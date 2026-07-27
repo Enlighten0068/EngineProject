@@ -1,0 +1,8 @@
+cmake cheatsheet:
+https://loshkinoleg.github.io/cheatsheets/CMakeLists_Cheatsheet
+
+markdown guide:
+https://daringfireball.net/projects/markdown/basics
+
+ADR:
+https://github.com/architecture-decision-record/architecture-decision-record
