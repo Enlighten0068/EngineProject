@@ -18,3 +18,12 @@ https://www.reddit.com/r/GraphicsProgramming/comments/1d6bpm3/tips_on_writing_a_
 
 Semantic versioning:
 https://semver.org/
+
+Git Branching and Merging:
+https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+
+Git submodules:
+https://git-scm.com/book/en/v2/Git-Tools-Submodules
+
+comandos subdirectory:
+git submodule add "repository-name" "target-directory"
