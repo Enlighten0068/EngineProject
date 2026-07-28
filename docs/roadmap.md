@@ -35,4 +35,18 @@
 
 *Representar ambientes isométricos respeitando profundidade dos objetos.*
 
+## Milestone 4 - Gestão de recursos
+* Asset manager
+* Scene manager
+* Serialização
+
+*Tornar o motor capaz de carregar/alternar entre diferentes cenas.*
+
+## Milestone 5 - ECS 
+* Entities
+* Components
+* Systems 
+
+*Arquitetura baseada em entidades e componentes, assim evitando usar hierarquia em classes.*
+
 ## Em desenvolvimento
