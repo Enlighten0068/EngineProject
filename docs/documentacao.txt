@@ -6,3 +6,12 @@ https://daringfireball.net/projects/markdown/basics
 
 ADR:
 https://github.com/architecture-decision-record/architecture-decision-record
+https://www.well-architected-guide.com/documents/design-decision-record-ddr-template/
+
+ECS:
+https://www.richardlord.net/blog/ecs/what-is-an-entity-framework
+
+Renderer agnóstico a API gráfico (consultar melhor):
+https://github.com/BarisUckardes/Felix
+https://ryanmccord.wordpress.com/individual-work/api-agnostic-renderer/
+https://www.reddit.com/r/GraphicsProgramming/comments/1d6bpm3/tips_on_writing_a_good_graphics_api_agnostic/
