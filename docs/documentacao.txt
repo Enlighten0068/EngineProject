@@ -27,3 +27,6 @@ https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
 comandos subdirectory:
 git submodule add "repository-name" "target-directory"
+
+clonagem para outro computador:
+git submodule update --init --recursive

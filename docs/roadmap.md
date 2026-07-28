@@ -1,10 +1,10 @@
 # Roadmap
 
 ## Milestone inicial - Base para desenvolvimento
-* Estrutura inicial do projeto - almost done
-* Configuração de build com CMake
+* Estrutura inicial do projeto - ~70% done
+* Configuração de build com CMake - ~30% done
 * openGL context
-* Processamento de eventos com SDL3
+* Processamento de eventos com SDL3 - 50% done
 
 *Tenho como objetivo ter a aplicação a abrir uma janela, receber input (events) e executar um loop principal simples.*
 
