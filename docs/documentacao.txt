@@ -1,6 +1,9 @@
 cmake cheatsheet:
 https://loshkinoleg.github.io/cheatsheets/CMakeLists_Cheatsheet
 
+build - ninja:
+cmake -S . -B build -G Ninja
+
 markdown guide:
 https://daringfireball.net/projects/markdown/basics
 
