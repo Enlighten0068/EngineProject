@@ -19,3 +19,16 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
     -Wpedantic
   )
 endif()
+
+add_subdirectory(vendor/SDL3)
+
+add_executable(
+  Game
+  game/src/main.cpp
+)
+
+target_link_libraries(
+  Game
+  PRIVATE
+  SDL3::SDL3
+)
