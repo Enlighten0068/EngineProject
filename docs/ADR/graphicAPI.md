@@ -45,3 +45,14 @@ O foco atual é a renderização em 2D e isométrica, as quais não são justifi
 ## Considerações futuras 
 
 Será necessário manter separado o Renderer e o Backend gráfico, assim permitindo a implementação da API Vulkan sem alterar o núcleo do motor.
+
+## Tabela comparativa
+
+| Critério | OpenGL | Vulkan |
+|---|---|---|
+| Curva de aprendizagem | Baixa | Alta |
+| Complexidade | Baixa | Alta |
+| Desenvolvimento | Adequado | Exigente |
+| Renderização | Adequado | Adequado |
+| Custo de tempo | Normal | Elevado |
+| Performance / Otimização | Fraca | Forte |
