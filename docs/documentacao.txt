@@ -15,3 +15,6 @@ Renderer agnóstico a API gráfico (consultar melhor):
 https://github.com/BarisUckardes/Felix
 https://ryanmccord.wordpress.com/individual-work/api-agnostic-renderer/
 https://www.reddit.com/r/GraphicsProgramming/comments/1d6bpm3/tips_on_writing_a_good_graphics_api_agnostic/
+
+Semantic versioning:
+https://semver.org/
