@@ -3,13 +3,13 @@
 
 
 int main(){
-  std::cout << "Teste de inicialização do SDL3.\n";
+  std::cout << "SDL3 Runtime initialization.\n";
   if (SDL_Init(SDL_INIT_VIDEO) < 0 ){
-    std::cout << "Erro na inicialização: " << SDL_GetError() << '\n';
+    std::cout << "Initializing failed: " << SDL_GetError() << '\n';
     return 1;
   }
   else{
-    std::cout << "Sucesso.\n";
+    std::cout << "Sucess.\n";
   }
   SDL_Quit();
   return 0;
