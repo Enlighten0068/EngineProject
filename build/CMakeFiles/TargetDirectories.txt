@@ -1,8 +1,0 @@
-/home/gmatos/project/EngineProject/build/CMakeFiles/Game.dir
-/home/gmatos/project/EngineProject/build/CMakeFiles/edit_cache.dir
-/home/gmatos/project/EngineProject/build/CMakeFiles/rebuild_cache.dir
-/home/gmatos/project/EngineProject/build/vendor/SDL3/CMakeFiles/SDL3-shared.dir
-/home/gmatos/project/EngineProject/build/vendor/SDL3/CMakeFiles/SDL3_test.dir
-/home/gmatos/project/EngineProject/build/vendor/SDL3/CMakeFiles/SDL_uclibc.dir
-/home/gmatos/project/EngineProject/build/vendor/SDL3/CMakeFiles/edit_cache.dir
-/home/gmatos/project/EngineProject/build/vendor/SDL3/CMakeFiles/rebuild_cache.dir

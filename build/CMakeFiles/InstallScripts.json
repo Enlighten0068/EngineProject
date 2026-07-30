@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/gmatos/project/EngineProject/build/cmake_install.cmake",
-		"/home/gmatos/project/EngineProject/build/vendor/SDL3/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
