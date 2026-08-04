@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.25) #Versão mínima do CMAKE
 project(
   EngineProject
   VERSION 0.1.0
-  LANGUAGES CXX
+  LANGUAGES C CXX
 )
 
 set(CMAKE_CXX_STANDARD 23) #Versão mínima standard C++
@@ -22,6 +22,17 @@ endif()
 
 add_subdirectory(vendor/SDL3)
 
+add_library(
+  glad
+  vendor/glad/src/glad.c
+)
+
+target_include_directories(
+  glad
+  PUBLIC
+  vendor/glad/include
+)
+
 add_executable(
   Game
   game/src/main.cpp
@@ -31,4 +42,5 @@ target_link_libraries(
   Game
   PRIVATE
   SDL3::SDL3
+glad
 )
