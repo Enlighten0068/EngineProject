@@ -1,4 +1,5 @@
 #include <SDL3/SDL.h>
+#include <glad/glad.h>
 #include <iostream>
 
 
@@ -8,8 +9,6 @@ int main(){
     std::cerr << "Initializing failed: " << SDL_GetError() << '\n';
     return 1;
   }
-
-  //std::cout << "Sucess.\n";
   
   const char* videoDriver = SDL_GetCurrentVideoDriver();
 
@@ -20,9 +19,13 @@ int main(){
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
   SDL_Window* window = SDL_CreateWindow("Game Window", 1920, 1080, SDL_WINDOW_OPENGL);
-  SDL_GLContext glContext = SDL_GL_CreateContext(window);
-  //std::cout << "OpenGL Version: " << SDL_GL_GetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION) << '\n';
+  if (!window){
+    std::cerr << "Window creation error: " << SDL_GetError() << '\n';
+    SDL_Quit();
+    return 1;
+  }
 
+  SDL_GLContext glContext = SDL_GL_CreateContext(window);
   if(!glContext){
     std::cerr << "OpenGL context not created: " << SDL_GetError() << '\n';
     SDL_DestroyWindow(window);
@@ -30,15 +33,35 @@ int main(){
     return 1;
   }
 
-  if (!window){
-    std::cerr << "Window creation error: " << SDL_GetError() << '\n';
+  SDL_GL_SetSwapInterval(1);
+
+  //GLAD initialization
+  if(!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)){
+    std::cerr << "GLAD initialization error.\n";
+    SDL_GL_DestroyContext(glContext);
+    SDL_DestroyWindow(window);
     SDL_Quit();
     return 1;
   }
+
+  std::cout << "OpenGL Version: " << glGetString(GL_VERSION) << '\n';
   std::cout << "Window ID: " << SDL_GetWindowID(window) << '\n';
   std::cout << "Window successfully created.\n";
-  
-  SDL_Delay(10000);
+
+  //Background color 
+  glClearColor(0.1f,0.2f,0.4f,1.0f);
+
+  bool running = true;
+
+  while(running){
+    SDL_Event event;
+    while(SDL_PollEvent(&event)){
+      if(event.type == SDL_EVENT_QUIT) running = false;
+    }
+
+    glClear(GL_COLOR_BUFFER_BIT);
+    SDL_GL_SwapWindow(window);
+  }
 
   SDL_GL_DestroyContext(glContext);
   std::cout << "OpenGL terminated.\n";
