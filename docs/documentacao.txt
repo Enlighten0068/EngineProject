@@ -31,14 +31,17 @@ https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
 comandos subdirectory:
 git submodule add "repository-name" "target-directory"
+git submodule add https://github.com/Dav1dde/glad.git .\vendor\glad
 
 clonagem para outro computador:
 git submodule update --init --recursive
-
-
-
 
 comando para desenhar janela e não a esconder pois não tem nada desenhado:
 SDL_VIDEODRIVER=x11 ./build/Game --> corre em x11 em vez de wayland
 
 -comportamento inesperado: quando arranco janela sem nada para desenhar o Wayland "esconde" a janela, se forçar arranque em x11, já a mostra corretamente.
+
+
+
+TO DO ADR:
+Comparar uso de profile Core ou Compatibility - OpenGL
