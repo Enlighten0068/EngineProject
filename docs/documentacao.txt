@@ -41,7 +41,15 @@ SDL_VIDEODRIVER=x11 ./build/Game --> corre em x11 em vez de wayland
 
 -comportamento inesperado: quando arranco janela sem nada para desenhar o Wayland "esconde" a janela, se forçar arranque em x11, já a mostra corretamente.
 
+ativar vsync:
+SDL_GL_SetSwapInterval(1);
 
 
 TO DO ADR:
 Comparar uso de profile Core ou Compatibility - OpenGL
+
+
+
+________________________________________________________________________________________________
+
+desacoplar funções para fora do main.cpp

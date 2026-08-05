@@ -36,6 +36,7 @@ target_include_directories(
 add_executable(
   Game
   game/src/main.cpp
+  engine/platform/sdl/SDLWindow.cpp
 )
 
 target_link_libraries(
