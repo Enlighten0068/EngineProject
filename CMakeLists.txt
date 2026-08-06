@@ -31,6 +31,7 @@ target_include_directories(
   glad
   PUBLIC
   vendor/glad/include
+  engine/platform/sdl
 )
 
 add_executable(
@@ -43,5 +44,5 @@ target_link_libraries(
   Game
   PRIVATE
   SDL3::SDL3
-glad
+  glad
 )
