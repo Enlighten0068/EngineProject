@@ -53,3 +53,7 @@ Comparar uso de profile Core ou Compatibility - OpenGL
 ________________________________________________________________________________________________
 
 desacoplar funções para fora do main.cpp
+
+
+SRP: https://www.geeksforgeeks.org/java/single-responsibility-principle-in-java-with-examples/
+Construtores: https://www.geeksforgeeks.org/cpp/constructors-c/
