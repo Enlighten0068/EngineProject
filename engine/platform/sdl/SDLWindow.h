@@ -7,7 +7,9 @@ class SDLWindow{
     SDLWindow();
     ~SDLWindow();
 
-    bool Create(cont char* title, int width, int weigth);
+    bool Create(const char* title, int width, int height);
+
+    void Destroy();
 
     void SwapBuffers();
 
