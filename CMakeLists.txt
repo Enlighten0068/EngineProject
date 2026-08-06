@@ -31,13 +31,19 @@ target_include_directories(
   glad
   PUBLIC
   vendor/glad/include
-  engine/platform/sdl
 )
 
 add_executable(
   Game
   game/src/main.cpp
+  engine/core/Application.cpp
   engine/platform/sdl/SDLWindow.cpp
+)
+
+target_include_directories(
+  Game
+  PRIVATE
+  engine
 )
 
 target_link_libraries(
