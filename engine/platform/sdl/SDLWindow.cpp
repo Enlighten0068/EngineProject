@@ -1,4 +1,5 @@
 #include "SDLWindow.h"
+#include "diagnostics/Log.h"
 #include <glad/glad.h>
 #include <iostream>
 
@@ -14,32 +15,32 @@ bool SDLWindow::Create(const char* title, int width, int height){
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
   m_Window = SDL_CreateWindow(title, width, height, SDL_WINDOW_OPENGL);
-  std::cout << "Window ID: " << SDL_GetWindowID(m_Window) << '\n'; 
-  std::cout << "Window successfully created.\n";
+  Log::Info(("Window ID: ") + std::to_string(SDL_GetWindowID(m_Window)));
+  Log::Info("Window successfully created.");
   
 
   if (!m_Window){
-    std::cerr << "Window creation error: " << SDL_GetError() << '\n';
+    Log::Error(("Window creation error: ") + std::string(SDL_GetError()));
     return false;
   }
 
   m_Context = SDL_GL_CreateContext(m_Window);
 
   if(!m_Context){
-    std::cerr << "OpenGL context not created: " << SDL_GetError() << '\n';
+    Log::Error(("OpenGL context not created: ") + std::string(SDL_GetError()));
     Destroy();
     return false;
   }
 
   if(!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)){
-    std::cerr << "GLAD initialization error.\n";
+    Log::Error("GLAD initialization error.");
     Destroy();
     return false;
   }
 
   SDL_GL_SetSwapInterval(1);
-  std::cout << "OpenGL Version: " << glGetString(GL_VERSION) << '\n';
-  std::cout << "Renderer: " << glGetString(GL_RENDERER) << '\n';
+  Log::Info(std::string("OpenGL Version: ") + reinterpret_cast<const char*>(glGetString(GL_VERSION))); //glGetString devolve GLubyte* - conversão para const char
+  Log::Info(std::string("Renderer: ") + reinterpret_cast<const char*>(glGetString(GL_RENDERER))); //glGetString devolve GLubyte* - conversão para const char
 
   glViewport(0,0,width,height);
   return true;

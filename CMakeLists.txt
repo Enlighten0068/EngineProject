@@ -38,6 +38,7 @@ add_executable(
   game/src/main.cpp
   engine/core/Application.cpp
   engine/core/Time.cpp
+  engine/diagnostics/Log.cpp
   engine/platform/sdl/SDLWindow.cpp
 )
 
