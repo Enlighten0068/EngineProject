@@ -61,3 +61,10 @@ Construtores: https://www.geeksforgeeks.org/cpp/constructors-c/
 
 membros public ou private:
 https://stackoverflow.com/questions/14399929/should-i-use-public-or-private-variables
+
+openGL guide: https://learnopengl.com/
+SDL3 event documentation: https://wiki.libsdl.org/SDL3/CategoryEvents
+
+
+!!!!!!!!!!! DELTA TIME - https://dev.to/dsaghliani/understanding-delta-time-in-games-3olf
+

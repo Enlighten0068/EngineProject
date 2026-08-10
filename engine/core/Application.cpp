@@ -1,4 +1,5 @@
 #include "core/Application.h"
+#include "core/Time.h"
 #include <SDL3/SDL.h>
 #include <glad/glad.h>
 #include <iostream>
@@ -35,21 +36,42 @@ bool Application::Initialize(){
 
 void Application::Run(){
     while (m_Running){
-        SDL_Event event;
+        Time::Update();
 
-        while (SDL_PollEvent(&event)){
-            if (event.type == SDL_EVENT_QUIT){
-                std::cout << "QuitEvent received. Closing.\n";
-                m_Running = false;
-            }
-        }
-
-        glClear(GL_COLOR_BUFFER_BIT);
-        m_Window.SwapBuffers();
+        ProcessEvents();
+        Update();
+        Render();
     }
 }
 
 void Application::Shutdown(){
     SDL_Quit();
     std::cout << "SDL3 terminated.\n";
+}
+
+void Application::ProcessEvents(){
+    SDL_Event event;
+
+    while (SDL_PollEvent(&event)){
+        if (event.type == SDL_EVENT_QUIT){
+            std::cout << "QuitEvent received. Closing.\n";
+            m_Running = false;
+        }
+    }
+}
+
+void Application::Update(){
+    static float timer = 0.0f;
+
+    timer += Time::DeltaTime();
+    if(timer >= 1.0f){
+        std::cout << "FPS: ~" << (1.0f / Time::DeltaTime()) << '\n';
+        std::cout << "Delta: " << Time::DeltaTime() << " | Elapsed: " << Time::ElapsedTime() << '\n';
+        timer = 0.0f;
+    }
+}
+
+void Application::Render(){
+    glClear(GL_COLOR_BUFFER_BIT);
+    m_Window.SwapBuffers();
 }

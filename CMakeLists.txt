@@ -37,6 +37,7 @@ add_executable(
   Game
   game/src/main.cpp
   engine/core/Application.cpp
+  engine/core/Time.cpp
   engine/platform/sdl/SDLWindow.cpp
 )
 
