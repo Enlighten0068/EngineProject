@@ -68,3 +68,9 @@ SDL3 event documentation: https://wiki.libsdl.org/SDL3/CategoryEvents
 
 !!!!!!!!!!! DELTA TIME - https://dev.to/dsaghliani/understanding-delta-time-in-games-3olf
 
+
+-_________________________________________________________________________________________________-
+
+
+Tipo de variáveis que podem ser formatadas com std::format: int,float,double,bool,std::string,const char*,uint64_t
+Já variáveis personalizadas não podem ser formatadas assim.

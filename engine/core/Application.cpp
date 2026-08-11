@@ -4,6 +4,7 @@
 #include <SDL3/SDL.h>
 #include <glad/glad.h>
 #include <iostream>
+#include <format>
 
 Application::Application() : m_Running(false) {}
 
@@ -20,13 +21,13 @@ bool Application::Initialize(){
 
     if (SDL_Init(SDL_INIT_VIDEO) < 0)
     {
-        Log::Error(std::string("Initializing failed: ") + SDL_GetError());
+        Log::Error(std::format("Initializing failed: {}", SDL_GetError()));
         return false;
     }
 
     const char* videoDriver = SDL_GetCurrentVideoDriver();
 
-    if (videoDriver) Log::Info(std::string("Video Driver: ") + videoDriver);
+    if (videoDriver) Log::Info(std::format("Video Driver: {}", videoDriver));
 
     if (!m_Window.Create("Game Window",1920,1080)){
         SDL_Quit();
