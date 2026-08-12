@@ -71,8 +71,10 @@ void Application::Update(){
 
     timer += Time::DeltaTime();
     if(timer >= 1.0f){
-        std::cout << "FPS: ~" << (1.0f / Time::DeltaTime()) << '\n';
-        std::cout << "Delta: " << Time::DeltaTime() << " | Elapsed: " << Time::ElapsedTime() << '\n';
+        Log::Info(std::format("FPS: ~{}", (1.0f / Time::DeltaTime())));
+        //std::cout << "FPS: ~" << (1.0f / Time::DeltaTime()) << '\n';
+        Log::Info(std::format("Delta: {} | Elapsed: {}", Time::DeltaTime(), Time::ElapsedTime()));
+        //std::cout << "Delta: " << Time::DeltaTime() << " | Elapsed: " << Time::ElapsedTime() << '\n';
         timer = 0.0f;
     }
 }
