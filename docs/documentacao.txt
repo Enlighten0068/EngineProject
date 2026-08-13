@@ -74,3 +74,6 @@ SDL3 event documentation: https://wiki.libsdl.org/SDL3/CategoryEvents
 
 Tipo de variáveis que podem ser formatadas com std::format: int,float,double,bool,std::string,const char*,uint64_t
 Já variáveis personalizadas não podem ser formatadas assim.
+
+Assertions: https://learn.microsoft.com/en-us/visualstudio/debugger/c-cpp-assertions?view=visualstudio
+https://softwareengineering.stackexchange.com/questions/15515/when-to-use-assertions-and-when-to-use-exceptions
