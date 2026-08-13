@@ -1,5 +1,6 @@
 #include "SDLWindow.h"
 #include "diagnostics/Log.h"
+#include "diagnostics/Assert.h"
 #include <glad/glad.h>
 #include <iostream>
 #include <format>
@@ -19,7 +20,8 @@ bool SDLWindow::Create(const char* title, int width, int height){
   Log::Info(std::format("Window ID: {}", SDL_GetWindowID(m_Window)));
   Log::Info("Window successfully created.");
   
-
+  //ASSERT - Use only for debugging purposes
+  //ENGINE_ASSERT(m_Window, "Window creation failed.");
   if (!m_Window){
     Log::Error(std::format("Window creation error: {}", SDL_GetError()));
     return false;
