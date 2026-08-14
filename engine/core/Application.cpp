@@ -1,6 +1,9 @@
 #include "core/Application.h"
 #include "core/Time.h"
 #include "diagnostics/Log.h"
+#include "events/EventType.h"
+#include "events/WindowEvent.h"
+#include "events/EventDispatcher.h"
 #include <SDL3/SDL.h>
 #include <glad/glad.h>
 #include <iostream>
@@ -19,7 +22,7 @@ bool Application::Initialize(){
 
     Log::Info("SDL3 Runtime initialization.");
 
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
+    if(SDL_Init(SDL_INIT_VIDEO) < 0)
     {
         Log::Error(std::format("Initializing failed: {}", SDL_GetError()));
         return false;
@@ -27,9 +30,9 @@ bool Application::Initialize(){
 
     const char* videoDriver = SDL_GetCurrentVideoDriver();
 
-    if (videoDriver) Log::Info(std::format("Video Driver: {}", videoDriver));
+    if(videoDriver) Log::Info(std::format("Video Driver: {}", videoDriver));
 
-    if (!m_Window.Create("Game Window",1920,1080)){
+    if(!m_Window.Create("Game Window",1920,1080)){
         SDL_Quit();
         return false;
     }
@@ -55,13 +58,31 @@ void Application::Shutdown(){
     Log::Info("SDL3 terminated.");
 }
 
+void Application::OnEvent(Event& event){
+    EventDispatcher dispatcher(event);
+
+    dispatcher.Dispatch<WindowCloseEvent>(WindowCloseEvent& event{
+        Log::Warning("Quit event received. Closing window.")
+        m_Running = false;
+        return true;
+    });
+
+    //if(event.GetEventType() == EventType::WindowClose){
+    //    m_Running = false;
+    //    Log::Warning("Quit event received. Closing window.");
+    //}
+}
+
 void Application::ProcessEvents(){
     SDL_Event event;
 
-    while (SDL_PollEvent(&event)){
-        if (event.type == SDL_EVENT_QUIT){
-            Log::Warning("QuitEvent received. Closing.");
-            m_Running = false;
+    while(SDL_PollEvent(&event)){
+        switch(event.type){
+            case SDL_EVENT_QUIT:{
+                WindowCloseEvent closeEvent;
+                OnEvent(closeEvent);
+                break;
+            }
         }
     }
 }

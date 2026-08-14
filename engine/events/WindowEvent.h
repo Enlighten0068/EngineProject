@@ -4,6 +4,9 @@
 
 class WindowCloseEvent : public Event{
 public:
+    static EventType GetStaticType(){
+        return EventType::WindowClose;
+    }
     EventType GetEventType() const override{
         return EventType::WindowClose;
     }

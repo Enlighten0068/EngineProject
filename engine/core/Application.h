@@ -1,6 +1,7 @@
 #pragma once
 
 #include "platform/sdl/SDLWindow.h"
+#include "events/Event.h"
 
 class Application{
 public:
@@ -18,4 +19,5 @@ private:
     void ProcessEvents();
     void Update();
     void Render();
+    void OnEvent(Event& event);
 };
