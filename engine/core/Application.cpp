@@ -4,6 +4,9 @@
 #include "events/EventType.h"
 #include "events/WindowEvent.h"
 #include "events/EventDispatcher.h"
+#include "graphics/VertexArray.h"
+#include "graphics/VertexBuffer.h"
+#include "graphics/Shader.h"
 #include <SDL3/SDL.h>
 #include <glad/glad.h>
 #include <iostream>
@@ -40,6 +43,47 @@ bool Application::Initialize(){
     glClearColor(0.1f,0.2f,0.4f,1.0f);
     m_Running = true;
 
+    float vertices[]{
+        0.0f, 0.5f, 0.0f,
+        -0.5f, -0.5f, 0.0f,
+        0.5f, -0.5f, 0.0f,
+    };
+
+    m_Shader = std::make_unique<Shader>();
+    m_VertexBuffer = std::make_unique<VertexBuffer>(vertices, sizeof(vertices));
+    m_VertexArray = std::make_unique<VertexArray>();
+
+    m_VertexArray->Bind();
+    m_VertexBuffer->Bind();
+
+    const std::string vertexShaderSource = R"(
+    #version 460 core
+
+    layout(location = 0) in vec3 a_Position;
+
+    void main(){
+        gl_Position = vec4(a_Position,1.0);
+    })";
+
+    const std::string fragmentShaderSource = R"(
+    #version 460 core
+
+    out vec4 FragColor;
+
+    void main(){
+        FragColor = vec4(1.0,0.5,0.2,1.0);
+    })";
+
+    m_Shader->Compile(vertexShaderSource, fragmentShaderSource);
+    if (!m_Shader->Compile(vertexShaderSource,fragmentShaderSource)){
+        Log::Error("Shader compilation failed.");
+        return false;
+    }
+
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,3 * sizeof(float),nullptr);
+
+    glEnableVertexAttribArray(0);
+
     return true;
 }
 
@@ -54,6 +98,8 @@ void Application::Run(){
 }
 
 void Application::Shutdown(){
+    m_VertexBuffer.reset();
+    m_VertexArray.reset();
     SDL_Quit();
     Log::Info("SDL3 terminated.");
 }
@@ -105,5 +151,11 @@ void Application::Update(){
 
 void Application::Render(){
     glClear(GL_COLOR_BUFFER_BIT);
+
+    m_Shader->Bind();
+    m_VertexArray->Bind();
+
+    glDrawArrays(GL_TRIANGLES,0,3);
+
     m_Window.SwapBuffers();
 }

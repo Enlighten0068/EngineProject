@@ -39,6 +39,9 @@ add_executable(
   engine/core/Application.cpp
   engine/core/Time.cpp
   engine/diagnostics/Log.cpp
+  engine/graphics/Shader.cpp
+  engine/graphics/VertexArray.cpp
+  engine/graphics/VertexBuffer.cpp
   engine/platform/sdl/SDLWindow.cpp
 )
 
