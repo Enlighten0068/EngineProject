@@ -61,16 +61,19 @@ void Application::Shutdown(){
 void Application::OnEvent(Event& event){
     EventDispatcher dispatcher(event);
 
-    dispatcher.Dispatch<WindowCloseEvent>(WindowCloseEvent& event{
-        Log::Warning("Quit event received. Closing window.")
-        m_Running = false;
-        return true;
-    });
+    //Event Dispatcher
+    /*dispatcher.Dispatch<WindowCloseEvent>(
+    *    [&](WindowCloseEvent& event){
+    *        Log::Warning("Quit event received. Closing window.");
+    *        m_Running = false;
+    *        return true;
+    *    }
+    );*/
 
-    //if(event.GetEventType() == EventType::WindowClose){
-    //    m_Running = false;
-    //    Log::Warning("Quit event received. Closing window.");
-    //}
+    if(event.GetEventType() == EventType::WindowClose){
+        m_Running = false;
+        Log::Warning("Quit event received. Closing window.");
+    }
 }
 
 void Application::ProcessEvents(){
@@ -92,7 +95,7 @@ void Application::Update(){
 
     timer += Time::DeltaTime();
     if(timer >= 1.0f){
-        Log::Info(std::format("FPS: ~{}", (1.0f / Time::DeltaTime())));
+        Log::Info(std::format("FPS: {}", (1.0f / Time::DeltaTime())));
         //std::cout << "FPS: ~" << (1.0f / Time::DeltaTime()) << '\n';
         Log::Info(std::format("Delta: {} | Elapsed: {}", Time::DeltaTime(), Time::ElapsedTime()));
         //std::cout << "Delta: " << Time::DeltaTime() << " | Elapsed: " << Time::ElapsedTime() << '\n';

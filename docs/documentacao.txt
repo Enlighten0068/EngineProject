@@ -77,3 +77,6 @@ Já variáveis personalizadas não podem ser formatadas assim.
 
 Assertions: https://learn.microsoft.com/en-us/visualstudio/debugger/c-cpp-assertions?view=visualstudio
 https://softwareengineering.stackexchange.com/questions/15515/when-to-use-assertions-and-when-to-use-exceptions
+
+
+Funções lambda: https://www.cppbetterexplained.com/posts/cpp-lambda-functions/
