@@ -90,3 +90,8 @@ https://learnopengl.com/
 VBO: https://www.khronos.org/opengl/wiki/Buffer_Object
 VAO: https://www.khronos.org/opengl/wiki/Vertex_Specification
 https://learnopengl.com/Getting-started/Hello-Triangle
+
+UV Mapping: https://en.wikipedia.org/wiki/UV_mapping
+
+
+Matrix 4x4: https://gamedev.stackexchange.com/questions/72044/why-do-we-use-4x4-matrices-to-transform-things-in-3d

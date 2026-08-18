@@ -7,4 +7,5 @@ class IndexBuffer;
 class Renderer{
 public:
     static void DrawQuad(Shader& shader,VertexArray& vertexArray,IndexBuffer& indexBuffer);
+    static void DrawTexturedQuad(Shader& shader,VertexArray& vertexArray,IndexBuffer& indexBuffer,Texture2D& texture);
 };

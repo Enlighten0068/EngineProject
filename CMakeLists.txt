@@ -31,6 +31,7 @@ target_include_directories(
   glad
   PUBLIC
   vendor/glad/include
+  vendor/stb
 )
 
 add_executable(
@@ -43,6 +44,7 @@ add_executable(
   engine/graphics/Shader.cpp
   engine/graphics/VertexArray.cpp
   engine/graphics/VertexBuffer.cpp
+  engine/graphics/Texture2D.cpp
   engine/platform/sdl/SDLWindow.cpp
   engine/renderer/Renderer.cpp
 )
