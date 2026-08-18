@@ -44,6 +44,7 @@ add_executable(
   engine/graphics/VertexArray.cpp
   engine/graphics/VertexBuffer.cpp
   engine/platform/sdl/SDLWindow.cpp
+  engine/renderer/Renderer.cpp
 )
 
 target_include_directories(

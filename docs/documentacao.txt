@@ -80,3 +80,13 @@ https://softwareengineering.stackexchange.com/questions/15515/when-to-use-assert
 
 
 Funções lambda: https://www.cppbetterexplained.com/posts/cpp-lambda-functions/
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Documentação openGL: https://www.khronos.org/opengl/wiki/
+https://learnopengl.com/
+
+VBO: https://www.khronos.org/opengl/wiki/Buffer_Object
+VAO: https://www.khronos.org/opengl/wiki/Vertex_Specification
+https://learnopengl.com/Getting-started/Hello-Triangle
