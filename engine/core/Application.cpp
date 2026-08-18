@@ -11,6 +11,7 @@
 #include <glad/glad.h>
 #include <iostream>
 #include <format>
+#include <cstdint>
 
 Application::Application() : m_Running(false) {}
 
@@ -19,9 +20,10 @@ Application::~Application(){
 }
 
 bool Application::Initialize(){
-    Log::Info("Logging...");
+    //for testing purposes
+    /*Log::Info("Logging...");
     Log::Warning("Warning test.");
-    Log::Error("Error test.");
+    Log::Error("Error test.");*/
 
     Log::Info("SDL3 Runtime initialization.");
 
@@ -40,21 +42,29 @@ bool Application::Initialize(){
         return false;
     }
 
-    glClearColor(0.1f,0.2f,0.4f,1.0f);
+    glClearColor(0.0f,0.0f,0.0f,1.0f);
     m_Running = true;
 
     float vertices[]{
-        0.0f, 0.5f, 0.0f,
         -0.5f, -0.5f, 0.0f,
         0.5f, -0.5f, 0.0f,
+        0.5f, 0.5f, 0.0f,
+        -0.5f, 0.5f, 0.0f
+    };
+
+    uint32_t indices[]{
+        0, 1, 2,
+        2, 3, 0
     };
 
     m_Shader = std::make_unique<Shader>();
     m_VertexBuffer = std::make_unique<VertexBuffer>(vertices, sizeof(vertices));
     m_VertexArray = std::make_unique<VertexArray>();
+    m_IndexBuffer = std::make_unique<IndexBuffer>(indices,6);
 
     m_VertexArray->Bind();
     m_VertexBuffer->Bind();
+    m_IndexBuffer->Bind();
 
     const std::string vertexShaderSource = R"(
     #version 460 core
@@ -74,7 +84,7 @@ bool Application::Initialize(){
         FragColor = vec4(1.0,0.5,0.2,1.0);
     })";
 
-    m_Shader->Compile(vertexShaderSource, fragmentShaderSource);
+    //m_Shader->Compile(vertexShaderSource, fragmentShaderSource);
     if (!m_Shader->Compile(vertexShaderSource,fragmentShaderSource)){
         Log::Error("Shader compilation failed.");
         return false;
@@ -100,6 +110,7 @@ void Application::Run(){
 void Application::Shutdown(){
     m_VertexBuffer.reset();
     m_VertexArray.reset();
+    m_Shader.reset();
     SDL_Quit();
     Log::Info("SDL3 terminated.");
 }
@@ -154,8 +165,10 @@ void Application::Render(){
 
     m_Shader->Bind();
     m_VertexArray->Bind();
+    m_IndexBuffer->Bind();
 
-    glDrawArrays(GL_TRIANGLES,0,3);
+    //glDrawArrays(GL_TRIANGLES,0,3);
+    glDrawElements(GL_TRIANGLES,m_IndexBuffer->GetCount(),GL_UNSIGNED_INT,nullptr);
 
     m_Window.SwapBuffers();
 }
