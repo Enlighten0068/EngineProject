@@ -1,3 +1,6 @@
+tutorial C game engine from scratch: https://www.youtube.com/watch?v=WficzyoTSsg&list=PLYokS5qr7lSsvgemrTwMSrQsdk4BRqJU6
+
+
 cmake cheatsheet:
 https://loshkinoleg.github.io/cheatsheets/CMakeLists_Cheatsheet
 

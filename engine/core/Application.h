@@ -6,7 +6,10 @@
 #include "graphics/Texture2D.h"
 #include "graphics/VertexArray.h"
 #include "graphics/VertexBuffer.h"
+#include "math/Transform.h"
 #include "platform/sdl/SDLWindow.h"
+#include "scene/Camera2D.h"
+
 #include <memory>
 
 
@@ -32,4 +35,6 @@ private:
     std::unique_ptr<VertexBuffer> m_VertexBuffer;
     std::unique_ptr<IndexBuffer> m_IndexBuffer;
     std::unique_ptr<Texture2D> m_Texture;
+    std::unique_ptr<Camera2D> m_Camera;
+    Transform m_TestTransform;
 };

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "math/Matrix4.h"
+
 #include <string>
 #include <cstdint>
 
@@ -14,6 +16,7 @@ public:
 
     void Bind() const;
     void Unbind() const;
+    void SetUniformMat4(const std::string& name, const Matrix4& matrix) const;
 
 private:
     unsigned int m_RendererID;

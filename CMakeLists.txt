@@ -45,8 +45,10 @@ add_executable(
   engine/graphics/VertexArray.cpp
   engine/graphics/VertexBuffer.cpp
   engine/graphics/Texture2D.cpp
+  engine/math/Matrix4.cpp
   engine/platform/sdl/SDLWindow.cpp
   engine/renderer/Renderer.cpp
+  engine/scene/Camera2D.cpp
 )
 
 target_include_directories(
