@@ -39,6 +39,7 @@ add_executable(
   game/src/main.cpp
   engine/core/Application.cpp
   engine/core/Time.cpp
+  engine/core/Input.cpp
   engine/diagnostics/Log.cpp
   engine/graphics/IndexBuffer.cpp
   engine/graphics/Shader.cpp

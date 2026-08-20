@@ -1,5 +1,6 @@
 #include "core/Application.h"
 #include "core/Time.h"
+#include "core/Input.h"
 #include "diagnostics/Log.h"
 #include "events/EventType.h"
 #include "events/WindowEvent.h"
@@ -184,6 +185,7 @@ bool Application::Initialize(){
 
     int winWidth, winHeight;
     SDL_GetWindowSize(m_Window.GetNativeWindow(), &winWidth, &winHeight);
+    Input::SetWindowSize(winWidth, winHeight);
     float aspect = static_cast<float>(winWidth) / static_cast<float>(winHeight);
     float height = 5.0f;
     float width = height * aspect;
@@ -200,6 +202,7 @@ bool Application::Initialize(){
 void Application::Run(){
     while (m_Running){
         Time::Update();
+        Input::Update();
 
         ProcessEvents();
         Update();
@@ -237,12 +240,14 @@ void Application::ProcessEvents(){
     SDL_Event event;
 
     while(SDL_PollEvent(&event)){
+        Input::ProcessEvent(event);
         switch(event.type){
             case SDL_EVENT_QUIT:{
                 WindowCloseEvent closeEvent;
                 OnEvent(closeEvent);
                 break;
             }
+            //To be added
         }
     }
 }
@@ -251,6 +256,16 @@ void Application::Update(){
     static float timer = 0.0f;
 
     timer += Time::DeltaTime();
+
+    float speed = 3.0f;
+    if (Input::IsKeyHeld(SDL_SCANCODE_UP)) m_TestTransform.Position.y += speed * Time::DeltaTime();
+    if (Input::IsKeyHeld(SDL_SCANCODE_DOWN)) m_TestTransform.Position.y -= speed * Time::DeltaTime();
+    if (Input::IsKeyHeld(SDL_SCANCODE_LEFT)) m_TestTransform.Position.x -= speed * Time::DeltaTime();
+    if (Input::IsKeyHeld(SDL_SCANCODE_RIGHT)) m_TestTransform.Position.x += speed * Time::DeltaTime();
+
+    Vector2D scroll = Input::GetScrollDelta();
+    m_TestTransform.Rotation.z += scroll.y * 0.1f;
+
     m_TestTransform.Position.x = std::sin(timer) * 2.0f;
     m_TestTransform.Rotation.z = timer * 0.5f;
     if(timer >= 1.0f){
