@@ -1,5 +1,7 @@
 #pragma once
 
+#include "components/Transform.h"
+#include "components/SpriteRenderer.h"
 #include "events/Event.h"
 #include "graphics/Shader.h"
 #include "graphics/IndexBuffer.h"
@@ -8,8 +10,9 @@
 #include "graphics/VertexBuffer.h"
 #include "math/Transform.h"
 #include "platform/sdl/SDLWindow.h"
+#include "resources/ResourceManager.h"
 #include "scene/Camera2D.h"
-
+#include <entt.hpp>
 #include <memory>
 
 
@@ -34,7 +37,7 @@ private:
     std::unique_ptr<VertexArray> m_VertexArray;
     std::unique_ptr<VertexBuffer> m_VertexBuffer;
     std::unique_ptr<IndexBuffer> m_IndexBuffer;
-    std::unique_ptr<Texture2D> m_Texture;
     std::unique_ptr<Camera2D> m_Camera;
-    Transform m_TestTransform;
+    entt::registry m_Registry;
+    entt::entity m_TestEntity;
 };

@@ -15,15 +15,10 @@ bool Shader::Compile(
     const std::string& fragmentSource)
 {
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-
     const char* vertexSrc = vertexSource.c_str();
-
     glShaderSource(vertexShader,1,&vertexSrc, nullptr);
-
     glCompileShader(vertexShader);
-
     GLint success;
-
     glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
 
     if (!success){
@@ -36,15 +31,12 @@ bool Shader::Compile(
 
         return false;
     }
+    Log::Info("Shader program linked successfully.");
 
     GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-
     const char* fragmentSrc = fragmentSource.c_str();
-
     glShaderSource(fragmentShader, 1, &fragmentSrc, nullptr);
-
     glCompileShader(fragmentShader);
-
     glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
 
     if (!success){
@@ -64,6 +56,7 @@ bool Shader::Compile(
     glAttachShader(m_RendererID, vertexShader);
     glAttachShader(m_RendererID, fragmentShader);
     glLinkProgram(m_RendererID);
+    Log::Info(std::format("Program ID: {}, Link status: {}", m_RendererID, success));
     glGetProgramiv(m_RendererID, GL_LINK_STATUS, &success);
 
     if (!success){
@@ -97,4 +90,5 @@ void Shader::Unbind() const{
 void Shader::SetUniformMat4(const std::string& name, const Matrix4& matrix) const{
     GLint location = glGetUniformLocation(m_RendererID, name.c_str());
     if (location != -1) glUniformMatrix4fv(location, 1, GL_FALSE, matrix.Data());
+    else Log::Warning(std::format("Uniform '{}' not found in shader.", name));
 }

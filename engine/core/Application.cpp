@@ -1,3 +1,5 @@
+#include "components/Transform.h"
+#include "components/SpriteRenderer.h"
 #include "core/Application.h"
 #include "core/Time.h"
 #include "core/Input.h"
@@ -7,17 +9,19 @@
 #include "events/EventDispatcher.h"
 #include "graphics/VertexArray.h"
 #include "graphics/VertexBuffer.h"
+#include "graphics/IndexBuffer.h"
 #include "graphics/Shader.h"
 #include "graphics/Texture2D.h"
 #include "math/Matrix4.h"
 #include "renderer/Renderer.h"
 #include "scene/Camera2D.h"
-
-#include <SDL3/SDL.h>
+#include "systems/RenderSystem.h"
 #include <glad/glad.h>
+#include <SDL3/SDL.h>
 #include <iostream>
 #include <format>
 #include <cstdint>
+#include <memory>
 
 Application::Application() : m_Running(false), m_Camera(nullptr) {}
 
@@ -25,8 +29,9 @@ Application::~Application(){
     Shutdown();
 }
 
+
 bool Application::Initialize(){
-    //for testing purposes
+    //For testing purposes
     /*Log::Info("Logging...");
     Log::Warning("Warning test.");
     Log::Error("Error test.");*/
@@ -67,17 +72,20 @@ bool Application::Initialize(){
     m_VertexBuffer = std::make_unique<VertexBuffer>(vertices, sizeof(vertices));
     m_VertexArray = std::make_unique<VertexArray>();
     m_IndexBuffer = std::make_unique<IndexBuffer>(indices, 6);
-    m_Texture = std::make_unique<Texture2D>();
 
-    if (!m_Texture->Load("assets/textures/test.png")) return false;
+    auto texture = ResourceManager::GetInstance().LoadTexture("assets/textures/test.png");
+    if (!texture) {
+        Log::Error("Failed to load texture.");
+        return false;
+    }
 
     m_VertexArray->Bind();
-    m_Texture->Bind();
     m_VertexBuffer->Bind();
     m_IndexBuffer->Bind();
 
     const std::string vertexShaderSource = R"(
     #version 460 core
+    //#error FORCED ERROR - TEST
 
     layout(location = 0) in vec3 a_Position;
     layout(location = 1) in vec2 a_TexCoord;
@@ -89,9 +97,14 @@ bool Application::Initialize(){
     out vec2 v_TexCoord;
 
     void main(){
+        //gl_Position = u_Model * vec4(a_Position, 1.0);
         gl_Position = u_Projection * u_View * u_Model * vec4(a_Position, 1.0);
+        //gl_Position = u_Model * vec4(a_Position, 1.0);
         v_TexCoord = a_TexCoord;
     })";
+
+    //Uncomment to check if ShaderSource cache is updated
+    //Log::Info("Vertex Shader Source:\n" + vertexShaderSource);
 
     const std::string fragmentShaderSource = R"(
     #version 460 core
@@ -103,12 +116,12 @@ bool Application::Initialize(){
 
     void main(){
         FragColor = texture(u_Texture, v_TexCoord);
+        //FragColor = vec4(1.0, 0.0, 0.0, 1.0);
     })";
 
-    //Log::Info("Vertex Shader Source:\n" + vertexShaderSource);
+    //Uncomment to check if ShaderSource cache is updated
     //Log::Info("Fragment Shader Source:\n" + fragmentShaderSource);
 
-    //m_Shader->Compile(vertexShaderSource, fragmentShaderSource);
     if (!m_Shader->Compile(vertexShaderSource, fragmentShaderSource)){
         Log::Error("Shader compilation failed.");
         return false;
@@ -186,37 +199,51 @@ bool Application::Initialize(){
     int winWidth, winHeight;
     SDL_GetWindowSize(m_Window.GetNativeWindow(), &winWidth, &winHeight);
     Input::SetWindowSize(winWidth, winHeight);
+
     float aspect = static_cast<float>(winWidth) / static_cast<float>(winHeight);
     float height = 5.0f;
     float width = height * aspect;
     m_Camera = std::make_unique<Camera2D>(-width, width, -height, height);
     m_Camera->SetPosition(Vector3D(0.0f, 0.0f, 0.0f));
 
+    m_TestEntity = m_Registry.create();
 
-    m_TestTransform.Position = Vector3D(0.0f, 0.0f, 0.0f);
-    m_TestTransform.Scale = Vector3D(5.0f, 5.0f, 1.0f);
+    auto& transform = m_Registry.emplace<Components::Transform>(m_TestEntity);
+    transform.Position = Vector3D(0.0f, 0.0f, 0.0f);
+    transform.Scale = Vector3D(5.0f, 5.0f, 1.0f);
+
+    auto& sprite = m_Registry.emplace<Components::SpriteRenderer>(m_TestEntity);
+    //sprite.Texture = std::shared_ptr<Texture2D>(m_Textures.get());
+    sprite.Texture = texture;
+
+    Log::Info("Application initialized successfully.");
 
     return true;
 }
 
+
 void Application::Run(){
     while (m_Running){
         Time::Update();
-        Input::Update();
-
         ProcessEvents();
         Update();
+        Input::Update();
         Render();
     }
 }
+
 
 void Application::Shutdown(){
     m_VertexBuffer.reset();
     m_VertexArray.reset();
     m_Shader.reset();
+    m_IndexBuffer.reset();
+    m_Camera.reset();
+
     SDL_Quit();
     Log::Info("SDL3 terminated.");
 }
+
 
 void Application::OnEvent(Event& event){
     EventDispatcher dispatcher(event);
@@ -236,6 +263,7 @@ void Application::OnEvent(Event& event){
     }
 }
 
+
 void Application::ProcessEvents(){
     SDL_Event event;
 
@@ -247,27 +275,50 @@ void Application::ProcessEvents(){
                 OnEvent(closeEvent);
                 break;
             }
+            case SDL_EVENT_MOUSE_WHEEL:{
+                Log::Info(std::format("Scroll event raw: x={}, y={}", event.wheel.x, event.wheel.y));
+                break;
+            }
             //To be added
         }
     }
 }
 
+
 void Application::Update(){
     static float timer = 0.0f;
-
     timer += Time::DeltaTime();
 
+    auto& transform = m_Registry.get<Components::Transform>(m_TestEntity);
+
     float speed = 3.0f;
-    if (Input::IsKeyHeld(SDL_SCANCODE_UP)) m_TestTransform.Position.y += speed * Time::DeltaTime();
-    if (Input::IsKeyHeld(SDL_SCANCODE_DOWN)) m_TestTransform.Position.y -= speed * Time::DeltaTime();
-    if (Input::IsKeyHeld(SDL_SCANCODE_LEFT)) m_TestTransform.Position.x -= speed * Time::DeltaTime();
-    if (Input::IsKeyHeld(SDL_SCANCODE_RIGHT)) m_TestTransform.Position.x += speed * Time::DeltaTime();
+    if (Input::IsKeyHeld(SDL_SCANCODE_UP)){
+        transform.Position.y += speed * Time::DeltaTime();
+        Log::Info("Up key held");
+    }
+    if (Input::IsKeyHeld(SDL_SCANCODE_DOWN)){
+        transform.Position.y -= speed * Time::DeltaTime();
+        Log::Info("Down key held");
+    }
+    if (Input::IsKeyHeld(SDL_SCANCODE_LEFT)){
+        transform.Position.x -= speed * Time::DeltaTime();
+        Log::Info("Left key held");
+    }
+    if (Input::IsKeyHeld(SDL_SCANCODE_RIGHT)){
+        transform.Position.x += speed * Time::DeltaTime();
+        Log::Info("Right key held");
+    }
 
     Vector2D scroll = Input::GetScrollDelta();
-    m_TestTransform.Rotation.z += scroll.y * 0.1f;
+    if (scroll.y != 0.0f) {
+        Log::Info(std::format("Scroll delta: {}", scroll.y));
+        transform.Scale.x += scroll.y * 0.5f;
+        transform.Scale.y += scroll.y * 0.5f;
+        Log::Info(std::format("Scale: ({}, {})", transform.Scale.x, transform.Scale.y));
+    }
 
-    m_TestTransform.Position.x = std::sin(timer) * 2.0f;
-    m_TestTransform.Rotation.z = timer * 0.5f;
+    //transform.Rotation.z = 0.785f;
+
     if(timer >= 1.0f){
         Log::Info(std::format("FPS: {}", (1.0f / Time::DeltaTime())));
         //std::cout << "FPS: ~" << (1.0f / Time::DeltaTime()) << '\n';
@@ -275,21 +326,25 @@ void Application::Update(){
         //std::cout << "Delta: " << Time::DeltaTime() << " | Elapsed: " << Time::ElapsedTime() << '\n';
         timer = 0.0f;
     }
+    //transform.Scale = Vector3D(20.0f, 20.0f, 1.0f);
+    transform.Rotation.z = 1.5708f; // 90 graus
+
+    /*Log::Info(std::format("[RenderSystem] Position: ({}, {}), Scale: ({}, {}), Rotation: {}",
+                          transform.Position.x, transform.Position.y,
+                          transform.Scale.x, transform.Scale.y,
+                          transform.Rotation.z));*/
 }
+
 
 void Application::Render(){
     m_Camera->Update();
-
-    Matrix4 model = Matrix4::Translation(m_TestTransform.Position);
-    model = model * Matrix4::RotationZ(m_TestTransform.Rotation.z);
-    model = model * Matrix4::Scale(m_TestTransform.Scale);
-
     const Matrix4& view = m_Camera->GetViewMatrix();
     const Matrix4& projection = m_Camera->GetProjectionMatrix();
 
     glClear(GL_COLOR_BUFFER_BIT);
 
-    Renderer::DrawTexturedQuad(*m_Shader, *m_VertexArray, *m_IndexBuffer, *m_Texture, model, view, projection);
+    RenderSystem::Render(m_Registry, *m_Shader, view, projection,
+                         *m_VertexArray, *m_IndexBuffer);
 
     m_Window.SwapBuffers();
 }

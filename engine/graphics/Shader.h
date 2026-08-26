@@ -18,6 +18,8 @@ public:
     void Unbind() const;
     void SetUniformMat4(const std::string& name, const Matrix4& matrix) const;
 
+    unsigned int GetRendererID() const { return m_RendererID; }
+
 private:
     unsigned int m_RendererID;
 };
