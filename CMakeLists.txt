@@ -49,6 +49,7 @@ add_executable(
   engine/math/Matrix4.cpp
   engine/platform/sdl/SDLWindow.cpp
   engine/renderer/Renderer.cpp
+  engine/resources/ResourceManager.cpp
   engine/scene/Camera2D.cpp
 )
 
@@ -56,6 +57,7 @@ target_include_directories(
   Game
   PRIVATE
   engine
+  vendor/entt
 )
 
 target_link_libraries(
