@@ -1,0 +1,36 @@
+[2026-08-27 17:24:34.973] [INFO] Log system initialized. File: logs/log_2026-08-27_17-24-34.log
+[2026-08-27 17:24:34.973] [INFO] Application: Initializing...
+[2026-08-27 17:24:34.973] [INFO] Engine: Initializing SDL3 runtime and window.
+[2026-08-27 17:24:35.077] [INFO] Window ID: 5
+[2026-08-27 17:24:35.077] [INFO] Window successfully created.
+[2026-08-27 17:24:35.104] [INFO] OpenGL Version: 4.6.0 NVIDIA 580.178.04
+[2026-08-27 17:24:35.104] [INFO] Renderer: NVIDIA GeForce GTX 1060 6GB/PCIe/SSE2
+[2026-08-27 17:24:35.104] [INFO] Engine initialized successfully.
+[2026-08-27 17:24:35.104] [INFO] Renderer ID: 1
+[2026-08-27 17:24:35.104] [INFO] VertexBuffer created.
+[2026-08-27 17:24:35.104] [INFO] VertexArray ID: 1
+[2026-08-27 17:24:35.104] [INFO] VertexArray created.
+[2026-08-27 17:24:35.104] [INFO] IndexBuffer created. Renderer ID: 2
+[2026-08-27 17:24:35.105] [INFO] Shader program linked successfully.
+[2026-08-27 17:24:35.106] [INFO] Program ID: 3, Link status: 1
+[2026-08-27 17:24:35.106] [INFO] Shader compiled successfully.
+[2026-08-27 17:24:35.106] [INFO] Graphics context initialized.
+[2026-08-27 17:24:35.137] [INFO] Texture loaded: assets/textures/test.png (1000x600)
+[2026-08-27 17:24:35.137] [INFO] Texture loaded and cached: assets/textures/test.png
+[2026-08-27 17:24:35.138] [INFO] Controllers initialized.
+[2026-08-27 17:24:35.138] [INFO] Application initialized successfully.
+[2026-08-27 17:24:36.145] [INFO] FPS: 61.6 | Delta: 0.0154s | Elapsed: 1.01s
+[2026-08-27 17:24:37.146] [INFO] FPS: 59.9 | Delta: 0.0150s | Elapsed: 2.01s
+[2026-08-27 17:24:38.146] [INFO] FPS: 60.0 | Delta: 0.0167s | Elapsed: 3.01s
+[2026-08-27 17:24:39.162] [INFO] FPS: 60.1 | Delta: 0.0169s | Elapsed: 4.02s
+[2026-08-27 17:24:40.163] [INFO] FPS: 60.0 | Delta: 0.0187s | Elapsed: 5.02s
+[2026-08-27 17:24:41.175] [INFO] FPS: 60.2 | Delta: 0.0219s | Elapsed: 6.04s
+[2026-08-27 17:24:42.191] [INFO] FPS: 60.0 | Delta: 0.0176s | Elapsed: 7.05s
+[2026-08-27 17:24:43.192] [INFO] FPS: 59.9 | Delta: 0.0162s | Elapsed: 8.05s
+[2026-08-27 17:24:44.193] [INFO] FPS: 59.9 | Delta: 0.0156s | Elapsed: 9.06s
+[2026-08-27 17:24:45.195] [INFO] FPS: 59.9 | Delta: 0.0173s | Elapsed: 10.06s
+[2026-08-27 17:24:46.201] [INFO] FPS: 59.7 | Delta: 0.0203s | Elapsed: 11.06s
+[2026-08-27 17:24:47.210] [INFO] FPS: 57.5 | Delta: 0.0218s | Elapsed: 12.07s
+[2026-08-27 17:24:48.014] [WARNING] Quit event received. Closing window.
+[2026-08-27 17:24:48.030] [INFO] Shutting down Application...
+[2026-08-27 17:24:48.030] [INFO] Log system shutting down.

@@ -32,6 +32,7 @@ Application::~Application(){ Shutdown(); }
 
 
 bool Application::Initialize(){
+    Log::Initialize("logs/");
     //For testing purposes
     /*Log::Info("Logging...");
     Log::Warning("Warning test.");
@@ -99,6 +100,7 @@ void Application::Run(){
 
 void Application::Shutdown(){
     Log::Info("Shutting down Application...");
+    Log::Shutdown();
 
     m_CameraController.reset();
     m_PlayerController.reset();

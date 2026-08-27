@@ -21,5 +21,5 @@ private:
     int m_FrameCount = 0;
     float m_DeltaTime = 0.0f;
     float m_ElapsedTime = 0.0f;
-    float m_LogInterval;
+    float m_LogInterval = 1.0f;
 };

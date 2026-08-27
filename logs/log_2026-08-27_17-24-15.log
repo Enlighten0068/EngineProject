@@ -1,0 +1,44 @@
+[2026-08-27 17:24:15.041] [INFO] Log system initialized. File: logs/log_2026-08-27_17-24-15.log
+[2026-08-27 17:24:15.041] [INFO] Application: Initializing...
+[2026-08-27 17:24:15.041] [INFO] Engine: Initializing SDL3 runtime and window.
+[2026-08-27 17:24:15.209] [INFO] Window ID: 5
+[2026-08-27 17:24:15.209] [INFO] Window successfully created.
+[2026-08-27 17:24:15.235] [INFO] OpenGL Version: 4.6.0 NVIDIA 580.178.04
+[2026-08-27 17:24:15.235] [INFO] Renderer: NVIDIA GeForce GTX 1060 6GB/PCIe/SSE2
+[2026-08-27 17:24:15.235] [INFO] Engine initialized successfully.
+[2026-08-27 17:24:15.236] [INFO] Renderer ID: 1
+[2026-08-27 17:24:15.236] [INFO] VertexBuffer created.
+[2026-08-27 17:24:15.236] [INFO] VertexArray ID: 1
+[2026-08-27 17:24:15.236] [INFO] VertexArray created.
+[2026-08-27 17:24:15.236] [INFO] IndexBuffer created. Renderer ID: 2
+[2026-08-27 17:24:15.238] [INFO] Shader program linked successfully.
+[2026-08-27 17:24:15.239] [INFO] Program ID: 3, Link status: 1
+[2026-08-27 17:24:15.239] [INFO] Shader compiled successfully.
+[2026-08-27 17:24:15.239] [INFO] Graphics context initialized.
+[2026-08-27 17:24:15.264] [INFO] Texture loaded: assets/textures/test.png (1000x600)
+[2026-08-27 17:24:15.265] [INFO] Texture loaded and cached: assets/textures/test.png
+[2026-08-27 17:24:15.265] [INFO] Controllers initialized.
+[2026-08-27 17:24:15.265] [INFO] Application initialized successfully.
+[2026-08-27 17:24:16.265] [INFO] FPS: 70.0 | Delta: 0.0170s | Elapsed: 1.00s
+[2026-08-27 17:24:17.267] [INFO] FPS: 59.9 | Delta: 0.0187s | Elapsed: 2.00s
+[2026-08-27 17:24:18.085] [INFO] Up key held
+[2026-08-27 17:24:18.101] [INFO] Up key held
+[2026-08-27 17:24:18.117] [INFO] Up key held
+[2026-08-27 17:24:18.135] [INFO] Up key held
+[2026-08-27 17:24:18.151] [INFO] Up key held
+[2026-08-27 17:24:18.169] [INFO] Up key held
+[2026-08-27 17:24:18.281] [INFO] FPS: 60.1 | Delta: 0.0163s | Elapsed: 3.02s
+[2026-08-27 17:24:18.348] [INFO] Up key held
+[2026-08-27 17:24:18.365] [INFO] Up key held
+[2026-08-27 17:24:18.382] [INFO] Up key held
+[2026-08-27 17:24:18.400] [INFO] Up key held
+[2026-08-27 17:24:18.418] [INFO] Up key held
+[2026-08-27 17:24:18.432] [INFO] Up key held
+[2026-08-27 17:24:18.449] [INFO] Up key held
+[2026-08-27 17:24:18.465] [INFO] Up key held
+[2026-08-27 17:24:19.284] [INFO] FPS: 59.8 | Delta: 0.0175s | Elapsed: 4.02s
+[2026-08-27 17:24:20.301] [INFO] FPS: 59.0 | Delta: 0.0190s | Elapsed: 5.04s
+[2026-08-27 17:24:21.315] [INFO] FPS: 60.2 | Delta: 0.0168s | Elapsed: 6.05s
+[2026-08-27 17:24:21.647] [WARNING] Quit event received. Closing window.
+[2026-08-27 17:24:21.663] [INFO] Shutting down Application...
+[2026-08-27 17:24:21.663] [INFO] Log system shutting down.
