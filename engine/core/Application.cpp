@@ -3,17 +3,18 @@
 #include "core/Application.h"
 #include "core/Time.h"
 #include "core/Input.h"
+#include "core/Engine.h"
 #include "diagnostics/Log.h"
 #include "events/EventType.h"
 #include "events/WindowEvent.h"
 #include "events/EventDispatcher.h"
 #include "graphics/VertexArray.h"
 #include "graphics/VertexBuffer.h"
-#include "graphics/IndexBuffer.h"
 #include "graphics/Shader.h"
 #include "graphics/Texture2D.h"
 #include "math/Matrix4.h"
 #include "renderer/Renderer.h"
+#include "resources/ResourceManager.h"
 #include "scene/Camera2D.h"
 #include "systems/RenderSystem.h"
 #include <glad/glad.h>
@@ -21,13 +22,10 @@
 #include <iostream>
 #include <format>
 #include <cstdint>
-#include <memory>
+//#include <memory>
 
-Application::Application() : m_Running(false), m_Camera(nullptr) {}
-
-Application::~Application(){
-    Shutdown();
-}
+Application::Application() = default;
+Application::~Application() { Shutdown(); }
 
 
 bool Application::Initialize(){
@@ -36,25 +34,14 @@ bool Application::Initialize(){
     Log::Warning("Warning test.");
     Log::Error("Error test.");*/
 
-    Log::Info("SDL3 Runtime initialization.");
+    Log::Info("Application: Initializing...");
 
-    if(SDL_Init(SDL_INIT_VIDEO) < 0)
-    {
-        Log::Error(std::format("Initializing failed: {}", SDL_GetError()));
-        return false;
-    }
-
-    const char* videoDriver = SDL_GetCurrentVideoDriver();
-
-    if(videoDriver) Log::Info(std::format("Video Driver: {}", videoDriver));
-
-    if(!m_Window.Create("Game Window", 1920, 1080)){
-        SDL_Quit();
+    if (!m_Engine.Initialize("Game Window", 1920, 1080)){
+        Log::Error("Failed to initialize Engine.");
         return false;
     }
 
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    m_Running = true;
 
     float vertices[]{
         -0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -63,21 +50,11 @@ bool Application::Initialize(){
         -0.5f, 0.5f, 0.0f, 0.0f, 1.0f
     };
 
-    uint32_t indices[]{
-        0, 1, 2,
-        2, 3, 0
-    };
+    uint32_t indices[]{ 0, 1, 2, 2, 3, 0 };
 
-    m_Shader = std::make_unique<Shader>();
     m_VertexBuffer = std::make_unique<VertexBuffer>(vertices, sizeof(vertices));
     m_VertexArray = std::make_unique<VertexArray>();
     m_IndexBuffer = std::make_unique<IndexBuffer>(indices, 6);
-
-    auto texture = ResourceManager::GetInstance().LoadTexture("assets/textures/test.png");
-    if (!texture) {
-        Log::Error("Failed to load texture.");
-        return false;
-    }
 
     m_VertexArray->Bind();
     m_VertexBuffer->Bind();
@@ -97,9 +74,7 @@ bool Application::Initialize(){
     out vec2 v_TexCoord;
 
     void main(){
-        //gl_Position = u_Model * vec4(a_Position, 1.0);
         gl_Position = u_Projection * u_View * u_Model * vec4(a_Position, 1.0);
-        //gl_Position = u_Model * vec4(a_Position, 1.0);
         v_TexCoord = a_TexCoord;
     })";
 
@@ -122,6 +97,7 @@ bool Application::Initialize(){
     //Uncomment to check if ShaderSource cache is updated
     //Log::Info("Fragment Shader Source:\n" + fragmentShaderSource);
 
+    m_Shader = std::make_unique<Shader>();
     if (!m_Shader->Compile(vertexShaderSource, fragmentShaderSource)){
         Log::Error("Shader compilation failed.");
         return false;
@@ -133,134 +109,54 @@ bool Application::Initialize(){
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3*sizeof(float)));
     glEnableVertexAttribArray(1);
 
-    /* Identity Matrix testing
-    Matrix4 identity = Matrix4::Identity();
-    const float* data = identity.Data();
-
-    Log::Info(std::format(
-        "{} {} {} {}\n"
-        "{} {} {} {}\n"
-        "{} {} {} {}\n"
-        "{} {} {} {}",
-
-        data[0], data[1], data[2], data[3],
-        data[4], data[5], data[6], data[7],
-        data[8], data[9], data[10], data[11],
-        data[12], data[13], data[14], data[15]));*/
-
-    /* Translation Matrix testing
-    Matrix4 translation = Matrix4::Translation(Vector3D(2.0f, 3.0f, 4.0f));
-    const float* data = translation.Data();
-
-    Log::Info(std::format(
-        "{} {} {} {}\n"
-        "{} {} {} {}\n"
-        "{} {} {} {}\n"
-        "{} {} {} {}",
-
-        data[0], data[1], data[2], data[3],
-        data[4], data[5], data[6], data[7],
-        data[8], data[9], data[10], data[11],
-        data[12], data[13], data[14], data[15]));*/
-
-    /* Scaling Matrix testing
-    Matrix4 scale = Matrix4::Scale(Vector3D(2.0f,3.0f,4.0f));
-    const float* data = scale.Data();
-
-    Log::Info(std::format(
-        "{} {} {} {}\n"
-        "{} {} {} {}\n"
-        "{} {} {} {}\n"
-        "{} {} {} {}",
-
-        data[0], data[1], data[2], data[3],
-        data[4], data[5], data[6], data[7],
-        data[8], data[9], data[10], data[11],
-        data[12], data[13], data[14], data[15]));*/
-
-    /* Matrix Multiplication testing
-    Matrix4 identityA = Matrix4::Identity();
-    Matrix4 identityB = Matrix4::Identity();
-
-    Matrix4 result = identityA * identityB;
-    const float* data = result.Data();
-
-    Log::Info(std::format(
-        "{} {} {} {}\n"
-        "{} {} {} {}\n"
-        "{} {} {} {}\n"
-        "{} {} {} {}",
-
-        data[0], data[1], data[2], data[3],
-        data[4], data[5], data[6], data[7],
-        data[8], data[9], data[10], data[11],
-        data[12], data[13], data[14], data[15]));*/
-
     int winWidth, winHeight;
-    SDL_GetWindowSize(m_Window.GetNativeWindow(), &winWidth, &winHeight);
+    SDL_GetWindowSize(m_Engine.GetWindow().GetNativeWindow(), &winWidth, &winHeight);
     Input::SetWindowSize(winWidth, winHeight);
-
     float aspect = static_cast<float>(winWidth) / static_cast<float>(winHeight);
     float height = 5.0f;
     float width = height * aspect;
     m_Camera = std::make_unique<Camera2D>(-width, width, -height, height);
     m_Camera->SetPosition(Vector3D(0.0f, 0.0f, 0.0f));
 
-    m_TestEntity = m_Registry.create();
+    m_Scene = std::make_unique<Scene>(*m_Shader, *m_VertexArray, *m_IndexBuffer);
 
-    auto& transform = m_Registry.emplace<Components::Transform>(m_TestEntity);
-    transform.Position = Vector3D(0.0f, 0.0f, 0.0f);
-    transform.Scale = Vector3D(5.0f, 5.0f, 1.0f);
+    // 8. Carregar textura via ResourceManager
+    auto texture = ResourceManager::GetInstance().LoadTexture("assets/textures/test.png");
+    if (!texture){
+        Log::Error("Failed to load texture.");
+        return false;
+    }
 
-    auto& sprite = m_Registry.emplace<Components::SpriteRenderer>(m_TestEntity);
-    //sprite.Texture = std::shared_ptr<Texture2D>(m_Textures.get());
-    sprite.Texture = texture;
+    m_PlayerEntity = m_Scene->CreateSpriteEntity(
+        Vector3D(0.0f, 0.0f, 0.0f), Vector3D(5.0f, 5.0f, 1.0f),texture);
 
     Log::Info("Application initialized successfully.");
-
     return true;
 }
 
 
 void Application::Run(){
-    while (m_Running){
+    while (m_Engine.IsRunning()){
         Time::Update();
         ProcessEvents();
         Update();
         Input::Update();
         Render();
+        //m_Engine.SwapBuffers();
     }
 }
 
 
 void Application::Shutdown(){
+    m_Scene.reset();
+    m_Shader.reset();
     m_VertexBuffer.reset();
     m_VertexArray.reset();
-    m_Shader.reset();
     m_IndexBuffer.reset();
     m_Camera.reset();
-
-    SDL_Quit();
-    Log::Info("SDL3 terminated.");
-}
-
-
-void Application::OnEvent(Event& event){
-    EventDispatcher dispatcher(event);
-
-    //Event Dispatcher test
-    /*dispatcher.Dispatch<WindowCloseEvent>(
-    *    [&](WindowCloseEvent& event){
-    *        Log::Warning("Quit event received. Closing window.");
-    *        m_Running = false;
-    *        return true;
-    *    }
-    );*/
-
-    if(event.GetEventType() == EventType::WindowClose){
-        m_Running = false;
-        Log::Warning("Quit event received. Closing window.");
-    }
+    m_Engine.Shutdown();
+    ResourceManager::GetInstance().Clear();
+    Log::Info("Application shutdown.");
 }
 
 
@@ -279,7 +175,8 @@ void Application::ProcessEvents(){
                 Log::Info(std::format("Scroll event raw: x={}, y={}", event.wheel.x, event.wheel.y));
                 break;
             }
-            //To be added
+            default:
+                break;
         }
     }
 }
@@ -289,7 +186,7 @@ void Application::Update(){
     static float timer = 0.0f;
     timer += Time::DeltaTime();
 
-    auto& transform = m_Registry.get<Components::Transform>(m_TestEntity);
+    auto& transform = m_Scene->GetRegistry().get<Components::Transform>(m_PlayerEntity);
 
     float speed = 3.0f;
     if (Input::IsKeyHeld(SDL_SCANCODE_UP)){
@@ -310,29 +207,22 @@ void Application::Update(){
     }
 
     Vector2D scroll = Input::GetScrollDelta();
-    if (scroll.y != 0.0f) {
+    if (scroll.y != 0.0f){
         Log::Info(std::format("Scroll delta: {}", scroll.y));
         transform.Scale.x += scroll.y * 0.5f;
         transform.Scale.y += scroll.y * 0.5f;
         Log::Info(std::format("Scale: ({}, {})", transform.Scale.x, transform.Scale.y));
     }
 
-    //transform.Rotation.z = 0.785f;
+    transform.Rotation.z = 0.785f;
 
     if(timer >= 1.0f){
         Log::Info(std::format("FPS: {}", (1.0f / Time::DeltaTime())));
-        //std::cout << "FPS: ~" << (1.0f / Time::DeltaTime()) << '\n';
         Log::Info(std::format("Delta: {} | Elapsed: {}", Time::DeltaTime(), Time::ElapsedTime()));
-        //std::cout << "Delta: " << Time::DeltaTime() << " | Elapsed: " << Time::ElapsedTime() << '\n';
         timer = 0.0f;
     }
-    //transform.Scale = Vector3D(20.0f, 20.0f, 1.0f);
-    transform.Rotation.z = 1.5708f; // 90 graus
 
-    /*Log::Info(std::format("[RenderSystem] Position: ({}, {}), Scale: ({}, {}), Rotation: {}",
-                          transform.Position.x, transform.Position.y,
-                          transform.Scale.x, transform.Scale.y,
-                          transform.Rotation.z));*/
+    m_Scene->Update(Time::DeltaTime());
 }
 
 
@@ -343,8 +233,25 @@ void Application::Render(){
 
     glClear(GL_COLOR_BUFFER_BIT);
 
-    RenderSystem::Render(m_Registry, *m_Shader, view, projection,
-                         *m_VertexArray, *m_IndexBuffer);
+    m_Scene->Render(view, projection);
+    m_Engine.GetWindow().SwapBuffers();
+}
 
-    m_Window.SwapBuffers();
+
+void Application::OnEvent(Event& event){
+    EventDispatcher dispatcher(event);
+
+    //Event Dispatcher test
+    /*dispatcher.Dispatch<WindowCloseEvent>(
+     *    [&](WindowCloseEvent& event){
+     *        Log::Warning("Quit event received. Closing window.");
+     *        m_Running = false;
+     *        return true;
+     *    }
+     *   );*/
+
+    if(event.GetEventType() == EventType::WindowClose){
+        m_Engine.SetRunning(false);
+        Log::Warning("Quit event received. Closing window.");
+    }
 }

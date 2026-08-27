@@ -38,6 +38,7 @@ add_executable(
   Game
   game/src/main.cpp
   engine/core/Application.cpp
+  engine/core/Engine.cpp
   engine/core/Time.cpp
   engine/core/Input.cpp
   engine/diagnostics/Log.cpp
@@ -51,6 +52,7 @@ add_executable(
   engine/renderer/Renderer.cpp
   engine/resources/ResourceManager.cpp
   engine/scene/Camera2D.cpp
+  engine/scene/Scene.cpp
 )
 
 target_include_directories(
