@@ -11,6 +11,9 @@ public:
     void SetRotation(float angleRadians);
     void SetZoom(float zoom);
 
+    Vector3D GetPosition() const{ return m_Position; }
+    float GetZoom() const{ return m_Zoom; }
+
     const Matrix4& GetViewMatrix() const;
     const Matrix4& GetProjectionMatrix() const;
     void Update();

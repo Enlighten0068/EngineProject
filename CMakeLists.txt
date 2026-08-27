@@ -41,12 +41,16 @@ add_executable(
   engine/core/Engine.cpp
   engine/core/Time.cpp
   engine/core/Input.cpp
+  engine/core/PlayerController.cpp
+  engine/core/FpsCounter.cpp
+  engine/core/CameraController.cpp
   engine/diagnostics/Log.cpp
   engine/graphics/IndexBuffer.cpp
   engine/graphics/Shader.cpp
   engine/graphics/VertexArray.cpp
   engine/graphics/VertexBuffer.cpp
   engine/graphics/Texture2D.cpp
+  engine/graphics/GraphicsContext.cpp
   engine/math/Matrix4.cpp
   engine/platform/sdl/SDLWindow.cpp
   engine/renderer/Renderer.cpp

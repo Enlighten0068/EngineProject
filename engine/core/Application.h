@@ -1,12 +1,16 @@
 #pragma once
 
 #include "core/Engine.h"
+#include "core/PlayerController.h"
+#include "core/FpsCounter.h"
+#include "core/CameraController.h"
 #include "events/Event.h"
 #include "graphics/Shader.h"
 #include "graphics/IndexBuffer.h"
 #include "graphics/VertexArray.h"
 #include "graphics/VertexBuffer.h"
 #include "graphics/Texture2D.h"
+#include "graphics/GraphicsContext.h"
 #include "resources/ResourceManager.h"
 #include "scene/Camera2D.h"
 #include "scene/Scene.h"
@@ -25,22 +29,18 @@ public:
 
 private:
     Engine m_Engine;
+    std::unique_ptr<GraphicsContext> m_Graphics;
     std::unique_ptr<Scene> m_Scene;
-    std::unique_ptr<Shader> m_Shader;
-    std::unique_ptr<VertexArray> m_VertexArray;
-    std::unique_ptr<VertexBuffer> m_VertexBuffer;
-    std::unique_ptr<IndexBuffer> m_IndexBuffer;
     std::unique_ptr<Camera2D> m_Camera;
+    std::unique_ptr<CameraController> m_CameraController;
+    std::unique_ptr<PlayerController> m_PlayerController;
+    std::unique_ptr<FpsCounter> m_FpsCounter;
 
-    //entt::registry m_Registry;
     entt::entity m_PlayerEntity;
 
-
-    //SDLWindow m_Window;
-    //bool m_Running;
     void ProcessEvents();
-    void Update();
     void Render();
+    void Update();
     void OnEvent(Event& event);
-
+    void SetupControllers();
 };
