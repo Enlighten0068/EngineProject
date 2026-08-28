@@ -4,5 +4,9 @@ enum class EventType{
     None = 0,
 
     WindowClose,
-    WindowResize
+    WindowResize,
+    Key,
+    MouseMotion,
+    MouseButton,
+    MouseWheel
 };
