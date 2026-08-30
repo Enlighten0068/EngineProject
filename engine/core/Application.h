@@ -5,6 +5,9 @@
 #include "core/FpsCounter.h"
 #include "core/CameraController.h"
 #include "events/Event.h"
+#include "events/KeyEvent.h"
+#include "events/MouseEvent.h"
+#include "events/EventBus.h"
 #include "graphics/Shader.h"
 #include "graphics/IndexBuffer.h"
 #include "graphics/VertexArray.h"
@@ -41,6 +44,5 @@ private:
     void ProcessEvents();
     void Render();
     void Update();
-    void OnEvent(Event& event);
     void SetupControllers();
 };

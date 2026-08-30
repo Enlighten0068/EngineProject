@@ -1,4 +1,5 @@
 #include "core/Input.h"
+#include "diagnostics/Log.h"
 
 #include <cstring>
 
@@ -59,6 +60,7 @@ void Input::ProcessEvent(const SDL_Event& event) {
         case SDL_EVENT_MOUSE_WHEEL:
             s_ScrollDelta.x += static_cast<float>(event.wheel.x);
             s_ScrollDelta.y += static_cast<float>(event.wheel.y);
+            Log::Info(std::format("[Input] Scroll accumulated: ({}, {})", s_ScrollDelta.x, s_ScrollDelta.y));
             break;
 
         case SDL_EVENT_WINDOW_RESIZED:

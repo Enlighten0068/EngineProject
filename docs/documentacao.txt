@@ -98,3 +98,8 @@ UV Mapping: https://en.wikipedia.org/wiki/UV_mapping
 
 
 Matrix 4x4: https://gamedev.stackexchange.com/questions/72044/why-do-we-use-4x4-matrices-to-transform-things-in-3d
+
+Polling ou event-driven input: https://gamedev.stackexchange.com/questions/12146/polling-vs-event-driven-input
+https://www.reddit.com/r/gamedev/comments/4ty1sg/handling_input_polling_or_event_driven_which_to/
+
+TO DO ADR: Polling vs event-driven input

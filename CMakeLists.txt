@@ -45,6 +45,8 @@ add_executable(
   engine/core/FpsCounter.cpp
   engine/core/CameraController.cpp
   engine/diagnostics/Log.cpp
+  engine/events/EventBus.cpp
+  engine/events/SDLEventTranslator.cpp
   engine/graphics/IndexBuffer.cpp
   engine/graphics/Shader.cpp
   engine/graphics/VertexArray.cpp

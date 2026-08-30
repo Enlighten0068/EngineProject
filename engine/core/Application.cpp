@@ -10,7 +10,7 @@
 #include "diagnostics/Log.h"
 #include "events/EventType.h"
 #include "events/WindowEvent.h"
-#include "events/EventDispatcher.h"
+#include "events/SDLEventTranslator.h"
 #include "graphics/VertexArray.h"
 #include "graphics/VertexBuffer.h"
 #include "graphics/Shader.h"
@@ -44,6 +44,22 @@ bool Application::Initialize(){
         Log::Error("Failed to initialize Engine.");
         return false;
     }
+
+    //Event Handling initialization
+    EventBus::GetInstance().Subscribe<WindowCloseEvent>([this](Event& e) {
+        Log::Info("WindowCloseEvent received, shutting down game.");
+        m_Engine.SetRunning(false);
+    });
+
+    EventBus::GetInstance().Subscribe<WindowResizeEvent>([](Event& e) {
+        WindowResizeEvent& resize = static_cast<WindowResizeEvent&>(e);
+        Log::Info(std::format("Window resized to {}x{}", resize.GetWidth(), resize.GetHeight()));
+    });
+
+
+    SDLEventTranslator::SetUnhandledCallback([](const SDL_Event& event) {
+        Log::Warning(std::format("Unhandled SDL event type: {}", event.type));
+    });
 
     //GraphicsContext initialization
     m_Graphics = std::make_unique<GraphicsContext>();
@@ -114,6 +130,9 @@ void Application::Shutdown(){
         m_Graphics.reset();
     }
 
+    EventBus::GetInstance().Clear();
+    Log::Info("EventBus cleared.");
+
     ResourceManager::GetInstance().Clear();
     m_Engine.Shutdown();
     Log::Info("Application shut down.");
@@ -124,14 +143,7 @@ void Application::ProcessEvents(){
     SDL_Event event;
     while(SDL_PollEvent(&event)){
         Input::ProcessEvent(event);
-        switch (event.type) {
-            case SDL_EVENT_QUIT: {
-                WindowCloseEvent closeEvent;
-                OnEvent(closeEvent);
-                break;
-            }
-            //More events to be added
-        }
+        SDLEventTranslator::TranslateAndDispatch(event);
     }
 }
 
@@ -139,6 +151,9 @@ void Application::ProcessEvents(){
 void Application::Update(){
     float dt = Time::DeltaTime();
     if (m_PlayerController) m_PlayerController->Update();
+
+    Vector2D scroll = Input::GetScrollDelta();
+    if (scroll.y != 0.0f) Log::Info(std::format("[Application] Scroll read in Update: {}", scroll.y));
 
     if (m_CameraController) {
         // Se a câmara seguir o jogador, atualizar o target
@@ -166,28 +181,9 @@ void Application::Render(){
 }
 
 
-void Application::OnEvent(Event& event){
-    EventDispatcher dispatcher(event);
-
-    //Event Dispatcher test
-    /*dispatcher.Dispatch<WindowCloseEvent>(
-     *    [&](WindowCloseEvent& event){
-     *        Log::Warning("Quit event received. Closing window.");
-     *        m_Running = false;
-     *        return true;
-     *    }
-     *   );*/
-
-    if(event.GetEventType() == EventType::WindowClose){
-        m_Engine.SetRunning(false);
-        Log::Warning("Quit event received. Closing window.");
-    }
-}
-
 void Application::SetupControllers() {
 
-    m_PlayerController = std::make_unique<PlayerController>(m_Scene->GetRegistry(),
-                                                            m_PlayerEntity);
+    m_PlayerController = std::make_unique<PlayerController>(m_Scene->GetRegistry(), m_PlayerEntity);
     m_PlayerController->SetSpeed(3.0f);
 
     m_CameraController = std::make_unique<CameraController>(*m_Camera);

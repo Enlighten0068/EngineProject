@@ -2,9 +2,20 @@
 #include "core/Input.h"
 #include "core/Time.h"
 #include "diagnostics/Log.h"
+#include "events/EventBus.h"
+#include "events/MouseEvent.h"
 
-CameraController::CameraController(Camera2D& camera)
-: m_Camera(camera){}
+CameraController::CameraController(Camera2D& camera) : m_Camera(camera){
+    EventBus::GetInstance().Subscribe<MouseWheelEvent>([this](Event& e){
+        MouseWheelEvent& wheel = static_cast<MouseWheelEvent&>(e);
+        float zoom = m_Camera.GetZoom() + wheel.GetDelta().y * 0.1f;
+        if (zoom > 0.1f){
+            m_Camera.SetZoom(zoom);
+            //Log::Info(std::format("Zoom: {}", zoom));
+        }
+        m_Camera.Update();
+    });
+}
 
 void CameraController::Update(float deltaTime){
     if (m_FollowEntity){
@@ -24,11 +35,6 @@ void CameraController::Update(float deltaTime){
         if (Input::IsKeyHeld(SDL_SCANCODE_A)) pos.x -= speed;
         if (Input::IsKeyHeld(SDL_SCANCODE_D)) pos.x += speed;
 
-        Vector2D scroll = Input::GetScrollDelta();
-        if (scroll.y != 0.0f){
-            float zoom = m_Camera.GetZoom() + scroll.y * 0.1f;
-            if (zoom > 0.1f) m_Camera.SetZoom(zoom);
-        }
         m_Camera.SetPosition(pos);
     }
     m_Camera.Update();
