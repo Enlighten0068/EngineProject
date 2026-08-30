@@ -8,5 +8,10 @@ enum class EventType{
     Key,
     MouseMotion,
     MouseButton,
-    MouseWheel
+    MouseWheel,
+
+    PlayerJumped,
+    PlayerLanded,
+    PlayerDied,
+    EnemyDied
 };

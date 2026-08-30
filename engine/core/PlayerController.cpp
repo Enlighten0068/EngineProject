@@ -3,6 +3,7 @@
 #include "core/Input.h"
 #include "core/Time.h"
 #include "diagnostics/Log.h"
+#include "events/PlayerEvents.h"
 #include "events/EventBus.h"
 #include "events/KeyEvent.h"
 #include <format>
@@ -22,10 +23,14 @@ void PlayerController::SetupEventSubscriptions(){
     EventBus::GetInstance().Subscribe<KeyEvent>([this](Event& e){
         KeyEvent& keyEvent = static_cast<KeyEvent&>(e);
         if (keyEvent.GetAction() == KeyAction::Pressed && keyEvent.GetScancode() == SDL_SCANCODE_SPACE){
-            if (!m_IsJumping){
+            if (!m_IsJumping && !m_IsDead){
                 m_IsJumping = true;
                 m_JumpTimer = 0.0f;
                 m_Velocity.y = 10.0f;
+
+                auto& transform = m_Registry.get<Components::Transform>(m_PlayerEntity);
+                PlayerJumpedEvent jumpEvent(transform.Position, m_Velocity.y);
+                EventBus::GetInstance().Dispatch(jumpEvent);
                 Log::Info("Jump started (event-driven)");
             }
         }
@@ -41,6 +46,8 @@ void PlayerController::SetupEventSubscriptions(){
 }
 
 void PlayerController::Update(){
+    if (m_IsDead) return;
+
     float dt = Time::DeltaTime();
     auto& transform = m_Registry.get<Components::Transform>(m_PlayerEntity);
 
@@ -72,5 +79,33 @@ void PlayerController::Update(){
         transform.Position.y = -10.0f;
         m_Velocity.y = 0.0f;
         m_IsJumping = false;
+
+        if (m_IsJumping) {
+            m_IsJumping = false;
+            PlayerLandedEvent landEvent(transform.Position, m_Velocity.y);
+            EventBus::GetInstance().Dispatch(landEvent);
+            Log::Info("Landed (event-driven)");
+        }
     }
+
+    if (transform.Position.y < -15.0f) {
+        Die("Fell off the world");
+    }
+}
+
+void PlayerController::Die(const std::string& cause) {
+    if (m_IsDead) return;
+    m_IsDead = true;
+
+    auto& transform = m_Registry.get<Components::Transform>(m_PlayerEntity);
+
+    PlayerDiedEvent deathEvent(transform.Position, cause);
+    EventBus::GetInstance().Dispatch(deathEvent);
+
+    Log::Info(std::format("Player died: {}", cause));
+
+    transform.Position = Vector3D(0.0f, 0.0f, 0.0f);
+    m_Velocity = Vector3D(0.0f, 0.0f, 0.0f);
+    m_IsJumping = false;
+    m_IsDead = false;
 }
