@@ -9,14 +9,13 @@
 std::ofstream Log::s_File;
 LogLevel Log::s_MinLevel = LogLevel::Info;
 bool Log::s_Initialized = false;
+std::unordered_map<std::string, float> Log::s_LastLogTime;
 
 void Log::Initialize(const std::string& logDir){
     if (s_Initialized) return;
 
     std::filesystem::create_directories(logDir);
-
     std::string filename = GenerateTimestampFilename(logDir);
-
     s_File.open(filename, std::ios::out | std::ios::trunc);
     if (!s_File.is_open()) {
         std::cerr << "[ERROR] Failed to open log file: " << filename << std::endl;
@@ -44,6 +43,17 @@ void Log::Warning(const std::string& message){
 
 void Log::Error(const std::string& message){
     Write(LogLevel::Error, message);
+}
+
+void Log::InfoThrottled(const std::string& message, const std::string& key, float intervalSeconds){
+    auto now = std::chrono::steady_clock::now();
+    float currentTime = std::chrono::duration<float>(now.time_since_epoch()).count();
+
+    auto it = s_LastLogTime.find(key);
+    if (it == s_LastLogTime.end() || (currentTime - it->second) >= intervalSeconds){
+        s_LastLogTime[key] = currentTime;
+        Info(message);
+    }
 }
 
 void Log::Write(LogLevel level, const std::string& message) {

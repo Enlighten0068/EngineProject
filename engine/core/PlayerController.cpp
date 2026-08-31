@@ -46,6 +46,7 @@ void PlayerController::SetupEventSubscriptions(){
 }
 
 void PlayerController::Update(){
+    static float lastLogTime = 0.0f;
     if (m_IsDead) return;
 
     float dt = Time::DeltaTime();
@@ -89,6 +90,8 @@ void PlayerController::Update(){
     }
 
     transform.Position = m_World.ClampPosition(transform.Position);
+
+    Log::InfoThrottled(std::format("Position after clamp: ({:.2f}, {:.2f})", transform.Position.x, transform.Position.y), "player_position", 2.0f);
 
     if (transform.Position.y < -15.0f) {
         Die("Fell off the world");
