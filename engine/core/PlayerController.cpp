@@ -8,8 +8,8 @@
 #include "events/KeyEvent.h"
 #include <format>
 
-PlayerController::PlayerController(entt::registry& registry, entt::entity playerEntity)
-: m_Registry(registry), m_PlayerEntity(playerEntity){ SetupEventSubscriptions(); }
+PlayerController::PlayerController(entt::registry& registry, entt::entity playerEntity, const GameWorld& world)
+: m_Registry(registry), m_PlayerEntity(playerEntity), m_World(world){ SetupEventSubscriptions(); }
 
 void PlayerController::SetupEventSubscriptions(){
     EventBus::GetInstance().Subscribe<KeyEvent>([this](Event& e){
@@ -87,6 +87,8 @@ void PlayerController::Update(){
             Log::Info("Landed (event-driven)");
         }
     }
+
+    transform.Position = m_World.ClampPosition(transform.Position);
 
     if (transform.Position.y < -15.0f) {
         Die("Fell off the world");

@@ -1,11 +1,13 @@
 #pragma once
 
 #include "components/Transform.h"
+#include "math/Vector3D.h"
+#include "scene/GameWorld.h"
 #include <entt.hpp>
 
 class PlayerController{
 public:
-    PlayerController(entt::registry& registry, entt::entity playerEntity);
+    PlayerController(entt::registry& registry, entt::entity playerEntity, const GameWorld& world);
     ~PlayerController() = default;
 
     void Update();
@@ -29,4 +31,5 @@ private:
 
     bool m_IsDead = false;
 
+    const GameWorld& m_World;
 };

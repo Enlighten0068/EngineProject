@@ -17,6 +17,7 @@
 #include "resources/ResourceManager.h"
 #include "scene/Camera2D.h"
 #include "scene/Scene.h"
+#include "scene/GameWorld.h"
 #include <entt.hpp>
 #include <memory>
 
@@ -38,6 +39,7 @@ private:
     std::unique_ptr<CameraController> m_CameraController;
     std::unique_ptr<PlayerController> m_PlayerController;
     std::unique_ptr<FpsCounter> m_FpsCounter;
+    std::unique_ptr<GameWorld> m_World;
 
     entt::entity m_PlayerEntity;
 

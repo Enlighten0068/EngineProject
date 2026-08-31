@@ -1,6 +1,7 @@
 #include "core/Input.h"
 #include "diagnostics/Log.h"
 
+#include <format>
 #include <cstring>
 
 bool Input::s_KeyState[SDL_SCANCODE_COUNT] = {};

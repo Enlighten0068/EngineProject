@@ -59,6 +59,7 @@ add_executable(
   engine/resources/ResourceManager.cpp
   engine/scene/Camera2D.cpp
   engine/scene/Scene.cpp
+  engine/scene/GameWorld.cpp
 )
 
 target_include_directories(

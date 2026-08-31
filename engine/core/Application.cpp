@@ -19,6 +19,7 @@
 #include "renderer/Renderer.h"
 #include "resources/ResourceManager.h"
 #include "scene/Camera2D.h"
+#include "scene/GameWorld.h"
 #include "systems/RenderSystem.h"
 #include <glad/glad.h>
 #include <SDL3/SDL.h>
@@ -84,6 +85,8 @@ bool Application::Initialize(){
                                       m_Graphics->GetIndexBuffer()
     );
 
+    m_World = std::make_unique<GameWorld>(-20.0f, 20.0f, -10.0f, 10.0f);
+
     //Texture Loading & entity testing - to be adjusted
     auto texture = ResourceManager::GetInstance().LoadTexture("assets/textures/test.png");
     if (!texture){
@@ -121,7 +124,7 @@ void Application::Shutdown(){
     m_CameraController.reset();
     m_PlayerController.reset();
     m_FpsCounter.reset();
-
+    m_World.reset();
     m_Scene.reset();
     m_Camera.reset();
 
@@ -183,7 +186,7 @@ void Application::Render(){
 
 void Application::SetupControllers() {
 
-    m_PlayerController = std::make_unique<PlayerController>(m_Scene->GetRegistry(), m_PlayerEntity);
+    m_PlayerController = std::make_unique<PlayerController>(m_Scene->GetRegistry(), m_PlayerEntity, *m_World);
     m_PlayerController->SetSpeed(3.0f);
 
     m_CameraController = std::make_unique<CameraController>(*m_Camera);
