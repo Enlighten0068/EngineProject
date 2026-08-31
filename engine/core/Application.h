@@ -16,7 +16,7 @@
 #include "graphics/GraphicsContext.h"
 #include "resources/ResourceManager.h"
 #include "scene/Camera2D.h"
-#include "scene/Scene.h"
+#include "scene/ECSScene.h"
 #include "scene/GameWorld.h"
 #include <entt.hpp>
 #include <memory>

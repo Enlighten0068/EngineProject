@@ -58,7 +58,7 @@ add_executable(
   engine/renderer/Renderer.cpp
   engine/resources/ResourceManager.cpp
   engine/scene/Camera2D.cpp
-  engine/scene/Scene.cpp
+  engine/scene/ECSScene.cpp
   engine/scene/GameWorld.cpp
 )
 

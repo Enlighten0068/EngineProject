@@ -10,10 +10,10 @@
 #include <entt.hpp>
 #include <memory>
 
-class Scene{
+class ECSScene{
 public:
-    Scene(Shader& shader, VertexArray& va, IndexBuffer& ib);
-    ~Scene();
+    ECSScene(Shader& shader, VertexArray& va, IndexBuffer& ib);
+    ~ECSScene();
 
     entt::entity CreateSpriteEntity(const Vector3D& position, const Vector3D& scale,
                                     std::shared_ptr<Texture2D> texture);

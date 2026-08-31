@@ -156,7 +156,7 @@ void Application::Update(){
     if (m_PlayerController) m_PlayerController->Update();
 
     Vector2D scroll = Input::GetScrollDelta();
-    if (scroll.y != 0.0f) Log::Info(std::format("[Application] Scroll read in Update: {}", scroll.y));
+    // if (scroll.y != 0.0f) Log::Info(std::format("[Application] Scroll read in Update: {}", scroll.y));
 
     if (m_CameraController) {
         // Se a câmara seguir o jogador, atualizar o target
