@@ -40,7 +40,8 @@ void CameraController::Update(float deltaTime){
     Vector2D scroll = Input::GetScrollDelta();
     if (scroll.y != 0.0f){
         float zoom = m_Camera.GetZoom() + scroll.y * 0.1f;
-        if (zoom > 0.1f) m_Camera.SetZoom(zoom);
+        zoom = std::clamp(zoom, 0.5f, 5.0f);
+        m_Camera.SetZoom(zoom);
     }
 
     m_Camera.Update();

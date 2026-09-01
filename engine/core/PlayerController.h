@@ -17,6 +17,11 @@ public:
 
     void Die(const std::string& cause = "Unknown.");
 
+    Vector3D& GetVelocity() { return m_Velocity; }
+    const Vector3D& GetVelocity() const { return m_Velocity; }
+
+    void SetGrounded(bool grounded) { m_IsGrounded = grounded; }
+    bool IsGrounded() const { return m_IsGrounded; }
 private:
     void SetupEventSubscriptions();
 
@@ -28,8 +33,8 @@ private:
 
     bool m_IsJumping = false;
     float m_JumpTimer = 0.0f;
-
     bool m_IsDead = false;
+    bool m_IsGrounded = false;
 
     const GameWorld& m_World;
 };

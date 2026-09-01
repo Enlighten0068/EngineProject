@@ -52,22 +52,27 @@ void Demo2DScene::SetupScene(){
                                                     playerTex);
 
     //Floor
-    m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, -9.0f, 0.0f),
-                                   Vector3D(40.0f, 1.0f, 1.0f),
-                                   tileTex);
+    auto plt_floor =    m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, -9.0f, 0.0f),
+                                                  Vector3D(40.0f, 1.0f, 1.0f),
+                                                  tileTex);
+    m_PlatformEntities.push_back(plt_floor);
+
     //Floating Platform
-    m_ECSScene->CreateSpriteEntity(Vector3D(-8.0f, -3.0f, 0.0f),
-                                   Vector3D(4.0f, 1.0f, 1.0f),
-                                   tileTex);
-    m_ECSScene->CreateSpriteEntity(
-        Vector3D(8.0f, -3.0f, 0.0f),
-                                   Vector3D(4.0f, 1.0f, 1.0f),
-                                   tileTex
-    );
+    auto plt_float1 = m_ECSScene->CreateSpriteEntity(Vector3D(-8.0f, -3.0f, 0.0f),
+                                                     Vector3D(4.0f, 1.0f, 1.0f),
+                                                     tileTex);
+    m_PlatformEntities.push_back(plt_float1);
+
+    auto plt_float2 = m_ECSScene->CreateSpriteEntity(Vector3D(8.0f, -3.0f, 0.0f),
+                                                     Vector3D(4.0f, 1.0f, 1.0f),
+                                                     tileTex);
+    m_PlatformEntities.push_back(plt_float2);
+
     //Central platform
-    m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, 2.0f, 0.0f),
-                                   Vector3D(6.0f, 1.0f, 1.0f),
-                                   tileTex);
+    auto plt_floatcenter = m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, 2.0f, 0.0f),
+                                                          Vector3D(6.0f, 1.0f, 1.0f),
+                                                          tileTex);
+    m_PlatformEntities.push_back(plt_floatcenter);
 
     m_PlayerController = std::make_unique<PlayerController>(m_ECSScene->GetRegistry(),
                                                             m_PlayerEntity,*m_World);
@@ -83,6 +88,7 @@ void Demo2DScene::SetupScene(){
 void Demo2DScene::Update(float deltaTime){
     Log::InfoThrottled("Update running...", "update_diagnostic", 2.0f);
     m_PlayerController->Update();
+    ResolveCollisions();
 
     auto& transform = m_ECSScene->GetRegistry().get<Components::Transform>(m_PlayerEntity);
     m_CameraController->SetTargetPosition(transform.Position);
@@ -99,4 +105,39 @@ void Demo2DScene::Render(){
     const Matrix4& projection = m_Camera->GetProjectionMatrix();
 
     m_ECSScene->Render(view, projection);
+}
+
+void Demo2DScene::ResolveCollisions(){
+    auto& registry = m_ECSScene->GetRegistry();
+    auto& playerTransform = registry.get<Components::Transform>(m_PlayerEntity);
+    Vector3D playerHalfSize = playerTransform.Scale * 0.5f;
+
+    bool grounded = false;
+
+    for (entt::entity platform : m_PlatformEntities){
+        auto& platformTransform = registry.get<Components::Transform>(platform);
+        Vector3D platformHalfSize = platformTransform.Scale * 0.5f;
+
+        Vector3D playerCenter = playerTransform.Position;
+        Vector3D platformCenter = platformTransform.Position;
+
+        Vector3D delta = playerCenter - platformCenter;
+        Vector3D overlap = playerHalfSize + platformHalfSize - Vector3D(std::abs(delta.x), std::abs(delta.y), 0.0f);
+
+        if (overlap.x > 0.0f && overlap.y > 0.0f){
+            if (overlap.x < overlap.y){
+                if (delta.x > 0.0f) playerTransform.Position.x += overlap.x;
+                else playerTransform.Position.x -= overlap.x;
+            } else{
+                if (delta.y > 0.0f){
+                    playerTransform.Position.y += overlap.y;
+                    if (m_PlayerController->GetVelocity().y <= 0.0f){
+                        grounded = true;
+                        m_PlayerController->GetVelocity().y = 0.0f;
+                    }
+                } else if (m_PlayerController->GetVelocity().y > 0.0f) m_PlayerController->GetVelocity().y = 0.0f;
+            }
+        }
+    }
+    m_PlayerController->SetGrounded(grounded);
 }

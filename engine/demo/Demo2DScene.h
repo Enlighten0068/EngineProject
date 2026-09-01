@@ -8,6 +8,7 @@
 #include "scene/GameWorld.h"
 #include "scene/Camera2D.h"
 #include <memory>
+#include <vector>
 
 class Demo2DScene : public Scene{
 public:
@@ -33,6 +34,9 @@ private:
 
     std::unique_ptr<FpsCounter> m_FpsCounter;
     entt::entity m_PlayerEntity;
+
+    std::vector<entt::entity> m_PlatformEntities;
+    void ResolveCollisions();
 
     void SetupScene();
 };

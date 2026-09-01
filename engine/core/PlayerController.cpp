@@ -52,12 +52,20 @@ void PlayerController::Update(){
     float dt = Time::DeltaTime();
     auto& transform = m_Registry.get<Components::Transform>(m_PlayerEntity);
 
-
     float speed = m_Speed * dt;
-    if (Input::IsKeyHeld(SDL_SCANCODE_UP)) transform.Position.y += speed;
-    if (Input::IsKeyHeld(SDL_SCANCODE_DOWN)) transform.Position.y -= speed;
     if (Input::IsKeyHeld(SDL_SCANCODE_LEFT)) transform.Position.x -= speed;
     if (Input::IsKeyHeld(SDL_SCANCODE_RIGHT)) transform.Position.x += speed;
+
+    if (m_IsGrounded && Input::IsKeyPressed(SDL_SCANCODE_SPACE)){
+        m_IsJumping = true;
+        m_IsGrounded = false;
+        m_JumpTimer = 0.0f;
+        m_Velocity.y = 10.0f;
+
+        PlayerJumpedEvent jumpEvent(transform.Position, m_Velocity.y);
+        EventBus::GetInstance().Dispatch(jumpEvent);
+        Log::Info("Jump started (event-driven)");
+    }
 
     if (m_IsJumping){
         if (Input::IsKeyHeld(SDL_SCANCODE_SPACE)){
@@ -65,31 +73,20 @@ void PlayerController::Update(){
             float gravityReduction = 1.0f - (m_JumpTimer / 0.5f);
             if (gravityReduction < 0.0f) gravityReduction = 0.0f;
             m_Velocity.y += (gravityReduction * 0.5f - 9.8f) * dt;
-        }
-    } else  m_Velocity.y -= 9.8f * dt;
-
-    transform.Position.y += m_Velocity.y * dt;
-
-    if (transform.Position.y < -10.0f) {
-        transform.Position.y = -10.0f;
-        m_Velocity.y = 0.0f;
-        m_IsJumping = false;
-
-        if (m_IsJumping) {
+        } else{
+            m_Velocity.y = std::min(m_Velocity.y, 0.0f);
             m_IsJumping = false;
-            PlayerLandedEvent landEvent(transform.Position, m_Velocity.y);
-            EventBus::GetInstance().Dispatch(landEvent);
-            Log::Info("Landed (event-driven)");
         }
+    } else{
+        if (!m_IsGrounded) m_Velocity.y -= 9.8f * dt;
+        else m_Velocity.y = 0.0f;
     }
+
+    if (!m_IsGrounded || m_Velocity.y > 0.0f) transform.Position.y += m_Velocity.y * dt;
 
     transform.Position = m_World.ClampPosition(transform.Position);
 
-    Log::InfoThrottled(std::format("Position after clamp: ({:.2f}, {:.2f})", transform.Position.x, transform.Position.y), "player_position", 2.0f);
-
-    if (transform.Position.y < -15.0f) {
-        Die("Fell off the world");
-    }
+    if (transform.Position.y < -15.0f) Die("Fell off the world");
 }
 
 void PlayerController::Die(const std::string& cause) {
