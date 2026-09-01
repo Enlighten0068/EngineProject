@@ -17,6 +17,7 @@
 #include "resources/ResourceManager.h"
 #include "scene/Camera2D.h"
 #include "scene/ECSScene.h"
+#include "scene/SceneManager.h"
 #include "scene/GameWorld.h"
 #include <entt.hpp>
 #include <memory>
@@ -31,17 +32,20 @@ public:
     void Run();
     void Shutdown();
 
+    SceneManager& GetSceneManager() { return m_SceneManager; }
+    GraphicsContext& GetGraphicsContext() { return *m_Graphics; }
+
 private:
     Engine m_Engine;
     std::unique_ptr<GraphicsContext> m_Graphics;
-    std::unique_ptr<Scene> m_Scene;
+    std::unique_ptr<ECSScene> m_Scene;
     std::unique_ptr<Camera2D> m_Camera;
-    std::unique_ptr<CameraController> m_CameraController;
     std::unique_ptr<PlayerController> m_PlayerController;
     std::unique_ptr<FpsCounter> m_FpsCounter;
     std::unique_ptr<GameWorld> m_World;
 
     entt::entity m_PlayerEntity;
+    SceneManager m_SceneManager;
 
     void ProcessEvents();
     void Render();

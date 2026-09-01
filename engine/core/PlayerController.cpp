@@ -59,12 +59,6 @@ void PlayerController::Update(){
     if (Input::IsKeyHeld(SDL_SCANCODE_LEFT)) transform.Position.x -= speed;
     if (Input::IsKeyHeld(SDL_SCANCODE_RIGHT)) transform.Position.x += speed;
 
-    Vector2D scroll = Input::GetScrollDelta();
-    if (scroll.y != 0.0f){
-        transform.Scale.x += scroll.y * 0.5f;
-        transform.Scale.y += scroll.y * 0.5f;
-    }
-
     if (m_IsJumping){
         if (Input::IsKeyHeld(SDL_SCANCODE_SPACE)){
             m_JumpTimer += dt;

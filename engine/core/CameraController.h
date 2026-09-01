@@ -1,10 +1,12 @@
 #pragma once
-#include "scene/Camera2D.h"
+
 #include "math/Vector3D.h"
+#include "scene/Camera2D.h"
+#include "scene/GameWorld.h"
 
 class CameraController{
 public:
-    CameraController(Camera2D& camera);
+    CameraController(Camera2D& camera, const GameWorld& world);
     ~CameraController() = default;
 
     void Update(float deltaTime);
@@ -19,6 +21,7 @@ public:
 
 private:
     Camera2D& m_Camera;
+    const GameWorld& m_World;
     bool m_FollowEntity = false;
     float m_Speed = 5.0f;
     float m_ZoomSpeed = 1.0f;

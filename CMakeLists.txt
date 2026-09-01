@@ -1,23 +1,14 @@
-cmake_minimum_required(VERSION 3.25) #Versão mínima do CMAKE
+cmake_minimum_required(VERSION 3.25) #CMAKE minimum version
 
-project(
-  EngineProject
-  VERSION 0.1.0
-  LANGUAGES C CXX
-)
+project(EngineProject VERSION 0.1.0 LANGUAGES C CXX)
 
-set(CMAKE_CXX_STANDARD 23) #Versão mínima standard C++
+set(CMAKE_CXX_STANDARD 23) #C++ standard mimimum version
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF) #Melhor portabilidade (não usa extensões gnu++)
-
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON) #Gera output dos comandos na compilação - ficheiro compile_commands.json
+set(CMAKE_CXX_EXTENSIONS OFF) #Better portability (doesn't use g++ compilers)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON) #Generate commands output during compilation - file: compile_commands.json
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
-  add_compile_options(
-    -Wall
-    -Wextra
-    -Wpedantic
-  )
+  add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
 add_subdirectory(vendor/SDL3)
@@ -34,9 +25,7 @@ target_include_directories(
   vendor/stb
 )
 
-add_executable(
-  Game
-  game/src/main.cpp
+set(ENGINE_SOURCES
   engine/core/Application.cpp
   engine/core/Engine.cpp
   engine/core/Time.cpp
@@ -44,6 +33,7 @@ add_executable(
   engine/core/PlayerController.cpp
   engine/core/FpsCounter.cpp
   engine/core/CameraController.cpp
+  engine/demo/Demo2DScene.cpp
   engine/diagnostics/Log.cpp
   engine/events/EventBus.cpp
   engine/events/SDLEventTranslator.cpp
@@ -60,12 +50,20 @@ add_executable(
   engine/scene/Camera2D.cpp
   engine/scene/ECSScene.cpp
   engine/scene/GameWorld.cpp
+  engine/scene/SceneManager.cpp
+  engine/scene/MenuScene.cpp
+)
+
+add_executable(
+  Game
+  game/src/main.cpp
+  ${ENGINE_SOURCES}
 )
 
 target_include_directories(
   Game
   PRIVATE
-  engine
+  ${CMAKE_SOURCE_DIR}/engine
   vendor/entt
 )
 
@@ -75,3 +73,6 @@ target_link_libraries(
   SDL3::SDL3
   glad
 )
+
+
+target_compile_definitions(Game PRIVATE DEMO_2D)

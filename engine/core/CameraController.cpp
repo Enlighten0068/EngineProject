@@ -4,18 +4,10 @@
 #include "diagnostics/Log.h"
 #include "events/EventBus.h"
 #include "events/MouseEvent.h"
+#include <algorithm>
 
-CameraController::CameraController(Camera2D& camera) : m_Camera(camera){
-    EventBus::GetInstance().Subscribe<MouseWheelEvent>([this](Event& e){
-        MouseWheelEvent& wheel = static_cast<MouseWheelEvent&>(e);
-        float zoom = m_Camera.GetZoom() + wheel.GetDelta().y * 0.1f;
-        if (zoom > 0.1f){
-            m_Camera.SetZoom(zoom);
-            //Log::Info(std::format("Zoom: {}", zoom));
-        }
-        m_Camera.Update();
-    });
-}
+CameraController::CameraController(Camera2D& camera, const GameWorld& world)
+: m_Camera(camera), m_World(world){}
 
 void CameraController::Update(float deltaTime){
     if (m_FollowEntity){
@@ -37,5 +29,19 @@ void CameraController::Update(float deltaTime){
 
         m_Camera.SetPosition(pos);
     }
+
+    Vector3D pos = m_Camera.GetPosition();
+    float marginX = 5.0f;
+    float marginY = 3.0f;
+    pos.x = std::clamp(pos.x, m_World.GetMinX() + marginX, m_World.GetMaxX() - marginX);
+    pos.y = std::clamp(pos.y, m_World.GetMinY() + marginY, m_World.GetMaxY() - marginY);
+    m_Camera.SetPosition(pos);
+
+    Vector2D scroll = Input::GetScrollDelta();
+    if (scroll.y != 0.0f){
+        float zoom = m_Camera.GetZoom() + scroll.y * 0.1f;
+        if (zoom > 0.1f) m_Camera.SetZoom(zoom);
+    }
+
     m_Camera.Update();
 }

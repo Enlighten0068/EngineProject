@@ -7,6 +7,7 @@
 #include "core/PlayerController.h"
 #include "core/CameraController.h"
 #include "core/FpsCounter.h"
+#include "demo/Demo2DScene.h"
 #include "diagnostics/Log.h"
 #include "events/EventType.h"
 #include "events/WindowEvent.h"
@@ -20,13 +21,13 @@
 #include "resources/ResourceManager.h"
 #include "scene/Camera2D.h"
 #include "scene/GameWorld.h"
+#include "scene/MenuScene.h"
 #include "systems/RenderSystem.h"
 #include <glad/glad.h>
 #include <SDL3/SDL.h>
 #include <iostream>
 #include <format>
 #include <cstdint>
-//#include <memory>
 
 Application::Application() = default;
 Application::~Application(){ Shutdown(); }
@@ -80,7 +81,7 @@ bool Application::Initialize(){
     m_Camera->SetPosition(Vector3D(0.0f, 0.0f, 0.0f));
 
     //Scene initialization
-    m_Scene = std::make_unique<Scene>(m_Graphics->GetShader(),
+    m_Scene = std::make_unique<ECSScene>(m_Graphics->GetShader(),
                                       m_Graphics->GetVertexArray(),
                                       m_Graphics->GetIndexBuffer()
     );
@@ -102,6 +103,13 @@ bool Application::Initialize(){
     m_FpsCounter = std::make_unique<FpsCounter>();
 
     Log::Info("Application initialized successfully.");
+
+    auto initialScene = std::make_unique<Demo2DScene>(m_Graphics->GetShader(),
+                                                      m_Graphics->GetVertexArray(),
+                                                      m_Graphics->GetIndexBuffer());
+
+    auto menuScene = std::make_unique<MenuScene>(m_SceneManager);
+    m_SceneManager.SetScene(std::move(menuScene));
     return true;
 }
 
@@ -121,7 +129,7 @@ void Application::Shutdown(){
     Log::Info("Shutting down Application...");
     Log::Shutdown();
 
-    m_CameraController.reset();
+    //m_CameraController.reset();
     m_PlayerController.reset();
     m_FpsCounter.reset();
     m_World.reset();
@@ -153,33 +161,14 @@ void Application::ProcessEvents(){
 
 void Application::Update(){
     float dt = Time::DeltaTime();
-    if (m_PlayerController) m_PlayerController->Update();
 
-    Vector2D scroll = Input::GetScrollDelta();
-    // if (scroll.y != 0.0f) Log::Info(std::format("[Application] Scroll read in Update: {}", scroll.y));
-
-    if (m_CameraController) {
-        // Se a câmara seguir o jogador, atualizar o target
-        if (m_CameraController->IsFollowing()) {
-            auto& playerTransform = m_Scene->GetRegistry().get<Components::Transform>(m_PlayerEntity);
-            m_CameraController->SetTargetPosition(playerTransform.Position);
-        }
-        m_CameraController->Update(dt);
-    }
-
-    m_Scene->Update(dt);
-
-    if (m_FpsCounter) m_FpsCounter->Update();
+    m_SceneManager.Update(dt);
 }
 
 
 void Application::Render(){
-    const Matrix4& view = m_Camera->GetViewMatrix();
-    const Matrix4& projection = m_Camera->GetProjectionMatrix();
-
     glClear(GL_COLOR_BUFFER_BIT);
-
-    m_Scene->Render(view, projection);
+    m_SceneManager.Render();
     m_Engine.GetWindow().SwapBuffers();
 }
 
@@ -189,10 +178,10 @@ void Application::SetupControllers() {
     m_PlayerController = std::make_unique<PlayerController>(m_Scene->GetRegistry(), m_PlayerEntity, *m_World);
     m_PlayerController->SetSpeed(3.0f);
 
-    m_CameraController = std::make_unique<CameraController>(*m_Camera);
+    /*m_CameraController = std::make_unique<CameraController>(*m_Camera);
     m_CameraController->SetSpeed(5.0f);
     m_CameraController->SetFollowEntity(true);
-    m_CameraController->SetZoomSpeed(1.0f);
+    m_CameraController->SetZoomSpeed(1.0f);*/
 
     Log::Info("Controllers initialized.");
 }
