@@ -1,44 +1,67 @@
 #include "core/Input.h"
-#include "demo/Demo2DScene.h"
+#include "demo/Demo2DFixedScene.h"
 #include "diagnostics/Log.h"
 #include "resources/ResourceManager.h"
 #include <glad/glad.h>
 #include <SDL3/SDL.h>
 
-Demo2DScene::Demo2DScene(Shader& shader, VertexArray& va, IndexBuffer& ib)
+Demo2DFixedScene::Demo2DFixedScene(Shader& shader, VertexArray& va, IndexBuffer& ib)
 : m_Shader(shader), m_VertexArray(va), m_IndexBuffer(ib){}
 
-Demo2DScene::~Demo2DScene() { OnExit(); }
+Demo2DFixedScene::~Demo2DFixedScene() { OnExit(); }
 
-void Demo2DScene::OnEnter(){
-    Log::Info("Entering Demo2DScene");
+void Demo2DFixedScene::OnEnter(){
+    Log::Info("Entering Demo2DFixedScene with fixed camera.");
     glClearColor(0.3f, 0.5f, 0.7f, 1.0f);
     SetupScene();
-    Log::Info("Entered Demo successfully.");
+    Log::Info("Entered Demo(fixed) successfully.");
 }
 
-void Demo2DScene::OnExit(){
+void Demo2DFixedScene::OnExit(){
     m_PlayerController.reset();
     m_CameraController.reset();
     m_FpsCounter.reset();
     m_Camera.reset();
     m_World.reset();
     m_ECSScene.reset();
-    Log::Info("Exiting Demo2DScene");
+    Log::Info("Exiting Demo2DFixedScene");
 }
 
-void Demo2DScene::SetupScene(){
+void Demo2DFixedScene::SetupScene(){
     m_ECSScene = std::make_unique<ECSScene>(m_Shader, m_VertexArray, m_IndexBuffer);
 
     m_World = std::make_unique<GameWorld>(-20.0f, 20.0f, -10.0f, 10.0f);
 
     int winWidth = Input::GetWindowWidth();
     int winHeight = Input::GetWindowHeight();
-    float aspect = static_cast<float>(winWidth) / static_cast<float>(winHeight);
-    float height = 5.0f;
-    float width = height * aspect;
-    m_Camera = std::make_unique<Camera2D>(-width, width, -height, height);
-    m_Camera->SetPosition(Vector3D(0.0f, 0.0f, 0.0f));
+    float windowAspect = static_cast<float>(winWidth) / static_cast<float>(winHeight);
+
+    float worldWidth = m_World->GetMaxX() - m_World->GetMinX();
+    float worldHeight = m_World->GetMaxY() - m_World->GetMinY();
+    float worldAspect = worldWidth / worldHeight;
+
+    float viewWidth, viewHeight;
+    if (windowAspect > worldAspect){
+        viewHeight = worldHeight;
+        viewWidth = worldHeight * windowAspect;
+    } else{
+        viewWidth = worldWidth;
+        viewHeight = worldWidth / windowAspect;
+    }
+
+    float centerX = (m_World->GetMinX() + m_World->GetMaxX()) * 0.5f;
+    float centerY = (m_World->GetMinY() + m_World->GetMaxY()) * 0.5f;
+
+    m_Camera = std::make_unique<Camera2D>(
+        -viewWidth * 0.5f,
+        viewWidth * 0.5f,
+        -viewHeight * 0.5f,
+        viewHeight * 0.5f
+    );
+    m_Camera->SetPosition(Vector3D(centerX, centerY, 0.0f));
+
+    Log::Info(std::format("Camera projection: left={}, right={}, bottom={}, top={}",
+                          -viewWidth * 0.5f, viewWidth * 0.5f, -viewHeight * 0.5f, viewHeight * 0.5f));
 
     auto playerTex = ResourceManager::GetInstance().LoadTexture("assets/textures/test.png");
     auto tileTex = ResourceManager::GetInstance().LoadTexture("assets/textures/tile.png");
@@ -98,24 +121,15 @@ void Demo2DScene::SetupScene(){
                                                             m_PlayerEntity,*m_World);
     m_PlayerController->SetSpeed(4.0f);
 
-    m_CameraController = std::make_unique<CameraController>(*m_Camera, *m_World);
-    m_CameraController->SetFollowEntity(true);
-    //Set zoom limits
-    m_CameraController->SetMinZoom(0.2f);
-    m_CameraController->SetMaxZoom(1.0f);
-    m_CameraController->SetZoomSpeed(1.0f);
-
     m_FpsCounter = std::make_unique<FpsCounter>();
 }
 
-void Demo2DScene::Update(float deltaTime){
+void Demo2DFixedScene::Update(float deltaTime){
     Log::InfoThrottled("Update running...", "update_diagnostic", 2.0f);
     m_PlayerController->Update();
     ResolveCollisions();
 
     auto& transform = m_ECSScene->GetRegistry().get<Components::Transform>(m_PlayerEntity);
-    m_CameraController->SetTargetPosition(transform.Position);
-    m_CameraController->Update(deltaTime);
 
     m_FpsCounter->Update();
     m_ECSScene->Update(deltaTime);
@@ -123,14 +137,14 @@ void Demo2DScene::Update(float deltaTime){
                        "player_pos", 2.0f);
 }
 
-void Demo2DScene::Render(){
+void Demo2DFixedScene::Render(){
     const Matrix4& view = m_Camera->GetViewMatrix();
     const Matrix4& projection = m_Camera->GetProjectionMatrix();
 
     m_ECSScene->Render(view, projection);
 }
 
-void Demo2DScene::ResolveCollisions(){
+void Demo2DFixedScene::ResolveCollisions(){
     auto& registry = m_ECSScene->GetRegistry();
     auto& playerTransform = registry.get<Components::Transform>(m_PlayerEntity);
     Vector3D playerHalfSize = playerTransform.Scale * 0.5f;

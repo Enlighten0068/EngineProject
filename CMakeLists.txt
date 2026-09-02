@@ -34,6 +34,7 @@ set(ENGINE_SOURCES
   engine/core/FpsCounter.cpp
   engine/core/CameraController.cpp
   engine/demo/Demo2DScene.cpp
+  engine/demo/Demo2DFixedScene.cpp
   engine/diagnostics/Log.cpp
   engine/events/EventBus.cpp
   engine/events/SDLEventTranslator.cpp
@@ -75,4 +76,4 @@ target_link_libraries(
 )
 
 
-target_compile_definitions(Game PRIVATE DEMO_2D)
+target_compile_definitions(Game PRIVATE DEMO_2D_FIXED)

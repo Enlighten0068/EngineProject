@@ -17,13 +17,14 @@ void Renderer::DrawQuad(Shader& shader, VertexArray& vertexArray, IndexBuffer& i
 }
 
 void Renderer::DrawTexturedQuad(Shader& shader, VertexArray& vertexArray, IndexBuffer& indexBuffer, Texture2D& texture,
-                                const Matrix4& model, const Matrix4& view, const Matrix4& projection){
+                                const Matrix4& model, const Matrix4& view, const Matrix4& projection, float tileScale){
     shader.Bind();
     texture.Bind();
 
     shader.SetUniformMat4("u_Model", model);
     shader.SetUniformMat4("u_View", view);
     shader.SetUniformMat4("u_Projection", projection);
+    shader.SetUniformFloat("u_TileScale", tileScale);
 
     GLint modelLoc = glGetUniformLocation(shader.GetRendererID(), "u_Model");
     if (modelLoc != -1) {

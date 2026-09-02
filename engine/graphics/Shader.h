@@ -17,6 +17,7 @@ public:
     void Bind() const;
     void Unbind() const;
     void SetUniformMat4(const std::string& name, const Matrix4& matrix) const;
+    void SetUniformFloat(const std::string& name, float value) const;
 
     unsigned int GetRendererID() const { return m_RendererID; }
 

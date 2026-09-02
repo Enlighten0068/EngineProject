@@ -31,9 +31,8 @@ public:
             //Log::Info(std::format("[RenderSystem] Model[0]={}, Model[5]={}",
                                   //model.Data()[0], model.Data()[5]));
 
-            Renderer::DrawTexturedQuad(shader, va, ib, *sprite.Texture, model, view, projection);
+            float tileScale = 1.0f;
+            Renderer::DrawTexturedQuad(shader, va, ib, *sprite.Texture, model, view, projection, tileScale);
+            }
         }
-
-
-    }
 };

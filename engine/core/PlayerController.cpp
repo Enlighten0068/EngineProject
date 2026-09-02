@@ -6,6 +6,7 @@
 #include "events/PlayerEvents.h"
 #include "events/EventBus.h"
 #include "events/KeyEvent.h"
+#include <algorithm>
 #include <format>
 
 PlayerController::PlayerController(entt::registry& registry, entt::entity playerEntity, const GameWorld& world)
@@ -62,13 +63,19 @@ void PlayerController::Update(){
 
     Log::InfoThrottled(std::format("Player grounded: {}, Is jumping: {}, Vertical velocity: {:.2f}",
                        m_IsGrounded, m_IsJumping, m_Velocity.y), "check_grounded_state", 2.0f);
-    transform.Position = m_World.ClampPosition(transform.Position);
+
+    Vector3D halfSize = transform.Scale * 0.5f;
+    float minX = m_World.GetMinX() + halfSize.x;
+    float maxX = m_World.GetMaxX() - halfSize.x;
+    float minY = m_World.GetMinY() + halfSize.y;
+    float maxY = m_World.GetMaxY() - halfSize.y;
+    transform.Position.x = std::clamp(transform.Position.x, minX, maxX);
+    transform.Position.y = std::clamp(transform.Position.y, minY, maxY);
 
     if (transform.Position.y < -15.0f) Die("Fell off the world");
 
-    if (m_IsGrounded){
-        m_Velocity.y = 0.0f;
-    }
+    if (m_IsGrounded) m_Velocity.y = 0.0f;
+
 }
 
 void PlayerController::Die(const std::string& cause) {

@@ -10,10 +10,7 @@ Shader::~Shader(){
     if (m_RendererID) glDeleteProgram(m_RendererID);
 }
 
-bool Shader::Compile(
-    const std::string& vertexSource,
-    const std::string& fragmentSource)
-{
+bool Shader::Compile(const std::string& vertexSource, const std::string& fragmentSource){
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
     const char* vertexSrc = vertexSource.c_str();
     glShaderSource(vertexShader,1,&vertexSrc, nullptr);
@@ -91,4 +88,10 @@ void Shader::SetUniformMat4(const std::string& name, const Matrix4& matrix) cons
     GLint location = glGetUniformLocation(m_RendererID, name.c_str());
     if (location != -1) glUniformMatrix4fv(location, 1, GL_FALSE, matrix.Data());
     else Log::Warning(std::format("Uniform '{}' not found in shader.", name));
+}
+
+void Shader::SetUniformFloat(const std::string& name, float value) const{
+    GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+    if (location != -1) glUniform1f(location, value);
+
 }
