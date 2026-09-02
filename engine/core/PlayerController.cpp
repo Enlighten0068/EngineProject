@@ -19,34 +19,9 @@ void PlayerController::SetupEventSubscriptions(){
             //Interaction function to be added
         }
     });
-
-    EventBus::GetInstance().Subscribe<KeyEvent>([this](Event& e){
-        KeyEvent& keyEvent = static_cast<KeyEvent&>(e);
-        if (keyEvent.GetAction() == KeyAction::Pressed && keyEvent.GetScancode() == SDL_SCANCODE_SPACE){
-            if (!m_IsJumping && !m_IsDead){
-                m_IsJumping = true;
-                m_JumpTimer = 0.0f;
-                m_Velocity.y = 10.0f;
-
-                auto& transform = m_Registry.get<Components::Transform>(m_PlayerEntity);
-                PlayerJumpedEvent jumpEvent(transform.Position, m_Velocity.y);
-                EventBus::GetInstance().Dispatch(jumpEvent);
-                Log::Info("Jump started (event-driven)");
-            }
-        }
-
-        if (keyEvent.GetAction() == KeyAction::Released && keyEvent.GetScancode() == SDL_SCANCODE_SPACE){
-            if (m_IsJumping){
-                m_Velocity.y = std::min(m_Velocity.y, 0.0f);
-                m_IsJumping = false;
-                Log::Info("Jump cut (released early)");
-            }
-        }
-    });
 }
 
 void PlayerController::Update(){
-    static float lastLogTime = 0.0f;
     if (m_IsDead) return;
 
     float dt = Time::DeltaTime();
@@ -60,7 +35,7 @@ void PlayerController::Update(){
         m_IsJumping = true;
         m_IsGrounded = false;
         m_JumpTimer = 0.0f;
-        m_Velocity.y = 10.0f;
+        m_Velocity.y = 15.0f;
 
         PlayerJumpedEvent jumpEvent(transform.Position, m_Velocity.y);
         EventBus::GetInstance().Dispatch(jumpEvent);
@@ -84,9 +59,16 @@ void PlayerController::Update(){
 
     if (!m_IsGrounded || m_Velocity.y > 0.0f) transform.Position.y += m_Velocity.y * dt;
 
+
+    Log::InfoThrottled(std::format("Player grounded: {}, Is jumping: {}, Vertical velocity: {:.2f}",
+                       m_IsGrounded, m_IsJumping, m_Velocity.y), "check_grounded_state", 2.0f);
     transform.Position = m_World.ClampPosition(transform.Position);
 
     if (transform.Position.y < -15.0f) Die("Fell off the world");
+
+    if (m_IsGrounded){
+        m_Velocity.y = 0.0f;
+    }
 }
 
 void PlayerController::Die(const std::string& cause) {

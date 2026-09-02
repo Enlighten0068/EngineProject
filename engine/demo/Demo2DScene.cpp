@@ -113,31 +113,68 @@ void Demo2DScene::ResolveCollisions(){
     Vector3D playerHalfSize = playerTransform.Scale * 0.5f;
 
     bool grounded = false;
+    const float GROUND_MARGIN = 0.1f;
+
+    float playerLeft = playerTransform.Position.x - playerHalfSize.x;
+    float playerRight = playerTransform.Position.x + playerHalfSize.x;
+    float playerBottom = playerTransform.Position.y - playerHalfSize.y;
+    float playerTop = playerTransform.Position.y + playerHalfSize.y;
 
     for (entt::entity platform : m_PlatformEntities){
         auto& platformTransform = registry.get<Components::Transform>(platform);
         Vector3D platformHalfSize = platformTransform.Scale * 0.5f;
 
-        Vector3D playerCenter = playerTransform.Position;
-        Vector3D platformCenter = platformTransform.Position;
+        float platformLeft = platformTransform.Position.x - platformHalfSize.x;
+        float platformRight = platformTransform.Position.x + platformHalfSize.x;
+        float platformTop = platformTransform.Position.y + platformHalfSize.y;
+        float platformBottom = platformTransform.Position.y - platformHalfSize.y;
 
-        Vector3D delta = playerCenter - platformCenter;
-        Vector3D overlap = playerHalfSize + platformHalfSize - Vector3D(std::abs(delta.x), std::abs(delta.y), 0.0f);
+        bool overlapX = (playerRight > platformLeft && playerLeft < platformRight);
+        bool overlapY = (playerTop > platformBottom && playerBottom < platformTop);
 
-        if (overlap.x > 0.0f && overlap.y > 0.0f){
-            if (overlap.x < overlap.y){
-                if (delta.x > 0.0f) playerTransform.Position.x += overlap.x;
-                else playerTransform.Position.x -= overlap.x;
-            } else{
-                if (delta.y > 0.0f){
-                    playerTransform.Position.y += overlap.y;
-                    if (m_PlayerController->GetVelocity().y <= 0.0f){
-                        grounded = true;
-                        m_PlayerController->GetVelocity().y = 0.0f;
+        if (overlapX){
+            float distanceToTop = playerBottom - platformTop;
+            if (distanceToTop <= GROUND_MARGIN && distanceToTop >= -GROUND_MARGIN){
+                grounded = true;
+                playerTransform.Position.y = platformTop + playerHalfSize.y;
+                if (m_PlayerController->GetVelocity().y <= 0.0f){
+                    m_PlayerController->GetVelocity().y = 0.0f;
+                }
+                break;
+            }
+        }
+
+        if (!grounded && overlapX && overlapY){
+            Vector3D delta = playerTransform.Position - platformTransform.Position;
+            Vector3D overlap = playerHalfSize + platformHalfSize - Vector3D(std::abs(delta.x), std::abs(delta.y), 0.0f);
+
+            if (overlap.x > 0.0f && overlap.y > 0.0f){
+                if (overlap.x < overlap.y){
+                    if (delta.x > 0.0f) playerTransform.Position.x += overlap.x;
+                    else playerTransform.Position.x -= overlap.x;
+                } else{
+
+                    if (delta.y < 0.0f){
+                        playerTransform.Position.y -= overlap.y;
+                        if (m_PlayerController->GetVelocity().y > 0.0f){
+                            m_PlayerController->GetVelocity().y = 0.0f;
+                        }
                     }
-                } else if (m_PlayerController->GetVelocity().y > 0.0f) m_PlayerController->GetVelocity().y = 0.0f;
+                }
             }
         }
     }
+
+    if (!grounded){
+        float worldFloor = m_World->GetMinY() + playerHalfSize.y;
+        if (playerTransform.Position.y <= worldFloor + GROUND_MARGIN){
+            playerTransform.Position.y = worldFloor;
+            if (m_PlayerController->GetVelocity().y <= 0.0f) {
+                m_PlayerController->GetVelocity().y = 0.0f;
+            }
+            grounded = true;
+        }
+    }
+
     m_PlayerController->SetGrounded(grounded);
 }
