@@ -19,9 +19,7 @@ void Demo2DFixedScene::OnEnter(){
 
 void Demo2DFixedScene::OnExit(){
     m_PlayerController.reset();
-    m_CameraController.reset();
     m_FpsCounter.reset();
-    m_Camera.reset();
     m_World.reset();
     m_ECSScene.reset();
     Log::Info("Exiting Demo2DFixedScene");
@@ -32,36 +30,13 @@ void Demo2DFixedScene::SetupScene(){
 
     m_World = std::make_unique<GameWorld>(-20.0f, 20.0f, -10.0f, 10.0f);
 
-    int winWidth = Input::GetWindowWidth();
-    int winHeight = Input::GetWindowHeight();
-    float windowAspect = static_cast<float>(winWidth) / static_cast<float>(winHeight);
+    m_ViewMatrix = Matrix4::Identity();
 
-    float worldWidth = m_World->GetMaxX() - m_World->GetMinX();
-    float worldHeight = m_World->GetMaxY() - m_World->GetMinY();
-    float worldAspect = worldWidth / worldHeight;
+    m_ProjectionMatrix = Matrix4::Orthographic(m_World->GetMinX(), m_World->GetMaxX(),
+                                               m_World->GetMinY(), m_World->GetMaxY(),
+                                               -1.0f, 1.0f);
 
-    float viewWidth, viewHeight;
-    if (windowAspect > worldAspect){
-        viewHeight = worldHeight;
-        viewWidth = worldHeight * windowAspect;
-    } else{
-        viewWidth = worldWidth;
-        viewHeight = worldWidth / windowAspect;
-    }
-
-    float centerX = (m_World->GetMinX() + m_World->GetMaxX()) * 0.5f;
-    float centerY = (m_World->GetMinY() + m_World->GetMaxY()) * 0.5f;
-
-    m_Camera = std::make_unique<Camera2D>(
-        -viewWidth * 0.5f,
-        viewWidth * 0.5f,
-        -viewHeight * 0.5f,
-        viewHeight * 0.5f
-    );
-    m_Camera->SetPosition(Vector3D(centerX, centerY, 0.0f));
-
-    Log::Info(std::format("Camera projection: left={}, right={}, bottom={}, top={}",
-                          -viewWidth * 0.5f, viewWidth * 0.5f, -viewHeight * 0.5f, viewHeight * 0.5f));
+    Log::Info("Camera projection set to world bounds.");
 
     auto playerTex = ResourceManager::GetInstance().LoadTexture("assets/textures/test.png");
     auto tileTex = ResourceManager::GetInstance().LoadTexture("assets/textures/tile.png");
@@ -73,7 +48,7 @@ void Demo2DFixedScene::SetupScene(){
 
     //Player
     m_PlayerEntity = m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, 0.0f, 0.0f),
-                                                    Vector3D(5.0f, 5.0f, 1.0f),
+                                                    Vector3D(3.0f, 3.0f, 1.0f),
                                                     playerTex);
 
     //Left Wall
@@ -95,7 +70,7 @@ void Demo2DFixedScene::SetupScene(){
     m_PlatformEntities.push_back(ceiling);
 
     //Floor
-    auto plt_floor = m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, m_World->GetMinY() + 0.25f, 0.0f),
+    auto plt_floor = m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, m_World->GetMinY() + 1.25f, 0.0f),
                                                     Vector3D(m_World->GetMaxX() - m_World->GetMinX(), 1.0f, 1.0f),
                                                     tileTex);
     m_PlatformEntities.push_back(plt_floor);
@@ -138,10 +113,7 @@ void Demo2DFixedScene::Update(float deltaTime){
 }
 
 void Demo2DFixedScene::Render(){
-    const Matrix4& view = m_Camera->GetViewMatrix();
-    const Matrix4& projection = m_Camera->GetProjectionMatrix();
-
-    m_ECSScene->Render(view, projection);
+    m_ECSScene->Render(m_ViewMatrix, m_ProjectionMatrix);
 }
 
 void Demo2DFixedScene::ResolveCollisions(){

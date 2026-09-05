@@ -18,6 +18,7 @@ public:
 
 
         auto view_entities = registry.view<Components::Transform, Components::SpriteRenderer>();
+        //Log::Info(std::format("RenderSystem: {} entities to render", view_entities.size()));
 
         for (auto [entity, transform, sprite] : view_entities.each()) {
             if (!sprite.Texture) continue;

@@ -26,16 +26,22 @@ void Renderer::DrawTexturedQuad(Shader& shader, VertexArray& vertexArray, IndexB
     shader.SetUniformMat4("u_Projection", projection);
     shader.SetUniformFloat("u_TileScale", tileScale);
 
-    GLint modelLoc = glGetUniformLocation(shader.GetRendererID(), "u_Model");
-    if (modelLoc != -1) {
-        float gpuModel[16];
-        glGetUniformfv(shader.GetRendererID(), modelLoc, gpuModel);
-        //Log::Info(std::format("[Renderer] GPU Model[0]={}, Model[5]={}", gpuModel[0], gpuModel[5]));
-    } //else Log::Error("[Renderer] Uniform 'u_Model' not found!");
+    //----------- For testing purposes
+    /*GLint projLoc = glGetUniformLocation(shader.GetRendererID(), "u_Projection");
+    if (projLoc != -1){
+        float projMat[16];
+        glGetUniformfv(shader.GetRendererID(), projLoc, projMat);
+        Log::Info(std::format("Projection[0]={}, Projection[5]={}, Projection[10]={}, Projection[15]={}",
+                              projMat[0], projMat[5], projMat[10], projMat[15]));
+    } else Log::Error("u_Projection not found!");
 
-    GLint viewLoc  = glGetUniformLocation(shader.GetRendererID(), "u_View");
-    GLint projLoc  = glGetUniformLocation(shader.GetRendererID(), "u_Projection");
-
+    GLint viewLoc = glGetUniformLocation(shader.GetRendererID(), "u_View");
+    if (viewLoc != -1){
+        float viewMat[16];
+        glGetUniformfv(shader.GetRendererID(), viewLoc, viewMat);
+        Log::Info(std::format("View[12]={}, View[13]={}", viewMat[12], viewMat[13]));
+    } */
+    // -------------------------
     vertexArray.Bind();
     indexBuffer.Bind();
     glDrawElements(GL_TRIANGLES, indexBuffer.GetCount(), GL_UNSIGNED_INT, nullptr);

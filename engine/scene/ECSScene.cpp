@@ -25,6 +25,7 @@ void ECSScene::Update(float deltaTime){
 }
 
 void ECSScene::Render(const Matrix4& view, const Matrix4& projection){
+    //Log::Info("ECSScene::Render() called");
     RenderSystem::Render(m_Registry, m_Shader, view, projection, m_VertexArray, m_IndexBuffer);
 }
 

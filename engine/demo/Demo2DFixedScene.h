@@ -6,7 +6,6 @@
 #include "scene/Scene.h"
 #include "scene/ECSScene.h"
 #include "scene/GameWorld.h"
-#include "scene/Camera2D.h"
 #include <memory>
 #include <vector>
 
@@ -26,10 +25,11 @@ private:
     VertexArray& m_VertexArray;
     IndexBuffer& m_IndexBuffer;
 
+    Matrix4 m_ViewMatrix;
+    Matrix4 m_ProjectionMatrix;
+
     std::unique_ptr<ECSScene> m_ECSScene;
     std::unique_ptr<GameWorld> m_World;
-    std::unique_ptr<Camera2D> m_Camera;
-    std::unique_ptr<CameraController> m_CameraController;
     std::unique_ptr<PlayerController> m_PlayerController;
 
     std::unique_ptr<FpsCounter> m_FpsCounter;
