@@ -1,3 +1,5 @@
+#include "audio/SoundManager.h"
+#include "audio/SoundEffect.h"
 #include "components/Transform.h"
 #include "components/SpriteRenderer.h"
 #include "core/Application.h"
@@ -99,6 +101,12 @@ bool Application::Initialize(){
 
     SetupControllers();
 
+    //Audio initialization
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0){
+        Log::Error(std::format("SDL Init failed: {}", SDL_GetError()));
+        return false;
+    }
+
     //FPS Counter
     m_FpsCounter = std::make_unique<FpsCounter>();
 
@@ -136,6 +144,7 @@ void Application::Shutdown(){
     m_Scene.reset();
     m_Camera.reset();
 
+
     if (m_Graphics){
         m_Graphics->Shutdown();
         m_Graphics.reset();
@@ -143,6 +152,7 @@ void Application::Shutdown(){
 
     EventBus::GetInstance().Clear();
     Log::Info("EventBus cleared.");
+    SoundEffect::CloseAudioDevice();
 
     ResourceManager::GetInstance().Clear();
     m_Engine.Shutdown();

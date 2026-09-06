@@ -103,3 +103,7 @@ Polling ou event-driven input: https://gamedev.stackexchange.com/questions/12146
 https://www.reddit.com/r/gamedev/comments/4ty1sg/handling_input_polling_or_event_driven_which_to/
 
 TO DO ADR: Polling vs event-driven input
+
+
+Audios para teste recolhidos:
+Jump: https://ambroggiomusic.itch.io/jump-sfx

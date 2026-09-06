@@ -1,3 +1,4 @@
+#include "audio/SoundManager.h"
 #include "components/Transform.h"
 #include "core/PlayerController.h"
 #include "core/Input.h"
@@ -32,6 +33,7 @@ void PlayerController::Update(){
     if (Input::IsKeyHeld(SDL_SCANCODE_LEFT)) transform.Position.x -= speed;
     if (Input::IsKeyHeld(SDL_SCANCODE_RIGHT)) transform.Position.x += speed;
 
+    //Jump
     if (m_IsGrounded && Input::IsKeyPressed(SDL_SCANCODE_SPACE)){
         m_IsJumping = true;
         m_IsGrounded = false;
@@ -40,6 +42,7 @@ void PlayerController::Update(){
 
         PlayerJumpedEvent jumpEvent(transform.Position, m_Velocity.y);
         EventBus::GetInstance().Dispatch(jumpEvent);
+        SoundManager::GetInstance().PlaySound("assets/sounds/jump.wav");
         Log::Info("Jump started (event-driven)");
     }
 
@@ -60,17 +63,25 @@ void PlayerController::Update(){
 
     if (!m_IsGrounded || m_Velocity.y > 0.0f) transform.Position.y += m_Velocity.y * dt;
 
+    if (m_IsGrounded && !m_WasGrounded){
+        SoundManager::GetInstance().PlaySound("assets/sounds/landing.wav");
+        Log::Info("Landed (sound played)");
+    }
+
+    m_WasGrounded = m_IsGrounded;
+
+    transform.Position = m_World.ClampPosition(transform.Position);
 
     Log::InfoThrottled(std::format("Player grounded: {}, Is jumping: {}, Vertical velocity: {:.2f}",
                        m_IsGrounded, m_IsJumping, m_Velocity.y), "check_grounded_state", 2.0f);
 
-    Vector3D halfSize = transform.Scale * 0.5f;
+    /*Vector3D halfSize = transform.Scale * 0.5f;
     float minX = m_World.GetMinX() + halfSize.x;
     float maxX = m_World.GetMaxX() - halfSize.x;
     float minY = m_World.GetMinY() + halfSize.y;
     float maxY = m_World.GetMaxY() - halfSize.y;
     transform.Position.x = std::clamp(transform.Position.x, minX, maxX);
-    transform.Position.y = std::clamp(transform.Position.y, minY, maxY);
+    transform.Position.y = std::clamp(transform.Position.y, minY, maxY);*/
 
     if (transform.Position.y < -15.0f) Die("Fell off the world");
 

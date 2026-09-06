@@ -35,6 +35,7 @@ private:
     float m_JumpTimer = 0.0f;
     bool m_IsDead = false;
     bool m_IsGrounded = false;
+    bool m_WasGrounded = false;
 
     const GameWorld& m_World;
 };

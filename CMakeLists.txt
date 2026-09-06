@@ -26,6 +26,8 @@ target_include_directories(
 )
 
 set(ENGINE_SOURCES
+  engine/audio/SoundEffect.cpp
+  engine/audio/SoundManager.cpp
   engine/core/Application.cpp
   engine/core/Engine.cpp
   engine/core/Time.cpp
