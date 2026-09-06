@@ -92,6 +92,8 @@ void Demo2DFixedScene::SetupScene(){
                                                           tileTex);
     m_PlatformEntities.push_back(plt_floatcenter);
 
+    SpawnEnemies();
+
     m_PlayerController = std::make_unique<PlayerController>(m_ECSScene->GetRegistry(),
                                                             m_PlayerEntity,*m_World);
     m_PlayerController->SetSpeed(4.0f);
@@ -105,6 +107,23 @@ void Demo2DFixedScene::Update(float deltaTime){
     ResolveCollisions();
 
     auto& transform = m_ECSScene->GetRegistry().get<Components::Transform>(m_PlayerEntity);
+
+    EnemySystem::Update(m_ECSScene->GetRegistry(), deltaTime,
+                        m_PlatformEntities, m_World->GetMinY());
+
+    auto& registry = m_ECSScene->GetRegistry();
+    auto& playerTransform = registry.get<Components::Transform>(m_PlayerEntity);
+    Vector3D playerSize = playerTransform.Scale;
+
+    auto enemyView = m_ECSScene->GetRegistry().view<Components::Transform, Enemy>();
+    for (auto [entity, transform, enemy] : enemyView.each()){
+        if (!enemy.IsActive) continue;
+        if (EnemySystem::CheckCollision(playerTransform.Position, playerSize, transform.Position, transform.Scale)){
+            Log::Info("Player collided with enemy!");
+            m_PlayerController->Die("Killed by enemy");
+            break;
+        }
+    }
 
     m_FpsCounter->Update();
     m_ECSScene->Update(deltaTime);
@@ -187,4 +206,43 @@ void Demo2DFixedScene::ResolveCollisions(){
     }
 
     m_PlayerController->SetGrounded(grounded);
+}
+
+void Demo2DFixedScene::SpawnEnemies(){
+    auto& registry = m_ECSScene->GetRegistry();
+    auto enemyTex = ResourceManager::GetInstance().LoadTexture("assets/textures/enemy.png");
+    if (!enemyTex){
+        Log::Warning("Enemy texture not found. Using tile texture as fallback.");
+        enemyTex = ResourceManager::GetInstance().LoadTexture("assets/textures/tile.png");
+        if (!enemyTex) return;
+    }
+
+    //Enemy1
+    auto enemy1 = m_ECSScene->CreateSpriteEntity(Vector3D(-12.0f, -8.0f, 0.0f),
+                                                 Vector3D(3.0f, 3.0f, 1.0f), enemyTex);
+    registry.emplace<Enemy>(enemy1);
+    registry.emplace<Patrol>(enemy1, Vector3D(-15.0f, -8.0f, 0.0f),
+                               Vector3D(-10.0f, -8.0f, 0.0f),2.0f);
+    registry.emplace<Components::PhysicsBody>(enemy1);
+    m_EnemyEntities.push_back(enemy1);
+
+    //Enemy2
+    auto enemy2 = m_ECSScene->CreateSpriteEntity(Vector3D(-8.0f, -2.0f, 0.0f),
+                                                 Vector3D(3.0f, 3.0f, 1.0f), enemyTex);
+    registry.emplace<Enemy>(enemy2);
+    registry.emplace<Patrol>(enemy2, Vector3D(-10.0f, -2.0f, 0.0f),
+                               Vector3D(-6.0f, -2.0f, 0.0f), 1.5f);
+    registry.emplace<Components::PhysicsBody>(enemy2);
+    m_EnemyEntities.push_back(enemy2);
+
+    //Enemy3
+    auto enemy3 = m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, 3.0f, 0.0f),
+                                                 Vector3D(3.0f, 3.0f, 1.0f), enemyTex);
+    registry.emplace<Enemy>(enemy3);
+    registry.emplace<Patrol>(enemy3, Vector3D(-2.0f, 3.0f, 0.0f),
+                               Vector3D(2.0f, 3.0f, 0.0f), 1.8f);
+    registry.emplace<Components::PhysicsBody>(enemy3);
+    m_EnemyEntities.push_back(enemy3);
+
+    Log::Info(std::format("Spawned {} enemies", m_EnemyEntities.size()));
 }

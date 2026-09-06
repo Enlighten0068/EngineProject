@@ -1,11 +1,14 @@
 #pragma once
 
+#include "components/Enemy.h"
+#include "components/Patrol.h"
 #include "core/PlayerController.h"
 #include "core/CameraController.h"
 #include "core/FpsCounter.h"
 #include "scene/Scene.h"
 #include "scene/ECSScene.h"
 #include "scene/GameWorld.h"
+#include "systems/EnemySystem.h"
 #include <memory>
 #include <vector>
 
@@ -33,10 +36,12 @@ private:
     std::unique_ptr<PlayerController> m_PlayerController;
 
     std::unique_ptr<FpsCounter> m_FpsCounter;
+
     entt::entity m_PlayerEntity;
-
+    std::vector<entt::entity> m_EnemyEntities;
     std::vector<entt::entity> m_PlatformEntities;
-    void ResolveCollisions();
 
+    void ResolveCollisions();
     void SetupScene();
+    void SpawnEnemies();
 };
