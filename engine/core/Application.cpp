@@ -107,6 +107,11 @@ bool Application::Initialize(){
         return false;
     }
 
+    //Check if any gamepad is available
+    if (!GamepadManager::GetInstance().Initialize()) {
+        Log::Warning("Gamepad initialization failed. Continuing without gamepad support.");
+    }
+
     //FPS Counter
     m_FpsCounter = std::make_unique<FpsCounter>();
 
@@ -153,6 +158,7 @@ void Application::Shutdown(){
     EventBus::GetInstance().Clear();
     Log::Info("EventBus cleared.");
     SoundEffect::CloseAudioDevice();
+    GamepadManager::GetInstance().Shutdown();
 
     ResourceManager::GetInstance().Clear();
     m_Engine.Shutdown();
@@ -164,6 +170,7 @@ void Application::ProcessEvents(){
     SDL_Event event;
     while(SDL_PollEvent(&event)){
         Input::ProcessEvent(event);
+        GamepadManager::GetInstance().ProcessEvent(event);
         SDLEventTranslator::TranslateAndDispatch(event);
     }
 }
@@ -172,6 +179,7 @@ void Application::ProcessEvents(){
 void Application::Update(){
     float dt = Time::DeltaTime();
 
+    GamepadManager::GetInstance().Update();
     m_SceneManager.Update(dt);
 }
 
@@ -185,9 +193,11 @@ void Application::Render(){
 
 void Application::SetupControllers() {
 
+    //For Fixed Camera Demo
     m_PlayerController = std::make_unique<PlayerController>(m_Scene->GetRegistry(), m_PlayerEntity, *m_World);
     m_PlayerController->SetSpeed(3.0f);
 
+    //For 2D demo with follow Camera
     /*m_CameraController = std::make_unique<CameraController>(*m_Camera);
     m_CameraController->SetSpeed(5.0f);
     m_CameraController->SetFollowEntity(true);

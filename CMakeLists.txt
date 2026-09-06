@@ -32,6 +32,7 @@ set(ENGINE_SOURCES
   engine/core/Engine.cpp
   engine/core/Time.cpp
   engine/core/Input.cpp
+  engine/core/GamepadManager.cpp
   engine/core/PlayerController.cpp
   engine/core/FpsCounter.cpp
   engine/core/CameraController.cpp

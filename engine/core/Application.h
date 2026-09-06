@@ -4,6 +4,7 @@
 #include "core/PlayerController.h"
 #include "core/FpsCounter.h"
 #include "core/CameraController.h"
+#include "core/GamepadManager.h"
 #include "events/Event.h"
 #include "events/KeyEvent.h"
 #include "events/MouseEvent.h"
