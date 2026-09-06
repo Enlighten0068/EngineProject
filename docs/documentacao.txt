@@ -104,6 +104,8 @@ https://www.reddit.com/r/gamedev/comments/4ty1sg/handling_input_polling_or_event
 
 TO DO ADR: Polling vs event-driven input
 
+Joystick input deadzone: https://machinations.io/glossary/dead-zone
+
 
 Audios para teste recolhidos:
 Jump: https://ambroggiomusic.itch.io/jump-sfx
