@@ -80,3 +80,18 @@ target_link_libraries(
 
 
 target_compile_definitions(Game PRIVATE DEMO_2D_FIXED)
+
+if (WIN32)
+    set(SDL3_DLL_PATH "${CMAKE_BINARY_DIR}/vendor/SDL3/SDL3.dll")
+    if (EXISTS "${SDL3_DLL_PATH}")
+        add_custom_command(
+            TARGET Game POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${SDL3_DLL_PATH}"
+                "$<TARGET_FILE_DIR:Game>"
+            COMMENT "Copying SDL3.dll to executable diretory..."
+        )
+    else()
+        message(WARNING "SDL3.dll not found in ${SDL3_DLL_PATH}. Executable might not work without its DLL files.")
+    endif()
+endif()
