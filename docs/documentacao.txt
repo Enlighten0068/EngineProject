@@ -109,3 +109,8 @@ Joystick input deadzone: https://machinations.io/glossary/dead-zone
 
 Audios para teste recolhidos:
 Jump: https://ambroggiomusic.itch.io/jump-sfx
+
+
+Doxygen (alternativa a JavaDocs para c++): https://www.doxygen.nl/manual/index.html
+
+Matemática (Euler): https://en.wikipedia.org/wiki/Euler_angles
