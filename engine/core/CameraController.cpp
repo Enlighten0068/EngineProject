@@ -9,7 +9,17 @@
 CameraController::CameraController(Camera2D& camera, const GameWorld& world)
 : m_Camera(camera), m_World(world){}
 
+/**
+ * @brief Updates the camera position and zoom based on input and mode.
+ *
+ * In follow mode, smoothly interpolates toward the target position.
+ * In manual mode, moves the camera with WASD keys.
+ * Also applies zoom from mouse scroll and clamps the camera to the world boundaries.
+ *
+ * @param deltaTime Time elapsed since the last frame.
+ */
 void CameraController::Update(float deltaTime){
+    //Follow Mode
     if (m_FollowEntity){
         Vector3D pos = m_Camera.GetPosition();
         Vector3D diff = m_TargetPosition - pos;
@@ -19,17 +29,19 @@ void CameraController::Update(float deltaTime){
             pos.y += diff.y * lerpFactor;
             m_Camera.SetPosition(pos);
         }
-    } else{
+    }
+    //Manual Mode
+    else{
         Vector3D pos = m_Camera.GetPosition();
         float speed = m_Speed * deltaTime;
         if (Input::IsKeyHeld(SDL_SCANCODE_W)) pos.y += speed;
         if (Input::IsKeyHeld(SDL_SCANCODE_S)) pos.y -= speed;
         if (Input::IsKeyHeld(SDL_SCANCODE_A)) pos.x -= speed;
         if (Input::IsKeyHeld(SDL_SCANCODE_D)) pos.x += speed;
-
         m_Camera.SetPosition(pos);
     }
 
+    //World boundary clamping - prevents the camera from showing the void beyond the world edges
     Vector3D pos = m_Camera.GetPosition();
     float marginX = 5.0f;
     float marginY = 3.0f;
@@ -37,6 +49,7 @@ void CameraController::Update(float deltaTime){
     pos.y = std::clamp(pos.y, m_World.GetMinY() + marginY, m_World.GetMaxY() - marginY);
     m_Camera.SetPosition(pos);
 
+    //Zoom
     Vector2D scroll = Input::GetScrollDelta();
     if (scroll.y != 0.0f){
         float zoom = m_Camera.GetZoom() + scroll.y * 0.1f;

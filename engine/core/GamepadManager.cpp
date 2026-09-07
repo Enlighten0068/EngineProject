@@ -2,11 +2,20 @@
 #include "diagnostics/Log.h"
 #include <format>
 
+//Singleton instance
 GamepadManager& GamepadManager::GetInstance(){
     static GamepadManager instance;
     return instance;
 }
 
+/**
+ * @brief Initializes the gamepad subsystem and detects connected devices.
+ *
+ * Tries SDL_INIT_GAMEPAD first; if that fails, falls back to SDL_INIT_JOYSTICK.
+ * This provides compatibility with systems that don't fully support the gamepad API.
+ *
+ * @return true if initialization succeeded, false otherwise.
+ */
 bool GamepadManager::Initialize(){
     if (SDL_InitSubSystem(SDL_INIT_GAMEPAD) != 0){
         Log::Error(std::format("Failed to initialize gamepad subsystem: {}", SDL_GetError()));
@@ -25,8 +34,8 @@ bool GamepadManager::Initialize(){
     SDL_JoystickID* gamepadIDs = SDL_GetGamepads(&numGamepads);
 
     if (!gamepadIDs){
+        //Fallback to joystick if no gamepad found
         Log::Warning("SDL_GetGamepads failed. Trying SDL_GetJoysticks...");
-
         int numJoysticks = 0;
         SDL_JoystickID* joystickIDs = SDL_GetJoysticks(&numJoysticks);
 
@@ -55,11 +64,17 @@ bool GamepadManager::Initialize(){
     return true;
 }
 
+/**
+ * @brief Shuts down the gamepad subsystem and releases all devices.
+ */
 void GamepadManager::Shutdown(){
+    //Close all open gamepads
     for (auto& [playerIndex, gamepad] : m_Gamepads){
         SDL_CloseGamepad(gamepad);
     }
     m_Gamepads.clear();
+
+    //Clear button states for each player
     for (int i = 0; i < MAX_PLAYERS; ++i){
         m_ButtonState[i].clear();
         m_ButtonPrevious[i].clear();
@@ -68,6 +83,12 @@ void GamepadManager::Shutdown(){
     Log::Info("GamepadManager shut down.");
 }
 
+/**
+ * @brief Updates the state of all connected gamepads.
+ *
+ * Saves the previous button states and updates the current ones.
+ * Should be called once per frame.
+ */
 void GamepadManager::Update(){
     for (auto& [playerIndex, gamepad] : m_Gamepads){
         m_ButtonPrevious[playerIndex] = m_ButtonState[playerIndex];
@@ -75,6 +96,10 @@ void GamepadManager::Update(){
     }
 }
 
+/**
+ * @brief Adds a new gamepad and assigns it to the first available player slot.
+ * @param deviceID SDL Joystick ID of the gamepad.
+ */
 void GamepadManager::AddGamepad(SDL_JoystickID deviceID){
     if (!SDL_IsGamepad(deviceID)) return;
 
@@ -103,6 +128,10 @@ void GamepadManager::AddGamepad(SDL_JoystickID deviceID){
     Log::Info(std::format("Gamepad {} connected: {} (Player {})", deviceID, name ? name : "Unknown", playerIndex));
 }
 
+/**
+ * @brief Removes a gamepad and frees its resources.
+ * @param deviceID SDL Joystick ID of the gamepad to remove.
+ */
 void GamepadManager::RemoveGamepad(SDL_JoystickID deviceID){
     int playerIndex = -1;
     for (auto& [idx, gamepad] : m_Gamepads) {
@@ -119,6 +148,10 @@ void GamepadManager::RemoveGamepad(SDL_JoystickID deviceID){
     }
 }
 
+/**
+ * @brief Updates the button state bitmask for a specific player.
+ * @param playerIndex Player index (0-3).
+ */
 void GamepadManager::UpdateButtonState(int playerIndex){
     auto it = m_Gamepads.find(playerIndex);
     if (it == m_Gamepads.end()) return;
@@ -131,7 +164,6 @@ void GamepadManager::UpdateButtonState(int playerIndex){
             state |= (1ULL << i);
         }
     }
-
     m_ButtonState[playerIndex][playerIndex] = state;
 }
 
@@ -191,6 +223,10 @@ void GamepadManager::SetRumble(int playerIndex, float lowFrequency, float highFr
 }
 
 
+/**
+ * @brief Processes SDL gamepad events (added/removed).
+ * @param event The SDL event to process.
+ */
 void GamepadManager::ProcessEvent(const SDL_Event& event){
     switch (event.type){
         case SDL_EVENT_GAMEPAD_ADDED:

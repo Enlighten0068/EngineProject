@@ -14,6 +14,12 @@
 PlayerController::PlayerController(entt::registry& registry, entt::entity playerEntity, const GameWorld& world)
 : m_Registry(registry), m_PlayerEntity(playerEntity), m_World(world){ SetupEventSubscriptions(); }
 
+/**
+ * @brief Sets up event subscriptions for the player.
+ *
+ * Currently subscribes to key events for interaction (E key) for now.
+ * Jump is handled via polling in Update() for more responsive input.
+ */
 void PlayerController::SetupEventSubscriptions(){
     EventBus::GetInstance().Subscribe<KeyEvent>([this](Event& e){
         KeyEvent& keyEvent = static_cast<KeyEvent&>(e);
@@ -24,6 +30,16 @@ void PlayerController::SetupEventSubscriptions(){
     });
 }
 
+/**
+ * @brief Updates the player's state (movement, jump, physics).
+ *
+ * This method handles horizontal movement, jump detection and its physics,
+ * vertical velocity, landing detection,
+ * boundary clamping and death.
+ *
+ * @note Vertical movement with UP/DOWN keys is commented out but can be enabled
+ *       for debugging or special mechanics.
+ */
 void PlayerController::Update(){
     if (m_IsDead) return;
 
@@ -134,6 +150,14 @@ void PlayerController::Update(){
 
 }
 
+/**
+ * @brief Player dies.
+ *
+ * Dispatches a PlayerDiedEvent, resets the player's position to the center
+ * of the world, and resets all physics state to allow immediate respawn.
+ *
+ * @param cause Reason for death (e.g., "Killed by enemy").
+ */
 void PlayerController::Die(const std::string& cause) {
     if (m_IsDead) return;
     m_IsDead = true;
@@ -145,8 +169,9 @@ void PlayerController::Die(const std::string& cause) {
 
     Log::Info(std::format("Player died: {}", cause));
 
+    //Respawn
     transform.Position = Vector3D(0.0f, 0.0f, 0.0f);
     m_Velocity = Vector3D(0.0f, 0.0f, 0.0f);
     m_IsJumping = false;
-    m_IsDead = false;
+    m_IsDead = false; //Instant respawn
 }

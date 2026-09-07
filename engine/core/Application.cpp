@@ -34,22 +34,30 @@
 Application::Application() = default;
 Application::~Application(){ Shutdown(); }
 
-
+/**
+ * @brief Initializes all engine subsystems and sets up the initial scene.
+ *
+ * It must follow an initialization order to work correctly starting from logging,
+ * engine, event system, graphics context, camera/world, scene, controllers and audio.
+ *
+ * @return true if all subsystems initialized successfully, false otherwise.
+ */
 bool Application::Initialize(){
+    //Logging
     Log::Initialize("logs/");
-    //For testing purposes
+    //For testing purposes - uncomment to validate logging initialization
     /*Log::Info("Logging...");
     Log::Warning("Warning test.");
     Log::Error("Error test.");*/
     Log::Info("Application: Initializing...");
 
-    //Game window initialization
+    //Game window initialization (engine)
     if (!m_Engine.Initialize("Game Window", 1920, 1080)){
         Log::Error("Failed to initialize Engine.");
         return false;
     }
 
-    //Event Handling initialization
+    //Event Handling System initialization
     EventBus::GetInstance().Subscribe<WindowCloseEvent>([this](Event& e) {
         Log::Info("WindowCloseEvent received, shutting down game.");
         m_Engine.SetRunning(false);
@@ -82,15 +90,18 @@ bool Application::Initialize(){
     m_Camera = std::make_unique<Camera2D>(-width, width, -height, height);
     m_Camera->SetPosition(Vector3D(0.0f, 0.0f, 0.0f));
 
+    //World initialization
+    m_World = std::make_unique<GameWorld>(-20.0f, 20.0f, -10.0f, 10.0f);
+
     //Scene initialization
     m_Scene = std::make_unique<ECSScene>(m_Graphics->GetShader(),
                                       m_Graphics->GetVertexArray(),
                                       m_Graphics->GetIndexBuffer()
     );
 
-    m_World = std::make_unique<GameWorld>(-20.0f, 20.0f, -10.0f, 10.0f);
 
-    //Texture Loading & entity testing - to be adjusted
+
+    //Player Entity
     auto texture = ResourceManager::GetInstance().LoadTexture("assets/textures/test.png");
     if (!texture){
         Log::Error("Failed to load texture.");
@@ -99,6 +110,7 @@ bool Application::Initialize(){
     m_PlayerEntity = m_Scene->CreateSpriteEntity(
         Vector3D(0.0f, 0.0f, 0.0f), Vector3D(5.0f, 5.0f, 1.0f),texture);
 
+    //Controllers
     SetupControllers();
 
     //Audio initialization
@@ -117,38 +129,52 @@ bool Application::Initialize(){
 
     Log::Info("Application initialized successfully.");
 
+    //Initial scene
     auto initialScene = std::make_unique<Demo2DScene>(m_Graphics->GetShader(),
                                                       m_Graphics->GetVertexArray(),
                                                       m_Graphics->GetIndexBuffer());
 
-    auto menuScene = std::make_unique<MenuScene>(m_SceneManager);
-    m_SceneManager.SetScene(std::move(menuScene));
+    //Initial Menu scene - to be implemented
+    /*auto menuScene = std::make_unique<MenuScene>(m_SceneManager);
+    m_SceneManager.SetScene(std::move(menuScene));*/
+
     return true;
 }
 
-
+/**
+ * @brief Main game loop.
+ *
+ * The loop runs while the engine is running, processing events, updating
+ * all systems, and rendering the current scene. It follows a strict order starting from
+ * time then event handling, system updates, input state, rendering.
+ */
 void Application::Run(){
     while (m_Engine.IsRunning()){
         Time::Update();
         ProcessEvents();
         Update();
-        Input::Update();
+        Input::Update(); //Reset input deltas
         Render();
     }
 }
 
-
+/**
+ * @brief Shuts down the application and releases all resources.
+ *
+ * The shutdown order is the reverse of initialization to ensure proper
+ * resource cleanup and avoid dangling references.
+ */
 void Application::Shutdown(){
     Log::Info("Shutting down Application...");
-    Log::Shutdown();
 
-    //m_CameraController.reset();
-    m_PlayerController.reset();
     m_FpsCounter.reset();
-    m_World.reset();
+    GamepadManager::GetInstance().Shutdown();
+    SoundEffect::CloseAudioDevice();
+    m_PlayerController.reset();
+    ResourceManager::GetInstance().Clear();
     m_Scene.reset();
+    m_World.reset();
     m_Camera.reset();
-
 
     if (m_Graphics){
         m_Graphics->Shutdown();
@@ -157,15 +183,19 @@ void Application::Shutdown(){
 
     EventBus::GetInstance().Clear();
     Log::Info("EventBus cleared.");
-    SoundEffect::CloseAudioDevice();
-    GamepadManager::GetInstance().Shutdown();
 
-    ResourceManager::GetInstance().Clear();
     m_Engine.Shutdown();
-    Log::Info("Application shut down.");
+    Log::Info("Engine shut down.");
+
+    Log::Shutdown();
 }
 
-
+/**
+ * @brief Processes all pending SDL events.
+ *
+ * Events are passed to Input (for state tracking), GamepadManager (for gamepad events),
+ * and SDLEventTranslator (for converting to engine events and dispatching via EventBus).
+ */
 void Application::ProcessEvents(){
     SDL_Event event;
     while(SDL_PollEvent(&event)){
@@ -175,25 +205,35 @@ void Application::ProcessEvents(){
     }
 }
 
-
+/**
+ * @brief Updates all systems for the current frame.
+ *
+ * This includes the gamepad state and the current scene (which updates
+ * entities, physics, AI)
+ */
 void Application::Update(){
-    float dt = Time::DeltaTime();
-
     GamepadManager::GetInstance().Update();
-    m_SceneManager.Update(dt);
+    m_SceneManager.Update(Time::DeltaTime());
 }
 
-
+/**
+ * @brief Renders the current scene.
+ *
+ * Clears buffers and delegates rendering to the Scene Manager.
+ */
 void Application::Render(){
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT); //Buffer clearing
     m_SceneManager.Render();
     m_Engine.GetWindow().SwapBuffers();
 }
 
-
-void Application::SetupControllers() {
-
-    //For Fixed Camera Demo
+/**
+ * @brief Initializes the player and camera controllers.
+ *
+ * Currently sets up the player controller with the world and entity.
+ */
+void Application::SetupControllers(){
+    //Player controller
     m_PlayerController = std::make_unique<PlayerController>(m_Scene->GetRegistry(), m_PlayerEntity, *m_World);
     m_PlayerController->SetSpeed(3.0f);
 

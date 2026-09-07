@@ -5,6 +5,13 @@
 
 FpsCounter::FpsCounter() = default;
 
+/**
+ * @brief Updates the FPS counter and logs when interval elapses.
+ *
+ * This method should be called once per frame. It accumulates delta time
+ * and frame count, and when the interval is reached,
+ * it calculates the average FPS and logs it.
+ */
 void FpsCounter::Update(){
     m_DeltaTime = Time::DeltaTime();
     m_ElapsedTime = Time::ElapsedTime();

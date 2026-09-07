@@ -114,3 +114,4 @@ Jump: https://ambroggiomusic.itch.io/jump-sfx
 Doxygen (alternativa a JavaDocs para c++): https://www.doxygen.nl/manual/index.html
 
 Matemática (Euler): https://en.wikipedia.org/wiki/Euler_angles
+Gimbal Lock: https://www.youtube.com/watch?v=zc8b2Jo7mno
