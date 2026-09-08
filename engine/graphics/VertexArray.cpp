@@ -17,11 +17,17 @@ VertexArray::~VertexArray(){
     glDeleteVertexArrays(1, &m_RendererID);
 }
 
+/**
+ * @brief Binds the VAO.
+ */
 void VertexArray::Bind() const{
     glBindVertexArray(
         m_RendererID);
 }
 
+/**
+ * @brief Unbinds the VAO.
+ */
 void VertexArray::Unbind() const{
     glBindVertexArray(0);
 }

@@ -3,6 +3,14 @@
 #include "events/Event.h"
 #include "math/Vector3D.h"
 
+/**
+ * @brief Event dispatched when the player jumps.
+ *
+ * Contains the player's position at the time of the jump and the jump force.
+ *
+ * @note Dispatched by PlayerController.
+ * @see PlayerController
+ */
 class PlayerJumpedEvent : public Event{
 public:
     PlayerJumpedEvent(const Vector3D& position, float jumpForce)
@@ -19,6 +27,13 @@ private:
     float m_JumpForce;
 };
 
+/**
+ * @brief Event dispatched when the player lands on a surface.
+ *
+ * Contains the player's position at landing and the fall speed.
+ *
+ * @note Dispatched by PlayerController when grounded detection triggers.
+ */
 class PlayerLandedEvent : public Event{
 public:
     PlayerLandedEvent(const Vector3D& position, float fallSpeed)
@@ -35,6 +50,13 @@ private:
     float m_FallSpeed;
 };
 
+/**
+ * @brief Event dispatched when the player dies.
+ *
+ * Contains the player's position at death and a cause string.
+ *
+ * @note Dispatched by PlayerController::Die().
+ */
 class PlayerDiedEvent : public Event{
 public:
     PlayerDiedEvent(const Vector3D& position, const std::string& cause = "Unknown")

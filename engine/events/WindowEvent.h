@@ -2,6 +2,14 @@
 
 #include "events/Event.h"
 
+/**
+ * @brief Event dispatched when the window close button is clicked or a SDL_EVENT_QUIT is received.
+ *
+ * This event is typically used to signal the application to shut down.
+ *
+ * @note Dispatched by SDLEventTranslator.
+ * @see SDLEventTranslator
+ */
 class WindowCloseEvent : public Event{
 public:
     static EventType GetStaticType(){
@@ -12,6 +20,13 @@ public:
     }
 };
 
+/**
+ * @brief Event dispatched when the window is resized.
+ *
+ * Contains the new width and height of the window.
+ *
+ * @note Dispatched by SDLEventTranslator on SDL_EVENT_WINDOW_RESIZED.
+ */
 class WindowResizeEvent : public Event{
 public:
     WindowResizeEvent(int width, int height): m_Width(width),m_Height(height){}

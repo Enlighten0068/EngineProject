@@ -6,18 +6,31 @@
 GraphicsContext::GraphicsContext() = default;
 GraphicsContext::~GraphicsContext(){ Shutdown(); }
 
+/**
+ * @brief Initializes the graphics context.
+ *
+ * Creates the vertex/index buffers, compiles the shaders, and sets up
+ * the vertex attribute layout.
+ *
+ * @return true if all resources were created successfully, false otherwise.
+ */
 bool GraphicsContext::Initialize(){
     if (!CreateBuffers()) return false;
     if (!CompileShaders()) return false;
 
+    //Define an array of vertex attribute data, see OpengGL documentation
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
     Log::Info("Graphics context initialized.");
     return true;
 }
 
+/**
+ * @brief Shuts down the graphics context and releases resources.
+ */
 void GraphicsContext::Shutdown(){
     m_Shader.reset();
     m_VertexArray.reset();
@@ -25,14 +38,21 @@ void GraphicsContext::Shutdown(){
     m_IndexBuffer.reset();
 }
 
+/**
+ * @brief Creates vertex and index buffers for a unit quad.
+ * @return true if buffers were created successfully, false otherwise.
+ */
 bool GraphicsContext::CreateBuffers(){
     float vertices[] ={
-        -0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
-        0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
-        0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
-        -0.5f,  0.5f, 0.0f, 0.0f, 1.0f
+        -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, //Bottom-left vertex
+        0.5f, -0.5f, 0.0f, 1.0f, 0.0f, //Bottom-right vertex
+        0.5f,  0.5f, 0.0f, 1.0f, 1.0f, //Top-right vertex
+        -0.5f,  0.5f, 0.0f, 0.0f, 1.0f //Top-Left vertex
     };
-    uint32_t indices[] ={ 0, 1, 2, 2, 3, 0 };
+
+    //Triangles
+    uint32_t indices[] ={ 0, 1, 2,  //Bottom-left, bottom-right, top-right
+                          2, 3, 0 }; //Top-right, top-left, bottom-left
 
     m_VertexBuffer = std::make_unique<VertexBuffer>(vertices, sizeof(vertices));
     m_VertexArray = std::make_unique<VertexArray>();
@@ -43,6 +63,7 @@ bool GraphicsContext::CreateBuffers(){
         return false;
     }
 
+    //Buffer binding
     m_VertexArray->Bind();
     m_VertexBuffer->Bind();
     m_IndexBuffer->Bind();
@@ -50,6 +71,15 @@ bool GraphicsContext::CreateBuffers(){
     return true;
 }
 
+/**
+ * @brief Compiles the vertex and fragment shaders.
+ *
+ * The vertex shader transforms vertices using model, view, and projection matrices.
+ * It also passes texture coordinates (scaled by u_TileScale) to the fragment shader.
+ * The fragment shader samples a texture at the given coordinates.
+ *
+ * @return true if shaders compiled and linked successfully, false otherwise.
+ */
 bool GraphicsContext::CompileShaders(){
     const std::string vertexShaderSource = R"(
     #version 460 core

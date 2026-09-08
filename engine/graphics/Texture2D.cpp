@@ -14,6 +14,18 @@ Texture2D::~Texture2D(){
 
 }
 
+/**
+ * @brief Loads a texture from a file using stb_image.
+ *
+ * The image is flipped vertically to match OpenGL's coordinate system
+ * (origin at bottom-left). The texture is configured with:
+ * GL_REPEAT for wrapping (S and T axes)
+ * GL_LINEAR_MIPMAP_LINEAR for minification
+ * GL_LINEAR for magnification
+ *
+ * @param filepath Path to the image file.
+ * @return true if the texture was loaded successfully, false otherwise.
+ */
 bool Texture2D::Load(const std::string& filepath){
     stbi_set_flip_vertically_on_load(true);
 
@@ -26,12 +38,15 @@ bool Texture2D::Load(const std::string& filepath){
 
     glGenTextures(1, &m_RendererID);
     glBindTexture(GL_TEXTURE_2D, m_RendererID);
+
+    //Texture Parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     GLenum format = GL_RGB;
 
+    //Color system - RGBA for opacity/transparency
     if (m_Channels == 4) format = GL_RGBA;
 
     glTexImage2D(GL_TEXTURE_2D, 0, format, m_Width, m_Height, 0, format, GL_UNSIGNED_BYTE, data);
@@ -44,11 +59,18 @@ bool Texture2D::Load(const std::string& filepath){
     return true;
 }
 
+/**
+ * @brief Binds the texture to a texture unit.
+ * @param slot Texture unit index.
+ */
 void Texture2D::Bind(uint32_t slot) const{
     glActiveTexture(GL_TEXTURE0 + slot);
     glBindTexture(GL_TEXTURE_2D, m_RendererID);
 }
 
+/**
+ * @brief Unbinds the texture.
+ */
 void Texture2D::Unbind() const{
     glBindTexture(GL_TEXTURE_2D,0);
 }
@@ -59,4 +81,13 @@ int Texture2D::GetWidth() const{
 
 int Texture2D::GetHeight() const{
     return m_Height;
+}
+
+/**
+ * @brief Returns the number of color channels.
+ * @return 3 for RGB, 4 for RGBA.
+ * @note This method is declared but not currently used.
+ */
+int Texture2D::GetChannels() const{
+    return m_Channels;
 }

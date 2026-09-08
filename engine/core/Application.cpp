@@ -12,6 +12,7 @@
 #include "demo/Demo2DScene.h"
 #include "diagnostics/Log.h"
 #include "events/EventType.h"
+#include "events/EventBus.h"
 #include "events/WindowEvent.h"
 #include "events/SDLEventTranslator.h"
 #include "graphics/VertexArray.h"

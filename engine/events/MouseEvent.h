@@ -4,6 +4,14 @@
 #include "math/Vector2D.h"
 #include <SDL3/SDL.h>
 
+/**
+ * @brief Event representing mouse movement.
+ *
+ * Contains the current mouse position and the delta (movement since last frame).
+ *
+ * @note This event is dispatched by SDLEventTranslator.
+ * @see SDLEventTranslator
+ */
 class MouseMotionEvent : public Event{
 public:
     MouseMotionEvent(const Vector2D& position, const Vector2D& delta)
@@ -20,6 +28,9 @@ private:
     Vector2D m_Delta;
 };
 
+/**
+ * @brief Mouse button identifiers (matches SDL button numbers).
+ */
 enum class MouseButton{
     Left = 1,
     Middle = 2,
@@ -28,11 +39,20 @@ enum class MouseButton{
     X2 = 5
 };
 
+/**
+ * @brief Mouse button action types.
+ */
 enum class MouseButtonAction{
     Pressed,
     Released
 };
 
+/**
+ * @brief Event representing a mouse button press/release.
+ *
+ * Contains which button was pressed/released, the action type,
+ * and the mouse position at the time of the event.
+ */
 class MouseButtonEvent : public Event{
 public:
     MouseButtonEvent(MouseButton button, MouseButtonAction action, const Vector2D& position)
@@ -51,6 +71,11 @@ private:
     Vector2D m_Position;
 };
 
+/**
+ * @brief Event representing mouse wheel scroll.
+ *
+ * Contains the scroll delta.
+ */
 class MouseWheelEvent : public Event{
 public:
     MouseWheelEvent(const Vector2D& delta) : m_Delta(delta) {}

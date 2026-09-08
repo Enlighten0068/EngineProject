@@ -1,12 +1,18 @@
 #include "math/Matrix4.h"
 
-
+/**
+ * @brief Default constructor: initializes all matrix elements to zero.
+ */
 Matrix4::Matrix4(){
     for (int i = 0; i < 16; i++){
         m_Data[i] = 0.0f;
     }
 }
 
+/**
+ * @brief Creates an identity matrix.
+ * @return Identity matrix.
+ */
 Matrix4 Matrix4::Identity(){
     Matrix4 result;
 
@@ -18,10 +24,22 @@ Matrix4 Matrix4::Identity(){
     return result;
 }
 
+/**
+ * @brief Returns a pointer to the internal data array.
+ * @return Pointer to the first element.
+ */
 const float* Matrix4::Data() const{
     return m_Data;
 }
 
+/**
+ * @brief Creates a translation matrix.
+ *
+ * The matrix translates points by the given vector.
+ *
+ * @param position Translation vector (x, y, z).
+ * @return Translation matrix.
+ */
 Matrix4 Matrix4::Translation(const Vector3D& position){
     Matrix4 result = Identity();
 
@@ -32,6 +50,14 @@ Matrix4 Matrix4::Translation(const Vector3D& position){
     return result;
 }
 
+/**
+ * @brief Creates a scale matrix.
+ *
+ * The matrix scales points along the X, Y, and Z axes by the given factors.
+ *
+ * @param scale Scale factors (x, y, z).
+ * @return Scale matrix.
+ */
 Matrix4 Matrix4::Scale(const Vector3D& scale){
     Matrix4 result = Identity();
 
@@ -42,6 +68,15 @@ Matrix4 Matrix4::Scale(const Vector3D& scale){
     return result;
 }
 
+/**
+ * @brief Matrix multiplication operator.
+ *
+ * Performs standard matrix multiplication: result = this * other.
+ * The order matters: this is applied first, then other.
+ *
+ * @param other The matrix to multiply with (on the right).
+ * @return Result of this * other.
+ */
 Matrix4 Matrix4::operator*(const Matrix4& other) const{
         Matrix4 result;
 
@@ -57,12 +92,29 @@ Matrix4 Matrix4::operator*(const Matrix4& other) const{
         return result;
     }
 
+    /**
+     * @brief Creates an orthographic projection matrix.
+     *
+     * This maps a 3D region (a box) to a 2D projection.
+     * The near and far planes are positive distances.
+     *
+     * @param left   Left clipping plane.
+     * @param right  Right clipping plane.
+     * @param bottom Bottom clipping plane.
+     * @param top    Top clipping plane.
+     * @param nearPlane Near clipping plane (positive).
+     * @param farPlane  Far clipping plane (positive).
+     * @return Orthographic projection matrix.
+     */
 Matrix4 Matrix4::Orthographic(float left, float right, float bottom, float top, float nearPlane, float farPlane){
         Matrix4 result = Identity();
 
+        //Scale
         result.m_Data[0] = 2.0f / (right - left);
         result.m_Data[5] = 2.0f / (top - bottom);
         result.m_Data[10] = -2.0f / (farPlane - nearPlane);
+
+        //Translation
         result.m_Data[12] =-(right + left) / (right - left);
         result.m_Data[13] =-(top + bottom) /(top - bottom);
         result.m_Data[14] =-(farPlane + nearPlane) /(farPlane - nearPlane);
@@ -70,6 +122,14 @@ Matrix4 Matrix4::Orthographic(float left, float right, float bottom, float top, 
         return result;
     }
 
+    /**
+     * @brief Creates a rotation matrix around the Z-axis.
+     *
+     * This rotates points in the coordinate plane by the given angle.
+     *
+     * @param angleRadians Rotation angle in radians.
+     * @return Rotation matrix (Z-axis roll).
+     */
 Matrix4 Matrix4::RotationZ(float angle) {
         Matrix4 result = Identity();
 

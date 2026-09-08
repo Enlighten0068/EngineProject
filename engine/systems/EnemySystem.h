@@ -10,36 +10,64 @@
 #include "math/Vector3D.h"
 #include <entt.hpp>
 
+/**
+ * @brief System that updates enemy entities with patrol, physics, and collision.
+ *
+ * The EnemySystem processes all entities that have the Enemy, Patrol, and PhysicsBody
+ * components. It handles:
+ *
+ * Horizontal patrol movement between two points, gravity and vertical velocity,
+ * collision detection and resolution with platforms, rounded state detection
+ * and world boundary clamping.
+ *
+ * @note This system is designed to be called once per frame from the scene's Update().
+ * @see Enemy, Patrol, PhysicsBody, Transform
+ */
 class EnemySystem{
 public:
+
+    /**
+     * @brief Updates all active enemy entities.
+     *
+     * This method iterates over all entities with Transform, Enemy, Patrol, and PhysicsBody
+     * components. For each active enemy, it:
+     * 1. Moves the enemy horizontally according to its patrol path.
+     * 2. Applies gravity to the enemy's vertical velocity.
+     * 3. Checks and resolves collisions with platforms.
+     * 4. Clamps the enemy to the world floor.
+     * 5. Updates the grounded state.
+     *
+     * @param registry Reference to the ECS registry containing all entities.
+     * @param deltaTime Time elapsed since the last frame (seconds).
+     * @param platforms List of entity IDs that act as collision platforms.
+     * @param worldMinY The minimum Y coordinate of the world (floor level).
+     */
     static void Update(entt::registry& registry, float deltaTime,
                        const std::vector<entt::entity>& platforms,float worldMinY){
+
+        // View: entities with Transform, Enemy, Patrol, and PhysicsBody
         auto view = registry.view<Components::Transform, Enemy, Patrol, Components::PhysicsBody>();
 
         for (auto [entity, transform, enemy, patrol, physics] : view.each()){
             if (!enemy.IsActive) continue;
 
-            //Horizontal enemy movement
+            //Enemy patrol
             float speed = patrol.Speed * deltaTime;
             if (patrol.MovingRight){
                 transform.Position.x += speed;
-                if (transform.Position.x >= patrol.EndPosition.x){
-                    patrol.MovingRight = false;
-                }
+                if (transform.Position.x >= patrol.EndPosition.x) patrol.MovingRight = false;
             } else{
                 transform.Position.x -= speed;
-                if (transform.Position.x <= patrol.StartPosition.x){
-                    patrol.MovingRight = true;
-                }
+                if (transform.Position.x <= patrol.StartPosition.x) patrol.MovingRight = true;
+
             }
 
-            //Enemy gravity
+            //Gravity
             float gravity = -9.8f * physics.GravityScale;
             physics.Velocity.y += gravity * deltaTime;
-
             transform.Position.y += physics.Velocity.y * deltaTime;
 
-            //Enemy collision
+            //Collision
             Vector3D enemyHalfSize = transform.Scale * 0.5f;
             bool grounded = false;
 
@@ -47,6 +75,7 @@ public:
                 auto& platformTransform = registry.get<Components::Transform>(platform);
                 Vector3D platformHalfSize = platformTransform.Scale * 0.5f;
 
+                //Calculates AABB bounds
                 float enemyLeft = transform.Position.x - enemyHalfSize.x;
                 float enemyRight = transform.Position.x + enemyHalfSize.x;
                 float enemyBottom = transform.Position.y - enemyHalfSize.y;
@@ -61,11 +90,13 @@ public:
                 bool overlapY = (enemyTop > platformBottom && enemyBottom < platformTop);
 
                 if (overlapX && overlapY){
+                    //Resolves detected collision
                     Vector3D delta = transform.Position - platformTransform.Position;
                     Vector3D overlap = enemyHalfSize + platformHalfSize -
                     Vector3D(std::abs(delta.x), std::abs(delta.y), 0.0f);
 
                     if (overlap.y < overlap.x){
+                        //Vertical collision
                         if (delta.y > 0.0f){
                             transform.Position.y += overlap.y;
                             physics.Velocity.y = 0.0f;
@@ -77,12 +108,14 @@ public:
                             }
                         }
                     } else{
+                        //Horizontal collision
                         if (delta.x > 0.0f) transform.Position.x += overlap.x;
                             else transform.Position.x -= overlap.x;
                     }
                 }
             }
 
+            //World floor clamping
             float worldFloor = worldMinY + enemyHalfSize.y;
             if (transform.Position.y < worldFloor){
                 transform.Position.y = worldFloor;
@@ -90,11 +123,24 @@ public:
                 grounded = true;
             }
 
+            //Upadte grounded state
             physics.IsGrounded = grounded;
 
         }
     }
 
+    /**
+     * @brief Performs AABB collision detection between the player and an enemy.
+     *
+     * This method checks if the player's bounding box overlaps with an enemy's
+     * bounding box using the Axis-Aligned Bounding Box (AABB) algorithm.
+     *
+     * @param playerPos The player's world position.
+     * @param playerSize The player's scale (width and height).
+     * @param enemyPos The enemy's world position.
+     * @param enemySize The enemy's scale (width and height).
+     * @return true if the player and enemy are overlapping, false otherwise.
+     */
     static bool CheckCollision(const Vector3D& playerPos, const Vector3D& playerSize,
                                const Vector3D& enemyPos, const Vector3D& enemySize){
         Vector3D playerHalf = playerSize * 0.5f;
