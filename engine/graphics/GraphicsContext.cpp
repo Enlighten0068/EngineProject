@@ -17,6 +17,7 @@ GraphicsContext::~GraphicsContext(){ Shutdown(); }
 bool GraphicsContext::Initialize(){
     if (!CreateBuffers()) return false;
     if (!CompileShaders()) return false;
+    if (!CompileLineShader()) return false;
 
     //Define an array of vertex attribute data, see OpengGL documentation
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
@@ -33,6 +34,7 @@ bool GraphicsContext::Initialize(){
  */
 void GraphicsContext::Shutdown(){
     m_Shader.reset();
+    m_LineShader.reset();
     m_VertexArray.reset();
     m_VertexBuffer.reset();
     m_IndexBuffer.reset();
@@ -90,13 +92,12 @@ bool GraphicsContext::CompileShaders(){
     uniform mat4 u_Model;
     uniform mat4 u_View;
     uniform mat4 u_Projection;
-    uniform float u_TileScale;
+    uniform vec2 u_TileScale;
 
     out vec2 v_TexCoord;
 
     void main() {
         gl_Position = u_Projection * u_View * u_Model * vec4(a_Position, 1.0);
-        //gl_Position = vec4(a_Position, 1.0);
         v_TexCoord = a_TexCoord * u_TileScale;
     })";
 
@@ -125,5 +126,35 @@ bool GraphicsContext::CompileShaders(){
         return false;
     }
 
+    return true;
+}
+
+
+bool GraphicsContext::CompileLineShader() {
+    const std::string vertexSource = R"(
+    #version 460 core
+    layout(location = 0) in vec3 a_Position;
+    uniform mat4 u_Model;
+    uniform mat4 u_View;
+    uniform mat4 u_Projection;
+    void main() {
+        gl_Position = u_Projection * u_View * u_Model * vec4(a_Position, 1.0);
+    })";
+
+    const std::string fragmentSource = R"(
+    #version 460 core
+    out vec4 FragColor;
+    uniform vec3 u_Color;
+    void main() {
+        FragColor = vec4(u_Color, 1.0);
+    })";
+
+    m_LineShader = std::make_unique<Shader>();
+    if (!m_LineShader->Compile(vertexSource, fragmentSource)) {
+        Log::Error("Line shader compilation failed.");
+        return false;
+    }
+
+    Log::Info("Line shader compiled successfully.");
     return true;
 }

@@ -71,6 +71,7 @@ public:
      * @return Reference to the GraphicsContext.
      */
     GraphicsContext& GetGraphicsContext(){ return *m_Graphics; }
+    Camera2D& GetCamera(){ return *m_Camera; }
 
 private:
     Engine m_Engine; //Window, SDL

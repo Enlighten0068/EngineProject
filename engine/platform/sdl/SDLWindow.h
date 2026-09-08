@@ -28,7 +28,7 @@ class SDLWindow{
      * @param height Window height in pixels.
      * @return true if the window and context were created successfully, false otherwise.
      */
-    bool Create(const char* title, int width, int height);
+    bool Create(const char* title, int width, int height, bool fullscreen);
 
     /**
      * @brief Destroys the window and OpenGL context.

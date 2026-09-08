@@ -10,6 +10,7 @@
 #include "core/CameraController.h"
 #include "core/FpsCounter.h"
 #include "demo/Demo2DScene.h"
+#include "demo/Demo2DFixedScene.h"
 #include "diagnostics/Log.h"
 #include "events/EventType.h"
 #include "events/EventBus.h"
@@ -52,8 +53,8 @@ bool Application::Initialize(){
     Log::Error("Error test.");*/
     Log::Info("Application: Initializing...");
 
-    //Game window initialization (engine)
-    if (!m_Engine.Initialize("Game Window", 1920, 1080)){
+    //Game window initialization (engine), change last parameter to true if fullscreen
+    if (!m_Engine.Initialize("Game Window", 1920, 1080, false)){
         Log::Error("Failed to initialize Engine.");
         return false;
     }
@@ -97,8 +98,7 @@ bool Application::Initialize(){
     //Scene initialization
     m_Scene = std::make_unique<ECSScene>(m_Graphics->GetShader(),
                                       m_Graphics->GetVertexArray(),
-                                      m_Graphics->GetIndexBuffer()
-    );
+                                      m_Graphics->GetIndexBuffer());
 
 
 
@@ -128,12 +128,34 @@ bool Application::Initialize(){
     //FPS Counter
     m_FpsCounter = std::make_unique<FpsCounter>();
 
+    EventBus::GetInstance().Subscribe<WindowResizeEvent>([this](Event& e){
+        WindowResizeEvent& resizeEvent = static_cast<WindowResizeEvent&>(e);
+        int newWidth = resizeEvent.GetWidth();
+        int newHeight = resizeEvent.GetHeight();
+
+        Input::SetWindowSize(newWidth, newHeight);
+
+        //Verifies if the scene is the fixed 2D Scene, skips camera update if true
+        Scene* currentScene = m_SceneManager.GetCurrentScene();
+        if (currentScene && currentScene->GetName() == "Demo2D_FixedCamera"){
+            Log::Info("Fixed camera scene active: skipping camera projection update.");
+            return;
+        }
+
+        if (m_Camera){
+            float aspect = static_cast<float>(newWidth) / static_cast<float>(newHeight);
+            float height = 5.0f;
+            float width = height * aspect;
+            m_Camera->SetProjection(-width, width, -height, height);
+        }
+    });
+
     Log::Info("Application initialized successfully.");
 
     //Initial scene
-    auto initialScene = std::make_unique<Demo2DScene>(m_Graphics->GetShader(),
-                                                      m_Graphics->GetVertexArray(),
-                                                      m_Graphics->GetIndexBuffer());
+    auto initialScene = std::make_unique<Demo2DFixedScene>(m_Graphics->GetShader(),
+                                                           m_Graphics->GetVertexArray(), m_Graphics->GetIndexBuffer(),
+                                                           *m_Camera, m_Graphics->GetLineShader());
 
     //Initial Menu scene - to be implemented
     /*auto menuScene = std::make_unique<MenuScene>(m_SceneManager);
@@ -223,6 +245,11 @@ void Application::Update(){
  * Clears buffers and delegates rendering to the Scene Manager.
  */
 void Application::Render(){
+    //Update viewport to window size
+    int winWidth = Input::GetWindowWidth();
+    int winHeight = Input::GetWindowHeight();
+    glViewport(0, 0, winWidth, winHeight);
+
     glClear(GL_COLOR_BUFFER_BIT); //Buffer clearing
     m_SceneManager.Render();
     m_Engine.GetWindow().SwapBuffers();

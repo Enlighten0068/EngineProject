@@ -1,6 +1,8 @@
 #pragma once
 
 #include "math/Matrix4.h"
+#include "math/Vector2D.h"
+#include "math/Vector3D.h"
 #include <string>
 #include <cstdint>
 
@@ -52,8 +54,39 @@ public:
      */
     void SetUniformFloat(const std::string& name, float value) const;
 
+    /**
+     * @brief Sets a 3D vector uniform (three floats).
+     * @param name Uniform name in the shader.
+     * @param x X component of the vector.
+     * @param y Y component of the vector.
+     * @param z Z component of the vector.
+     */
+    void SetUniformFloat3(const std::string& name, float x, float y, float z) const;
+
+    /**
+     * @brief Sets a 3D vector uniform from a Vector3D.
+     * @param name Uniform name in the shader.
+     * @param value Vector3D value to set.
+     */
+    void SetUniformFloat3(const std::string& name, const Vector3D& value) const;
+
+    /**
+     * @brief Sets a 2D vector uniform (two floats).
+     * @param name Uniform name in the shader.
+     * @param x X component of the vector.
+     * @param y Y component of the vector.
+     */
+    void SetUniformVec2(const std::string& name, float x, float y) const;
+
+    /**
+     * @brief Sets a 2D vector uniform from a Vector2D.
+     * @param name Uniform name in the shader.
+     * @param value Vector2D value to set.
+     */
+    void SetUniformVec2(const std::string& name, const Vector2D& value) const;
+
     unsigned int GetRendererID() const{ return m_RendererID; } //Gets OpenGL program ID
 
 private:
-    unsigned int m_RendererID;
+    unsigned int m_RendererID; //OpenGL program ID
 };

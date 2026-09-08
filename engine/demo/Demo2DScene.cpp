@@ -118,7 +118,7 @@ void Demo2DScene::Update(float deltaTime){
     m_CameraController->Update(deltaTime);
 
     m_FpsCounter->Update();
-    m_ECSScene->Update(deltaTime);
+    //m_ECSScene->Update(deltaTime);
     Log::InfoThrottled(std::format("Player: ({:.2f}, {:.2f})", transform.Position.x, transform.Position.y),
                        "player_pos", 2.0f);
 }

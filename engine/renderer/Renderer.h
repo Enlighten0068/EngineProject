@@ -48,5 +48,6 @@ public:
      * @param tileScale The texture tile scale (number of repetitions per unit).
      */
     static void DrawTexturedQuad(Shader& shader, VertexArray& vertexArray, IndexBuffer& indexBuffer, Texture2D& texture,
-                                 const Matrix4& model, const Matrix4& view, const Matrix4& projection, float tileScale = 1.0f);
+                                 const Matrix4& model, const Matrix4& view, const Matrix4& projection,
+                                 float tileScaleX = 1.0f, float tileScaleY = 1.0f);
 };

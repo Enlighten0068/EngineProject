@@ -25,17 +25,39 @@ SDLWindow::~SDLWindow(){
  * @param height Window height in pixels.
  * @return true if all steps succeeded, false otherwise.
  */
-bool SDLWindow::Create(const char* title, int width, int height){
-
+bool SDLWindow::Create(const char* title, int width, int height, bool fullscreen = false){
   //Set OpenGL Core Profile version 4.6
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
+  //Get primary display resolution
+  SDL_DisplayID displayID = SDL_GetPrimaryDisplay();
+  const SDL_DisplayMode* displayMode = SDL_GetCurrentDisplayMode(displayID);
+
+  int displayWidth = displayMode->w;
+  int displayHeight = displayMode->h;
+
+  if (width <= 0 || height <= 0){
+    width = displayWidth;
+    height = displayHeight;
+  }
+
   //Window creation
-  m_Window = SDL_CreateWindow(title, width, height, SDL_WINDOW_OPENGL);
+  m_Window = SDL_CreateWindow(title, width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
   Log::Info(std::format("Window ID: {}", SDL_GetWindowID(m_Window)));
   Log::Info("Window successfully created.");
+
+  if (fullscreen){
+    if (SDL_SetWindowFullscreen(m_Window, SDL_WINDOW_FULLSCREEN) != 0){
+      Log::Warning(std::format("Failed to set fullscreen: {}", SDL_GetError()));
+    } else{
+      Log::Info("Fullscreen mode enabled.");
+    }
+  } else{
+    SDL_SetWindowPosition(m_Window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
+  }
+
   
   //ASSERT - Use only for debugging purposes
   //ENGINE_ASSERT(m_Window, "Window creation failed.");
@@ -43,6 +65,9 @@ bool SDLWindow::Create(const char* title, int width, int height){
     Log::Error(std::format("Window creation error: {}", SDL_GetError()));
     return false;
   }
+
+  //Center window if not fullscreen
+  if (!fullscreen) SDL_SetWindowPosition(m_Window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
 
   //OpenGL context creation
   m_Context = SDL_GL_CreateContext(m_Window);
@@ -61,6 +86,11 @@ bool SDLWindow::Create(const char* title, int width, int height){
 
   //Set vsync
   SDL_GL_SetSwapInterval(1);
+
+  //Get window size
+  int realWidth, realHeight;
+  SDL_GetWindowSize(m_Window, &realWidth, &realHeight);
+  glViewport(0, 0, realWidth, realHeight);
 
   Log::Info(std::format("OpenGL Version: {}", reinterpret_cast<const char*>(glGetString(GL_VERSION)))); //glGetString devolve GLubyte* - conversão para const char
   Log::Info(std::format("Renderer: {}", reinterpret_cast<const char*>(glGetString(GL_RENDERER)))); //glGetString devolve GLubyte* - conversão para const char

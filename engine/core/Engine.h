@@ -23,7 +23,7 @@ public:
      * @param height Window height in pixels.
      * @return true if initialization succeeded, false otherwise.
      */
-    bool Initialize(const char* title, int width, int height);
+    bool Initialize(const char* title, int width, int height, bool fullscreen = false);
 
     /**
      * @brief Runs the engine's internal event loop.

@@ -41,12 +41,14 @@ public:
     VertexArray& GetVertexArray(){ return *m_VertexArray; }
     VertexBuffer& GetVertexBuffer(){ return *m_VertexBuffer; }
     IndexBuffer& GetIndexBuffer(){ return *m_IndexBuffer; }
+    Shader& GetLineShader(){ return *m_LineShader; }
 
 private:
     std::unique_ptr<Shader> m_Shader;
     std::unique_ptr<VertexArray> m_VertexArray;
     std::unique_ptr<VertexBuffer> m_VertexBuffer;
     std::unique_ptr<IndexBuffer> m_IndexBuffer;
+    std::unique_ptr<Shader> m_LineShader;
 
     /**
      * @brief Creates the vertex and index buffers for a quad.
@@ -63,4 +65,6 @@ private:
      * @return true if shaders compiled and linked successfully, false otherwise.
      */
     bool CompileShaders();
+
+    bool CompileLineShader();
 };

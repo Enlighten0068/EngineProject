@@ -1,12 +1,16 @@
+#include "components/TileScale.h"
 #include "core/Input.h"
 #include "demo/Demo2DFixedScene.h"
 #include "diagnostics/Log.h"
 #include "resources/ResourceManager.h"
 #include <glad/glad.h>
 #include <SDL3/SDL.h>
+#include <format>
 
-Demo2DFixedScene::Demo2DFixedScene(Shader& shader, VertexArray& va, IndexBuffer& ib)
-: m_Shader(shader), m_VertexArray(va), m_IndexBuffer(ib){}
+Demo2DFixedScene::Demo2DFixedScene(Shader& shader, VertexArray& va, IndexBuffer& ib,
+                                   Camera2D& camera, Shader& lineShader)
+: m_Shader(shader), m_VertexArray(va), m_IndexBuffer(ib),
+  m_Camera(camera), m_LineShader(lineShader){}
 
 Demo2DFixedScene::~Demo2DFixedScene() { OnExit(); }
 
@@ -27,17 +31,19 @@ void Demo2DFixedScene::OnExit(){
 
 void Demo2DFixedScene::SetupScene(){
     m_ECSScene = std::make_unique<ECSScene>(m_Shader, m_VertexArray, m_IndexBuffer);
-
     m_World = std::make_unique<GameWorld>(-20.0f, 20.0f, -10.0f, 10.0f);
 
-    m_ViewMatrix = Matrix4::Identity();
+    m_Camera.SetProjection(m_World->GetMinX(), m_World->GetMaxX(),
+                           m_World->GetMinY(), m_World->GetMaxY());
 
-    m_ProjectionMatrix = Matrix4::Orthographic(m_World->GetMinX(), m_World->GetMaxX(),
-                                               m_World->GetMinY(), m_World->GetMaxY(),
-                                               -1.0f, 1.0f);
+    float centerX = (m_World->GetMinX() + m_World->GetMaxX()) * 0.5f;
+    float centerY = (m_World->GetMinY() + m_World->GetMaxY()) * 0.5f;
+    m_Camera.SetPosition(Vector3D(centerX, centerY, 0.0f));
+    m_Camera.Update();
 
     Log::Info("Camera projection set to world bounds.");
 
+    //Textures
     auto playerTex = ResourceManager::GetInstance().LoadTexture("assets/textures/test.png");
     auto tileTex = ResourceManager::GetInstance().LoadTexture("assets/textures/tile.png");
     if (!playerTex || !tileTex){
@@ -51,46 +57,56 @@ void Demo2DFixedScene::SetupScene(){
                                                     Vector3D(3.0f, 3.0f, 1.0f),
                                                     playerTex);
 
+    //Below are platform entities
+    //CreateSpriteEntity: (Position(x,y,z), Scale(x,y,z), texture)
+
     //Left Wall
-    auto left_wall = m_ECSScene->CreateSpriteEntity(Vector3D(m_World->GetMinX() + 0.25f, 0.0f, 0.0f),
+    auto left_wall = m_ECSScene->CreateSpriteEntity(Vector3D(m_World->GetMinX() + 0.50f, 0.0f, 0.0f),
                                                     Vector3D(1.0f, m_World->GetMaxY() - m_World->GetMinY(), 1.0f),
                                                     wallTex);
     m_PlatformEntities.push_back(left_wall);
+    m_ECSScene->GetRegistry().emplace<TileScale>(left_wall, 1.0f, 20.0f);
 
     //Right Wall
-    auto rgt_wall = m_ECSScene->CreateSpriteEntity(Vector3D(m_World->GetMaxX() - 0.25f, 0.0f, 0.0f),
+    auto rgt_wall = m_ECSScene->CreateSpriteEntity(Vector3D(m_World->GetMaxX() - 0.50f, 0.0f, 0.0f),
                                                    Vector3D(1.0f, m_World->GetMaxY() - m_World->GetMinY(), 1.0f),
                                                    wallTex);
     m_PlatformEntities.push_back(rgt_wall);
+    m_ECSScene->GetRegistry().emplace<TileScale>(rgt_wall, 1.0f, 20.0f);
 
     //Ceiling
-    auto ceiling = m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, m_World->GetMaxY() - 0.25f, 0.0f),
+    auto ceiling = m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, m_World->GetMaxY() - 0.50f, 0.0f),
                                                   Vector3D(m_World->GetMaxX() - m_World->GetMinX(), 1.0f, 1.0f),
                                                   wallTex);
     m_PlatformEntities.push_back(ceiling);
+    m_ECSScene->GetRegistry().emplace<TileScale>(ceiling, 39.0f, 1.0f);
 
     //Floor
-    auto plt_floor = m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, m_World->GetMinY() + 1.25f, 0.0f),
+    auto plt_floor = m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, m_World->GetMinY() + 0.50f, 0.0f),
                                                     Vector3D(m_World->GetMaxX() - m_World->GetMinX(), 1.0f, 1.0f),
                                                     tileTex);
     m_PlatformEntities.push_back(plt_floor);
+    m_ECSScene->GetRegistry().emplace<TileScale>(plt_floor, 39.0f, 1.0f);
 
     //Floating Platform
     auto plt_float1 = m_ECSScene->CreateSpriteEntity(Vector3D(-8.0f, -3.0f, 0.0f),
                                                      Vector3D(4.0f, 1.0f, 1.0f),
                                                      tileTex);
     m_PlatformEntities.push_back(plt_float1);
+    m_ECSScene->GetRegistry().emplace<TileScale>(plt_float1, 4.0f, 1.0f);
 
     auto plt_float2 = m_ECSScene->CreateSpriteEntity(Vector3D(8.0f, -3.0f, 0.0f),
                                                      Vector3D(4.0f, 1.0f, 1.0f),
                                                      tileTex);
     m_PlatformEntities.push_back(plt_float2);
+    m_ECSScene->GetRegistry().emplace<TileScale>(plt_float2, 4.0f, 1.0f);
 
     //Central platform
     auto plt_floatcenter = m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, 2.0f, 0.0f),
-                                                          Vector3D(6.0f, 1.0f, 1.0f),
+                                                          Vector3D(8.0f, 1.0f, 1.0f),
                                                           tileTex);
     m_PlatformEntities.push_back(plt_floatcenter);
+    m_ECSScene->GetRegistry().emplace<TileScale>(plt_floatcenter, 8.0f, 1.0f);
 
     SpawnEnemies();
 
@@ -126,13 +142,23 @@ void Demo2DFixedScene::Update(float deltaTime){
     }
 
     m_FpsCounter->Update();
-    m_ECSScene->Update(deltaTime);
+    //m_ECSScene->Update(deltaTime);
     Log::InfoThrottled(std::format("Player: ({:.2f}, {:.2f})", transform.Position.x, transform.Position.y),
                        "player_pos", 2.0f);
 }
 
 void Demo2DFixedScene::Render(){
-    m_ECSScene->Render(m_ViewMatrix, m_ProjectionMatrix);
+    const Matrix4& view = m_Camera.GetViewMatrix();
+    const Matrix4& projection = m_Camera.GetProjectionMatrix();
+
+    Log::InfoThrottled(std::format("View[12]={}, View[13]={}",
+                                   view.Data()[12], view.Data()[13]), "view_pos", 2.0f);
+    Log::InfoThrottled(std::format("Proj[0]={}, Proj[5]={}, Proj[12]={}, Proj[13]={}",
+                                   projection.Data()[0], projection.Data()[5],
+                                   projection.Data()[12], projection.Data()[13]), "proj_debug", 2.0f);
+
+    m_ECSScene->Render(view, projection);
+    m_World->Render(m_LineShader, view, projection);
 }
 
 void Demo2DFixedScene::ResolveCollisions(){

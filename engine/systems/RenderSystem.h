@@ -2,6 +2,7 @@
 
 #include "components/Transform.h"
 #include "components/SpriteRenderer.h"
+#include "components/TileScale.h"
 #include "diagnostics/Log.h"
 #include "graphics/Shader.h"
 #include "graphics/VertexArray.h"
@@ -18,8 +19,11 @@
  * and a SpriteRenderer (texture) component, calculates the model matrix, and
  * calls the Renderer to draw each entity.
  *
+ * Entities with a TileScale component use its value; entities without TileScale
+ * default to 1.0f (no repetition, texture stretches to fill the quad).
+ *
  * @note This system should be called once per frame from the scene's Render() method.
- * @see Transform, SpriteRenderer, Renderer
+ * @see Transform, SpriteRenderer, TileScale, Renderer
  */
 class RenderSystem{
 public:
@@ -63,8 +67,16 @@ public:
             //Log::Info(std::format("[RenderSystem] Model[0]={}, Model[5]={}",
                                   //model.Data()[0], model.Data()[5]));
 
-            float tileScale = 1.0f;
-            Renderer::DrawTexturedQuad(shader, va, ib, *sprite.Texture, model, view, projection, tileScale);
+            float tileScaleX = 1.0f;
+            float tileScaleY = 1.0f;
+
+            if (registry.all_of<TileScale>(entity)){
+                const auto& ts = registry.get<TileScale>(entity);
+                tileScaleX = ts.ScaleX;
+                tileScaleY = ts.ScaleY;
+            }
+
+            Renderer::DrawTexturedQuad(shader, va, ib, *sprite.Texture, model, view, projection, tileScaleX, tileScaleY);
             }
         }
 };

@@ -14,7 +14,8 @@
 
 class Demo2DFixedScene : public Scene{
 public:
-    Demo2DFixedScene(Shader& shader, VertexArray& va, IndexBuffer& ib);
+    Demo2DFixedScene(Shader& shader, VertexArray& va, IndexBuffer& ib,
+                     Camera2D& camera, Shader& lineShader);
     ~Demo2DFixedScene();
 
     void OnEnter() override;
@@ -28,8 +29,8 @@ private:
     VertexArray& m_VertexArray;
     IndexBuffer& m_IndexBuffer;
 
-    Matrix4 m_ViewMatrix;
-    Matrix4 m_ProjectionMatrix;
+    Camera2D& m_Camera;
+    Shader& m_LineShader;
 
     std::unique_ptr<ECSScene> m_ECSScene;
     std::unique_ptr<GameWorld> m_World;

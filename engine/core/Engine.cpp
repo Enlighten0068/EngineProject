@@ -22,7 +22,7 @@ Engine::~Engine(){
  *
  * @return true if successful, false otherwise.
  */
-bool Engine::Initialize(const char* title, int width, int height){
+bool Engine::Initialize(const char* title, int width, int height, bool fullscreen){
     Log::Info("Engine: Initializing SDL3 runtime and window.");
 
     if (SDL_Init(SDL_INIT_VIDEO) < 0){
@@ -30,7 +30,7 @@ bool Engine::Initialize(const char* title, int width, int height){
         return false;
     }
 
-    if (!m_Window.Create(title, width, height)){
+    if (!m_Window.Create(title, width, height, fullscreen)){
         SDL_Quit();
         return false;
     }

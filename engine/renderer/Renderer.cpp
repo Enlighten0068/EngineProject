@@ -40,17 +40,18 @@ void Renderer::DrawQuad(Shader& shader, VertexArray& vertexArray, IndexBuffer& i
  * @param model The model matrix (position, rotation, scale).
  * @param view The view matrix (camera position).
  * @param projection The projection matrix (orthographic or perspective).
- * @param tileScale The texture tile scale (number of repetitions per unit).
+ * @param tileScaleX Number of texture repetitions along the X axis.
+ * @param tileScaleY Number of texture repetitions along the Y axis.
  */
 void Renderer::DrawTexturedQuad(Shader& shader, VertexArray& vertexArray, IndexBuffer& indexBuffer, Texture2D& texture,
-                                const Matrix4& model, const Matrix4& view, const Matrix4& projection, float tileScale){
+                                const Matrix4& model, const Matrix4& view, const Matrix4& projection, float tileScaleX, float tileScaleY){
     shader.Bind();
     texture.Bind();
 
     shader.SetUniformMat4("u_Model", model);
     shader.SetUniformMat4("u_View", view);
     shader.SetUniformMat4("u_Projection", projection);
-    shader.SetUniformFloat("u_TileScale", tileScale);
+    shader.SetUniformVec2("u_TileScale", tileScaleX, tileScaleY);
 
     //For testing purposes
     /*GLint projLoc = glGetUniformLocation(shader.GetRendererID(), "u_Projection");

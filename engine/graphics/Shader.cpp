@@ -128,3 +128,38 @@ void Shader::SetUniformFloat(const std::string& name, float value) const{
     if (location != -1) glUniform1f(location, value);
 
 }
+
+
+void Shader::SetUniformFloat3(const std::string& name, float x, float y, float z) const{
+    GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+    if (location != -1) glUniform3f(location, x, y, z);
+}
+
+void Shader::SetUniformFloat3(const std::string& name, const Vector3D& value) const{
+    SetUniformFloat3(name, value.x, value.y, value.z);
+}
+
+/**
+ * @brief Sets a 2D vector uniform (two floats).
+ *
+ * If the uniform is not found, the call is silently ignored.
+ *
+ * @param name Uniform name in the shader.
+ * @param x X component of the vector.
+ * @param y Y component of the vector.
+ */
+void Shader::SetUniformVec2(const std::string& name, float x, float y) const{
+    GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+    if (location != -1){
+        glUniform2f(location, x, y);
+    }
+}
+
+/**
+ * @brief Sets a 2D vector uniform from a Vector2D.
+ * @param name Uniform name in the shader.
+ * @param value Vector2D value to set.
+ */
+void Shader::SetUniformVec2(const std::string& name, const Vector2D& value) const{
+    SetUniformVec2(name, value.x, value.y);
+}
