@@ -9,6 +9,7 @@
  * in GPU memory.
  *
  * @note The buffer is created with GL_STATIC_DRAW usage.
+ * @see VertexArray
  */
 class VertexBuffer{
 public:
@@ -32,5 +33,5 @@ public:
     void Unbind() const;
 
 private:
-    uint32_t m_RendererID;
+    uint32_t m_RendererID; //OpenGL VBO ID
 };

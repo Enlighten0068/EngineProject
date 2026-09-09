@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Texture2D_8h" kind="file" language="C++">
+    <compoundname>Texture2D.h</compoundname>
+    <includes local="no">SDL3/SDL.h</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="no">string</includes>
+    <includedby refid="SpriteRenderer_8h" local="yes">engine/components/SpriteRenderer.h</includedby>
+    <includedby refid="Application_8cpp" local="yes">engine/core/Application.cpp</includedby>
+    <includedby refid="Application_8h" local="yes">engine/core/Application.h</includedby>
+    <includedby refid="Texture2D_8cpp" local="yes">engine/graphics/Texture2D.cpp</includedby>
+    <includedby refid="Renderer_8cpp" local="yes">engine/renderer/Renderer.cpp</includedby>
+    <includedby refid="ResourceManager_8h" local="yes">engine/resources/ResourceManager.h</includedby>
+    <includedby refid="ECSScene_8h" local="yes">engine/scene/ECSScene.h</includedby>
+    <includedby refid="GameObject_8h" local="yes">engine/scene/GameObject.h</includedby>
+    <includedby refid="MenuScene_8cpp" local="yes">engine/scene/MenuScene.cpp</includedby>
+    <includedby refid="MenuScene_8h" local="yes">engine/scene/MenuScene.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/graphics/Texture2D.h</label>
+        <link refid="Texture2D_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/components/SpriteRenderer.h</label>
+        <link refid="SpriteRenderer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5">
+        <label>engine/core/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>engine/core/Time.cpp</label>
+        <link refid="Time_8cpp"/>
+      </node>
+      <node id="9">
+        <label>engine/demo/Demo2DFixedScene.cpp</label>
+        <link refid="Demo2DFixedScene_8cpp"/>
+      </node>
+      <node id="8">
+        <label>engine/demo/Demo2DFixedScene.h</label>
+        <link refid="Demo2DFixedScene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>engine/demo/Demo2DScene.cpp</label>
+        <link refid="Demo2DScene_8cpp"/>
+      </node>
+      <node id="11">
+        <label>engine/demo/Demo2DScene.h</label>
+        <link refid="Demo2DScene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>engine/graphics/Texture2D.cpp</label>
+        <link refid="Texture2D_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/graphics/Texture2D.h</label>
+        <link refid="Texture2D_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>engine/renderer/Renderer.cpp</label>
+        <link refid="Renderer_8cpp"/>
+      </node>
+      <node id="19">
+        <label>engine/resources/ResourceManager.cpp</label>
+        <link refid="ResourceManager_8cpp"/>
+      </node>
+      <node id="18">
+        <label>engine/resources/ResourceManager.h</label>
+        <link refid="ResourceManager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>engine/scene/ECSScene.cpp</label>
+        <link refid="ECSScene_8cpp"/>
+      </node>
+      <node id="4">
+        <label>engine/scene/ECSScene.h</label>
+        <link refid="ECSScene_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>engine/scene/GameObject.cpp</label>
+        <link refid="GameObject_8cpp"/>
+      </node>
+      <node id="20">
+        <label>engine/scene/GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>engine/scene/MenuScene.cpp</label>
+        <link refid="MenuScene_8cpp"/>
+      </node>
+      <node id="22">
+        <label>engine/scene/MenuScene.h</label>
+        <link refid="MenuScene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>engine/systems/EnemySystem.h</label>
+        <link refid="EnemySystem_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>engine/systems/RenderSystem.h</label>
+        <link refid="RenderSystem_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classTexture2D" prot="public">Texture2D</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL3/SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="classTexture2D" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classTexture2D_1ab62c7c5172a4800b4629cd475147819d" kindref="member">Texture2D</ref>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTexture2D_1ab62c7c5172a4800b4629cd475147819d" kindref="member">Texture2D</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTexture2D_1ab62c7c5172a4800b4629cd475147819d" kindref="member">~Texture2D</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classTexture2D_1ac70d133f5d75f03b471c6107d5f27ee1" kindref="member">Load</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filepath);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classTexture2D_1a185324994184bca2479fbbc1fcb7f5ec" kindref="member">LoadFromSurface</ref>(SDL_Surface*<sp/>surface);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTexture2D_1ae3aec86ebdc50bf233eef52668a029ce" kindref="member">Bind</ref>(uint32_t<sp/>slot<sp/>=<sp/>0)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTexture2D_1a9758668e9a0a0810bc03195a65497426" kindref="member">Unbind</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Getters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classTexture2D_1adc9c5c07e3715910107e817283262564" kindref="member">GetWidth</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classTexture2D_1a83d2555038cf0390415adf558629c176" kindref="member">GetHeight</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classTexture2D_1adfa893526e2b5378b22c74387bf43491" kindref="member">GetChannels</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57" refid="classTexture2D_1af877ad4b2d68d7e39ba2799bf345ab1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="classTexture2D_1af877ad4b2d68d7e39ba2799bf345ab1e" kindref="member">GetRendererID</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classTexture2D_1a08bc9aed013a941384db82972b91704c" kindref="member">m_RendererID</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="60" refid="classTexture2D_1a08bc9aed013a941384db82972b91704c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="classTexture2D_1a08bc9aed013a941384db82972b91704c" kindref="member">m_RendererID</ref>;<sp/></highlight><highlight class="comment">//OpenGL<sp/>texture<sp/>ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classTexture2D_1a72fb2ef7cf77006a4860ef1700036e96" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classTexture2D_1a72fb2ef7cf77006a4860ef1700036e96" kindref="member">m_Width</ref>;<sp/></highlight><highlight class="comment">//Texture<sp/>width<sp/>in<sp/>pixels</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classTexture2D_1a50e9da52d931a0f9c9ace3ccb646292b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classTexture2D_1a50e9da52d931a0f9c9ace3ccb646292b" kindref="member">m_Height</ref>;<sp/></highlight><highlight class="comment">//Texture<sp/>height<sp/>in<sp/>pixels</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classTexture2D_1a9003e6b742c84c9a34a8516cda4b9412" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classTexture2D_1a9003e6b742c84c9a34a8516cda4b9412" kindref="member">m_Channels</ref>;<sp/></highlight><highlight class="comment">//Number<sp/>of<sp/>color<sp/>channels<sp/>(3<sp/>=<sp/>RGB,<sp/>4<sp/>=<sp/>RGBA)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/graphics/Texture2D.h"/>
+  </compounddef>
+</doxygen>

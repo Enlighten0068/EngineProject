@@ -1,0 +1,49 @@
+\doxysection{Scene\+Manager.\+cpp}
+\hypertarget{SceneManager_8cpp_source}{}\label{SceneManager_8cpp_source}\index{engine/scene/SceneManager.cpp@{engine/scene/SceneManager.cpp}}
+\doxymbox{\hyperlink{SceneManager_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{SceneManager_8h}{scene/SceneManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00008}\doxymbox{\hyperlink{classSceneManager_ae0003097b2a7ccd3f63758fcf8734bfd}{00008}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSceneManager_ae0003097b2a7ccd3f63758fcf8734bfd}{SceneManager::SetScene}}(std::unique\_ptr<Scene>\ scene)\{}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{comment}{//Exit\ and\ remove\ current\ scene}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.empty())\{}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.top()-\/>OnExit();}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.pop();}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//Enter\ and\ push\ new\ scene}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}(scene)\{}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ scene-\/>OnEnter();}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.push(std::move(scene));}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Scene\ set:\ "{}}\ +\ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.top()-\/>GetName());}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00027}\doxymbox{\hyperlink{classSceneManager_a41636a6ebf257eaa823c4af31e71e4c2}{00027}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSceneManager_a41636a6ebf257eaa823c4af31e71e4c2}{SceneManager::PushScene}}(std::unique\_ptr<Scene>\ scene)\{}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}(scene)\{}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ scene-\/>OnEnter();}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.push(std::move(scene));}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Scene\ pushed:\ "{}}\ +\ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.top()-\/>GetName());}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00038}\doxymbox{\hyperlink{classSceneManager_a5a3440850e459813d5d05fd85f2344b2}{00038}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSceneManager_a5a3440850e459813d5d05fd85f2344b2}{SceneManager::PopScene}}()\{}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.size()\ >\ 1)\{}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.top()-\/>OnExit();}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.pop();}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Scene\ popped.\ Current:\ "{}}\ +\ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.top()-\/>GetName());}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00043}00043\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a5a5a1c297ed72ab2f850d0d01ae00aaa}{Log::Warning}}(\textcolor{stringliteral}{"{}Cannot\ pop\ the\ last\ scene."{}});}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00052}\doxymbox{\hyperlink{classSceneManager_adbede64d5706507e65f0e9dd0eaddd6b}{00052}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSceneManager_adbede64d5706507e65f0e9dd0eaddd6b}{SceneManager::Update}}(\textcolor{keywordtype}{float}\ deltaTime)\{}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.empty())\ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.top()-\/>Update(deltaTime);}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00059}\doxymbox{\hyperlink{classSceneManager_a61329955734e0c8a67796ef2b041b5a2}{00059}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSceneManager_a61329955734e0c8a67796ef2b041b5a2}{SceneManager::Render}}()\{}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.empty())\ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\_SceneStack}}.top()-\/>Render();}
+\DoxyCodeLine{\Hypertarget{SceneManager_8cpp_source_l00061}00061\ \}}
+
+\end{DoxyCode}

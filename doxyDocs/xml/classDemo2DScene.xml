@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classDemo2DScene" kind="class" language="C++" prot="public">
+    <compoundname>Demo2DScene</compoundname>
+    <basecompoundref refid="classScene" prot="public" virt="non-virtual">Scene</basecompoundref>
+    <includes refid="Demo2DScene_8h" local="no">Demo2DScene.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDemo2DScene_1ac0fb2242739ad3f82ed75d227e9345a8" prot="private" static="no" mutable="no">
+        <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader&amp; Demo2DScene::m_Shader</definition>
+        <argsstring></argsstring>
+        <name>m_Shader</name>
+        <qualifiedname>Demo2DScene::m_Shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="41" column="12" bodyfile="engine/demo/Demo2DScene.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DScene_1a1df48e8d11e82a73fe80fbeaf8baa865" prot="private" static="no" mutable="no">
+        <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+        <definition>VertexArray&amp; Demo2DScene::m_VertexArray</definition>
+        <argsstring></argsstring>
+        <name>m_VertexArray</name>
+        <qualifiedname>Demo2DScene::m_VertexArray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="42" column="17" bodyfile="engine/demo/Demo2DScene.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DScene_1a21e4a1ff58a2078dca4e3960cd711ee1" prot="private" static="no" mutable="no">
+        <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+        <definition>IndexBuffer&amp; Demo2DScene::m_IndexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_IndexBuffer</name>
+        <qualifiedname>Demo2DScene::m_IndexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="43" column="17" bodyfile="engine/demo/Demo2DScene.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DScene_1adabb5c6e7c667fb73f4e7f658ac16bc1" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classECSScene" kindref="compound">ECSScene</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ECSScene&gt; Demo2DScene::m_ECSScene</definition>
+        <argsstring></argsstring>
+        <name>m_ECSScene</name>
+        <qualifiedname>Demo2DScene::m_ECSScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="45" column="21" bodyfile="engine/demo/Demo2DScene.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DScene_1a7c3d302fcd9a919f137373c18a37117e" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classGameWorld" kindref="compound">GameWorld</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GameWorld&gt; Demo2DScene::m_World</definition>
+        <argsstring></argsstring>
+        <name>m_World</name>
+        <qualifiedname>Demo2DScene::m_World</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="46" column="21" bodyfile="engine/demo/Demo2DScene.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DScene_1aef6643910216af035868027d99a24b82" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classCamera2D" kindref="compound">Camera2D</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Camera2D&gt; Demo2DScene::m_Camera</definition>
+        <argsstring></argsstring>
+        <name>m_Camera</name>
+        <qualifiedname>Demo2DScene::m_Camera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="47" column="21" bodyfile="engine/demo/Demo2DScene.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DScene_1ac2db1d3e28993e56e7e8dc23646afd07" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classCameraController" kindref="compound">CameraController</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;CameraController&gt; Demo2DScene::m_CameraController</definition>
+        <argsstring></argsstring>
+        <name>m_CameraController</name>
+        <qualifiedname>Demo2DScene::m_CameraController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="48" column="21" bodyfile="engine/demo/Demo2DScene.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DScene_1ad0106d2bb23c26d650934ed6d6bb444b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classPlayerController" kindref="compound">PlayerController</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;PlayerController&gt; Demo2DScene::m_PlayerController</definition>
+        <argsstring></argsstring>
+        <name>m_PlayerController</name>
+        <qualifiedname>Demo2DScene::m_PlayerController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="49" column="21" bodyfile="engine/demo/Demo2DScene.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DScene_1aeb9849fda70cb52780bc4db9eae68a24" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classFpsCounter" kindref="compound">FpsCounter</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;FpsCounter&gt; Demo2DScene::m_FpsCounter</definition>
+        <argsstring></argsstring>
+        <name>m_FpsCounter</name>
+        <qualifiedname>Demo2DScene::m_FpsCounter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="51" column="21" bodyfile="engine/demo/Demo2DScene.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DScene_1a1a61e61b8e799326f91368f32f765f2a" prot="private" static="no" mutable="no">
+        <type>entt::entity</type>
+        <definition>entt::entity Demo2DScene::m_PlayerEntity</definition>
+        <argsstring></argsstring>
+        <name>m_PlayerEntity</name>
+        <qualifiedname>Demo2DScene::m_PlayerEntity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="52" column="18" bodyfile="engine/demo/Demo2DScene.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DScene_1a63f635c31e07444a4d0f83bfb7f3d410" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; entt::entity &gt;</type>
+        <definition>std::vector&lt;entt::entity&gt; Demo2DScene::m_PlatformEntities</definition>
+        <argsstring></argsstring>
+        <name>m_PlatformEntities</name>
+        <qualifiedname>Demo2DScene::m_PlatformEntities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="54" column="17" bodyfile="engine/demo/Demo2DScene.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDemo2DScene_1add40385f9fe2a12d44b8a02336a8ea2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Demo2DScene::Demo2DScene</definition>
+        <argsstring>(Shader &amp;shader, VertexArray &amp;va, IndexBuffer &amp;ib)</argsstring>
+        <name>Demo2DScene</name>
+        <qualifiedname>Demo2DScene::Demo2DScene</qualifiedname>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+          <declname>va</declname>
+        </param>
+        <param>
+          <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+          <declname>ib</declname>
+        </param>
+        <briefdescription>
+<para>Constructs the demo scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the main shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>va</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the vertex array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ib</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the index buffer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="31" column="5" bodyfile="engine/demo/Demo2DScene.cpp" bodystart="8" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DScene_1a7cd67f927980cb296ba9b3148fad4ef2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Demo2DScene::~Demo2DScene</definition>
+        <argsstring>()</argsstring>
+        <name>~Demo2DScene</name>
+        <qualifiedname>Demo2DScene::~Demo2DScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="32" column="5" bodyfile="engine/demo/Demo2DScene.cpp" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DScene_1a8ffa82c6772da7121ff4d812d9d1c1e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Demo2DScene::OnEnter</definition>
+        <argsstring>() override</argsstring>
+        <name>OnEnter</name>
+        <qualifiedname>Demo2DScene::OnEnter</qualifiedname>
+        <reimplements refid="classScene_1ad09d42329f52df55fad0467cd092c9aa">OnEnter</reimplements>
+        <briefdescription>
+<para>Called when the scene becomes active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the clear color, sets up the scene with all entities, and logs the scene entry. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="34" column="10" bodyfile="engine/demo/Demo2DScene.cpp" bodystart="19" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DScene_1afce546436c8328555a6c548dcb3a9d90" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Demo2DScene::OnExit</definition>
+        <argsstring>() override</argsstring>
+        <name>OnExit</name>
+        <qualifiedname>Demo2DScene::OnExit</qualifiedname>
+        <reimplements refid="classScene_1a9824fefa923e5a9db4dca5a23343609b">OnExit</reimplements>
+        <briefdescription>
+<para>Called when the scene is exited. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases all resources used by the scene. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="35" column="10" bodyfile="engine/demo/Demo2DScene.cpp" bodystart="31" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DScene_1a960e0d534e6e05bda39f3d9eaaf30deb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Demo2DScene::Update</definition>
+        <argsstring>(float deltaTime) override</argsstring>
+        <name>Update</name>
+        <qualifiedname>Demo2DScene::Update</qualifiedname>
+        <reimplements refid="classScene_1aaede6346f58776bd40efffd55885ab02">Update</reimplements>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+<para>Updates the scene logic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classTime" kindref="compound">Time</ref> elapsed since the last frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="36" column="10" bodyfile="engine/demo/Demo2DScene.cpp" bodystart="138" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DScene_1aa04f40209bc6b113df30f9dcf03bd80c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Demo2DScene::Render</definition>
+        <argsstring>() override</argsstring>
+        <name>Render</name>
+        <qualifiedname>Demo2DScene::Render</qualifiedname>
+        <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
+        <briefdescription>
+<para>Renders the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Renders all entities in the ECS scene. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="37" column="10" bodyfile="engine/demo/Demo2DScene.cpp" bodystart="163" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DScene_1aa6caae608302b160ef184473e1ef0219" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Demo2DScene::GetName</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetName</name>
+        <qualifiedname>Demo2DScene::GetName</qualifiedname>
+        <reimplements refid="classScene_1ad93511100250c3f3ed736b9ed69fdc6f">GetName</reimplements>
+        <briefdescription>
+<para>Gets the name of the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>String containing the scene name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="38" column="17" bodyfile="engine/demo/Demo2DScene.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDemo2DScene_1aac72f489fe5514f29e315acfd7851a06" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Demo2DScene::ResolveCollisions</definition>
+        <argsstring>()</argsstring>
+        <name>ResolveCollisions</name>
+        <qualifiedname>Demo2DScene::ResolveCollisions</qualifiedname>
+        <briefdescription>
+<para>Resolves collisions between the player and platforms. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs AABB collision detection and resolution between the player and all platform entities. Updates the player&apos;s grounded state. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="56" column="10" bodyfile="engine/demo/Demo2DScene.cpp" bodystart="176" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DScene_1af7cdfcef2f6bede3ffe930dba96f4812" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Demo2DScene::SetupScene</definition>
+        <argsstring>()</argsstring>
+        <name>SetupScene</name>
+        <qualifiedname>Demo2DScene::SetupScene</qualifiedname>
+        <briefdescription>
+<para>Sets up the scene with all entities. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates the ECS scene, world, camera, player, and platforms. Initializes the player controller, camera controller, and FPS counter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DScene.h" line="57" column="10" bodyfile="engine/demo/Demo2DScene.cpp" bodystart="47" bodyend="132"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Demo 2D <ref refid="classScene" kindref="compound">Scene</ref> with a dynamic camera that follows the player. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This scene features a camera that follows the player entity, making it suitable for larger levels where the player can move beyond the screen. It includes platform collision and player movement mechanics.</para>
+<para><simplesect kind="note"><para>This scene does not include enemies (unlike <ref refid="classDemo2DFixedScene" kindref="compound">Demo2DFixedScene</ref>). </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDemo2DFixedScene" kindref="compound">Demo2DFixedScene</ref>, <ref refid="classPlayerController" kindref="compound">PlayerController</ref>, <ref refid="classCameraController" kindref="compound">CameraController</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Demo2DScene</label>
+        <link refid="classDemo2DScene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Demo2DScene</label>
+        <link refid="classDemo2DScene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_Shader</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>-m_VertexArray</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-m_IndexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IndexBuffer</label>
+        <link refid="classIndexBuffer"/>
+      </node>
+      <node id="2">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="3">
+        <label>Shader</label>
+        <link refid="classShader"/>
+      </node>
+      <node id="4">
+        <label>VertexArray</label>
+        <link refid="classVertexArray"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/demo/Demo2DScene.h" line="23" column="1" bodyfile="engine/demo/Demo2DScene.h" bodystart="23" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classDemo2DScene_1add40385f9fe2a12d44b8a02336a8ea2a" prot="public" virt="non-virtual"><scope>Demo2DScene</scope><name>Demo2DScene</name></member>
+      <member refid="classDemo2DScene_1aa6caae608302b160ef184473e1ef0219" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>GetName</name></member>
+      <member refid="classDemo2DScene_1aef6643910216af035868027d99a24b82" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_Camera</name></member>
+      <member refid="classDemo2DScene_1ac2db1d3e28993e56e7e8dc23646afd07" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_CameraController</name></member>
+      <member refid="classDemo2DScene_1adabb5c6e7c667fb73f4e7f658ac16bc1" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_ECSScene</name></member>
+      <member refid="classDemo2DScene_1aeb9849fda70cb52780bc4db9eae68a24" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_FpsCounter</name></member>
+      <member refid="classDemo2DScene_1a21e4a1ff58a2078dca4e3960cd711ee1" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_IndexBuffer</name></member>
+      <member refid="classDemo2DScene_1a63f635c31e07444a4d0f83bfb7f3d410" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_PlatformEntities</name></member>
+      <member refid="classDemo2DScene_1ad0106d2bb23c26d650934ed6d6bb444b" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_PlayerController</name></member>
+      <member refid="classDemo2DScene_1a1a61e61b8e799326f91368f32f765f2a" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_PlayerEntity</name></member>
+      <member refid="classDemo2DScene_1ac0fb2242739ad3f82ed75d227e9345a8" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_Shader</name></member>
+      <member refid="classDemo2DScene_1a1df48e8d11e82a73fe80fbeaf8baa865" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_VertexArray</name></member>
+      <member refid="classDemo2DScene_1a7c3d302fcd9a919f137373c18a37117e" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_World</name></member>
+      <member refid="classDemo2DScene_1a8ffa82c6772da7121ff4d812d9d1c1e5" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>OnEnter</name></member>
+      <member refid="classDemo2DScene_1afce546436c8328555a6c548dcb3a9d90" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>OnExit</name></member>
+      <member refid="classDemo2DScene_1aa04f40209bc6b113df30f9dcf03bd80c" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>Render</name></member>
+      <member refid="classDemo2DScene_1aac72f489fe5514f29e315acfd7851a06" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>ResolveCollisions</name></member>
+      <member refid="classDemo2DScene_1af7cdfcef2f6bede3ffe930dba96f4812" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>SetupScene</name></member>
+      <member refid="classDemo2DScene_1a960e0d534e6e05bda39f3d9eaaf30deb" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>Update</name></member>
+      <member refid="classDemo2DScene_1a7cd67f927980cb296ba9b3148fad4ef2" prot="public" virt="non-virtual"><scope>Demo2DScene</scope><name>~Demo2DScene</name></member>
+      <member refid="classScene_1af6e09d91ebd10ae9cc7c12c39d06386c" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

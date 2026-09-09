@@ -14,8 +14,8 @@ namespace Components{
      * @see SpriteRenderer, PhysicsBody, RenderSystem
      */
     struct Transform{
-        Vector3D Position{0.0f, 0.0f, 0.0f}; //World position in 3D space, if 2D Z is depth
-        Vector3D Rotation{0.0f, 0.0f, 0.0f}; //Tait-Bryan angles in radians
-        Vector3D Scale{1.0f, 1.0f, 1.0f}; //Scaling
+        Vector3D Position{0.0f, 0.0f, 0.0f}; //World position in 3D space (Z is depth in 2D)
+        Vector3D Rotation{0.0f, 0.0f, 0.0f}; //Euler angles in radians (Tait-Bryan)
+        Vector3D Scale{1.0f, 1.0f, 1.0f}; //Scale factors along each axis
     };
 }

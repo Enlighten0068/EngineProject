@@ -1,0 +1,3 @@
+<map id="RenderSystem" name="RenderSystem">
+<area shape="rect" id="Node000001" title="System that renders all entities with Transform and SpriteRenderer components." alt="" coords="5,5,111,78"/>
+</map>

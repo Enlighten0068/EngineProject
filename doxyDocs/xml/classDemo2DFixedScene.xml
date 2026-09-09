@@ -1,0 +1,607 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classDemo2DFixedScene" kind="class" language="C++" prot="public">
+    <compoundname>Demo2DFixedScene</compoundname>
+    <basecompoundref refid="classScene" prot="public" virt="non-virtual">Scene</basecompoundref>
+    <includes refid="Demo2DFixedScene_8h" local="no">Demo2DFixedScene.h</includes>
+    <innerclass refid="structDemo2DFixedScene_1_1EnemyDefinition" prot="private">Demo2DFixedScene::EnemyDefinition</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDemo2DFixedScene_1a72eb5c39b6d923aef977f431e0988b8a" prot="private" static="no" mutable="no">
+        <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader&amp; Demo2DFixedScene::m_Shader</definition>
+        <argsstring></argsstring>
+        <name>m_Shader</name>
+        <qualifiedname>Demo2DFixedScene::m_Shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="70" column="12" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1a77804f6fb699219b0143b0b8f001a8c4" prot="private" static="no" mutable="no">
+        <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+        <definition>VertexArray&amp; Demo2DFixedScene::m_VertexArray</definition>
+        <argsstring></argsstring>
+        <name>m_VertexArray</name>
+        <qualifiedname>Demo2DFixedScene::m_VertexArray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="71" column="17" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1a2ced53f08d393097dbcc9d3626aa2067" prot="private" static="no" mutable="no">
+        <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+        <definition>IndexBuffer&amp; Demo2DFixedScene::m_IndexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_IndexBuffer</name>
+        <qualifiedname>Demo2DFixedScene::m_IndexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="72" column="17" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1a3ab92e6d343904b8e4b28e017fa46b9f" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera2D" kindref="compound">Camera2D</ref> &amp;</type>
+        <definition>Camera2D&amp; Demo2DFixedScene::m_Camera</definition>
+        <argsstring></argsstring>
+        <name>m_Camera</name>
+        <qualifiedname>Demo2DFixedScene::m_Camera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="74" column="14" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1a787fa04b8244b3ae73716afc235a5a62" prot="private" static="no" mutable="no">
+        <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader&amp; Demo2DFixedScene::m_LineShader</definition>
+        <argsstring></argsstring>
+        <name>m_LineShader</name>
+        <qualifiedname>Demo2DFixedScene::m_LineShader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="75" column="12" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1abf62eae1501faa926e757267ca05fd24" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classECSScene" kindref="compound">ECSScene</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ECSScene&gt; Demo2DFixedScene::m_ECSScene</definition>
+        <argsstring></argsstring>
+        <name>m_ECSScene</name>
+        <qualifiedname>Demo2DFixedScene::m_ECSScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="77" column="21" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1afbb0d5066454921f90e85a0533374fd3" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classGameWorld" kindref="compound">GameWorld</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GameWorld&gt; Demo2DFixedScene::m_World</definition>
+        <argsstring></argsstring>
+        <name>m_World</name>
+        <qualifiedname>Demo2DFixedScene::m_World</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="78" column="21" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1a3e97beb9d39b2739299f5b69e313a476" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classPlayerController" kindref="compound">PlayerController</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;PlayerController&gt; Demo2DFixedScene::m_PlayerController</definition>
+        <argsstring></argsstring>
+        <name>m_PlayerController</name>
+        <qualifiedname>Demo2DFixedScene::m_PlayerController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="79" column="21" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1a3d03cc75e7581e3c6dd7867a09efc071" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classFpsCounter" kindref="compound">FpsCounter</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;FpsCounter&gt; Demo2DFixedScene::m_FpsCounter</definition>
+        <argsstring></argsstring>
+        <name>m_FpsCounter</name>
+        <qualifiedname>Demo2DFixedScene::m_FpsCounter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="81" column="21" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1ae18f7410197aaf02aa761a54fe3d9dab" prot="private" static="no" mutable="no">
+        <type>entt::entity</type>
+        <definition>entt::entity Demo2DFixedScene::m_PlayerEntity</definition>
+        <argsstring></argsstring>
+        <name>m_PlayerEntity</name>
+        <qualifiedname>Demo2DFixedScene::m_PlayerEntity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="83" column="18" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1ab52acc6df50d92a733ca96c0917f5a63" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; entt::entity &gt;</type>
+        <definition>std::vector&lt;entt::entity&gt; Demo2DFixedScene::m_EnemyEntities</definition>
+        <argsstring></argsstring>
+        <name>m_EnemyEntities</name>
+        <qualifiedname>Demo2DFixedScene::m_EnemyEntities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="84" column="17" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1a372f55e9f96ee108c3b358650b3160a1" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structDemo2DFixedScene_1_1EnemyDefinition" kindref="compound">EnemyDefinition</ref> &gt;</type>
+        <definition>std::vector&lt;EnemyDefinition&gt; Demo2DFixedScene::m_EnemyDefinitions</definition>
+        <argsstring></argsstring>
+        <name>m_EnemyDefinitions</name>
+        <qualifiedname>Demo2DFixedScene::m_EnemyDefinitions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="85" column="17" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDemo2DFixedScene_1a8e149e818044f82568f4fcb0a2375ae0" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; entt::entity &gt;</type>
+        <definition>std::vector&lt;entt::entity&gt; Demo2DFixedScene::m_PlatformEntities</definition>
+        <argsstring></argsstring>
+        <name>m_PlatformEntities</name>
+        <qualifiedname>Demo2DFixedScene::m_PlatformEntities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="86" column="17" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDemo2DFixedScene_1a492ba9953dd92d3b3536c44b1d7c2b2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Demo2DFixedScene::Demo2DFixedScene</definition>
+        <argsstring>(Shader &amp;shader, VertexArray &amp;va, IndexBuffer &amp;ib, Camera2D &amp;camera, Shader &amp;lineShader)</argsstring>
+        <name>Demo2DFixedScene</name>
+        <qualifiedname>Demo2DFixedScene::Demo2DFixedScene</qualifiedname>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+          <declname>va</declname>
+        </param>
+        <param>
+          <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+          <declname>ib</declname>
+        </param>
+        <param>
+          <type><ref refid="classCamera2D" kindref="compound">Camera2D</ref> &amp;</type>
+          <declname>camera</declname>
+        </param>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>lineShader</declname>
+        </param>
+        <briefdescription>
+<para>Constructs the fixed camera demo scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the main shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>va</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the vertex array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ib</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the index buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>camera</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the 2D camera. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lineShader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the line shader for world borders. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="37" column="5" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="10" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DFixedScene_1af4168b94757ca0061d18f058efd2b5cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Demo2DFixedScene::~Demo2DFixedScene</definition>
+        <argsstring>()</argsstring>
+        <name>~Demo2DFixedScene</name>
+        <qualifiedname>Demo2DFixedScene::~Demo2DFixedScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="39" column="5" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DFixedScene_1a1daab876b813800575999e0a5374d899" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Demo2DFixedScene::OnEnter</definition>
+        <argsstring>() override</argsstring>
+        <name>OnEnter</name>
+        <qualifiedname>Demo2DFixedScene::OnEnter</qualifiedname>
+        <reimplements refid="classScene_1ad09d42329f52df55fad0467cd092c9aa">OnEnter</reimplements>
+        <briefdescription>
+<para>Called when the scene becomes active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the clear color, sets up the scene with all entities, and logs the scene entry. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="41" column="10" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="23" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DFixedScene_1a327f00eb5155cd0b30138787babecba2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Demo2DFixedScene::OnExit</definition>
+        <argsstring>() override</argsstring>
+        <name>OnExit</name>
+        <qualifiedname>Demo2DFixedScene::OnExit</qualifiedname>
+        <reimplements refid="classScene_1a9824fefa923e5a9db4dca5a23343609b">OnExit</reimplements>
+        <briefdescription>
+<para>Called when the scene is exited. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases all resources used by the scene. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="42" column="10" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="35" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DFixedScene_1ac626aa848bd8d98054f7d2b21a724ac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Demo2DFixedScene::Update</definition>
+        <argsstring>(float deltaTime) override</argsstring>
+        <name>Update</name>
+        <qualifiedname>Demo2DFixedScene::Update</qualifiedname>
+        <reimplements refid="classScene_1aaede6346f58776bd40efffd55885ab02">Update</reimplements>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+<para>Updates the scene logic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classTime" kindref="compound">Time</ref> elapsed since the last frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="43" column="10" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="147" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DFixedScene_1ad938c557aa7ad055aee8d25171fafad5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Demo2DFixedScene::Render</definition>
+        <argsstring>() override</argsstring>
+        <name>Render</name>
+        <qualifiedname>Demo2DFixedScene::Render</qualifiedname>
+        <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
+        <briefdescription>
+<para>Renders the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Renders all entities and the world borders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="44" column="10" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="191" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DFixedScene_1a67590905026e92be48a1e864db868eb9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Demo2DFixedScene::GetName</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetName</name>
+        <qualifiedname>Demo2DFixedScene::GetName</qualifiedname>
+        <reimplements refid="classScene_1ad93511100250c3f3ed736b9ed69fdc6f">GetName</reimplements>
+        <briefdescription>
+<para>Gets the name of the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>String containing the scene name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="45" column="17" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DFixedScene_1a52b58c77935f74c69ec27e6a48ad9187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Demo2DFixedScene::RespawnEnemies</definition>
+        <argsstring>()</argsstring>
+        <name>RespawnEnemies</name>
+        <qualifiedname>Demo2DFixedScene::RespawnEnemies</qualifiedname>
+        <briefdescription>
+<para>Respawns all enemies in the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Respawns all enemies from their saved definitions.</para>
+<para>On player death, recreates all enemies from their saved definitions, restoring their positions, patrol ranges, and physics state.</para>
+<para>Destroys all current enemy entities and recreates them using the stored definitions. This is called when the player dies. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="53" column="10" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="359" bodyend="376"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDemo2DFixedScene_1abe838d285b6b2bc5277c613b39943d19" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Demo2DFixedScene::ResolveCollisions</definition>
+        <argsstring>()</argsstring>
+        <name>ResolveCollisions</name>
+        <qualifiedname>Demo2DFixedScene::ResolveCollisions</qualifiedname>
+        <briefdescription>
+<para>Resolves collisions between the player and platforms. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs AABB collision detection and resolution between the player and all platform entities. Updates the player&apos;s grounded state. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="88" column="10" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="213" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DFixedScene_1a72b82e82afbbd9c98718549f5c4c3e83" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Demo2DFixedScene::SetupScene</definition>
+        <argsstring>()</argsstring>
+        <name>SetupScene</name>
+        <qualifiedname>Demo2DFixedScene::SetupScene</qualifiedname>
+        <briefdescription>
+<para>Sets up the scene with all entities. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates the ECS scene, world, camera, player, platforms, and enemies. Also initializes the player controller and FPS counter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="89" column="10" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="51" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DFixedScene_1ac513fcf662cef5ea0db8f3c361be058d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Demo2DFixedScene::SpawnEnemies</definition>
+        <argsstring>()</argsstring>
+        <name>SpawnEnemies</name>
+        <qualifiedname>Demo2DFixedScene::SpawnEnemies</qualifiedname>
+        <briefdescription>
+<para>Spawns all enemies in the scene and saves their definitions for respawn. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates enemy entities with Patrol and PhysicsBody components, and stores their definitions in m_EnemyDefinitions for later respawning. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="90" column="10" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="295" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DFixedScene_1ae4c2705e2db95258b513cfe674f9c797" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Demo2DFixedScene::CheckEnemyCollisions</definition>
+        <argsstring>()</argsstring>
+        <name>CheckEnemyCollisions</name>
+        <qualifiedname>Demo2DFixedScene::CheckEnemyCollisions</qualifiedname>
+        <briefdescription>
+<para>Checks collisions between the player and all enemies. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines the direction of collision. If the player is falling (velocity.y &lt; 0) and the collision is from above, the enemy is destroyed (stomp). Otherwise, the player dies. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="91" column="10" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="385" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="classDemo2DFixedScene_1a54aa78702f3655ce33457462b421a94c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Demo2DFixedScene::DestroyEnemy</definition>
+        <argsstring>(entt::entity enemy)</argsstring>
+        <name>DestroyEnemy</name>
+        <qualifiedname>Demo2DFixedScene::DestroyEnemy</qualifiedname>
+        <param>
+          <type>entt::entity</type>
+          <declname>enemy</declname>
+        </param>
+        <briefdescription>
+<para>Destroys an enemy entity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enemy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enemy entity to destroy. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="92" column="10" bodyfile="engine/demo/Demo2DFixedScene.cpp" bodystart="432" bodyend="445"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Demo 2D <ref refid="classScene" kindref="compound">Scene</ref> with a fixed camera and enemy stomping mechanics. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This scene implements Super Mario-style enemy stomping: jumping on top of an enemy destroys it, while touching it from the sides or below kills the player. Enemies respawn when the player dies.</para>
+<para>The camera is fixed to show the entire world, making it suitable for small platformer levels where the whole level is visible on screen.</para>
+<para><simplesect kind="see"><para><ref refid="classDemo2DScene" kindref="compound">Demo2DScene</ref>, <ref refid="classEnemySystem" kindref="compound">EnemySystem</ref>, <ref refid="classPlayerController" kindref="compound">PlayerController</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Demo2DFixedScene</label>
+        <link refid="classDemo2DFixedScene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>Camera2D</label>
+        <link refid="classCamera2D"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>-m_Position</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>-m_ProjectionMatrix</edgelabel>
+          <edgelabel>-m_ViewMatrix</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Demo2DFixedScene</label>
+        <link refid="classDemo2DFixedScene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_LineShader</edgelabel>
+          <edgelabel>-m_Shader</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>-m_VertexArray</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-m_IndexBuffer</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>-m_Camera</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IndexBuffer</label>
+        <link refid="classIndexBuffer"/>
+      </node>
+      <node id="8">
+        <label>Matrix4</label>
+        <link refid="classMatrix4"/>
+      </node>
+      <node id="2">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="3">
+        <label>Shader</label>
+        <link refid="classShader"/>
+      </node>
+      <node id="7">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+      <node id="4">
+        <label>VertexArray</label>
+        <link refid="classVertexArray"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/demo/Demo2DFixedScene.h" line="27" column="1" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="27" bodyend="93"/>
+    <listofallmembers>
+      <member refid="classDemo2DFixedScene_1ae4c2705e2db95258b513cfe674f9c797" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>CheckEnemyCollisions</name></member>
+      <member refid="classDemo2DFixedScene_1a492ba9953dd92d3b3536c44b1d7c2b2f" prot="public" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>Demo2DFixedScene</name></member>
+      <member refid="classDemo2DFixedScene_1a54aa78702f3655ce33457462b421a94c" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>DestroyEnemy</name></member>
+      <member refid="classDemo2DFixedScene_1a67590905026e92be48a1e864db868eb9" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>GetName</name></member>
+      <member refid="classDemo2DFixedScene_1a3ab92e6d343904b8e4b28e017fa46b9f" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_Camera</name></member>
+      <member refid="classDemo2DFixedScene_1abf62eae1501faa926e757267ca05fd24" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_ECSScene</name></member>
+      <member refid="classDemo2DFixedScene_1a372f55e9f96ee108c3b358650b3160a1" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_EnemyDefinitions</name></member>
+      <member refid="classDemo2DFixedScene_1ab52acc6df50d92a733ca96c0917f5a63" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_EnemyEntities</name></member>
+      <member refid="classDemo2DFixedScene_1a3d03cc75e7581e3c6dd7867a09efc071" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_FpsCounter</name></member>
+      <member refid="classDemo2DFixedScene_1a2ced53f08d393097dbcc9d3626aa2067" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_IndexBuffer</name></member>
+      <member refid="classDemo2DFixedScene_1a787fa04b8244b3ae73716afc235a5a62" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_LineShader</name></member>
+      <member refid="classDemo2DFixedScene_1a8e149e818044f82568f4fcb0a2375ae0" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_PlatformEntities</name></member>
+      <member refid="classDemo2DFixedScene_1a3e97beb9d39b2739299f5b69e313a476" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_PlayerController</name></member>
+      <member refid="classDemo2DFixedScene_1ae18f7410197aaf02aa761a54fe3d9dab" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_PlayerEntity</name></member>
+      <member refid="classDemo2DFixedScene_1a72eb5c39b6d923aef977f431e0988b8a" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_Shader</name></member>
+      <member refid="classDemo2DFixedScene_1a77804f6fb699219b0143b0b8f001a8c4" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_VertexArray</name></member>
+      <member refid="classDemo2DFixedScene_1afbb0d5066454921f90e85a0533374fd3" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_World</name></member>
+      <member refid="classDemo2DFixedScene_1a1daab876b813800575999e0a5374d899" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>OnEnter</name></member>
+      <member refid="classDemo2DFixedScene_1a327f00eb5155cd0b30138787babecba2" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>OnExit</name></member>
+      <member refid="classDemo2DFixedScene_1ad938c557aa7ad055aee8d25171fafad5" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>Render</name></member>
+      <member refid="classDemo2DFixedScene_1abe838d285b6b2bc5277c613b39943d19" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>ResolveCollisions</name></member>
+      <member refid="classDemo2DFixedScene_1a52b58c77935f74c69ec27e6a48ad9187" prot="public" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>RespawnEnemies</name></member>
+      <member refid="classDemo2DFixedScene_1a72b82e82afbbd9c98718549f5c4c3e83" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>SetupScene</name></member>
+      <member refid="classDemo2DFixedScene_1ac513fcf662cef5ea0db8f3c361be058d" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>SpawnEnemies</name></member>
+      <member refid="classDemo2DFixedScene_1ac626aa848bd8d98054f7d2b21a724ac9" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>Update</name></member>
+      <member refid="classDemo2DFixedScene_1af4168b94757ca0061d18f058efd2b5cc" prot="public" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>~Demo2DFixedScene</name></member>
+      <member refid="classScene_1af6e09d91ebd10ae9cc7c12c39d06386c" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

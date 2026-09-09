@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classSoundEffect" kind="class" language="C++" prot="public">
+    <compoundname>SoundEffect</compoundname>
+    <includes refid="SoundEffect_8h" local="no">SoundEffect.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSoundEffect_1ab9c4c95f7087e7a777d1b77233236cf0" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; Uint8 &gt;</type>
+        <definition>std::vector&lt;Uint8&gt; SoundEffect::m_Data</definition>
+        <argsstring></argsstring>
+        <name>m_Data</name>
+        <qualifiedname>SoundEffect::m_Data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="55" column="17" bodyfile="engine/audio/SoundEffect.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSoundEffect_1a19a66ea9ad7c306554bf58ce68283814" prot="private" static="no" mutable="no">
+        <type>SDL_AudioSpec</type>
+        <definition>SDL_AudioSpec SoundEffect::m_Spec</definition>
+        <argsstring></argsstring>
+        <name>m_Spec</name>
+        <qualifiedname>SoundEffect::m_Spec</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="56" column="19" bodyfile="engine/audio/SoundEffect.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSoundEffect_1a834510bdbcad1236e1b70646016346a5" prot="private" static="no" mutable="no">
+        <type>SDL_AudioStream *</type>
+        <definition>SDL_AudioStream* SoundEffect::m_Stream</definition>
+        <argsstring></argsstring>
+        <name>m_Stream</name>
+        <qualifiedname>SoundEffect::m_Stream</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="58" column="21" bodyfile="engine/audio/SoundEffect.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classSoundEffect_1aae475e32a6dc801f92706191709dfe48" prot="private" static="yes" mutable="no">
+        <type>SDL_AudioSpec</type>
+        <definition>SDL_AudioSpec SoundEffect::m_DeviceSpec</definition>
+        <argsstring></argsstring>
+        <name>m_DeviceSpec</name>
+        <qualifiedname>SoundEffect::m_DeviceSpec</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="57" column="26" bodyfile="engine/audio/SoundEffect.h" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSoundEffect_1a133e312b04f01d6835286ed69b667951" prot="private" static="yes" mutable="no">
+        <type>SDL_AudioDeviceID</type>
+        <definition>SDL_AudioDeviceID SoundEffect::s_AudioDevice</definition>
+        <argsstring></argsstring>
+        <name>s_AudioDevice</name>
+        <qualifiedname>SoundEffect::s_AudioDevice</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="59" column="30" bodyfile="engine/audio/SoundEffect.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSoundEffect_1ad1201573d75db7d3f6128d38dbde4c6a" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool SoundEffect::s_DeviceOpen</definition>
+        <argsstring></argsstring>
+        <name>s_DeviceOpen</name>
+        <qualifiedname>SoundEffect::s_DeviceOpen</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="60" column="17" bodyfile="engine/audio/SoundEffect.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSoundEffect_1aa779f253615cd049725b4998e0de88b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SoundEffect::SoundEffect</definition>
+        <argsstring>()</argsstring>
+        <name>SoundEffect</name>
+        <qualifiedname>SoundEffect::SoundEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="14" column="5" bodyfile="engine/audio/SoundEffect.cpp" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classSoundEffect_1a5e03a7a8eb4c5b9d0548fb178b76a44c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SoundEffect::~SoundEffect</definition>
+        <argsstring>()</argsstring>
+        <name>~SoundEffect</name>
+        <qualifiedname>SoundEffect::~SoundEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="15" column="5" bodyfile="engine/audio/SoundEffect.cpp" bodystart="13" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classSoundEffect_1aa759a5f6e53d18c9b7447b3e856c0bd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SoundEffect::Load</definition>
+        <argsstring>(const std::string &amp;filepath)</argsstring>
+        <name>Load</name>
+        <qualifiedname>SoundEffect::Load</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+<para>Loads a .wav file from a specified location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads a .wav file from a specified location on disk.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the .wav file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if loaded successfully, false otherwise.</para>
+</simplesect>
+Opens the shared audio device if not already open, then reads the .wav file into memory. The audio data is stored as raw PCM samples for later playback.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the .wav file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the file was loaded successfully, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="22" column="10" bodyfile="engine/audio/SoundEffect.cpp" bodystart="62" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classSoundEffect_1a4a39a296b2231b690985dade9ce7733a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SoundEffect::Play</definition>
+        <argsstring>(int volume=128)</argsstring>
+        <name>Play</name>
+        <qualifiedname>SoundEffect::Play</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>volume</declname>
+          <defval>128</defval>
+        </param>
+        <briefdescription>
+<para>Plays the loaded sound effect once. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Volume level (0-128).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Creates a new audio stream, pushes the audio data into it, and binds it to the shared device. If there&apos;s a previous stream active, unbinds and destroys it to avoid errors.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Volume level (0-128). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="28" column="10" bodyfile="engine/audio/SoundEffect.cpp" bodystart="99" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classSoundEffect_1aac80ead03ebef197b679e6edbc10fc99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SoundEffect::Unload</definition>
+        <argsstring>()</argsstring>
+        <name>Unload</name>
+        <qualifiedname>SoundEffect::Unload</qualifiedname>
+        <briefdescription>
+<para>Unloads the sound data and releases resources. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Unloads the sound effect and releases all resources.</para>
+<para>Unbinds and destroys the audio stream, clears the audio data, and resets the specification. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="33" column="10" bodyfile="engine/audio/SoundEffect.cpp" bodystart="162" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classSoundEffect_1a9ad602d2d962fb031553174c5bc73661" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SoundEffect::IsLoaded</definition>
+        <argsstring>() const</argsstring>
+        <name>IsLoaded</name>
+        <qualifiedname>SoundEffect::IsLoaded</qualifiedname>
+        <briefdescription>
+<para>Checks if a sound is currently loaded. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if sound data is loaded, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="39" column="10" bodyfile="engine/audio/SoundEffect.h" bodystart="39" bodyend="39"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classSoundEffect_1a2394c50d77422ecd0cca27d9016a5868" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SDL_AudioDeviceID</type>
+        <definition>static SDL_AudioDeviceID SoundEffect::GetAudioDevice</definition>
+        <argsstring>()</argsstring>
+        <name>GetAudioDevice</name>
+        <qualifiedname>SoundEffect::GetAudioDevice</qualifiedname>
+        <briefdescription>
+<para>Gets the shared audio device ID used by all <ref refid="classSoundEffect" kindref="compound">SoundEffect</ref> instances. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>SDL_AudioDeviceID of the shared audio device. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="45" column="30" bodyfile="engine/audio/SoundEffect.h" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classSoundEffect_1abc204c2f7c0a891eb671821d23b38bc7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SoundEffect::CloseAudioDevice</definition>
+        <argsstring>()</argsstring>
+        <name>CloseAudioDevice</name>
+        <qualifiedname>SoundEffect::CloseAudioDevice</qualifiedname>
+        <briefdescription>
+<para>Closes the shared audio device. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Should be called during application shutdown for cleanup.</para>
+<para>This should be called during application shutdown to release the audio device and free its associated resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="52" column="17" bodyfile="engine/audio/SoundEffect.cpp" bodystart="179" bodyend="186"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSoundEffect_1a82797947050d4f08f80406ee9a9987a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SoundEffect::OpenDevice</definition>
+        <argsstring>()</argsstring>
+        <name>OpenDevice</name>
+        <qualifiedname>SoundEffect::OpenDevice</qualifiedname>
+        <briefdescription>
+<para>Opens the shared audio device if not already open. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens the shared audio device with default parameters.</para>
+<para><simplesect kind="return"><para>true if the device is (or was) successfully opened, false otherwise.</para>
+</simplesect>
+The device is configured for 44.1 kHz, 16-bit stereo audio. This is a one-time initialization - subsequent calls are ignored if the device is already open.</para>
+<para><simplesect kind="return"><para>true if the device was successfully opened or is already open, false on failure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundEffect.h" line="66" column="10" bodyfile="engine/audio/SoundEffect.cpp" bodystart="25" bodyend="51"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Handles a sound effect that is loaded from a .wav file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It uses SDL3 audio stream API to manage the loading, playback and unloading of audio data. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>SoundEffect</label>
+        <link refid="classSoundEffect"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/audio/SoundEffect.h" line="12" column="1" bodyfile="engine/audio/SoundEffect.h" bodystart="12" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classSoundEffect_1abc204c2f7c0a891eb671821d23b38bc7" prot="public" virt="non-virtual"><scope>SoundEffect</scope><name>CloseAudioDevice</name></member>
+      <member refid="classSoundEffect_1a2394c50d77422ecd0cca27d9016a5868" prot="public" virt="non-virtual"><scope>SoundEffect</scope><name>GetAudioDevice</name></member>
+      <member refid="classSoundEffect_1a9ad602d2d962fb031553174c5bc73661" prot="public" virt="non-virtual"><scope>SoundEffect</scope><name>IsLoaded</name></member>
+      <member refid="classSoundEffect_1aa759a5f6e53d18c9b7447b3e856c0bd1" prot="public" virt="non-virtual"><scope>SoundEffect</scope><name>Load</name></member>
+      <member refid="classSoundEffect_1ab9c4c95f7087e7a777d1b77233236cf0" prot="private" virt="non-virtual"><scope>SoundEffect</scope><name>m_Data</name></member>
+      <member refid="classSoundEffect_1aae475e32a6dc801f92706191709dfe48" prot="private" virt="non-virtual"><scope>SoundEffect</scope><name>m_DeviceSpec</name></member>
+      <member refid="classSoundEffect_1a19a66ea9ad7c306554bf58ce68283814" prot="private" virt="non-virtual"><scope>SoundEffect</scope><name>m_Spec</name></member>
+      <member refid="classSoundEffect_1a834510bdbcad1236e1b70646016346a5" prot="private" virt="non-virtual"><scope>SoundEffect</scope><name>m_Stream</name></member>
+      <member refid="classSoundEffect_1a82797947050d4f08f80406ee9a9987a8" prot="private" virt="non-virtual"><scope>SoundEffect</scope><name>OpenDevice</name></member>
+      <member refid="classSoundEffect_1a4a39a296b2231b690985dade9ce7733a" prot="public" virt="non-virtual"><scope>SoundEffect</scope><name>Play</name></member>
+      <member refid="classSoundEffect_1a133e312b04f01d6835286ed69b667951" prot="private" virt="non-virtual"><scope>SoundEffect</scope><name>s_AudioDevice</name></member>
+      <member refid="classSoundEffect_1ad1201573d75db7d3f6128d38dbde4c6a" prot="private" virt="non-virtual"><scope>SoundEffect</scope><name>s_DeviceOpen</name></member>
+      <member refid="classSoundEffect_1aa779f253615cd049725b4998e0de88b7" prot="public" virt="non-virtual"><scope>SoundEffect</scope><name>SoundEffect</name></member>
+      <member refid="classSoundEffect_1aac80ead03ebef197b679e6edbc10fc99" prot="public" virt="non-virtual"><scope>SoundEffect</scope><name>Unload</name></member>
+      <member refid="classSoundEffect_1a5e03a7a8eb4c5b9d0548fb178b76a44c" prot="public" virt="non-virtual"><scope>SoundEffect</scope><name>~SoundEffect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

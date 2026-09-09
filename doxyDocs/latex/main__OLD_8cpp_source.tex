@@ -1,0 +1,82 @@
+\doxysection{main\+\_\+\+OLD.\+cpp}
+\hypertarget{main__OLD_8cpp_source}{}\label{main__OLD_8cpp_source}\index{game/src/main\_OLD.cpp@{game/src/main\_OLD.cpp}}
+\doxymbox{\hyperlink{main__OLD_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00006}\doxymbox{\hyperlink{main__OLD_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00006}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\{}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00007}00007\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}SDL3\ Runtime\ initialization.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00008}00008\ \ \ \textcolor{keywordflow}{if}\ (SDL\_Init(SDL\_INIT\_VIDEO)\ ==\ -\/1)\{}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00009}00009\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Initializing\ failed:\ "{}}\ <<\ SDL\_GetError()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00011}00011\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00012}00012\ \ \ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00013}00013\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ videoDriver\ =\ SDL\_GetCurrentVideoDriver();}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00015}00015\ \ \ \textcolor{keywordflow}{if}\ (videoDriver)\ std::cout\ <<\ \textcolor{stringliteral}{"{}Video\ Driver:\ "{}}\ <<\ videoDriver\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00017}00017\ \ \ SDL\_GL\_SetAttribute(SDL\_GL\_CONTEXT\_MAJOR\_VERSION,\ 4);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00018}00018\ \ \ SDL\_GL\_SetAttribute(SDL\_GL\_CONTEXT\_MINOR\_VERSION,\ 6);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00019}00019\ \ \ SDL\_GL\_SetAttribute(SDL\_GL\_CONTEXT\_PROFILE\_MASK,\ SDL\_GL\_CONTEXT\_PROFILE\_CORE);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00021}00021\ \ \ SDL\_Window*\ window\ =\ SDL\_CreateWindow(\textcolor{stringliteral}{"{}Game\ Window"{}},\ 1920,\ 1080,\ SDL\_WINDOW\_OPENGL);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00022}00022\ \ \ \textcolor{keywordflow}{if}\ (!window)\{}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00023}00023\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Window\ creation\ error:\ "{}}\ <<\ SDL\_GetError()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00024}00024\ \ \ \ \ SDL\_Quit();}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00026}00026\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00028}00028\ \ \ SDL\_GLContext\ glContext\ =\ SDL\_GL\_CreateContext(window);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00029}00029\ \ \ \textcolor{keywordflow}{if}(!glContext)\{}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00030}00030\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}OpenGL\ context\ not\ created:\ "{}}\ <<\ SDL\_GetError()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00031}00031\ \ \ \ \ SDL\_DestroyWindow(window);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00032}00032\ \ \ \ \ SDL\_Quit();}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00034}00034\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00036}00036\ \ \ SDL\_GL\_SetSwapInterval(1);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00038}00038\ \ \ \textcolor{comment}{//GLAD\ initialization}}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00039}00039\ \ \ \textcolor{keywordflow}{if}(!gladLoadGLLoader((GLADloadproc)SDL\_GL\_GetProcAddress))\{}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00040}00040\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}GLAD\ initialization\ error.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00041}00041\ \ \ \ \ SDL\_GL\_DestroyContext(glContext);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00042}00042\ \ \ \ \ SDL\_DestroyWindow(window);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00043}00043\ \ \ \ \ SDL\_Quit();}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00045}00045\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00047}00047\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}OpenGL\ Version:\ "{}}\ <<\ glGetString(GL\_VERSION)\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00048}00048\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Window\ ID:\ "{}}\ <<\ SDL\_GetWindowID(window)\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00049}00049\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Window\ successfully\ created.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00051}00051\ \ \ \textcolor{comment}{//Background\ color\ }}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00052}00052\ \ \ glClearColor(0.1f,0.2f,0.4f,1.0f);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00054}00054\ \ \ \textcolor{keywordtype}{bool}\ running\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00056}00056\ \ \ \textcolor{keywordflow}{while}(running)\{}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00057}00057\ \ \ \ \ SDL\_Event\ event;}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{while}(SDL\_PollEvent(\&event))\{}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00059}00059\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(event.type\ ==\ SDL\_EVENT\_QUIT)\ running\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00062}00062\ \ \ \ \ glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00063}00063\ \ \ \ \ SDL\_GL\_SwapWindow(window);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00064}00064\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00066}00066\ \ \ SDL\_GL\_DestroyContext(glContext);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00067}00067\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}OpenGL\ terminated.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00069}00069\ \ \ SDL\_DestroyWindow(window);}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00070}00070\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Window\ disposal\ success.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00072}00072\ \ \ SDL\_Quit();}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00073}00073\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}SDL3\ terminated.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00075}00075\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main__OLD_8cpp_source_l00076}00076\ \}}
+
+\end{DoxyCode}

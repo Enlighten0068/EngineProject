@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="ECSScene_8cpp" kind="file" language="C++">
+    <compoundname>ECSScene.cpp</compoundname>
+    <includes refid="Input_8h" local="yes">core/Input.h</includes>
+    <includes refid="Log_8h" local="yes">diagnostics/Log.h</includes>
+    <includes refid="Renderer_8h" local="yes">renderer/Renderer.h</includes>
+    <includes refid="ECSScene_8h" local="yes">scene/ECSScene.h</includes>
+    <includes refid="RenderSystem_8h" local="yes">systems/RenderSystem.h</includes>
+    <incdepgraph>
+      <node id="19">
+        <label>components/SpriteRenderer.h</label>
+        <link refid="SpriteRenderer_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>components/TileScale.h</label>
+        <link refid="TileScale_8h"/>
+      </node>
+      <node id="18">
+        <label>components/Transform.h</label>
+        <link refid="components_2Transform_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>core/Input.h</label>
+        <link refid="Input_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>graphics/Texture2D.h</label>
+        <link refid="Texture2D_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>graphics/VertexArray.h</label>
+        <link refid="VertexArray_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="14">
+        <label>renderer/Renderer.h</label>
+        <link refid="Renderer_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/scene/ECSScene.cpp</label>
+        <link refid="ECSScene_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>scene/ECSScene.h</label>
+        <link refid="ECSScene_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>systems/RenderSystem.h</label>
+        <link refid="RenderSystem_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="10">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>cmath</label>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="25">
+        <label>entt.hpp</label>
+      </node>
+      <node id="9">
+        <label>fstream</label>
+      </node>
+      <node id="11">
+        <label>iomanip</label>
+      </node>
+      <node id="21">
+        <label>memory</label>
+      </node>
+      <node id="12">
+        <label>sstream</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="13">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Input_8h" kindref="compound">core/Input.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Log_8h" kindref="compound">diagnostics/Log.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Renderer_8h" kindref="compound">renderer/Renderer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ECSScene_8h" kindref="compound">scene/ECSScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="RenderSystem_8h" kindref="compound">systems/RenderSystem.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classECSScene_1a47e4a9a1d139379538ca65dd28c31e27" refkind="member"><highlight class="normal"><ref refid="classECSScene_1a47e4a9a1d139379538ca65dd28c31e27" kindref="member">ECSScene::ECSScene</ref>(<ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>shader,<sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/>va,<sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/>ib)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">:<sp/><ref refid="classECSScene_1a80f1088d363fcff611b334f2d45d183c" kindref="member">m_Shader</ref>(shader),<sp/><ref refid="classECSScene_1a4a96793d8eb86e77608681f2bb3c40ce" kindref="member">m_VertexArray</ref>(va),<sp/><ref refid="classECSScene_1a929d63f68e5c63da9444a788fe7390b8" kindref="member">m_IndexBuffer</ref>(ib){}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="classECSScene_1ae126bfdb0b37bf4b89f86f603c8f153f" kindref="member">ECSScene::~ECSScene</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="classECSScene_1a818d8b2200a44df7097c4eedaa1c6142" refkind="member"><highlight class="normal">entt::entity<sp/><ref refid="classECSScene_1a818d8b2200a44df7097c4eedaa1c6142" kindref="member">ECSScene::CreateSpriteEntity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>position,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>scale,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/>texture){</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>entity<sp/>=<sp/><ref refid="classECSScene_1a207e75960af3e48dc84ccb8b569dec94" kindref="member">m_Registry</ref>.create();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>transform<sp/>=<sp/><ref refid="classECSScene_1a207e75960af3e48dc84ccb8b569dec94" kindref="member">m_Registry</ref>.emplace&lt;<ref refid="structComponents_1_1Transform" kindref="compound">Components::Transform</ref>&gt;(entity);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>transform.<ref refid="structComponents_1_1Transform_1aa2a3a1979b171ef97e29461f9ce52cc1" kindref="member">Position</ref><sp/>=<sp/>position;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>transform.Scale<sp/>=<sp/>scale;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>sprite<sp/>=<sp/><ref refid="classECSScene_1a207e75960af3e48dc84ccb8b569dec94" kindref="member">m_Registry</ref>.emplace&lt;<ref refid="structComponents_1_1SpriteRenderer" kindref="compound">Components::SpriteRenderer</ref>&gt;(entity);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>sprite.<ref refid="structComponents_1_1SpriteRenderer_1a7f430566c6a661fa1973ad364f6ba744" kindref="member">Texture</ref><sp/>=<sp/>texture;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>entity;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="classECSScene_1a1d0dd704f1aaf7012b20aa8644a1bf1f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classECSScene_1a1d0dd704f1aaf7012b20aa8644a1bf1f" kindref="member">ECSScene::Render</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref>&amp;<sp/>view,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref>&amp;<sp/>projection){</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRenderSystem_1a0dee88c7afdb4acfa6ad44e3902ce7a3" kindref="member">RenderSystem::Render</ref>(<ref refid="classECSScene_1a207e75960af3e48dc84ccb8b569dec94" kindref="member">m_Registry</ref>,<sp/><ref refid="classECSScene_1a80f1088d363fcff611b334f2d45d183c" kindref="member">m_Shader</ref>,<sp/>view,<sp/>projection,<sp/><ref refid="classECSScene_1a4a96793d8eb86e77608681f2bb3c40ce" kindref="member">m_VertexArray</ref>,<sp/><ref refid="classECSScene_1a929d63f68e5c63da9444a788fe7390b8" kindref="member">m_IndexBuffer</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/scene/ECSScene.cpp"/>
+  </compounddef>
+</doxygen>

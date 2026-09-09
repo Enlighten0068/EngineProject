@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="WindowEvent_8h" kind="file" language="C++">
+    <compoundname>WindowEvent.h</compoundname>
+    <includes refid="Event_8h" local="yes">events/Event.h</includes>
+    <includedby refid="Application_8cpp" local="yes">engine/core/Application.cpp</includedby>
+    <includedby refid="Engine_8cpp" local="yes">engine/core/Engine.cpp</includedby>
+    <includedby refid="SDLEventTranslator_8h" local="yes">engine/events/SDLEventTranslator.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>events/Event.h</label>
+        <link refid="Event_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>events/EventType.h</label>
+        <link refid="EventType_8h"/>
+      </node>
+      <node id="1">
+        <label>engine/events/WindowEvent.h</label>
+        <link refid="WindowEvent_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/core/Engine.cpp</label>
+        <link refid="Engine_8cpp"/>
+      </node>
+      <node id="5">
+        <label>engine/events/SDLEventTranslator.cpp</label>
+        <link refid="SDLEventTranslator_8cpp"/>
+      </node>
+      <node id="4">
+        <label>engine/events/SDLEventTranslator.h</label>
+        <link refid="SDLEventTranslator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/events/WindowEvent.h</label>
+        <link refid="WindowEvent_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classWindowCloseEvent" prot="public">WindowCloseEvent</innerclass>
+    <innerclass refid="classWindowResizeEvent" prot="public">WindowResizeEvent</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Event_8h" kindref="compound">events/Event.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classWindowCloseEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classWindowCloseEvent" kindref="compound">WindowCloseEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classEvent" kindref="compound">Event</ref>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15" refid="classWindowCloseEvent_1ad5b50a492d592ea6f0086a425a47b5a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classWindowCloseEvent_1ad5b50a492d592ea6f0086a425a47b5a8" kindref="member">GetStaticType</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faac984201d37197ab297a14d19efee4b07" kindref="member">EventType::WindowClose</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="16" refid="classWindowCloseEvent_1a4ad7d8ef5ba544c908e1a59a74b40492" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classWindowCloseEvent_1a4ad7d8ef5ba544c908e1a59a74b40492" kindref="member">GetEventType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faac984201d37197ab297a14d19efee4b07" kindref="member">EventType::WindowClose</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classWindowResizeEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classWindowResizeEvent_1a4bbcb192821b1ba82dfc1513ba890be9" kindref="member">WindowResizeEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classEvent" kindref="compound">Event</ref>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33" refid="classWindowResizeEvent_1a4bbcb192821b1ba82dfc1513ba890be9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classWindowResizeEvent_1a4bbcb192821b1ba82dfc1513ba890be9" kindref="member">WindowResizeEvent</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height)<sp/>:<sp/><ref refid="classWindowResizeEvent_1a15a7789119a3f52b90b5e622a6557869" kindref="member">m_Width</ref>(width),<sp/><ref refid="classWindowResizeEvent_1ac4adfd68bfdea73ef2291f38bf8e3170" kindref="member">m_Height</ref>(height){}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="classWindowResizeEvent_1a60b310d95bea3bfa3b53ce70fb9a98f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classWindowResizeEvent_1a60b310d95bea3bfa3b53ce70fb9a98f2" kindref="member">GetEventType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa9f8f27bff2915738c4fe1b970e12f89c" kindref="member">EventType::WindowResize</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classWindowResizeEvent_1a9800bd5e7b5a84c59c68d9b2301ca159" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classWindowResizeEvent_1a9800bd5e7b5a84c59c68d9b2301ca159" kindref="member">GetWidth</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classWindowResizeEvent_1a15a7789119a3f52b90b5e622a6557869" kindref="member">m_Width</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="38" refid="classWindowResizeEvent_1a13becd83abdc32de50c57664f64a5e55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classWindowResizeEvent_1a13becd83abdc32de50c57664f64a5e55" kindref="member">GetHeight</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classWindowResizeEvent_1ac4adfd68bfdea73ef2291f38bf8e3170" kindref="member">m_Height</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41" refid="classWindowResizeEvent_1a15a7789119a3f52b90b5e622a6557869" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classWindowResizeEvent_1a15a7789119a3f52b90b5e622a6557869" kindref="member">m_Width</ref>;<sp/></highlight><highlight class="comment">//New<sp/>window<sp/>width</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classWindowResizeEvent_1ac4adfd68bfdea73ef2291f38bf8e3170" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classWindowResizeEvent_1ac4adfd68bfdea73ef2291f38bf8e3170" kindref="member">m_Height</ref>;<sp/></highlight><highlight class="comment">//New<sp/>window<sp/>height</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/events/WindowEvent.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,299 @@
+\doxysection{Texture2D Class Reference}
+\hypertarget{classTexture2D}{}\label{classTexture2D}\index{Texture2D@{Texture2D}}
+
+
+2D texture wrapper for Open\+GL textures.  
+
+
+
+
+{\ttfamily \+\#include $<$Texture2\+D.\+h$>$}
+
+
+
+Collaboration diagram for Texture2D:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classTexture2D__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classTexture2D_ab62c7c5172a4800b4629cd475147819d}{Texture2D}} ()
+\item 
+\doxymbox{\hyperlink{classTexture2D_a84210f27b55799a096b8abc36380a077}{\texorpdfstring{$\sim$}{\string~}\+Texture2D}} ()
+\item 
+bool \doxymbox{\hyperlink{classTexture2D_ac70d133f5d75f03b471c6107d5f27ee1}{Load}} (const std::\+string \&filepath)
+\begin{DoxyCompactList}\small\item\em Loads a texture from a file. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classTexture2D_a185324994184bca2479fbbc1fcb7f5ec}{Load\+From\+Surface}} (SDL\+\_\+\+Surface \texorpdfstring{$\ast$}{*}surface)
+\begin{DoxyCompactList}\small\item\em Loads a texture from an SDL\+\_\+\+Surface. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classTexture2D_ae3aec86ebdc50bf233eef52668a029ce}{Bind}} (uint32\+\_\+t slot=0) const
+\begin{DoxyCompactList}\small\item\em Binds the texture to a texture unit. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classTexture2D_a9758668e9a0a0810bc03195a65497426}{Unbind}} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the texture. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{classTexture2D_adc9c5c07e3715910107e817283262564}{Get\+Width}} () const
+\item 
+int \doxymbox{\hyperlink{classTexture2D_a83d2555038cf0390415adf558629c176}{Get\+Height}} () const
+\item 
+int \doxymbox{\hyperlink{classTexture2D_adfa893526e2b5378b22c74387bf43491}{Get\+Channels}} () const
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{classTexture2D_af877ad4b2d68d7e39ba2799bf345ab1e}{Get\+Renderer\+ID}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{classTexture2D_a08bc9aed013a941384db82972b91704c}{m\+\_\+\+Renderer\+ID}}
+\item 
+int \doxymbox{\hyperlink{classTexture2D_a72fb2ef7cf77006a4860ef1700036e96}{m\+\_\+\+Width}}
+\item 
+int \doxymbox{\hyperlink{classTexture2D_a50e9da52d931a0f9c9ace3ccb646292b}{m\+\_\+\+Height}}
+\item 
+int \doxymbox{\hyperlink{classTexture2D_a9003e6b742c84c9a34a8516cda4b9412}{m\+\_\+\+Channels}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+2D texture wrapper for Open\+GL textures. 
+
+Loads images from files (using stb\+\_\+image) and manages the Open\+GL texture object. Supports wrapping modes (GL\+\_\+\+REPEAT) and mipmap generation.
+
+\begin{DoxyNote}{Note}
+Textures are loaded with vertical flip enabled (stbi\+\_\+set\+\_\+flip\+\_\+vertically\+\_\+on\+\_\+load). 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classResourceManager}{Resource\+Manager} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8h_source_l00016}{16}} of file \doxymbox{\hyperlink{Texture2D_8h_source}{Texture2\+D.\+h}}.
+
+
+
+\label{classTexture2D_doc-constructors}
+\Hypertarget{classTexture2D_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTexture2D_ab62c7c5172a4800b4629cd475147819d}\index{Texture2D@{Texture2D}!Texture2D@{Texture2D}}
+\index{Texture2D@{Texture2D}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{Texture2D()}{Texture2D()}}
+{\footnotesize\ttfamily \label{classTexture2D_ab62c7c5172a4800b4629cd475147819d} 
+Texture2\+D::\+\+Texture2D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8cpp_source_l00012}{12}} of file \doxymbox{\hyperlink{Texture2D_8cpp_source}{Texture2\+D.\+cpp}}.
+
+\Hypertarget{classTexture2D_a84210f27b55799a096b8abc36380a077}\index{Texture2D@{Texture2D}!````~Texture2D@{\texorpdfstring{$\sim$}{\string~}Texture2D}}
+\index{````~Texture2D@{\texorpdfstring{$\sim$}{\string~}Texture2D}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Texture2D()}{\string~Texture2D()}}
+{\footnotesize\ttfamily \label{classTexture2D_a84210f27b55799a096b8abc36380a077} 
+Texture2\+D::\+\texorpdfstring{$\sim$}{\string~}\+Texture2D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8cpp_source_l00014}{14}} of file \doxymbox{\hyperlink{Texture2D_8cpp_source}{Texture2\+D.\+cpp}}.
+
+
+
+\label{classTexture2D_doc-func-members}
+\Hypertarget{classTexture2D_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTexture2D_ae3aec86ebdc50bf233eef52668a029ce}\index{Texture2D@{Texture2D}!Bind@{Bind}}
+\index{Bind@{Bind}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{classTexture2D_ae3aec86ebdc50bf233eef52668a029ce} 
+void Texture2\+D::\+\+Bind (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{slot}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const}
+
+
+
+Binds the texture to a texture unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slot} & Texture unit index (default: 0).\\
+\hline
+{\em slot} & Texture unit index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8cpp_source_l00111}{111}} of file \doxymbox{\hyperlink{Texture2D_8cpp_source}{Texture2\+D.\+cpp}}.
+
+\Hypertarget{classTexture2D_adfa893526e2b5378b22c74387bf43491}\index{Texture2D@{Texture2D}!GetChannels@{GetChannels}}
+\index{GetChannels@{GetChannels}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{GetChannels()}{GetChannels()}}
+{\footnotesize\ttfamily \label{classTexture2D_adfa893526e2b5378b22c74387bf43491} 
+int Texture2\+D::\+\+Get\+Channels (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8cpp_source_l00125}{125}} of file \doxymbox{\hyperlink{Texture2D_8cpp_source}{Texture2\+D.\+cpp}}.
+
+\Hypertarget{classTexture2D_a83d2555038cf0390415adf558629c176}\index{Texture2D@{Texture2D}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily \label{classTexture2D_a83d2555038cf0390415adf558629c176} 
+int Texture2\+D::\+\+Get\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8cpp_source_l00124}{124}} of file \doxymbox{\hyperlink{Texture2D_8cpp_source}{Texture2\+D.\+cpp}}.
+
+\Hypertarget{classTexture2D_af877ad4b2d68d7e39ba2799bf345ab1e}\index{Texture2D@{Texture2D}!GetRendererID@{GetRendererID}}
+\index{GetRendererID@{GetRendererID}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{GetRendererID()}{GetRendererID()}}
+{\footnotesize\ttfamily \label{classTexture2D_af877ad4b2d68d7e39ba2799bf345ab1e} 
+uint32\+\_\+t Texture2\+D::\+\+Get\+Renderer\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8h_source_l00057}{57}} of file \doxymbox{\hyperlink{Texture2D_8h_source}{Texture2\+D.\+h}}.
+
+\Hypertarget{classTexture2D_adc9c5c07e3715910107e817283262564}\index{Texture2D@{Texture2D}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily \label{classTexture2D_adc9c5c07e3715910107e817283262564} 
+int Texture2\+D::\+\+Get\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8cpp_source_l00123}{123}} of file \doxymbox{\hyperlink{Texture2D_8cpp_source}{Texture2\+D.\+cpp}}.
+
+\Hypertarget{classTexture2D_ac70d133f5d75f03b471c6107d5f27ee1}\index{Texture2D@{Texture2D}!Load@{Load}}
+\index{Load@{Load}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily \label{classTexture2D_ac70d133f5d75f03b471c6107d5f27ee1} 
+bool Texture2\+D::\+\+Load (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filepath}{}\end{DoxyParamCaption})}
+
+
+
+Loads a texture from a file. 
+
+Loads a texture from a file using stb\+\_\+image.
+
+Supports common formats (.png, .jpg, .bmp, etc.) via stb\+\_\+image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the image file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the texture was loaded successfully, false otherwise.
+\end{DoxyReturn}
+The image is flipped vertically to match Open\+GL\textquotesingle{}s coordinate system (origin at bottom-\/left). The texture is configured with: GL\+\_\+\+REPEAT for wrapping (S and T axes) GL\+\_\+\+LINEAR\+\_\+\+MIPMAP\+\_\+\+LINEAR for minification GL\+\_\+\+LINEAR for magnification
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the image file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the texture was loaded successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8cpp_source_l00030}{30}} of file \doxymbox{\hyperlink{Texture2D_8cpp_source}{Texture2\+D.\+cpp}}.
+
+\Hypertarget{classTexture2D_a185324994184bca2479fbbc1fcb7f5ec}\index{Texture2D@{Texture2D}!LoadFromSurface@{LoadFromSurface}}
+\index{LoadFromSurface@{LoadFromSurface}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{LoadFromSurface()}{LoadFromSurface()}}
+{\footnotesize\ttfamily \label{classTexture2D_a185324994184bca2479fbbc1fcb7f5ec} 
+bool Texture2\+D::\+\+Load\+From\+Surface (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Surface \texorpdfstring{$\ast$}{*}}]{surface}{}\end{DoxyParamCaption})}
+
+
+
+Loads a texture from an SDL\+\_\+\+Surface. 
+
+This method is useful for rendering text from SDL\+\_\+ttf.
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The SDL\+\_\+\+Surface containing the image data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the texture was loaded successfully, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The surface is NOT freed by this method; the caller must free it.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & The SDL\+\_\+\+Surface containing the image data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the texture was loaded successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8cpp_source_l00064}{64}} of file \doxymbox{\hyperlink{Texture2D_8cpp_source}{Texture2\+D.\+cpp}}.
+
+\Hypertarget{classTexture2D_a9758668e9a0a0810bc03195a65497426}\index{Texture2D@{Texture2D}!Unbind@{Unbind}}
+\index{Unbind@{Unbind}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{Unbind()}{Unbind()}}
+{\footnotesize\ttfamily \label{classTexture2D_a9758668e9a0a0810bc03195a65497426} 
+void Texture2\+D::\+\+Unbind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Unbinds the texture. 
+
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8cpp_source_l00119}{119}} of file \doxymbox{\hyperlink{Texture2D_8cpp_source}{Texture2\+D.\+cpp}}.
+
+
+
+\label{classTexture2D_doc-variable-members}
+\Hypertarget{classTexture2D_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTexture2D_a9003e6b742c84c9a34a8516cda4b9412}\index{Texture2D@{Texture2D}!m\_Channels@{m\_Channels}}
+\index{m\_Channels@{m\_Channels}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{m\_Channels}{m\_Channels}}
+{\footnotesize\ttfamily \label{classTexture2D_a9003e6b742c84c9a34a8516cda4b9412} 
+int Texture2\+D::\+m\+\_\+\+Channels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8h_source_l00063}{63}} of file \doxymbox{\hyperlink{Texture2D_8h_source}{Texture2\+D.\+h}}.
+
+\Hypertarget{classTexture2D_a50e9da52d931a0f9c9ace3ccb646292b}\index{Texture2D@{Texture2D}!m\_Height@{m\_Height}}
+\index{m\_Height@{m\_Height}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{m\_Height}{m\_Height}}
+{\footnotesize\ttfamily \label{classTexture2D_a50e9da52d931a0f9c9ace3ccb646292b} 
+int Texture2\+D::\+m\+\_\+\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8h_source_l00062}{62}} of file \doxymbox{\hyperlink{Texture2D_8h_source}{Texture2\+D.\+h}}.
+
+\Hypertarget{classTexture2D_a08bc9aed013a941384db82972b91704c}\index{Texture2D@{Texture2D}!m\_RendererID@{m\_RendererID}}
+\index{m\_RendererID@{m\_RendererID}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{m\_RendererID}{m\_RendererID}}
+{\footnotesize\ttfamily \label{classTexture2D_a08bc9aed013a941384db82972b91704c} 
+uint32\+\_\+t Texture2\+D::\+m\+\_\+\+Renderer\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8h_source_l00060}{60}} of file \doxymbox{\hyperlink{Texture2D_8h_source}{Texture2\+D.\+h}}.
+
+\Hypertarget{classTexture2D_a72fb2ef7cf77006a4860ef1700036e96}\index{Texture2D@{Texture2D}!m\_Width@{m\_Width}}
+\index{m\_Width@{m\_Width}!Texture2D@{Texture2D}}
+\doxysubsubsection{\texorpdfstring{m\_Width}{m\_Width}}
+{\footnotesize\ttfamily \label{classTexture2D_a72fb2ef7cf77006a4860ef1700036e96} 
+int Texture2\+D::\+m\+\_\+\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Texture2D_8h_source_l00061}{61}} of file \doxymbox{\hyperlink{Texture2D_8h_source}{Texture2\+D.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+graphics/\doxymbox{\hyperlink{Texture2D_8h}{Texture2\+D.\+h}}\item 
+engine/\+graphics/\doxymbox{\hyperlink{Texture2D_8cpp}{Texture2\+D.\+cpp}}\end{DoxyCompactItemize}

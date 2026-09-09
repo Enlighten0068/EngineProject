@@ -1,0 +1,7 @@
+<map id="PlayerJumpedEvent" name="PlayerJumpedEvent">
+<area shape="rect" id="Node000001" title="Event dispatched when the player jumps." alt="" coords="56,285,220,446"/>
+<area shape="rect" id="Node000002" href="$classEvent.html" title="Base class for all events in the engine." alt="" coords="5,61,132,156"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,168,119,285,114,285,84,172"/>
+<area shape="rect" id="Node000003" href="$structVector3D.html" title="3D vector struct with basic arithmetic operations." alt="" coords="156,5,259,212"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,209,167,269,162,267,178,214"/>
+</map>

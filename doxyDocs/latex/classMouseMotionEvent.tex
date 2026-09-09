@@ -1,0 +1,194 @@
+\doxysection{Mouse\+Motion\+Event Class Reference}
+\hypertarget{classMouseMotionEvent}{}\label{classMouseMotionEvent}\index{MouseMotionEvent@{MouseMotionEvent}}
+
+
+\doxylink{classEvent}{Event} representing mouse movement.  
+
+
+
+
+{\ttfamily \+\#include $<$Mouse\+Event.\+h$>$}
+
+
+
+Inheritance diagram for Mouse\+Motion\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classMouseMotionEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mouse\+Motion\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classMouseMotionEvent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classMouseMotionEvent_a1bdabca2300cd77ee0166a48fd5a7c9e}{Mouse\+Motion\+Event}} (const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&position, const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&delta)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classMouseMotionEvent}{Mouse\+Motion\+Event}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classMouseMotionEvent_ae26e8d1f348784c25d68dd9fb691eeb1}{Get\+Position}} () const
+\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classMouseMotionEvent_ab75755aade6aed87c74176e642a44a54}{Get\+Delta}} () const
+\item 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classMouseMotionEvent_a966916d6e4e738f508fb746249908612}{Get\+Event\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classEvent_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classMouseMotionEvent_aadf068b5e7bd1080ddbcf1217108c05b}{Get\+Static\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classMouseMotionEvent_a5d81a69936ee2ba03ade02b561c12057}{m\+\_\+\+Position}}
+\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classMouseMotionEvent_a93e06baad08ae0e8e9bba34af7fc36a7}{m\+\_\+\+Delta}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classEvent_a8ad0c350a8f569dbb05cf845caa4737e}{Handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classEvent}{Event} representing mouse movement. 
+
+Contains the current mouse position and the delta (movement since last frame).
+
+\begin{DoxyNote}{Note}
+This event is dispatched by \doxylink{classSDLEventTranslator}{SDLEvent\+Translator}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classSDLEventTranslator}{SDLEvent\+Translator} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00015}{15}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+\label{classMouseMotionEvent_doc-constructors}
+\Hypertarget{classMouseMotionEvent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMouseMotionEvent_a1bdabca2300cd77ee0166a48fd5a7c9e}\index{MouseMotionEvent@{MouseMotionEvent}!MouseMotionEvent@{MouseMotionEvent}}
+\index{MouseMotionEvent@{MouseMotionEvent}!MouseMotionEvent@{MouseMotionEvent}}
+\doxysubsubsection{\texorpdfstring{MouseMotionEvent()}{MouseMotionEvent()}}
+{\footnotesize\ttfamily \label{classMouseMotionEvent_a1bdabca2300cd77ee0166a48fd5a7c9e} 
+Mouse\+Motion\+Event::\+\+Mouse\+Motion\+Event (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&}]{position}{, }\item[{const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&}]{delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classMouseMotionEvent}{Mouse\+Motion\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Current mouse position in screen coordinates. \\
+\hline
+{\em delta} & Movement since last frame. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00022}{22}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+\label{classMouseMotionEvent_doc-func-members}
+\Hypertarget{classMouseMotionEvent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMouseMotionEvent_ab75755aade6aed87c74176e642a44a54}\index{MouseMotionEvent@{MouseMotionEvent}!GetDelta@{GetDelta}}
+\index{GetDelta@{GetDelta}!MouseMotionEvent@{MouseMotionEvent}}
+\doxysubsubsection{\texorpdfstring{GetDelta()}{GetDelta()}}
+{\footnotesize\ttfamily \label{classMouseMotionEvent_ab75755aade6aed87c74176e642a44a54} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Mouse\+Motion\+Event::\+\+Get\+Delta (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00026}{26}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseMotionEvent_a966916d6e4e738f508fb746249908612}\index{MouseMotionEvent@{MouseMotionEvent}!GetEventType@{GetEventType}}
+\index{GetEventType@{GetEventType}!MouseMotionEvent@{MouseMotionEvent}}
+\doxysubsubsection{\texorpdfstring{GetEventType()}{GetEventType()}}
+{\footnotesize\ttfamily \label{classMouseMotionEvent_a966916d6e4e738f508fb746249908612} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Mouse\+Motion\+Event::\+\+Get\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the event. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type} enum value identifying the event. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classEvent_af14bbd8f69c2778def9462375a0e70f2}{Event}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00029}{29}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseMotionEvent_ae26e8d1f348784c25d68dd9fb691eeb1}\index{MouseMotionEvent@{MouseMotionEvent}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!MouseMotionEvent@{MouseMotionEvent}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{classMouseMotionEvent_ae26e8d1f348784c25d68dd9fb691eeb1} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Mouse\+Motion\+Event::\+\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00025}{25}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseMotionEvent_aadf068b5e7bd1080ddbcf1217108c05b}\index{MouseMotionEvent@{MouseMotionEvent}!GetStaticType@{GetStaticType}}
+\index{GetStaticType@{GetStaticType}!MouseMotionEvent@{MouseMotionEvent}}
+\doxysubsubsection{\texorpdfstring{GetStaticType()}{GetStaticType()}}
+{\footnotesize\ttfamily \label{classMouseMotionEvent_aadf068b5e7bd1080ddbcf1217108c05b} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Mouse\+Motion\+Event::\+\+Get\+Static\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00028}{28}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+\label{classMouseMotionEvent_doc-variable-members}
+\Hypertarget{classMouseMotionEvent_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMouseMotionEvent_a93e06baad08ae0e8e9bba34af7fc36a7}\index{MouseMotionEvent@{MouseMotionEvent}!m\_Delta@{m\_Delta}}
+\index{m\_Delta@{m\_Delta}!MouseMotionEvent@{MouseMotionEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Delta}{m\_Delta}}
+{\footnotesize\ttfamily \label{classMouseMotionEvent_a93e06baad08ae0e8e9bba34af7fc36a7} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Mouse\+Motion\+Event::\+m\+\_\+\+Delta\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00033}{33}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseMotionEvent_a5d81a69936ee2ba03ade02b561c12057}\index{MouseMotionEvent@{MouseMotionEvent}!m\_Position@{m\_Position}}
+\index{m\_Position@{m\_Position}!MouseMotionEvent@{MouseMotionEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Position}{m\_Position}}
+{\footnotesize\ttfamily \label{classMouseMotionEvent_a5d81a69936ee2ba03ade02b561c12057} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Mouse\+Motion\+Event::\+m\+\_\+\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00032}{32}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+events/\doxymbox{\hyperlink{MouseEvent_8h}{Mouse\+Event.\+h}}\end{DoxyCompactItemize}

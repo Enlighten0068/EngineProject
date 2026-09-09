@@ -10,15 +10,15 @@
  *
  * @note Rotation is stored as Euler angles (pitch, yaw, roll) in radians.
  *       Usually only the roll is used in 2D games.
- * @see Matrix4::Translation, Matrix4::RotationZ, Matrix4::Scale
+ * @see Components::Transform, Matrix4::Translation, Matrix4::RotationZ, Matrix4::Scale
  */
 struct Transform{
     Vector3D Position; //World position
-    Vector3D Rotation; //Euler angle in radians
-    Vector3D Scale; //Scale
+    Vector3D Rotation; //Euler angles in radians
+    Vector3D Scale; //Scale factors
 
     /**
      * @brief Default constructor: position at origin, no rotation, scale 1.
      */
-    Transform() : Position(0.0f, 0.0f, 0.0f),Rotation(0.0f, 0.0f, 0.0f),Scale(1.0f, 1.0f, 1.0f){}
+    Transform() : Position(0.0f, 0.0f, 0.0f), Rotation(0.0f, 0.0f, 0.0f), Scale(1.0f, 1.0f, 1.0f){}
 };

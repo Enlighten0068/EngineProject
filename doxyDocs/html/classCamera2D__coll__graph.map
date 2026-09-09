@@ -1,0 +1,7 @@
+<map id="Camera2D" name="Camera2D">
+<area shape="rect" id="Node000001" title="2D camera with orthographic projection, position, rotation, and zoom." alt="" coords="41,329,208,759"/>
+<area shape="rect" id="Node000002" href="$structVector3D.html" title="3D vector struct with basic arithmetic operations." alt="" coords="5,16,108,223"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,220,81,305,82,312,77,312,76,306,67,225"/>
+<area shape="rect" id="Node000003" href="$classMatrix4.html" title="4x4 matrix class for 3D transformations and projections." alt="" coords="132,5,253,234"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,231,166,306,165,314,160,312,161,305,174,236"/>
+</map>

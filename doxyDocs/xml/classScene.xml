@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classScene" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Scene</compoundname>
+    <derivedcompoundref refid="classDemo2DFixedScene" prot="public" virt="non-virtual">Demo2DFixedScene</derivedcompoundref>
+    <derivedcompoundref refid="classDemo2DScene" prot="public" virt="non-virtual">Demo2DScene</derivedcompoundref>
+    <derivedcompoundref refid="classMenuScene" prot="public" virt="non-virtual">MenuScene</derivedcompoundref>
+    <includes refid="Scene_8h" local="no">Scene.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classScene_1af6e09d91ebd10ae9cc7c12c39d06386c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Scene::~Scene</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Scene</name>
+        <qualifiedname>Scene::~Scene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Scene.h" line="16" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1ad09d42329f52df55fad0467cd092c9aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::OnEnter</definition>
+        <argsstring>()=0</argsstring>
+        <name>OnEnter</name>
+        <qualifiedname>Scene::OnEnter</qualifiedname>
+        <reimplementedby refid="classDemo2DFixedScene_1a1daab876b813800575999e0a5374d899">OnEnter</reimplementedby>
+        <reimplementedby refid="classDemo2DScene_1a8ffa82c6772da7121ff4d812d9d1c1e5">OnEnter</reimplementedby>
+        <reimplementedby refid="classMenuScene_1a015085736912c87c4e28ab54ab056e6d">OnEnter</reimplementedby>
+        <briefdescription>
+<para>Called when the scene becomes active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this method to initialize scene-specific resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Scene.h" line="23" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1a9824fefa923e5a9db4dca5a23343609b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::OnExit</definition>
+        <argsstring>()=0</argsstring>
+        <name>OnExit</name>
+        <qualifiedname>Scene::OnExit</qualifiedname>
+        <reimplementedby refid="classDemo2DFixedScene_1a327f00eb5155cd0b30138787babecba2">OnExit</reimplementedby>
+        <reimplementedby refid="classDemo2DScene_1afce546436c8328555a6c548dcb3a9d90">OnExit</reimplementedby>
+        <reimplementedby refid="classMenuScene_1a834e7aa54dd72502876d30114e47cc9e">OnExit</reimplementedby>
+        <briefdescription>
+<para>Called when the scene is exited. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this method to clean up scene-specific resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Scene.h" line="30" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1aaede6346f58776bd40efffd55885ab02" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::Update</definition>
+        <argsstring>(float deltaTime)=0</argsstring>
+        <name>Update</name>
+        <qualifiedname>Scene::Update</qualifiedname>
+        <reimplementedby refid="classDemo2DFixedScene_1ac626aa848bd8d98054f7d2b21a724ac9">Update</reimplementedby>
+        <reimplementedby refid="classDemo2DScene_1a960e0d534e6e05bda39f3d9eaaf30deb">Update</reimplementedby>
+        <reimplementedby refid="classMenuScene_1af2b1e0e9e1c783c8b058f60906add842">Update</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+<para>Updates the scene logic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classTime" kindref="compound">Time</ref> elapsed since the last frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Scene.h" line="36" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1ae24d21e12b34839994ad265662ea24d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Scene::Render</definition>
+        <argsstring>()=0</argsstring>
+        <name>Render</name>
+        <qualifiedname>Scene::Render</qualifiedname>
+        <reimplementedby refid="classDemo2DFixedScene_1ad938c557aa7ad055aee8d25171fafad5">Render</reimplementedby>
+        <reimplementedby refid="classDemo2DScene_1aa04f40209bc6b113df30f9dcf03bd80c">Render</reimplementedby>
+        <reimplementedby refid="classMenuScene_1a57787dac0643417ddd147c940c36b93a">Render</reimplementedby>
+        <briefdescription>
+<para>Renders the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Scene.h" line="41" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1ad93511100250c3f3ed736b9ed69fdc6f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string Scene::GetName</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetName</name>
+        <qualifiedname>Scene::GetName</qualifiedname>
+        <reimplementedby refid="classDemo2DFixedScene_1a67590905026e92be48a1e864db868eb9">GetName</reimplementedby>
+        <reimplementedby refid="classDemo2DScene_1aa6caae608302b160ef184473e1ef0219">GetName</reimplementedby>
+        <reimplementedby refid="classMenuScene_1a8bb0e3e014de1ba6912dc937de6a2a69">GetName</reimplementedby>
+        <briefdescription>
+<para>Gets the name of the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>String containing the scene name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Scene.h" line="47" column="25"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Abstract base class for all scenes in the engine. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A scene represents a distinct game state or screen (e.g., menu, gameplay, pause). Each scene must implement lifecycle methods: OnEnter, OnExit, Update, and Render.</para>
+<para><simplesect kind="note"><para>Scenes are managed by the <ref refid="classSceneManager" kindref="compound">SceneManager</ref>. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classSceneManager" kindref="compound">SceneManager</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Demo2DFixedScene</label>
+        <link refid="classDemo2DFixedScene"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Demo2DScene</label>
+        <link refid="classDemo2DScene"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>MenuScene</label>
+        <link refid="classMenuScene"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/scene/Scene.h" line="14" column="1" bodyfile="engine/scene/Scene.h" bodystart="14" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classScene_1ad93511100250c3f3ed736b9ed69fdc6f" prot="public" virt="pure-virtual"><scope>Scene</scope><name>GetName</name></member>
+      <member refid="classScene_1ad09d42329f52df55fad0467cd092c9aa" prot="public" virt="pure-virtual"><scope>Scene</scope><name>OnEnter</name></member>
+      <member refid="classScene_1a9824fefa923e5a9db4dca5a23343609b" prot="public" virt="pure-virtual"><scope>Scene</scope><name>OnExit</name></member>
+      <member refid="classScene_1ae24d21e12b34839994ad265662ea24d7" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Render</name></member>
+      <member refid="classScene_1aaede6346f58776bd40efffd55885ab02" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Update</name></member>
+      <member refid="classScene_1af6e09d91ebd10ae9cc7c12c39d06386c" prot="public" virt="virtual"><scope>Scene</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,194 @@
+\doxysection{Enemy\+Died\+Event Class Reference}
+\hypertarget{classEnemyDiedEvent}{}\label{classEnemyDiedEvent}\index{EnemyDiedEvent@{EnemyDiedEvent}}
+
+
+\doxylink{classEvent}{Event} dispatched when an enemy dies.  
+
+
+
+
+{\ttfamily \+\#include $<$Enemy\+Events.\+h$>$}
+
+
+
+Inheritance diagram for Enemy\+Died\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classEnemyDiedEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Enemy\+Died\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classEnemyDiedEvent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classEnemyDiedEvent_a08d712390038a196578dcd7480787f6b}{Enemy\+Died\+Event}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&position, int score\+Value=10)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classEnemyDiedEvent}{Enemy\+Died\+Event}. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \& \doxymbox{\hyperlink{classEnemyDiedEvent_a40f4d9860f414989f5f1915a9a9d5120}{Get\+Position}} () const
+\item 
+int \doxymbox{\hyperlink{classEnemyDiedEvent_abc2d58a54cb87be48cfe7cd6adca4fca}{Get\+Score\+Value}} () const
+\item 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classEnemyDiedEvent_a71e2fc9fee13d00be1838a8f6fd46419}{Get\+Event\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classEvent_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classEnemyDiedEvent_a34f2a4f74c43ff573a53552cfa4348c0}{Get\+Static\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{classEnemyDiedEvent_a77a177161b33ef294e6014d6ad1dc99c}{m\+\_\+\+Position}}
+\item 
+int \doxymbox{\hyperlink{classEnemyDiedEvent_a4c307b78629d99dbb5d055911f206cea}{m\+\_\+\+Score\+Value}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classEvent_a8ad0c350a8f569dbb05cf845caa4737e}{Handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classEvent}{Event} dispatched when an enemy dies. 
+
+Contains the enemy\textquotesingle{}s position at death and the score value awarded.
+
+\begin{DoxyNote}{Note}
+This event can be used by UI systems to update score or by audio systems to play death sounds. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classEnemySystem}{Enemy\+System} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{EnemyEvents_8h_source_l00015}{15}} of file \doxymbox{\hyperlink{EnemyEvents_8h_source}{Enemy\+Events.\+h}}.
+
+
+
+\label{classEnemyDiedEvent_doc-constructors}
+\Hypertarget{classEnemyDiedEvent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEnemyDiedEvent_a08d712390038a196578dcd7480787f6b}\index{EnemyDiedEvent@{EnemyDiedEvent}!EnemyDiedEvent@{EnemyDiedEvent}}
+\index{EnemyDiedEvent@{EnemyDiedEvent}!EnemyDiedEvent@{EnemyDiedEvent}}
+\doxysubsubsection{\texorpdfstring{EnemyDiedEvent()}{EnemyDiedEvent()}}
+{\footnotesize\ttfamily \label{classEnemyDiedEvent_a08d712390038a196578dcd7480787f6b} 
+Enemy\+Died\+Event::\+\+Enemy\+Died\+Event (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{position}{, }\item[{int}]{score\+Value}{ = {\ttfamily 10}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \doxylink{classEnemyDiedEvent}{Enemy\+Died\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Enemy position at death. \\
+\hline
+{\em score\+Value} & Score value awarded (default: 10). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{EnemyEvents_8h_source_l00022}{22}} of file \doxymbox{\hyperlink{EnemyEvents_8h_source}{Enemy\+Events.\+h}}.
+
+
+
+\label{classEnemyDiedEvent_doc-func-members}
+\Hypertarget{classEnemyDiedEvent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEnemyDiedEvent_a71e2fc9fee13d00be1838a8f6fd46419}\index{EnemyDiedEvent@{EnemyDiedEvent}!GetEventType@{GetEventType}}
+\index{GetEventType@{GetEventType}!EnemyDiedEvent@{EnemyDiedEvent}}
+\doxysubsubsection{\texorpdfstring{GetEventType()}{GetEventType()}}
+{\footnotesize\ttfamily \label{classEnemyDiedEvent_a71e2fc9fee13d00be1838a8f6fd46419} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Enemy\+Died\+Event::\+\+Get\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the event. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type} enum value identifying the event. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classEvent_af14bbd8f69c2778def9462375a0e70f2}{Event}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{EnemyEvents_8h_source_l00029}{29}} of file \doxymbox{\hyperlink{EnemyEvents_8h_source}{Enemy\+Events.\+h}}.
+
+\Hypertarget{classEnemyDiedEvent_a40f4d9860f414989f5f1915a9a9d5120}\index{EnemyDiedEvent@{EnemyDiedEvent}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!EnemyDiedEvent@{EnemyDiedEvent}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{classEnemyDiedEvent_a40f4d9860f414989f5f1915a9a9d5120} 
+const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \& Enemy\+Died\+Event::\+\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{EnemyEvents_8h_source_l00025}{25}} of file \doxymbox{\hyperlink{EnemyEvents_8h_source}{Enemy\+Events.\+h}}.
+
+\Hypertarget{classEnemyDiedEvent_abc2d58a54cb87be48cfe7cd6adca4fca}\index{EnemyDiedEvent@{EnemyDiedEvent}!GetScoreValue@{GetScoreValue}}
+\index{GetScoreValue@{GetScoreValue}!EnemyDiedEvent@{EnemyDiedEvent}}
+\doxysubsubsection{\texorpdfstring{GetScoreValue()}{GetScoreValue()}}
+{\footnotesize\ttfamily \label{classEnemyDiedEvent_abc2d58a54cb87be48cfe7cd6adca4fca} 
+int Enemy\+Died\+Event::\+\+Get\+Score\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{EnemyEvents_8h_source_l00026}{26}} of file \doxymbox{\hyperlink{EnemyEvents_8h_source}{Enemy\+Events.\+h}}.
+
+\Hypertarget{classEnemyDiedEvent_a34f2a4f74c43ff573a53552cfa4348c0}\index{EnemyDiedEvent@{EnemyDiedEvent}!GetStaticType@{GetStaticType}}
+\index{GetStaticType@{GetStaticType}!EnemyDiedEvent@{EnemyDiedEvent}}
+\doxysubsubsection{\texorpdfstring{GetStaticType()}{GetStaticType()}}
+{\footnotesize\ttfamily \label{classEnemyDiedEvent_a34f2a4f74c43ff573a53552cfa4348c0} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Enemy\+Died\+Event::\+\+Get\+Static\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{EnemyEvents_8h_source_l00028}{28}} of file \doxymbox{\hyperlink{EnemyEvents_8h_source}{Enemy\+Events.\+h}}.
+
+
+
+\label{classEnemyDiedEvent_doc-variable-members}
+\Hypertarget{classEnemyDiedEvent_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classEnemyDiedEvent_a77a177161b33ef294e6014d6ad1dc99c}\index{EnemyDiedEvent@{EnemyDiedEvent}!m\_Position@{m\_Position}}
+\index{m\_Position@{m\_Position}!EnemyDiedEvent@{EnemyDiedEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Position}{m\_Position}}
+{\footnotesize\ttfamily \label{classEnemyDiedEvent_a77a177161b33ef294e6014d6ad1dc99c} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Enemy\+Died\+Event::\+m\+\_\+\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{EnemyEvents_8h_source_l00032}{32}} of file \doxymbox{\hyperlink{EnemyEvents_8h_source}{Enemy\+Events.\+h}}.
+
+\Hypertarget{classEnemyDiedEvent_a4c307b78629d99dbb5d055911f206cea}\index{EnemyDiedEvent@{EnemyDiedEvent}!m\_ScoreValue@{m\_ScoreValue}}
+\index{m\_ScoreValue@{m\_ScoreValue}!EnemyDiedEvent@{EnemyDiedEvent}}
+\doxysubsubsection{\texorpdfstring{m\_ScoreValue}{m\_ScoreValue}}
+{\footnotesize\ttfamily \label{classEnemyDiedEvent_a4c307b78629d99dbb5d055911f206cea} 
+int Enemy\+Died\+Event::\+m\+\_\+\+Score\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{EnemyEvents_8h_source_l00033}{33}} of file \doxymbox{\hyperlink{EnemyEvents_8h_source}{Enemy\+Events.\+h}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+events/\doxymbox{\hyperlink{EnemyEvents_8h}{Enemy\+Events.\+h}}\end{DoxyCompactItemize}

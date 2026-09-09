@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structComponents_1_1SpriteRenderer" kind="struct" language="C++" prot="public">
+    <compoundname>Components::SpriteRenderer</compoundname>
+    <includes refid="SpriteRenderer_8h" local="no">SpriteRenderer.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structComponents_1_1SpriteRenderer_1a7f430566c6a661fa1973ad364f6ba744" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2D&gt; Components::SpriteRenderer::Texture</definition>
+        <argsstring></argsstring>
+        <name>Texture</name>
+        <qualifiedname>Components::SpriteRenderer::Texture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/SpriteRenderer.h" line="19" column="25" bodyfile="engine/components/SpriteRenderer.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Associates a texture with an entity for 2D rendering. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Entities with this component will be rendered as a sprite using the assigned texture. The <ref refid="classRenderSystem" kindref="compound">RenderSystem</ref> reads this component along with <ref refid="structComponents_1_1Transform" kindref="compound">Transform</ref> to draw the entity.</para>
+<para><simplesect kind="note"><para>The texture is stored as a shared_ptr, allowing multiple entities to share the same texture (efficient for tilemaps or repeated sprites). </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structComponents_1_1Transform" kindref="compound">Transform</ref>, <ref refid="classRenderSystem" kindref="compound">RenderSystem</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Components::SpriteRenderer</label>
+        <link refid="structComponents_1_1SpriteRenderer"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/components/SpriteRenderer.h" line="18" column="5" bodyfile="engine/components/SpriteRenderer.h" bodystart="18" bodyend="20"/>
+    <listofallmembers>
+      <member refid="structComponents_1_1SpriteRenderer_1a7f430566c6a661fa1973ad364f6ba744" prot="public" virt="non-virtual"><scope>Components::SpriteRenderer</scope><name>Texture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

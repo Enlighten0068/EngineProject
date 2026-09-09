@@ -1,0 +1,50 @@
+\doxysection{Player\+Controller.\+h}
+\hypertarget{PlayerController_8h_source}{}\label{PlayerController_8h_source}\index{engine/core/PlayerController.h@{engine/core/PlayerController.h}}
+\doxymbox{\hyperlink{PlayerController_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{components_2Transform_8h}{components/Transform.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Vector3D_8h}{math/Vector3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{GameWorld_8h}{scene/GameWorld.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <entt.hpp>}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00020}\doxymbox{\hyperlink{classPlayerController}{00020}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classPlayerController_a526dbbbce5f9567a8558b5366445b4f7}{PlayerController}}\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00021}00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00028}00028\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a526dbbbce5f9567a8558b5366445b4f7}{PlayerController}}(entt::registry\&\ registry,\ entt::entity\ playerEntity,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classGameWorld}{GameWorld}}\&\ world);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00029}\doxymbox{\hyperlink{classPlayerController_ab89c90498ca2285d7f0ef0b83a091966}{00029}}\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ab89c90498ca2285d7f0ef0b83a091966}{\string~PlayerController}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPlayerController_a2e0c380d64a88c8cfe60ce8452921227}{Update}}();}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00043}\doxymbox{\hyperlink{classPlayerController_abc200ae4a92f7fb881a6dfeb395c1f11}{00043}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPlayerController_abc200ae4a92f7fb881a6dfeb395c1f11}{SetSpeed}}(\textcolor{keywordtype}{float}\ speed)\{\ \doxymbox{\hyperlink{classPlayerController_a552c0308cb0226c7862d99c04f68357a}{m\_Speed}}\ =\ speed;\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00049}\doxymbox{\hyperlink{classPlayerController_ab4060eac83a61cfcb0e527a1494b8a23}{00049}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classPlayerController_ab4060eac83a61cfcb0e527a1494b8a23}{GetSpeed}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classPlayerController_a552c0308cb0226c7862d99c04f68357a}{m\_Speed}};\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPlayerController_a41c1071503dfa351b2e028389476529b}{Die}}(\textcolor{keyword}{const}\ std::string\&\ cause\ =\ \textcolor{stringliteral}{"{}Unknown."{}});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//Physics\ state\ accessors}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00058}\doxymbox{\hyperlink{classPlayerController_ade1bb93004235d430154378ed6306afa}{00058}}\ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ \doxymbox{\hyperlink{classPlayerController_ade1bb93004235d430154378ed6306afa}{GetVelocity}}()\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}};\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00059}\doxymbox{\hyperlink{classPlayerController_a8e1f16bbd03a85df6db3922c46d03552}{00059}}\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ \doxymbox{\hyperlink{classPlayerController_a8e1f16bbd03a85df6db3922c46d03552}{GetVelocity}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}};\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00060}\doxymbox{\hyperlink{classPlayerController_a1fa66a69ec5d0c51bedf8ca25b69629a}{00060}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPlayerController_a1fa66a69ec5d0c51bedf8ca25b69629a}{SetGrounded}}(\textcolor{keywordtype}{bool}\ grounded)\{\ \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}}\ =\ grounded;\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00061}\doxymbox{\hyperlink{classPlayerController_a6df72345dcec81954352df7e19763057}{00061}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classPlayerController_a6df72345dcec81954352df7e19763057}{IsGrounded}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}};\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00063}00063\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPlayerController_ab1593f66b3a70d2ce2c99d2898b27300}{SetupEventSubscriptions}}();}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00072}\doxymbox{\hyperlink{classPlayerController_ad586858eeaf73156678220adde0dfc65}{00072}}\ \ \ \ \ entt::registry\&\ \doxymbox{\hyperlink{classPlayerController_ad586858eeaf73156678220adde0dfc65}{m\_Registry}};\ \textcolor{comment}{//ECS\ registry}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00073}\doxymbox{\hyperlink{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7}{00073}}\ \ \ \ \ entt::entity\ \doxymbox{\hyperlink{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7}{m\_PlayerEntity}};\ \textcolor{comment}{//Player\ entity\ ID}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00075}\doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{00075}}\ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}\{0.0f,\ 0.0f,\ 0.0f\};\ \textcolor{comment}{//Current\ velocity}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00076}\doxymbox{\hyperlink{classPlayerController_a552c0308cb0226c7862d99c04f68357a}{00076}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classPlayerController_a552c0308cb0226c7862d99c04f68357a}{m\_Speed}}\ =\ 3.0f;\ \textcolor{comment}{//Movement\ speed}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00078}00078\ \ \ \ \ \textcolor{comment}{//Physics\ state\ flags}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00079}\doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{00079}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\_IsJumping}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//Currently\ jumping}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00080}\doxymbox{\hyperlink{classPlayerController_ae0e4240a0fad2c55cdf0b96e4450e83d}{00080}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classPlayerController_ae0e4240a0fad2c55cdf0b96e4450e83d}{m\_JumpTimer}}\ =\ 0.0f;\ \textcolor{comment}{//Time\ spent\ in\ current\ jump}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00081}\doxymbox{\hyperlink{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}{00081}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}{m\_IsDead}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//Dead\ state}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00082}\doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{00082}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//Touching\ ground}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00083}\doxymbox{\hyperlink{classPlayerController_a2b4f8434fdc256669b54c8ac8f7d6aeb}{00083}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classPlayerController_a2b4f8434fdc256669b54c8ac8f7d6aeb}{m\_WasGrounded}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//Previous\ frame\ grounded\ state}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00085}\doxymbox{\hyperlink{classPlayerController_a0741e03ee1239165e1a12ab2fdc818db}{00085}}\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classGameWorld}{GameWorld}}\&\ \doxymbox{\hyperlink{classPlayerController_a0741e03ee1239165e1a12ab2fdc818db}{m\_World}};\ \textcolor{comment}{//World\ for\ boundary\ clamping}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8h_source_l00086}00086\ \};}
+
+\end{DoxyCode}

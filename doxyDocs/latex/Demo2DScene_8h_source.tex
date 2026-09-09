@@ -1,0 +1,48 @@
+\doxysection{Demo2\+DScene.\+h}
+\hypertarget{Demo2DScene_8h_source}{}\label{Demo2DScene_8h_source}\index{engine/demo/Demo2DScene.h@{engine/demo/Demo2DScene.h}}
+\doxymbox{\hyperlink{Demo2DScene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{PlayerController_8h}{core/PlayerController.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{CameraController_8h}{core/CameraController.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{FpsCounter_8h}{core/FpsCounter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Scene_8h}{scene/Scene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{ECSScene_8h}{scene/ECSScene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{GameWorld_8h}{scene/GameWorld.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Camera2D_8h}{scene/Camera2D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00023}\doxymbox{\hyperlink{classDemo2DScene}{00023}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classDemo2DScene_add40385f9fe2a12d44b8a02336a8ea2a}{Demo2DScene}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classScene}{Scene}}\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00024}00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00031}00031\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_add40385f9fe2a12d44b8a02336a8ea2a}{Demo2DScene}}(\doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ va,\ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ ib);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00032}00032\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_add40385f9fe2a12d44b8a02336a8ea2a}{\string~Demo2DScene}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_a8ffa82c6772da7121ff4d812d9d1c1e5}{OnEnter}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_afce546436c8328555a6c548dcb3a9d90}{OnExit}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_a960e0d534e6e05bda39f3d9eaaf30deb}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_aa04f40209bc6b113df30f9dcf03bd80c}{Render}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00038}\doxymbox{\hyperlink{classDemo2DScene_aa6caae608302b160ef184473e1ef0219}{00038}}\ \ \ \ \ std::string\ \doxymbox{\hyperlink{classDemo2DScene_aa6caae608302b160ef184473e1ef0219}{GetName}}()\textcolor{keyword}{\ const\ override}\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Demo2D"{}};\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00040}00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00041}\doxymbox{\hyperlink{classDemo2DScene_ac0fb2242739ad3f82ed75d227e9345a8}{00041}}\ \ \ \ \ \doxymbox{\hyperlink{classShader}{Shader}}\&\ \doxymbox{\hyperlink{classDemo2DScene_ac0fb2242739ad3f82ed75d227e9345a8}{m\_Shader}};\ \textcolor{comment}{//Main\ shader\ for\ rendering}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00042}\doxymbox{\hyperlink{classDemo2DScene_a1df48e8d11e82a73fe80fbeaf8baa865}{00042}}\ \ \ \ \ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ \doxymbox{\hyperlink{classDemo2DScene_a1df48e8d11e82a73fe80fbeaf8baa865}{m\_VertexArray}};\ \textcolor{comment}{//Vertex\ array\ for\ geometry}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00043}\doxymbox{\hyperlink{classDemo2DScene_a21e4a1ff58a2078dca4e3960cd711ee1}{00043}}\ \ \ \ \ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ \doxymbox{\hyperlink{classDemo2DScene_a21e4a1ff58a2078dca4e3960cd711ee1}{m\_IndexBuffer}};\ \textcolor{comment}{//Index\ buffer\ for\ geometry}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00045}\doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{00045}}\ \ \ \ \ std::unique\_ptr<ECSScene>\ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}};\ \textcolor{comment}{//ECS\ scene\ containing\ all\ entities}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00046}\doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{00046}}\ \ \ \ \ std::unique\_ptr<GameWorld>\ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}};\ \textcolor{comment}{//World\ boundaries}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00047}\doxymbox{\hyperlink{classDemo2DScene_aef6643910216af035868027d99a24b82}{00047}}\ \ \ \ \ std::unique\_ptr<Camera2D>\ \doxymbox{\hyperlink{classDemo2DScene_aef6643910216af035868027d99a24b82}{m\_Camera}};\ \textcolor{comment}{//Dynamic\ camera}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00048}\doxymbox{\hyperlink{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}{00048}}\ \ \ \ \ std::unique\_ptr<CameraController>\ \doxymbox{\hyperlink{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}{m\_CameraController}};\ \textcolor{comment}{//Camera\ controller}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00049}\doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{00049}}\ \ \ \ \ std::unique\_ptr<PlayerController>\ \doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}};\ \textcolor{comment}{//Player\ controller}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00051}\doxymbox{\hyperlink{classDemo2DScene_aeb9849fda70cb52780bc4db9eae68a24}{00051}}\ \ \ \ \ std::unique\_ptr<FpsCounter>\ \doxymbox{\hyperlink{classDemo2DScene_aeb9849fda70cb52780bc4db9eae68a24}{m\_FpsCounter}};\ \textcolor{comment}{//FPS\ counter}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00052}\doxymbox{\hyperlink{classDemo2DScene_a1a61e61b8e799326f91368f32f765f2a}{00052}}\ \ \ \ \ entt::entity\ \doxymbox{\hyperlink{classDemo2DScene_a1a61e61b8e799326f91368f32f765f2a}{m\_PlayerEntity}};\ \textcolor{comment}{//Player\ entity\ ID}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00054}\doxymbox{\hyperlink{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}{00054}}\ \ \ \ \ std::vector<entt::entity>\ \doxymbox{\hyperlink{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}{m\_PlatformEntities}};\ \textcolor{comment}{//Platform\ entities\ for\ collision}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_aac72f489fe5514f29e315acfd7851a06}{ResolveCollisions}}();\ \textcolor{comment}{//Resolves\ player-\/platform\ collisions}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_af7cdfcef2f6bede3ffe930dba96f4812}{SetupScene}}();\ \textcolor{comment}{//Sets\ up\ the\ scene\ with\ all\ entities}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8h_source_l00058}00058\ \};}
+
+\end{DoxyCode}

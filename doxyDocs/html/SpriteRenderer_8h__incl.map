@@ -1,0 +1,13 @@
+<map id="engine/components/SpriteRenderer.h" name="engine/components/SpriteRenderer.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="132,5,323,50"/>
+<area shape="rect" id="Node000002" href="$Texture2D_8h.html" title=" " alt="" coords="78,98,236,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,49,180,88,176,84,207,52"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="260,98,336,126"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="247,48,280,86,274,86,245,53"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,174,101,201"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="141,126,85,167,82,163,136,127"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="124,174,190,201"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="159,124,159,159,155,157,155,128"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="213,174,272,201"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="173,124,218,163,213,163,171,129"/>
+</map>

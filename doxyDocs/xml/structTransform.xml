@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structTransform" kind="struct" language="C++" prot="public">
+    <compoundname>Transform</compoundname>
+    <includes refid="math_2Transform_8h" local="no">Transform.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTransform_1a067ba0742fc185518bf280543d53f348" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Transform::Position</definition>
+        <argsstring></argsstring>
+        <name>Position</name>
+        <qualifiedname>Transform::Position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Transform.h" line="16" column="14" bodyfile="engine/math/Transform.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTransform_1a076925ea681b074978cdfc3d20aa51fa" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Transform::Rotation</definition>
+        <argsstring></argsstring>
+        <name>Rotation</name>
+        <qualifiedname>Transform::Rotation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Transform.h" line="17" column="14" bodyfile="engine/math/Transform.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structTransform_1af736c98399dd283677d5b8e232df95fb" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Transform::Scale</definition>
+        <argsstring></argsstring>
+        <name>Scale</name>
+        <qualifiedname>Transform::Scale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Transform.h" line="18" column="14" bodyfile="engine/math/Transform.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structTransform_1aa08ca4266efabc768973cdeea51945ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Transform::Transform</definition>
+        <argsstring>()</argsstring>
+        <name>Transform</name>
+        <qualifiedname>Transform::Transform</qualifiedname>
+        <briefdescription>
+<para>Default constructor: position at origin, no rotation, scale 1. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Transform.h" line="23" column="5" bodyfile="engine/math/Transform.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a 3D transformation: position, rotation, and scale. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This struct is used as a component in the ECS system to store the spatial properties of an entity.</para>
+<para><simplesect kind="note"><para>Rotation is stored as Euler angles (pitch, yaw, roll) in radians. Usually only the roll is used in 2D games. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structComponents_1_1Transform" kindref="compound">Components::Transform</ref>, <ref refid="classMatrix4_1a35fb272e82fbfc17cdf2d75c858f5da7" kindref="member">Matrix4::Translation</ref>, <ref refid="classMatrix4_1aaa53c3d6bcda5ac9c4d8568a54d3d543" kindref="member">Matrix4::RotationZ</ref>, <ref refid="classMatrix4_1aa3a30984ce9f309c23827d5e1cde0fdc" kindref="member">Matrix4::Scale</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Transform</label>
+        <link refid="structTransform"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+Position</edgelabel>
+          <edgelabel>+Rotation</edgelabel>
+          <edgelabel>+Scale</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/math/Transform.h" line="15" column="1" bodyfile="engine/math/Transform.h" bodystart="15" bodyend="24"/>
+    <listofallmembers>
+      <member refid="structTransform_1a067ba0742fc185518bf280543d53f348" prot="public" virt="non-virtual"><scope>Transform</scope><name>Position</name></member>
+      <member refid="structTransform_1a076925ea681b074978cdfc3d20aa51fa" prot="public" virt="non-virtual"><scope>Transform</scope><name>Rotation</name></member>
+      <member refid="structTransform_1af736c98399dd283677d5b8e232df95fb" prot="public" virt="non-virtual"><scope>Transform</scope><name>Scale</name></member>
+      <member refid="structTransform_1aa08ca4266efabc768973cdeea51945ab" prot="public" virt="non-virtual"><scope>Transform</scope><name>Transform</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

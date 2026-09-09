@@ -1,0 +1,253 @@
+\doxysection{Vector2D Struct Reference}
+\hypertarget{structVector2D}{}\label{structVector2D}\index{Vector2D@{Vector2D}}
+
+
+2D vector struct with basic arithmetic operations.  
+
+
+
+
+{\ttfamily \+\#include $<$Vector2\+D.\+h$>$}
+
+
+
+Collaboration diagram for Vector2D:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{structVector2D__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structVector2D_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor: zero vector. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector2D_a430087719aec1e0021eb360413d84327}{Vector2D}} (float x\+Value, float y\+Value)
+\begin{DoxyCompactList}\small\item\em Constructs a vector from two floats. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{structVector2D_ab753e2684f0d7b8dda34664fa35e60d2}{operator+}} (const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&other) const
+\begin{DoxyCompactList}\small\item\em Vector addition. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{structVector2D_a064e055cd20ee42d561f4156108956d8}{operator-\/}} (const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&other) const
+\begin{DoxyCompactList}\small\item\em Vector subtraction. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{structVector2D_ade6501d6c7e51e0b0184ece75c101bc5}{operator\texorpdfstring{$\ast$}{*}}} (float scalar) const
+\begin{DoxyCompactList}\small\item\em Scalar multiplication. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{structVector2D_a12bd5609ad5336e9c3bb9bf30cbd3ec7}{operator/}} (float scalar) const
+\begin{DoxyCompactList}\small\item\em Scalar division. \end{DoxyCompactList}\item 
+float \doxymbox{\hyperlink{structVector2D_ad83e0c1674c68673be6f79c416fac333}{Length}} () const
+\begin{DoxyCompactList}\small\item\em Computes the Euclidean length (magnitude) of the vector. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{structVector2D_a4a1b14c0b7ef08d834b8ba0c2f53f326}{Normalized}} () const
+\begin{DoxyCompactList}\small\item\em Returns a normalized copy of the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}
+\item 
+float \doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+2D vector struct with basic arithmetic operations. 
+
+Used for positions, directions, and other 2D spatial data. All operators are const and return a new vector. 
+
+Definition at line \doxymbox{\hyperlink{Vector2D_8h_source_l00011}{11}} of file \doxymbox{\hyperlink{Vector2D_8h_source}{Vector2\+D.\+h}}.
+
+
+
+\label{structVector2D_doc-constructors}
+\Hypertarget{structVector2D_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structVector2D_a98e9997ebb7a629f4db52397d4e0d653}\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{Vector2D()}{Vector2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{structVector2D_a98e9997ebb7a629f4db52397d4e0d653} 
+Vector2\+D::\+\+Vector2D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor: zero vector. 
+
+
+
+Definition at line \doxymbox{\hyperlink{Vector2D_8h_source_l00018}{18}} of file \doxymbox{\hyperlink{Vector2D_8h_source}{Vector2\+D.\+h}}.
+
+\Hypertarget{structVector2D_a430087719aec1e0021eb360413d84327}\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{Vector2D()}{Vector2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{structVector2D_a430087719aec1e0021eb360413d84327} 
+Vector2\+D::\+\+Vector2D (\begin{DoxyParamCaption}\item[{float}]{x\+Value}{, }\item[{float}]{y\+Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a vector from two floats. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Value} & X component. \\
+\hline
+{\em y\+Value} & Y component. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Vector2D_8h_source_l00025}{25}} of file \doxymbox{\hyperlink{Vector2D_8h_source}{Vector2\+D.\+h}}.
+
+
+
+\label{structVector2D_doc-func-members}
+\Hypertarget{structVector2D_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structVector2D_ad83e0c1674c68673be6f79c416fac333}\index{Vector2D@{Vector2D}!Length@{Length}}
+\index{Length@{Length}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{Length()}{Length()}}
+{\footnotesize\ttfamily \label{structVector2D_ad83e0c1674c68673be6f79c416fac333} 
+float Vector2\+D::\+\+Length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the Euclidean length (magnitude) of the vector. 
+
+\begin{DoxyReturn}{Returns}
+Length of the vector. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Vector2D_8h_source_l00067}{67}} of file \doxymbox{\hyperlink{Vector2D_8h_source}{Vector2\+D.\+h}}.
+
+\Hypertarget{structVector2D_a4a1b14c0b7ef08d834b8ba0c2f53f326}\index{Vector2D@{Vector2D}!Normalized@{Normalized}}
+\index{Normalized@{Normalized}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{Normalized()}{Normalized()}}
+{\footnotesize\ttfamily \label{structVector2D_a4a1b14c0b7ef08d834b8ba0c2f53f326} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Vector2\+D::\+\+Normalized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a normalized copy of the vector. 
+
+\begin{DoxyReturn}{Returns}
+Normalized vector (unit length), or itself if length is zero. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Vector2D_8h_source_l00075}{75}} of file \doxymbox{\hyperlink{Vector2D_8h_source}{Vector2\+D.\+h}}.
+
+\Hypertarget{structVector2D_ade6501d6c7e51e0b0184ece75c101bc5}\index{Vector2D@{Vector2D}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{structVector2D_ade6501d6c7e51e0b0184ece75c101bc5} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Vector2\+D::\+operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{float}]{scalar}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Scalar multiplication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Multiplicand. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector with components multiplied by scalar. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Vector2D_8h_source_l00050}{50}} of file \doxymbox{\hyperlink{Vector2D_8h_source}{Vector2\+D.\+h}}.
+
+\Hypertarget{structVector2D_ab753e2684f0d7b8dda34664fa35e60d2}\index{Vector2D@{Vector2D}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{structVector2D_ab753e2684f0d7b8dda34664fa35e60d2} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Vector2\+D::\+operator+ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vector addition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Vector to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector with component-\/wise sum. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Vector2D_8h_source_l00032}{32}} of file \doxymbox{\hyperlink{Vector2D_8h_source}{Vector2\+D.\+h}}.
+
+\Hypertarget{structVector2D_a064e055cd20ee42d561f4156108956d8}\index{Vector2D@{Vector2D}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{structVector2D_a064e055cd20ee42d561f4156108956d8} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Vector2\+D::\+operator-\/ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vector subtraction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Vector to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector with component-\/wise difference. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Vector2D_8h_source_l00041}{41}} of file \doxymbox{\hyperlink{Vector2D_8h_source}{Vector2\+D.\+h}}.
+
+\Hypertarget{structVector2D_a12bd5609ad5336e9c3bb9bf30cbd3ec7}\index{Vector2D@{Vector2D}!operator/@{operator/}}
+\index{operator/@{operator/}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \label{structVector2D_a12bd5609ad5336e9c3bb9bf30cbd3ec7} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Vector2\+D::\+operator/ (\begin{DoxyParamCaption}\item[{float}]{scalar}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Scalar division. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Divisor (MUST NOT BE 0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector with components divided by scalar. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Vector2D_8h_source_l00059}{59}} of file \doxymbox{\hyperlink{Vector2D_8h_source}{Vector2\+D.\+h}}.
+
+
+
+\label{structVector2D_doc-variable-members}
+\Hypertarget{structVector2D_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structVector2D_aeb4253ba6555251d010ea4450619029e}\index{Vector2D@{Vector2D}!x@{x}}
+\index{x@{x}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{structVector2D_aeb4253ba6555251d010ea4450619029e} 
+float Vector2\+D::\+x}
+
+
+
+Definition at line \doxymbox{\hyperlink{Vector2D_8h_source_l00012}{12}} of file \doxymbox{\hyperlink{Vector2D_8h_source}{Vector2\+D.\+h}}.
+
+\Hypertarget{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}\index{Vector2D@{Vector2D}!y@{y}}
+\index{y@{y}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{structVector2D_a85215519d3f71d0e6be7d636346f3b7d} 
+float Vector2\+D::\+y}
+
+
+
+Definition at line \doxymbox{\hyperlink{Vector2D_8h_source_l00013}{13}} of file \doxymbox{\hyperlink{Vector2D_8h_source}{Vector2\+D.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+math/\doxymbox{\hyperlink{Vector2D_8h}{Vector2\+D.\+h}}\end{DoxyCompactItemize}

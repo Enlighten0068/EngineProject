@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classMouseButtonEvent" kind="class" language="C++" prot="public">
+    <compoundname>MouseButtonEvent</compoundname>
+    <basecompoundref refid="classEvent" prot="public" virt="non-virtual">Event</basecompoundref>
+    <includes refid="MouseEvent_8h" local="no">MouseEvent.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMouseButtonEvent_1aeb7e0639c6bf9d4d427784152113b6ad" prot="private" static="no" mutable="no">
+        <type><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711" kindref="member">MouseButton</ref></type>
+        <definition>MouseButton MouseButtonEvent::m_Button</definition>
+        <argsstring></argsstring>
+        <name>m_Button</name>
+        <qualifiedname>MouseButtonEvent::m_Button</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="80" column="17" bodyfile="engine/events/MouseEvent.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMouseButtonEvent_1a73d4f8d32af734e233bcc6f33116de08" prot="private" static="no" mutable="no">
+        <type><ref refid="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224" kindref="member">MouseButtonAction</ref></type>
+        <definition>MouseButtonAction MouseButtonEvent::m_Action</definition>
+        <argsstring></argsstring>
+        <name>m_Action</name>
+        <qualifiedname>MouseButtonEvent::m_Action</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="81" column="23" bodyfile="engine/events/MouseEvent.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMouseButtonEvent_1ab5e7ca136eb4f1cf266a45cc852cfb4a" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D MouseButtonEvent::m_Position</definition>
+        <argsstring></argsstring>
+        <name>m_Position</name>
+        <qualifiedname>MouseButtonEvent::m_Position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="82" column="14" bodyfile="engine/events/MouseEvent.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMouseButtonEvent_1a789cf2cf6cfe1d76413c397950cd128b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MouseButtonEvent::MouseButtonEvent</definition>
+        <argsstring>(MouseButton button, MouseButtonAction action, const Vector2D &amp;position)</argsstring>
+        <name>MouseButtonEvent</name>
+        <qualifiedname>MouseButtonEvent::MouseButtonEvent</qualifiedname>
+        <param>
+          <type><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711" kindref="member">MouseButton</ref></type>
+          <declname>button</declname>
+        </param>
+        <param>
+          <type><ref refid="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224" kindref="member">MouseButtonAction</ref></type>
+          <declname>action</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector2D" kindref="compound">Vector2D</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classMouseButtonEvent" kindref="compound">MouseButtonEvent</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>button</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mouse button. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Action type (pressed or released). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mouse position at the time of the event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="69" column="5" bodyfile="engine/events/MouseEvent.h" bodystart="69" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classMouseButtonEvent_1ab60dceaeb707317ab267ffacde3b6c1b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711" kindref="member">MouseButton</ref></type>
+        <definition>MouseButton MouseButtonEvent::GetButton</definition>
+        <argsstring>() const</argsstring>
+        <name>GetButton</name>
+        <qualifiedname>MouseButtonEvent::GetButton</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="72" column="17" bodyfile="engine/events/MouseEvent.h" bodystart="72" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classMouseButtonEvent_1ac54f1bb65b817b818e310526ca8aed97" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224" kindref="member">MouseButtonAction</ref></type>
+        <definition>MouseButtonAction MouseButtonEvent::GetAction</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAction</name>
+        <qualifiedname>MouseButtonEvent::GetAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="73" column="23" bodyfile="engine/events/MouseEvent.h" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classMouseButtonEvent_1aee204344f9ab0de4d3448017846d2dcc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D MouseButtonEvent::GetPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPosition</name>
+        <qualifiedname>MouseButtonEvent::GetPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="74" column="14" bodyfile="engine/events/MouseEvent.h" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classMouseButtonEvent_1ac6b8e90d0d6ed6bc07199726f209b72e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>EventType MouseButtonEvent::GetEventType</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetEventType</name>
+        <qualifiedname>MouseButtonEvent::GetEventType</qualifiedname>
+        <reimplements refid="classEvent_1af14bbd8f69c2778def9462375a0e70f2">GetEventType</reimplements>
+        <briefdescription>
+<para>Returns the type of the event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref> enum value identifying the event. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="77" column="15" bodyfile="engine/events/MouseEvent.h" bodystart="77" bodyend="77"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classMouseButtonEvent_1a9c56ce7622039fc9a191fa72b779655b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>static EventType MouseButtonEvent::GetStaticType</definition>
+        <argsstring>()</argsstring>
+        <name>GetStaticType</name>
+        <qualifiedname>MouseButtonEvent::GetStaticType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="76" column="22" bodyfile="engine/events/MouseEvent.h" bodystart="76" bodyend="76"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classEvent" kindref="compound">Event</ref> representing a mouse button press/release. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contains which button was pressed/released, the action type, and the mouse position at the time of the event. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>MouseButtonEvent</label>
+        <link refid="classMouseButtonEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>MouseButtonEvent</label>
+        <link refid="classMouseButtonEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_Position</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Vector2D</label>
+        <link refid="structVector2D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/events/MouseEvent.h" line="61" column="1" bodyfile="engine/events/MouseEvent.h" bodystart="61" bodyend="83"/>
+    <listofallmembers>
+      <member refid="classMouseButtonEvent_1ac54f1bb65b817b818e310526ca8aed97" prot="public" virt="non-virtual"><scope>MouseButtonEvent</scope><name>GetAction</name></member>
+      <member refid="classMouseButtonEvent_1ab60dceaeb707317ab267ffacde3b6c1b" prot="public" virt="non-virtual"><scope>MouseButtonEvent</scope><name>GetButton</name></member>
+      <member refid="classMouseButtonEvent_1ac6b8e90d0d6ed6bc07199726f209b72e" prot="public" virt="virtual"><scope>MouseButtonEvent</scope><name>GetEventType</name></member>
+      <member refid="classMouseButtonEvent_1aee204344f9ab0de4d3448017846d2dcc" prot="public" virt="non-virtual"><scope>MouseButtonEvent</scope><name>GetPosition</name></member>
+      <member refid="classMouseButtonEvent_1a9c56ce7622039fc9a191fa72b779655b" prot="public" virt="non-virtual"><scope>MouseButtonEvent</scope><name>GetStaticType</name></member>
+      <member refid="classEvent_1a8ad0c350a8f569dbb05cf845caa4737e" prot="public" virt="non-virtual"><scope>MouseButtonEvent</scope><name>Handled</name></member>
+      <member refid="classMouseButtonEvent_1a73d4f8d32af734e233bcc6f33116de08" prot="private" virt="non-virtual"><scope>MouseButtonEvent</scope><name>m_Action</name></member>
+      <member refid="classMouseButtonEvent_1aeb7e0639c6bf9d4d427784152113b6ad" prot="private" virt="non-virtual"><scope>MouseButtonEvent</scope><name>m_Button</name></member>
+      <member refid="classMouseButtonEvent_1ab5e7ca136eb4f1cf266a45cc852cfb4a" prot="private" virt="non-virtual"><scope>MouseButtonEvent</scope><name>m_Position</name></member>
+      <member refid="classMouseButtonEvent_1a789cf2cf6cfe1d76413c397950cd128b" prot="public" virt="non-virtual"><scope>MouseButtonEvent</scope><name>MouseButtonEvent</name></member>
+      <member refid="classEvent_1a105223995bbf1a1e4714d0c77f91cf0b" prot="public" virt="virtual"><scope>MouseButtonEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

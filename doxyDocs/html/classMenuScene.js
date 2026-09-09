@@ -1,0 +1,27 @@
+var classMenuScene =
+[
+    [ "MenuOption", "structMenuScene_1_1MenuOption.html", "structMenuScene_1_1MenuOption" ],
+    [ "MenuScene", "classMenuScene.html#a76e19b60d3334d7697f7d29bab6708d3", null ],
+    [ "~MenuScene", "classMenuScene.html#a9b8d7fd2c641191231e9d352932be80d", null ],
+    [ "CreateTextTexture", "classMenuScene.html#a4e1a9cdb5e0dedaab5c9f780f54d4f67", null ],
+    [ "GetName", "classMenuScene.html#a8bb0e3e014de1ba6912dc937de6a2a69", null ],
+    [ "HandleSelection", "classMenuScene.html#a46a3159d25cbdd8710abf3a1a67bfca0", null ],
+    [ "IsMouseOverOption", "classMenuScene.html#a329504c5161fa328040b3f3092df2bae", null ],
+    [ "OnEnter", "classMenuScene.html#a015085736912c87c4e28ab54ab056e6d", null ],
+    [ "OnExit", "classMenuScene.html#a834e7aa54dd72502876d30114e47cc9e", null ],
+    [ "Render", "classMenuScene.html#a57787dac0643417ddd147c940c36b93a", null ],
+    [ "RenderOption", "classMenuScene.html#a1e7a918b520265294fd74c1d9d086795", null ],
+    [ "Update", "classMenuScene.html#af2b1e0e9e1c783c8b058f60906add842", null ],
+    [ "m_BackgroundTexture", "classMenuScene.html#acfabc7d7b96c85747e56c6c11f9077c1", null ],
+    [ "m_Camera", "classMenuScene.html#a42392ac9ca92d2c766daef724b6ab131", null ],
+    [ "m_Font", "classMenuScene.html#af6491cf56e85392de0bcf6e510afe9cf", null ],
+    [ "m_IndexBuffer", "classMenuScene.html#af61d24fa8a94de5b0282fce6af54e0c4", null ],
+    [ "m_LineShader", "classMenuScene.html#a46e28a18551c53cff67144bb9ffe6057", null ],
+    [ "m_NormalColor", "classMenuScene.html#a0ad6ec8522307042405a1e14b6d7e72e", null ],
+    [ "m_Options", "classMenuScene.html#aae06e56f01f32bab0f9b7262dad0f393", null ],
+    [ "m_SceneManager", "classMenuScene.html#aafe8fc8c4b77426e8edbc443283c6dda", null ],
+    [ "m_SelectedColor", "classMenuScene.html#af46c6487c84f609a1fea2f0c98c0d2f7", null ],
+    [ "m_SelectedOption", "classMenuScene.html#aaa5474b6830601a4a96a15426cc915c7", null ],
+    [ "m_Shader", "classMenuScene.html#a9efeacffbcd00dea280ccf3703321f71", null ],
+    [ "m_VertexArray", "classMenuScene.html#aee526af82a75d255d1b6fd6d3d499e92", null ]
+];

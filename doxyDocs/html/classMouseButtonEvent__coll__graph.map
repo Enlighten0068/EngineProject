@@ -1,0 +1,7 @@
+<map id="MouseButtonEvent" name="MouseButtonEvent">
+<area shape="rect" id="Node000001" title="Event representing a mouse button press/release." alt="" coords="61,329,221,536"/>
+<area shape="rect" id="Node000002" href="$classEvent.html" title="Base class for all events in the engine." alt="" coords="5,84,132,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,190,119,329,114,330,82,195"/>
+<area shape="rect" id="Node000003" href="$structVector2D.html" title="2D vector struct with basic arithmetic operations." alt="" coords="157,5,269,256"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,254,172,314,167,312,182,258"/>
+</map>

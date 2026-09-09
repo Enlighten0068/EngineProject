@@ -1,0 +1,111 @@
+\doxysection{Transform Struct Reference}
+\hypertarget{structTransform}{}\label{structTransform}\index{Transform@{Transform}}
+
+
+Represents a 3D transformation: position, rotation, and scale.  
+
+
+
+
+{\ttfamily \+\#include $<$Transform.\+h$>$}
+
+
+
+Collaboration diagram for Transform:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{structTransform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structTransform_aa08ca4266efabc768973cdeea51945ab}{Transform}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor: position at origin, no rotation, scale 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{structTransform_a067ba0742fc185518bf280543d53f348}{Position}}
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{structTransform_a076925ea681b074978cdfc3d20aa51fa}{Rotation}}
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{structTransform_af736c98399dd283677d5b8e232df95fb}{Scale}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a 3D transformation: position, rotation, and scale. 
+
+This struct is used as a component in the ECS system to store the spatial properties of an entity.
+
+\begin{DoxyNote}{Note}
+Rotation is stored as Euler angles (pitch, yaw, roll) in radians. Usually only the roll is used in 2D games. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structComponents_1_1Transform}{Components::\+\+Transform}, \doxylink{classMatrix4_a35fb272e82fbfc17cdf2d75c858f5da7}{Matrix4::\+\+Translation}, \doxylink{classMatrix4_aaa53c3d6bcda5ac9c4d8568a54d3d543}{Matrix4::\+\+RotationZ}, \doxylink{classMatrix4_aa3a30984ce9f309c23827d5e1cde0fdc}{Matrix4::\+\+Scale} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{math_2Transform_8h_source_l00015}{15}} of file \doxymbox{\hyperlink{math_2Transform_8h_source}{Transform.\+h}}.
+
+
+
+\label{structTransform_doc-constructors}
+\Hypertarget{structTransform_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structTransform_aa08ca4266efabc768973cdeea51945ab}\index{Transform@{Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily \label{structTransform_aa08ca4266efabc768973cdeea51945ab} 
+Transform::\+\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor: position at origin, no rotation, scale 1. 
+
+
+
+Definition at line \doxymbox{\hyperlink{math_2Transform_8h_source_l00023}{23}} of file \doxymbox{\hyperlink{math_2Transform_8h_source}{Transform.\+h}}.
+
+
+
+\label{structTransform_doc-variable-members}
+\Hypertarget{structTransform_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structTransform_a067ba0742fc185518bf280543d53f348}\index{Transform@{Transform}!Position@{Position}}
+\index{Position@{Position}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily \label{structTransform_a067ba0742fc185518bf280543d53f348} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Transform::\+\+Position}
+
+
+
+Definition at line \doxymbox{\hyperlink{math_2Transform_8h_source_l00016}{16}} of file \doxymbox{\hyperlink{math_2Transform_8h_source}{Transform.\+h}}.
+
+\Hypertarget{structTransform_a076925ea681b074978cdfc3d20aa51fa}\index{Transform@{Transform}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{Rotation}{Rotation}}
+{\footnotesize\ttfamily \label{structTransform_a076925ea681b074978cdfc3d20aa51fa} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Transform::\+\+Rotation}
+
+
+
+Definition at line \doxymbox{\hyperlink{math_2Transform_8h_source_l00017}{17}} of file \doxymbox{\hyperlink{math_2Transform_8h_source}{Transform.\+h}}.
+
+\Hypertarget{structTransform_af736c98399dd283677d5b8e232df95fb}\index{Transform@{Transform}!Scale@{Scale}}
+\index{Scale@{Scale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{Scale}{Scale}}
+{\footnotesize\ttfamily \label{structTransform_af736c98399dd283677d5b8e232df95fb} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Transform::\+\+Scale}
+
+
+
+Definition at line \doxymbox{\hyperlink{math_2Transform_8h_source_l00018}{18}} of file \doxymbox{\hyperlink{math_2Transform_8h_source}{Transform.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+math/\doxymbox{\hyperlink{math_2Transform_8h}{Transform.\+h}}\end{DoxyCompactItemize}

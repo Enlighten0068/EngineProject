@@ -5,20 +5,19 @@
 
 /**
  * @brief Creates an index buffer and uploads indices to the GPU.
- *
  * @param indices Pointer to index data.
  * @param count Number of indices.
  */
 IndexBuffer::IndexBuffer(const uint32_t* indices, uint32_t count) : m_RendererID(0), m_Count(count){
     glGenBuffers(1, &m_RendererID);
-
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_RendererID);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(uint32_t), indices, GL_STATIC_DRAW);
 
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(uint32_t), indices,GL_STATIC_DRAW);
-
-    if(m_RendererID == 0) Log::Error("IndexBuffer creation failed.");
-    else Log::Info(std::format("IndexBuffer created. Renderer ID: {}", m_RendererID));
-
+    if(m_RendererID == 0){
+        Log::Error("IndexBuffer creation failed.");
+    } else{
+        Log::Info(std::format("IndexBuffer created. ID: {}", m_RendererID));
+    }
 }
 
 IndexBuffer::~IndexBuffer(){
@@ -36,7 +35,7 @@ void IndexBuffer::Bind() const{
  * @brief Unbinds the buffer.
  */
 void IndexBuffer::Unbind() const{
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
 /**

@@ -17,7 +17,8 @@ m_Near(nearPlane), m_Far(farPlane), m_IsDirty(true){
 }
 
 /**
- * @brief Sets the camera position and marks the view matrix as dirty for recalculation.
+ * @brief Sets the camera position and marks the view matrix as dirty.
+ * @param position New position.
  */
 void Camera2D::SetPosition(const Vector3D& position){
     m_Position = position;
@@ -25,7 +26,8 @@ void Camera2D::SetPosition(const Vector3D& position){
 }
 
 /**
- * @brief Sets the camera rotation and marks the view matrix as dirty for recalculation.
+ * @brief Sets the camera rotation and marks the view matrix as dirty.
+ * @param angleRadians Rotation angle in radians.
  */
 void Camera2D::SetRotation(float angleRadians){
     m_Rotation = angleRadians;
@@ -34,17 +36,21 @@ void Camera2D::SetRotation(float angleRadians){
 
 /**
  * @brief Sets the camera zoom level and recalculates the projection matrix.
- *
- * Zoom values less than 0.1 are clamped to 0.1 to prevent extreme zoom-out.
- *
- * @note Doesn't trigger camera dirty-flag for recalculation.
+ * @param zoom Zoom factor (clamped to a minimum of 0.1).
  */
 void Camera2D::SetZoom(float zoom){
-    if (zoom < 0.1f) zoom = 0.1f;
+    if(zoom < 0.1f) zoom = 0.1f;
     m_Zoom = zoom;
     UpdateProjection();
 }
 
+/**
+ * @brief Sets the camera projection volume.
+ * @param left Left boundary.
+ * @param right Right boundary.
+ * @param bottom Bottom boundary.
+ * @param top Top boundary.
+ */
 void Camera2D::SetProjection(float left, float right, float bottom, float top){
     m_Width = (right - left) / 2.0f;
     m_Height = (top - bottom) / 2.0f;
@@ -61,12 +67,12 @@ void Camera2D::SetProjection(float left, float right, float bottom, float top){
  * 2. Apply rotation around Z-axis (inverse angle)
  */
 void Camera2D::Update(){
-    if (!m_IsDirty) return;
+    if(!m_IsDirty) return;
 
-    //Build view matrix, see order above
+    //Build view matrix
     Matrix4 view = Matrix4::Translation(Vector3D(-m_Position.x, -m_Position.y, -m_Position.z));
 
-    if (m_Rotation != 0.0f){
+    if(m_Rotation != 0.0f){
         Matrix4 rot = Matrix4::RotationZ(-m_Rotation);
         view = rot * view;
     }
@@ -76,10 +82,8 @@ void Camera2D::Update(){
 
 /**
  * @brief Recalculates the orthographic projection matrix based on zoom.
- *
- * Zoom is applied by scaling the view volume: higher zoom = smaller volume = closer view.
  */
-void Camera2D::UpdateProjection() {
+void Camera2D::UpdateProjection(){
     float left = -m_Width * (1.0f / m_Zoom);
     float right = m_Width * (1.0f / m_Zoom);
     float bottom = -m_Height * (1.0f / m_Zoom);

@@ -1,0 +1,272 @@
+\doxysection{Key\+Event Class Reference}
+\hypertarget{classKeyEvent}{}\label{classKeyEvent}\index{KeyEvent@{KeyEvent}}
+
+
+\doxylink{classEvent}{Event} representing a keyboard key press/\+release.  
+
+
+
+
+{\ttfamily \+\#include $<$Key\+Event.\+h$>$}
+
+
+
+Inheritance diagram for Key\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classKeyEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Key\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classKeyEvent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classKeyEvent_ae7effbcd58ecd0fa7787a0c7bb8fc4c7}{Key\+Event}} (SDL\+\_\+\+Scancode scancode, \doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1}{Key\+Action}} action, bool ctrl, bool shift, bool alt)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classKeyEvent}{Key\+Event}. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Scancode \doxymbox{\hyperlink{classKeyEvent_ad612ba1c06ae469951e06d4635ae256f}{Get\+Scancode}} () const
+\item 
+\doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1}{Key\+Action}} \doxymbox{\hyperlink{classKeyEvent_a83f1a67717c14fc58ab42c668425de0e}{Get\+Action}} () const
+\item 
+bool \doxymbox{\hyperlink{classKeyEvent_a59358073046cd36740b8595d4ff28379}{Is\+Ctrl\+Pressed}} () const
+\item 
+bool \doxymbox{\hyperlink{classKeyEvent_a58e682c21b99b031779ec1f210a50a0a}{Is\+Shift\+Pressed}} () const
+\item 
+bool \doxymbox{\hyperlink{classKeyEvent_aab67e22618180ca64d3369555fa2aee6}{Is\+Alt\+Pressed}} () const
+\item 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classKeyEvent_aba1bc77a6676e8a62dd26a14670a69e1}{Get\+Event\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classEvent_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classKeyEvent_a2d85adf9e71829dad3518f4310f8ef0d}{Get\+Static\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Scancode \doxymbox{\hyperlink{classKeyEvent_a628fa8f7d5d100dadcde5a126d0bd8ee}{m\+\_\+\+Scancode}}
+\item 
+\doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1}{Key\+Action}} \doxymbox{\hyperlink{classKeyEvent_aad5fdec337221e5ee64d961e22a26e62}{m\+\_\+\+Action}}
+\item 
+bool \doxymbox{\hyperlink{classKeyEvent_a23cd0c227402e8ab0558c625f672382b}{m\+\_\+\+Ctrl}}
+\item 
+bool \doxymbox{\hyperlink{classKeyEvent_a7adc51b58a55cfc871e59d796acd75e9}{m\+\_\+\+Shift}}
+\item 
+bool \doxymbox{\hyperlink{classKeyEvent_a2e4b86082ea9bcf30bf0140d04a76640}{m\+\_\+\+Alt}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classEvent_a8ad0c350a8f569dbb05cf845caa4737e}{Handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classEvent}{Event} representing a keyboard key press/\+release. 
+
+Contains information about which key was pressed, the action type, and the state of modifier keys (Ctrl, Shift, Alt).
+
+\begin{DoxyNote}{Note}
+This event is dispatched by \doxylink{classSDLEventTranslator}{SDLEvent\+Translator}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classSDLEventTranslator}{SDLEvent\+Translator}, \doxylink{classEventBus}{Event\+Bus} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00024}{24}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+
+
+\label{classKeyEvent_doc-constructors}
+\Hypertarget{classKeyEvent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classKeyEvent_ae7effbcd58ecd0fa7787a0c7bb8fc4c7}\index{KeyEvent@{KeyEvent}!KeyEvent@{KeyEvent}}
+\index{KeyEvent@{KeyEvent}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{KeyEvent()}{KeyEvent()}}
+{\footnotesize\ttfamily \label{classKeyEvent_ae7effbcd58ecd0fa7787a0c7bb8fc4c7} 
+Key\+Event::\+\+Key\+Event (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Scancode}]{scancode}{, }\item[{\doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1}{Key\+Action}}}]{action}{, }\item[{bool}]{ctrl}{, }\item[{bool}]{shift}{, }\item[{bool}]{alt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classKeyEvent}{Key\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scancode} & SDL scancode of the key. \\
+\hline
+{\em action} & Action type (pressed, released, repeated). \\
+\hline
+{\em ctrl} & True if Ctrl key is held. \\
+\hline
+{\em shift} & True if Shift key is held. \\
+\hline
+{\em alt} & True if Alt key is held. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00034}{34}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+
+
+\label{classKeyEvent_doc-func-members}
+\Hypertarget{classKeyEvent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classKeyEvent_a83f1a67717c14fc58ab42c668425de0e}\index{KeyEvent@{KeyEvent}!GetAction@{GetAction}}
+\index{GetAction@{GetAction}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{GetAction()}{GetAction()}}
+{\footnotesize\ttfamily \label{classKeyEvent_a83f1a67717c14fc58ab42c668425de0e} 
+\doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1}{Key\+Action}} Key\+Event::\+\+Get\+Action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00038}{38}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+\Hypertarget{classKeyEvent_aba1bc77a6676e8a62dd26a14670a69e1}\index{KeyEvent@{KeyEvent}!GetEventType@{GetEventType}}
+\index{GetEventType@{GetEventType}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{GetEventType()}{GetEventType()}}
+{\footnotesize\ttfamily \label{classKeyEvent_aba1bc77a6676e8a62dd26a14670a69e1} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Key\+Event::\+\+Get\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the event. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type} enum value identifying the event. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classEvent_af14bbd8f69c2778def9462375a0e70f2}{Event}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00044}{44}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+\Hypertarget{classKeyEvent_ad612ba1c06ae469951e06d4635ae256f}\index{KeyEvent@{KeyEvent}!GetScancode@{GetScancode}}
+\index{GetScancode@{GetScancode}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{GetScancode()}{GetScancode()}}
+{\footnotesize\ttfamily \label{classKeyEvent_ad612ba1c06ae469951e06d4635ae256f} 
+SDL\+\_\+\+Scancode Key\+Event::\+\+Get\+Scancode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00037}{37}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+\Hypertarget{classKeyEvent_a2d85adf9e71829dad3518f4310f8ef0d}\index{KeyEvent@{KeyEvent}!GetStaticType@{GetStaticType}}
+\index{GetStaticType@{GetStaticType}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{GetStaticType()}{GetStaticType()}}
+{\footnotesize\ttfamily \label{classKeyEvent_a2d85adf9e71829dad3518f4310f8ef0d} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Key\+Event::\+\+Get\+Static\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00043}{43}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+\Hypertarget{classKeyEvent_aab67e22618180ca64d3369555fa2aee6}\index{KeyEvent@{KeyEvent}!IsAltPressed@{IsAltPressed}}
+\index{IsAltPressed@{IsAltPressed}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{IsAltPressed()}{IsAltPressed()}}
+{\footnotesize\ttfamily \label{classKeyEvent_aab67e22618180ca64d3369555fa2aee6} 
+bool Key\+Event::\+\+Is\+Alt\+Pressed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00041}{41}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+\Hypertarget{classKeyEvent_a59358073046cd36740b8595d4ff28379}\index{KeyEvent@{KeyEvent}!IsCtrlPressed@{IsCtrlPressed}}
+\index{IsCtrlPressed@{IsCtrlPressed}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{IsCtrlPressed()}{IsCtrlPressed()}}
+{\footnotesize\ttfamily \label{classKeyEvent_a59358073046cd36740b8595d4ff28379} 
+bool Key\+Event::\+\+Is\+Ctrl\+Pressed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00039}{39}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+\Hypertarget{classKeyEvent_a58e682c21b99b031779ec1f210a50a0a}\index{KeyEvent@{KeyEvent}!IsShiftPressed@{IsShiftPressed}}
+\index{IsShiftPressed@{IsShiftPressed}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{IsShiftPressed()}{IsShiftPressed()}}
+{\footnotesize\ttfamily \label{classKeyEvent_a58e682c21b99b031779ec1f210a50a0a} 
+bool Key\+Event::\+\+Is\+Shift\+Pressed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00040}{40}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+
+
+\label{classKeyEvent_doc-variable-members}
+\Hypertarget{classKeyEvent_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classKeyEvent_aad5fdec337221e5ee64d961e22a26e62}\index{KeyEvent@{KeyEvent}!m\_Action@{m\_Action}}
+\index{m\_Action@{m\_Action}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Action}{m\_Action}}
+{\footnotesize\ttfamily \label{classKeyEvent_aad5fdec337221e5ee64d961e22a26e62} 
+\doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1}{Key\+Action}} Key\+Event::\+m\+\_\+\+Action\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00048}{48}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+\Hypertarget{classKeyEvent_a2e4b86082ea9bcf30bf0140d04a76640}\index{KeyEvent@{KeyEvent}!m\_Alt@{m\_Alt}}
+\index{m\_Alt@{m\_Alt}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Alt}{m\_Alt}}
+{\footnotesize\ttfamily \label{classKeyEvent_a2e4b86082ea9bcf30bf0140d04a76640} 
+bool Key\+Event::\+m\+\_\+\+Alt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00051}{51}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+\Hypertarget{classKeyEvent_a23cd0c227402e8ab0558c625f672382b}\index{KeyEvent@{KeyEvent}!m\_Ctrl@{m\_Ctrl}}
+\index{m\_Ctrl@{m\_Ctrl}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Ctrl}{m\_Ctrl}}
+{\footnotesize\ttfamily \label{classKeyEvent_a23cd0c227402e8ab0558c625f672382b} 
+bool Key\+Event::\+m\+\_\+\+Ctrl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00049}{49}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+\Hypertarget{classKeyEvent_a628fa8f7d5d100dadcde5a126d0bd8ee}\index{KeyEvent@{KeyEvent}!m\_Scancode@{m\_Scancode}}
+\index{m\_Scancode@{m\_Scancode}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Scancode}{m\_Scancode}}
+{\footnotesize\ttfamily \label{classKeyEvent_a628fa8f7d5d100dadcde5a126d0bd8ee} 
+SDL\+\_\+\+Scancode Key\+Event::\+m\+\_\+\+Scancode\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00047}{47}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+\Hypertarget{classKeyEvent_a7adc51b58a55cfc871e59d796acd75e9}\index{KeyEvent@{KeyEvent}!m\_Shift@{m\_Shift}}
+\index{m\_Shift@{m\_Shift}!KeyEvent@{KeyEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Shift}{m\_Shift}}
+{\footnotesize\ttfamily \label{classKeyEvent_a7adc51b58a55cfc871e59d796acd75e9} 
+bool Key\+Event::\+m\+\_\+\+Shift\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{KeyEvent_8h_source_l00050}{50}} of file \doxymbox{\hyperlink{KeyEvent_8h_source}{Key\+Event.\+h}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+events/\doxymbox{\hyperlink{KeyEvent_8h}{Key\+Event.\+h}}\end{DoxyCompactItemize}

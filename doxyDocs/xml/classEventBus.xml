@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classEventBus" kind="class" language="C++" prot="public">
+    <compoundname>EventBus</compoundname>
+    <includes refid="EventBus_8h" local="no">EventBus.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classEventBus_1aedcd787e8f3f1a2c587be349957da894" prot="public" static="no">
+        <type>std::function&lt; void(<ref refid="classEvent" kindref="compound">Event</ref> &amp;)&gt;</type>
+        <definition>using EventBus::Callback = std::function&lt;void(Event&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>Callback</name>
+        <qualifiedname>EventBus::Callback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventBus.h" line="21" column="5" bodyfile="engine/events/EventBus.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classEventBus_1a702797a8b9f7919aebea9be693fed6fa" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::type_index, std::vector&lt; <ref refid="classEventBus_1aedcd787e8f3f1a2c587be349957da894" kindref="member">Callback</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::type_index, std::vector&lt;Callback&gt; &gt; EventBus::m_Subscribers</definition>
+        <argsstring></argsstring>
+        <name>m_Subscribers</name>
+        <qualifiedname>EventBus::m_Subscribers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventBus.h" line="77" column="24" bodyfile="engine/events/EventBus.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classEventBus_1abb3a69dd93dc265aec144024ab8ab3ed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classEventBus" kindref="compound">EventBus</ref> &amp;</type>
+        <definition>EventBus &amp; EventBus::GetInstance</definition>
+        <argsstring>()</argsstring>
+        <name>GetInstance</name>
+        <qualifiedname>EventBus::GetInstance</qualifiedname>
+        <briefdescription>
+<para>Gets the singleton instance of the <ref refid="classEventBus" kindref="compound">EventBus</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the singleton instance of <ref refid="classEventBus" kindref="compound">EventBus</ref>.</para>
+<para><simplesect kind="return"><para>Reference to the <ref refid="classEventBus" kindref="compound">EventBus</ref> instance.</para>
+</simplesect>
+The instance is created on first call and destroyed automatically when the program exits.</para>
+<para><simplesect kind="return"><para>Reference to the <ref refid="classEventBus" kindref="compound">EventBus</ref> instance. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventBus.h" line="27" column="21" bodyfile="engine/events/EventBus.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classEventBus_1aec7a1402c0f1789198cc9954639bac99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void EventBus::Subscribe</definition>
+        <argsstring>(const Callback &amp;callback)</argsstring>
+        <name>Subscribe</name>
+        <qualifiedname>EventBus::Subscribe</qualifiedname>
+        <param>
+          <type>const <ref refid="classEventBus_1aedcd787e8f3f1a2c587be349957da894" kindref="member">Callback</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Subscribes a callback to a specific event type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The callback will be invoked whenever an event of type T is dispatched. Multiple callbacks can be subscribed to the same event type.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event type to subscribe to (must inherit from <ref refid="classEvent" kindref="compound">Event</ref>). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function to call when the event is dispatched. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventBus.h" line="39" column="10" bodyfile="engine/events/EventBus.h" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classEventBus_1a82238e13fe91bb5ed5bc1dbb1555c0af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EventBus::Dispatch</definition>
+        <argsstring>(Event &amp;event)</argsstring>
+        <name>Dispatch</name>
+        <qualifiedname>EventBus::Dispatch</qualifiedname>
+        <param>
+          <type><ref refid="classEvent" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Dispatches an event to all subscribed callbacks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All callbacks subscribed to the event&apos;s type will be invoked in the order they were registered.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event to dispatch. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventBus.h" line="52" column="10" bodyfile="engine/events/EventBus.h" bodystart="52" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classEventBus_1a979e575b3ee8a4e6d09c2d723d54ce79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EventBus::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <qualifiedname>EventBus::Clear</qualifiedname>
+        <briefdescription>
+<para>Clears all subscriptions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes all registered callbacks. Should be used during shutdown. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventBus.h" line="67" column="10" bodyfile="engine/events/EventBus.h" bodystart="67" bodyend="69"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classEventBus_1a33cb29b2fe543e43494fc40adf9cdfa7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EventBus::EventBus</definition>
+        <argsstring>()=default</argsstring>
+        <name>EventBus</name>
+        <qualifiedname>EventBus::EventBus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventBus.h" line="72" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classEventBus_1aaea67615da6646dfcc3418a632bfedc2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EventBus::~EventBus</definition>
+        <argsstring>()=default</argsstring>
+        <name>~EventBus</name>
+        <qualifiedname>EventBus::~EventBus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventBus.h" line="73" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classEventBus_1a270ac5b93ed8fa8c64a32f89c281e7fa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EventBus::EventBus</definition>
+        <argsstring>(const EventBus &amp;)=delete</argsstring>
+        <name>EventBus</name>
+        <qualifiedname>EventBus::EventBus</qualifiedname>
+        <param>
+          <type>const <ref refid="classEventBus" kindref="compound">EventBus</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventBus.h" line="74" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classEventBus_1a77679fdfb272555934f408c0a685c850" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classEventBus" kindref="compound">EventBus</ref> &amp;</type>
+        <definition>EventBus &amp; EventBus::operator=</definition>
+        <argsstring>(const EventBus &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>EventBus::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classEventBus" kindref="compound">EventBus</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventBus.h" line="75" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton event bus for global event dispatching. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classEventBus" kindref="compound">EventBus</ref> allows any part of the engine to subscribe to events and be notified when they occur. It uses type-based subscription (via std::type_index) for type-safe event handling.</para>
+<para><simplesect kind="note"><para>This is a singleton; use <ref refid="classEventBus_1abb3a69dd93dc265aec144024ab8ab3ed" kindref="member">GetInstance()</ref> to access it. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classEvent" kindref="compound">Event</ref>, <ref refid="classEventDispatcher" kindref="compound">EventDispatcher</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>EventBus</label>
+        <link refid="classEventBus"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/events/EventBus.h" line="19" column="1" bodyfile="engine/events/EventBus.h" bodystart="19" bodyend="78"/>
+    <listofallmembers>
+      <member refid="classEventBus_1aedcd787e8f3f1a2c587be349957da894" prot="public" virt="non-virtual"><scope>EventBus</scope><name>Callback</name></member>
+      <member refid="classEventBus_1a979e575b3ee8a4e6d09c2d723d54ce79" prot="public" virt="non-virtual"><scope>EventBus</scope><name>Clear</name></member>
+      <member refid="classEventBus_1a82238e13fe91bb5ed5bc1dbb1555c0af" prot="public" virt="non-virtual"><scope>EventBus</scope><name>Dispatch</name></member>
+      <member refid="classEventBus_1a33cb29b2fe543e43494fc40adf9cdfa7" prot="private" virt="non-virtual"><scope>EventBus</scope><name>EventBus</name></member>
+      <member refid="classEventBus_1a270ac5b93ed8fa8c64a32f89c281e7fa" prot="private" virt="non-virtual"><scope>EventBus</scope><name>EventBus</name></member>
+      <member refid="classEventBus_1abb3a69dd93dc265aec144024ab8ab3ed" prot="public" virt="non-virtual"><scope>EventBus</scope><name>GetInstance</name></member>
+      <member refid="classEventBus_1a702797a8b9f7919aebea9be693fed6fa" prot="private" virt="non-virtual"><scope>EventBus</scope><name>m_Subscribers</name></member>
+      <member refid="classEventBus_1a77679fdfb272555934f408c0a685c850" prot="private" virt="non-virtual"><scope>EventBus</scope><name>operator=</name></member>
+      <member refid="classEventBus_1aec7a1402c0f1789198cc9954639bac99" prot="public" virt="non-virtual"><scope>EventBus</scope><name>Subscribe</name></member>
+      <member refid="classEventBus_1aaea67615da6646dfcc3418a632bfedc2" prot="private" virt="non-virtual"><scope>EventBus</scope><name>~EventBus</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

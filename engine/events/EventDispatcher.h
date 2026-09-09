@@ -32,7 +32,7 @@ public:
      */
     template<typename T, typename F>
     bool Dispatch(const F& function){
-        if (m_Event.GetEventType() == T::GetStaticType()){
+        if(m_Event.GetEventType() == T::GetStaticType()){
             m_Event.Handled = function(static_cast<T&>(m_Event));
             return true;
         }
@@ -40,5 +40,5 @@ public:
     }
 
 private:
-    Event& m_Event; //Reference to the event dispatched
+    Event& m_Event; //Reference to the event being dispatched
 };

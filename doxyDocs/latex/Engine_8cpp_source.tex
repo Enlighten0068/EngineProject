@@ -1,0 +1,44 @@
+\doxysection{Engine.\+cpp}
+\hypertarget{Engine_8cpp_source}{}\label{Engine_8cpp_source}\index{engine/core/Engine.cpp@{engine/core/Engine.cpp}}
+\doxymbox{\hyperlink{Engine_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Engine_8h}{core/Engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Input_8h}{core/Input.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{EventType_8h}{events/EventType.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{WindowEvent_8h}{events/WindowEvent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{EventDispatcher_8h}{events/EventDispatcher.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00011}\doxymbox{\hyperlink{classEngine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{00011}}\ \doxymbox{\hyperlink{classEngine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{Engine::Engine}}()\ :\ \doxymbox{\hyperlink{classEngine_a9702c44e02c02eb256ede54a6f259782}{m\_Running}}(false)\ \{\}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00013}\doxymbox{\hyperlink{classEngine_a8ef7030a089ecb30bbfcb9e43094717a}{00013}}\ \doxymbox{\hyperlink{classEngine_a8ef7030a089ecb30bbfcb9e43094717a}{Engine::\string~Engine}}()\{}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00014}00014\ \ \ \ \ \doxymbox{\hyperlink{classEngine_a3dbd2c0a65e642baa7eaa97caa6e4e64}{Shutdown}}();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00029}\doxymbox{\hyperlink{classEngine_a253fc356293f0a5228b6d7ab143540b3}{00029}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classEngine_a253fc356293f0a5228b6d7ab143540b3}{Engine::Initialize}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ fullscreen)\{}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00030}00030\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Engine:\ Initializing\ SDL3\ runtime\ and\ window."{}});}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classEngine_a6bbcb94d19650accc1e62492c82178e2}{m\_Window}}.\doxymbox{\hyperlink{classSDLWindow_a6c60257844fe3a5fe819183539116e40}{Create}}(title,\ width,\ height,\ fullscreen))\{}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ SDL\_Quit();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00037}00037\ \ \ \ \ \doxymbox{\hyperlink{classEngine_a9702c44e02c02eb256ede54a6f259782}{m\_Running}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00038}00038\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Engine\ initialized\ successfully."{}});}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00047}\doxymbox{\hyperlink{classEngine_a3dbd2c0a65e642baa7eaa97caa6e4e64}{00047}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classEngine_a3dbd2c0a65e642baa7eaa97caa6e4e64}{Engine::Shutdown}}()\{}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00048}00048\ \ \ \ \ \doxymbox{\hyperlink{classEngine_a6bbcb94d19650accc1e62492c82178e2}{m\_Window}}.\doxymbox{\hyperlink{classSDLWindow_ac8f370d73ebfe50529fbbba56c100b4b}{Destroy}}();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00049}00049\ \ \ \ \ SDL\_Quit();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00050}00050\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Engine\ shutdown."{}});}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00057}\doxymbox{\hyperlink{classEngine_a531f887d1b7f38525d0c21d20e216e6c}{00057}}\ \doxymbox{\hyperlink{classSDLWindow}{SDLWindow}}\&\ \doxymbox{\hyperlink{classEngine_a531f887d1b7f38525d0c21d20e216e6c}{Engine::GetWindow}}()\{}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classEngine_a6bbcb94d19650accc1e62492c82178e2}{m\_Window}};}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00059}00059\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="KeyEvent_8h" kind="file" language="C++">
+    <compoundname>KeyEvent.h</compoundname>
+    <includes refid="Event_8h" local="yes">events/Event.h</includes>
+    <includes local="no">SDL3/SDL.h</includes>
+    <includedby refid="Application_8h" local="yes">engine/core/Application.h</includedby>
+    <includedby refid="PlayerController_8cpp" local="yes">engine/core/PlayerController.cpp</includedby>
+    <includedby refid="SDLEventTranslator_8h" local="yes">engine/events/SDLEventTranslator.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>events/Event.h</label>
+        <link refid="Event_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>events/EventType.h</label>
+        <link refid="EventType_8h"/>
+      </node>
+      <node id="1">
+        <label>engine/events/KeyEvent.h</label>
+        <link refid="KeyEvent_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SDL3/SDL.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="2">
+        <label>engine/core/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>engine/core/PlayerController.cpp</label>
+        <link refid="PlayerController_8cpp"/>
+      </node>
+      <node id="4">
+        <label>engine/core/Time.cpp</label>
+        <link refid="Time_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/events/KeyEvent.h</label>
+        <link refid="KeyEvent_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>engine/events/SDLEventTranslator.cpp</label>
+        <link refid="SDLEventTranslator_8cpp"/>
+      </node>
+      <node id="7">
+        <label>engine/events/SDLEventTranslator.h</label>
+        <link refid="SDLEventTranslator_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classKeyEvent" prot="public">KeyEvent</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>KeyAction</name>
+        <enumvalue id="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1ad78a68f6a85421ae121c2cb5b73a1040" prot="public">
+          <name>Pressed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1aea1e34304a5d8ffa7c9b0ed8ede4ef1a" prot="public">
+          <name>Released</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1a7f7309d5a83099309ac04dcb795ad0ce" prot="public">
+          <name>Repeated</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Keyboard action types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="9" column="1" bodyfile="engine/events/KeyEvent.h" bodystart="9" bodyend="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Event_8h" kindref="compound">events/Event.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL3/SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1" kindref="member">KeyAction</ref>{</highlight></codeline>
+<codeline lineno="10" refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1ad78a68f6a85421ae121c2cb5b73a1040" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1ad78a68f6a85421ae121c2cb5b73a1040" kindref="member">Pressed</ref>,<sp/><sp/></highlight><highlight class="comment">//Key<sp/>was<sp/>pressed<sp/>down</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1aea1e34304a5d8ffa7c9b0ed8ede4ef1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1aea1e34304a5d8ffa7c9b0ed8ede4ef1a" kindref="member">Released</ref>,<sp/></highlight><highlight class="comment">//Key<sp/>was<sp/>released</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1a7f7309d5a83099309ac04dcb795ad0ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1a7f7309d5a83099309ac04dcb795ad0ce" kindref="member">Repeated</ref><sp/><sp/></highlight><highlight class="comment">//Key<sp/>is<sp/>being<sp/>held<sp/>(repeat<sp/>event)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classKeyEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classKeyEvent_1ae7effbcd58ecd0fa7787a0c7bb8fc4c7" kindref="member">KeyEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classEvent" kindref="compound">Event</ref>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34" refid="classKeyEvent_1ae7effbcd58ecd0fa7787a0c7bb8fc4c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classKeyEvent_1ae7effbcd58ecd0fa7787a0c7bb8fc4c7" kindref="member">KeyEvent</ref>(SDL_Scancode<sp/>scancode,<sp/><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1" kindref="member">KeyAction</ref><sp/>action,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ctrl,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>shift,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>alt)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classKeyEvent_1a628fa8f7d5d100dadcde5a126d0bd8ee" kindref="member">m_Scancode</ref>(scancode),<sp/><ref refid="classKeyEvent_1aad5fdec337221e5ee64d961e22a26e62" kindref="member">m_Action</ref>(action),<sp/><ref refid="classKeyEvent_1a23cd0c227402e8ab0558c625f672382b" kindref="member">m_Ctrl</ref>(ctrl),<sp/><ref refid="classKeyEvent_1a7adc51b58a55cfc871e59d796acd75e9" kindref="member">m_Shift</ref>(shift),<sp/><ref refid="classKeyEvent_1a2e4b86082ea9bcf30bf0140d04a76640" kindref="member">m_Alt</ref>(alt){}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classKeyEvent_1ad612ba1c06ae469951e06d4635ae256f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Scancode<sp/><ref refid="classKeyEvent_1ad612ba1c06ae469951e06d4635ae256f" kindref="member">GetScancode</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classKeyEvent_1a628fa8f7d5d100dadcde5a126d0bd8ee" kindref="member">m_Scancode</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="38" refid="classKeyEvent_1a83f1a67717c14fc58ab42c668425de0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1" kindref="member">KeyAction</ref><sp/><ref refid="classKeyEvent_1a83f1a67717c14fc58ab42c668425de0e" kindref="member">GetAction</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classKeyEvent_1aad5fdec337221e5ee64d961e22a26e62" kindref="member">m_Action</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="39" refid="classKeyEvent_1a59358073046cd36740b8595d4ff28379" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classKeyEvent_1a59358073046cd36740b8595d4ff28379" kindref="member">IsCtrlPressed</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classKeyEvent_1a23cd0c227402e8ab0558c625f672382b" kindref="member">m_Ctrl</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="40" refid="classKeyEvent_1a58e682c21b99b031779ec1f210a50a0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classKeyEvent_1a58e682c21b99b031779ec1f210a50a0a" kindref="member">IsShiftPressed</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classKeyEvent_1a7adc51b58a55cfc871e59d796acd75e9" kindref="member">m_Shift</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="41" refid="classKeyEvent_1aab67e22618180ca64d3369555fa2aee6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classKeyEvent_1aab67e22618180ca64d3369555fa2aee6" kindref="member">IsAltPressed</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classKeyEvent_1a2e4b86082ea9bcf30bf0140d04a76640" kindref="member">m_Alt</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classKeyEvent_1a2d85adf9e71829dad3518f4310f8ef0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classKeyEvent_1a2d85adf9e71829dad3518f4310f8ef0d" kindref="member">GetStaticType</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa897356954c2cd3d41b221e3f24f99bba" kindref="member">EventType::Key</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="44" refid="classKeyEvent_1aba1bc77a6676e8a62dd26a14670a69e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classKeyEvent_1aba1bc77a6676e8a62dd26a14670a69e1" kindref="member">GetEventType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa897356954c2cd3d41b221e3f24f99bba" kindref="member">EventType::Key</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47" refid="classKeyEvent_1a628fa8f7d5d100dadcde5a126d0bd8ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Scancode<sp/><ref refid="classKeyEvent_1a628fa8f7d5d100dadcde5a126d0bd8ee" kindref="member">m_Scancode</ref>;<sp/></highlight><highlight class="comment">//SDL<sp/>scancode<sp/>of<sp/>the<sp/>key</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classKeyEvent_1aad5fdec337221e5ee64d961e22a26e62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1" kindref="member">KeyAction</ref><sp/><ref refid="classKeyEvent_1aad5fdec337221e5ee64d961e22a26e62" kindref="member">m_Action</ref>;<sp/></highlight><highlight class="comment">//Action<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="classKeyEvent_1a23cd0c227402e8ab0558c625f672382b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classKeyEvent_1a23cd0c227402e8ab0558c625f672382b" kindref="member">m_Ctrl</ref>;<sp/></highlight><highlight class="comment">//Ctrl<sp/>key<sp/>held</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classKeyEvent_1a7adc51b58a55cfc871e59d796acd75e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classKeyEvent_1a7adc51b58a55cfc871e59d796acd75e9" kindref="member">m_Shift</ref>;<sp/></highlight><highlight class="comment">//Shift<sp/>key<sp/>held</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classKeyEvent_1a2e4b86082ea9bcf30bf0140d04a76640" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classKeyEvent_1a2e4b86082ea9bcf30bf0140d04a76640" kindref="member">m_Alt</ref>;<sp/></highlight><highlight class="comment">//Alt<sp/>key<sp/>held</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/events/KeyEvent.h"/>
+  </compounddef>
+</doxygen>

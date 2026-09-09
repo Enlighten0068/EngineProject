@@ -1,0 +1,26 @@
+\doxysection{Enemy\+Events.\+h}
+\hypertarget{EnemyEvents_8h_source}{}\label{EnemyEvents_8h_source}\index{engine/events/EnemyEvents.h@{engine/events/EnemyEvents.h}}
+\doxymbox{\hyperlink{EnemyEvents_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Event_8h}{events/Event.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Vector3D_8h}{math/Vector3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00015}\doxymbox{\hyperlink{classEnemyDiedEvent}{00015}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classEnemyDiedEvent_a08d712390038a196578dcd7480787f6b}{EnemyDiedEvent}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classEvent}{Event}}\{}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00016}00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00022}\doxymbox{\hyperlink{classEnemyDiedEvent_a08d712390038a196578dcd7480787f6b}{00022}}\ \ \ \ \ \doxymbox{\hyperlink{classEnemyDiedEvent_a08d712390038a196578dcd7480787f6b}{EnemyDiedEvent}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ position,\ \textcolor{keywordtype}{int}\ scoreValue\ =\ 10)}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00023}00023\ \ \ \ \ :\ \doxymbox{\hyperlink{classEnemyDiedEvent_a77a177161b33ef294e6014d6ad1dc99c}{m\_Position}}(position),\ \doxymbox{\hyperlink{classEnemyDiedEvent_a4c307b78629d99dbb5d055911f206cea}{m\_ScoreValue}}(scoreValue)\{\}}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00025}\doxymbox{\hyperlink{classEnemyDiedEvent_a40f4d9860f414989f5f1915a9a9d5120}{00025}}\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ \doxymbox{\hyperlink{classEnemyDiedEvent_a40f4d9860f414989f5f1915a9a9d5120}{GetPosition}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classEnemyDiedEvent_a77a177161b33ef294e6014d6ad1dc99c}{m\_Position}};\ \}}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00026}\doxymbox{\hyperlink{classEnemyDiedEvent_abc2d58a54cb87be48cfe7cd6adca4fca}{00026}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classEnemyDiedEvent_abc2d58a54cb87be48cfe7cd6adca4fca}{GetScoreValue}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classEnemyDiedEvent_a4c307b78629d99dbb5d055911f206cea}{m\_ScoreValue}};\ \}}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00028}\doxymbox{\hyperlink{classEnemyDiedEvent_a34f2a4f74c43ff573a53552cfa4348c0}{00028}}\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{EventType}}\ \doxymbox{\hyperlink{classEnemyDiedEvent_a34f2a4f74c43ff573a53552cfa4348c0}{GetStaticType}}()\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faae59ed6209af6696edabb7eddf66bd2eb}{EventType::EnemyDied}};\ \}}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00029}\doxymbox{\hyperlink{classEnemyDiedEvent_a71e2fc9fee13d00be1838a8f6fd46419}{00029}}\ \ \ \ \ \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{EventType}}\ \doxymbox{\hyperlink{classEnemyDiedEvent_a71e2fc9fee13d00be1838a8f6fd46419}{GetEventType}}()\textcolor{keyword}{\ const\ override}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faae59ed6209af6696edabb7eddf66bd2eb}{EventType::EnemyDied}};\ \}}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00031}00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00032}\doxymbox{\hyperlink{classEnemyDiedEvent_a77a177161b33ef294e6014d6ad1dc99c}{00032}}\ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ \doxymbox{\hyperlink{classEnemyDiedEvent_a77a177161b33ef294e6014d6ad1dc99c}{m\_Position}};\ \textcolor{comment}{//Enemy\ position}}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00033}\doxymbox{\hyperlink{classEnemyDiedEvent_a4c307b78629d99dbb5d055911f206cea}{00033}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classEnemyDiedEvent_a4c307b78629d99dbb5d055911f206cea}{m\_ScoreValue}};\ \textcolor{comment}{//Score\ value\ awarded}}
+\DoxyCodeLine{\Hypertarget{EnemyEvents_8h_source_l00034}00034\ \};}
+
+\end{DoxyCode}

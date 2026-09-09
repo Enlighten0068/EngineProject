@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="math_2Transform_8h" kind="file" language="C++">
+    <compoundname>Transform.h</compoundname>
+    <includes refid="Vector3D_8h" local="yes">math/Vector3D.h</includes>
+    <includedby refid="GameObject_8h" local="yes">engine/scene/GameObject.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/math/Transform.h</label>
+        <link refid="math_2Transform_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>engine/math/Transform.h</label>
+        <link refid="math_2Transform_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>engine/scene/GameObject.cpp</label>
+        <link refid="GameObject_8cpp"/>
+      </node>
+      <node id="2">
+        <label>engine/scene/GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structTransform" prot="public">Transform</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3D_8h" kindref="compound">math/Vector3D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="structTransform" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structTransform_1aa08ca4266efabc768973cdeea51945ab" kindref="member">Transform</ref>{</highlight></codeline>
+<codeline lineno="16" refid="structTransform_1a067ba0742fc185518bf280543d53f348" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structTransform_1a067ba0742fc185518bf280543d53f348" kindref="member">Position</ref>;<sp/></highlight><highlight class="comment">//World<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="structTransform_1a076925ea681b074978cdfc3d20aa51fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structTransform_1a076925ea681b074978cdfc3d20aa51fa" kindref="member">Rotation</ref>;<sp/></highlight><highlight class="comment">//Euler<sp/>angles<sp/>in<sp/>radians</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="structTransform_1af736c98399dd283677d5b8e232df95fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structTransform_1af736c98399dd283677d5b8e232df95fb" kindref="member">Scale</ref>;<sp/></highlight><highlight class="comment">//Scale<sp/>factors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="structTransform_1aa08ca4266efabc768973cdeea51945ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structTransform_1aa08ca4266efabc768973cdeea51945ab" kindref="member">Transform</ref>()<sp/>:<sp/><ref refid="structTransform_1a067ba0742fc185518bf280543d53f348" kindref="member">Position</ref>(0.0f,<sp/>0.0f,<sp/>0.0f),<sp/><ref refid="structTransform_1a076925ea681b074978cdfc3d20aa51fa" kindref="member">Rotation</ref>(0.0f,<sp/>0.0f,<sp/>0.0f),<sp/><ref refid="structTransform_1af736c98399dd283677d5b8e232df95fb" kindref="member">Scale</ref>(1.0f,<sp/>1.0f,<sp/>1.0f){}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/math/Transform.h"/>
+  </compounddef>
+</doxygen>

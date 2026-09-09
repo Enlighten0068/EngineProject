@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="SceneManager_8cpp" kind="file" language="C++">
+    <compoundname>SceneManager.cpp</compoundname>
+    <includes refid="Log_8h" local="yes">diagnostics/Log.h</includes>
+    <includes refid="SceneManager_8h" local="yes">scene/SceneManager.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>scene/Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/scene/SceneManager.cpp</label>
+        <link refid="SceneManager_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>scene/SceneManager.h</label>
+        <link refid="SceneManager_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>fstream</label>
+      </node>
+      <node id="6">
+        <label>iomanip</label>
+      </node>
+      <node id="11">
+        <label>memory</label>
+      </node>
+      <node id="7">
+        <label>sstream</label>
+      </node>
+      <node id="12">
+        <label>stack</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Log_8h" kindref="compound">diagnostics/Log.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SceneManager_8h" kindref="compound">scene/SceneManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="classSceneManager_1ae0003097b2a7ccd3f63758fcf8734bfd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSceneManager_1ae0003097b2a7ccd3f63758fcf8734bfd" kindref="member">SceneManager::SetScene</ref>(std::unique_ptr&lt;Scene&gt;<sp/>scene){</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Exit<sp/>and<sp/>remove<sp/>current<sp/>scene</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.empty()){</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.top()-&gt;OnExit();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.pop();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Enter<sp/>and<sp/>push<sp/>new<sp/>scene</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(scene){</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scene-&gt;OnEnter();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.push(std::move(scene));</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Scene<sp/>set:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.top()-&gt;GetName());</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classSceneManager_1a41636a6ebf257eaa823c4af31e71e4c2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSceneManager_1a41636a6ebf257eaa823c4af31e71e4c2" kindref="member">SceneManager::PushScene</ref>(std::unique_ptr&lt;Scene&gt;<sp/>scene){</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(scene){</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scene-&gt;OnEnter();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.push(std::move(scene));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Scene<sp/>pushed:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.top()-&gt;GetName());</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classSceneManager_1a5a3440850e459813d5d05fd85f2344b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSceneManager_1a5a3440850e459813d5d05fd85f2344b2" kindref="member">SceneManager::PopScene</ref>(){</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.size()<sp/>&gt;<sp/>1){</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.top()-&gt;OnExit();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.pop();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Scene<sp/>popped.<sp/>Current:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.top()-&gt;GetName());</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a5a5a1c297ed72ab2f850d0d01ae00aaa" kindref="member">Log::Warning</ref>(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>pop<sp/>the<sp/>last<sp/>scene.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classSceneManager_1adbede64d5706507e65f0e9dd0eaddd6b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSceneManager_1adbede64d5706507e65f0e9dd0eaddd6b" kindref="member">SceneManager::Update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime){</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.empty())<sp/><ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.top()-&gt;Update(deltaTime);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classSceneManager_1a61329955734e0c8a67796ef2b041b5a2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSceneManager_1a61329955734e0c8a67796ef2b041b5a2" kindref="member">SceneManager::Render</ref>(){</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.empty())<sp/><ref refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kindref="member">m_SceneStack</ref>.top()-&gt;Render();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/scene/SceneManager.cpp"/>
+  </compounddef>
+</doxygen>

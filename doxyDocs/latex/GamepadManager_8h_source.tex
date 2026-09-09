@@ -1,0 +1,53 @@
+\doxysection{Gamepad\+Manager.\+h}
+\hypertarget{GamepadManager_8h_source}{}\label{GamepadManager_8h_source}\index{engine/core/GamepadManager.h@{engine/core/GamepadManager.h}}
+\doxymbox{\hyperlink{GamepadManager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00018}\doxymbox{\hyperlink{classGamepadManager}{00018}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classGamepadManager_a989db3a6f006163a230a138a028c0dd7}{GamepadManager}}\{}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00019}00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{classGamepadManager_a989db3a6f006163a230a138a028c0dd7}{GamepadManager}}\&\ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GetInstance}}();}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classGamepadManager_a1413ab6313f7d89a6c42e42ac59c587c}{Initialize}}();}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGamepadManager_a55ac3f9f4cc6174f3143b176d348f0dc}{Shutdown}}();}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGamepadManager_a6de10c692816a54eb47ea13a9b0786fc}{Update}}();}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classGamepadManager_a3f0b50a62302886b5672ea42fe3f888e}{IsConnected}}(\textcolor{keywordtype}{int}\ playerIndex\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//Button\ state\ queries\ (returns\ true/false)}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classGamepadManager_ac0353ae7462fed666bd6983491f2979e}{IsButtonPressed}}(\textcolor{keywordtype}{int}\ playerIndex,\ SDL\_GamepadButton\ button)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classGamepadManager_a49f21e7fc6fc0eb8749ab7b13e62982f}{IsButtonHeld}}(\textcolor{keywordtype}{int}\ playerIndex,\ SDL\_GamepadButton\ button)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classGamepadManager_a853ba537c60f9acb1d5ff90e1980fdd1}{IsButtonReleased}}(\textcolor{keywordtype}{int}\ playerIndex,\ SDL\_GamepadButton\ button)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//Axis\ and\ trigger\ queries\ (returns\ -\/1.0\ to\ 1.0)}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classGamepadManager_afc5533e2907a7356e1e7a34cbae3f872}{GetAxis}}(\textcolor{keywordtype}{int}\ playerIndex,\ SDL\_GamepadAxis\ axis)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classGamepadManager_a66451577d794bf16cf3fdedddaef6523}{GetTrigger}}(\textcolor{keywordtype}{int}\ playerIndex,\ SDL\_GamepadAxis\ axis)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGamepadManager_a84e1fc9b83d217de9d5160b065309c14}{SetRumble}}(\textcolor{keywordtype}{int}\ playerIndex,\ \textcolor{keywordtype}{float}\ lowFrequency,\ \textcolor{keywordtype}{float}\ highFrequency,\ Uint32\ durationMs);}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGamepadManager_a3d38e8583ad177eef9fecfda4d015826}{ProcessEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ event);}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00075}00075\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00076}\doxymbox{\hyperlink{classGamepadManager_a989db3a6f006163a230a138a028c0dd7}{00076}}\ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a989db3a6f006163a230a138a028c0dd7}{GamepadManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00077}\doxymbox{\hyperlink{classGamepadManager_ac64e78c1c9b6dccd3b979233aaf817e1}{00077}}\ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_ac64e78c1c9b6dccd3b979233aaf817e1}{\string~GamepadManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00078}\doxymbox{\hyperlink{classGamepadManager_a359e8a0c182f344041952b4c4f1bb446}{00078}}\ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a359e8a0c182f344041952b4c4f1bb446}{GamepadManager}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classGamepadManager_a989db3a6f006163a230a138a028c0dd7}{GamepadManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00079}\doxymbox{\hyperlink{classGamepadManager_a2930e5f0279ea6ccc589dfcfeb2d4271}{00079}}\ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a989db3a6f006163a230a138a028c0dd7}{GamepadManager}}\&\ \doxymbox{\hyperlink{classGamepadManager_a2930e5f0279ea6ccc589dfcfeb2d4271}{operator=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classGamepadManager_a989db3a6f006163a230a138a028c0dd7}{GamepadManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00081}\doxymbox{\hyperlink{classGamepadManager_a68b06a2e5a93cf739c5bdf9851c2d381}{00081}}\ \ \ \ \ std::unordered\_map<int,\ SDL\_Gamepad*>\ \doxymbox{\hyperlink{classGamepadManager_a68b06a2e5a93cf739c5bdf9851c2d381}{m\_Gamepads}};\ \textcolor{comment}{//Map\ of\ player\ index\ to\ gamepad}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00082}\doxymbox{\hyperlink{classGamepadManager_ad86d9929ec0b5ac35c6b32903a5bcb3c}{00082}}\ \ \ \ \ std::unordered\_map<int,\ Uint64>\ \doxymbox{\hyperlink{classGamepadManager_ad86d9929ec0b5ac35c6b32903a5bcb3c}{m\_ButtonState}}[4];\ \textcolor{comment}{//Current\ button\ state\ per\ player}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00083}\doxymbox{\hyperlink{classGamepadManager_acde2ada37c2d93c15b8f2a834b59385f}{00083}}\ \ \ \ \ std::unordered\_map<int,\ Uint64>\ \doxymbox{\hyperlink{classGamepadManager_acde2ada37c2d93c15b8f2a834b59385f}{m\_ButtonPrevious}}[4];\ \textcolor{comment}{//Previous\ button\ state\ per\ player}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00085}\doxymbox{\hyperlink{classGamepadManager_a198e2ef559b545d3d7ee93167ab85117}{00085}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classGamepadManager_a198e2ef559b545d3d7ee93167ab85117}{MAX\_PLAYERS}}\ =\ 4;\ \textcolor{comment}{//Maximum\ number\ of\ supported\ players}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGamepadManager_a186c1ce24c83a70e92e8440116a930e2}{AddGamepad}}(SDL\_JoystickID\ deviceID);\ \textcolor{comment}{//Add\ a\ gamepad}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGamepadManager_ade0a3192b1570bbc2d5f72b0129dfef2}{RemoveGamepad}}(SDL\_JoystickID\ deviceID);\ \textcolor{comment}{//Remove\ a\ gamepad}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGamepadManager_a3e65cf524ef558d0d9ee62283dbfed6b}{UpdateButtonState}}(\textcolor{keywordtype}{int}\ playerIndex);\ \textcolor{comment}{//Update\ button\ states\ for\ a\ player}}
+\DoxyCodeLine{\Hypertarget{GamepadManager_8h_source_l00090}00090\ \};}
+
+\end{DoxyCode}

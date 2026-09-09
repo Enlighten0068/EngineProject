@@ -1,0 +1,229 @@
+\doxysection{Event\+Bus Class Reference}
+\hypertarget{classEventBus}{}\label{classEventBus}\index{EventBus@{EventBus}}
+
+
+Singleton event bus for global event dispatching.  
+
+
+
+
+{\ttfamily \+\#include $<$Event\+Bus.\+h$>$}
+
+
+
+Collaboration diagram for Event\+Bus:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classEventBus__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \doxymbox{\hyperlink{classEventBus_aedcd787e8f3f1a2c587be349957da894}{Callback}} = std::\+function$<$void(\doxymbox{\hyperlink{classEvent}{Event}}\&)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \doxymbox{\hyperlink{classEventBus_aec7a1402c0f1789198cc9954639bac99}{Subscribe}} (const \doxymbox{\hyperlink{classEventBus_aedcd787e8f3f1a2c587be349957da894}{Callback}} \&callback)
+\begin{DoxyCompactList}\small\item\em Subscribes a callback to a specific event type. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}} (\doxymbox{\hyperlink{classEvent}{Event}} \&event)
+\begin{DoxyCompactList}\small\item\em Dispatches an event to all subscribed callbacks. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classEventBus_a979e575b3ee8a4e6d09c2d723d54ce79}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears all subscriptions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{classEventBus}{Event\+Bus}} \& \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of the \doxylink{classEventBus}{Event\+Bus}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classEventBus_a33cb29b2fe543e43494fc40adf9cdfa7}{Event\+Bus}} ()=default
+\item 
+\doxymbox{\hyperlink{classEventBus_aaea67615da6646dfcc3418a632bfedc2}{\texorpdfstring{$\sim$}{\string~}\+Event\+Bus}} ()=default
+\item 
+\doxymbox{\hyperlink{classEventBus_a270ac5b93ed8fa8c64a32f89c281e7fa}{Event\+Bus}} (const \doxymbox{\hyperlink{classEventBus}{Event\+Bus}} \&)=delete
+\item 
+\doxymbox{\hyperlink{classEventBus}{Event\+Bus}} \& \doxymbox{\hyperlink{classEventBus_a77679fdfb272555934f408c0a685c850}{operator=}} (const \doxymbox{\hyperlink{classEventBus}{Event\+Bus}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+unordered\+\_\+map$<$ std::\+type\+\_\+index, std::\+vector$<$ \doxymbox{\hyperlink{classEventBus_aedcd787e8f3f1a2c587be349957da894}{Callback}} $>$ $>$ \doxymbox{\hyperlink{classEventBus_a702797a8b9f7919aebea9be693fed6fa}{m\+\_\+\+Subscribers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton event bus for global event dispatching. 
+
+The \doxylink{classEventBus}{Event\+Bus} allows any part of the engine to subscribe to events and be notified when they occur. It uses type-\/based subscription (via std::\+type\+\_\+index) for type-\/safe event handling.
+
+\begin{DoxyNote}{Note}
+This is a singleton; use \doxylink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{Get\+Instance()} to access it. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classEvent}{Event}, \doxylink{classEventDispatcher}{Event\+Dispatcher} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{EventBus_8h_source_l00019}{19}} of file \doxymbox{\hyperlink{EventBus_8h_source}{Event\+Bus.\+h}}.
+
+
+
+\label{classEventBus_doc-typedef-members}
+\Hypertarget{classEventBus_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classEventBus_aedcd787e8f3f1a2c587be349957da894}\index{EventBus@{EventBus}!Callback@{Callback}}
+\index{Callback@{Callback}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{Callback}{Callback}}
+{\footnotesize\ttfamily \label{classEventBus_aedcd787e8f3f1a2c587be349957da894} 
+using \doxymbox{\hyperlink{classEventBus_aedcd787e8f3f1a2c587be349957da894}{Event\+Bus::\+\+Callback}} = std::\+function$<$void(\doxymbox{\hyperlink{classEvent}{Event}}\&)$>$}
+
+
+
+Definition at line \doxymbox{\hyperlink{EventBus_8h_source_l00021}{21}} of file \doxymbox{\hyperlink{EventBus_8h_source}{Event\+Bus.\+h}}.
+
+
+
+\label{classEventBus_doc-constructors}
+\Hypertarget{classEventBus_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEventBus_a33cb29b2fe543e43494fc40adf9cdfa7}\index{EventBus@{EventBus}!EventBus@{EventBus}}
+\index{EventBus@{EventBus}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{EventBus()}{EventBus()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classEventBus_a33cb29b2fe543e43494fc40adf9cdfa7} 
+Event\+Bus::\+\+Event\+Bus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}
+
+\Hypertarget{classEventBus_aaea67615da6646dfcc3418a632bfedc2}\index{EventBus@{EventBus}!````~EventBus@{\texorpdfstring{$\sim$}{\string~}EventBus}}
+\index{````~EventBus@{\texorpdfstring{$\sim$}{\string~}EventBus}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EventBus()}{\string~EventBus()}}
+{\footnotesize\ttfamily \label{classEventBus_aaea67615da6646dfcc3418a632bfedc2} 
+Event\+Bus::\+\texorpdfstring{$\sim$}{\string~}\+Event\+Bus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}
+
+\Hypertarget{classEventBus_a270ac5b93ed8fa8c64a32f89c281e7fa}\index{EventBus@{EventBus}!EventBus@{EventBus}}
+\index{EventBus@{EventBus}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{EventBus()}{EventBus()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classEventBus_a270ac5b93ed8fa8c64a32f89c281e7fa} 
+Event\+Bus::\+\+Event\+Bus (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classEventBus}{Event\+Bus}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\label{classEventBus_doc-func-members}
+\Hypertarget{classEventBus_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEventBus_a979e575b3ee8a4e6d09c2d723d54ce79}\index{EventBus@{EventBus}!Clear@{Clear}}
+\index{Clear@{Clear}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{classEventBus_a979e575b3ee8a4e6d09c2d723d54ce79} 
+void Event\+Bus::\+\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clears all subscriptions. 
+
+Removes all registered callbacks. Should be used during shutdown. 
+
+Definition at line \doxymbox{\hyperlink{EventBus_8h_source_l00067}{67}} of file \doxymbox{\hyperlink{EventBus_8h_source}{Event\+Bus.\+h}}.
+
+\Hypertarget{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}\index{EventBus@{EventBus}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}}
+{\footnotesize\ttfamily \label{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af} 
+void Event\+Bus::\+\+Dispatch (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classEvent}{Event}} \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dispatches an event to all subscribed callbacks. 
+
+All callbacks subscribed to the event\textquotesingle{}s type will be invoked in the order they were registered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The event to dispatch. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{EventBus_8h_source_l00052}{52}} of file \doxymbox{\hyperlink{EventBus_8h_source}{Event\+Bus.\+h}}.
+
+\Hypertarget{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}\index{EventBus@{EventBus}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed} 
+\doxymbox{\hyperlink{classEventBus}{Event\+Bus}} \& Event\+Bus::\+\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the singleton instance of the \doxylink{classEventBus}{Event\+Bus}. 
+
+Returns the singleton instance of \doxylink{classEventBus}{Event\+Bus}.
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classEventBus}{Event\+Bus} instance.
+\end{DoxyReturn}
+The instance is created on first call and destroyed automatically when the program exits.
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classEventBus}{Event\+Bus} instance. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{EventBus_8cpp_source_l00011}{11}} of file \doxymbox{\hyperlink{EventBus_8cpp_source}{Event\+Bus.\+cpp}}.
+
+\Hypertarget{classEventBus_a77679fdfb272555934f408c0a685c850}\index{EventBus@{EventBus}!operator=@{operator=}}
+\index{operator=@{operator=}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classEventBus_a77679fdfb272555934f408c0a685c850} 
+\doxymbox{\hyperlink{classEventBus}{Event\+Bus}} \& Event\+Bus::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classEventBus}{Event\+Bus}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\Hypertarget{classEventBus_aec7a1402c0f1789198cc9954639bac99}\index{EventBus@{EventBus}!Subscribe@{Subscribe}}
+\index{Subscribe@{Subscribe}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{Subscribe()}{Subscribe()}}
+{\footnotesize\ttfamily \label{classEventBus_aec7a1402c0f1789198cc9954639bac99} 
+template$<$typename T$>$ \\
+void Event\+Bus::\+\+Subscribe (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classEventBus_aedcd787e8f3f1a2c587be349957da894}{Callback}} \&}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subscribes a callback to a specific event type. 
+
+The callback will be invoked whenever an event of type T is dispatched. Multiple callbacks can be subscribed to the same event type.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The event type to subscribe to (must inherit from \doxylink{classEvent}{Event}). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Function to call when the event is dispatched. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{EventBus_8h_source_l00039}{39}} of file \doxymbox{\hyperlink{EventBus_8h_source}{Event\+Bus.\+h}}.
+
+
+
+\label{classEventBus_doc-variable-members}
+\Hypertarget{classEventBus_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classEventBus_a702797a8b9f7919aebea9be693fed6fa}\index{EventBus@{EventBus}!m\_Subscribers@{m\_Subscribers}}
+\index{m\_Subscribers@{m\_Subscribers}!EventBus@{EventBus}}
+\doxysubsubsection{\texorpdfstring{m\_Subscribers}{m\_Subscribers}}
+{\footnotesize\ttfamily \label{classEventBus_a702797a8b9f7919aebea9be693fed6fa} 
+std::\+unordered\+\_\+map$<$std::\+type\+\_\+index, std::\+vector$<$\doxymbox{\hyperlink{classEventBus_aedcd787e8f3f1a2c587be349957da894}{Callback}}$>$ $>$ Event\+Bus::\+m\+\_\+\+Subscribers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{EventBus_8h_source_l00077}{77}} of file \doxymbox{\hyperlink{EventBus_8h_source}{Event\+Bus.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+events/\doxymbox{\hyperlink{EventBus_8h}{Event\+Bus.\+h}}\item 
+engine/\+events/\doxymbox{\hyperlink{EventBus_8cpp}{Event\+Bus.\+cpp}}\end{DoxyCompactItemize}

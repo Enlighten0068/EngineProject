@@ -1,0 +1,235 @@
+\doxysection{Engine Class Reference}
+\hypertarget{classEngine}{}\label{classEngine}\index{Engine@{Engine}}
+
+
+Core engine class responsible for window creation and SDL lifecycle.  
+
+
+
+
+{\ttfamily \+\#include $<$Engine.\+h$>$}
+
+
+
+Collaboration diagram for Engine:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classEngine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classEngine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{Engine}} ()
+\item 
+\doxymbox{\hyperlink{classEngine_a8ef7030a089ecb30bbfcb9e43094717a}{\texorpdfstring{$\sim$}{\string~}\+Engine}} ()
+\item 
+bool \doxymbox{\hyperlink{classEngine_a253fc356293f0a5228b6d7ab143540b3}{Initialize}} (const char \texorpdfstring{$\ast$}{*}title, int width, int height, bool fullscreen=false)
+\begin{DoxyCompactList}\small\item\em Initializes SDL and creates the game window. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classEngine_a3dbd2c0a65e642baa7eaa97caa6e4e64}{Shutdown}} ()
+\begin{DoxyCompactList}\small\item\em Shuts down the engine and destroys the game window. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classSDLWindow}{SDLWindow}} \& \doxymbox{\hyperlink{classEngine_a531f887d1b7f38525d0c21d20e216e6c}{Get\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Gets the \doxylink{classSDLWindow}{SDLWindow} instance. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classEngine_a96fbaebec1936cf4440f93b59a7c5148}{Is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the engine is still running. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classEngine_a75cf7e8499772e2a46c9bb747ce1f4e9}{Set\+Running}} (bool running)
+\begin{DoxyCompactList}\small\item\em Sets the running state of the engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classSDLWindow}{SDLWindow}} \doxymbox{\hyperlink{classEngine_a6bbcb94d19650accc1e62492c82178e2}{m\+\_\+\+Window}}
+\item 
+bool \doxymbox{\hyperlink{classEngine_a9702c44e02c02eb256ede54a6f259782}{m\+\_\+\+Running}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Core engine class responsible for window creation and SDL lifecycle. 
+
+The \doxylink{classEngine}{Engine} class abstracts the low-\/level window management and SDL initialization. It owns the \doxylink{classSDLWindow}{SDLWindow} and manages the main loop\textquotesingle{}s running state.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classSDLWindow}{SDLWindow}, \doxylink{classApplication}{Application} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
+
+
+
+\label{classEngine_doc-constructors}
+\Hypertarget{classEngine_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEngine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}\index{Engine@{Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Engine()}{Engine()}}
+{\footnotesize\ttfamily \label{classEngine_a8c98683b0a3aa28d8ab72a8bcd0d52f2} 
+Engine::\+\+Engine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{Engine_8cpp_source_l00011}{11}} of file \doxymbox{\hyperlink{Engine_8cpp_source}{Engine.\+cpp}}.
+
+\Hypertarget{classEngine_a8ef7030a089ecb30bbfcb9e43094717a}\index{Engine@{Engine}!````~Engine@{\texorpdfstring{$\sim$}{\string~}Engine}}
+\index{````~Engine@{\texorpdfstring{$\sim$}{\string~}Engine}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Engine()}{\string~Engine()}}
+{\footnotesize\ttfamily \label{classEngine_a8ef7030a089ecb30bbfcb9e43094717a} 
+Engine::\+\texorpdfstring{$\sim$}{\string~}\+Engine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{Engine_8cpp_source_l00013}{13}} of file \doxymbox{\hyperlink{Engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+\label{classEngine_doc-func-members}
+\Hypertarget{classEngine_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEngine_a531f887d1b7f38525d0c21d20e216e6c}\index{Engine@{Engine}!GetWindow@{GetWindow}}
+\index{GetWindow@{GetWindow}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{GetWindow()}{GetWindow()}}
+{\footnotesize\ttfamily \label{classEngine_a531f887d1b7f38525d0c21d20e216e6c} 
+\doxymbox{\hyperlink{classSDLWindow}{SDLWindow}} \& Engine::\+\+Get\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the \doxylink{classSDLWindow}{SDLWindow} instance. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classSDLWindow}{SDLWindow}. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Engine_8cpp_source_l00057}{57}} of file \doxymbox{\hyperlink{Engine_8cpp_source}{Engine.\+cpp}}.
+
+\Hypertarget{classEngine_a253fc356293f0a5228b6d7ab143540b3}\index{Engine@{Engine}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{classEngine_a253fc356293f0a5228b6d7ab143540b3} 
+bool Engine::\+\+Initialize (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{title}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{bool}]{fullscreen}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Initializes SDL and creates the game window. 
+
+Initializes SDL and creates the window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Window title. \\
+\hline
+{\em width} & Window width in pixels. \\
+\hline
+{\em height} & Window height in pixels. \\
+\hline
+{\em fullscreen} & Whether to start in fullscreen mode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if initialization succeeded, false otherwise.
+\end{DoxyReturn}
+This method initializes the SDL video subsystem and creates a window with the specified title and dimensions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Window title. \\
+\hline
+{\em width} & Window width in pixels. \\
+\hline
+{\em height} & Window height in pixels. \\
+\hline
+{\em fullscreen} & Whether to start in fullscreen mode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Engine_8cpp_source_l00029}{29}} of file \doxymbox{\hyperlink{Engine_8cpp_source}{Engine.\+cpp}}.
+
+\Hypertarget{classEngine_a96fbaebec1936cf4440f93b59a7c5148}\index{Engine@{Engine}!IsRunning@{IsRunning}}
+\index{IsRunning@{IsRunning}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{IsRunning()}{IsRunning()}}
+{\footnotesize\ttfamily \label{classEngine_a96fbaebec1936cf4440f93b59a7c5148} 
+bool Engine::\+\+Is\+Running (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the engine is still running. 
+
+\begin{DoxyReturn}{Returns}
+true if running, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00044}{44}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
+
+\Hypertarget{classEngine_a75cf7e8499772e2a46c9bb747ce1f4e9}\index{Engine@{Engine}!SetRunning@{SetRunning}}
+\index{SetRunning@{SetRunning}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{SetRunning()}{SetRunning()}}
+{\footnotesize\ttfamily \label{classEngine_a75cf7e8499772e2a46c9bb747ce1f4e9} 
+void Engine::\+\+Set\+Running (\begin{DoxyParamCaption}\item[{bool}]{running}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the running state of the engine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em running} & New running state. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00050}{50}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
+
+\Hypertarget{classEngine_a3dbd2c0a65e642baa7eaa97caa6e4e64}\index{Engine@{Engine}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily \label{classEngine_a3dbd2c0a65e642baa7eaa97caa6e4e64} 
+void Engine::\+\+Shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Shuts down the engine and destroys the game window. 
+
+Shuts down the engine.
+
+Destroys the window and quits SDL. 
+
+Definition at line \doxymbox{\hyperlink{Engine_8cpp_source_l00047}{47}} of file \doxymbox{\hyperlink{Engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+\label{classEngine_doc-variable-members}
+\Hypertarget{classEngine_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classEngine_a9702c44e02c02eb256ede54a6f259782}\index{Engine@{Engine}!m\_Running@{m\_Running}}
+\index{m\_Running@{m\_Running}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{m\_Running}{m\_Running}}
+{\footnotesize\ttfamily \label{classEngine_a9702c44e02c02eb256ede54a6f259782} 
+bool Engine::\+m\+\_\+\+Running\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00054}{54}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
+
+\Hypertarget{classEngine_a6bbcb94d19650accc1e62492c82178e2}\index{Engine@{Engine}!m\_Window@{m\_Window}}
+\index{m\_Window@{m\_Window}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{m\_Window}{m\_Window}}
+{\footnotesize\ttfamily \label{classEngine_a6bbcb94d19650accc1e62492c82178e2} 
+\doxymbox{\hyperlink{classSDLWindow}{SDLWindow}} Engine::\+m\+\_\+\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00053}{53}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+core/\doxymbox{\hyperlink{Engine_8h}{Engine.\+h}}\item 
+engine/\+core/\doxymbox{\hyperlink{Engine_8cpp}{Engine.\+cpp}}\end{DoxyCompactItemize}

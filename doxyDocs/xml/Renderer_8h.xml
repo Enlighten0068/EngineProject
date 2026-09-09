@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Renderer_8h" kind="file" language="C++">
+    <compoundname>Renderer.h</compoundname>
+    <includes refid="Matrix4_8h" local="yes">math/Matrix4.h</includes>
+    <includedby refid="Application_8cpp" local="yes">engine/core/Application.cpp</includedby>
+    <includedby refid="Renderer_8cpp" local="yes">engine/renderer/Renderer.cpp</includedby>
+    <includedby refid="ECSScene_8cpp" local="yes">engine/scene/ECSScene.cpp</includedby>
+    <includedby refid="GameObject_8cpp" local="yes">engine/scene/GameObject.cpp</includedby>
+    <includedby refid="GameWorld_8cpp" local="yes">engine/scene/GameWorld.cpp</includedby>
+    <includedby refid="MenuScene_8cpp" local="yes">engine/scene/MenuScene.cpp</includedby>
+    <includedby refid="RenderSystem_8h" local="yes">engine/systems/RenderSystem.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="1">
+        <label>engine/renderer/Renderer.h</label>
+        <link refid="Renderer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cmath</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/renderer/Renderer.cpp</label>
+        <link refid="Renderer_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/renderer/Renderer.h</label>
+        <link refid="Renderer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>engine/scene/ECSScene.cpp</label>
+        <link refid="ECSScene_8cpp"/>
+      </node>
+      <node id="5">
+        <label>engine/scene/GameObject.cpp</label>
+        <link refid="GameObject_8cpp"/>
+      </node>
+      <node id="6">
+        <label>engine/scene/GameWorld.cpp</label>
+        <link refid="GameWorld_8cpp"/>
+      </node>
+      <node id="7">
+        <label>engine/scene/MenuScene.cpp</label>
+        <link refid="MenuScene_8cpp"/>
+      </node>
+      <node id="8">
+        <label>engine/systems/RenderSystem.h</label>
+        <link refid="RenderSystem_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classRenderer" prot="public">Renderer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Matrix4_8h" kindref="compound">math/Matrix4.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//Forward<sp/>declarations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classShader" kindref="compound">Shader</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classVertexArray" kindref="compound">VertexArray</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classTexture2D" kindref="compound">Texture2D</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classRenderer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classRenderer" kindref="compound">Renderer</ref>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRenderer_1a62a84dbdb97eed1c5fcc0cfa545ab281" kindref="member">DrawQuad</ref>(<ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>shader,<sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/>vertexArray,<sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/>indexBuffer);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRenderer_1a71992cf4acf88e30dd0abaaa6cda23b4" kindref="member">DrawTexturedQuad</ref>(<ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>shader,<sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/>vertexArray,<sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/>indexBuffer,<sp/><ref refid="classTexture2D" kindref="compound">Texture2D</ref>&amp;<sp/>texture,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref>&amp;<sp/>model,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref>&amp;<sp/>view,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref>&amp;<sp/>projection,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>tileScaleX<sp/>=<sp/>1.0f,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>tileScaleY<sp/>=<sp/>1.0f);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/renderer/Renderer.h"/>
+  </compounddef>
+</doxygen>

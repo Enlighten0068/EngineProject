@@ -1,0 +1,336 @@
+\doxysection{Matrix4 Class Reference}
+\hypertarget{classMatrix4}{}\label{classMatrix4}\index{Matrix4@{Matrix4}}
+
+
+4x4 matrix class for 3D transformations and projections.  
+
+
+
+
+{\ttfamily \+\#include $<$Matrix4.\+h$>$}
+
+
+
+Collaboration diagram for Matrix4:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classMatrix4__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a zero-\/initialized matrix. \end{DoxyCompactList}\item 
+const float \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classMatrix4_a8ac4bc2827badac74be9b12d788e4d1c}{Data}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the underlying data array. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classMatrix4}{Matrix4}} \doxymbox{\hyperlink{classMatrix4_a07a0a50c8e4d085e289a9d383040202d}{operator\texorpdfstring{$\ast$}{*}}} (const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&other) const
+\begin{DoxyCompactList}\small\item\em Matrix multiplication operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \doxymbox{\hyperlink{classMatrix4_ae114a47efddacad2207eadac5f532098}{Identity}} ()
+\begin{DoxyCompactList}\small\item\em Creates an identity matrix (1 on the main diagonal, 0 elsewhere). \end{DoxyCompactList}\item 
+static \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \doxymbox{\hyperlink{classMatrix4_a35fb272e82fbfc17cdf2d75c858f5da7}{Translation}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&position)
+\begin{DoxyCompactList}\small\item\em Creates a translation matrix. \end{DoxyCompactList}\item 
+static \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \doxymbox{\hyperlink{classMatrix4_aa3a30984ce9f309c23827d5e1cde0fdc}{Scale}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&scale)
+\begin{DoxyCompactList}\small\item\em Creates a scale matrix. \end{DoxyCompactList}\item 
+static \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \doxymbox{\hyperlink{classMatrix4_a8cc70f5111adc0c13fed0521a31b80b6}{Orthographic}} (float left, float right, float bottom, float top, float near\+Plane, float far\+Plane)
+\begin{DoxyCompactList}\small\item\em Creates an orthographic projection matrix. \end{DoxyCompactList}\item 
+static \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \doxymbox{\hyperlink{classMatrix4_aaa53c3d6bcda5ac9c4d8568a54d3d543}{RotationZ}} (float angle\+Radians)
+\begin{DoxyCompactList}\small\item\em Creates a rotation matrix around the Z-\/axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \doxymbox{\hyperlink{classMatrix4_a7ae7521ab1dd94119349dcbf408cb004}{m\+\_\+\+Data}} \+[16]
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+4x4 matrix class for 3D transformations and projections. 
+
+The matrix is stored in column-\/major order (Open\+GL style), meaning the data array is organized as:
+
+\+[ col0, col1, col2, col3 ]
+
+where each column is a Vector4.
+
+\begin{DoxyNote}{Note}
+All static methods return a new \doxylink{classMatrix4}{Matrix4} instance. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structVector3D}{Vector3D} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Matrix4_8h_source_l00019}{19}} of file \doxymbox{\hyperlink{Matrix4_8h_source}{Matrix4.\+h}}.
+
+
+
+\label{classMatrix4_doc-constructors}
+\Hypertarget{classMatrix4_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMatrix4_a21e70a74447b9b05cf9a06400bc9c661}\index{Matrix4@{Matrix4}!Matrix4@{Matrix4}}
+\index{Matrix4@{Matrix4}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{Matrix4()}{Matrix4()}}
+{\footnotesize\ttfamily \label{classMatrix4_a21e70a74447b9b05cf9a06400bc9c661} 
+Matrix4::\+\+Matrix4 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a zero-\/initialized matrix. 
+
+Default constructor: initializes all matrix elements to zero. 
+
+Definition at line \doxymbox{\hyperlink{Matrix4_8cpp_source_l00006}{6}} of file \doxymbox{\hyperlink{Matrix4_8cpp_source}{Matrix4.\+cpp}}.
+
+
+
+\label{classMatrix4_doc-func-members}
+\Hypertarget{classMatrix4_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMatrix4_a8ac4bc2827badac74be9b12d788e4d1c}\index{Matrix4@{Matrix4}!Data@{Data}}
+\index{Data@{Data}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}}
+{\footnotesize\ttfamily \label{classMatrix4_a8ac4bc2827badac74be9b12d788e4d1c} 
+const float \texorpdfstring{$\ast$}{*} Matrix4::\+\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the underlying data array. 
+
+Returns a pointer to the internal data array.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the first element of the 16-\/float array.
+
+Pointer to the first element. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Matrix4_8cpp_source_l00016}{16}} of file \doxymbox{\hyperlink{Matrix4_8cpp_source}{Matrix4.\+cpp}}.
+
+\Hypertarget{classMatrix4_ae114a47efddacad2207eadac5f532098}\index{Matrix4@{Matrix4}!Identity@{Identity}}
+\index{Identity@{Identity}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{Identity()}{Identity()}}
+{\footnotesize\ttfamily \label{classMatrix4_ae114a47efddacad2207eadac5f532098} 
+\doxymbox{\hyperlink{classMatrix4}{Matrix4}} Matrix4::\+\+Identity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates an identity matrix (1 on the main diagonal, 0 elsewhere). 
+
+Creates an identity matrix.
+
+\begin{DoxyReturn}{Returns}
+Identity matrix. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Matrix4_8cpp_source_l00024}{24}} of file \doxymbox{\hyperlink{Matrix4_8cpp_source}{Matrix4.\+cpp}}.
+
+\Hypertarget{classMatrix4_a07a0a50c8e4d085e289a9d383040202d}\index{Matrix4@{Matrix4}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{classMatrix4_a07a0a50c8e4d085e289a9d383040202d} 
+\doxymbox{\hyperlink{classMatrix4}{Matrix4}} Matrix4::\+operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Matrix multiplication operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Matrix to multiply with (on the right). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of {\ttfamily this \texorpdfstring{$\ast$}{*} other}.
+\end{DoxyReturn}
+Performs standard matrix multiplication: result = this \texorpdfstring{$\ast$}{*} other. The order matters: this is applied first, then other.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The matrix to multiply with (on the right). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of this \texorpdfstring{$\ast$}{*} other. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Matrix4_8cpp_source_l00074}{74}} of file \doxymbox{\hyperlink{Matrix4_8cpp_source}{Matrix4.\+cpp}}.
+
+\Hypertarget{classMatrix4_a8cc70f5111adc0c13fed0521a31b80b6}\index{Matrix4@{Matrix4}!Orthographic@{Orthographic}}
+\index{Orthographic@{Orthographic}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{Orthographic()}{Orthographic()}}
+{\footnotesize\ttfamily \label{classMatrix4_a8cc70f5111adc0c13fed0521a31b80b6} 
+\doxymbox{\hyperlink{classMatrix4}{Matrix4}} Matrix4::\+\+Orthographic (\begin{DoxyParamCaption}\item[{float}]{left}{, }\item[{float}]{right}{, }\item[{float}]{bottom}{, }\item[{float}]{top}{, }\item[{float}]{near\+Plane}{, }\item[{float}]{far\+Plane}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates an orthographic projection matrix. 
+
+This maps a 3D volume (left-\/right, bottom-\/top, near-\/far) to a 2D screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left clipping plane. \\
+\hline
+{\em right} & Right clipping plane. \\
+\hline
+{\em bottom} & Bottom clipping plane. \\
+\hline
+{\em top} & Top clipping plane. \\
+\hline
+{\em near\+Plane} & Near clipping plane. \\
+\hline
+{\em far\+Plane} & Far clipping plane. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Orthographic projection matrix.
+\end{DoxyReturn}
+This maps a 3D region (a box) to a 2D projection. The near and far planes are positive distances.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left clipping plane. \\
+\hline
+{\em right} & Right clipping plane. \\
+\hline
+{\em bottom} & Bottom clipping plane. \\
+\hline
+{\em top} & Top clipping plane. \\
+\hline
+{\em near\+Plane} & Near clipping plane (positive). \\
+\hline
+{\em far\+Plane} & Far clipping plane (positive). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Orthographic projection matrix. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Matrix4_8cpp_source_l00103}{103}} of file \doxymbox{\hyperlink{Matrix4_8cpp_source}{Matrix4.\+cpp}}.
+
+\Hypertarget{classMatrix4_aaa53c3d6bcda5ac9c4d8568a54d3d543}\index{Matrix4@{Matrix4}!RotationZ@{RotationZ}}
+\index{RotationZ@{RotationZ}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{RotationZ()}{RotationZ()}}
+{\footnotesize\ttfamily \label{classMatrix4_aaa53c3d6bcda5ac9c4d8568a54d3d543} 
+\doxymbox{\hyperlink{classMatrix4}{Matrix4}} Matrix4::\+\+RotationZ (\begin{DoxyParamCaption}\item[{float}]{angle\+Radians}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a rotation matrix around the Z-\/axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+Radians} & Rotation angle in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix (Z-\/axis roll).
+\end{DoxyReturn}
+This rotates points in the coordinate plane by the given angle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+Radians} & Rotation angle in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix (Z-\/axis roll). 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Matrix4_8cpp_source_l00127}{127}} of file \doxymbox{\hyperlink{Matrix4_8cpp_source}{Matrix4.\+cpp}}.
+
+\Hypertarget{classMatrix4_aa3a30984ce9f309c23827d5e1cde0fdc}\index{Matrix4@{Matrix4}!Scale@{Scale}}
+\index{Scale@{Scale}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{Scale()}{Scale()}}
+{\footnotesize\ttfamily \label{classMatrix4_aa3a30984ce9f309c23827d5e1cde0fdc} 
+\doxymbox{\hyperlink{classMatrix4}{Matrix4}} Matrix4::\+\+Scale (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{scale}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a scale matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & Scale factors (x, y, z). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scale matrix.
+\end{DoxyReturn}
+The matrix scales points along the X, Y, and Z axes by the given factors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & Scale factors (x, y, z). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scale matrix. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Matrix4_8cpp_source_l00057}{57}} of file \doxymbox{\hyperlink{Matrix4_8cpp_source}{Matrix4.\+cpp}}.
+
+\Hypertarget{classMatrix4_a35fb272e82fbfc17cdf2d75c858f5da7}\index{Matrix4@{Matrix4}!Translation@{Translation}}
+\index{Translation@{Translation}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{Translation()}{Translation()}}
+{\footnotesize\ttfamily \label{classMatrix4_a35fb272e82fbfc17cdf2d75c858f5da7} 
+\doxymbox{\hyperlink{classMatrix4}{Matrix4}} Matrix4::\+\+Translation (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a translation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Translation vector (x, y, z). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Translation matrix.
+\end{DoxyReturn}
+The matrix translates points by the given vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Translation vector (x, y, z). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Translation matrix. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Matrix4_8cpp_source_l00041}{41}} of file \doxymbox{\hyperlink{Matrix4_8cpp_source}{Matrix4.\+cpp}}.
+
+
+
+\label{classMatrix4_doc-variable-members}
+\Hypertarget{classMatrix4_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMatrix4_a7ae7521ab1dd94119349dcbf408cb004}\index{Matrix4@{Matrix4}!m\_Data@{m\_Data}}
+\index{m\_Data@{m\_Data}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{m\_Data}{m\_Data}}
+{\footnotesize\ttfamily \label{classMatrix4_a7ae7521ab1dd94119349dcbf408cb004} 
+float Matrix4::\+m\+\_\+\+Data\+[16]\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Matrix4_8h_source_l00082}{82}} of file \doxymbox{\hyperlink{Matrix4_8h_source}{Matrix4.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+math/\doxymbox{\hyperlink{Matrix4_8h}{Matrix4.\+h}}\item 
+engine/\+math/\doxymbox{\hyperlink{Matrix4_8cpp}{Matrix4.\+cpp}}\end{DoxyCompactItemize}

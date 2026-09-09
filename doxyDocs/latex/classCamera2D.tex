@@ -1,0 +1,412 @@
+\doxysection{Camera2D Class Reference}
+\hypertarget{classCamera2D}{}\label{classCamera2D}\index{Camera2D@{Camera2D}}
+
+
+2D camera with orthographic projection, position, rotation, and zoom.  
+
+
+
+
+{\ttfamily \+\#include $<$Camera2\+D.\+h$>$}
+
+
+
+Collaboration diagram for Camera2D:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classCamera2D__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classCamera2D_a08e4985039e813d649881fc1e9de295e}{Camera2D}} (float left, float right, float bottom, float top, float near\+Plane=-\/1.\+0f, float far\+Plane=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Constructs a 2D camera with specified view volume. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classCamera2D_add37aa370c8718e7d38a0de2f8b86b10}{Set\+Position}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&position)
+\begin{DoxyCompactList}\small\item\em Sets the camera position in world space. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classCamera2D_acd244eddd3322e8aca89338cbdd18725}{Set\+Rotation}} (float angle\+Radians)
+\begin{DoxyCompactList}\small\item\em Sets the camera rotation around the Z-\/axis. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classCamera2D_aed0e07c98dcc2dab4cfb46021c5af4f6}{Set\+Projection}} (float left, float right, float bottom, float top)
+\begin{DoxyCompactList}\small\item\em Sets the camera projection volume. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classCamera2D_a2dacc853f7361a368c53571932c5bee1}{Set\+Zoom}} (float zoom)
+\begin{DoxyCompactList}\small\item\em Sets the camera zoom level. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{classCamera2D_a81735ad622947ceecfe836d2f855cfc8}{Get\+Position}} () const
+\item 
+float \doxymbox{\hyperlink{classCamera2D_af8d9ff1e06b780cc2917b9559ab4a369}{Get\+Zoom}} () const
+\item 
+const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \& \doxymbox{\hyperlink{classCamera2D_ae3168f69ca945882e188e8afd65c3df0}{Get\+View\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Gets the view matrix. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \& \doxymbox{\hyperlink{classCamera2D_ab701ef4c77ac12b75120d37dd84f6cfa}{Get\+Projection\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Gets the projection matrix. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classCamera2D_adab7c2dd541f23c9e20ce54c73520f03}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the view matrix if the camera is dirty. Should be called before rendering if the camera has moved or rotated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classCamera2D_a2f6f0e9b8c1ed59d3cbaf54e45d6d4f5}{Update\+Projection}} ()
+\begin{DoxyCompactList}\small\item\em Recalculates the projection matrix based on zoom level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \doxymbox{\hyperlink{classCamera2D_a651b5a30b9359cc06ebd5d0a6270775c}{m\+\_\+\+Near}}
+\item 
+float \doxymbox{\hyperlink{classCamera2D_a302aa156fb2c542f00dfeef40e51752e}{m\+\_\+\+Far}}
+\item 
+float \doxymbox{\hyperlink{classCamera2D_a3895006dcd93f387d2cdb9ebdda506c0}{m\+\_\+\+Width}}
+\item 
+float \doxymbox{\hyperlink{classCamera2D_a7093ce0f3db7658bd5c7e579c1e8cf47}{m\+\_\+\+Height}}
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{classCamera2D_ac5b66f8164de772cefb2dd90d18199d3}{m\+\_\+\+Position}}
+\item 
+float \doxymbox{\hyperlink{classCamera2D_a9eef4aba3d315743afb6afbb89bae3c6}{m\+\_\+\+Rotation}}
+\item 
+float \doxymbox{\hyperlink{classCamera2D_a591fefdf777617222afbfa7b9d0a70bc}{m\+\_\+\+Zoom}}
+\item 
+\doxymbox{\hyperlink{classMatrix4}{Matrix4}} \doxymbox{\hyperlink{classCamera2D_a260d3283fabe527248217099823cc25f}{m\+\_\+\+Projection\+Matrix}}
+\item 
+\doxymbox{\hyperlink{classMatrix4}{Matrix4}} \doxymbox{\hyperlink{classCamera2D_a15183741d20d595084a1984a84968254}{m\+\_\+\+View\+Matrix}}
+\item 
+bool \doxymbox{\hyperlink{classCamera2D_a5418a2d219a54844b223106e1170db5c}{m\+\_\+\+Is\+Dirty}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+2D camera with orthographic projection, position, rotation, and zoom. 
+
+The \doxylink{classCamera2D}{Camera2D} class manages an orthographic projection matrix and a view matrix based on the camera\textquotesingle{}s position, rotation (around Z-\/axis), and zoom level. It is used to define what part of the world is visible on screen.
+
+\begin{DoxyNote}{Note}
+The camera uses a dirty flag to avoid recalculating the view matrix every frame unless the position or rotation has changed. 
+\end{DoxyNote}
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00016}{16}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+
+
+\label{classCamera2D_doc-constructors}
+\Hypertarget{classCamera2D_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCamera2D_a08e4985039e813d649881fc1e9de295e}\index{Camera2D@{Camera2D}!Camera2D@{Camera2D}}
+\index{Camera2D@{Camera2D}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{Camera2D()}{Camera2D()}}
+{\footnotesize\ttfamily \label{classCamera2D_a08e4985039e813d649881fc1e9de295e} 
+Camera2\+D::\+\+Camera2D (\begin{DoxyParamCaption}\item[{float}]{left}{, }\item[{float}]{right}{, }\item[{float}]{bottom}{, }\item[{float}]{top}{, }\item[{float}]{near\+Plane}{ = {\ttfamily -\/1.0f}, }\item[{float}]{far\+Plane}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})}
+
+
+
+Constructs a 2D camera with specified view volume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left boundary of the view volume. \\
+\hline
+{\em right} & Right boundary of the view volume. \\
+\hline
+{\em bottom} & Bottom boundary of the view volume. \\
+\hline
+{\em top} & Top boundary of the view volume. \\
+\hline
+{\em near\+Plane} & Near clipping plane (default: -\/1.\+0). \\
+\hline
+{\em far\+Plane} & Far clipping plane (default: 1.\+0).\\
+\hline
+\end{DoxyParams}
+Initializes the camera with the given view volume, sets default position to (0,0,0), with no rotation, zoom=1, and calculates the initial projection matrix. 
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8cpp_source_l00012}{12}} of file \doxymbox{\hyperlink{Camera2D_8cpp_source}{Camera2\+D.\+cpp}}.
+
+
+
+\label{classCamera2D_doc-func-members}
+\Hypertarget{classCamera2D_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCamera2D_a81735ad622947ceecfe836d2f855cfc8}\index{Camera2D@{Camera2D}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{classCamera2D_a81735ad622947ceecfe836d2f855cfc8} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Camera2\+D::\+\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00057}{57}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+\Hypertarget{classCamera2D_ab701ef4c77ac12b75120d37dd84f6cfa}\index{Camera2D@{Camera2D}!GetProjectionMatrix@{GetProjectionMatrix}}
+\index{GetProjectionMatrix@{GetProjectionMatrix}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{GetProjectionMatrix()}{GetProjectionMatrix()}}
+{\footnotesize\ttfamily \label{classCamera2D_ab701ef4c77ac12b75120d37dd84f6cfa} 
+const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \& Camera2\+D::\+\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the projection matrix. 
+
+\begin{DoxyReturn}{Returns}
+Const reference to the projection matrix. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8cpp_source_l00106}{106}} of file \doxymbox{\hyperlink{Camera2D_8cpp_source}{Camera2\+D.\+cpp}}.
+
+\Hypertarget{classCamera2D_ae3168f69ca945882e188e8afd65c3df0}\index{Camera2D@{Camera2D}!GetViewMatrix@{GetViewMatrix}}
+\index{GetViewMatrix@{GetViewMatrix}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{GetViewMatrix()}{GetViewMatrix()}}
+{\footnotesize\ttfamily \label{classCamera2D_ae3168f69ca945882e188e8afd65c3df0} 
+const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \& Camera2\+D::\+\+Get\+View\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the view matrix. 
+
+\begin{DoxyReturn}{Returns}
+Const reference to the view matrix. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8cpp_source_l00098}{98}} of file \doxymbox{\hyperlink{Camera2D_8cpp_source}{Camera2\+D.\+cpp}}.
+
+\Hypertarget{classCamera2D_af8d9ff1e06b780cc2917b9559ab4a369}\index{Camera2D@{Camera2D}!GetZoom@{GetZoom}}
+\index{GetZoom@{GetZoom}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{GetZoom()}{GetZoom()}}
+{\footnotesize\ttfamily \label{classCamera2D_af8d9ff1e06b780cc2917b9559ab4a369} 
+float Camera2\+D::\+\+Get\+Zoom (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00058}{58}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+\Hypertarget{classCamera2D_add37aa370c8718e7d38a0de2f8b86b10}\index{Camera2D@{Camera2D}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily \label{classCamera2D_add37aa370c8718e7d38a0de2f8b86b10} 
+void Camera2\+D::\+\+Set\+Position (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Sets the camera position in world space. 
+
+Sets the camera position and marks the view matrix as dirty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8cpp_source_l00023}{23}} of file \doxymbox{\hyperlink{Camera2D_8cpp_source}{Camera2\+D.\+cpp}}.
+
+\Hypertarget{classCamera2D_aed0e07c98dcc2dab4cfb46021c5af4f6}\index{Camera2D@{Camera2D}!SetProjection@{SetProjection}}
+\index{SetProjection@{SetProjection}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{SetProjection()}{SetProjection()}}
+{\footnotesize\ttfamily \label{classCamera2D_aed0e07c98dcc2dab4cfb46021c5af4f6} 
+void Camera2\+D::\+\+Set\+Projection (\begin{DoxyParamCaption}\item[{float}]{left}{, }\item[{float}]{right}{, }\item[{float}]{bottom}{, }\item[{float}]{top}{}\end{DoxyParamCaption})}
+
+
+
+Sets the camera projection volume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left boundary. \\
+\hline
+{\em right} & Right boundary. \\
+\hline
+{\em bottom} & Bottom boundary. \\
+\hline
+{\em top} & Top boundary. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8cpp_source_l00054}{54}} of file \doxymbox{\hyperlink{Camera2D_8cpp_source}{Camera2\+D.\+cpp}}.
+
+\Hypertarget{classCamera2D_acd244eddd3322e8aca89338cbdd18725}\index{Camera2D@{Camera2D}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{SetRotation()}{SetRotation()}}
+{\footnotesize\ttfamily \label{classCamera2D_acd244eddd3322e8aca89338cbdd18725} 
+void Camera2\+D::\+\+Set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{angle\+Radians}{}\end{DoxyParamCaption})}
+
+
+
+Sets the camera rotation around the Z-\/axis. 
+
+Sets the camera rotation and marks the view matrix as dirty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+Radians} & Rotation angle in radians. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8cpp_source_l00032}{32}} of file \doxymbox{\hyperlink{Camera2D_8cpp_source}{Camera2\+D.\+cpp}}.
+
+\Hypertarget{classCamera2D_a2dacc853f7361a368c53571932c5bee1}\index{Camera2D@{Camera2D}!SetZoom@{SetZoom}}
+\index{SetZoom@{SetZoom}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{SetZoom()}{SetZoom()}}
+{\footnotesize\ttfamily \label{classCamera2D_a2dacc853f7361a368c53571932c5bee1} 
+void Camera2\+D::\+\+Set\+Zoom (\begin{DoxyParamCaption}\item[{float}]{zoom}{}\end{DoxyParamCaption})}
+
+
+
+Sets the camera zoom level. 
+
+Sets the camera zoom level and recalculates the projection matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zoom} & Zoom factor (clamped to a minimum of 0.\+1). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8cpp_source_l00041}{41}} of file \doxymbox{\hyperlink{Camera2D_8cpp_source}{Camera2\+D.\+cpp}}.
+
+\Hypertarget{classCamera2D_adab7c2dd541f23c9e20ce54c73520f03}\index{Camera2D@{Camera2D}!Update@{Update}}
+\index{Update@{Update}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classCamera2D_adab7c2dd541f23c9e20ce54c73520f03} 
+void Camera2\+D::\+\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the view matrix if the camera is dirty. Should be called before rendering if the camera has moved or rotated. 
+
+Updates the view matrix ONLY when the camera is dirty.
+
+The view matrix is the inverse of the camera\textquotesingle{}s transform:
+\begin{DoxyEnumerate}
+\item Apply translation to -\/position
+\item Apply rotation around Z-\/axis (inverse angle) 
+\end{DoxyEnumerate}
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8cpp_source_l00069}{69}} of file \doxymbox{\hyperlink{Camera2D_8cpp_source}{Camera2\+D.\+cpp}}.
+
+\Hypertarget{classCamera2D_a2f6f0e9b8c1ed59d3cbaf54e45d6d4f5}\index{Camera2D@{Camera2D}!UpdateProjection@{UpdateProjection}}
+\index{UpdateProjection@{UpdateProjection}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{UpdateProjection()}{UpdateProjection()}}
+{\footnotesize\ttfamily \label{classCamera2D_a2f6f0e9b8c1ed59d3cbaf54e45d6d4f5} 
+void Camera2\+D::\+\+Update\+Projection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recalculates the projection matrix based on zoom level. 
+
+Recalculates the orthographic projection matrix based on zoom. 
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8cpp_source_l00086}{86}} of file \doxymbox{\hyperlink{Camera2D_8cpp_source}{Camera2\+D.\+cpp}}.
+
+
+
+\label{classCamera2D_doc-variable-members}
+\Hypertarget{classCamera2D_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCamera2D_a302aa156fb2c542f00dfeef40e51752e}\index{Camera2D@{Camera2D}!m\_Far@{m\_Far}}
+\index{m\_Far@{m\_Far}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{m\_Far}{m\_Far}}
+{\footnotesize\ttfamily \label{classCamera2D_a302aa156fb2c542f00dfeef40e51752e} 
+float Camera2\+D::\+m\+\_\+\+Far\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00075}{75}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+\Hypertarget{classCamera2D_a7093ce0f3db7658bd5c7e579c1e8cf47}\index{Camera2D@{Camera2D}!m\_Height@{m\_Height}}
+\index{m\_Height@{m\_Height}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{m\_Height}{m\_Height}}
+{\footnotesize\ttfamily \label{classCamera2D_a7093ce0f3db7658bd5c7e579c1e8cf47} 
+float Camera2\+D::\+m\+\_\+\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00077}{77}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+\Hypertarget{classCamera2D_a5418a2d219a54844b223106e1170db5c}\index{Camera2D@{Camera2D}!m\_IsDirty@{m\_IsDirty}}
+\index{m\_IsDirty@{m\_IsDirty}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{m\_IsDirty}{m\_IsDirty}}
+{\footnotesize\ttfamily \label{classCamera2D_a5418a2d219a54844b223106e1170db5c} 
+bool Camera2\+D::\+m\+\_\+\+Is\+Dirty\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00085}{85}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+\Hypertarget{classCamera2D_a651b5a30b9359cc06ebd5d0a6270775c}\index{Camera2D@{Camera2D}!m\_Near@{m\_Near}}
+\index{m\_Near@{m\_Near}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{m\_Near}{m\_Near}}
+{\footnotesize\ttfamily \label{classCamera2D_a651b5a30b9359cc06ebd5d0a6270775c} 
+float Camera2\+D::\+m\+\_\+\+Near\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00074}{74}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+\Hypertarget{classCamera2D_ac5b66f8164de772cefb2dd90d18199d3}\index{Camera2D@{Camera2D}!m\_Position@{m\_Position}}
+\index{m\_Position@{m\_Position}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{m\_Position}{m\_Position}}
+{\footnotesize\ttfamily \label{classCamera2D_ac5b66f8164de772cefb2dd90d18199d3} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Camera2\+D::\+m\+\_\+\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00079}{79}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+\Hypertarget{classCamera2D_a260d3283fabe527248217099823cc25f}\index{Camera2D@{Camera2D}!m\_ProjectionMatrix@{m\_ProjectionMatrix}}
+\index{m\_ProjectionMatrix@{m\_ProjectionMatrix}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{m\_ProjectionMatrix}{m\_ProjectionMatrix}}
+{\footnotesize\ttfamily \label{classCamera2D_a260d3283fabe527248217099823cc25f} 
+\doxymbox{\hyperlink{classMatrix4}{Matrix4}} Camera2\+D::\+m\+\_\+\+Projection\+Matrix\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00083}{83}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+\Hypertarget{classCamera2D_a9eef4aba3d315743afb6afbb89bae3c6}\index{Camera2D@{Camera2D}!m\_Rotation@{m\_Rotation}}
+\index{m\_Rotation@{m\_Rotation}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{m\_Rotation}{m\_Rotation}}
+{\footnotesize\ttfamily \label{classCamera2D_a9eef4aba3d315743afb6afbb89bae3c6} 
+float Camera2\+D::\+m\+\_\+\+Rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00080}{80}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+\Hypertarget{classCamera2D_a15183741d20d595084a1984a84968254}\index{Camera2D@{Camera2D}!m\_ViewMatrix@{m\_ViewMatrix}}
+\index{m\_ViewMatrix@{m\_ViewMatrix}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{m\_ViewMatrix}{m\_ViewMatrix}}
+{\footnotesize\ttfamily \label{classCamera2D_a15183741d20d595084a1984a84968254} 
+\doxymbox{\hyperlink{classMatrix4}{Matrix4}} Camera2\+D::\+m\+\_\+\+View\+Matrix\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00084}{84}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+\Hypertarget{classCamera2D_a3895006dcd93f387d2cdb9ebdda506c0}\index{Camera2D@{Camera2D}!m\_Width@{m\_Width}}
+\index{m\_Width@{m\_Width}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{m\_Width}{m\_Width}}
+{\footnotesize\ttfamily \label{classCamera2D_a3895006dcd93f387d2cdb9ebdda506c0} 
+float Camera2\+D::\+m\+\_\+\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00076}{76}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+\Hypertarget{classCamera2D_a591fefdf777617222afbfa7b9d0a70bc}\index{Camera2D@{Camera2D}!m\_Zoom@{m\_Zoom}}
+\index{m\_Zoom@{m\_Zoom}!Camera2D@{Camera2D}}
+\doxysubsubsection{\texorpdfstring{m\_Zoom}{m\_Zoom}}
+{\footnotesize\ttfamily \label{classCamera2D_a591fefdf777617222afbfa7b9d0a70bc} 
+float Camera2\+D::\+m\+\_\+\+Zoom\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Camera2D_8h_source_l00081}{81}} of file \doxymbox{\hyperlink{Camera2D_8h_source}{Camera2\+D.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+scene/\doxymbox{\hyperlink{Camera2D_8h}{Camera2\+D.\+h}}\item 
+engine/\+scene/\doxymbox{\hyperlink{Camera2D_8cpp}{Camera2\+D.\+cpp}}\end{DoxyCompactItemize}

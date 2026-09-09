@@ -1,0 +1,110 @@
+\doxysection{SDLWindow.\+cpp}
+\hypertarget{SDLWindow_8cpp_source}{}\label{SDLWindow_8cpp_source}\index{engine/platform/sdl/SDLWindow.cpp@{engine/platform/sdl/SDLWindow.cpp}}
+\doxymbox{\hyperlink{SDLWindow_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{SDLWindow_8h}{SDLWindow.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Assert_8h}{diagnostics/Assert.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00008}\doxymbox{\hyperlink{classSDLWindow_ab081329db76eaeaed1716c2e3bad50b2}{00008}}\ \doxymbox{\hyperlink{classSDLWindow_ab081329db76eaeaed1716c2e3bad50b2}{SDLWindow::SDLWindow}}()\ :\ \doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}}(nullptr),\ \doxymbox{\hyperlink{classSDLWindow_a0ebd46794adf3da5005805893212f8b2}{m\_Context}}(nullptr)\{\}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00010}\doxymbox{\hyperlink{classSDLWindow_a7a0af0daec54970ff2262b67a6ece281}{00010}}\ \doxymbox{\hyperlink{classSDLWindow_a7a0af0daec54970ff2262b67a6ece281}{SDLWindow::\string~SDLWindow}}()\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00011}00011\ \ \ \doxymbox{\hyperlink{classSDLWindow_ac8f370d73ebfe50529fbbba56c100b4b}{Destroy}}();}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00029}\doxymbox{\hyperlink{classSDLWindow_a6c60257844fe3a5fe819183539116e40}{00029}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classSDLWindow_a6c60257844fe3a5fe819183539116e40}{SDLWindow::Create}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ fullscreen)\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00030}00030\ \ \ \textcolor{comment}{//Set\ OpenGL\ Core\ Profile\ version\ 4.6}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00031}00031\ \ \ SDL\_GL\_SetAttribute(SDL\_GL\_CONTEXT\_MAJOR\_VERSION,\ 4);}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00032}00032\ \ \ SDL\_GL\_SetAttribute(SDL\_GL\_CONTEXT\_MINOR\_VERSION,\ 6);}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00033}00033\ \ \ SDL\_GL\_SetAttribute(SDL\_GL\_CONTEXT\_PROFILE\_MASK,\ SDL\_GL\_CONTEXT\_PROFILE\_CORE);}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00035}00035\ \ \ \textcolor{comment}{//Get\ primary\ display\ resolution}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00036}00036\ \ \ SDL\_DisplayID\ displayID\ =\ SDL\_GetPrimaryDisplay();}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00037}00037\ \ \ \textcolor{keyword}{const}\ SDL\_DisplayMode*\ displayMode\ =\ SDL\_GetCurrentDisplayMode(displayID);}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00039}00039\ \ \ \textcolor{keywordtype}{int}\ displayWidth\ =\ displayMode-\/>w;}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00040}00040\ \ \ \textcolor{keywordtype}{int}\ displayHeight\ =\ displayMode-\/>h;}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00042}00042\ \ \ \textcolor{comment}{//Use\ display\ resolution\ if\ invalid\ dimensions\ provided}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00043}00043\ \ \ \textcolor{keywordflow}{if}(width\ <=\ 0\ ||\ height\ <=\ 0)\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00044}00044\ \ \ \ \ width\ =\ displayWidth;}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00045}00045\ \ \ \ \ height\ =\ displayHeight;}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00046}00046\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00048}00048\ \ \ \textcolor{comment}{//Create\ SDL\ window\ with\ OpenGL\ support\ and\ resizable\ flag}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00049}00049\ \ \ \doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}}\ =\ SDL\_CreateWindow(title,\ width,\ height,\ SDL\_WINDOW\_OPENGL\ |\ SDL\_WINDOW\_RESIZABLE);}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00050}00050\ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Window\ ID:\ \{\}"{}},\ SDL\_GetWindowID(\doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}})));}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00051}00051\ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Window\ successfully\ created."{}});}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00053}00053\ \ \ \textcolor{comment}{//Validate\ window\ creation}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00054}00054\ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}})\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00055}00055\ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(std::format(\textcolor{stringliteral}{"{}Window\ creation\ error:\ \{\}"{}},\ SDL\_GetError()));}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00057}00057\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00059}00059\ \ \ \textcolor{comment}{//Set\ fullscreen\ mode\ if\ requested}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00060}00060\ \ \ \textcolor{keywordflow}{if}(fullscreen)\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}(SDL\_SetWindowFullscreen(\doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}},\ SDL\_WINDOW\_FULLSCREEN)\ !=\ 0)\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00062}00062\ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a5a5a1c297ed72ab2f850d0d01ae00aaa}{Log::Warning}}(std::format(\textcolor{stringliteral}{"{}Failed\ to\ set\ fullscreen:\ \{\}"{}},\ SDL\_GetError()));}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00063}00063\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00064}00064\ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Fullscreen\ mode\ enabled."{}});}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00066}00066\ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//Center\ window\ on\ screen}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00068}00068\ \ \ \ \ SDL\_SetWindowPosition(\doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}},\ SDL\_WINDOWPOS\_CENTERED,\ SDL\_WINDOWPOS\_CENTERED);}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00069}00069\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00071}00071\ \ \ \textcolor{comment}{//Create\ OpenGL\ context}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00072}00072\ \ \ \doxymbox{\hyperlink{classSDLWindow_a0ebd46794adf3da5005805893212f8b2}{m\_Context}}\ =\ SDL\_GL\_CreateContext(\doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}});}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00073}00073\ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classSDLWindow_a0ebd46794adf3da5005805893212f8b2}{m\_Context}})\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00074}00074\ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(std::format(\textcolor{stringliteral}{"{}OpenGL\ context\ not\ created:\ \{\}"{}},\ SDL\_GetError()));}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00075}00075\ \ \ \ \ \doxymbox{\hyperlink{classSDLWindow_ac8f370d73ebfe50529fbbba56c100b4b}{Destroy}}();}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00077}00077\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00079}00079\ \ \ \textcolor{comment}{//Initialize\ GLAD\ (OpenGL\ function\ loader)}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00080}00080\ \ \ \textcolor{keywordflow}{if}(!gladLoadGLLoader((GLADloadproc)SDL\_GL\_GetProcAddress))\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00081}00081\ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(\textcolor{stringliteral}{"{}GLAD\ initialization\ error."{}});}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00082}00082\ \ \ \ \ \doxymbox{\hyperlink{classSDLWindow_ac8f370d73ebfe50529fbbba56c100b4b}{Destroy}}();}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00084}00084\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00086}00086\ \ \ \textcolor{comment}{//Enable\ vsync\ (1\ =\ on,\ 0\ =\ off)}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00087}00087\ \ \ SDL\_GL\_SetSwapInterval(1);}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00089}00089\ \ \ \textcolor{comment}{//Log\ OpenGL\ information}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00090}00090\ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}OpenGL\ Version:\ \{\}"{}},\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(glGetString(GL\_VERSION))));}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00091}00091\ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Renderer:\ \{\}"{}},\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(glGetString(GL\_RENDERER))));}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00093}00093\ \ \ \textcolor{comment}{//Set\ viewport\ to\ match\ window\ size}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00094}00094\ \ \ \textcolor{keywordtype}{int}\ realWidth,\ realHeight;}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00095}00095\ \ \ SDL\_GetWindowSize(\doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}},\ \&realWidth,\ \&realHeight);}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00096}00096\ \ \ glViewport(0,\ 0,\ realWidth,\ realHeight);}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00098}00098\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00107}\doxymbox{\hyperlink{classSDLWindow_ac8f370d73ebfe50529fbbba56c100b4b}{00107}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLWindow_ac8f370d73ebfe50529fbbba56c100b4b}{SDLWindow::Destroy}}()\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00108}00108\ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classSDLWindow_a0ebd46794adf3da5005805893212f8b2}{m\_Context}})\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00109}00109\ \ \ \ \ SDL\_GL\_DestroyContext(\doxymbox{\hyperlink{classSDLWindow_a0ebd46794adf3da5005805893212f8b2}{m\_Context}});}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00110}00110\ \ \ \ \ \doxymbox{\hyperlink{classSDLWindow_a0ebd46794adf3da5005805893212f8b2}{m\_Context}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00111}00111\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00113}00113\ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}})\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00114}00114\ \ \ \ \ SDL\_DestroyWindow(\doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}});}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00115}00115\ \ \ \ \ \doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00116}00116\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00124}\doxymbox{\hyperlink{classSDLWindow_a63de111915a58b28696a6fd1889acec8}{00124}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLWindow_a63de111915a58b28696a6fd1889acec8}{SDLWindow::SwapBuffers}}()\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00125}00125\ \ \ SDL\_GL\_SwapWindow(\doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}});}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00135}\doxymbox{\hyperlink{classSDLWindow_ad11eb6f7291bfcedcd7a5cbff75ebd8e}{00135}}\ SDL\_Window*\ \doxymbox{\hyperlink{classSDLWindow_ad11eb6f7291bfcedcd7a5cbff75ebd8e}{SDLWindow::GetNativeWindow}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00136}00136\ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\_Window}};}
+\DoxyCodeLine{\Hypertarget{SDLWindow_8cpp_source_l00137}00137\ \}}
+
+\end{DoxyCode}

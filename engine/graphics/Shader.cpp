@@ -3,11 +3,10 @@
 #include <glad/glad.h>
 #include <format>
 
-Shader::Shader() : m_RendererID(0){
-}
+Shader::Shader() : m_RendererID(0){}
 
 Shader::~Shader(){
-    if (m_RendererID) glDeleteProgram(m_RendererID);
+    if(m_RendererID) glDeleteProgram(m_RendererID);
 }
 
 /**
@@ -22,71 +21,62 @@ Shader::~Shader(){
  * @return true if compilation and linking succeeded, false otherwise.
  */
 bool Shader::Compile(const std::string& vertexSource, const std::string& fragmentSource){
-    //Vertex shader
+    //Compile vertex shader
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
     const char* vertexSrc = vertexSource.c_str();
-    glShaderSource(vertexShader,1,&vertexSrc, nullptr);
+    glShaderSource(vertexShader, 1, &vertexSrc, nullptr);
     glCompileShader(vertexShader);
+
     GLint success;
     glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-
-    if (!success){
+    if(!success){
         char infoLog[1024];
         glGetShaderInfoLog(vertexShader, sizeof(infoLog), nullptr, infoLog);
-
         Log::Error(std::format("Vertex shader compilation failed:\n{}", infoLog));
-
         glDeleteShader(vertexShader);
-
         return false;
     }
-    Log::Info("Shader program linked successfully.");
+    Log::Info("Vertex shader compiled successfully.");
 
-    //Fragment shader
+    //Compile fragment shader
     GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     const char* fragmentSrc = fragmentSource.c_str();
     glShaderSource(fragmentShader, 1, &fragmentSrc, nullptr);
     glCompileShader(fragmentShader);
-    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
 
-    if (!success){
+    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+    if(!success){
         char infoLog[1024];
         glGetShaderInfoLog(fragmentShader, sizeof(infoLog), nullptr, infoLog);
-
         Log::Error(std::format("Fragment shader compilation failed:\n{}", infoLog));
-
         glDeleteShader(vertexShader);
         glDeleteShader(fragmentShader);
-
         return false;
     }
+    Log::Info("Fragment shader compiled successfully.");
 
-    //Linking
+    //Link shader program
     m_RendererID = glCreateProgram();
     glAttachShader(m_RendererID, vertexShader);
     glAttachShader(m_RendererID, fragmentShader);
     glLinkProgram(m_RendererID);
-    Log::Info(std::format("Program ID: {}, Link status: {}", m_RendererID, success));
-    glGetProgramiv(m_RendererID, GL_LINK_STATUS, &success);
 
-    if (!success){
+    glGetProgramiv(m_RendererID, GL_LINK_STATUS, &success);
+    if(!success){
         char infoLog[512];
         glGetProgramInfoLog(m_RendererID, sizeof(infoLog), nullptr, infoLog);
-
         Log::Error(std::format("Shader program linking failed:\n{}", infoLog));
-
         glDeleteShader(vertexShader);
         glDeleteShader(fragmentShader);
-
+        glDeleteProgram(m_RendererID);
         return false;
     }
 
-    //Cleanup in case of sucess, don't worry it also cleans up in case of shader compilation or linking failure
+    //Cleanup shader objects
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
-    Log::Info("Shader compiled successfully.");
-
+    Log::Info("Shader compiled and linked successfully.");
     return true;
 }
 
@@ -106,16 +96,16 @@ void Shader::Unbind() const{
 
 /**
  * @brief Sets a 4x4 matrix uniform.
- *
- * If the uniform is not found in the shader, a warning is logged.
- *
  * @param name Uniform name in the shader.
  * @param matrix Matrix to set.
  */
 void Shader::SetUniformMat4(const std::string& name, const Matrix4& matrix) const{
     GLint location = glGetUniformLocation(m_RendererID, name.c_str());
-    if (location != -1) glUniformMatrix4fv(location, 1, GL_FALSE, matrix.Data());
-    else Log::Warning(std::format("Uniform '{}' not found in shader.", name));
+    if(location != -1){
+        glUniformMatrix4fv(location, 1, GL_FALSE, matrix.Data());
+    } else{
+        Log::Warning(std::format("Uniform '{}' not found in shader.", name));
+    }
 }
 
 /**
@@ -125,34 +115,39 @@ void Shader::SetUniformMat4(const std::string& name, const Matrix4& matrix) cons
  */
 void Shader::SetUniformFloat(const std::string& name, float value) const{
     GLint location = glGetUniformLocation(m_RendererID, name.c_str());
-    if (location != -1) glUniform1f(location, value);
-
+    if(location != -1) glUniform1f(location, value);
 }
 
-
+/**
+ * @brief Sets a 3D vector uniform (three floats).
+ * @param name Uniform name in the shader.
+ * @param x X component.
+ * @param y Y component.
+ * @param z Z component.
+ */
 void Shader::SetUniformFloat3(const std::string& name, float x, float y, float z) const{
     GLint location = glGetUniformLocation(m_RendererID, name.c_str());
-    if (location != -1) glUniform3f(location, x, y, z);
+    if(location != -1) glUniform3f(location, x, y, z);
 }
 
+/**
+ * @brief Sets a 3D vector uniform from a Vector3D.
+ * @param name Uniform name in the shader.
+ * @param value Vector3D value to set.
+ */
 void Shader::SetUniformFloat3(const std::string& name, const Vector3D& value) const{
     SetUniformFloat3(name, value.x, value.y, value.z);
 }
 
 /**
  * @brief Sets a 2D vector uniform (two floats).
- *
- * If the uniform is not found, the call is silently ignored.
- *
  * @param name Uniform name in the shader.
- * @param x X component of the vector.
- * @param y Y component of the vector.
+ * @param x X component.
+ * @param y Y component.
  */
 void Shader::SetUniformVec2(const std::string& name, float x, float y) const{
     GLint location = glGetUniformLocation(m_RendererID, name.c_str());
-    if (location != -1){
-        glUniform2f(location, x, y);
-    }
+    if(location != -1) glUniform2f(location, x, y);
 }
 
 /**

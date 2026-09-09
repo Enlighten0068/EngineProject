@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Enemy_8h" kind="file" language="C++">
+    <compoundname>Enemy.h</compoundname>
+    <includedby refid="Demo2DFixedScene_8h" local="yes">engine/demo/Demo2DFixedScene.h</includedby>
+    <includedby refid="EnemySystem_8h" local="yes">engine/systems/EnemySystem.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>engine/components/Enemy.h</label>
+        <link refid="Enemy_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="4">
+        <label>engine/demo/Demo2DFixedScene.cpp</label>
+        <link refid="Demo2DFixedScene_8cpp"/>
+      </node>
+      <node id="2">
+        <label>engine/demo/Demo2DFixedScene.h</label>
+        <link refid="Demo2DFixedScene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>engine/scene/MenuScene.cpp</label>
+        <link refid="MenuScene_8cpp"/>
+      </node>
+      <node id="7">
+        <label>engine/systems/EnemySystem.h</label>
+        <link refid="EnemySystem_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structComponents_1_1Enemy" prot="public">Components::Enemy</innerclass>
+    <innernamespace refid="namespaceComponents">Components</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="namespaceComponents" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceComponents" kindref="compound">Components</ref>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="structComponents_1_1Enemy" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structComponents_1_1Enemy" kindref="compound">Enemy</ref>{</highlight></codeline>
+<codeline lineno="15" refid="structComponents_1_1Enemy_1add79bf2acc05e16201c29fec98027afd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structComponents_1_1Enemy_1add79bf2acc05e16201c29fec98027afd" kindref="member">IsActive</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Flag<sp/>indicating<sp/>if<sp/>the<sp/>enemy<sp/>is<sp/>active<sp/>and<sp/>should<sp/>be<sp/>processed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/components/Enemy.h"/>
+  </compounddef>
+</doxygen>

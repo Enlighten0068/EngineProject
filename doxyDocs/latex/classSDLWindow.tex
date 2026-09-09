@@ -1,0 +1,223 @@
+\doxysection{SDLWindow Class Reference}
+\hypertarget{classSDLWindow}{}\label{classSDLWindow}\index{SDLWindow@{SDLWindow}}
+
+
+Wrapper for an SDL3 window with Open\+GL context.  
+
+
+
+
+{\ttfamily \+\#include $<$SDLWindow.\+h$>$}
+
+
+
+Collaboration diagram for SDLWindow:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classSDLWindow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classSDLWindow_ab081329db76eaeaed1716c2e3bad50b2}{SDLWindow}} ()
+\item 
+\doxymbox{\hyperlink{classSDLWindow_a7a0af0daec54970ff2262b67a6ece281}{\texorpdfstring{$\sim$}{\string~}\+SDLWindow}} ()
+\item 
+bool \doxymbox{\hyperlink{classSDLWindow_a6c60257844fe3a5fe819183539116e40}{Create}} (const char \texorpdfstring{$\ast$}{*}title, int width, int height, bool fullscreen)
+\begin{DoxyCompactList}\small\item\em Creates an SDL window with an Open\+GL context. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classSDLWindow_ac8f370d73ebfe50529fbbba56c100b4b}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the window and Open\+GL context. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classSDLWindow_a63de111915a58b28696a6fd1889acec8}{Swap\+Buffers}} ()
+\begin{DoxyCompactList}\small\item\em Swaps the front and back buffers (presents the rendered frame). \end{DoxyCompactList}\item 
+SDL\+\_\+\+Window \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classSDLWindow_ad11eb6f7291bfcedcd7a5cbff75ebd8e}{Get\+Native\+Window}} () const
+\begin{DoxyCompactList}\small\item\em Gets the native SDL\+\_\+\+Window handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Window \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}{m\+\_\+\+Window}}
+\item 
+SDL\+\_\+\+GLContext \doxymbox{\hyperlink{classSDLWindow_a0ebd46794adf3da5005805893212f8b2}{m\+\_\+\+Context}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper for an SDL3 window with Open\+GL context. 
+
+This class manages the creation, destruction, and swapping of an SDL window with an Open\+GL context. It abstracts the platform-\/specific window handling and provides a clean interface for the engine.
+
+\begin{DoxyNote}{Note}
+The Open\+GL context is created with version 4.\+6 Core Profile. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classEngine}{Engine}, \doxylink{classGraphicsContext}{Graphics\+Context} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{SDLWindow_8h_source_l00015}{15}} of file \doxymbox{\hyperlink{SDLWindow_8h_source}{SDLWindow.\+h}}.
+
+
+
+\label{classSDLWindow_doc-constructors}
+\Hypertarget{classSDLWindow_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSDLWindow_ab081329db76eaeaed1716c2e3bad50b2}\index{SDLWindow@{SDLWindow}!SDLWindow@{SDLWindow}}
+\index{SDLWindow@{SDLWindow}!SDLWindow@{SDLWindow}}
+\doxysubsubsection{\texorpdfstring{SDLWindow()}{SDLWindow()}}
+{\footnotesize\ttfamily \label{classSDLWindow_ab081329db76eaeaed1716c2e3bad50b2} 
+SDLWindow::\+\+SDLWindow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00008}{8}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
+
+\Hypertarget{classSDLWindow_a7a0af0daec54970ff2262b67a6ece281}\index{SDLWindow@{SDLWindow}!````~SDLWindow@{\texorpdfstring{$\sim$}{\string~}SDLWindow}}
+\index{````~SDLWindow@{\texorpdfstring{$\sim$}{\string~}SDLWindow}!SDLWindow@{SDLWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SDLWindow()}{\string~SDLWindow()}}
+{\footnotesize\ttfamily \label{classSDLWindow_a7a0af0daec54970ff2262b67a6ece281} 
+SDLWindow::\+\texorpdfstring{$\sim$}{\string~}\+SDLWindow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00010}{10}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
+
+
+
+\label{classSDLWindow_doc-func-members}
+\Hypertarget{classSDLWindow_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSDLWindow_a6c60257844fe3a5fe819183539116e40}\index{SDLWindow@{SDLWindow}!Create@{Create}}
+\index{Create@{Create}!SDLWindow@{SDLWindow}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \label{classSDLWindow_a6c60257844fe3a5fe819183539116e40} 
+bool SDLWindow::\+\+Create (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{title}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{bool}]{fullscreen}{}\end{DoxyParamCaption})}
+
+
+
+Creates an SDL window with an Open\+GL context. 
+
+Creates the SDL window and Open\+GL context.
+
+This method sets Open\+GL attributes (version 4.\+6 Core Profile), creates the window, initializes GLAD (Open\+GL function loader), and configures the viewport.
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Window title. \\
+\hline
+{\em width} & Window width in pixels. \\
+\hline
+{\em height} & Window height in pixels. \\
+\hline
+{\em fullscreen} & Whether to start in fullscreen mode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the window and context were created successfully, false otherwise.
+\end{DoxyReturn}
+It sets Open\+GL attributes (currently version 4.\+6 Core Profile), then creates the SDL window with the Open\+GL flag, Open\+GL context, initializes GLAD, sets swap interval (vsync) and log driver information then sets the viewport to match the window size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Window title. \\
+\hline
+{\em width} & Window width in pixels. \\
+\hline
+{\em height} & Window height in pixels. \\
+\hline
+{\em fullscreen} & Whether to start in fullscreen mode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all steps succeeded, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00029}{29}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
+
+\Hypertarget{classSDLWindow_ac8f370d73ebfe50529fbbba56c100b4b}\index{SDLWindow@{SDLWindow}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!SDLWindow@{SDLWindow}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily \label{classSDLWindow_ac8f370d73ebfe50529fbbba56c100b4b} 
+void SDLWindow::\+\+Destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destroys the window and Open\+GL context. 
+
+Destroys the Open\+GL context and the SDL window.
+
+The context is destroyed first, then the window. Both pointers are set to nullptr to prevent double deletion. 
+
+Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00107}{107}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
+
+\Hypertarget{classSDLWindow_ad11eb6f7291bfcedcd7a5cbff75ebd8e}\index{SDLWindow@{SDLWindow}!GetNativeWindow@{GetNativeWindow}}
+\index{GetNativeWindow@{GetNativeWindow}!SDLWindow@{SDLWindow}}
+\doxysubsubsection{\texorpdfstring{GetNativeWindow()}{GetNativeWindow()}}
+{\footnotesize\ttfamily \label{classSDLWindow_ad11eb6f7291bfcedcd7a5cbff75ebd8e} 
+SDL\+\_\+\+Window \texorpdfstring{$\ast$}{*} SDLWindow::\+\+Get\+Native\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the native SDL\+\_\+\+Window handle. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the SDL\+\_\+\+Window.
+\end{DoxyReturn}
+Used by other systems (e.\+g., \doxylink{classInput}{Input}, \doxylink{classEngine}{Engine}) that need direct access to the window.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the SDL\+\_\+\+Window. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00135}{135}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
+
+\Hypertarget{classSDLWindow_a63de111915a58b28696a6fd1889acec8}\index{SDLWindow@{SDLWindow}!SwapBuffers@{SwapBuffers}}
+\index{SwapBuffers@{SwapBuffers}!SDLWindow@{SDLWindow}}
+\doxysubsubsection{\texorpdfstring{SwapBuffers()}{SwapBuffers()}}
+{\footnotesize\ttfamily \label{classSDLWindow_a63de111915a58b28696a6fd1889acec8} 
+void SDLWindow::\+\+Swap\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Swaps the front and back buffers (presents the rendered frame). 
+
+Swaps the front and back buffers.
+
+This presents the rendered frame to the screen. 
+
+Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00124}{124}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
+
+
+
+\label{classSDLWindow_doc-variable-members}
+\Hypertarget{classSDLWindow_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSDLWindow_a0ebd46794adf3da5005805893212f8b2}\index{SDLWindow@{SDLWindow}!m\_Context@{m\_Context}}
+\index{m\_Context@{m\_Context}!SDLWindow@{SDLWindow}}
+\doxysubsubsection{\texorpdfstring{m\_Context}{m\_Context}}
+{\footnotesize\ttfamily \label{classSDLWindow_a0ebd46794adf3da5005805893212f8b2} 
+SDL\+\_\+\+GLContext SDLWindow::\+m\+\_\+\+Context\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{SDLWindow_8h_source_l00053}{53}} of file \doxymbox{\hyperlink{SDLWindow_8h_source}{SDLWindow.\+h}}.
+
+\Hypertarget{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}\index{SDLWindow@{SDLWindow}!m\_Window@{m\_Window}}
+\index{m\_Window@{m\_Window}!SDLWindow@{SDLWindow}}
+\doxysubsubsection{\texorpdfstring{m\_Window}{m\_Window}}
+{\footnotesize\ttfamily \label{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a} 
+SDL\+\_\+\+Window\texorpdfstring{$\ast$}{*} SDLWindow::\+m\+\_\+\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{SDLWindow_8h_source_l00052}{52}} of file \doxymbox{\hyperlink{SDLWindow_8h_source}{SDLWindow.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+platform/\+sdl/\doxymbox{\hyperlink{SDLWindow_8h}{SDLWindow.\+h}}\item 
+engine/\+platform/\+sdl/\doxymbox{\hyperlink{SDLWindow_8cpp}{SDLWindow.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="IndexBuffer_8cpp" kind="file" language="C++">
+    <compoundname>IndexBuffer.cpp</compoundname>
+    <includes refid="Log_8h" local="yes">diagnostics/Log.h</includes>
+    <includes refid="IndexBuffer_8h" local="yes">graphics/IndexBuffer.h</includes>
+    <includes local="no">glad/glad.h</includes>
+    <includes local="no">format</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/graphics/IndexBuffer.cpp</label>
+        <link refid="IndexBuffer_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>chrono</label>
+      </node>
+      <node id="10">
+        <label>cstdint</label>
+      </node>
+      <node id="12">
+        <label>format</label>
+      </node>
+      <node id="4">
+        <label>fstream</label>
+      </node>
+      <node id="11">
+        <label>glad/glad.h</label>
+      </node>
+      <node id="6">
+        <label>iomanip</label>
+      </node>
+      <node id="7">
+        <label>sstream</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Log_8h" kindref="compound">diagnostics/Log.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="IndexBuffer_8h" kindref="compound">graphics/IndexBuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;glad/glad.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;format&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classIndexBuffer_1ad88171bcb24ca515393f7ae86822b3e8" refkind="member"><highlight class="normal"><ref refid="classIndexBuffer_1ad88171bcb24ca515393f7ae86822b3e8" kindref="member">IndexBuffer::IndexBuffer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t*<sp/>indices,<sp/>uint32_t<sp/>count)<sp/>:<sp/><ref refid="classIndexBuffer_1ae819041807551f8df4276aefcfce6505" kindref="member">m_RendererID</ref>(0),<sp/><ref refid="classIndexBuffer_1a5272b565abe244ea28d5cfa4c390b893" kindref="member">m_Count</ref>(count){</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>glGenBuffers(1,<sp/>&amp;<ref refid="classIndexBuffer_1ae819041807551f8df4276aefcfce6505" kindref="member">m_RendererID</ref>);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,<sp/><ref refid="classIndexBuffer_1ae819041807551f8df4276aefcfce6505" kindref="member">m_RendererID</ref>);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>glBufferData(GL_ELEMENT_ARRAY_BUFFER,<sp/>count<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint32_t),<sp/>indices,<sp/>GL_STATIC_DRAW);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classIndexBuffer_1ae819041807551f8df4276aefcfce6505" kindref="member">m_RendererID</ref><sp/>==<sp/>0){</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(</highlight><highlight class="stringliteral">&quot;IndexBuffer<sp/>creation<sp/>failed.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(std::format(</highlight><highlight class="stringliteral">&quot;IndexBuffer<sp/>created.<sp/>ID:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/><ref refid="classIndexBuffer_1ae819041807551f8df4276aefcfce6505" kindref="member">m_RendererID</ref>));</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classIndexBuffer_1a348889936f378b7942c1e01d83e42866" refkind="member"><highlight class="normal"><ref refid="classIndexBuffer_1a348889936f378b7942c1e01d83e42866" kindref="member">IndexBuffer::~IndexBuffer</ref>(){</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>glDeleteBuffers(1,<sp/>&amp;<ref refid="classIndexBuffer_1ae819041807551f8df4276aefcfce6505" kindref="member">m_RendererID</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classIndexBuffer_1ac8bdd0495f718173fb46691ad1b7e4af" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classIndexBuffer_1ac8bdd0495f718173fb46691ad1b7e4af" kindref="member">IndexBuffer::Bind</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,<sp/><ref refid="classIndexBuffer_1ae819041807551f8df4276aefcfce6505" kindref="member">m_RendererID</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classIndexBuffer_1a5a1cfc46339ea7d6e72d22a096da5a77" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classIndexBuffer_1a5a1cfc46339ea7d6e72d22a096da5a77" kindref="member">IndexBuffer::Unbind</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,<sp/>0);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classIndexBuffer_1a3ba6f17fc6a2efa79c3b58f98e9cf0d8" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classIndexBuffer_1a3ba6f17fc6a2efa79c3b58f98e9cf0d8" kindref="member">IndexBuffer::GetCount</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classIndexBuffer_1a5272b565abe244ea28d5cfa4c390b893" kindref="member">m_Count</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/graphics/IndexBuffer.cpp"/>
+  </compounddef>
+</doxygen>

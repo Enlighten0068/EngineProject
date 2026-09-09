@@ -2,7 +2,6 @@
 #include "core/Time.h"
 #include <SDL3/SDL.h>
 
-
 float Time::s_DeltaTime = 0.0f;
 float Time::s_ElapsedTime = 0.0f;
 
@@ -12,7 +11,7 @@ float Time::s_ElapsedTime = 0.0f;
  * Uses SDL's counters to measure time accurately.
  * Should be called once per frame at the start of the frame.
  */
-void  Time::Update(){
+void Time::Update(){
     static Uint64 previousCounter = SDL_GetPerformanceCounter();
     Uint64 currentCounter = SDL_GetPerformanceCounter();
     Uint64 frequency = SDL_GetPerformanceFrequency();

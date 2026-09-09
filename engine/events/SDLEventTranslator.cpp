@@ -14,7 +14,7 @@ SDLEventTranslator::UnhandledCallback SDLEventTranslator::s_UnhandledCallback = 
  * @return true if the event was translated, false otherwise.
  */
 bool SDLEventTranslator::TranslateAndDispatch(const SDL_Event& sdlEvent){
-    switch (sdlEvent.type){
+    switch(sdlEvent.type){
         case SDL_EVENT_QUIT:
         case SDL_EVENT_WINDOW_RESIZED:
             DispatchWindowEvent(sdlEvent);
@@ -34,7 +34,7 @@ bool SDLEventTranslator::TranslateAndDispatch(const SDL_Event& sdlEvent){
             DispatchMouseWheelEvent(sdlEvent);
             return true;
         default:
-            if (s_UnhandledCallback) {
+            if(s_UnhandledCallback){
                 s_UnhandledCallback(sdlEvent);
             }
             return false;
@@ -55,15 +55,18 @@ void SDLEventTranslator::SetUnhandledCallback(const UnhandledCallback& callback)
  */
 void SDLEventTranslator::DispatchKeyEvent(const SDL_Event& sdlEvent){
     KeyAction action;
-    if (sdlEvent.type == SDL_EVENT_KEY_DOWN) action = (sdlEvent.key.repeat) ? KeyAction::Repeated : KeyAction::Pressed;
-    else action = KeyAction::Released;
+    if(sdlEvent.type == SDL_EVENT_KEY_DOWN){
+        action = (sdlEvent.key.repeat) ? KeyAction::Repeated : KeyAction::Pressed;
+    } else{
+        action = KeyAction::Released;
+    }
 
     KeyEvent event(
         sdlEvent.key.scancode,
         action,
-        sdlEvent.key.mod & SDL_KMOD_CTRL,
-        sdlEvent.key.mod & SDL_KMOD_SHIFT,
-        sdlEvent.key.mod & SDL_KMOD_ALT
+        (sdlEvent.key.mod & SDL_KMOD_CTRL) != 0,
+                   (sdlEvent.key.mod & SDL_KMOD_SHIFT) != 0,
+                   (sdlEvent.key.mod & SDL_KMOD_ALT) != 0
     );
     EventBus::GetInstance().Dispatch(event);
 }
@@ -114,10 +117,10 @@ void SDLEventTranslator::DispatchMouseWheelEvent(const SDL_Event& sdlEvent){
  * @param sdlEvent The SDL window event.
  */
 void SDLEventTranslator::DispatchWindowEvent(const SDL_Event& sdlEvent){
-    if (sdlEvent.type == SDL_EVENT_QUIT) {
+    if(sdlEvent.type == SDL_EVENT_QUIT){
         WindowCloseEvent event;
         EventBus::GetInstance().Dispatch(event);
-    } else if (sdlEvent.type == SDL_EVENT_WINDOW_RESIZED) {
+    } else if(sdlEvent.type == SDL_EVENT_WINDOW_RESIZED){
         WindowResizeEvent event(sdlEvent.window.data1, sdlEvent.window.data2);
         EventBus::GetInstance().Dispatch(event);
     }

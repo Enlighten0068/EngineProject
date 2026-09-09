@@ -15,10 +15,8 @@
  */
 class Camera2D{
 public:
-
     /**
      * @brief Constructs a 2D camera with specified view volume.
-     *
      * @param left Left boundary of the view volume.
      * @param right Right boundary of the view volume.
      * @param bottom Bottom boundary of the view volume.
@@ -40,67 +38,49 @@ public:
      */
     void SetRotation(float angleRadians);
 
+    /**
+     * @brief Sets the camera projection volume.
+     * @param left Left boundary.
+     * @param right Right boundary.
+     * @param bottom Bottom boundary.
+     * @param top Top boundary.
+     */
     void SetProjection(float left, float right, float bottom, float top);
 
     /**
      * @brief Sets the camera zoom level.
-     *
-     * Zoom values greater than 1.0 zoom in, values less than 1.0 zoom out.
-     *
      * @param zoom Zoom factor (clamped to a minimum of 0.1).
      */
     void SetZoom(float zoom);
 
-    /**
-     * @brief Gets the current camera position.
-     * @return Current position.
-     */
+    //Getters
     Vector3D GetPosition() const{ return m_Position; }
-
-    /**
-     * @brief Gets the current zoom level.
-     * @return Current zoom factor.
-     */
     float GetZoom() const{ return m_Zoom; }
-
-    /**
-     * @brief Gets the view matrix.
-     * @return Const reference to the view matrix.
-     */
     const Matrix4& GetViewMatrix() const;
-
-    /**
-     * @brief Gets the projection matrix.
-     * @return Const reference to the projection matrix.
-     */
     const Matrix4& GetProjectionMatrix() const;
 
     /**
      * @brief Updates the view matrix if the camera is dirty.
-     *
-     * This method should be called before rendering if the camera has moved
-     * or rotated since the last update.
+     * Should be called before rendering if the camera has moved or rotated.
      */
     void Update();
 
 private:
-
     /**
      * @brief Recalculates the projection matrix based on zoom level.
      */
     void UpdateProjection();
 
-    float m_Near;
-    float m_Far;
+    float m_Near; //Near clipping plane
+    float m_Far; //Far clipping plane
+    float m_Width; //Half-width of the view volume
+    float m_Height; //Half-height of the view volume
 
-    float m_Width;
-    float m_Height;
+    Vector3D m_Position; //Camera position
+    float m_Rotation; //Rotation around Z-axis in radians
+    float m_Zoom; //Zoom factor
 
-    Vector3D m_Position;
-    float m_Rotation;
-    float m_Zoom;
-
-    Matrix4 m_ProjectionMatrix;
-    Matrix4 m_ViewMatrix;
+    Matrix4 m_ProjectionMatrix; //Projection matrix
+    Matrix4 m_ViewMatrix; //View matrix
     bool m_IsDirty; //True when view matrix needs recalculation
 };

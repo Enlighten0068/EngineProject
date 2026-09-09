@@ -18,16 +18,16 @@
  */
 class EventBus{
 public:
-    using Callback = std::function<void(Event&)>;
+    using Callback = std::function<void(Event&)>; //Callback type for event handlers
 
     /**
-     * @brief Get the singleton instance of the EventBus.
+     * @brief Gets the singleton instance of the EventBus.
      * @return Reference to the EventBus instance.
      */
     static EventBus& GetInstance();
 
     /**
-     * @brief Subscribe a callback to a specific event type.
+     * @brief Subscribes a callback to a specific event type.
      *
      * The callback will be invoked whenever an event of type T is dispatched.
      * Multiple callbacks can be subscribed to the same event type.
@@ -42,7 +42,7 @@ public:
     }
 
     /**
-     * @brief Dispatch an event to all subscribed callbacks.
+     * @brief Dispatches an event to all subscribed callbacks.
      *
      * All callbacks subscribed to the event's type will be invoked
      * in the order they were registered.
@@ -52,15 +52,15 @@ public:
     void Dispatch(Event& event){
         std::type_index typeIndex = std::type_index(typeid(event));
         auto it = m_Subscribers.find(typeIndex);
-        if (it != m_Subscribers.end()){
-            for (auto& callback : it->second){
+        if(it != m_Subscribers.end()){
+            for(auto& callback : it->second){
                 callback(event);
             }
         }
     }
 
     /**
-     * @brief Clear all subscriptions.
+     * @brief Clears all subscriptions.
      *
      * Removes all registered callbacks. Should be used during shutdown.
      */
@@ -74,5 +74,5 @@ private:
     EventBus(const EventBus&) = delete;
     EventBus& operator=(const EventBus&) = delete;
 
-    std::unordered_map<std::type_index, std::vector<Callback>> m_Subscribers;
+    std::unordered_map<std::type_index, std::vector<Callback>> m_Subscribers; //Map of event types to callbacks
 };

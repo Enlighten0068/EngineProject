@@ -6,10 +6,10 @@
 VertexArray::VertexArray() : m_RendererID(0){
     glGenVertexArrays(1, &m_RendererID);
 
-    if (m_RendererID == 0) Log::Error("VertexArray creation failed.");
-    else{
-        Log::Info(std::format("VertexArray ID: {}", m_RendererID));
-        Log::Info("VertexArray created.");
+    if(m_RendererID == 0){
+        Log::Error("VertexArray creation failed.");
+    } else{
+        Log::Info(std::format("VertexArray created. ID: {}", m_RendererID));
     }
 }
 
@@ -21,8 +21,7 @@ VertexArray::~VertexArray(){
  * @brief Binds the VAO.
  */
 void VertexArray::Bind() const{
-    glBindVertexArray(
-        m_RendererID);
+    glBindVertexArray(m_RendererID);
 }
 
 /**

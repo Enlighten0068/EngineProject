@@ -1,0 +1,41 @@
+\doxysection{Renderer.\+cpp}
+\hypertarget{Renderer_8cpp_source}{}\label{Renderer_8cpp_source}\index{engine/renderer/Renderer.cpp@{engine/renderer/Renderer.cpp}}
+\doxymbox{\hyperlink{Renderer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Texture2D_8h}{graphics/Texture2D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Shader_8h}{graphics/Shader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{VertexArray_8h}{graphics/VertexArray.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{IndexBuffer_8h}{graphics/IndexBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Renderer_8h}{renderer/Renderer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00020}\doxymbox{\hyperlink{classRenderer_a62a84dbdb97eed1c5fcc0cfa545ab281}{00020}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classRenderer_a62a84dbdb97eed1c5fcc0cfa545ab281}{Renderer::DrawQuad}}(\doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ vertexArray,\ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ indexBuffer)\{}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00021}00021\ \ \ \ \ shader.\doxymbox{\hyperlink{classShader_a5a5a24f72050f46f03cb839b41490527}{Bind}}();}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00022}00022\ \ \ \ \ vertexArray.\doxymbox{\hyperlink{classVertexArray_ad5059455f0864327028636c628d5a661}{Bind}}();}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00023}00023\ \ \ \ \ indexBuffer.\doxymbox{\hyperlink{classIndexBuffer_ac8bdd0495f718173fb46691ad1b7e4af}{Bind}}();}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00025}00025\ \ \ \ \ glDrawElements(GL\_TRIANGLES,\ indexBuffer.\doxymbox{\hyperlink{classIndexBuffer_a3ba6f17fc6a2efa79c3b58f98e9cf0d8}{GetCount}}(),\ GL\_UNSIGNED\_INT,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00045}\doxymbox{\hyperlink{classRenderer_a71992cf4acf88e30dd0abaaa6cda23b4}{00045}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classRenderer_a71992cf4acf88e30dd0abaaa6cda23b4}{Renderer::DrawTexturedQuad}}(\doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ vertexArray,\ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ indexBuffer,\ \doxymbox{\hyperlink{classTexture2D}{Texture2D}}\&\ texture,}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ model,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ view,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ projection,}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tileScaleX,\ \textcolor{keywordtype}{float}\ tileScaleY)\{}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//Bind\ shader\ and\ texture}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00049}00049\ \ \ \ \ shader.\doxymbox{\hyperlink{classShader_a5a5a24f72050f46f03cb839b41490527}{Bind}}();}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00050}00050\ \ \ \ \ texture.\doxymbox{\hyperlink{classTexture2D_ae3aec86ebdc50bf233eef52668a029ce}{Bind}}();}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//Set\ transformation\ uniforms}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00053}00053\ \ \ \ \ shader.\doxymbox{\hyperlink{classShader_a1abb7c1fa7d1c58f82ba6544b2ae57bc}{SetUniformMat4}}(\textcolor{stringliteral}{"{}u\_Model"{}},\ model);}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00054}00054\ \ \ \ \ shader.\doxymbox{\hyperlink{classShader_a1abb7c1fa7d1c58f82ba6544b2ae57bc}{SetUniformMat4}}(\textcolor{stringliteral}{"{}u\_View"{}},\ view);}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00055}00055\ \ \ \ \ shader.\doxymbox{\hyperlink{classShader_a1abb7c1fa7d1c58f82ba6544b2ae57bc}{SetUniformMat4}}(\textcolor{stringliteral}{"{}u\_Projection"{}},\ projection);}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00056}00056\ \ \ \ \ shader.\doxymbox{\hyperlink{classShader_a382e9d0bb916f47a09f6a5a4b378e65d}{SetUniformVec2}}(\textcolor{stringliteral}{"{}u\_TileScale"{}},\ tileScaleX,\ tileScaleY);}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//Bind\ geometry\ and\ draw}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00059}00059\ \ \ \ \ vertexArray.\doxymbox{\hyperlink{classVertexArray_ad5059455f0864327028636c628d5a661}{Bind}}();}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00060}00060\ \ \ \ \ indexBuffer.\doxymbox{\hyperlink{classIndexBuffer_ac8bdd0495f718173fb46691ad1b7e4af}{Bind}}();}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00061}00061\ \ \ \ \ glDrawElements(GL\_TRIANGLES,\ indexBuffer.\doxymbox{\hyperlink{classIndexBuffer_a3ba6f17fc6a2efa79c3b58f98e9cf0d8}{GetCount}}(),\ GL\_UNSIGNED\_INT,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}

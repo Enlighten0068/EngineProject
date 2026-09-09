@@ -36,7 +36,7 @@ public:
      */
     void Shutdown();
 
-    //Getters
+    //Getters for graphics resources
     Shader& GetShader(){ return *m_Shader; }
     VertexArray& GetVertexArray(){ return *m_VertexArray; }
     VertexBuffer& GetVertexBuffer(){ return *m_VertexBuffer; }
@@ -44,11 +44,11 @@ public:
     Shader& GetLineShader(){ return *m_LineShader; }
 
 private:
-    std::unique_ptr<Shader> m_Shader;
-    std::unique_ptr<VertexArray> m_VertexArray;
-    std::unique_ptr<VertexBuffer> m_VertexBuffer;
-    std::unique_ptr<IndexBuffer> m_IndexBuffer;
-    std::unique_ptr<Shader> m_LineShader;
+    std::unique_ptr<Shader> m_Shader; //Main shader for sprite rendering
+    std::unique_ptr<VertexArray> m_VertexArray; //Vertex array object
+    std::unique_ptr<VertexBuffer> m_VertexBuffer; //Vertex buffer for quad geometry
+    std::unique_ptr<IndexBuffer> m_IndexBuffer; //Index buffer for quad geometry
+    std::unique_ptr<Shader> m_LineShader; //Line shader for debug/wireframe rendering
 
     /**
      * @brief Creates the vertex and index buffers for a quad.
@@ -60,11 +60,14 @@ private:
     bool CreateBuffers();
 
     /**
-     * @brief Compiles the vertex and fragment shaders.
-     *
+     * @brief Compiles the vertex and fragment shaders for sprite rendering.
      * @return true if shaders compiled and linked successfully, false otherwise.
      */
     bool CompileShaders();
 
+    /**
+     * @brief Compiles the vertex and fragment shaders for line rendering.
+     * @return true if shaders compiled and linked successfully, false otherwise.
+     */
     bool CompileLineShader();
 };

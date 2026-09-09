@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structMenuScene_1_1MenuOption" kind="struct" language="C++" prot="private">
+    <compoundname>MenuScene::MenuOption</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structMenuScene_1_1MenuOption_1a2be42da1d855215326a50ed1b684c4c4" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string MenuScene::MenuOption::Label</definition>
+        <argsstring></argsstring>
+        <name>Label</name>
+        <qualifiedname>MenuScene::MenuOption::Label</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="48" column="21" bodyfile="engine/scene/MenuScene.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMenuScene_1_1MenuOption_1ae7196230c8420e3bbaaded73df24c0a1" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2D&gt; MenuScene::MenuOption::NormalTexture</definition>
+        <argsstring></argsstring>
+        <name>NormalTexture</name>
+        <qualifiedname>MenuScene::MenuOption::NormalTexture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="49" column="25" bodyfile="engine/scene/MenuScene.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMenuScene_1_1MenuOption_1a351d76fc84f6056639f56d93556cc902" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2D&gt; MenuScene::MenuOption::SelectedTexture</definition>
+        <argsstring></argsstring>
+        <name>SelectedTexture</name>
+        <qualifiedname>MenuScene::MenuOption::SelectedTexture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="50" column="25" bodyfile="engine/scene/MenuScene.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D MenuScene::MenuOption::Position</definition>
+        <argsstring></argsstring>
+        <name>Position</name>
+        <qualifiedname>MenuScene::MenuOption::Position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="51" column="18" bodyfile="engine/scene/MenuScene.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMenuScene_1_1MenuOption_1af87421383fdb8457d9f5019ee5d07eaa" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float MenuScene::MenuOption::Width</definition>
+        <argsstring></argsstring>
+        <name>Width</name>
+        <qualifiedname>MenuScene::MenuOption::Width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="52" column="15" bodyfile="engine/scene/MenuScene.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structMenuScene_1_1MenuOption_1a0fd1eb2ae016bd9ef36cae3f22e30cb4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float MenuScene::MenuOption::Height</definition>
+        <argsstring></argsstring>
+        <name>Height</name>
+        <qualifiedname>MenuScene::MenuOption::Height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="53" column="15" bodyfile="engine/scene/MenuScene.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Menu option data. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>MenuScene::MenuOption</label>
+        <link refid="structMenuScene_1_1MenuOption"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+Position</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/scene/MenuScene.h" line="47" column="5" bodyfile="engine/scene/MenuScene.h" bodystart="47" bodyend="54"/>
+    <listofallmembers>
+      <member refid="structMenuScene_1_1MenuOption_1a0fd1eb2ae016bd9ef36cae3f22e30cb4" prot="public" virt="non-virtual"><scope>MenuScene::MenuOption</scope><name>Height</name></member>
+      <member refid="structMenuScene_1_1MenuOption_1a2be42da1d855215326a50ed1b684c4c4" prot="public" virt="non-virtual"><scope>MenuScene::MenuOption</scope><name>Label</name></member>
+      <member refid="structMenuScene_1_1MenuOption_1ae7196230c8420e3bbaaded73df24c0a1" prot="public" virt="non-virtual"><scope>MenuScene::MenuOption</scope><name>NormalTexture</name></member>
+      <member refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" prot="public" virt="non-virtual"><scope>MenuScene::MenuOption</scope><name>Position</name></member>
+      <member refid="structMenuScene_1_1MenuOption_1a351d76fc84f6056639f56d93556cc902" prot="public" virt="non-virtual"><scope>MenuScene::MenuOption</scope><name>SelectedTexture</name></member>
+      <member refid="structMenuScene_1_1MenuOption_1af87421383fdb8457d9f5019ee5d07eaa" prot="public" virt="non-virtual"><scope>MenuScene::MenuOption</scope><name>Width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

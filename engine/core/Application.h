@@ -61,32 +61,32 @@ public:
     void Shutdown();
 
     /**
-     * @brief Get the SceneManager instance.
+     * @brief Gets the SceneManager instance.
      * @return Reference to the SceneManager.
      */
     SceneManager& GetSceneManager(){ return m_SceneManager; }
 
     /**
-     * @brief Get the GraphicsContext instance.
+     * @brief Gets the GraphicsContext instance.
      * @return Reference to the GraphicsContext.
      */
     GraphicsContext& GetGraphicsContext(){ return *m_Graphics; }
+
+    /**
+     * @brief Gets the Camera2D instance.
+     * @return Reference to the Camera2D.
+     */
     Camera2D& GetCamera(){ return *m_Camera; }
 
 private:
-    Engine m_Engine; //Window, SDL
-    std::unique_ptr<GraphicsContext> m_Graphics; //Shaders, OpenGL, Buffers
-    //std::unique_ptr<ECSScene> m_Scene; //Scene containing entities and components
-    std::unique_ptr<Camera2D> m_Camera;
-    //std::unique_ptr<PlayerController> m_PlayerController; //Player entity actions
-    std::unique_ptr<FpsCounter> m_FpsCounter;
-    std::unique_ptr<GameWorld> m_World; //Game word - boundaries, colision resolution
+    Engine m_Engine; //Window and SDL management
+    std::unique_ptr<GraphicsContext> m_Graphics; //OpenGL shaders and buffers
+    std::unique_ptr<Camera2D> m_Camera; //2D camera for rendering
+    std::unique_ptr<FpsCounter> m_FpsCounter; //FPS measurement and logging
+    std::unique_ptr<GameWorld> m_World; //World boundaries and clamping
+    SceneManager m_SceneManager; //Scene stack management
 
-    //entt::entity m_PlayerEntity;
-    SceneManager m_SceneManager;
-
-    void ProcessEvents(); //Handles polls and SDL events
-    void Render(); //Scene renderization
-    void Update(); //Systems update during the current frame
-    void SetupControllers(); //Player and camera controllers initialization
+    void ProcessEvents(); //Handles SDL event polling
+    void Render(); //Renders the current scene
+    void Update(); //Updates all systems for the current frame
 };

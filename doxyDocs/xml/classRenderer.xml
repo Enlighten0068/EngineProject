@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classRenderer" kind="class" language="C++" prot="public">
+    <compoundname>Renderer</compoundname>
+    <includes refid="Renderer_8h" local="no">Renderer.h</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classRenderer_1a62a84dbdb97eed1c5fcc0cfa545ab281" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Renderer::DrawQuad</definition>
+        <argsstring>(Shader &amp;shader, VertexArray &amp;vertexArray, IndexBuffer &amp;indexBuffer)</argsstring>
+        <name>DrawQuad</name>
+        <qualifiedname>Renderer::DrawQuad</qualifiedname>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+          <declname>vertexArray</declname>
+        </param>
+        <param>
+          <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+          <declname>indexBuffer</declname>
+        </param>
+        <briefdescription>
+<para>Draws a flat (untextured) quad. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Binds the shader, vertex array, and index buffer, then issues a draw call.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The shader program to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vertexArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertex array object containing vertex data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>indexBuffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index buffer containing the quad indices.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This method is used for simple geometry that does not require texturing. It binds the shader, VAO, and IBO, then issues a single draw call.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The shader program to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vertexArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertex array object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>indexBuffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index buffer containing the quad indices. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/renderer/Renderer.h" line="33" column="17" bodyfile="engine/renderer/Renderer.cpp" bodystart="20" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classRenderer_1a71992cf4acf88e30dd0abaaa6cda23b4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Renderer::DrawTexturedQuad</definition>
+        <argsstring>(Shader &amp;shader, VertexArray &amp;vertexArray, IndexBuffer &amp;indexBuffer, Texture2D &amp;texture, const Matrix4 &amp;model, const Matrix4 &amp;view, const Matrix4 &amp;projection, float tileScaleX=1.0f, float tileScaleY=1.0f)</argsstring>
+        <name>DrawTexturedQuad</name>
+        <qualifiedname>Renderer::DrawTexturedQuad</qualifiedname>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+          <declname>vertexArray</declname>
+        </param>
+        <param>
+          <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+          <declname>indexBuffer</declname>
+        </param>
+        <param>
+          <type><ref refid="classTexture2D" kindref="compound">Texture2D</ref> &amp;</type>
+          <declname>texture</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classMatrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classMatrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>view</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classMatrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>projection</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>tileScaleX</declname>
+          <defval>1.0f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>tileScaleY</declname>
+          <defval>1.0f</defval>
+        </param>
+        <briefdescription>
+<para>Draws a textured quad with transformation matrices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Binds the shader, texture, vertex array, and index buffer, then sets the model, view, projection, and tile scale uniforms before drawing.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The shader program to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vertexArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertex array object containing vertex data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>indexBuffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index buffer containing the quad indices. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture to apply to the quad. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The model matrix (position, rotation, scale). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The view matrix (camera position). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>projection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The projection matrix (orthographic or perspective). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tileScaleX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of texture repetitions along the X axis (default: 1.0). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tileScaleY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of texture repetitions along the Y axis (default: 1.0).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This is the primary rendering method for 2D sprites. It applies the model, view, and projection matrices to position the quad in world space, and uses a tile scale to repeat the texture across the quad surface.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The shader program to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vertexArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertex array object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>indexBuffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index buffer containing the quad indices. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture to apply to the quad. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The model matrix (position, rotation, scale). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The view matrix (camera position). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>projection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The projection matrix (orthographic or perspective). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tileScaleX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of texture repetitions along the X axis. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tileScaleY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of texture repetitions along the Y axis. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/renderer/Renderer.h" line="51" column="17" bodyfile="engine/renderer/Renderer.cpp" bodystart="45" bodyend="62"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Static rendering API for drawing 2D geometry. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classRenderer" kindref="compound">Renderer</ref> provides a simple interface for drawing textured or untextured quads using the engine&apos;s shader and buffer objects. All methods are static, making it easy to use from anywhere in the engine.</para>
+<para><simplesect kind="note"><para>The <ref refid="classRenderer" kindref="compound">Renderer</ref> assumes that the shader already has the correct uniforms for the model, view, and projection matrices, as well as a texture sampler. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classShader" kindref="compound">Shader</ref>, <ref refid="classVertexArray" kindref="compound">VertexArray</ref>, <ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>, <ref refid="classTexture2D" kindref="compound">Texture2D</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Renderer</label>
+        <link refid="classRenderer"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/renderer/Renderer.h" line="22" column="1" bodyfile="engine/renderer/Renderer.h" bodystart="22" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classRenderer_1a62a84dbdb97eed1c5fcc0cfa545ab281" prot="public" virt="non-virtual"><scope>Renderer</scope><name>DrawQuad</name></member>
+      <member refid="classRenderer_1a71992cf4acf88e30dd0abaaa6cda23b4" prot="public" virt="non-virtual"><scope>Renderer</scope><name>DrawTexturedQuad</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

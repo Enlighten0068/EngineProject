@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classEngine" kind="class" language="C++" prot="public">
+    <compoundname>Engine</compoundname>
+    <includes refid="Engine_8h" local="no">Engine.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classEngine_1a6bbcb94d19650accc1e62492c82178e2" prot="private" static="no" mutable="no">
+        <type><ref refid="classSDLWindow" kindref="compound">SDLWindow</ref></type>
+        <definition>SDLWindow Engine::m_Window</definition>
+        <argsstring></argsstring>
+        <name>m_Window</name>
+        <qualifiedname>Engine::m_Window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Engine.h" line="53" column="15" bodyfile="engine/core/Engine.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classEngine_1a9702c44e02c02eb256ede54a6f259782" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Engine::m_Running</definition>
+        <argsstring></argsstring>
+        <name>m_Running</name>
+        <qualifiedname>Engine::m_Running</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Engine.h" line="54" column="10" bodyfile="engine/core/Engine.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classEngine_1a8c98683b0a3aa28d8ab72a8bcd0d52f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Engine::Engine</definition>
+        <argsstring>()</argsstring>
+        <name>Engine</name>
+        <qualifiedname>Engine::Engine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Engine.h" line="16" column="5" bodyfile="engine/core/Engine.cpp" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classEngine_1a8ef7030a089ecb30bbfcb9e43094717a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Engine::~Engine</definition>
+        <argsstring>()</argsstring>
+        <name>~Engine</name>
+        <qualifiedname>Engine::~Engine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Engine.h" line="17" column="5" bodyfile="engine/core/Engine.cpp" bodystart="13" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classEngine_1a253fc356293f0a5228b6d7ab143540b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Engine::Initialize</definition>
+        <argsstring>(const char *title, int width, int height, bool fullscreen=false)</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>Engine::Initialize</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fullscreen</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Initializes SDL and creates the game window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes SDL and creates the window.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window title. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window width in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window height in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fullscreen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to start in fullscreen mode. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if initialization succeeded, false otherwise.</para>
+</simplesect>
+This method initializes the SDL video subsystem and creates a window with the specified title and dimensions.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window title. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window width in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window height in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fullscreen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to start in fullscreen mode. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successful, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Engine.h" line="27" column="10" bodyfile="engine/core/Engine.cpp" bodystart="29" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classEngine_1a3dbd2c0a65e642baa7eaa97caa6e4e64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Engine::Shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>Shutdown</name>
+        <qualifiedname>Engine::Shutdown</qualifiedname>
+        <briefdescription>
+<para>Shuts down the engine and destroys the game window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Shuts down the engine.</para>
+<para>Destroys the window and quits SDL. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Engine.h" line="32" column="10" bodyfile="engine/core/Engine.cpp" bodystart="47" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classEngine_1a531f887d1b7f38525d0c21d20e216e6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classSDLWindow" kindref="compound">SDLWindow</ref> &amp;</type>
+        <definition>SDLWindow &amp; Engine::GetWindow</definition>
+        <argsstring>()</argsstring>
+        <name>GetWindow</name>
+        <qualifiedname>Engine::GetWindow</qualifiedname>
+        <briefdescription>
+<para>Gets the <ref refid="classSDLWindow" kindref="compound">SDLWindow</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to the <ref refid="classSDLWindow" kindref="compound">SDLWindow</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Engine.h" line="38" column="15" bodyfile="engine/core/Engine.cpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classEngine_1a96fbaebec1936cf4440f93b59a7c5148" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Engine::IsRunning</definition>
+        <argsstring>() const</argsstring>
+        <name>IsRunning</name>
+        <qualifiedname>Engine::IsRunning</qualifiedname>
+        <briefdescription>
+<para>Checks if the engine is still running. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if running, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Engine.h" line="44" column="10" bodyfile="engine/core/Engine.h" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classEngine_1a75cf7e8499772e2a46c9bb747ce1f4e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Engine::SetRunning</definition>
+        <argsstring>(bool running)</argsstring>
+        <name>SetRunning</name>
+        <qualifiedname>Engine::SetRunning</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>running</declname>
+        </param>
+        <briefdescription>
+<para>Sets the running state of the engine. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>running</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New running state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Engine.h" line="50" column="10" bodyfile="engine/core/Engine.h" bodystart="50" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Core engine class responsible for window creation and SDL lifecycle. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classEngine" kindref="compound">Engine</ref> class abstracts the low-level window management and SDL initialization. It owns the <ref refid="classSDLWindow" kindref="compound">SDLWindow</ref> and manages the main loop&apos;s running state.</para>
+<para><simplesect kind="see"><para><ref refid="classSDLWindow" kindref="compound">SDLWindow</ref>, <ref refid="classApplication" kindref="compound">Application</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Engine</label>
+        <link refid="classEngine"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-m_Window</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDLWindow</label>
+        <link refid="classSDLWindow"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/core/Engine.h" line="14" column="1" bodyfile="engine/core/Engine.h" bodystart="14" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classEngine_1a8c98683b0a3aa28d8ab72a8bcd0d52f2" prot="public" virt="non-virtual"><scope>Engine</scope><name>Engine</name></member>
+      <member refid="classEngine_1a531f887d1b7f38525d0c21d20e216e6c" prot="public" virt="non-virtual"><scope>Engine</scope><name>GetWindow</name></member>
+      <member refid="classEngine_1a253fc356293f0a5228b6d7ab143540b3" prot="public" virt="non-virtual"><scope>Engine</scope><name>Initialize</name></member>
+      <member refid="classEngine_1a96fbaebec1936cf4440f93b59a7c5148" prot="public" virt="non-virtual"><scope>Engine</scope><name>IsRunning</name></member>
+      <member refid="classEngine_1a9702c44e02c02eb256ede54a6f259782" prot="private" virt="non-virtual"><scope>Engine</scope><name>m_Running</name></member>
+      <member refid="classEngine_1a6bbcb94d19650accc1e62492c82178e2" prot="private" virt="non-virtual"><scope>Engine</scope><name>m_Window</name></member>
+      <member refid="classEngine_1a75cf7e8499772e2a46c9bb747ce1f4e9" prot="public" virt="non-virtual"><scope>Engine</scope><name>SetRunning</name></member>
+      <member refid="classEngine_1a3dbd2c0a65e642baa7eaa97caa6e4e64" prot="public" virt="non-virtual"><scope>Engine</scope><name>Shutdown</name></member>
+      <member refid="classEngine_1a8ef7030a089ecb30bbfcb9e43094717a" prot="public" virt="non-virtual"><scope>Engine</scope><name>~Engine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

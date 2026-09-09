@@ -11,19 +11,19 @@
 enum class EventType{
     None = 0,
 
-    //Windows events
-    WindowClose,
-    WindowResize,
+    //Window events
+    WindowClose,   //Window close requested
+    WindowResize,  //Window resized
 
     //Input events
-    Key,
-    MouseMotion,
-    MouseButton,
-    MouseWheel,
+    Key,           //Keyboard key event
+    MouseMotion,   //Mouse movement event
+    MouseButton,   //Mouse button event
+    MouseWheel,    //Mouse wheel event
 
     //Gameplay events
-    PlayerJumped,
-    PlayerLanded,
-    PlayerDied,
-    EnemyDied
+    PlayerJumped,  //Player jumped
+    PlayerLanded,  //Player landed on surface
+    PlayerDied,    //Player died
+    EnemyDied      //Enemy died
 };

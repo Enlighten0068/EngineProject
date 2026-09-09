@@ -1,0 +1,69 @@
+\doxysection{engine/\+diagnostics/\+\+Assert.h File Reference}
+\hypertarget{Assert_8h}{}\label{Assert_8h}\index{engine/diagnostics/Assert.h@{engine/diagnostics/Assert.h}}
+{\ttfamily \+\#include "{}diagnostics/\+\+Log.\+h"{}}\newline
+{\ttfamily \+\#include $<$cstdlib$>$}\newline
+Include dependency graph for Assert.\+h:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Assert_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{Assert_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{Assert_8h_a8cd446f746bfa7d25787eb94290c900d}{ENGINE\+\_\+\+ASSERT}}(condition,  message)
+\begin{DoxyCompactList}\small\item\em Asserts a condition and aborts the program if it fails. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{Assert_8h_doc-define-members}
+\Hypertarget{Assert_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{Assert_8h_a8cd446f746bfa7d25787eb94290c900d}\index{Assert.h@{Assert.h}!ENGINE\_ASSERT@{ENGINE\_ASSERT}}
+\index{ENGINE\_ASSERT@{ENGINE\_ASSERT}!Assert.h@{Assert.h}}
+\doxysubsubsection{\texorpdfstring{ENGINE\_ASSERT}{ENGINE\_ASSERT}}
+{\footnotesize\ttfamily \label{Assert_8h_a8cd446f746bfa7d25787eb94290c900d} 
+\+\#define ENGINE\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{condition}{, }\item[{}]{message}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do}\{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if(!(condition))\{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Log::Error(std::format(\textcolor{stringliteral}{"{}Assertion\ Failed:\ \{\}\(\backslash\)nFile:\ \{\}\(\backslash\)n\ Line:\ \{\}"{}},\ message,\ \_\_FILE\_\_,\ \_\_LINE\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::abort();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{while}(\textcolor{keyword}{false})}
+
+\end{DoxyCode}
+
+
+Asserts a condition and aborts the program if it fails. 
+
+If the condition evaluates to false, logs an error message with the file name and line number, then terminates the program with std::\+abort().
+
+
+\begin{DoxyParams}{Parameters}
+{\em condition} & The condition to evaluate. \\
+\hline
+{\em message} & The error message to log if the condition fails.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Should be used only in debug builds. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::\+\+Error} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Assert_8h_source_l00019}{19}} of file \doxymbox{\hyperlink{Assert_8h_source}{Assert.\+h}}.
+

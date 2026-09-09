@@ -1,0 +1,382 @@
+\doxysection{Player\+Controller Class Reference}
+\hypertarget{classPlayerController}{}\label{classPlayerController}\index{PlayerController@{PlayerController}}
+
+
+Controller for the player entity, handling movement, jumping, and physics.  
+
+
+
+
+{\ttfamily \+\#include $<$Player\+Controller.\+h$>$}
+
+
+
+Collaboration diagram for Player\+Controller:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classPlayerController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classPlayerController_a526dbbbce5f9567a8558b5366445b4f7}{Player\+Controller}} (entt::\+registry \&registry, entt::\+entity player\+Entity, const \doxymbox{\hyperlink{classGameWorld}{Game\+World}} \&world)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classPlayerController}{Player\+Controller}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classPlayerController_ab89c90498ca2285d7f0ef0b83a091966}{\texorpdfstring{$\sim$}{\string~}\+Player\+Controller}} ()=default
+\item 
+void \doxymbox{\hyperlink{classPlayerController_a2e0c380d64a88c8cfe60ce8452921227}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the player\textquotesingle{}s state (movement, jump, physics). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPlayerController_abc200ae4a92f7fb881a6dfeb395c1f11}{Set\+Speed}} (float speed)
+\begin{DoxyCompactList}\small\item\em Sets the movement speed of the player. \end{DoxyCompactList}\item 
+float \doxymbox{\hyperlink{classPlayerController_ab4060eac83a61cfcb0e527a1494b8a23}{Get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Gets the movement speed of the player. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPlayerController_a41c1071503dfa351b2e028389476529b}{Die}} (const std::\+string \&cause="{}Unknown."{})
+\begin{DoxyCompactList}\small\item\em Kills the player and triggers respawn. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \& \doxymbox{\hyperlink{classPlayerController_ade1bb93004235d430154378ed6306afa}{Get\+Velocity}} ()
+\item 
+const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \& \doxymbox{\hyperlink{classPlayerController_a8e1f16bbd03a85df6db3922c46d03552}{Get\+Velocity}} () const
+\item 
+void \doxymbox{\hyperlink{classPlayerController_a1fa66a69ec5d0c51bedf8ca25b69629a}{Set\+Grounded}} (bool grounded)
+\item 
+bool \doxymbox{\hyperlink{classPlayerController_a6df72345dcec81954352df7e19763057}{Is\+Grounded}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classPlayerController_ab1593f66b3a70d2ce2c99d2898b27300}{Setup\+Event\+Subscriptions}} ()
+\begin{DoxyCompactList}\small\item\em Sets up event subscriptions for player interactions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+entt::\+registry \& \doxymbox{\hyperlink{classPlayerController_ad586858eeaf73156678220adde0dfc65}{m\+\_\+\+Registry}}
+\item 
+entt::\+entity \doxymbox{\hyperlink{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7}{m\+\_\+\+Player\+Entity}}
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\+\_\+\+Velocity}} \{0.\+0f, 0.\+0f, 0.\+0f\}
+\item 
+float \doxymbox{\hyperlink{classPlayerController_a552c0308cb0226c7862d99c04f68357a}{m\+\_\+\+Speed}} = 3.\+0f
+\item 
+bool \doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\+\_\+\+Is\+Jumping}} = false
+\item 
+float \doxymbox{\hyperlink{classPlayerController_ae0e4240a0fad2c55cdf0b96e4450e83d}{m\+\_\+\+Jump\+Timer}} = 0.\+0f
+\item 
+bool \doxymbox{\hyperlink{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}{m\+\_\+\+Is\+Dead}} = false
+\item 
+bool \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\+\_\+\+Is\+Grounded}} = false
+\item 
+bool \doxymbox{\hyperlink{classPlayerController_a2b4f8434fdc256669b54c8ac8f7d6aeb}{m\+\_\+\+Was\+Grounded}} = false
+\item 
+const \doxymbox{\hyperlink{classGameWorld}{Game\+World}} \& \doxymbox{\hyperlink{classPlayerController_a0741e03ee1239165e1a12ab2fdc818db}{m\+\_\+\+World}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller for the player entity, handling movement, jumping, and physics. 
+
+This class processes keyboard and gamepad input, updates the player position and velocity, and handles jump physics (variable jump height, gravity, and grounded detection). It also integrates with the audio system to play jump and landing sound effects.
+
+\begin{DoxyNote}{Note}
+The controller works in conjunction with the physics system and collision resolution performed in the scene. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classGameWorld}{Game\+World}, \doxylink{structTransform}{Transform}, \doxylink{classSoundManager}{Sound\+Manager} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00020}{20}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+
+
+\label{classPlayerController_doc-constructors}
+\Hypertarget{classPlayerController_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPlayerController_a526dbbbce5f9567a8558b5366445b4f7}\index{PlayerController@{PlayerController}!PlayerController@{PlayerController}}
+\index{PlayerController@{PlayerController}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{PlayerController()}{PlayerController()}}
+{\footnotesize\ttfamily \label{classPlayerController_a526dbbbce5f9567a8558b5366445b4f7} 
+Player\+Controller::\+\+Player\+Controller (\begin{DoxyParamCaption}\item[{entt::\+registry \&}]{registry}{, }\item[{entt::\+entity}]{player\+Entity}{, }\item[{const \doxymbox{\hyperlink{classGameWorld}{Game\+World}} \&}]{world}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classPlayerController}{Player\+Controller}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em registry} & Reference to the ECS registry. \\
+\hline
+{\em player\+Entity} & The entity ID of the player. \\
+\hline
+{\em world} & Reference to the \doxylink{classGameWorld}{Game\+World} for boundary clamping. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00014}{14}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
+
+\Hypertarget{classPlayerController_ab89c90498ca2285d7f0ef0b83a091966}\index{PlayerController@{PlayerController}!````~PlayerController@{\texorpdfstring{$\sim$}{\string~}PlayerController}}
+\index{````~PlayerController@{\texorpdfstring{$\sim$}{\string~}PlayerController}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}PlayerController()}{\string~PlayerController()}}
+{\footnotesize\ttfamily \label{classPlayerController_ab89c90498ca2285d7f0ef0b83a091966} 
+Player\+Controller::\+\texorpdfstring{$\sim$}{\string~}\+Player\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{classPlayerController_doc-func-members}
+\Hypertarget{classPlayerController_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPlayerController_a41c1071503dfa351b2e028389476529b}\index{PlayerController@{PlayerController}!Die@{Die}}
+\index{Die@{Die}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{Die()}{Die()}}
+{\footnotesize\ttfamily \label{classPlayerController_a41c1071503dfa351b2e028389476529b} 
+void Player\+Controller::\+\+Die (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{cause}{ = {\ttfamily "{}Unknown."{}}}\end{DoxyParamCaption})}
+
+
+
+Kills the player and triggers respawn. 
+
+Player dies.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cause} & Reason for death (e.\+g., "{}\+Player fell off the world"{}).\\
+\hline
+\end{DoxyParams}
+Dispatches a \doxylink{classPlayerDiedEvent}{Player\+Died\+Event}, resets the player\textquotesingle{}s position to the center of the world, and resets all physics state to allow immediate respawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cause} & Reason for death (e.\+g., "{}\+Killed by enemy"{}). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00154}{154}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
+
+\Hypertarget{classPlayerController_ab4060eac83a61cfcb0e527a1494b8a23}\index{PlayerController@{PlayerController}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily \label{classPlayerController_ab4060eac83a61cfcb0e527a1494b8a23} 
+float Player\+Controller::\+\+Get\+Speed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the movement speed of the player. 
+
+\begin{DoxyReturn}{Returns}
+Current speed in units per second. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00049}{49}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_ade1bb93004235d430154378ed6306afa}\index{PlayerController@{PlayerController}!GetVelocity@{GetVelocity}}
+\index{GetVelocity@{GetVelocity}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{GetVelocity()}{GetVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classPlayerController_ade1bb93004235d430154378ed6306afa} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \& Player\+Controller::\+\+Get\+Velocity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00058}{58}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_a8e1f16bbd03a85df6db3922c46d03552}\index{PlayerController@{PlayerController}!GetVelocity@{GetVelocity}}
+\index{GetVelocity@{GetVelocity}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{GetVelocity()}{GetVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classPlayerController_a8e1f16bbd03a85df6db3922c46d03552} 
+const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \& Player\+Controller::\+\+Get\+Velocity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00059}{59}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_a6df72345dcec81954352df7e19763057}\index{PlayerController@{PlayerController}!IsGrounded@{IsGrounded}}
+\index{IsGrounded@{IsGrounded}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{IsGrounded()}{IsGrounded()}}
+{\footnotesize\ttfamily \label{classPlayerController_a6df72345dcec81954352df7e19763057} 
+bool Player\+Controller::\+\+Is\+Grounded (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00061}{61}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_a1fa66a69ec5d0c51bedf8ca25b69629a}\index{PlayerController@{PlayerController}!SetGrounded@{SetGrounded}}
+\index{SetGrounded@{SetGrounded}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{SetGrounded()}{SetGrounded()}}
+{\footnotesize\ttfamily \label{classPlayerController_a1fa66a69ec5d0c51bedf8ca25b69629a} 
+void Player\+Controller::\+\+Set\+Grounded (\begin{DoxyParamCaption}\item[{bool}]{grounded}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00060}{60}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_abc200ae4a92f7fb881a6dfeb395c1f11}\index{PlayerController@{PlayerController}!SetSpeed@{SetSpeed}}
+\index{SetSpeed@{SetSpeed}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{SetSpeed()}{SetSpeed()}}
+{\footnotesize\ttfamily \label{classPlayerController_abc200ae4a92f7fb881a6dfeb395c1f11} 
+void Player\+Controller::\+\+Set\+Speed (\begin{DoxyParamCaption}\item[{float}]{speed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the movement speed of the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & Speed in units per second. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00043}{43}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_ab1593f66b3a70d2ce2c99d2898b27300}\index{PlayerController@{PlayerController}!SetupEventSubscriptions@{SetupEventSubscriptions}}
+\index{SetupEventSubscriptions@{SetupEventSubscriptions}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{SetupEventSubscriptions()}{SetupEventSubscriptions()}}
+{\footnotesize\ttfamily \label{classPlayerController_ab1593f66b3a70d2ce2c99d2898b27300} 
+void Player\+Controller::\+\+Setup\+Event\+Subscriptions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets up event subscriptions for player interactions. 
+
+Sets up event subscriptions for the player.
+
+Currently subscribes to key events (E key for interaction). Still under development.
+
+Currently subscribes to key events for interaction (E key). Jump is handled via polling in \doxylink{classPlayerController_a2e0c380d64a88c8cfe60ce8452921227}{Update()} for more responsive input. 
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00025}{25}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
+
+\Hypertarget{classPlayerController_a2e0c380d64a88c8cfe60ce8452921227}\index{PlayerController@{PlayerController}!Update@{Update}}
+\index{Update@{Update}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classPlayerController_a2e0c380d64a88c8cfe60ce8452921227} 
+void Player\+Controller::\+\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the player\textquotesingle{}s state (movement, jump, physics). 
+
+Should be called once per frame. Reads input, updates velocity and position, and handles jump logic. Also detects landing events and plays sound effects.
+
+This method handles horizontal movement, jump detection and its physics, vertical velocity, landing detection, boundary clamping and death.
+
+\begin{DoxyNote}{Note}
+Vertical movement with UP/\+\+DOWN keys is commented out but can be enabled for debugging or special mechanics. 
+\end{DoxyNote}
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00043}{43}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
+
+
+
+\label{classPlayerController_doc-variable-members}
+\Hypertarget{classPlayerController_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}\index{PlayerController@{PlayerController}!m\_IsDead@{m\_IsDead}}
+\index{m\_IsDead@{m\_IsDead}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{m\_IsDead}{m\_IsDead}}
+{\footnotesize\ttfamily \label{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f} 
+bool Player\+Controller::\+m\+\_\+\+Is\+Dead = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00081}{81}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}\index{PlayerController@{PlayerController}!m\_IsGrounded@{m\_IsGrounded}}
+\index{m\_IsGrounded@{m\_IsGrounded}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{m\_IsGrounded}{m\_IsGrounded}}
+{\footnotesize\ttfamily \label{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c} 
+bool Player\+Controller::\+m\+\_\+\+Is\+Grounded = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00082}{82}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}\index{PlayerController@{PlayerController}!m\_IsJumping@{m\_IsJumping}}
+\index{m\_IsJumping@{m\_IsJumping}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{m\_IsJumping}{m\_IsJumping}}
+{\footnotesize\ttfamily \label{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541} 
+bool Player\+Controller::\+m\+\_\+\+Is\+Jumping = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00079}{79}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_ae0e4240a0fad2c55cdf0b96e4450e83d}\index{PlayerController@{PlayerController}!m\_JumpTimer@{m\_JumpTimer}}
+\index{m\_JumpTimer@{m\_JumpTimer}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{m\_JumpTimer}{m\_JumpTimer}}
+{\footnotesize\ttfamily \label{classPlayerController_ae0e4240a0fad2c55cdf0b96e4450e83d} 
+float Player\+Controller::\+m\+\_\+\+Jump\+Timer = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00080}{80}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7}\index{PlayerController@{PlayerController}!m\_PlayerEntity@{m\_PlayerEntity}}
+\index{m\_PlayerEntity@{m\_PlayerEntity}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{m\_PlayerEntity}{m\_PlayerEntity}}
+{\footnotesize\ttfamily \label{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7} 
+entt::\+entity Player\+Controller::\+m\+\_\+\+Player\+Entity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00073}{73}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_ad586858eeaf73156678220adde0dfc65}\index{PlayerController@{PlayerController}!m\_Registry@{m\_Registry}}
+\index{m\_Registry@{m\_Registry}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{m\_Registry}{m\_Registry}}
+{\footnotesize\ttfamily \label{classPlayerController_ad586858eeaf73156678220adde0dfc65} 
+entt::\+registry\& Player\+Controller::\+m\+\_\+\+Registry\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00072}{72}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_a552c0308cb0226c7862d99c04f68357a}\index{PlayerController@{PlayerController}!m\_Speed@{m\_Speed}}
+\index{m\_Speed@{m\_Speed}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{m\_Speed}{m\_Speed}}
+{\footnotesize\ttfamily \label{classPlayerController_a552c0308cb0226c7862d99c04f68357a} 
+float Player\+Controller::\+m\+\_\+\+Speed = 3.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00076}{76}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}\index{PlayerController@{PlayerController}!m\_Velocity@{m\_Velocity}}
+\index{m\_Velocity@{m\_Velocity}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{m\_Velocity}{m\_Velocity}}
+{\footnotesize\ttfamily \label{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Player\+Controller::\+m\+\_\+\+Velocity \{0.\+0f, 0.\+0f, 0.\+0f\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00075}{75}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_a2b4f8434fdc256669b54c8ac8f7d6aeb}\index{PlayerController@{PlayerController}!m\_WasGrounded@{m\_WasGrounded}}
+\index{m\_WasGrounded@{m\_WasGrounded}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{m\_WasGrounded}{m\_WasGrounded}}
+{\footnotesize\ttfamily \label{classPlayerController_a2b4f8434fdc256669b54c8ac8f7d6aeb} 
+bool Player\+Controller::\+m\+\_\+\+Was\+Grounded = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00083}{83}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+\Hypertarget{classPlayerController_a0741e03ee1239165e1a12ab2fdc818db}\index{PlayerController@{PlayerController}!m\_World@{m\_World}}
+\index{m\_World@{m\_World}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{m\_World}{m\_World}}
+{\footnotesize\ttfamily \label{classPlayerController_a0741e03ee1239165e1a12ab2fdc818db} 
+const \doxymbox{\hyperlink{classGameWorld}{Game\+World}}\& Player\+Controller::\+m\+\_\+\+World\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00085}{85}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+core/\doxymbox{\hyperlink{PlayerController_8h}{Player\+Controller.\+h}}\item 
+engine/\+core/\doxymbox{\hyperlink{PlayerController_8cpp}{Player\+Controller.\+cpp}}\end{DoxyCompactItemize}

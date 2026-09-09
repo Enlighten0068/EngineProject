@@ -1,0 +1,320 @@
+\doxysection{Graphics\+Context Class Reference}
+\hypertarget{classGraphicsContext}{}\label{classGraphicsContext}\index{GraphicsContext@{GraphicsContext}}
+
+
+Centralized manager for Open\+GL graphics resources.  
+
+
+
+
+{\ttfamily \+\#include $<$Graphics\+Context.\+h$>$}
+
+
+
+Collaboration diagram for Graphics\+Context:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classGraphicsContext__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classGraphicsContext_ad40a8e479ca7f377ea6d4adfed3ba3e7}{Graphics\+Context}} ()
+\item 
+\doxymbox{\hyperlink{classGraphicsContext_adf561cc173ce8824f27854c04ee0effc}{\texorpdfstring{$\sim$}{\string~}\+Graphics\+Context}} ()
+\item 
+bool \doxymbox{\hyperlink{classGraphicsContext_aadcd5eebbfec1be436549ad4ed909a60}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initializes all graphics resources. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classGraphicsContext_ab79b1ec7a5d63666aad24ff086705828}{Shutdown}} ()
+\begin{DoxyCompactList}\small\item\em Shuts down and releases all graphics resources. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classShader}{Shader}} \& \doxymbox{\hyperlink{classGraphicsContext_ac72c010277ef084de5d680bcd58a223e}{Get\+Shader}} ()
+\item 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \& \doxymbox{\hyperlink{classGraphicsContext_a82dfe9bc5bd032e4a32e1736cf85ccf6}{Get\+Vertex\+Array}} ()
+\item 
+\doxymbox{\hyperlink{classVertexBuffer}{Vertex\+Buffer}} \& \doxymbox{\hyperlink{classGraphicsContext_ad9ec3d04af96d1a4d805852109bd9e8c}{Get\+Vertex\+Buffer}} ()
+\item 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \& \doxymbox{\hyperlink{classGraphicsContext_a1e99a7cb43ec5c9ae6cc5059663de7fe}{Get\+Index\+Buffer}} ()
+\item 
+\doxymbox{\hyperlink{classShader}{Shader}} \& \doxymbox{\hyperlink{classGraphicsContext_a04dd74301ef00fda5b0d157df90ae39e}{Get\+Line\+Shader}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classGraphicsContext_a64a20e75ab42bb9b959ba8f6ac077991}{Create\+Buffers}} ()
+\begin{DoxyCompactList}\small\item\em Creates the vertex and index buffers for a quad. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classGraphicsContext_a92739ce6618c156223091aa5b37f2f93}{Compile\+Shaders}} ()
+\begin{DoxyCompactList}\small\item\em Compiles the vertex and fragment shaders for sprite rendering. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classGraphicsContext_a1e40666b05cab4ede2e01bf3ab6487f0}{Compile\+Line\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em Compiles the vertex and fragment shaders for line rendering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classShader}{Shader}} $>$ \doxymbox{\hyperlink{classGraphicsContext_ab662bdd94fa5b2daef1dca119d3423af}{m\+\_\+\+Shader}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} $>$ \doxymbox{\hyperlink{classGraphicsContext_ac2acd7387eaed15cfdebc3b7f6577a98}{m\+\_\+\+Vertex\+Array}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classVertexBuffer}{Vertex\+Buffer}} $>$ \doxymbox{\hyperlink{classGraphicsContext_a8ce73fa81f3c21abdb541ba6f3c95c04}{m\+\_\+\+Vertex\+Buffer}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} $>$ \doxymbox{\hyperlink{classGraphicsContext_a5e9b71e185b7c14435050f5337b59df2}{m\+\_\+\+Index\+Buffer}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classShader}{Shader}} $>$ \doxymbox{\hyperlink{classGraphicsContext_a539dff391f3e386ec987bf179024e0b7}{m\+\_\+\+Line\+Shader}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Centralized manager for Open\+GL graphics resources. 
+
+The \doxylink{classGraphicsContext}{Graphics\+Context} is responsible for creating and managing all Open\+GL resources used by the engine: shaders, vertex array objects, vertex buffers, and index buffers. It encapsulates the Open\+GL initialization and provides access to these resources.
+
+\begin{DoxyNote}{Note}
+This class should be initialized after the Open\+GL context is created. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classShader}{Shader}, \doxylink{classVertexArray}{Vertex\+Array}, \doxylink{classVertexBuffer}{Vertex\+Buffer}, \doxylink{classIndexBuffer}{Index\+Buffer} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8h_source_l00020}{20}} of file \doxymbox{\hyperlink{GraphicsContext_8h_source}{Graphics\+Context.\+h}}.
+
+
+
+\label{classGraphicsContext_doc-constructors}
+\Hypertarget{classGraphicsContext_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGraphicsContext_ad40a8e479ca7f377ea6d4adfed3ba3e7}\index{GraphicsContext@{GraphicsContext}!GraphicsContext@{GraphicsContext}}
+\index{GraphicsContext@{GraphicsContext}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{GraphicsContext()}{GraphicsContext()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_ad40a8e479ca7f377ea6d4adfed3ba3e7} 
+Graphics\+Context::\+\+Graphics\+Context (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classGraphicsContext_adf561cc173ce8824f27854c04ee0effc}\index{GraphicsContext@{GraphicsContext}!````~GraphicsContext@{\texorpdfstring{$\sim$}{\string~}GraphicsContext}}
+\index{````~GraphicsContext@{\texorpdfstring{$\sim$}{\string~}GraphicsContext}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GraphicsContext()}{\string~GraphicsContext()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_adf561cc173ce8824f27854c04ee0effc} 
+Graphics\+Context::\+\texorpdfstring{$\sim$}{\string~}\+Graphics\+Context (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8cpp_source_l00007}{7}} of file \doxymbox{\hyperlink{GraphicsContext_8cpp_source}{Graphics\+Context.\+cpp}}.
+
+
+
+\label{classGraphicsContext_doc-func-members}
+\Hypertarget{classGraphicsContext_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGraphicsContext_a1e40666b05cab4ede2e01bf3ab6487f0}\index{GraphicsContext@{GraphicsContext}!CompileLineShader@{CompileLineShader}}
+\index{CompileLineShader@{CompileLineShader}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{CompileLineShader()}{CompileLineShader()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_a1e40666b05cab4ede2e01bf3ab6487f0} 
+bool Graphics\+Context::\+\+Compile\+Line\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compiles the vertex and fragment shaders for line rendering. 
+
+\begin{DoxyReturn}{Returns}
+true if shaders compiled and linked successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8cpp_source_l00108}{108}} of file \doxymbox{\hyperlink{GraphicsContext_8cpp_source}{Graphics\+Context.\+cpp}}.
+
+\Hypertarget{classGraphicsContext_a92739ce6618c156223091aa5b37f2f93}\index{GraphicsContext@{GraphicsContext}!CompileShaders@{CompileShaders}}
+\index{CompileShaders@{CompileShaders}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{CompileShaders()}{CompileShaders()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_a92739ce6618c156223091aa5b37f2f93} 
+bool Graphics\+Context::\+\+Compile\+Shaders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compiles the vertex and fragment shaders for sprite rendering. 
+
+\begin{DoxyReturn}{Returns}
+true if shaders compiled and linked successfully, false otherwise.
+\end{DoxyReturn}
+The vertex shader transforms vertices using model, view, and projection matrices. It also passes texture coordinates (scaled by u\+\_\+\+Tile\+Scale) to the fragment shader. The fragment shader samples a texture at the given coordinates.
+
+\begin{DoxyReturn}{Returns}
+true if shaders compiled and linked successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8cpp_source_l00090}{90}} of file \doxymbox{\hyperlink{GraphicsContext_8cpp_source}{Graphics\+Context.\+cpp}}.
+
+\Hypertarget{classGraphicsContext_a64a20e75ab42bb9b959ba8f6ac077991}\index{GraphicsContext@{GraphicsContext}!CreateBuffers@{CreateBuffers}}
+\index{CreateBuffers@{CreateBuffers}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{CreateBuffers()}{CreateBuffers()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_a64a20e75ab42bb9b959ba8f6ac077991} 
+bool Graphics\+Context::\+\+Create\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates the vertex and index buffers for a quad. 
+
+Creates vertex and index buffers for a unit quad.
+
+Quads are a unit square centered at the origin with texture coordinates.
+
+\begin{DoxyReturn}{Returns}
+true if buffers were created successfully, false otherwise.
+
+true if buffers were created successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8cpp_source_l00051}{51}} of file \doxymbox{\hyperlink{GraphicsContext_8cpp_source}{Graphics\+Context.\+cpp}}.
+
+\Hypertarget{classGraphicsContext_a1e99a7cb43ec5c9ae6cc5059663de7fe}\index{GraphicsContext@{GraphicsContext}!GetIndexBuffer@{GetIndexBuffer}}
+\index{GetIndexBuffer@{GetIndexBuffer}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{GetIndexBuffer()}{GetIndexBuffer()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_a1e99a7cb43ec5c9ae6cc5059663de7fe} 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \& Graphics\+Context::\+\+Get\+Index\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8h_source_l00043}{43}} of file \doxymbox{\hyperlink{GraphicsContext_8h_source}{Graphics\+Context.\+h}}.
+
+\Hypertarget{classGraphicsContext_a04dd74301ef00fda5b0d157df90ae39e}\index{GraphicsContext@{GraphicsContext}!GetLineShader@{GetLineShader}}
+\index{GetLineShader@{GetLineShader}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{GetLineShader()}{GetLineShader()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_a04dd74301ef00fda5b0d157df90ae39e} 
+\doxymbox{\hyperlink{classShader}{Shader}} \& Graphics\+Context::\+\+Get\+Line\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8h_source_l00044}{44}} of file \doxymbox{\hyperlink{GraphicsContext_8h_source}{Graphics\+Context.\+h}}.
+
+\Hypertarget{classGraphicsContext_ac72c010277ef084de5d680bcd58a223e}\index{GraphicsContext@{GraphicsContext}!GetShader@{GetShader}}
+\index{GetShader@{GetShader}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{GetShader()}{GetShader()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_ac72c010277ef084de5d680bcd58a223e} 
+\doxymbox{\hyperlink{classShader}{Shader}} \& Graphics\+Context::\+\+Get\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8h_source_l00040}{40}} of file \doxymbox{\hyperlink{GraphicsContext_8h_source}{Graphics\+Context.\+h}}.
+
+\Hypertarget{classGraphicsContext_a82dfe9bc5bd032e4a32e1736cf85ccf6}\index{GraphicsContext@{GraphicsContext}!GetVertexArray@{GetVertexArray}}
+\index{GetVertexArray@{GetVertexArray}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{GetVertexArray()}{GetVertexArray()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_a82dfe9bc5bd032e4a32e1736cf85ccf6} 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \& Graphics\+Context::\+\+Get\+Vertex\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8h_source_l00041}{41}} of file \doxymbox{\hyperlink{GraphicsContext_8h_source}{Graphics\+Context.\+h}}.
+
+\Hypertarget{classGraphicsContext_ad9ec3d04af96d1a4d805852109bd9e8c}\index{GraphicsContext@{GraphicsContext}!GetVertexBuffer@{GetVertexBuffer}}
+\index{GetVertexBuffer@{GetVertexBuffer}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{GetVertexBuffer()}{GetVertexBuffer()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_ad9ec3d04af96d1a4d805852109bd9e8c} 
+\doxymbox{\hyperlink{classVertexBuffer}{Vertex\+Buffer}} \& Graphics\+Context::\+\+Get\+Vertex\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8h_source_l00042}{42}} of file \doxymbox{\hyperlink{GraphicsContext_8h_source}{Graphics\+Context.\+h}}.
+
+\Hypertarget{classGraphicsContext_aadcd5eebbfec1be436549ad4ed909a60}\index{GraphicsContext@{GraphicsContext}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_aadcd5eebbfec1be436549ad4ed909a60} 
+bool Graphics\+Context::\+\+Initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes all graphics resources. 
+
+Initializes the graphics context.
+
+Creates buffers, compiles shaders, and sets up vertex attribute layouts.
+
+\begin{DoxyReturn}{Returns}
+true if initialization succeeded, false otherwise.
+\end{DoxyReturn}
+Creates the vertex/\+index buffers, compiles the shaders, and sets up the vertex attribute layout.
+
+\begin{DoxyReturn}{Returns}
+true if all resources were created successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8cpp_source_l00017}{17}} of file \doxymbox{\hyperlink{GraphicsContext_8cpp_source}{Graphics\+Context.\+cpp}}.
+
+\Hypertarget{classGraphicsContext_ab79b1ec7a5d63666aad24ff086705828}\index{GraphicsContext@{GraphicsContext}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily \label{classGraphicsContext_ab79b1ec7a5d63666aad24ff086705828} 
+void Graphics\+Context::\+\+Shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Shuts down and releases all graphics resources. 
+
+Shuts down the graphics context and releases resources. 
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8cpp_source_l00039}{39}} of file \doxymbox{\hyperlink{GraphicsContext_8cpp_source}{Graphics\+Context.\+cpp}}.
+
+
+
+\label{classGraphicsContext_doc-variable-members}
+\Hypertarget{classGraphicsContext_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGraphicsContext_a5e9b71e185b7c14435050f5337b59df2}\index{GraphicsContext@{GraphicsContext}!m\_IndexBuffer@{m\_IndexBuffer}}
+\index{m\_IndexBuffer@{m\_IndexBuffer}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{m\_IndexBuffer}{m\_IndexBuffer}}
+{\footnotesize\ttfamily \label{classGraphicsContext_a5e9b71e185b7c14435050f5337b59df2} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}}$>$ Graphics\+Context::\+m\+\_\+\+Index\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8h_source_l00050}{50}} of file \doxymbox{\hyperlink{GraphicsContext_8h_source}{Graphics\+Context.\+h}}.
+
+\Hypertarget{classGraphicsContext_a539dff391f3e386ec987bf179024e0b7}\index{GraphicsContext@{GraphicsContext}!m\_LineShader@{m\_LineShader}}
+\index{m\_LineShader@{m\_LineShader}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{m\_LineShader}{m\_LineShader}}
+{\footnotesize\ttfamily \label{classGraphicsContext_a539dff391f3e386ec987bf179024e0b7} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classShader}{Shader}}$>$ Graphics\+Context::\+m\+\_\+\+Line\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8h_source_l00051}{51}} of file \doxymbox{\hyperlink{GraphicsContext_8h_source}{Graphics\+Context.\+h}}.
+
+\Hypertarget{classGraphicsContext_ab662bdd94fa5b2daef1dca119d3423af}\index{GraphicsContext@{GraphicsContext}!m\_Shader@{m\_Shader}}
+\index{m\_Shader@{m\_Shader}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{m\_Shader}{m\_Shader}}
+{\footnotesize\ttfamily \label{classGraphicsContext_ab662bdd94fa5b2daef1dca119d3423af} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classShader}{Shader}}$>$ Graphics\+Context::\+m\+\_\+\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8h_source_l00047}{47}} of file \doxymbox{\hyperlink{GraphicsContext_8h_source}{Graphics\+Context.\+h}}.
+
+\Hypertarget{classGraphicsContext_ac2acd7387eaed15cfdebc3b7f6577a98}\index{GraphicsContext@{GraphicsContext}!m\_VertexArray@{m\_VertexArray}}
+\index{m\_VertexArray@{m\_VertexArray}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{m\_VertexArray}{m\_VertexArray}}
+{\footnotesize\ttfamily \label{classGraphicsContext_ac2acd7387eaed15cfdebc3b7f6577a98} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}}$>$ Graphics\+Context::\+m\+\_\+\+Vertex\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8h_source_l00048}{48}} of file \doxymbox{\hyperlink{GraphicsContext_8h_source}{Graphics\+Context.\+h}}.
+
+\Hypertarget{classGraphicsContext_a8ce73fa81f3c21abdb541ba6f3c95c04}\index{GraphicsContext@{GraphicsContext}!m\_VertexBuffer@{m\_VertexBuffer}}
+\index{m\_VertexBuffer@{m\_VertexBuffer}!GraphicsContext@{GraphicsContext}}
+\doxysubsubsection{\texorpdfstring{m\_VertexBuffer}{m\_VertexBuffer}}
+{\footnotesize\ttfamily \label{classGraphicsContext_a8ce73fa81f3c21abdb541ba6f3c95c04} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classVertexBuffer}{Vertex\+Buffer}}$>$ Graphics\+Context::\+m\+\_\+\+Vertex\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GraphicsContext_8h_source_l00049}{49}} of file \doxymbox{\hyperlink{GraphicsContext_8h_source}{Graphics\+Context.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+graphics/\doxymbox{\hyperlink{GraphicsContext_8h}{Graphics\+Context.\+h}}\item 
+engine/\+graphics/\doxymbox{\hyperlink{GraphicsContext_8cpp}{Graphics\+Context.\+cpp}}\end{DoxyCompactItemize}

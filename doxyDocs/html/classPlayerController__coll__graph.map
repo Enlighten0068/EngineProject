@@ -1,0 +1,7 @@
+<map id="PlayerController" name="PlayerController">
+<area shape="rect" id="Node000001" title="Controller for the player entity, handling movement, jumping, and physics." alt="" coords="31,486,229,938"/>
+<area shape="rect" id="Node000002" href="$structVector3D.html" title="3D vector struct with basic arithmetic operations." alt="" coords="5,106,108,312"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,309,91,461,92,469,87,469,86,462,68,315"/>
+<area shape="rect" id="Node000003" href="$classGameWorld.html" title="Defines the boundaries of the game world and provides clamping." alt="" coords="132,5,275,413"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,410,177,462,176,469,171,468,172,461,180,415"/>
+</map>

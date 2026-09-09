@@ -1,0 +1,27 @@
+\doxysection{Font.\+h}
+\hypertarget{Font_8h_source}{}\label{Font_8h_source}\index{engine/graphics/Font.h@{engine/graphics/Font.h}}
+\doxymbox{\hyperlink{Font_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <SDL3\_ttf/SDL\_ttf.h>}}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00018}\doxymbox{\hyperlink{classFont}{00018}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classFont_a4e6a119206f505522100221c1fafde45}{Font}}\{}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00019}00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00020}\doxymbox{\hyperlink{classFont_a4e6a119206f505522100221c1fafde45}{00020}}\ \ \ \ \ \doxymbox{\hyperlink{classFont_a4e6a119206f505522100221c1fafde45}{Font}}();}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00021}00021\ \ \ \ \ \doxymbox{\hyperlink{classFont_a4e6a119206f505522100221c1fafde45}{\string~Font}}();}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classFont_a4d8b450779ecae61899cfebae34c8f4e}{Load}}(\textcolor{keyword}{const}\ std::string\&\ filepath,\ \textcolor{keywordtype}{int}\ pointSize);}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00041}00041\ \ \ \ \ SDL\_Surface*\ \doxymbox{\hyperlink{classFont_a75f569c89614b2f1132d7d5bee98db8d}{RenderText}}(\textcolor{keyword}{const}\ std::string\&\ text,\ \textcolor{keyword}{const}\ SDL\_Color\&\ color)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00047}\doxymbox{\hyperlink{classFont_af691b307fad7de811621c465467e98cd}{00047}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classFont_af691b307fad7de811621c465467e98cd}{IsLoaded}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}{m\_Font}}\ !=\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00049}00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00050}\doxymbox{\hyperlink{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}{00050}}\ \ \ \ \ TTF\_Font*\ \doxymbox{\hyperlink{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}{m\_Font}}\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//TTF\ font\ handle}}
+\DoxyCodeLine{\Hypertarget{Font_8h_source_l00051}00051\ \};}
+
+\end{DoxyCode}

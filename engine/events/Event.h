@@ -21,5 +21,5 @@ public:
      */
     virtual EventType GetEventType() const = 0;
 
-    bool Handled = false; //Flag if event has been handled
+    bool Handled = false; //Flag indicating if the event has been handled
 };

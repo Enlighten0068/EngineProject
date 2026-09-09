@@ -11,6 +11,9 @@
  * This class manages loading a font from a file and rendering text
  * to OpenGL textures. It supports setting font size and style.
  *
+ * @note The font is loaded from a TTF file and rendered to SDL_Surface,
+ *       which can then be converted to an OpenGL texture.
+ * @see Texture2D
  */
 class Font{
 public:
@@ -19,7 +22,6 @@ public:
 
     /**
      * @brief Loads a TrueType font from a file.
-     *
      * @param filepath Path to the TTF font file.
      * @param pointSize Font size in points.
      * @return true if the font was loaded successfully, false otherwise.
@@ -45,5 +47,5 @@ public:
     bool IsLoaded() const{ return m_Font != nullptr; }
 
 private:
-    TTF_Font* m_Font = nullptr;  //TTF font handle
+    TTF_Font* m_Font = nullptr; //TTF font handle
 };

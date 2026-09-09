@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classVertexArray" kind="class" language="C++" prot="public">
+    <compoundname>VertexArray</compoundname>
+    <includes refid="VertexArray_8h" local="no">VertexArray.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classVertexArray_1a36bdccb065b3d1ca1c2cddfa5e65033c" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t VertexArray::m_RendererID</definition>
+        <argsstring></argsstring>
+        <name>m_RendererID</name>
+        <qualifiedname>VertexArray::m_RendererID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/VertexArray.h" line="30" column="14" bodyfile="engine/graphics/VertexArray.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classVertexArray_1ab8a2dcce9698f96dac5f9a19c6979d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VertexArray::VertexArray</definition>
+        <argsstring>()</argsstring>
+        <name>VertexArray</name>
+        <qualifiedname>VertexArray::VertexArray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/VertexArray.h" line="16" column="5" bodyfile="engine/graphics/VertexArray.cpp" bodystart="6" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classVertexArray_1a82597eb9daba5ad66dd3cf898e159a95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VertexArray::~VertexArray</definition>
+        <argsstring>()</argsstring>
+        <name>~VertexArray</name>
+        <qualifiedname>VertexArray::~VertexArray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/VertexArray.h" line="17" column="5" bodyfile="engine/graphics/VertexArray.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classVertexArray_1ad5059455f0864327028636c628d5a661" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VertexArray::Bind</definition>
+        <argsstring>() const</argsstring>
+        <name>Bind</name>
+        <qualifiedname>VertexArray::Bind</qualifiedname>
+        <briefdescription>
+<para>Binds the VAO. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/VertexArray.h" line="22" column="10" bodyfile="engine/graphics/VertexArray.cpp" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classVertexArray_1a73f0d868a6c76622bcd57063a2c2d8d4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VertexArray::Unbind</definition>
+        <argsstring>() const</argsstring>
+        <name>Unbind</name>
+        <qualifiedname>VertexArray::Unbind</qualifiedname>
+        <briefdescription>
+<para>Unbinds the VAO. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/VertexArray.h" line="27" column="10" bodyfile="engine/graphics/VertexArray.cpp" bodystart="30" bodyend="32"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>OpenGL Vertex Array Object (VAO) wrapper. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A VAO stores the vertex attribute configuration for a vertex buffer. It encapsulates the state of vertex attributes (position, texture coordinates, etc.).</para>
+<para><simplesect kind="note"><para>The VAO must be bound before configuring vertex attributes. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classVertexBuffer" kindref="compound">VertexBuffer</ref>, <ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>VertexArray</label>
+        <link refid="classVertexArray"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/graphics/VertexArray.h" line="14" column="1" bodyfile="engine/graphics/VertexArray.h" bodystart="14" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classVertexArray_1ad5059455f0864327028636c628d5a661" prot="public" virt="non-virtual"><scope>VertexArray</scope><name>Bind</name></member>
+      <member refid="classVertexArray_1a36bdccb065b3d1ca1c2cddfa5e65033c" prot="private" virt="non-virtual"><scope>VertexArray</scope><name>m_RendererID</name></member>
+      <member refid="classVertexArray_1a73f0d868a6c76622bcd57063a2c2d8d4" prot="public" virt="non-virtual"><scope>VertexArray</scope><name>Unbind</name></member>
+      <member refid="classVertexArray_1ab8a2dcce9698f96dac5f9a19c6979d03" prot="public" virt="non-virtual"><scope>VertexArray</scope><name>VertexArray</name></member>
+      <member refid="classVertexArray_1a82597eb9daba5ad66dd3cf898e159a95" prot="public" virt="non-virtual"><scope>VertexArray</scope><name>~VertexArray</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

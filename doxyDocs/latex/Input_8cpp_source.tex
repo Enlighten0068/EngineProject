@@ -1,0 +1,116 @@
+\doxysection{Input.\+cpp}
+\hypertarget{Input_8cpp_source}{}\label{Input_8cpp_source}\index{engine/core/Input.cpp@{engine/core/Input.cpp}}
+\doxymbox{\hyperlink{Input_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Input_8h}{core/Input.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00006}00006\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_ae35589903d5dd57f1b29df2039bbe562}{Input::s\_KeyState}}[SDL\_SCANCODE\_COUNT]\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00007}00007\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a101419ed1564201345669b7dc3aceab9}{Input::s\_KeyStatePrevious}}[SDL\_SCANCODE\_COUNT]\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00008}00008\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_ab00b8236f27ec4750c2f7445cb1b10f6}{Input::s\_MousePosition}}(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00009}00009\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_a3d3d10de42d33da3c4b05ffdb39795d2}{Input::s\_MouseDelta}}(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00010}00010\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a38cbcc583b20863850fd3f552d9bf460}{Input::s\_MouseButtonState}}[5]\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00011}00011\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a4e47ca136800ff0fdb2ff45cbd4d6e1b}{Input::s\_MouseButtonPrevious}}[5]\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00012}00012\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_ab41e893697e72075e87d4beb5e827155}{Input::s\_ScrollDelta}}(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00013}00013\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_aead1b302f92f40508f394030fb96ff43}{Input::s\_WindowResized}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00014}00014\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classInput_ac9f8548524960a49842cc0a16ec9ac96}{Input::s\_WindowWidth}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00015}00015\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classInput_ac2a9b120cf7963ce08709b5aa96fd8b2}{Input::s\_WindowHeight}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00024}\doxymbox{\hyperlink{classInput_af80dcfde6dbfe39bf3bc0345c75595ce}{00024}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classInput_af80dcfde6dbfe39bf3bc0345c75595ce}{Input::Update}}()\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//Save\ previous\ states\ for\ transition\ detection}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00026}00026\ \ \ \ \ std::memcpy(\doxymbox{\hyperlink{classInput_a101419ed1564201345669b7dc3aceab9}{s\_KeyStatePrevious}},\ \doxymbox{\hyperlink{classInput_ae35589903d5dd57f1b29df2039bbe562}{s\_KeyState}},\ \textcolor{keyword}{sizeof}(\doxymbox{\hyperlink{classInput_ae35589903d5dd57f1b29df2039bbe562}{s\_KeyState}}));}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00027}00027\ \ \ \ \ std::memcpy(\doxymbox{\hyperlink{classInput_a4e47ca136800ff0fdb2ff45cbd4d6e1b}{s\_MouseButtonPrevious}},\ \doxymbox{\hyperlink{classInput_a38cbcc583b20863850fd3f552d9bf460}{s\_MouseButtonState}},\ \textcolor{keyword}{sizeof}(\doxymbox{\hyperlink{classInput_a38cbcc583b20863850fd3f552d9bf460}{s\_MouseButtonState}}));}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//Fetch\ current\ keyboard\ state\ from\ SDL}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}*\ keyboardState\ =\ SDL\_GetKeyboardState(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ SDL\_SCANCODE\_COUNT;\ ++i)\ \doxymbox{\hyperlink{classInput_ae35589903d5dd57f1b29df2039bbe562}{s\_KeyState}}[i]\ =\ keyboardState[i]\ !=\ 0;}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//Reset\ all\ delta\ values}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00034}00034\ \ \ \ \ \doxymbox{\hyperlink{classInput_a3d3d10de42d33da3c4b05ffdb39795d2}{s\_MouseDelta}}\ =\ \doxymbox{\hyperlink{structVector2D_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}}(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00035}00035\ \ \ \ \ \doxymbox{\hyperlink{classInput_ab41e893697e72075e87d4beb5e827155}{s\_ScrollDelta}}\ =\ \doxymbox{\hyperlink{structVector2D_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}}(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00036}00036\ \ \ \ \ \doxymbox{\hyperlink{classInput_aead1b302f92f40508f394030fb96ff43}{s\_WindowResized}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00047}\doxymbox{\hyperlink{classInput_abe4504868f560362185f020c471e9a84}{00047}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classInput_abe4504868f560362185f020c471e9a84}{Input::ProcessEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ event)\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{switch}(event.type)\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_MOUSE\_MOTION:}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_ab00b8236f27ec4750c2f7445cb1b10f6}{s\_MousePosition}}.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\textcolor{keyword}{event}.motion.x);}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_ab00b8236f27ec4750c2f7445cb1b10f6}{s\_MousePosition}}.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\textcolor{keyword}{event}.motion.y);}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_a3d3d10de42d33da3c4b05ffdb39795d2}{s\_MouseDelta}}.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\textcolor{keyword}{event}.motion.xrel);}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_a3d3d10de42d33da3c4b05ffdb39795d2}{s\_MouseDelta}}.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\textcolor{keyword}{event}.motion.yrel);}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_MOUSE\_BUTTON\_DOWN:}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(event.button.button\ >=\ 1\ \&\&\ event.button.button\ <=\ 5)\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_a38cbcc583b20863850fd3f552d9bf460}{s\_MouseButtonState}}[\textcolor{keyword}{event}.button.button\ -\/\ 1]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_MOUSE\_BUTTON\_UP:}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(event.button.button\ >=\ 1\ \&\&\ event.button.button\ <=\ 5)\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_a38cbcc583b20863850fd3f552d9bf460}{s\_MouseButtonState}}[\textcolor{keyword}{event}.button.button\ -\/\ 1]\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_MOUSE\_WHEEL:}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_ab41e893697e72075e87d4beb5e827155}{s\_ScrollDelta}}.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\textcolor{keyword}{event}.wheel.x);}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_ab41e893697e72075e87d4beb5e827155}{s\_ScrollDelta}}.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\textcolor{keyword}{event}.wheel.y);}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_WINDOW\_RESIZED:}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_aead1b302f92f40508f394030fb96ff43}{s\_WindowResized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_ac9f8548524960a49842cc0a16ec9ac96}{s\_WindowWidth}}\ =\ \textcolor{keyword}{event}.window.data1;}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_ac2a9b120cf7963ce08709b5aa96fd8b2}{s\_WindowHeight}}\ =\ \textcolor{keyword}{event}.window.data2;}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00079}00079\ \textcolor{comment}{//Keyboard\ transition\ detection}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00080}\doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{00080}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Input::IsKeyPressed}}(SDL\_Scancode\ key)\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{if}(key\ <\ 0\ ||\ key\ >=\ SDL\_SCANCODE\_COUNT)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classInput_ae35589903d5dd57f1b29df2039bbe562}{s\_KeyState}}[key]\ \&\&\ !\doxymbox{\hyperlink{classInput_a101419ed1564201345669b7dc3aceab9}{s\_KeyStatePrevious}}[key];}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00085}\doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{00085}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Input::IsKeyHeld}}(SDL\_Scancode\ key)\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{if}(key\ <\ 0\ ||\ key\ >=\ SDL\_SCANCODE\_COUNT)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classInput_ae35589903d5dd57f1b29df2039bbe562}{s\_KeyState}}[key];}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00090}\doxymbox{\hyperlink{classInput_a21e529cf7720b4df2906bd44aa73e889}{00090}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a21e529cf7720b4df2906bd44aa73e889}{Input::IsKeyReleased}}(SDL\_Scancode\ key)\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{if}(key\ <\ 0\ ||\ key\ >=\ SDL\_SCANCODE\_COUNT)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{return}\ !\doxymbox{\hyperlink{classInput_ae35589903d5dd57f1b29df2039bbe562}{s\_KeyState}}[key]\ \&\&\ \doxymbox{\hyperlink{classInput_a101419ed1564201345669b7dc3aceab9}{s\_KeyStatePrevious}}[key];}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00095}00095\ \textcolor{comment}{//Mouse\ getters}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00096}\doxymbox{\hyperlink{classInput_a58652e658e6b2a088d0bfbd07753c914}{00096}}\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_a58652e658e6b2a088d0bfbd07753c914}{Input::GetMousePosition}}()\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classInput_ab00b8236f27ec4750c2f7445cb1b10f6}{s\_MousePosition}};\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00097}\doxymbox{\hyperlink{classInput_a53bdc3cb0c879a60bd99396872eb6dcb}{00097}}\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_a53bdc3cb0c879a60bd99396872eb6dcb}{Input::GetMouseDelta}}()\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classInput_a3d3d10de42d33da3c4b05ffdb39795d2}{s\_MouseDelta}};\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00099}00099\ \textcolor{comment}{//Mouse\ button\ transition\ detection}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00100}\doxymbox{\hyperlink{classInput_a1915a90124c915e35e04bc9044d3b575}{00100}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a1915a90124c915e35e04bc9044d3b575}{Input::IsMouseButtonPressed}}(uint8\_t\ button)\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{if}(button\ <\ 1\ ||\ button\ >\ 5)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classInput_a38cbcc583b20863850fd3f552d9bf460}{s\_MouseButtonState}}[button\ -\/\ 1]\ \&\&\ !\doxymbox{\hyperlink{classInput_a4e47ca136800ff0fdb2ff45cbd4d6e1b}{s\_MouseButtonPrevious}}[button\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00105}\doxymbox{\hyperlink{classInput_aec38619f1a5a330430756de75db0aff2}{00105}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_aec38619f1a5a330430756de75db0aff2}{Input::IsMouseButtonHeld}}(uint8\_t\ button)\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{if}(button\ <\ 1\ ||\ button\ >\ 5)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classInput_a38cbcc583b20863850fd3f552d9bf460}{s\_MouseButtonState}}[button\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00108}00108\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00110}\doxymbox{\hyperlink{classInput_acf61c1a35081151e6d382272ba07d051}{00110}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_acf61c1a35081151e6d382272ba07d051}{Input::IsMouseButtonReleased}}(uint8\_t\ button)\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{if}(button\ <\ 1\ ||\ button\ >\ 5)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{return}\ !\doxymbox{\hyperlink{classInput_a38cbcc583b20863850fd3f552d9bf460}{s\_MouseButtonState}}[button\ -\/\ 1]\ \&\&\ \doxymbox{\hyperlink{classInput_a4e47ca136800ff0fdb2ff45cbd4d6e1b}{s\_MouseButtonPrevious}}[button\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00113}00113\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00115}00115\ \textcolor{comment}{//Scroll\ getter}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00116}\doxymbox{\hyperlink{classInput_af4fb33ee8a3ae10ad92ad2adc7e00ebf}{00116}}\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_af4fb33ee8a3ae10ad92ad2adc7e00ebf}{Input::GetScrollDelta}}()\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classInput_ab41e893697e72075e87d4beb5e827155}{s\_ScrollDelta}};\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00118}00118\ \textcolor{comment}{//Window\ state\ getters/setters}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00119}\doxymbox{\hyperlink{classInput_a4ddd4e0a717ca4b564a0491e32e6e280}{00119}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a4ddd4e0a717ca4b564a0491e32e6e280}{Input::WasWindowResized}}()\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classInput_aead1b302f92f40508f394030fb96ff43}{s\_WindowResized}};\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00120}\doxymbox{\hyperlink{classInput_a6fa97576489b0946ce0bcc88e8cbb46a}{00120}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classInput_a6fa97576489b0946ce0bcc88e8cbb46a}{Input::GetWindowWidth}}()\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classInput_ac9f8548524960a49842cc0a16ec9ac96}{s\_WindowWidth}};\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00121}\doxymbox{\hyperlink{classInput_a73ac35d323c9c62b29a0fdb7cd10c84f}{00121}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classInput_a73ac35d323c9c62b29a0fdb7cd10c84f}{Input::GetWindowHeight}}()\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classInput_ac2a9b120cf7963ce08709b5aa96fd8b2}{s\_WindowHeight}};\ \}}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00122}\doxymbox{\hyperlink{classInput_a4d970dee00ab2bbe858a7758cc167d07}{00122}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classInput_a4d970dee00ab2bbe858a7758cc167d07}{Input::SetWindowSize}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)\{}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00123}00123\ \ \ \ \ \doxymbox{\hyperlink{classInput_ac9f8548524960a49842cc0a16ec9ac96}{s\_WindowWidth}}\ =\ width;}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00124}00124\ \ \ \ \ \doxymbox{\hyperlink{classInput_ac2a9b120cf7963ce08709b5aa96fd8b2}{s\_WindowHeight}}\ =\ height;}
+\DoxyCodeLine{\Hypertarget{Input_8cpp_source_l00125}00125\ \}}
+
+\end{DoxyCode}

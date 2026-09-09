@@ -1,0 +1,162 @@
+\doxysection{Scene Class Reference}
+\hypertarget{classScene}{}\label{classScene}\index{Scene@{Scene}}
+
+
+Abstract base class for all scenes in the engine.  
+
+
+
+
+{\ttfamily \+\#include $<$Scene.\+h$>$}
+
+
+
+Inheritance diagram for Scene:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScene__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scene:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classScene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classScene_af6e09d91ebd10ae9cc7c12c39d06386c}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
+\item 
+virtual void \doxymbox{\hyperlink{classScene_ad09d42329f52df55fad0467cd092c9aa}{On\+Enter}} ()=0
+\begin{DoxyCompactList}\small\item\em Called when the scene becomes active. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{classScene_a9824fefa923e5a9db4dca5a23343609b}{On\+Exit}} ()=0
+\begin{DoxyCompactList}\small\item\em Called when the scene is exited. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{classScene_aaede6346f58776bd40efffd55885ab02}{Update}} (float delta\+Time)=0
+\begin{DoxyCompactList}\small\item\em Updates the scene logic. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{classScene_ae24d21e12b34839994ad265662ea24d7}{Render}} ()=0
+\begin{DoxyCompactList}\small\item\em Renders the scene. \end{DoxyCompactList}\item 
+virtual std::\+string \doxymbox{\hyperlink{classScene_ad93511100250c3f3ed736b9ed69fdc6f}{Get\+Name}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the name of the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for all scenes in the engine. 
+
+A scene represents a distinct game state or screen (e.\+g., menu, gameplay, pause). Each scene must implement lifecycle methods: On\+Enter, On\+Exit, Update, and Render.
+
+\begin{DoxyNote}{Note}
+Scenes are managed by the \doxylink{classSceneManager}{Scene\+Manager}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classSceneManager}{Scene\+Manager} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Scene_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{Scene_8h_source}{Scene.\+h}}.
+
+
+
+\label{classScene_doc-constructors}
+\Hypertarget{classScene_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classScene_af6e09d91ebd10ae9cc7c12c39d06386c}\index{Scene@{Scene}!````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}}
+\index{````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Scene()}{\string~Scene()}}
+{\footnotesize\ttfamily \label{classScene_af6e09d91ebd10ae9cc7c12c39d06386c} 
+virtual Scene::\+\texorpdfstring{$\sim$}{\string~}\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{classScene_doc-func-members}
+\Hypertarget{classScene_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classScene_ad93511100250c3f3ed736b9ed69fdc6f}\index{Scene@{Scene}!GetName@{GetName}}
+\index{GetName@{GetName}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily \label{classScene_ad93511100250c3f3ed736b9ed69fdc6f} 
+virtual std::\+string Scene::\+\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the name of the scene. 
+
+\begin{DoxyReturn}{Returns}
+String containing the scene name. 
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{classDemo2DFixedScene_a67590905026e92be48a1e864db868eb9}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_aa6caae608302b160ef184473e1ef0219}{Demo2\+DScene}}, and \doxymbox{\hyperlink{classMenuScene_a8bb0e3e014de1ba6912dc937de6a2a69}{Menu\+Scene}}.
+
+\Hypertarget{classScene_ad09d42329f52df55fad0467cd092c9aa}\index{Scene@{Scene}!OnEnter@{OnEnter}}
+\index{OnEnter@{OnEnter}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{OnEnter()}{OnEnter()}}
+{\footnotesize\ttfamily \label{classScene_ad09d42329f52df55fad0467cd092c9aa} 
+virtual void Scene::\+\+On\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called when the scene becomes active. 
+
+Use this method to initialize scene-\/specific resources. 
+
+Implemented in \doxymbox{\hyperlink{classDemo2DFixedScene_a1daab876b813800575999e0a5374d899}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_a8ffa82c6772da7121ff4d812d9d1c1e5}{Demo2\+DScene}}, and \doxymbox{\hyperlink{classMenuScene_a015085736912c87c4e28ab54ab056e6d}{Menu\+Scene}}.
+
+\Hypertarget{classScene_a9824fefa923e5a9db4dca5a23343609b}\index{Scene@{Scene}!OnExit@{OnExit}}
+\index{OnExit@{OnExit}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{OnExit()}{OnExit()}}
+{\footnotesize\ttfamily \label{classScene_a9824fefa923e5a9db4dca5a23343609b} 
+virtual void Scene::\+\+On\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called when the scene is exited. 
+
+Use this method to clean up scene-\/specific resources. 
+
+Implemented in \doxymbox{\hyperlink{classDemo2DFixedScene_a327f00eb5155cd0b30138787babecba2}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_afce546436c8328555a6c548dcb3a9d90}{Demo2\+DScene}}, and \doxymbox{\hyperlink{classMenuScene_a834e7aa54dd72502876d30114e47cc9e}{Menu\+Scene}}.
+
+\Hypertarget{classScene_ae24d21e12b34839994ad265662ea24d7}\index{Scene@{Scene}!Render@{Render}}
+\index{Render@{Render}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{classScene_ae24d21e12b34839994ad265662ea24d7} 
+virtual void Scene::\+\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Renders the scene. 
+
+
+
+Implemented in \doxymbox{\hyperlink{classDemo2DFixedScene_ad938c557aa7ad055aee8d25171fafad5}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_aa04f40209bc6b113df30f9dcf03bd80c}{Demo2\+DScene}}, and \doxymbox{\hyperlink{classMenuScene_a57787dac0643417ddd147c940c36b93a}{Menu\+Scene}}.
+
+\Hypertarget{classScene_aaede6346f58776bd40efffd55885ab02}\index{Scene@{Scene}!Update@{Update}}
+\index{Update@{Update}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classScene_aaede6346f58776bd40efffd55885ab02} 
+virtual void Scene::\+\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the scene logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \doxylink{classTime}{Time} elapsed since the last frame. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \doxymbox{\hyperlink{classDemo2DFixedScene_ac626aa848bd8d98054f7d2b21a724ac9}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_a960e0d534e6e05bda39f3d9eaaf30deb}{Demo2\+DScene}}, and \doxymbox{\hyperlink{classMenuScene_af2b1e0e9e1c783c8b058f60906add842}{Menu\+Scene}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+scene/\doxymbox{\hyperlink{Scene_8h}{Scene.\+h}}\end{DoxyCompactItemize}

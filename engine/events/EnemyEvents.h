@@ -14,8 +14,13 @@
  */
 class EnemyDiedEvent : public Event{
 public:
+    /**
+     * @brief Constructs an EnemyDiedEvent.
+     * @param position Enemy position at death.
+     * @param scoreValue Score value awarded (default: 10).
+     */
     EnemyDiedEvent(const Vector3D& position, int scoreValue = 10)
-    : m_Position(position), m_ScoreValue(scoreValue) {}
+    : m_Position(position), m_ScoreValue(scoreValue){}
 
     const Vector3D& GetPosition() const{ return m_Position; }
     int GetScoreValue() const{ return m_ScoreValue; }
@@ -24,6 +29,6 @@ public:
     EventType GetEventType() const override{ return EventType::EnemyDied; }
 
 private:
-    Vector3D m_Position;
-    int m_ScoreValue;
+    Vector3D m_Position; //Enemy position
+    int m_ScoreValue; //Score value awarded
 };

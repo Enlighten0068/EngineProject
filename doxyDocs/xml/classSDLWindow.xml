@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classSDLWindow" kind="class" language="C++" prot="public">
+    <compoundname>SDLWindow</compoundname>
+    <includes refid="SDLWindow_8h" local="no">SDLWindow.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSDLWindow_1a4ec4dc1373136604f3d13aac6a9d1b2a" prot="private" static="no" mutable="no">
+        <type>SDL_Window *</type>
+        <definition>SDL_Window* SDLWindow::m_Window</definition>
+        <argsstring></argsstring>
+        <name>m_Window</name>
+        <qualifiedname>SDLWindow::m_Window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/platform/sdl/SDLWindow.h" line="52" column="14" bodyfile="engine/platform/sdl/SDLWindow.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSDLWindow_1a0ebd46794adf3da5005805893212f8b2" prot="private" static="no" mutable="no">
+        <type>SDL_GLContext</type>
+        <definition>SDL_GLContext SDLWindow::m_Context</definition>
+        <argsstring></argsstring>
+        <name>m_Context</name>
+        <qualifiedname>SDLWindow::m_Context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/platform/sdl/SDLWindow.h" line="53" column="17" bodyfile="engine/platform/sdl/SDLWindow.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSDLWindow_1ab081329db76eaeaed1716c2e3bad50b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SDLWindow::SDLWindow</definition>
+        <argsstring>()</argsstring>
+        <name>SDLWindow</name>
+        <qualifiedname>SDLWindow::SDLWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/platform/sdl/SDLWindow.h" line="17" column="3" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="8" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLWindow_1a7a0af0daec54970ff2262b67a6ece281" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SDLWindow::~SDLWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~SDLWindow</name>
+        <qualifiedname>SDLWindow::~SDLWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/platform/sdl/SDLWindow.h" line="18" column="3" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLWindow_1a6c60257844fe3a5fe819183539116e40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDLWindow::Create</definition>
+        <argsstring>(const char *title, int width, int height, bool fullscreen)</argsstring>
+        <name>Create</name>
+        <qualifiedname>SDLWindow::Create</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fullscreen</declname>
+        </param>
+        <briefdescription>
+<para>Creates an SDL window with an OpenGL context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates the SDL window and OpenGL context.</para>
+<para>This method sets OpenGL attributes (version 4.6 Core Profile), creates the window, initializes GLAD (OpenGL function loader), and configures the viewport.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window title. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window width in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window height in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fullscreen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to start in fullscreen mode. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the window and context were created successfully, false otherwise.</para>
+</simplesect>
+It sets OpenGL attributes (currently version 4.6 Core Profile), then creates the SDL window with the OpenGL flag, OpenGL context, initializes GLAD, sets swap interval (vsync) and log driver information then sets the viewport to match the window size.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window title. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window width in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window height in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fullscreen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to start in fullscreen mode. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all steps succeeded, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/platform/sdl/SDLWindow.h" line="33" column="8" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="29" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLWindow_1ac8f370d73ebfe50529fbbba56c100b4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDLWindow::Destroy</definition>
+        <argsstring>()</argsstring>
+        <name>Destroy</name>
+        <qualifiedname>SDLWindow::Destroy</qualifiedname>
+        <briefdescription>
+<para>Destroys the window and OpenGL context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys the OpenGL context and the SDL window.</para>
+<para>The context is destroyed first, then the window. Both pointers are set to nullptr to prevent double deletion. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/platform/sdl/SDLWindow.h" line="38" column="8" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="107" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLWindow_1a63de111915a58b28696a6fd1889acec8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDLWindow::SwapBuffers</definition>
+        <argsstring>()</argsstring>
+        <name>SwapBuffers</name>
+        <qualifiedname>SDLWindow::SwapBuffers</qualifiedname>
+        <briefdescription>
+<para>Swaps the front and back buffers (presents the rendered frame). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Swaps the front and back buffers.</para>
+<para>This presents the rendered frame to the screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/platform/sdl/SDLWindow.h" line="43" column="8" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="124" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLWindow_1ad11eb6f7291bfcedcd7a5cbff75ebd8e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>SDL_Window *</type>
+        <definition>SDL_Window * SDLWindow::GetNativeWindow</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNativeWindow</name>
+        <qualifiedname>SDLWindow::GetNativeWindow</qualifiedname>
+        <briefdescription>
+<para>Gets the native SDL_Window handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the SDL_Window.</para>
+</simplesect>
+Used by other systems (e.g., <ref refid="classInput" kindref="compound">Input</ref>, <ref refid="classEngine" kindref="compound">Engine</ref>) that need direct access to the window.</para>
+<para><simplesect kind="return"><para>Pointer to the SDL_Window. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/platform/sdl/SDLWindow.h" line="49" column="14" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="135" bodyend="137"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Wrapper for an SDL3 window with OpenGL context. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class manages the creation, destruction, and swapping of an SDL window with an OpenGL context. It abstracts the platform-specific window handling and provides a clean interface for the engine.</para>
+<para><simplesect kind="note"><para>The OpenGL context is created with version 4.6 Core Profile. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classEngine" kindref="compound">Engine</ref>, <ref refid="classGraphicsContext" kindref="compound">GraphicsContext</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>SDLWindow</label>
+        <link refid="classSDLWindow"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/platform/sdl/SDLWindow.h" line="15" column="1" bodyfile="engine/platform/sdl/SDLWindow.h" bodystart="15" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classSDLWindow_1a6c60257844fe3a5fe819183539116e40" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>Create</name></member>
+      <member refid="classSDLWindow_1ac8f370d73ebfe50529fbbba56c100b4b" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>Destroy</name></member>
+      <member refid="classSDLWindow_1ad11eb6f7291bfcedcd7a5cbff75ebd8e" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>GetNativeWindow</name></member>
+      <member refid="classSDLWindow_1a0ebd46794adf3da5005805893212f8b2" prot="private" virt="non-virtual"><scope>SDLWindow</scope><name>m_Context</name></member>
+      <member refid="classSDLWindow_1a4ec4dc1373136604f3d13aac6a9d1b2a" prot="private" virt="non-virtual"><scope>SDLWindow</scope><name>m_Window</name></member>
+      <member refid="classSDLWindow_1ab081329db76eaeaed1716c2e3bad50b2" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>SDLWindow</name></member>
+      <member refid="classSDLWindow_1a63de111915a58b28696a6fd1889acec8" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>SwapBuffers</name></member>
+      <member refid="classSDLWindow_1a7a0af0daec54970ff2262b67a6ece281" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>~SDLWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

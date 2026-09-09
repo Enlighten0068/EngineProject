@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="EventDispatcher_8h" kind="file" language="C++">
+    <compoundname>EventDispatcher.h</compoundname>
+    <includes refid="Event_8h" local="yes">events/Event.h</includes>
+    <includedby refid="Engine_8cpp" local="yes">engine/core/Engine.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>events/Event.h</label>
+        <link refid="Event_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/events/EventDispatcher.h</label>
+        <link refid="EventDispatcher_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>events/EventType.h</label>
+        <link refid="EventType_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/core/Engine.cpp</label>
+        <link refid="Engine_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/events/EventDispatcher.h</label>
+        <link refid="EventDispatcher_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classEventDispatcher" prot="public">EventDispatcher</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Event_8h" kindref="compound">events/Event.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classEventDispatcher" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classEventDispatcher_1a14b98277653a576b21c0cd46c3ce4838" kindref="member">EventDispatcher</ref>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20" refid="classEventDispatcher_1a14b98277653a576b21c0cd46c3ce4838" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEventDispatcher_1a14b98277653a576b21c0cd46c3ce4838" kindref="member">EventDispatcher</ref>(<ref refid="classEvent" kindref="compound">Event</ref>&amp;<sp/>event)<sp/>:<sp/><ref refid="classEventDispatcher_1a8c924988641e1ecbdfd2da84d89c8889" kindref="member">m_Event</ref>(event){}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
+<codeline lineno="34" refid="classEventDispatcher_1a1786380511e001fdd2c73511abf7660a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classEventDispatcher_1a1786380511e001fdd2c73511abf7660a" kindref="member">Dispatch</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>F&amp;<sp/>function){</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classEventDispatcher_1a8c924988641e1ecbdfd2da84d89c8889" kindref="member">m_Event</ref>.<ref refid="classEvent_1af14bbd8f69c2778def9462375a0e70f2" kindref="member">GetEventType</ref>()<sp/>==<sp/>T::GetStaticType()){</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEventDispatcher_1a8c924988641e1ecbdfd2da84d89c8889" kindref="member">m_Event</ref>.<ref refid="classEvent_1a8ad0c350a8f569dbb05cf845caa4737e" kindref="member">Handled</ref><sp/>=<sp/>function(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classEventDispatcher_1a8c924988641e1ecbdfd2da84d89c8889" kindref="member">m_Event</ref>));</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43" refid="classEventDispatcher_1a8c924988641e1ecbdfd2da84d89c8889" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEvent" kindref="compound">Event</ref>&amp;<sp/><ref refid="classEventDispatcher_1a8c924988641e1ecbdfd2da84d89c8889" kindref="member">m_Event</ref>;<sp/></highlight><highlight class="comment">//Reference<sp/>to<sp/>the<sp/>event<sp/>being<sp/>dispatched</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/events/EventDispatcher.h"/>
+  </compounddef>
+</doxygen>

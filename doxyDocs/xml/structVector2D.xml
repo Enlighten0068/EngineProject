@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structVector2D" kind="struct" language="C++" prot="public">
+    <compoundname>Vector2D</compoundname>
+    <includes refid="Vector2D_8h" local="no">Vector2D.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structVector2D_1aeb4253ba6555251d010ea4450619029e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Vector2D::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>Vector2D::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector2D.h" line="12" column="11" bodyfile="engine/math/Vector2D.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Vector2D::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>Vector2D::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector2D.h" line="13" column="11" bodyfile="engine/math/Vector2D.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structVector2D_1a98e9997ebb7a629f4db52397d4e0d653" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Vector2D::Vector2D</definition>
+        <argsstring>()</argsstring>
+        <name>Vector2D</name>
+        <qualifiedname>Vector2D::Vector2D</qualifiedname>
+        <briefdescription>
+<para>Default constructor: zero vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector2D.h" line="18" column="5" bodyfile="engine/math/Vector2D.h" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector2D_1a430087719aec1e0021eb360413d84327" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Vector2D::Vector2D</definition>
+        <argsstring>(float xValue, float yValue)</argsstring>
+        <name>Vector2D</name>
+        <qualifiedname>Vector2D::Vector2D</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>xValue</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>yValue</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a vector from two floats. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y component. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector2D.h" line="25" column="5" bodyfile="engine/math/Vector2D.h" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector2D_1ab753e2684f0d7b8dda34664fa35e60d2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D Vector2D::operator+</definition>
+        <argsstring>(const Vector2D &amp;other) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>Vector2D::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector2D" kindref="compound">Vector2D</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Vector addition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New vector with component-wise sum. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector2D.h" line="32" column="14" bodyfile="engine/math/Vector2D.h" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector2D_1a064e055cd20ee42d561f4156108956d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D Vector2D::operator-</definition>
+        <argsstring>(const Vector2D &amp;other) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>Vector2D::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector2D" kindref="compound">Vector2D</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Vector subtraction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector to subtract. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New vector with component-wise difference. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector2D.h" line="41" column="14" bodyfile="engine/math/Vector2D.h" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector2D_1ade6501d6c7e51e0b0184ece75c101bc5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D Vector2D::operator*</definition>
+        <argsstring>(float scalar) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>Vector2D::operator*</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>Scalar multiplication. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Multiplicand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New vector with components multiplied by scalar. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector2D.h" line="50" column="14" bodyfile="engine/math/Vector2D.h" bodystart="50" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector2D_1a12bd5609ad5336e9c3bb9bf30cbd3ec7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D Vector2D::operator/</definition>
+        <argsstring>(float scalar) const</argsstring>
+        <name>operator/</name>
+        <qualifiedname>Vector2D::operator/</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>Scalar division. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Divisor (MUST NOT BE 0). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New vector with components divided by scalar. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector2D.h" line="59" column="14" bodyfile="engine/math/Vector2D.h" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector2D_1ad83e0c1674c68673be6f79c416fac333" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Vector2D::Length</definition>
+        <argsstring>() const</argsstring>
+        <name>Length</name>
+        <qualifiedname>Vector2D::Length</qualifiedname>
+        <briefdescription>
+<para>Computes the Euclidean length (magnitude) of the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Length of the vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector2D.h" line="67" column="11" bodyfile="engine/math/Vector2D.h" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector2D_1a4a1b14c0b7ef08d834b8ba0c2f53f326" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D Vector2D::Normalized</definition>
+        <argsstring>() const</argsstring>
+        <name>Normalized</name>
+        <qualifiedname>Vector2D::Normalized</qualifiedname>
+        <briefdescription>
+<para>Returns a normalized copy of the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Normalized vector (unit length), or itself if length is zero. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector2D.h" line="75" column="14" bodyfile="engine/math/Vector2D.h" bodystart="75" bodyend="79"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>2D vector struct with basic arithmetic operations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Used for positions, directions, and other 2D spatial data. All operators are const and return a new vector. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Vector2D</label>
+        <link refid="structVector2D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/math/Vector2D.h" line="11" column="1" bodyfile="engine/math/Vector2D.h" bodystart="11" bodyend="80"/>
+    <listofallmembers>
+      <member refid="structVector2D_1ad83e0c1674c68673be6f79c416fac333" prot="public" virt="non-virtual"><scope>Vector2D</scope><name>Length</name></member>
+      <member refid="structVector2D_1a4a1b14c0b7ef08d834b8ba0c2f53f326" prot="public" virt="non-virtual"><scope>Vector2D</scope><name>Normalized</name></member>
+      <member refid="structVector2D_1ade6501d6c7e51e0b0184ece75c101bc5" prot="public" virt="non-virtual"><scope>Vector2D</scope><name>operator*</name></member>
+      <member refid="structVector2D_1ab753e2684f0d7b8dda34664fa35e60d2" prot="public" virt="non-virtual"><scope>Vector2D</scope><name>operator+</name></member>
+      <member refid="structVector2D_1a064e055cd20ee42d561f4156108956d8" prot="public" virt="non-virtual"><scope>Vector2D</scope><name>operator-</name></member>
+      <member refid="structVector2D_1a12bd5609ad5336e9c3bb9bf30cbd3ec7" prot="public" virt="non-virtual"><scope>Vector2D</scope><name>operator/</name></member>
+      <member refid="structVector2D_1a98e9997ebb7a629f4db52397d4e0d653" prot="public" virt="non-virtual"><scope>Vector2D</scope><name>Vector2D</name></member>
+      <member refid="structVector2D_1a430087719aec1e0021eb360413d84327" prot="public" virt="non-virtual"><scope>Vector2D</scope><name>Vector2D</name></member>
+      <member refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" prot="public" virt="non-virtual"><scope>Vector2D</scope><name>x</name></member>
+      <member refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" prot="public" virt="non-virtual"><scope>Vector2D</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="EnemyEvents_8h" kind="file" language="C++">
+    <compoundname>EnemyEvents.h</compoundname>
+    <includes refid="Event_8h" local="yes">events/Event.h</includes>
+    <includes refid="Vector3D_8h" local="yes">math/Vector3D.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/events/EnemyEvents.h</label>
+        <link refid="EnemyEvents_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>events/Event.h</label>
+        <link refid="Event_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>events/EventType.h</label>
+        <link refid="EventType_8h"/>
+      </node>
+      <node id="4">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classEnemyDiedEvent" prot="public">EnemyDiedEvent</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Event_8h" kindref="compound">events/Event.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3D_8h" kindref="compound">math/Vector3D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classEnemyDiedEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classEnemyDiedEvent_1a08d712390038a196578dcd7480787f6b" kindref="member">EnemyDiedEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classEvent" kindref="compound">Event</ref>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22" refid="classEnemyDiedEvent_1a08d712390038a196578dcd7480787f6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEnemyDiedEvent_1a08d712390038a196578dcd7480787f6b" kindref="member">EnemyDiedEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>position,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scoreValue<sp/>=<sp/>10)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classEnemyDiedEvent_1a77a177161b33ef294e6014d6ad1dc99c" kindref="member">m_Position</ref>(position),<sp/><ref refid="classEnemyDiedEvent_1a4c307b78629d99dbb5d055911f206cea" kindref="member">m_ScoreValue</ref>(scoreValue){}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classEnemyDiedEvent_1a40f4d9860f414989f5f1915a9a9d5120" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/><ref refid="classEnemyDiedEvent_1a40f4d9860f414989f5f1915a9a9d5120" kindref="member">GetPosition</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classEnemyDiedEvent_1a77a177161b33ef294e6014d6ad1dc99c" kindref="member">m_Position</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="26" refid="classEnemyDiedEvent_1abc2d58a54cb87be48cfe7cd6adca4fca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classEnemyDiedEvent_1abc2d58a54cb87be48cfe7cd6adca4fca" kindref="member">GetScoreValue</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classEnemyDiedEvent_1a4c307b78629d99dbb5d055911f206cea" kindref="member">m_ScoreValue</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classEnemyDiedEvent_1a34f2a4f74c43ff573a53552cfa4348c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classEnemyDiedEvent_1a34f2a4f74c43ff573a53552cfa4348c0" kindref="member">GetStaticType</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faae59ed6209af6696edabb7eddf66bd2eb" kindref="member">EventType::EnemyDied</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="29" refid="classEnemyDiedEvent_1a71e2fc9fee13d00be1838a8f6fd46419" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classEnemyDiedEvent_1a71e2fc9fee13d00be1838a8f6fd46419" kindref="member">GetEventType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faae59ed6209af6696edabb7eddf66bd2eb" kindref="member">EventType::EnemyDied</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32" refid="classEnemyDiedEvent_1a77a177161b33ef294e6014d6ad1dc99c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="classEnemyDiedEvent_1a77a177161b33ef294e6014d6ad1dc99c" kindref="member">m_Position</ref>;<sp/></highlight><highlight class="comment">//Enemy<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classEnemyDiedEvent_1a4c307b78629d99dbb5d055911f206cea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classEnemyDiedEvent_1a4c307b78629d99dbb5d055911f206cea" kindref="member">m_ScoreValue</ref>;<sp/></highlight><highlight class="comment">//Score<sp/>value<sp/>awarded</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/events/EnemyEvents.h"/>
+  </compounddef>
+</doxygen>

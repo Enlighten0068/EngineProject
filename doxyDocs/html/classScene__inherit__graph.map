@@ -1,0 +1,9 @@
+<map id="Scene" name="Scene">
+<area shape="rect" id="Node000001" title="Abstract base class for all scenes in the engine." alt="" coords="246,5,345,189"/>
+<area shape="rect" id="Node000002" href="$classDemo2DFixedScene.html" title="Demo 2D Scene with a fixed camera and enemy stomping mechanics." alt="" coords="5,237,190,846"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,179,204,239,193,263,188,261,199,236,239,174"/>
+<area shape="rect" id="Node000003" href="$classDemo2DScene.html" title="Demo 2D Scene with a dynamic camera that follows the player." alt="" coords="214,304,376,779"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="296,202,298,305,293,304,294,207"/>
+<area shape="rect" id="Node000004" href="$classMenuScene.html" title="Main menu scene with visual text rendering." alt="" coords="400,271,572,812"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="353,174,391,236,406,271,401,271,386,239,353,179"/>
+</map>

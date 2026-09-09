@@ -23,7 +23,7 @@ SoundEffect::~SoundEffect(){
  * @return true if the device was successfully opened or is already open, false on failure.
  */
 bool SoundEffect::OpenDevice(){
-    if (s_DeviceOpen) return true;
+    if(s_DeviceOpen) return true;
 
     SDL_AudioSpec desiredSpec;
     SDL_zero(desiredSpec);
@@ -32,12 +32,12 @@ bool SoundEffect::OpenDevice(){
     desiredSpec.freq = 44100;
 
     s_AudioDevice = SDL_OpenAudioDevice(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &desiredSpec);
-    if (s_AudioDevice == 0){
+    if(s_AudioDevice == 0){
         Log::Error(std::format("Failed to open audio device: {}", SDL_GetError()));
         return false;
     }
 
-    if (!SDL_GetAudioDeviceFormat(s_AudioDevice, &m_DeviceSpec, nullptr)) {
+    if(!SDL_GetAudioDeviceFormat(s_AudioDevice, &m_DeviceSpec, nullptr)){
         Log::Error(std::format("Failed to get actual device format: {}", SDL_GetError()));
         SDL_CloseAudioDevice(s_AudioDevice);
         return false;
@@ -60,11 +60,11 @@ bool SoundEffect::OpenDevice(){
  * @return true if the file was loaded successfully, false otherwise.
  */
 bool SoundEffect::Load(const std::string& filepath){
-    if (!OpenDevice()) return false;
+    if(!OpenDevice()) return false;
 
     //Uses SDL_IOStream struct to convert opened file
     SDL_IOStream* io = SDL_IOFromFile(filepath.c_str(), "rb");
-    if (!io){
+    if(!io){
         Log::Error(std::format("Failed to open .wav file: {}", SDL_GetError()));
         return false;
     }
@@ -74,7 +74,7 @@ bool SoundEffect::Load(const std::string& filepath){
     SDL_AudioSpec spec;
 
     //Loading .wav file into memory
-    if (!SDL_LoadWAV_IO(io, 1, &spec, &data, &dataLen)){
+    if(!SDL_LoadWAV_IO(io, 1, &spec, &data, &dataLen)){
         Log::Error(std::format("Failed to load .wav: {}", SDL_GetError()));
         return false;
     }
@@ -92,29 +92,29 @@ bool SoundEffect::Load(const std::string& filepath){
  * @brief Plays the loaded sound effect once.
  *
  * Creates a new audio stream, pushes the audio data into it, and binds it to the shared device.
- * If there's a previous stream active, unbounds and destroys it to avoid errors.
+ * If there's a previous stream active, unbinds and destroys it to avoid errors.
  *
- * @param volume Volume level.
+ * @param volume Volume level (0-128).
  */
 void SoundEffect::Play(int volume){
-    if (m_Data.empty()){
+    if(m_Data.empty()){
         Log::Warning("Attempted to play unloaded sound.");
         return;
     }
 
-    if (!s_DeviceOpen){
+    if(!s_DeviceOpen){
         Log::Warning("Audio device not open.");
         return;
     }
 
     //Validates device format
-    if (m_DeviceSpec.format == 0){
+    if(m_DeviceSpec.format == 0){
         Log::Error("Device format is invalid. Cannot create audio stream.");
         return;
     }
 
     //Previous stream cleanup - Not the same as SoundEffect::Unload found below
-    if (m_Stream){
+    if(m_Stream){
         SDL_UnbindAudioStream(m_Stream);
         SDL_DestroyAudioStream(m_Stream);
         m_Stream = nullptr;
@@ -122,16 +122,17 @@ void SoundEffect::Play(int volume){
 
     //Creates a new audio stream to convert the .wav format to the device format
     m_Stream = SDL_CreateAudioStream(&m_Spec, &m_DeviceSpec);
-    if (!m_Stream){
+    if(!m_Stream){
         Log::Error(std::format("Failed to create audio stream: {}", SDL_GetError()));
         return;
     }
 
+    //Applies volume gain (0.0 to 1.0)
     float volumeFactor = static_cast<float>(volume) / 128.0f;
     SDL_SetAudioStreamGain(m_Stream, volumeFactor);
 
     //Pushes the audio data into the audio stream
-    if (!SDL_PutAudioStreamData(m_Stream, m_Data.data(), m_Data.size())) {
+    if(!SDL_PutAudioStreamData(m_Stream, m_Data.data(), m_Data.size())){
         Log::Error(std::format("Failed to put data into stream: {}", SDL_GetError()));
         SDL_DestroyAudioStream(m_Stream);
         m_Stream = nullptr;
@@ -139,7 +140,7 @@ void SoundEffect::Play(int volume){
     }
 
     //Binds the stream to the audio device for playback
-    if (!SDL_BindAudioStream(s_AudioDevice, m_Stream)){
+    if(!SDL_BindAudioStream(s_AudioDevice, m_Stream)){
         Log::Error(std::format("Failed to bind audio stream: {}", SDL_GetError()));
         SDL_DestroyAudioStream(m_Stream);
         m_Stream = nullptr;
@@ -159,7 +160,7 @@ void SoundEffect::Play(int volume){
  * Unbinds and destroys the audio stream, clears the audio data, and resets the specification.
  */
 void SoundEffect::Unload(){
-    if (m_Stream){
+    if(m_Stream){
         SDL_UnbindAudioStream(m_Stream);
         SDL_DestroyAudioStream(m_Stream);
         m_Stream = nullptr;
@@ -176,7 +177,7 @@ void SoundEffect::Unload(){
  * and free its associated resources.
  */
 void SoundEffect::CloseAudioDevice(){
-    if (s_AudioDevice != 0){
+    if(s_AudioDevice != 0){
         SDL_CloseAudioDevice(s_AudioDevice);
         s_AudioDevice = 0;
         s_DeviceOpen = false;

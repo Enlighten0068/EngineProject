@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Log_8h" kind="file" language="C++">
+    <compoundname>Log.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">iomanip</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">unordered_map</includes>
+    <includedby refid="SoundEffect_8cpp" local="yes">engine/audio/SoundEffect.cpp</includedby>
+    <includedby refid="SoundManager_8cpp" local="yes">engine/audio/SoundManager.cpp</includedby>
+    <includedby refid="Application_8cpp" local="yes">engine/core/Application.cpp</includedby>
+    <includedby refid="CameraController_8cpp" local="yes">engine/core/CameraController.cpp</includedby>
+    <includedby refid="Engine_8cpp" local="yes">engine/core/Engine.cpp</includedby>
+    <includedby refid="FpsCounter_8cpp" local="yes">engine/core/FpsCounter.cpp</includedby>
+    <includedby refid="GamepadManager_8cpp" local="yes">engine/core/GamepadManager.cpp</includedby>
+    <includedby refid="Input_8cpp" local="yes">engine/core/Input.cpp</includedby>
+    <includedby refid="PlayerController_8cpp" local="yes">engine/core/PlayerController.cpp</includedby>
+    <includedby refid="Demo2DFixedScene_8cpp" local="yes">engine/demo/Demo2DFixedScene.cpp</includedby>
+    <includedby refid="Demo2DScene_8cpp" local="yes">engine/demo/Demo2DScene.cpp</includedby>
+    <includedby refid="Assert_8h" local="yes">engine/diagnostics/Assert.h</includedby>
+    <includedby refid="Log_8cpp" local="yes">engine/diagnostics/Log.cpp</includedby>
+    <includedby refid="SDLEventTranslator_8cpp" local="yes">engine/events/SDLEventTranslator.cpp</includedby>
+    <includedby refid="Font_8cpp" local="yes">engine/graphics/Font.cpp</includedby>
+    <includedby refid="GraphicsContext_8cpp" local="yes">engine/graphics/GraphicsContext.cpp</includedby>
+    <includedby refid="IndexBuffer_8cpp" local="yes">engine/graphics/IndexBuffer.cpp</includedby>
+    <includedby refid="Shader_8cpp" local="yes">engine/graphics/Shader.cpp</includedby>
+    <includedby refid="Texture2D_8cpp" local="yes">engine/graphics/Texture2D.cpp</includedby>
+    <includedby refid="VertexArray_8cpp" local="yes">engine/graphics/VertexArray.cpp</includedby>
+    <includedby refid="VertexBuffer_8cpp" local="yes">engine/graphics/VertexBuffer.cpp</includedby>
+    <includedby refid="SDLWindow_8cpp" local="yes">engine/platform/sdl/SDLWindow.cpp</includedby>
+    <includedby refid="Renderer_8cpp" local="yes">engine/renderer/Renderer.cpp</includedby>
+    <includedby refid="ResourceManager_8cpp" local="yes">engine/resources/ResourceManager.cpp</includedby>
+    <includedby refid="Camera2D_8cpp" local="yes">engine/scene/Camera2D.cpp</includedby>
+    <includedby refid="ECSScene_8cpp" local="yes">engine/scene/ECSScene.cpp</includedby>
+    <includedby refid="GameWorld_8cpp" local="yes">engine/scene/GameWorld.cpp</includedby>
+    <includedby refid="MenuScene_8cpp" local="yes">engine/scene/MenuScene.cpp</includedby>
+    <includedby refid="SceneManager_8cpp" local="yes">engine/scene/SceneManager.cpp</includedby>
+    <includedby refid="EnemySystem_8h" local="yes">engine/systems/EnemySystem.h</includedby>
+    <includedby refid="RenderSystem_8h" local="yes">engine/systems/RenderSystem.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>chrono</label>
+      </node>
+      <node id="3">
+        <label>fstream</label>
+      </node>
+      <node id="5">
+        <label>iomanip</label>
+      </node>
+      <node id="6">
+        <label>sstream</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/audio/SoundEffect.cpp</label>
+        <link refid="SoundEffect_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/audio/SoundManager.cpp</label>
+        <link refid="SoundManager_8cpp"/>
+      </node>
+      <node id="4">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5">
+        <label>engine/core/CameraController.cpp</label>
+        <link refid="CameraController_8cpp"/>
+      </node>
+      <node id="6">
+        <label>engine/core/Engine.cpp</label>
+        <link refid="Engine_8cpp"/>
+      </node>
+      <node id="7">
+        <label>engine/core/FpsCounter.cpp</label>
+        <link refid="FpsCounter_8cpp"/>
+      </node>
+      <node id="8">
+        <label>engine/core/GamepadManager.cpp</label>
+        <link refid="GamepadManager_8cpp"/>
+      </node>
+      <node id="9">
+        <label>engine/core/Input.cpp</label>
+        <link refid="Input_8cpp"/>
+      </node>
+      <node id="10">
+        <label>engine/core/PlayerController.cpp</label>
+        <link refid="PlayerController_8cpp"/>
+      </node>
+      <node id="11">
+        <label>engine/demo/Demo2DFixedScene.cpp</label>
+        <link refid="Demo2DFixedScene_8cpp"/>
+      </node>
+      <node id="32">
+        <label>engine/demo/Demo2DFixedScene.h</label>
+        <link refid="Demo2DFixedScene_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>engine/demo/Demo2DScene.cpp</label>
+        <link refid="Demo2DScene_8cpp"/>
+      </node>
+      <node id="13">
+        <label>engine/diagnostics/Assert.h</label>
+        <link refid="Assert_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>engine/diagnostics/Log.cpp</label>
+        <link refid="Log_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>engine/events/SDLEventTranslator.cpp</label>
+        <link refid="SDLEventTranslator_8cpp"/>
+      </node>
+      <node id="17">
+        <label>engine/graphics/Font.cpp</label>
+        <link refid="Font_8cpp"/>
+      </node>
+      <node id="18">
+        <label>engine/graphics/GraphicsContext.cpp</label>
+        <link refid="GraphicsContext_8cpp"/>
+      </node>
+      <node id="19">
+        <label>engine/graphics/IndexBuffer.cpp</label>
+        <link refid="IndexBuffer_8cpp"/>
+      </node>
+      <node id="20">
+        <label>engine/graphics/Shader.cpp</label>
+        <link refid="Shader_8cpp"/>
+      </node>
+      <node id="21">
+        <label>engine/graphics/Texture2D.cpp</label>
+        <link refid="Texture2D_8cpp"/>
+      </node>
+      <node id="22">
+        <label>engine/graphics/VertexArray.cpp</label>
+        <link refid="VertexArray_8cpp"/>
+      </node>
+      <node id="23">
+        <label>engine/graphics/VertexBuffer.cpp</label>
+        <link refid="VertexBuffer_8cpp"/>
+      </node>
+      <node id="14">
+        <label>engine/platform/sdl/SDLWindow.cpp</label>
+        <link refid="SDLWindow_8cpp"/>
+      </node>
+      <node id="24">
+        <label>engine/renderer/Renderer.cpp</label>
+        <link refid="Renderer_8cpp"/>
+      </node>
+      <node id="25">
+        <label>engine/resources/ResourceManager.cpp</label>
+        <link refid="ResourceManager_8cpp"/>
+      </node>
+      <node id="26">
+        <label>engine/scene/Camera2D.cpp</label>
+        <link refid="Camera2D_8cpp"/>
+      </node>
+      <node id="27">
+        <label>engine/scene/ECSScene.cpp</label>
+        <link refid="ECSScene_8cpp"/>
+      </node>
+      <node id="28">
+        <label>engine/scene/GameWorld.cpp</label>
+        <link refid="GameWorld_8cpp"/>
+      </node>
+      <node id="29">
+        <label>engine/scene/MenuScene.cpp</label>
+        <link refid="MenuScene_8cpp"/>
+      </node>
+      <node id="30">
+        <label>engine/scene/SceneManager.cpp</label>
+        <link refid="SceneManager_8cpp"/>
+      </node>
+      <node id="31">
+        <label>engine/systems/EnemySystem.h</label>
+        <link refid="EnemySystem_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>engine/systems/RenderSystem.h</label>
+        <link refid="RenderSystem_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classLog" prot="public">Log</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>LogLevel</name>
+        <enumvalue id="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9aa603905470e2a5b8c13e96b579ef0dba" prot="public">
+          <name>Debug</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9a4059b0251f66a18cb56f544728796875" prot="public">
+          <name>Info</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9a0eaadb4fcb48a0a0ed7bc9868be9fbaa" prot="public">
+          <name>Warning</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9a902b0d55fddef6f8d651fe1035b7d4bd" prot="public">
+          <name>Error</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classLog" kindref="compound">Log</ref> levels for filtering messages. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The log level determines which messages are written to the console and log file. Messages with a level below the current minimum level are ignored. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="17" column="1" bodyfile="engine/diagnostics/Log.h" bodystart="17" bodyend="22"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iomanip&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref>{</highlight></codeline>
+<codeline lineno="18" refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9aa603905470e2a5b8c13e96b579ef0dba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9aa603905470e2a5b8c13e96b579ef0dba" kindref="member">Debug</ref>,<sp/><sp/><sp/></highlight><highlight class="comment">//Debug<sp/>messages<sp/>(lowest<sp/>priority)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9a4059b0251f66a18cb56f544728796875" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9a4059b0251f66a18cb56f544728796875" kindref="member">Info</ref>,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Informational<sp/>messages</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9a0eaadb4fcb48a0a0ed7bc9868be9fbaa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9a0eaadb4fcb48a0a0ed7bc9868be9fbaa" kindref="member">Warning</ref>,<sp/></highlight><highlight class="comment">//Warning<sp/>messages</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9a902b0d55fddef6f8d651fe1035b7d4bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9a902b0d55fddef6f8d651fe1035b7d4bd" kindref="member">Error</ref><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Error<sp/>messages<sp/>(highest<sp/>priority)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classLog" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classLog" kindref="compound">Log</ref>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLog_1af3ff6e05d74f1950e7ee991ae4fa7461" kindref="member">Initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>logDir<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;logs/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLog_1ae32d1e5b199330781e5ce6b87f5e61c8" kindref="member">Shutdown</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Logging<sp/>Methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Info</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLog_1a5a5a1c297ed72ab2f850d0d01ae00aaa" kindref="member">Warning</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Error</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLog_1a112833cbd05320dac0790f50eb4ab25e" kindref="member">InfoThrottled</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>intervalSeconds<sp/>=<sp/>2.0f);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classLog_1a9d61d43e442e0298e48185c7568708c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLog_1a9d61d43e442e0298e48185c7568708c5" kindref="member">SetMinLevel</ref>(<ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref><sp/>level){<sp/><ref refid="classLog_1a3dd36397bb30af3c6ccd514d3e8468e0" kindref="member">s_MinLevel</ref><sp/>=<sp/>level;<sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="81" refid="classLog_1a10767fd008319be02fc0125dd20ba948" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::ofstream<sp/><ref refid="classLog_1a10767fd008319be02fc0125dd20ba948" kindref="member">s_File</ref>;<sp/></highlight><highlight class="comment">//Log<sp/>file<sp/>stream</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classLog_1a3dd36397bb30af3c6ccd514d3e8468e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref><sp/><ref refid="classLog_1a3dd36397bb30af3c6ccd514d3e8468e0" kindref="member">s_MinLevel</ref>;<sp/></highlight><highlight class="comment">//Minimum<sp/>log<sp/>level<sp/>for<sp/>filtering</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classLog_1ae21d84fef839b5bfb9e1f18fa0c3f6b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classLog_1ae21d84fef839b5bfb9e1f18fa0c3f6b4" kindref="member">s_Initialized</ref>;<sp/></highlight><highlight class="comment">//Flag<sp/>indicating<sp/>if<sp/>logging<sp/>is<sp/>initialized</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLog_1ad0e82be038f63f7959e64333f73fbf13" kindref="member">Write</ref>(<ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref><sp/>level,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message);<sp/></highlight><highlight class="comment">//Writes<sp/>a<sp/>log<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classLog_1a90dd7d410a46e5b840949f3260555f10" kindref="member">GenerateTimestampFilename</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>logDir);<sp/></highlight><highlight class="comment">//Generates<sp/>log<sp/>filename</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classLog_1a323ff35e896a21198efc5e472d3ac113" kindref="member">LevelToString</ref>(<ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref><sp/>level);<sp/></highlight><highlight class="comment">//Converts<sp/>LogLevel<sp/>to<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classLog_1ab91281939d32cf870499a85edcb820e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unordered_map&lt;std::string,<sp/>float&gt;<sp/><ref refid="classLog_1ab91281939d32cf870499a85edcb820e3" kindref="member">s_LastLogTime</ref>;<sp/></highlight><highlight class="comment">//Last<sp/>log<sp/>time<sp/>per<sp/>key<sp/>for<sp/>throttling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//static<sp/>std::mutex<sp/>s_LogMutex;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/diagnostics/Log.h"/>
+  </compounddef>
+</doxygen>

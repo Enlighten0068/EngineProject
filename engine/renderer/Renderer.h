@@ -2,6 +2,7 @@
 
 #include "math/Matrix4.h"
 
+//Forward declarations
 class Shader;
 class VertexArray;
 class IndexBuffer;
@@ -20,7 +21,6 @@ class Texture2D;
  */
 class Renderer{
 public:
-
     /**
      * @brief Draws a flat (untextured) quad.
      *
@@ -45,7 +45,8 @@ public:
      * @param model The model matrix (position, rotation, scale).
      * @param view The view matrix (camera position).
      * @param projection The projection matrix (orthographic or perspective).
-     * @param tileScale The texture tile scale (number of repetitions per unit).
+     * @param tileScaleX Number of texture repetitions along the X axis (default: 1.0).
+     * @param tileScaleY Number of texture repetitions along the Y axis (default: 1.0).
      */
     static void DrawTexturedQuad(Shader& shader, VertexArray& vertexArray, IndexBuffer& indexBuffer, Texture2D& texture,
                                  const Matrix4& model, const Matrix4& view, const Matrix4& projection,

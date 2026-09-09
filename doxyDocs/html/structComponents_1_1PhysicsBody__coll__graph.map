@@ -1,0 +1,5 @@
+<map id="Components::PhysicsBody" name="Components::PhysicsBody">
+<area shape="rect" id="Node000001" title="Adds physics properties to an entity." alt="" coords="5,285,188,379"/>
+<area shape="rect" id="Node000002" href="$structVector3D.html" title="3D vector struct with basic arithmetic operations." alt="" coords="45,5,148,212"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,209,99,269,94,268,95,214"/>
+</map>

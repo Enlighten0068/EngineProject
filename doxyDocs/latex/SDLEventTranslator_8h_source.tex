@@ -1,0 +1,37 @@
+\doxysection{SDLEvent\+Translator.\+h}
+\hypertarget{SDLEventTranslator_8h_source}{}\label{SDLEventTranslator_8h_source}\index{engine/events/SDLEventTranslator.h@{engine/events/SDLEventTranslator.h}}
+\doxymbox{\hyperlink{SDLEventTranslator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Event_8h}{events/Event.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{KeyEvent_8h}{events/KeyEvent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{MouseEvent_8h}{events/MouseEvent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{WindowEvent_8h}{events/WindowEvent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{EventBus_8h}{events/EventBus.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00019}\doxymbox{\hyperlink{classSDLEventTranslator}{00019}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classSDLEventTranslator_a5ee49053d4da68c3516eb8457140b0c8}{SDLEventTranslator}}\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00020}00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00021}\doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{00021}}\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{UnhandledCallback}}\ =\ std::function<void(\textcolor{keyword}{const}\ SDL\_Event\&)>;\ \textcolor{comment}{//Callback\ for\ unhandled\ events}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classSDLEventTranslator_a3f9759218967a1c0aa87e8e8208de25d}{TranslateAndDispatch}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_a3667c0593acbe43be9c7e88fc1c1d05a}{SetUnhandledCallback}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{UnhandledCallback}}\&\ callback);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00039}00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00040}\doxymbox{\hyperlink{classSDLEventTranslator_a20e49284964400b64b5ab2978c84d0af}{00040}}\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{UnhandledCallback}}\ \doxymbox{\hyperlink{classSDLEventTranslator_a20e49284964400b64b5ab2978c84d0af}{s\_UnhandledCallback}};\ \textcolor{comment}{//Callback\ for\ unhandled\ events}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//Dispatch\ methods\ for\ each\ event\ type}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_ab8c64c13f07e44ec781e7a4122f3bbae}{DispatchKeyEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_a680ae74d8df0178b6f12b2060041fd48}{DispatchMouseMotionEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_ae9e18c1d2fed7acb98e42d7b66de8977}{DispatchMouseButtonEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_a35af4df9452cb3de586453ccbf851e34}{DispatchMouseWheelEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_ac79ddf4fb80535293db3ea36f5e96907}{DispatchWindowEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00049}\doxymbox{\hyperlink{classSDLEventTranslator_a5ee49053d4da68c3516eb8457140b0c8}{00049}}\ \ \ \ \ \doxymbox{\hyperlink{classSDLEventTranslator_a5ee49053d4da68c3516eb8457140b0c8}{SDLEventTranslator}}()\ =\ \textcolor{keyword}{delete};\ \textcolor{comment}{//Prevent\ instantiation}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00050}\doxymbox{\hyperlink{classSDLEventTranslator_aa29f382112025cf21607da25366a8b64}{00050}}\ \ \ \ \ \doxymbox{\hyperlink{classSDLEventTranslator_aa29f382112025cf21607da25366a8b64}{\string~SDLEventTranslator}}()\ =\ \textcolor{keyword}{delete};\ \textcolor{comment}{//Prevent\ destruction}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8h_source_l00051}00051\ \};}
+
+\end{DoxyCode}

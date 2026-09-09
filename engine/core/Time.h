@@ -11,13 +11,13 @@
 class Time{
 public:
     /**
-     * @brief Get the time elapsed since the last frame.
+     * @brief Gets the time elapsed since the last frame.
      * @return Delta time in seconds.
      */
     static float DeltaTime();
 
     /**
-     * @brief Get the total time elapsed since application startup.
+     * @brief Gets the total time elapsed since application startup.
      * @return Elapsed time in seconds.
      */
     static float ElapsedTime();
@@ -31,6 +31,6 @@ public:
     static void Update();
 
 private:
-    static float s_DeltaTime;
-    static float s_ElapsedTime;
+    static float s_DeltaTime; //Time between frames
+    static float s_ElapsedTime; //Total elapsed time since startup
 };

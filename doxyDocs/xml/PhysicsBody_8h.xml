@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="PhysicsBody_8h" kind="file" language="C++">
+    <compoundname>PhysicsBody.h</compoundname>
+    <includes refid="Vector3D_8h" local="yes">math/Vector3D.h</includes>
+    <includedby refid="EnemySystem_8h" local="yes">engine/systems/EnemySystem.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/components/PhysicsBody.h</label>
+        <link refid="PhysicsBody_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>engine/components/PhysicsBody.h</label>
+        <link refid="PhysicsBody_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5">
+        <label>engine/demo/Demo2DFixedScene.cpp</label>
+        <link refid="Demo2DFixedScene_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/demo/Demo2DFixedScene.h</label>
+        <link refid="Demo2DFixedScene_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>engine/scene/MenuScene.cpp</label>
+        <link refid="MenuScene_8cpp"/>
+      </node>
+      <node id="2">
+        <label>engine/systems/EnemySystem.h</label>
+        <link refid="EnemySystem_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structComponents_1_1PhysicsBody" prot="public">Components::PhysicsBody</innerclass>
+    <innernamespace refid="namespaceComponents">Components</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3D_8h" kindref="compound">math/Vector3D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceComponents" kindref="compound">Components</ref>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="structComponents_1_1PhysicsBody" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structComponents_1_1PhysicsBody" kindref="compound">PhysicsBody</ref>{</highlight></codeline>
+<codeline lineno="18" refid="structComponents_1_1PhysicsBody_1a3210a86ca2ea87ab8ce3ff1bda713ade" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structComponents_1_1PhysicsBody_1a3210a86ca2ea87ab8ce3ff1bda713ade" kindref="member">Velocity</ref>{0.0f,<sp/>0.0f,<sp/>0.0f};<sp/></highlight><highlight class="comment">//Current<sp/>velocity<sp/>in<sp/>units<sp/>per<sp/>second</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="structComponents_1_1PhysicsBody_1a12befd41867fdde0774a00c766457a26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structComponents_1_1PhysicsBody_1a12befd41867fdde0774a00c766457a26" kindref="member">IsGrounded</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Flag<sp/>indicating<sp/>if<sp/>the<sp/>entity<sp/>is<sp/>standing<sp/>on<sp/>a<sp/>surface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="structComponents_1_1PhysicsBody_1afab2ab2824663679e684cb92e4d0a2ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structComponents_1_1PhysicsBody_1afab2ab2824663679e684cb92e4d0a2ed" kindref="member">GravityScale</ref><sp/>=<sp/>1.0f;<sp/></highlight><highlight class="comment">//Multiplier<sp/>for<sp/>gravity<sp/>(1.0<sp/>=<sp/>normal<sp/>gravity)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/components/PhysicsBody.h"/>
+  </compounddef>
+</doxygen>

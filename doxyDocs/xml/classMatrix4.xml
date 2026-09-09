@@ -1,0 +1,430 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classMatrix4" kind="class" language="C++" prot="public">
+    <compoundname>Matrix4</compoundname>
+    <includes refid="Matrix4_8h" local="no">Matrix4.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Matrix4::m_Data[16]</definition>
+        <argsstring>[16]</argsstring>
+        <name>m_Data</name>
+        <qualifiedname>Matrix4::m_Data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Matrix4.h" line="82" column="11" bodyfile="engine/math/Matrix4.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Matrix4::Matrix4</definition>
+        <argsstring>()</argsstring>
+        <name>Matrix4</name>
+        <qualifiedname>Matrix4::Matrix4</qualifiedname>
+        <briefdescription>
+<para>Constructs a zero-initialized matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Default constructor: initializes all matrix elements to zero. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Matrix4.h" line="24" column="5" bodyfile="engine/math/Matrix4.cpp" bodystart="6" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classMatrix4_1a8ac4bc2827badac74be9b12d788e4d1c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float *</type>
+        <definition>const float * Matrix4::Data</definition>
+        <argsstring>() const</argsstring>
+        <name>Data</name>
+        <qualifiedname>Matrix4::Data</qualifiedname>
+        <briefdescription>
+<para>Returns a pointer to the underlying data array. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a pointer to the internal data array.</para>
+<para><simplesect kind="return"><para>Pointer to the first element of the 16-float array.</para>
+</simplesect>
+<simplesect kind="return"><para>Pointer to the first element. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Matrix4.h" line="30" column="17" bodyfile="engine/math/Matrix4.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classMatrix4_1a07a0a50c8e4d085e289a9d383040202d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMatrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 Matrix4::operator*</definition>
+        <argsstring>(const Matrix4 &amp;other) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>Matrix4::operator*</qualifiedname>
+        <param>
+          <type>const <ref refid="classMatrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Matrix multiplication operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix to multiply with (on the right). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Result of <computeroutput>this * other</computeroutput>.</para>
+</simplesect>
+Performs standard matrix multiplication: result = this * other. The order matters: this is applied first, then other.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The matrix to multiply with (on the right). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Result of this * other. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Matrix4.h" line="57" column="13" bodyfile="engine/math/Matrix4.cpp" bodystart="74" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classMatrix4_1ae114a47efddacad2207eadac5f532098" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMatrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 Matrix4::Identity</definition>
+        <argsstring>()</argsstring>
+        <name>Identity</name>
+        <qualifiedname>Matrix4::Identity</qualifiedname>
+        <briefdescription>
+<para>Creates an identity matrix (1 on the main diagonal, 0 elsewhere). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an identity matrix.</para>
+<para><simplesect kind="return"><para>Identity matrix. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Matrix4.h" line="36" column="20" bodyfile="engine/math/Matrix4.cpp" bodystart="24" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classMatrix4_1a35fb272e82fbfc17cdf2d75c858f5da7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMatrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 Matrix4::Translation</definition>
+        <argsstring>(const Vector3D &amp;position)</argsstring>
+        <name>Translation</name>
+        <qualifiedname>Matrix4::Translation</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>Creates a translation matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Translation vector (x, y, z). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Translation matrix.</para>
+</simplesect>
+The matrix translates points by the given vector.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Translation vector (x, y, z). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Translation matrix. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Matrix4.h" line="43" column="20" bodyfile="engine/math/Matrix4.cpp" bodystart="41" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classMatrix4_1aa3a30984ce9f309c23827d5e1cde0fdc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMatrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 Matrix4::Scale</definition>
+        <argsstring>(const Vector3D &amp;scale)</argsstring>
+        <name>Scale</name>
+        <qualifiedname>Matrix4::Scale</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+<para>Creates a scale matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scale factors (x, y, z). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Scale matrix.</para>
+</simplesect>
+The matrix scales points along the X, Y, and Z axes by the given factors.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scale factors (x, y, z). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Scale matrix. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Matrix4.h" line="50" column="20" bodyfile="engine/math/Matrix4.cpp" bodystart="57" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classMatrix4_1a8cc70f5111adc0c13fed0521a31b80b6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMatrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 Matrix4::Orthographic</definition>
+        <argsstring>(float left, float right, float bottom, float top, float nearPlane, float farPlane)</argsstring>
+        <name>Orthographic</name>
+        <qualifiedname>Matrix4::Orthographic</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>right</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>bottom</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>top</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>nearPlane</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>farPlane</declname>
+        </param>
+        <briefdescription>
+<para>Creates an orthographic projection matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This maps a 3D volume (left-right, bottom-top, near-far) to a 2D screen.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left clipping plane. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right clipping plane. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bottom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bottom clipping plane. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>top</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Top clipping plane. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nearPlane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Near clipping plane. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>farPlane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Far clipping plane. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Orthographic projection matrix.</para>
+</simplesect>
+This maps a 3D region (a box) to a 2D projection. The near and far planes are positive distances.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left clipping plane. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right clipping plane. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bottom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bottom clipping plane. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>top</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Top clipping plane. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nearPlane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Near clipping plane (positive). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>farPlane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Far clipping plane (positive). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Orthographic projection matrix. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Matrix4.h" line="72" column="20" bodyfile="engine/math/Matrix4.cpp" bodystart="103" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classMatrix4_1aaa53c3d6bcda5ac9c4d8568a54d3d543" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classMatrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 Matrix4::RotationZ</definition>
+        <argsstring>(float angleRadians)</argsstring>
+        <name>RotationZ</name>
+        <qualifiedname>Matrix4::RotationZ</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>angleRadians</declname>
+        </param>
+        <briefdescription>
+<para>Creates a rotation matrix around the Z-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>angleRadians</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rotation angle in radians. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation matrix (Z-axis roll).</para>
+</simplesect>
+This rotates points in the coordinate plane by the given angle.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>angleRadians</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rotation angle in radians. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation matrix (Z-axis roll). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Matrix4.h" line="79" column="20" bodyfile="engine/math/Matrix4.cpp" bodystart="127" bodyend="139"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>4x4 matrix class for 3D transformations and projections. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The matrix is stored in column-major order (OpenGL style), meaning the data array is organized as:</para>
+<para>[ col0, col1, col2, col3 ]</para>
+<para>where each column is a Vector4.</para>
+<para><simplesect kind="note"><para>All static methods return a new <ref refid="classMatrix4" kindref="compound">Matrix4</ref> instance. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structVector3D" kindref="compound">Vector3D</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Matrix4</label>
+        <link refid="classMatrix4"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/math/Matrix4.h" line="19" column="1" bodyfile="engine/math/Matrix4.h" bodystart="19" bodyend="83"/>
+    <listofallmembers>
+      <member refid="classMatrix4_1a8ac4bc2827badac74be9b12d788e4d1c" prot="public" virt="non-virtual"><scope>Matrix4</scope><name>Data</name></member>
+      <member refid="classMatrix4_1ae114a47efddacad2207eadac5f532098" prot="public" virt="non-virtual"><scope>Matrix4</scope><name>Identity</name></member>
+      <member refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" prot="private" virt="non-virtual"><scope>Matrix4</scope><name>m_Data</name></member>
+      <member refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" prot="public" virt="non-virtual"><scope>Matrix4</scope><name>Matrix4</name></member>
+      <member refid="classMatrix4_1a07a0a50c8e4d085e289a9d383040202d" prot="public" virt="non-virtual"><scope>Matrix4</scope><name>operator*</name></member>
+      <member refid="classMatrix4_1a8cc70f5111adc0c13fed0521a31b80b6" prot="public" virt="non-virtual"><scope>Matrix4</scope><name>Orthographic</name></member>
+      <member refid="classMatrix4_1aaa53c3d6bcda5ac9c4d8568a54d3d543" prot="public" virt="non-virtual"><scope>Matrix4</scope><name>RotationZ</name></member>
+      <member refid="classMatrix4_1aa3a30984ce9f309c23827d5e1cde0fdc" prot="public" virt="non-virtual"><scope>Matrix4</scope><name>Scale</name></member>
+      <member refid="classMatrix4_1a35fb272e82fbfc17cdf2d75c858f5da7" prot="public" virt="non-virtual"><scope>Matrix4</scope><name>Translation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

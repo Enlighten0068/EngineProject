@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Camera2D_8cpp" kind="file" language="C++">
+    <compoundname>Camera2D.cpp</compoundname>
+    <includes refid="Log_8h" local="yes">diagnostics/Log.h</includes>
+    <includes refid="Camera2D_8h" local="yes">scene/Camera2D.h</includes>
+    <includes refid="Matrix4_8h" local="yes">math/Matrix4.h</includes>
+    <includes local="no">format</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="1">
+        <label>engine/scene/Camera2D.cpp</label>
+        <link refid="Camera2D_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>scene/Camera2D.h</label>
+        <link refid="Camera2D_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>chrono</label>
+      </node>
+      <node id="12">
+        <label>cmath</label>
+      </node>
+      <node id="13">
+        <label>format</label>
+      </node>
+      <node id="4">
+        <label>fstream</label>
+      </node>
+      <node id="6">
+        <label>iomanip</label>
+      </node>
+      <node id="7">
+        <label>sstream</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Log_8h" kindref="compound">diagnostics/Log.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera2D_8h" kindref="compound">scene/Camera2D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Matrix4_8h" kindref="compound">math/Matrix4.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;format&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classCamera2D_1a08e4985039e813d649881fc1e9de295e" refkind="member"><highlight class="normal"><ref refid="classCamera2D_1a08e4985039e813d649881fc1e9de295e" kindref="member">Camera2D::Camera2D</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>right,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottom,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>nearPlane,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>farPlane)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">:<sp/><ref refid="classCamera2D_1ac5b66f8164de772cefb2dd90d18199d3" kindref="member">m_Position</ref>(0.0f,<sp/>0.0f,<sp/>0.0f),<sp/><ref refid="classCamera2D_1a9eef4aba3d315743afb6afbb89bae3c6" kindref="member">m_Rotation</ref>(0.0f),<sp/><ref refid="classCamera2D_1a591fefdf777617222afbfa7b9d0a70bc" kindref="member">m_Zoom</ref>(1.0f),</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><ref refid="classCamera2D_1a3895006dcd93f387d2cdb9ebdda506c0" kindref="member">m_Width</ref>((right<sp/>-<sp/>left)<sp/>/<sp/>2.0f),<sp/><ref refid="classCamera2D_1a7093ce0f3db7658bd5c7e579c1e8cf47" kindref="member">m_Height</ref>((top<sp/>-<sp/>bottom)<sp/>/<sp/>2.0f),</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="classCamera2D_1a651b5a30b9359cc06ebd5d0a6270775c" kindref="member">m_Near</ref>(nearPlane),<sp/><ref refid="classCamera2D_1a302aa156fb2c542f00dfeef40e51752e" kindref="member">m_Far</ref>(farPlane),<sp/><ref refid="classCamera2D_1a5418a2d219a54844b223106e1170db5c" kindref="member">m_IsDirty</ref>(true){</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a2f6f0e9b8c1ed59d3cbaf54e45d6d4f5" kindref="member">UpdateProjection</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classCamera2D_1add37aa370c8718e7d38a0de2f8b86b10" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera2D_1add37aa370c8718e7d38a0de2f8b86b10" kindref="member">Camera2D::SetPosition</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>position){</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1ac5b66f8164de772cefb2dd90d18199d3" kindref="member">m_Position</ref><sp/>=<sp/>position;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a5418a2d219a54844b223106e1170db5c" kindref="member">m_IsDirty</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classCamera2D_1acd244eddd3322e8aca89338cbdd18725" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera2D_1acd244eddd3322e8aca89338cbdd18725" kindref="member">Camera2D::SetRotation</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>angleRadians){</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a9eef4aba3d315743afb6afbb89bae3c6" kindref="member">m_Rotation</ref><sp/>=<sp/>angleRadians;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a5418a2d219a54844b223106e1170db5c" kindref="member">m_IsDirty</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classCamera2D_1a2dacc853f7361a368c53571932c5bee1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera2D_1a2dacc853f7361a368c53571932c5bee1" kindref="member">Camera2D::SetZoom</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>zoom){</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(zoom<sp/>&lt;<sp/>0.1f)<sp/>zoom<sp/>=<sp/>0.1f;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a591fefdf777617222afbfa7b9d0a70bc" kindref="member">m_Zoom</ref><sp/>=<sp/>zoom;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a2f6f0e9b8c1ed59d3cbaf54e45d6d4f5" kindref="member">UpdateProjection</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classCamera2D_1aed0e07c98dcc2dab4cfb46021c5af4f6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera2D_1aed0e07c98dcc2dab4cfb46021c5af4f6" kindref="member">Camera2D::SetProjection</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>right,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottom,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top){</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a3895006dcd93f387d2cdb9ebdda506c0" kindref="member">m_Width</ref><sp/>=<sp/>(right<sp/>-<sp/>left)<sp/>/<sp/>2.0f;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a7093ce0f3db7658bd5c7e579c1e8cf47" kindref="member">m_Height</ref><sp/>=<sp/>(top<sp/>-<sp/>bottom)<sp/>/<sp/>2.0f;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a2f6f0e9b8c1ed59d3cbaf54e45d6d4f5" kindref="member">UpdateProjection</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(std::format(</highlight><highlight class="stringliteral">&quot;Camera<sp/>Projection:<sp/>left={},<sp/>right={},<sp/>bottom={},<sp/>top={},<sp/>width={},<sp/>height={}&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>left,<sp/>right,<sp/>bottom,<sp/>top,<sp/><ref refid="classCamera2D_1a3895006dcd93f387d2cdb9ebdda506c0" kindref="member">m_Width</ref>,<sp/><ref refid="classCamera2D_1a7093ce0f3db7658bd5c7e579c1e8cf47" kindref="member">m_Height</ref>));</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classCamera2D_1adab7c2dd541f23c9e20ce54c73520f03" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera2D_1adab7c2dd541f23c9e20ce54c73520f03" kindref="member">Camera2D::Update</ref>(){</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classCamera2D_1a5418a2d219a54844b223106e1170db5c" kindref="member">m_IsDirty</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Build<sp/>view<sp/>matrix</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref><sp/>view<sp/>=<sp/><ref refid="classMatrix4_1a35fb272e82fbfc17cdf2d75c858f5da7" kindref="member">Matrix4::Translation</ref>(<ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>(-<ref refid="classCamera2D_1ac5b66f8164de772cefb2dd90d18199d3" kindref="member">m_Position</ref>.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref>,<sp/>-<ref refid="classCamera2D_1ac5b66f8164de772cefb2dd90d18199d3" kindref="member">m_Position</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>,<sp/>-<ref refid="classCamera2D_1ac5b66f8164de772cefb2dd90d18199d3" kindref="member">m_Position</ref>.<ref refid="structVector3D_1af9728f1eba23b9ee091755346214f391" kindref="member">z</ref>));</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classCamera2D_1a9eef4aba3d315743afb6afbb89bae3c6" kindref="member">m_Rotation</ref><sp/>!=<sp/>0.0f){</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref><sp/>rot<sp/>=<sp/><ref refid="classMatrix4_1aaa53c3d6bcda5ac9c4d8568a54d3d543" kindref="member">Matrix4::RotationZ</ref>(-<ref refid="classCamera2D_1a9eef4aba3d315743afb6afbb89bae3c6" kindref="member">m_Rotation</ref>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>view<sp/>=<sp/>rot<sp/>*<sp/>view;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a15183741d20d595084a1984a84968254" kindref="member">m_ViewMatrix</ref><sp/>=<sp/>view;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a5418a2d219a54844b223106e1170db5c" kindref="member">m_IsDirty</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classCamera2D_1a2f6f0e9b8c1ed59d3cbaf54e45d6d4f5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCamera2D_1a2f6f0e9b8c1ed59d3cbaf54e45d6d4f5" kindref="member">Camera2D::UpdateProjection</ref>(){</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left<sp/>=<sp/>-<ref refid="classCamera2D_1a3895006dcd93f387d2cdb9ebdda506c0" kindref="member">m_Width</ref><sp/>*<sp/>(1.0f<sp/>/<sp/><ref refid="classCamera2D_1a591fefdf777617222afbfa7b9d0a70bc" kindref="member">m_Zoom</ref>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>right<sp/>=<sp/><ref refid="classCamera2D_1a3895006dcd93f387d2cdb9ebdda506c0" kindref="member">m_Width</ref><sp/>*<sp/>(1.0f<sp/>/<sp/><ref refid="classCamera2D_1a591fefdf777617222afbfa7b9d0a70bc" kindref="member">m_Zoom</ref>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottom<sp/>=<sp/>-<ref refid="classCamera2D_1a7093ce0f3db7658bd5c7e579c1e8cf47" kindref="member">m_Height</ref><sp/>*<sp/>(1.0f<sp/>/<sp/><ref refid="classCamera2D_1a591fefdf777617222afbfa7b9d0a70bc" kindref="member">m_Zoom</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top<sp/>=<sp/><ref refid="classCamera2D_1a7093ce0f3db7658bd5c7e579c1e8cf47" kindref="member">m_Height</ref><sp/>*<sp/>(1.0f<sp/>/<sp/><ref refid="classCamera2D_1a591fefdf777617222afbfa7b9d0a70bc" kindref="member">m_Zoom</ref>);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D_1a260d3283fabe527248217099823cc25f" kindref="member">m_ProjectionMatrix</ref><sp/>=<sp/><ref refid="classMatrix4_1a8cc70f5111adc0c13fed0521a31b80b6" kindref="member">Matrix4::Orthographic</ref>(left,<sp/>right,<sp/>bottom,<sp/>top,<sp/><ref refid="classCamera2D_1a651b5a30b9359cc06ebd5d0a6270775c" kindref="member">m_Near</ref>,<sp/><ref refid="classCamera2D_1a302aa156fb2c542f00dfeef40e51752e" kindref="member">m_Far</ref>);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="classCamera2D_1ae3168f69ca945882e188e8afd65c3df0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref>&amp;<sp/><ref refid="classCamera2D_1ae3168f69ca945882e188e8afd65c3df0" kindref="member">Camera2D::GetViewMatrix</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCamera2D_1a15183741d20d595084a1984a84968254" kindref="member">m_ViewMatrix</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classCamera2D_1ab701ef4c77ac12b75120d37dd84f6cfa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref>&amp;<sp/><ref refid="classCamera2D_1ab701ef4c77ac12b75120d37dd84f6cfa" kindref="member">Camera2D::GetProjectionMatrix</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCamera2D_1a260d3283fabe527248217099823cc25f" kindref="member">m_ProjectionMatrix</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/scene/Camera2D.cpp"/>
+  </compounddef>
+</doxygen>

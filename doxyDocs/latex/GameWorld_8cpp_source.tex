@@ -1,0 +1,71 @@
+\doxysection{Game\+World.\+cpp}
+\hypertarget{GameWorld_8cpp_source}{}\label{GameWorld_8cpp_source}\index{engine/scene/GameWorld.cpp@{engine/scene/GameWorld.cpp}}
+\doxymbox{\hyperlink{GameWorld_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Renderer_8h}{renderer/Renderer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{GameWorld_8h}{scene/GameWorld.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00006}\doxymbox{\hyperlink{classGameWorld_a5c71e1ff720b9e0bfb3d77235d5a533a}{00006}}\ \doxymbox{\hyperlink{classGameWorld_a5c71e1ff720b9e0bfb3d77235d5a533a}{GameWorld::GameWorld}}(\textcolor{keywordtype}{float}\ minX,\ \textcolor{keywordtype}{float}\ maxX,\ \textcolor{keywordtype}{float}\ minY,\ \textcolor{keywordtype}{float}\ maxY)}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00007}00007\ :\ \doxymbox{\hyperlink{classGameWorld_a6e4a7ddd6e8e6b559762e2e876b253bf}{m\_MinX}}(minX),\ \doxymbox{\hyperlink{classGameWorld_ac285b18975cf6fc4a540505096a2d956}{m\_MaxX}}(maxX),\ \doxymbox{\hyperlink{classGameWorld_a1372f43d4d26999b34ec887104d4d09f}{m\_MinY}}(minY),\ \doxymbox{\hyperlink{classGameWorld_abb6691e3d68d354ec5d5317062f3111a}{m\_MaxY}}(maxY)\{}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00008}00008\ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_afb1706f708290669d6321d848945610f}{InitializeBorders}}();}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00014}\doxymbox{\hyperlink{classGameWorld_afb1706f708290669d6321d848945610f}{00014}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGameWorld_afb1706f708290669d6321d848945610f}{GameWorld::InitializeBorders}}()\{}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//World\ corners}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{float}\ vertices[]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_a6e4a7ddd6e8e6b559762e2e876b253bf}{m\_MinX}},\ \doxymbox{\hyperlink{classGameWorld_a1372f43d4d26999b34ec887104d4d09f}{m\_MinY}},\ 0.0f,\ \textcolor{comment}{//Bottom-\/left}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_ac285b18975cf6fc4a540505096a2d956}{m\_MaxX}},\ \doxymbox{\hyperlink{classGameWorld_a1372f43d4d26999b34ec887104d4d09f}{m\_MinY}},\ 0.0f,\ \textcolor{comment}{//Bottom-\/right}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_ac285b18975cf6fc4a540505096a2d956}{m\_MaxX}},\ \doxymbox{\hyperlink{classGameWorld_abb6691e3d68d354ec5d5317062f3111a}{m\_MaxY}},\ 0.0f,\ \textcolor{comment}{//Top-\/right}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_a6e4a7ddd6e8e6b559762e2e876b253bf}{m\_MinX}},\ \doxymbox{\hyperlink{classGameWorld_abb6691e3d68d354ec5d5317062f3111a}{m\_MaxY}},\ 0.0f\ \ \textcolor{comment}{//Top-\/left}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00021}00021\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//Line\ loop\ indices\ (4\ edges)}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00024}00024\ \ \ \ \ uint32\_t\ indices[]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ 0,\ 1,\ \textcolor{comment}{//Bottom\ edge}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ 1,\ 2,\ \textcolor{comment}{//Right\ edge}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ 2,\ 3,\ \textcolor{comment}{//Top\ edge}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ 3,\ 0\ \ \textcolor{comment}{//Left\ edge}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00029}00029\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00031}00031\ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_ab1548ee47ba447b297fd0f9b71bb6485}{m\_VertexBuffer}}\ =\ std::make\_unique<VertexBuffer>(vertices,\ \textcolor{keyword}{sizeof}(vertices));}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00032}00032\ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_a3bdd6e89d6e6348a359e9385c4dc58c5}{m\_VertexArray}}\ =\ std::make\_unique<VertexArray>();}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00033}00033\ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_a29c1ca144eb19eb1443e616a5b4246d0}{m\_IndexBuffer}}\ =\ std::make\_unique<IndexBuffer>(indices,\ 8);}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00035}00035\ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_a3bdd6e89d6e6348a359e9385c4dc58c5}{m\_VertexArray}}-\/>Bind();}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00036}00036\ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_ab1548ee47ba447b297fd0f9b71bb6485}{m\_VertexBuffer}}-\/>Bind();}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00037}00037\ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_a29c1ca144eb19eb1443e616a5b4246d0}{m\_IndexBuffer}}-\/>Bind();}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//Position\ attribute\ only\ (3\ floats)}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00040}00040\ \ \ \ \ glVertexAttribPointer(0,\ 3,\ GL\_FLOAT,\ GL\_FALSE,\ 3\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ (\textcolor{keywordtype}{void}*)0);}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00041}00041\ \ \ \ \ glEnableVertexAttribArray(0);}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00043}00043\ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_aa58a26b7b2a2b49aac082c52b5d89af2}{m\_Initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00044}00044\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}GameWorld\ initialized\ with\ borders."{}});}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00052}\doxymbox{\hyperlink{classGameWorld_a3e8ec719469deeee0e298939e85996b2}{00052}}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ \doxymbox{\hyperlink{classGameWorld_a3e8ec719469deeee0e298939e85996b2}{GameWorld::ClampPosition}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ position)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00053}00053\ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ clamped\ =\ position;}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00054}00054\ \ \ \ \ clamped.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ =\ std::max(\doxymbox{\hyperlink{classGameWorld_a6e4a7ddd6e8e6b559762e2e876b253bf}{m\_MinX}},\ std::min(\doxymbox{\hyperlink{classGameWorld_ac285b18975cf6fc4a540505096a2d956}{m\_MaxX}},\ clamped.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}));}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00055}00055\ \ \ \ \ clamped.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ =\ std::max(\doxymbox{\hyperlink{classGameWorld_a1372f43d4d26999b34ec887104d4d09f}{m\_MinY}},\ std::min(\doxymbox{\hyperlink{classGameWorld_abb6691e3d68d354ec5d5317062f3111a}{m\_MaxY}},\ clamped.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}));}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return}\ clamped;}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00065}\doxymbox{\hyperlink{classGameWorld_ae7266c49a835d0a98bbc94cff538576e}{00065}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGameWorld_ae7266c49a835d0a98bbc94cff538576e}{GameWorld::Render}}(\doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ view,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ projection)\{}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classGameWorld_aa58a26b7b2a2b49aac082c52b5d89af2}{m\_Initialized}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00068}00068\ \ \ \ \ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\ model\ =\ \doxymbox{\hyperlink{classMatrix4_ae114a47efddacad2207eadac5f532098}{Matrix4::Identity}}();}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00070}00070\ \ \ \ \ shader.\doxymbox{\hyperlink{classShader_a5a5a24f72050f46f03cb839b41490527}{Bind}}();}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00071}00071\ \ \ \ \ shader.\doxymbox{\hyperlink{classShader_a1abb7c1fa7d1c58f82ba6544b2ae57bc}{SetUniformMat4}}(\textcolor{stringliteral}{"{}u\_Model"{}},\ model);}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00072}00072\ \ \ \ \ shader.\doxymbox{\hyperlink{classShader_a1abb7c1fa7d1c58f82ba6544b2ae57bc}{SetUniformMat4}}(\textcolor{stringliteral}{"{}u\_View"{}},\ view);}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00073}00073\ \ \ \ \ shader.\doxymbox{\hyperlink{classShader_a1abb7c1fa7d1c58f82ba6544b2ae57bc}{SetUniformMat4}}(\textcolor{stringliteral}{"{}u\_Projection"{}},\ projection);}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00074}00074\ \ \ \ \ shader.\doxymbox{\hyperlink{classShader_a317a09917f0a22884b3c6b96bbe0184d}{SetUniformFloat3}}(\textcolor{stringliteral}{"{}u\_Color"{}},\ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(1.0f,\ 0.0f,\ 0.0f));\ \textcolor{comment}{//Red}}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00076}00076\ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_a3bdd6e89d6e6348a359e9385c4dc58c5}{m\_VertexArray}}-\/>Bind();}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00077}00077\ \ \ \ \ \doxymbox{\hyperlink{classGameWorld_a29c1ca144eb19eb1443e616a5b4246d0}{m\_IndexBuffer}}-\/>Bind();}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00078}00078\ \ \ \ \ glDrawElements(GL\_LINES,\ 8,\ GL\_UNSIGNED\_INT,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{GameWorld_8cpp_source_l00079}00079\ \}}
+
+\end{DoxyCode}

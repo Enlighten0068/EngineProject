@@ -1,0 +1,5 @@
+<map id="WindowResizeEvent" name="WindowResizeEvent">
+<area shape="rect" id="Node000001" title="Event dispatched when the window is resized." alt="" coords="5,148,174,310"/>
+<area shape="rect" id="Node000002" href="$classEvent.html" title="Base class for all events in the engine." alt="" coords="26,5,153,100"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,112,92,148,87,148,89,117"/>
+</map>

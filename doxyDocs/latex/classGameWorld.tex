@@ -1,0 +1,304 @@
+\doxysection{Game\+World Class Reference}
+\hypertarget{classGameWorld}{}\label{classGameWorld}\index{GameWorld@{GameWorld}}
+
+
+Defines the boundaries of the game world and provides clamping.  
+
+
+
+
+{\ttfamily \+\#include $<$Game\+World.\+h$>$}
+
+
+
+Collaboration diagram for Game\+World:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classGameWorld__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classGameWorld_a5c71e1ff720b9e0bfb3d77235d5a533a}{Game\+World}} (float minX, float maxX, float minY, float maxY)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classGameWorld}{Game\+World} with specified boundaries. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classGameWorld_a00e9f9381d953e3bda8cd1decdf6ae1c}{\texorpdfstring{$\sim$}{\string~}\+Game\+World}} ()=default
+\item 
+float \doxymbox{\hyperlink{classGameWorld_a099be0356a0cea9620ccd151dffc00a2}{Get\+MinX}} () const
+\item 
+float \doxymbox{\hyperlink{classGameWorld_a60de5cbf4bd843be6370b2e61f18020f}{Get\+MaxX}} () const
+\item 
+float \doxymbox{\hyperlink{classGameWorld_a509019005800fd39a25ed20e25f670e4}{Get\+MinY}} () const
+\item 
+float \doxymbox{\hyperlink{classGameWorld_a17c3daa62412f90d7549f38a51f2acad}{Get\+MaxY}} () const
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{classGameWorld_a3e8ec719469deeee0e298939e85996b2}{Clamp\+Position}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&position) const
+\begin{DoxyCompactList}\small\item\em Clamps a position to stay within the world boundaries. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classGameWorld_ae7266c49a835d0a98bbc94cff538576e}{Render}} (\doxymbox{\hyperlink{classShader}{Shader}} \&shader, const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&view, const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&projection)
+\begin{DoxyCompactList}\small\item\em Renders the world borders as red lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classGameWorld_afb1706f708290669d6321d848945610f}{Initialize\+Borders}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the border geometry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \doxymbox{\hyperlink{classGameWorld_a6e4a7ddd6e8e6b559762e2e876b253bf}{m\+\_\+\+MinX}}
+\item 
+float \doxymbox{\hyperlink{classGameWorld_ac285b18975cf6fc4a540505096a2d956}{m\+\_\+\+MaxX}}
+\item 
+float \doxymbox{\hyperlink{classGameWorld_a1372f43d4d26999b34ec887104d4d09f}{m\+\_\+\+MinY}}
+\item 
+float \doxymbox{\hyperlink{classGameWorld_abb6691e3d68d354ec5d5317062f3111a}{m\+\_\+\+MaxY}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} $>$ \doxymbox{\hyperlink{classGameWorld_a3bdd6e89d6e6348a359e9385c4dc58c5}{m\+\_\+\+Vertex\+Array}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classVertexBuffer}{Vertex\+Buffer}} $>$ \doxymbox{\hyperlink{classGameWorld_ab1548ee47ba447b297fd0f9b71bb6485}{m\+\_\+\+Vertex\+Buffer}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} $>$ \doxymbox{\hyperlink{classGameWorld_a29c1ca144eb19eb1443e616a5b4246d0}{m\+\_\+\+Index\+Buffer}}
+\item 
+bool \doxymbox{\hyperlink{classGameWorld_aa58a26b7b2a2b49aac082c52b5d89af2}{m\+\_\+\+Initialized}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the boundaries of the game world and provides clamping. 
+
+The \doxylink{classGameWorld}{Game\+World} class holds the minimum and maximum coordinates of the world in both X and Y axes. It provides a Clamp\+Position method to keep entities within these bounds and renders the world borders. 
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00017}{17}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+
+
+\label{classGameWorld_doc-constructors}
+\Hypertarget{classGameWorld_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGameWorld_a5c71e1ff720b9e0bfb3d77235d5a533a}\index{GameWorld@{GameWorld}!GameWorld@{GameWorld}}
+\index{GameWorld@{GameWorld}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{GameWorld()}{GameWorld()}}
+{\footnotesize\ttfamily \label{classGameWorld_a5c71e1ff720b9e0bfb3d77235d5a533a} 
+Game\+World::\+\+Game\+World (\begin{DoxyParamCaption}\item[{float}]{minX}{, }\item[{float}]{maxX}{, }\item[{float}]{minY}{, }\item[{float}]{maxY}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classGameWorld}{Game\+World} with specified boundaries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em minX} & Minimum X coordinate. \\
+\hline
+{\em maxX} & Maximum X coordinate. \\
+\hline
+{\em minY} & Minimum Y coordinate. \\
+\hline
+{\em maxY} & Maximum Y coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8cpp_source_l00006}{6}} of file \doxymbox{\hyperlink{GameWorld_8cpp_source}{Game\+World.\+cpp}}.
+
+\Hypertarget{classGameWorld_a00e9f9381d953e3bda8cd1decdf6ae1c}\index{GameWorld@{GameWorld}!````~GameWorld@{\texorpdfstring{$\sim$}{\string~}GameWorld}}
+\index{````~GameWorld@{\texorpdfstring{$\sim$}{\string~}GameWorld}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameWorld()}{\string~GameWorld()}}
+{\footnotesize\ttfamily \label{classGameWorld_a00e9f9381d953e3bda8cd1decdf6ae1c} 
+Game\+World::\+\texorpdfstring{$\sim$}{\string~}\+Game\+World (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{classGameWorld_doc-func-members}
+\Hypertarget{classGameWorld_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGameWorld_a3e8ec719469deeee0e298939e85996b2}\index{GameWorld@{GameWorld}!ClampPosition@{ClampPosition}}
+\index{ClampPosition@{ClampPosition}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{ClampPosition()}{ClampPosition()}}
+{\footnotesize\ttfamily \label{classGameWorld_a3e8ec719469deeee0e298939e85996b2} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Game\+World::\+\+Clamp\+Position (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{position}{}\end{DoxyParamCaption}) const}
+
+
+
+Clamps a position to stay within the world boundaries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position to clamp. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Clamped position. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8cpp_source_l00052}{52}} of file \doxymbox{\hyperlink{GameWorld_8cpp_source}{Game\+World.\+cpp}}.
+
+\Hypertarget{classGameWorld_a60de5cbf4bd843be6370b2e61f18020f}\index{GameWorld@{GameWorld}!GetMaxX@{GetMaxX}}
+\index{GetMaxX@{GetMaxX}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetMaxX()}{GetMaxX()}}
+{\footnotesize\ttfamily \label{classGameWorld_a60de5cbf4bd843be6370b2e61f18020f} 
+float Game\+World::\+\+Get\+MaxX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00031}{31}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+\Hypertarget{classGameWorld_a17c3daa62412f90d7549f38a51f2acad}\index{GameWorld@{GameWorld}!GetMaxY@{GetMaxY}}
+\index{GetMaxY@{GetMaxY}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetMaxY()}{GetMaxY()}}
+{\footnotesize\ttfamily \label{classGameWorld_a17c3daa62412f90d7549f38a51f2acad} 
+float Game\+World::\+\+Get\+MaxY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00033}{33}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+\Hypertarget{classGameWorld_a099be0356a0cea9620ccd151dffc00a2}\index{GameWorld@{GameWorld}!GetMinX@{GetMinX}}
+\index{GetMinX@{GetMinX}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetMinX()}{GetMinX()}}
+{\footnotesize\ttfamily \label{classGameWorld_a099be0356a0cea9620ccd151dffc00a2} 
+float Game\+World::\+\+Get\+MinX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00030}{30}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+\Hypertarget{classGameWorld_a509019005800fd39a25ed20e25f670e4}\index{GameWorld@{GameWorld}!GetMinY@{GetMinY}}
+\index{GetMinY@{GetMinY}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetMinY()}{GetMinY()}}
+{\footnotesize\ttfamily \label{classGameWorld_a509019005800fd39a25ed20e25f670e4} 
+float Game\+World::\+\+Get\+MinY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00032}{32}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+\Hypertarget{classGameWorld_afb1706f708290669d6321d848945610f}\index{GameWorld@{GameWorld}!InitializeBorders@{InitializeBorders}}
+\index{InitializeBorders@{InitializeBorders}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{InitializeBorders()}{InitializeBorders()}}
+{\footnotesize\ttfamily \label{classGameWorld_afb1706f708290669d6321d848945610f} 
+void Game\+World::\+\+Initialize\+Borders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the border geometry. 
+
+Initializes the border geometry as a rectangle wireframe. 
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8cpp_source_l00014}{14}} of file \doxymbox{\hyperlink{GameWorld_8cpp_source}{Game\+World.\+cpp}}.
+
+\Hypertarget{classGameWorld_ae7266c49a835d0a98bbc94cff538576e}\index{GameWorld@{GameWorld}!Render@{Render}}
+\index{Render@{Render}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{classGameWorld_ae7266c49a835d0a98bbc94cff538576e} 
+void Game\+World::\+\+Render (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{shader}{, }\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{view}{, }\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{projection}{}\end{DoxyParamCaption})}
+
+
+
+Renders the world borders as red lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \doxylink{classShader}{Shader} to use for rendering. \\
+\hline
+{\em view} & View matrix. \\
+\hline
+{\em projection} & Projection matrix. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8cpp_source_l00065}{65}} of file \doxymbox{\hyperlink{GameWorld_8cpp_source}{Game\+World.\+cpp}}.
+
+
+
+\label{classGameWorld_doc-variable-members}
+\Hypertarget{classGameWorld_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGameWorld_a29c1ca144eb19eb1443e616a5b4246d0}\index{GameWorld@{GameWorld}!m\_IndexBuffer@{m\_IndexBuffer}}
+\index{m\_IndexBuffer@{m\_IndexBuffer}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{m\_IndexBuffer}{m\_IndexBuffer}}
+{\footnotesize\ttfamily \label{classGameWorld_a29c1ca144eb19eb1443e616a5b4246d0} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}}$>$ Game\+World::\+m\+\_\+\+Index\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00056}{56}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+\Hypertarget{classGameWorld_aa58a26b7b2a2b49aac082c52b5d89af2}\index{GameWorld@{GameWorld}!m\_Initialized@{m\_Initialized}}
+\index{m\_Initialized@{m\_Initialized}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{m\_Initialized}{m\_Initialized}}
+{\footnotesize\ttfamily \label{classGameWorld_aa58a26b7b2a2b49aac082c52b5d89af2} 
+bool Game\+World::\+m\+\_\+\+Initialized = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00057}{57}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+\Hypertarget{classGameWorld_ac285b18975cf6fc4a540505096a2d956}\index{GameWorld@{GameWorld}!m\_MaxX@{m\_MaxX}}
+\index{m\_MaxX@{m\_MaxX}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{m\_MaxX}{m\_MaxX}}
+{\footnotesize\ttfamily \label{classGameWorld_ac285b18975cf6fc4a540505096a2d956} 
+float Game\+World::\+m\+\_\+\+MaxX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00051}{51}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+\Hypertarget{classGameWorld_abb6691e3d68d354ec5d5317062f3111a}\index{GameWorld@{GameWorld}!m\_MaxY@{m\_MaxY}}
+\index{m\_MaxY@{m\_MaxY}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{m\_MaxY}{m\_MaxY}}
+{\footnotesize\ttfamily \label{classGameWorld_abb6691e3d68d354ec5d5317062f3111a} 
+float Game\+World::\+m\+\_\+\+MaxY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00052}{52}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+\Hypertarget{classGameWorld_a6e4a7ddd6e8e6b559762e2e876b253bf}\index{GameWorld@{GameWorld}!m\_MinX@{m\_MinX}}
+\index{m\_MinX@{m\_MinX}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{m\_MinX}{m\_MinX}}
+{\footnotesize\ttfamily \label{classGameWorld_a6e4a7ddd6e8e6b559762e2e876b253bf} 
+float Game\+World::\+m\+\_\+\+MinX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00051}{51}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+\Hypertarget{classGameWorld_a1372f43d4d26999b34ec887104d4d09f}\index{GameWorld@{GameWorld}!m\_MinY@{m\_MinY}}
+\index{m\_MinY@{m\_MinY}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{m\_MinY}{m\_MinY}}
+{\footnotesize\ttfamily \label{classGameWorld_a1372f43d4d26999b34ec887104d4d09f} 
+float Game\+World::\+m\+\_\+\+MinY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00052}{52}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+\Hypertarget{classGameWorld_a3bdd6e89d6e6348a359e9385c4dc58c5}\index{GameWorld@{GameWorld}!m\_VertexArray@{m\_VertexArray}}
+\index{m\_VertexArray@{m\_VertexArray}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{m\_VertexArray}{m\_VertexArray}}
+{\footnotesize\ttfamily \label{classGameWorld_a3bdd6e89d6e6348a359e9385c4dc58c5} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}}$>$ Game\+World::\+m\+\_\+\+Vertex\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00054}{54}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+\Hypertarget{classGameWorld_ab1548ee47ba447b297fd0f9b71bb6485}\index{GameWorld@{GameWorld}!m\_VertexBuffer@{m\_VertexBuffer}}
+\index{m\_VertexBuffer@{m\_VertexBuffer}!GameWorld@{GameWorld}}
+\doxysubsubsection{\texorpdfstring{m\_VertexBuffer}{m\_VertexBuffer}}
+{\footnotesize\ttfamily \label{classGameWorld_ab1548ee47ba447b297fd0f9b71bb6485} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classVertexBuffer}{Vertex\+Buffer}}$>$ Game\+World::\+m\+\_\+\+Vertex\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameWorld_8h_source_l00055}{55}} of file \doxymbox{\hyperlink{GameWorld_8h_source}{Game\+World.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+scene/\doxymbox{\hyperlink{GameWorld_8h}{Game\+World.\+h}}\item 
+engine/\+scene/\doxymbox{\hyperlink{GameWorld_8cpp}{Game\+World.\+cpp}}\end{DoxyCompactItemize}

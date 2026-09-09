@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classWindowCloseEvent" kind="class" language="C++" prot="public">
+    <compoundname>WindowCloseEvent</compoundname>
+    <basecompoundref refid="classEvent" prot="public" virt="non-virtual">Event</basecompoundref>
+    <includes refid="WindowEvent_8h" local="no">WindowEvent.h</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classWindowCloseEvent_1ad5b50a492d592ea6f0086a425a47b5a8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>static EventType WindowCloseEvent::GetStaticType</definition>
+        <argsstring>()</argsstring>
+        <name>GetStaticType</name>
+        <qualifiedname>WindowCloseEvent::GetStaticType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/WindowEvent.h" line="15" column="22" bodyfile="engine/events/WindowEvent.h" bodystart="15" bodyend="15"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classWindowCloseEvent_1a4ad7d8ef5ba544c908e1a59a74b40492" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>EventType WindowCloseEvent::GetEventType</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetEventType</name>
+        <qualifiedname>WindowCloseEvent::GetEventType</qualifiedname>
+        <reimplements refid="classEvent_1af14bbd8f69c2778def9462375a0e70f2">GetEventType</reimplements>
+        <briefdescription>
+<para>Returns the type of the event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref> enum value identifying the event. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/WindowEvent.h" line="16" column="15" bodyfile="engine/events/WindowEvent.h" bodystart="16" bodyend="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classEvent" kindref="compound">Event</ref> dispatched when the window close button is clicked or a SDL_EVENT_QUIT is received. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This event is typically used to signal the application to shut down.</para>
+<para><simplesect kind="note"><para>Dispatched by <ref refid="classSDLEventTranslator" kindref="compound">SDLEventTranslator</ref>. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classSDLEventTranslator" kindref="compound">SDLEventTranslator</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>WindowCloseEvent</label>
+        <link refid="classWindowCloseEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>WindowCloseEvent</label>
+        <link refid="classWindowCloseEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="engine/events/WindowEvent.h" line="13" column="1" bodyfile="engine/events/WindowEvent.h" bodystart="13" bodyend="17"/>
+    <listofallmembers>
+      <member refid="classWindowCloseEvent_1a4ad7d8ef5ba544c908e1a59a74b40492" prot="public" virt="virtual"><scope>WindowCloseEvent</scope><name>GetEventType</name></member>
+      <member refid="classWindowCloseEvent_1ad5b50a492d592ea6f0086a425a47b5a8" prot="public" virt="non-virtual"><scope>WindowCloseEvent</scope><name>GetStaticType</name></member>
+      <member refid="classEvent_1a8ad0c350a8f569dbb05cf845caa4737e" prot="public" virt="non-virtual"><scope>WindowCloseEvent</scope><name>Handled</name></member>
+      <member refid="classEvent_1a105223995bbf1a1e4714d0c77f91cf0b" prot="public" virt="virtual"><scope>WindowCloseEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

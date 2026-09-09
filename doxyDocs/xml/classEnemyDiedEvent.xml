@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classEnemyDiedEvent" kind="class" language="C++" prot="public">
+    <compoundname>EnemyDiedEvent</compoundname>
+    <basecompoundref refid="classEvent" prot="public" virt="non-virtual">Event</basecompoundref>
+    <includes refid="EnemyEvents_8h" local="no">EnemyEvents.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classEnemyDiedEvent_1a77a177161b33ef294e6014d6ad1dc99c" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D EnemyDiedEvent::m_Position</definition>
+        <argsstring></argsstring>
+        <name>m_Position</name>
+        <qualifiedname>EnemyDiedEvent::m_Position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EnemyEvents.h" line="32" column="14" bodyfile="engine/events/EnemyEvents.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classEnemyDiedEvent_1a4c307b78629d99dbb5d055911f206cea" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EnemyDiedEvent::m_ScoreValue</definition>
+        <argsstring></argsstring>
+        <name>m_ScoreValue</name>
+        <qualifiedname>EnemyDiedEvent::m_ScoreValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EnemyEvents.h" line="33" column="9" bodyfile="engine/events/EnemyEvents.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classEnemyDiedEvent_1a08d712390038a196578dcd7480787f6b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EnemyDiedEvent::EnemyDiedEvent</definition>
+        <argsstring>(const Vector3D &amp;position, int scoreValue=10)</argsstring>
+        <name>EnemyDiedEvent</name>
+        <qualifiedname>EnemyDiedEvent::EnemyDiedEvent</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scoreValue</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+<para>Constructs an <ref refid="classEnemyDiedEvent" kindref="compound">EnemyDiedEvent</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Enemy position at death. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scoreValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Score value awarded (default: 10). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EnemyEvents.h" line="22" column="5" bodyfile="engine/events/EnemyEvents.h" bodystart="22" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classEnemyDiedEvent_1a40f4d9860f414989f5f1915a9a9d5120" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+        <definition>const Vector3D &amp; EnemyDiedEvent::GetPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPosition</name>
+        <qualifiedname>EnemyDiedEvent::GetPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EnemyEvents.h" line="25" column="20" bodyfile="engine/events/EnemyEvents.h" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classEnemyDiedEvent_1abc2d58a54cb87be48cfe7cd6adca4fca" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EnemyDiedEvent::GetScoreValue</definition>
+        <argsstring>() const</argsstring>
+        <name>GetScoreValue</name>
+        <qualifiedname>EnemyDiedEvent::GetScoreValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EnemyEvents.h" line="26" column="9" bodyfile="engine/events/EnemyEvents.h" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classEnemyDiedEvent_1a71e2fc9fee13d00be1838a8f6fd46419" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>EventType EnemyDiedEvent::GetEventType</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetEventType</name>
+        <qualifiedname>EnemyDiedEvent::GetEventType</qualifiedname>
+        <reimplements refid="classEvent_1af14bbd8f69c2778def9462375a0e70f2">GetEventType</reimplements>
+        <briefdescription>
+<para>Returns the type of the event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref> enum value identifying the event. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EnemyEvents.h" line="29" column="15" bodyfile="engine/events/EnemyEvents.h" bodystart="29" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classEnemyDiedEvent_1a34f2a4f74c43ff573a53552cfa4348c0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>static EventType EnemyDiedEvent::GetStaticType</definition>
+        <argsstring>()</argsstring>
+        <name>GetStaticType</name>
+        <qualifiedname>EnemyDiedEvent::GetStaticType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EnemyEvents.h" line="28" column="22" bodyfile="engine/events/EnemyEvents.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classEvent" kindref="compound">Event</ref> dispatched when an enemy dies. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contains the enemy&apos;s position at death and the score value awarded.</para>
+<para><simplesect kind="note"><para>This event can be used by UI systems to update score or by audio systems to play death sounds. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classEnemySystem" kindref="compound">EnemySystem</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>EnemyDiedEvent</label>
+        <link refid="classEnemyDiedEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>EnemyDiedEvent</label>
+        <link refid="classEnemyDiedEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_Position</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="3">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/events/EnemyEvents.h" line="15" column="1" bodyfile="engine/events/EnemyEvents.h" bodystart="15" bodyend="34"/>
+    <listofallmembers>
+      <member refid="classEnemyDiedEvent_1a08d712390038a196578dcd7480787f6b" prot="public" virt="non-virtual"><scope>EnemyDiedEvent</scope><name>EnemyDiedEvent</name></member>
+      <member refid="classEnemyDiedEvent_1a71e2fc9fee13d00be1838a8f6fd46419" prot="public" virt="virtual"><scope>EnemyDiedEvent</scope><name>GetEventType</name></member>
+      <member refid="classEnemyDiedEvent_1a40f4d9860f414989f5f1915a9a9d5120" prot="public" virt="non-virtual"><scope>EnemyDiedEvent</scope><name>GetPosition</name></member>
+      <member refid="classEnemyDiedEvent_1abc2d58a54cb87be48cfe7cd6adca4fca" prot="public" virt="non-virtual"><scope>EnemyDiedEvent</scope><name>GetScoreValue</name></member>
+      <member refid="classEnemyDiedEvent_1a34f2a4f74c43ff573a53552cfa4348c0" prot="public" virt="non-virtual"><scope>EnemyDiedEvent</scope><name>GetStaticType</name></member>
+      <member refid="classEvent_1a8ad0c350a8f569dbb05cf845caa4737e" prot="public" virt="non-virtual"><scope>EnemyDiedEvent</scope><name>Handled</name></member>
+      <member refid="classEnemyDiedEvent_1a77a177161b33ef294e6014d6ad1dc99c" prot="private" virt="non-virtual"><scope>EnemyDiedEvent</scope><name>m_Position</name></member>
+      <member refid="classEnemyDiedEvent_1a4c307b78629d99dbb5d055911f206cea" prot="private" virt="non-virtual"><scope>EnemyDiedEvent</scope><name>m_ScoreValue</name></member>
+      <member refid="classEvent_1a105223995bbf1a1e4714d0c77f91cf0b" prot="public" virt="virtual"><scope>EnemyDiedEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

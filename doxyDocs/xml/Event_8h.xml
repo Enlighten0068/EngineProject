@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Event_8h" kind="file" language="C++">
+    <compoundname>Event.h</compoundname>
+    <includes refid="EventType_8h" local="yes">events/EventType.h</includes>
+    <includedby refid="Application_8h" local="yes">engine/core/Application.h</includedby>
+    <includedby refid="EnemyEvents_8h" local="yes">engine/events/EnemyEvents.h</includedby>
+    <includedby refid="EventBus_8h" local="yes">engine/events/EventBus.h</includedby>
+    <includedby refid="EventDispatcher_8h" local="yes">engine/events/EventDispatcher.h</includedby>
+    <includedby refid="KeyEvent_8h" local="yes">engine/events/KeyEvent.h</includedby>
+    <includedby refid="MouseEvent_8h" local="yes">engine/events/MouseEvent.h</includedby>
+    <includedby refid="PlayerEvents_8h" local="yes">engine/events/PlayerEvents.h</includedby>
+    <includedby refid="SDLEventTranslator_8h" local="yes">engine/events/SDLEventTranslator.h</includedby>
+    <includedby refid="WindowEvent_8h" local="yes">engine/events/WindowEvent.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/events/Event.h</label>
+        <link refid="Event_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>events/EventType.h</label>
+        <link refid="EventType_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="2">
+        <label>engine/core/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>engine/core/CameraController.cpp</label>
+        <link refid="CameraController_8cpp"/>
+      </node>
+      <node id="14">
+        <label>engine/core/Engine.cpp</label>
+        <link refid="Engine_8cpp"/>
+      </node>
+      <node id="9">
+        <label>engine/core/PlayerController.cpp</label>
+        <link refid="PlayerController_8cpp"/>
+      </node>
+      <node id="4">
+        <label>engine/core/Time.cpp</label>
+        <link refid="Time_8cpp"/>
+      </node>
+      <node id="6">
+        <label>engine/events/EnemyEvents.h</label>
+        <link refid="EnemyEvents_8h"/>
+      </node>
+      <node id="1">
+        <label>engine/events/Event.h</label>
+        <link refid="Event_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>engine/events/EventBus.cpp</label>
+        <link refid="EventBus_8cpp"/>
+      </node>
+      <node id="7">
+        <label>engine/events/EventBus.h</label>
+        <link refid="EventBus_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>engine/events/EventDispatcher.h</label>
+        <link refid="EventDispatcher_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>engine/events/KeyEvent.h</label>
+        <link refid="KeyEvent_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>engine/events/MouseEvent.h</label>
+        <link refid="MouseEvent_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>engine/events/PlayerEvents.h</label>
+        <link refid="PlayerEvents_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>engine/events/SDLEventTranslator.cpp</label>
+        <link refid="SDLEventTranslator_8cpp"/>
+      </node>
+      <node id="11">
+        <label>engine/events/SDLEventTranslator.h</label>
+        <link refid="SDLEventTranslator_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>engine/events/WindowEvent.h</label>
+        <link refid="WindowEvent_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classEvent" prot="public">Event</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="EventType_8h" kindref="compound">events/EventType.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classEvent" kindref="compound">Event</ref>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16" refid="classEvent_1a105223995bbf1a1e4714d0c77f91cf0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classEvent_1a105223995bbf1a1e4714d0c77f91cf0b" kindref="member">~Event</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classEvent_1af14bbd8f69c2778def9462375a0e70f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classEvent_1af14bbd8f69c2778def9462375a0e70f2" kindref="member">GetEventType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classEvent_1a8ad0c350a8f569dbb05cf845caa4737e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classEvent_1a8ad0c350a8f569dbb05cf845caa4737e" kindref="member">Handled</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Flag<sp/>indicating<sp/>if<sp/>the<sp/>event<sp/>has<sp/>been<sp/>handled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/events/Event.h"/>
+  </compounddef>
+</doxygen>

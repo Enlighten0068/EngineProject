@@ -1,0 +1,49 @@
+\doxysection{Render\+System.\+h}
+\hypertarget{RenderSystem_8h_source}{}\label{RenderSystem_8h_source}\index{engine/systems/RenderSystem.h@{engine/systems/RenderSystem.h}}
+\doxymbox{\hyperlink{RenderSystem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{components_2Transform_8h}{components/Transform.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{SpriteRenderer_8h}{components/SpriteRenderer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{TileScale_8h}{components/TileScale.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Shader_8h}{graphics/Shader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{VertexArray_8h}{graphics/VertexArray.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{IndexBuffer_8h}{graphics/IndexBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Matrix4_8h}{math/Matrix4.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Renderer_8h}{renderer/Renderer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <entt.hpp>}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00028}\doxymbox{\hyperlink{classRenderSystem}{00028}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classRenderSystem}{RenderSystem}}\{}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00029}00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00044}\doxymbox{\hyperlink{classRenderSystem_a0dee88c7afdb4acfa6ad44e3902ce7a3}{00044}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classRenderSystem_a0dee88c7afdb4acfa6ad44e3902ce7a3}{Render}}(entt::registry\&\ registry,\ \doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ view,}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ projection,\ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ va,\ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ ib)\{}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ view\_entities\ =\ registry.view<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}},\ \doxymbox{\hyperlink{structComponents_1_1SpriteRenderer}{Components::SpriteRenderer}}>();}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [entity,\ transform,\ sprite]\ :\ view\_entities.each())\{}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Skip\ entities\ without\ texture}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!sprite.Texture)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Build\ model\ matrix:\ translation\ *\ rotation\ *\ scale}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\ model\ =\ \doxymbox{\hyperlink{classMatrix4_a35fb272e82fbfc17cdf2d75c858f5da7}{Matrix4::Translation}}(transform.Position);}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ model\ =\ model\ *\ \doxymbox{\hyperlink{classMatrix4_aaa53c3d6bcda5ac9c4d8568a54d3d543}{Matrix4::RotationZ}}(transform.Rotation.z);}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ model\ =\ model\ *\ \doxymbox{\hyperlink{classMatrix4_aa3a30984ce9f309c23827d5e1cde0fdc}{Matrix4::Scale}}(transform.Scale);}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Get\ tile\ scale\ (default\ to\ 1.0\ if\ not\ present)}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tileScaleX\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tileScaleY\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(registry.all\_of<\doxymbox{\hyperlink{structComponents_1_1TileScale}{Components::TileScale}}>(entity))\{}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ ts\ =\ registry.get<\doxymbox{\hyperlink{structComponents_1_1TileScale}{Components::TileScale}}>(entity);}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tileScaleX\ =\ ts.\doxymbox{\hyperlink{structComponents_1_1TileScale_a2056b13025a5feff66ba87bc66a3faca}{ScaleX}};}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tileScaleY\ =\ ts.ScaleY;}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Draw\ the\ textured\ quad}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classRenderer_a71992cf4acf88e30dd0abaaa6cda23b4}{Renderer::DrawTexturedQuad}}(shader,\ va,\ ib,\ *sprite.Texture,}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ model,\ view,\ projection,\ tileScaleX,\ tileScaleY);}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RenderSystem_8h_source_l00071}00071\ \};}
+
+\end{DoxyCode}

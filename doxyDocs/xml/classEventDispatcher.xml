@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classEventDispatcher" kind="class" language="C++" prot="public">
+    <compoundname>EventDispatcher</compoundname>
+    <includes refid="EventDispatcher_8h" local="no">EventDispatcher.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classEventDispatcher_1a8c924988641e1ecbdfd2da84d89c8889" prot="private" static="no" mutable="no">
+        <type><ref refid="classEvent" kindref="compound">Event</ref> &amp;</type>
+        <definition>Event&amp; EventDispatcher::m_Event</definition>
+        <argsstring></argsstring>
+        <name>m_Event</name>
+        <qualifiedname>EventDispatcher::m_Event</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventDispatcher.h" line="43" column="11" bodyfile="engine/events/EventDispatcher.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classEventDispatcher_1a14b98277653a576b21c0cd46c3ce4838" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EventDispatcher::EventDispatcher</definition>
+        <argsstring>(Event &amp;event)</argsstring>
+        <name>EventDispatcher</name>
+        <qualifiedname>EventDispatcher::EventDispatcher</qualifiedname>
+        <param>
+          <type><ref refid="classEvent" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Constructs an <ref refid="classEventDispatcher" kindref="compound">EventDispatcher</ref> for a specific event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event to dispatch. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventDispatcher.h" line="20" column="5" bodyfile="engine/events/EventDispatcher.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classEventDispatcher_1a1786380511e001fdd2c73511abf7660a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool EventDispatcher::Dispatch</definition>
+        <argsstring>(const F &amp;function)</argsstring>
+        <name>Dispatch</name>
+        <qualifiedname>EventDispatcher::Dispatch</qualifiedname>
+        <param>
+          <type>const F &amp;</type>
+          <declname>function</declname>
+        </param>
+        <briefdescription>
+<para>Dispatches the event to a handler if the type matches. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the event type matches T::GetStaticType(), the callback is invoked with the event cast to T&amp;. The Handled flag is set to the callback&apos;s return value.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event type to handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback to invoke if the type matches. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the type matched and the callback was invoked, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventDispatcher.h" line="34" column="10" bodyfile="engine/events/EventDispatcher.h" bodystart="34" bodyend="40"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Utility class for dispatching events to specific handlers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classEventDispatcher" kindref="compound">EventDispatcher</ref> allows type-safe event handling by checking the event type and casting to the appropriate derived class before invoking the callback.</para>
+<para><simplesect kind="note"><para>This is a lightweight wrapper; for global event handling, use <ref refid="classEventBus" kindref="compound">EventBus</ref>. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classEventBus" kindref="compound">EventBus</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>EventDispatcher</label>
+        <link refid="classEventDispatcher"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-m_Event</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="engine/events/EventDispatcher.h" line="14" column="1" bodyfile="engine/events/EventDispatcher.h" bodystart="14" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classEventDispatcher_1a1786380511e001fdd2c73511abf7660a" prot="public" virt="non-virtual"><scope>EventDispatcher</scope><name>Dispatch</name></member>
+      <member refid="classEventDispatcher_1a14b98277653a576b21c0cd46c3ce4838" prot="public" virt="non-virtual"><scope>EventDispatcher</scope><name>EventDispatcher</name></member>
+      <member refid="classEventDispatcher_1a8c924988641e1ecbdfd2da84d89c8889" prot="private" virt="non-virtual"><scope>EventDispatcher</scope><name>m_Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

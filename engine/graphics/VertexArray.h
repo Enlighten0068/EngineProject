@@ -9,6 +9,7 @@
  * It encapsulates the state of vertex attributes (position, texture coordinates, etc.).
  *
  * @note The VAO must be bound before configuring vertex attributes.
+ * @see VertexBuffer, IndexBuffer
  */
 class VertexArray{
 public:
@@ -26,5 +27,5 @@ public:
     void Unbind() const;
 
 private:
-    uint32_t m_RendererID;
+    uint32_t m_RendererID; //OpenGL VAO ID
 };

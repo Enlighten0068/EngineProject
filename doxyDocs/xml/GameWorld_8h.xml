@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="GameWorld_8h" kind="file" language="C++">
+    <compoundname>GameWorld.h</compoundname>
+    <includes refid="Shader_8h" local="yes">graphics/Shader.h</includes>
+    <includes refid="VertexArray_8h" local="yes">graphics/VertexArray.h</includes>
+    <includes refid="VertexBuffer_8h" local="yes">graphics/VertexBuffer.h</includes>
+    <includes refid="IndexBuffer_8h" local="yes">graphics/IndexBuffer.h</includes>
+    <includes refid="Vector3D_8h" local="yes">math/Vector3D.h</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="Application_8cpp" local="yes">engine/core/Application.cpp</includedby>
+    <includedby refid="Application_8h" local="yes">engine/core/Application.h</includedby>
+    <includedby refid="CameraController_8h" local="yes">engine/core/CameraController.h</includedby>
+    <includedby refid="PlayerController_8h" local="yes">engine/core/PlayerController.h</includedby>
+    <includedby refid="Demo2DFixedScene_8h" local="yes">engine/demo/Demo2DFixedScene.h</includedby>
+    <includedby refid="Demo2DScene_8h" local="yes">engine/demo/Demo2DScene.h</includedby>
+    <includedby refid="GameWorld_8cpp" local="yes">engine/scene/GameWorld.cpp</includedby>
+    <incdepgraph>
+      <node id="11">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>graphics/VertexArray.h</label>
+        <link refid="VertexArray_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>graphics/VertexBuffer.h</label>
+        <link refid="VertexBuffer_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="1">
+        <label>engine/scene/GameWorld.h</label>
+        <link refid="GameWorld_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>cmath</label>
+      </node>
+      <node id="8">
+        <label>cstdint</label>
+      </node>
+      <node id="12">
+        <label>memory</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/core/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>engine/core/CameraController.cpp</label>
+        <link refid="CameraController_8cpp"/>
+      </node>
+      <node id="6">
+        <label>engine/core/CameraController.h</label>
+        <link refid="CameraController_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>engine/core/PlayerController.cpp</label>
+        <link refid="PlayerController_8cpp"/>
+      </node>
+      <node id="13">
+        <label>engine/core/PlayerController.h</label>
+        <link refid="PlayerController_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>engine/core/Time.cpp</label>
+        <link refid="Time_8cpp"/>
+      </node>
+      <node id="9">
+        <label>engine/demo/Demo2DFixedScene.cpp</label>
+        <link refid="Demo2DFixedScene_8cpp"/>
+      </node>
+      <node id="8">
+        <label>engine/demo/Demo2DFixedScene.h</label>
+        <link refid="Demo2DFixedScene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>engine/demo/Demo2DScene.cpp</label>
+        <link refid="Demo2DScene_8cpp"/>
+      </node>
+      <node id="11">
+        <label>engine/demo/Demo2DScene.h</label>
+        <link refid="Demo2DScene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>engine/scene/GameWorld.cpp</label>
+        <link refid="GameWorld_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/scene/GameWorld.h</label>
+        <link refid="GameWorld_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>engine/scene/MenuScene.cpp</label>
+        <link refid="MenuScene_8cpp"/>
+      </node>
+      <node id="5">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classGameWorld" prot="public">GameWorld</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Shader_8h" kindref="compound">graphics/Shader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="VertexArray_8h" kindref="compound">graphics/VertexArray.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="VertexBuffer_8h" kindref="compound">graphics/VertexBuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="IndexBuffer_8h" kindref="compound">graphics/IndexBuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3D_8h" kindref="compound">math/Vector3D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classGameWorld" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classGameWorld_1a5c71e1ff720b9e0bfb3d77235d5a533a" kindref="member">GameWorld</ref>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGameWorld_1a5c71e1ff720b9e0bfb3d77235d5a533a" kindref="member">GameWorld</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>maxX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minY,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>maxY);</highlight></codeline>
+<codeline lineno="27" refid="classGameWorld_1a00e9f9381d953e3bda8cd1decdf6ae1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGameWorld_1a00e9f9381d953e3bda8cd1decdf6ae1c" kindref="member">~GameWorld</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Getters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classGameWorld_1a099be0356a0cea9620ccd151dffc00a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1a099be0356a0cea9620ccd151dffc00a2" kindref="member">GetMinX</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1a6e4a7ddd6e8e6b559762e2e876b253bf" kindref="member">m_MinX</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="31" refid="classGameWorld_1a60de5cbf4bd843be6370b2e61f18020f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1a60de5cbf4bd843be6370b2e61f18020f" kindref="member">GetMaxX</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1ac285b18975cf6fc4a540505096a2d956" kindref="member">m_MaxX</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="32" refid="classGameWorld_1a509019005800fd39a25ed20e25f670e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1a509019005800fd39a25ed20e25f670e4" kindref="member">GetMinY</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1a1372f43d4d26999b34ec887104d4d09f" kindref="member">m_MinY</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="33" refid="classGameWorld_1a17c3daa62412f90d7549f38a51f2acad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1a17c3daa62412f90d7549f38a51f2acad" kindref="member">GetMaxY</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1abb6691e3d68d354ec5d5317062f3111a" kindref="member">m_MaxY</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="classGameWorld_1a3e8ec719469deeee0e298939e85996b2" kindref="member">ClampPosition</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>position)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1ae7266c49a835d0a98bbc94cff538576e" kindref="member">Render</ref>(<ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>shader,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref>&amp;<sp/>view,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref>&amp;<sp/>projection);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51" refid="classGameWorld_1ac285b18975cf6fc4a540505096a2d956" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1a6e4a7ddd6e8e6b559762e2e876b253bf" kindref="member">m_MinX</ref>,<sp/><ref refid="classGameWorld_1ac285b18975cf6fc4a540505096a2d956" kindref="member">m_MaxX</ref>;<sp/></highlight><highlight class="comment">//X<sp/>boundaries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classGameWorld_1abb6691e3d68d354ec5d5317062f3111a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1a1372f43d4d26999b34ec887104d4d09f" kindref="member">m_MinY</ref>,<sp/><ref refid="classGameWorld_1abb6691e3d68d354ec5d5317062f3111a" kindref="member">m_MaxY</ref>;<sp/></highlight><highlight class="comment">//Y<sp/>boundaries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classGameWorld_1a3bdd6e89d6e6348a359e9385c4dc58c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;VertexArray&gt;<sp/><ref refid="classGameWorld_1a3bdd6e89d6e6348a359e9385c4dc58c5" kindref="member">m_VertexArray</ref>;<sp/></highlight><highlight class="comment">//VAO<sp/>for<sp/>border<sp/>lines</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classGameWorld_1ab1548ee47ba447b297fd0f9b71bb6485" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;VertexBuffer&gt;<sp/><ref refid="classGameWorld_1ab1548ee47ba447b297fd0f9b71bb6485" kindref="member">m_VertexBuffer</ref>;<sp/></highlight><highlight class="comment">//VBO<sp/>for<sp/>border<sp/>vertices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classGameWorld_1a29c1ca144eb19eb1443e616a5b4246d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;IndexBuffer&gt;<sp/><ref refid="classGameWorld_1a29c1ca144eb19eb1443e616a5b4246d0" kindref="member">m_IndexBuffer</ref>;<sp/></highlight><highlight class="comment">//IBO<sp/>for<sp/>border<sp/>indices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classGameWorld_1aa58a26b7b2a2b49aac082c52b5d89af2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1aa58a26b7b2a2b49aac082c52b5d89af2" kindref="member">m_Initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Flag<sp/>indicating<sp/>if<sp/>borders<sp/>are<sp/>initialized</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGameWorld_1afb1706f708290669d6321d848945610f" kindref="member">InitializeBorders</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/scene/GameWorld.h"/>
+  </compounddef>
+</doxygen>

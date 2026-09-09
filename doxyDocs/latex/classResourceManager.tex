@@ -1,0 +1,253 @@
+\doxysection{Resource\+Manager Class Reference}
+\hypertarget{classResourceManager}{}\label{classResourceManager}\index{ResourceManager@{ResourceManager}}
+
+
+Singleton resource manager for loading and caching assets.  
+
+
+
+
+{\ttfamily \+\#include $<$Resource\+Manager.\+h$>$}
+
+
+
+Collaboration diagram for Resource\+Manager:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classResourceManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \doxymbox{\hyperlink{classResourceManager_ab4f1fc4151670863ad470b5e138dfd1b}{Load\+Texture}} (const std::\+string \&filepath)
+\begin{DoxyCompactList}\small\item\em Loads a texture from a file path, with caching. \end{DoxyCompactList}\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classShader}{Shader}} $>$ \doxymbox{\hyperlink{classResourceManager_a04610bfda86d5a2b7e4d574929eeb478}{Load\+Shader}} (const std::\+string \&name, const std::\+string \&vertex\+Source, const std::\+string \&fragment\+Source)
+\begin{DoxyCompactList}\small\item\em Loads or retrieves a shader program by name. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classResourceManager_aecd08b92634fad3316442c267a04e8c4}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears all cached resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{classResourceManager}{Resource\+Manager}} \& \doxymbox{\hyperlink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of \doxylink{classResourceManager}{Resource\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classResourceManager_a2d9db4c26c604834c60702ded80947d8}{Resource\+Manager}} ()=default
+\item 
+\doxymbox{\hyperlink{classResourceManager_a611e031031ad668b7c462a463577b65c}{\texorpdfstring{$\sim$}{\string~}\+Resource\+Manager}} ()=default
+\item 
+\doxymbox{\hyperlink{classResourceManager_ab69f63d44bed2b736ac816d9a2bf84c1}{Resource\+Manager}} (const \doxymbox{\hyperlink{classResourceManager}{Resource\+Manager}} \&)=delete
+\item 
+\doxymbox{\hyperlink{classResourceManager}{Resource\+Manager}} \& \doxymbox{\hyperlink{classResourceManager_ac213fb8bed90e40d1ba8018563f9e4b0}{operator=}} (const \doxymbox{\hyperlink{classResourceManager}{Resource\+Manager}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+unordered\+\_\+map$<$ std::\+string, std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ $>$ \doxymbox{\hyperlink{classResourceManager_a71964307b18876b6c549658b91bb4fb6}{m\+\_\+\+Textures}}
+\item 
+std::\+unordered\+\_\+map$<$ std::\+string, std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classShader}{Shader}} $>$ $>$ \doxymbox{\hyperlink{classResourceManager_a8688e902916642bf611a35954a539ab9}{m\+\_\+\+Shaders}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton resource manager for loading and caching assets. 
+
+The \doxylink{classResourceManager}{Resource\+Manager} provides a centralized system for loading and caching assets such as textures and shaders. It ensures that each asset is loaded only once and shared across the engine, reducing memory usage and load times.
+
+Supported assets: textures and shaders.
+
+\begin{DoxyNote}{Note}
+This is a singleton; use \doxylink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{Get\+Instance()} to access it. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classTexture2D}{Texture2D}, \doxylink{classShader}{Shader} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{ResourceManager_8h_source_l00021}{21}} of file \doxymbox{\hyperlink{ResourceManager_8h_source}{Resource\+Manager.\+h}}.
+
+
+
+\label{classResourceManager_doc-constructors}
+\Hypertarget{classResourceManager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classResourceManager_a2d9db4c26c604834c60702ded80947d8}\index{ResourceManager@{ResourceManager}!ResourceManager@{ResourceManager}}
+\index{ResourceManager@{ResourceManager}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{ResourceManager()}{ResourceManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classResourceManager_a2d9db4c26c604834c60702ded80947d8} 
+Resource\+Manager::\+\+Resource\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}
+
+\Hypertarget{classResourceManager_a611e031031ad668b7c462a463577b65c}\index{ResourceManager@{ResourceManager}!````~ResourceManager@{\texorpdfstring{$\sim$}{\string~}ResourceManager}}
+\index{````~ResourceManager@{\texorpdfstring{$\sim$}{\string~}ResourceManager}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ResourceManager()}{\string~ResourceManager()}}
+{\footnotesize\ttfamily \label{classResourceManager_a611e031031ad668b7c462a463577b65c} 
+Resource\+Manager::\+\texorpdfstring{$\sim$}{\string~}\+Resource\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}
+
+\Hypertarget{classResourceManager_ab69f63d44bed2b736ac816d9a2bf84c1}\index{ResourceManager@{ResourceManager}!ResourceManager@{ResourceManager}}
+\index{ResourceManager@{ResourceManager}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{ResourceManager()}{ResourceManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classResourceManager_ab69f63d44bed2b736ac816d9a2bf84c1} 
+Resource\+Manager::\+\+Resource\+Manager (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classResourceManager}{Resource\+Manager}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\label{classResourceManager_doc-func-members}
+\Hypertarget{classResourceManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classResourceManager_aecd08b92634fad3316442c267a04e8c4}\index{ResourceManager@{ResourceManager}!Clear@{Clear}}
+\index{Clear@{Clear}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{classResourceManager_aecd08b92634fad3316442c267a04e8c4} 
+void Resource\+Manager::\+\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears all cached resources. 
+
+Releases all textures and shaders from the cache. This should be called during application shutdown or when switching to a completely different game state that requires different assets.
+
+Releases all shared pointers to textures and shaders, allowing their memory to be freed if no other references exist. This is useful for level transitions or application shutdown. 
+
+Definition at line \doxymbox{\hyperlink{ResourceManager_8cpp_source_l00091}{91}} of file \doxymbox{\hyperlink{ResourceManager_8cpp_source}{Resource\+Manager.\+cpp}}.
+
+\Hypertarget{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}\index{ResourceManager@{ResourceManager}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2} 
+\doxymbox{\hyperlink{classResourceManager}{Resource\+Manager}} \& Resource\+Manager::\+\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the singleton instance of \doxylink{classResourceManager}{Resource\+Manager}. 
+
+Returns the singleton instance of \doxylink{classResourceManager}{Resource\+Manager}.
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classResourceManager}{Resource\+Manager} instance.
+\end{DoxyReturn}
+The instance is created on first call and destroyed automatically when the program exits.
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classResourceManager}{Resource\+Manager} instance. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{ResourceManager_8cpp_source_l00013}{13}} of file \doxymbox{\hyperlink{ResourceManager_8cpp_source}{Resource\+Manager.\+cpp}}.
+
+\Hypertarget{classResourceManager_a04610bfda86d5a2b7e4d574929eeb478}\index{ResourceManager@{ResourceManager}!LoadShader@{LoadShader}}
+\index{LoadShader@{LoadShader}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{LoadShader()}{LoadShader()}}
+{\footnotesize\ttfamily \label{classResourceManager_a04610bfda86d5a2b7e4d574929eeb478} 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classShader}{Shader}} $>$ Resource\+Manager::\+\+Load\+Shader (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{name}{, }\item[{const std::\+string \&}]{vertex\+Source}{, }\item[{const std::\+string \&}]{fragment\+Source}{}\end{DoxyParamCaption})}
+
+
+
+Loads or retrieves a shader program by name. 
+
+If the shader has already been compiled and cached under the given name, returns the cached instance. Otherwise, compiles the shader from source strings and stores it in the cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique identifier for this shader (e.\+g., "{}sprite"{}, "{}ui"{}). \\
+\hline
+{\em vertex\+Source} & GLSL source code for the vertex shader. \\
+\hline
+{\em fragment\+Source} & GLSL source code for the fragment shader. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shared pointer to the loaded \doxylink{classShader}{Shader}, or nullptr on compilation failure.
+\end{DoxyReturn}
+This method caches shaders by name, allowing the same shader to be used by multiple entities without recompiling. This is particularly useful for shaders that are used frequently (e.\+g., the standard sprite shader).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique identifier for this shader. \\
+\hline
+{\em vertex\+Source} & GLSL source code for the vertex shader. \\
+\hline
+{\em fragment\+Source} & GLSL source code for the fragment shader. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shared pointer to the loaded \doxylink{classShader}{Shader}, or nullptr on compilation failure. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{ResourceManager_8cpp_source_l00061}{61}} of file \doxymbox{\hyperlink{ResourceManager_8cpp_source}{Resource\+Manager.\+cpp}}.
+
+\Hypertarget{classResourceManager_ab4f1fc4151670863ad470b5e138dfd1b}\index{ResourceManager@{ResourceManager}!LoadTexture@{LoadTexture}}
+\index{LoadTexture@{LoadTexture}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{LoadTexture()}{LoadTexture()}}
+{\footnotesize\ttfamily \label{classResourceManager_ab4f1fc4151670863ad470b5e138dfd1b} 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ Resource\+Manager::\+\+Load\+Texture (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filepath}{}\end{DoxyParamCaption})}
+
+
+
+Loads a texture from a file path, with caching. 
+
+If the texture has already been loaded, returns the cached instance. Otherwise, loads the texture from the file system and stores it in the cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the texture file (e.\+g., "{}assets/\+textures/\+player.\+png"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shared pointer to the loaded \doxylink{classTexture2D}{Texture2D}, or nullptr on failure.
+\end{DoxyReturn}
+This method checks the cache first to avoid loading the same texture twice. If the texture is not already loaded, it creates a new \doxylink{classTexture2D}{Texture2D} instance and attempts to load the file. On success, the texture is added to the cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the texture file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shared pointer to the loaded \doxylink{classTexture2D}{Texture2D}, or nullptr on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{ResourceManager_8cpp_source_l00028}{28}} of file \doxymbox{\hyperlink{ResourceManager_8cpp_source}{Resource\+Manager.\+cpp}}.
+
+\Hypertarget{classResourceManager_ac213fb8bed90e40d1ba8018563f9e4b0}\index{ResourceManager@{ResourceManager}!operator=@{operator=}}
+\index{operator=@{operator=}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classResourceManager_ac213fb8bed90e40d1ba8018563f9e4b0} 
+\doxymbox{\hyperlink{classResourceManager}{Resource\+Manager}} \& Resource\+Manager::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classResourceManager}{Resource\+Manager}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\label{classResourceManager_doc-variable-members}
+\Hypertarget{classResourceManager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classResourceManager_a8688e902916642bf611a35954a539ab9}\index{ResourceManager@{ResourceManager}!m\_Shaders@{m\_Shaders}}
+\index{m\_Shaders@{m\_Shaders}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{m\_Shaders}{m\_Shaders}}
+{\footnotesize\ttfamily \label{classResourceManager_a8688e902916642bf611a35954a539ab9} 
+std::\+unordered\+\_\+map$<$std::\+string, std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classShader}{Shader}}$>$ $>$ Resource\+Manager::\+m\+\_\+\+Shaders\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{ResourceManager_8h_source_l00072}{72}} of file \doxymbox{\hyperlink{ResourceManager_8h_source}{Resource\+Manager.\+h}}.
+
+\Hypertarget{classResourceManager_a71964307b18876b6c549658b91bb4fb6}\index{ResourceManager@{ResourceManager}!m\_Textures@{m\_Textures}}
+\index{m\_Textures@{m\_Textures}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{m\_Textures}{m\_Textures}}
+{\footnotesize\ttfamily \label{classResourceManager_a71964307b18876b6c549658b91bb4fb6} 
+std::\+unordered\+\_\+map$<$std::\+string, std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classTexture2D}{Texture2D}}$>$ $>$ Resource\+Manager::\+m\+\_\+\+Textures\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{ResourceManager_8h_source_l00071}{71}} of file \doxymbox{\hyperlink{ResourceManager_8h_source}{Resource\+Manager.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+resources/\doxymbox{\hyperlink{ResourceManager_8h}{Resource\+Manager.\+h}}\item 
+engine/\+resources/\doxymbox{\hyperlink{ResourceManager_8cpp}{Resource\+Manager.\+cpp}}\end{DoxyCompactItemize}

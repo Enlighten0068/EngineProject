@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structComponents_1_1PhysicsBody" kind="struct" language="C++" prot="public">
+    <compoundname>Components::PhysicsBody</compoundname>
+    <includes refid="PhysicsBody_8h" local="no">PhysicsBody.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structComponents_1_1PhysicsBody_1a3210a86ca2ea87ab8ce3ff1bda713ade" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Components::PhysicsBody::Velocity</definition>
+        <argsstring></argsstring>
+        <name>Velocity</name>
+        <qualifiedname>Components::PhysicsBody::Velocity</qualifiedname>
+        <initializer>{0.0f, 0.0f, 0.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/PhysicsBody.h" line="18" column="18" bodyfile="engine/components/PhysicsBody.h" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="variable" id="structComponents_1_1PhysicsBody_1a12befd41867fdde0774a00c766457a26" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Components::PhysicsBody::IsGrounded</definition>
+        <argsstring></argsstring>
+        <name>IsGrounded</name>
+        <qualifiedname>Components::PhysicsBody::IsGrounded</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/PhysicsBody.h" line="19" column="14" bodyfile="engine/components/PhysicsBody.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structComponents_1_1PhysicsBody_1afab2ab2824663679e684cb92e4d0a2ed" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Components::PhysicsBody::GravityScale</definition>
+        <argsstring></argsstring>
+        <name>GravityScale</name>
+        <qualifiedname>Components::PhysicsBody::GravityScale</qualifiedname>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/PhysicsBody.h" line="20" column="15" bodyfile="engine/components/PhysicsBody.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Adds physics properties to an entity. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Entities with this component are affected by gravity and can participate in collision detection and resolution. The velocity is updated each frame by the physics system.</para>
+<para><simplesect kind="note"><para>This component is used for both the player and enemies. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structComponents_1_1Transform" kindref="compound">Transform</ref>, <ref refid="classEnemySystem" kindref="compound">EnemySystem</ref>, <ref refid="classPlayerController" kindref="compound">PlayerController</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Components::PhysicsBody</label>
+        <link refid="structComponents_1_1PhysicsBody"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+Velocity</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/components/PhysicsBody.h" line="17" column="5" bodyfile="engine/components/PhysicsBody.h" bodystart="17" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structComponents_1_1PhysicsBody_1afab2ab2824663679e684cb92e4d0a2ed" prot="public" virt="non-virtual"><scope>Components::PhysicsBody</scope><name>GravityScale</name></member>
+      <member refid="structComponents_1_1PhysicsBody_1a12befd41867fdde0774a00c766457a26" prot="public" virt="non-virtual"><scope>Components::PhysicsBody</scope><name>IsGrounded</name></member>
+      <member refid="structComponents_1_1PhysicsBody_1a3210a86ca2ea87ab8ce3ff1bda713ade" prot="public" virt="non-virtual"><scope>Components::PhysicsBody</scope><name>Velocity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

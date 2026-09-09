@@ -1,0 +1,5 @@
+<map id="Demo2DFixedScene" name="Demo2DFixedScene">
+<area shape="rect" id="Node000001" title="Demo 2D Scene with a fixed camera and enemy stomping mechanics." alt="" coords="5,237,190,846"/>
+<area shape="rect" id="Node000002" href="$classScene.html" title="Abstract base class for all scenes in the engine." alt="" coords="48,5,147,189"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,202,100,238,95,237,98,207"/>
+</map>

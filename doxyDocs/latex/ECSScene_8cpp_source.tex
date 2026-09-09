@@ -1,0 +1,31 @@
+\doxysection{ECSScene.\+cpp}
+\hypertarget{ECSScene_8cpp_source}{}\label{ECSScene_8cpp_source}\index{engine/scene/ECSScene.cpp@{engine/scene/ECSScene.cpp}}
+\doxymbox{\hyperlink{ECSScene_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Input_8h}{core/Input.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Renderer_8h}{renderer/Renderer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{ECSScene_8h}{scene/ECSScene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{RenderSystem_8h}{systems/RenderSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00007}\doxymbox{\hyperlink{classECSScene_a47e4a9a1d139379538ca65dd28c31e27}{00007}}\ \doxymbox{\hyperlink{classECSScene_a47e4a9a1d139379538ca65dd28c31e27}{ECSScene::ECSScene}}(\doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ va,\ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ ib)}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00008}00008\ :\ \doxymbox{\hyperlink{classECSScene_a80f1088d363fcff611b334f2d45d183c}{m\_Shader}}(shader),\ \doxymbox{\hyperlink{classECSScene_a4a96793d8eb86e77608681f2bb3c40ce}{m\_VertexArray}}(va),\ \doxymbox{\hyperlink{classECSScene_a929d63f68e5c63da9444a788fe7390b8}{m\_IndexBuffer}}(ib)\{\}}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00010}00010\ \doxymbox{\hyperlink{classECSScene_ae126bfdb0b37bf4b89f86f603c8f153f}{ECSScene::\string~ECSScene}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00019}\doxymbox{\hyperlink{classECSScene_a818d8b2200a44df7097c4eedaa1c6142}{00019}}\ entt::entity\ \doxymbox{\hyperlink{classECSScene_a818d8b2200a44df7097c4eedaa1c6142}{ECSScene::CreateSpriteEntity}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ position,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ scale,}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Texture2D>\ texture)\{}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{auto}\ entity\ =\ \doxymbox{\hyperlink{classECSScene_a207e75960af3e48dc84ccb8b569dec94}{m\_Registry}}.create();}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ \doxymbox{\hyperlink{classECSScene_a207e75960af3e48dc84ccb8b569dec94}{m\_Registry}}.emplace<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(entity);}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00023}00023\ \ \ \ \ transform.\doxymbox{\hyperlink{structComponents_1_1Transform_aa2a3a1979b171ef97e29461f9ce52cc1}{Position}}\ =\ position;}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00024}00024\ \ \ \ \ transform.Scale\ =\ scale;}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{auto}\&\ sprite\ =\ \doxymbox{\hyperlink{classECSScene_a207e75960af3e48dc84ccb8b569dec94}{m\_Registry}}.emplace<\doxymbox{\hyperlink{structComponents_1_1SpriteRenderer}{Components::SpriteRenderer}}>(entity);}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00026}00026\ \ \ \ \ sprite.\doxymbox{\hyperlink{structComponents_1_1SpriteRenderer_a7f430566c6a661fa1973ad364f6ba744}{Texture}}\ =\ texture;}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{return}\ entity;}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00035}\doxymbox{\hyperlink{classECSScene_a1d0dd704f1aaf7012b20aa8644a1bf1f}{00035}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classECSScene_a1d0dd704f1aaf7012b20aa8644a1bf1f}{ECSScene::Render}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ view,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ projection)\{}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00036}00036\ \ \ \ \ \doxymbox{\hyperlink{classRenderSystem_a0dee88c7afdb4acfa6ad44e3902ce7a3}{RenderSystem::Render}}(\doxymbox{\hyperlink{classECSScene_a207e75960af3e48dc84ccb8b569dec94}{m\_Registry}},\ \doxymbox{\hyperlink{classECSScene_a80f1088d363fcff611b334f2d45d183c}{m\_Shader}},\ view,\ projection,\ \doxymbox{\hyperlink{classECSScene_a4a96793d8eb86e77608681f2bb3c40ce}{m\_VertexArray}},\ \doxymbox{\hyperlink{classECSScene_a929d63f68e5c63da9444a788fe7390b8}{m\_IndexBuffer}});}
+\DoxyCodeLine{\Hypertarget{ECSScene_8cpp_source_l00037}00037\ \}}
+
+\end{DoxyCode}

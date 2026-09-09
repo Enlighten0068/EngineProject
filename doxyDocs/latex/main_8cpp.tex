@@ -1,0 +1,50 @@
+\doxysection{game/\+src/\+main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{game/src/main.cpp@{game/src/main.cpp}}
+{\ttfamily \+\#include "{}core/\+\+Application.\+h"{}}\newline
+{\ttfamily \+\#include "{}demo/\+\+Demo2\+DScene.\+h"{}}\newline
+{\ttfamily \+\#include "{}demo/\+\+Demo2\+DFixed\+Scene.\+h"{}}\newline
+{\ttfamily \+\#include "{}scene/\+\+Menu\+Scene.\+h"{}}\newline
+{\ttfamily \+\#include $<$memory$>$}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+Include dependency graph for main.\+cpp:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Entry point for the Engine\+Project application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{main_8cpp_doc-func-members}
+\Hypertarget{main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Entry point for the Engine\+Project application. 
+
+Creates the main \doxylink{classApplication}{Application} instance, initializes all engine subsystems, and selects the initial scene based on the DEMO\+\_\+2\+D\+\_\+\+FIXED preprocessor macro.
+
+If DEMO\+\_\+2\+D\+\_\+\+FIXED is defined, the application starts directly in the \doxylink{classDemo2DFixedScene}{Demo2\+DFixed\+Scene} (a 2D platformer demo with a fixed camera). Otherwise, it starts in the \doxylink{classMenuScene}{Menu\+Scene}, allowing the user to navigate to different game modes.
+
+\begin{DoxyReturn}{Returns}
+int Returns 0 on successful execution, 1 if initialization fails.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classApplication}{Application}, \doxylink{classDemo2DFixedScene}{Demo2\+DFixed\+Scene}, \doxylink{classMenuScene}{Menu\+Scene} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{main_8cpp_source_l00023}{23}} of file \doxymbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+

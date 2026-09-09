@@ -13,8 +13,13 @@
  */
 class PlayerJumpedEvent : public Event{
 public:
+    /**
+     * @brief Constructs a PlayerJumpedEvent.
+     * @param position Player position at jump time.
+     * @param jumpForce The vertical force applied.
+     */
     PlayerJumpedEvent(const Vector3D& position, float jumpForce)
-    : m_Position(position), m_JumpForce(jumpForce) {}
+    : m_Position(position), m_JumpForce(jumpForce){}
 
     const Vector3D& GetPosition() const{ return m_Position; }
     float GetJumpForce() const{ return m_JumpForce; }
@@ -23,8 +28,8 @@ public:
     EventType GetEventType() const override{ return EventType::PlayerJumped; }
 
 private:
-    Vector3D m_Position;
-    float m_JumpForce;
+    Vector3D m_Position; //Player position
+    float m_JumpForce; //Jump force applied
 };
 
 /**
@@ -36,8 +41,13 @@ private:
  */
 class PlayerLandedEvent : public Event{
 public:
+    /**
+     * @brief Constructs a PlayerLandedEvent.
+     * @param position Player position at landing.
+     * @param fallSpeed The speed at landing.
+     */
     PlayerLandedEvent(const Vector3D& position, float fallSpeed)
-    : m_Position(position), m_FallSpeed(fallSpeed) {}
+    : m_Position(position), m_FallSpeed(fallSpeed){}
 
     const Vector3D& GetPosition() const{ return m_Position; }
     float GetFallSpeed() const{ return m_FallSpeed; }
@@ -46,8 +56,8 @@ public:
     EventType GetEventType() const override{ return EventType::PlayerLanded; }
 
 private:
-    Vector3D m_Position;
-    float m_FallSpeed;
+    Vector3D m_Position; //Player position
+    float m_FallSpeed; //Fall speed at landing
 };
 
 /**
@@ -59,8 +69,13 @@ private:
  */
 class PlayerDiedEvent : public Event{
 public:
+    /**
+     * @brief Constructs a PlayerDiedEvent.
+     * @param position Player position at death.
+     * @param cause Reason for death (e.g., "Killed by enemy").
+     */
     PlayerDiedEvent(const Vector3D& position, const std::string& cause = "Unknown")
-    : m_Position(position), m_Cause(cause) {}
+    : m_Position(position), m_Cause(cause){}
 
     const Vector3D& GetPosition() const{ return m_Position; }
     const std::string& GetCause() const{ return m_Cause; }
@@ -69,6 +84,6 @@ public:
     EventType GetEventType() const override{ return EventType::PlayerDied; }
 
 private:
-    Vector3D m_Position;
-    std::string m_Cause;
+    Vector3D m_Position; //Player position
+    std::string m_Cause; //Death cause
 };

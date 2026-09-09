@@ -1,0 +1,14 @@
+<map id="engine/audio/SoundEffect.h" name="engine/audio/SoundEffect.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="304,5,503,33"/>
+<area shape="rect" id="Node000002" href="$SoundEffect_8cpp.html" title=" " alt="" coords="56,81,270,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="344,39,207,83,205,78,348,37"/>
+<area shape="rect" id="Node000003" href="$SoundManager_8h.html" title=" " alt="" coords="294,81,512,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="405,47,406,82,401,79,402,51"/>
+<area shape="rect" id="Node000005" href="$Application_8cpp.html" title=" " alt="" coords="520,157,721,184"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="450,37,488,56,526,79,575,119,612,157,607,156,571,123,523,83,486,61,449,42"/>
+<area shape="rect" id="Node000004" href="$SoundManager_8cpp.html" title=" " alt="" coords="5,157,239,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="341,115,173,159,172,154,337,111"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="457,111,584,156,579,156,456,117"/>
+<area shape="rect" id="Node000006" href="$PlayerController_8cpp.html" title=" " alt="" coords="263,157,496,184"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="396,122,385,158,382,154,392,125"/>
+</map>

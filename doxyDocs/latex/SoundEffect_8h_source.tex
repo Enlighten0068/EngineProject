@@ -1,0 +1,39 @@
+\doxysection{Sound\+Effect.\+h}
+\hypertarget{SoundEffect_8h_source}{}\label{SoundEffect_8h_source}\index{engine/audio/SoundEffect.h@{engine/audio/SoundEffect.h}}
+\doxymbox{\hyperlink{SoundEffect_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00012}\doxymbox{\hyperlink{classSoundEffect}{00012}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classSoundEffect_aa779f253615cd049725b4998e0de88b7}{SoundEffect}}\{}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00013}00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00014}00014\ \ \ \ \ \doxymbox{\hyperlink{classSoundEffect_aa779f253615cd049725b4998e0de88b7}{SoundEffect}}();}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00015}00015\ \ \ \ \ \doxymbox{\hyperlink{classSoundEffect_aa779f253615cd049725b4998e0de88b7}{\string~SoundEffect}}();}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classSoundEffect_aa759a5f6e53d18c9b7447b3e856c0bd1}{Load}}(\textcolor{keyword}{const}\ std::string\&\ filepath);}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSoundEffect_a4a39a296b2231b690985dade9ce7733a}{Play}}(\textcolor{keywordtype}{int}\ volume\ =\ 128);}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSoundEffect_aac80ead03ebef197b679e6edbc10fc99}{Unload}}();}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00039}\doxymbox{\hyperlink{classSoundEffect_a9ad602d2d962fb031553174c5bc73661}{00039}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classSoundEffect_a9ad602d2d962fb031553174c5bc73661}{IsLoaded}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ !\doxymbox{\hyperlink{classSoundEffect_ab9c4c95f7087e7a777d1b77233236cf0}{m\_Data}}.empty();\ \}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00045}\doxymbox{\hyperlink{classSoundEffect_a2394c50d77422ecd0cca27d9016a5868}{00045}}\ \ \ \ \ \textcolor{keyword}{static}\ SDL\_AudioDeviceID\ \doxymbox{\hyperlink{classSoundEffect_a2394c50d77422ecd0cca27d9016a5868}{GetAudioDevice}}()\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classSoundEffect_a133e312b04f01d6835286ed69b667951}{s\_AudioDevice}};\ \}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSoundEffect_abc204c2f7c0a891eb671821d23b38bc7}{CloseAudioDevice}}();}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00054}00054\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00055}\doxymbox{\hyperlink{classSoundEffect_ab9c4c95f7087e7a777d1b77233236cf0}{00055}}\ \ \ \ \ std::vector<Uint8>\ \doxymbox{\hyperlink{classSoundEffect_ab9c4c95f7087e7a777d1b77233236cf0}{m\_Data}};\ \textcolor{comment}{//Raw\ audio\ data\ as\ PCM\ samples}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00056}\doxymbox{\hyperlink{classSoundEffect_a19a66ea9ad7c306554bf58ce68283814}{00056}}\ \ \ \ \ SDL\_AudioSpec\ \doxymbox{\hyperlink{classSoundEffect_a19a66ea9ad7c306554bf58ce68283814}{m\_Spec}};\ \textcolor{comment}{//Audio\ specification\ for\ the\ loaded\ sound}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{static}\ SDL\_AudioSpec\ \doxymbox{\hyperlink{classSoundEffect_aae475e32a6dc801f92706191709dfe48}{m\_DeviceSpec}};\ \textcolor{comment}{//Actual\ audio\ device\ specification}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00058}\doxymbox{\hyperlink{classSoundEffect_a834510bdbcad1236e1b70646016346a5}{00058}}\ \ \ \ \ SDL\_AudioStream*\ \doxymbox{\hyperlink{classSoundEffect_a834510bdbcad1236e1b70646016346a5}{m\_Stream}}\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//Audio\ stream\ for\ playback}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00059}\doxymbox{\hyperlink{classSoundEffect_a133e312b04f01d6835286ed69b667951}{00059}}\ \ \ \ \ \textcolor{keyword}{static}\ SDL\_AudioDeviceID\ \doxymbox{\hyperlink{classSoundEffect_a133e312b04f01d6835286ed69b667951}{s\_AudioDevice}};\ \textcolor{comment}{//Shared\ audio\ device\ ID}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00060}\doxymbox{\hyperlink{classSoundEffect_ad1201573d75db7d3f6128d38dbde4c6a}{00060}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classSoundEffect_ad1201573d75db7d3f6128d38dbde4c6a}{s\_DeviceOpen}};\ \textcolor{comment}{//Flag\ indicating\ if\ the\ audio\ device\ is\ open}}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classSoundEffect_a82797947050d4f08f80406ee9a9987a8}{OpenDevice}}();}
+\DoxyCodeLine{\Hypertarget{SoundEffect_8h_source_l00067}00067\ \};}
+
+\end{DoxyCode}

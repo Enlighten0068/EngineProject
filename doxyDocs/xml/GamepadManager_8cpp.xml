@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="GamepadManager_8cpp" kind="file" language="C++">
+    <compoundname>GamepadManager.cpp</compoundname>
+    <includes refid="GamepadManager_8h" local="yes">core/GamepadManager.h</includes>
+    <includes refid="Log_8h" local="yes">diagnostics/Log.h</includes>
+    <includes local="no">format</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/core/GamepadManager.cpp</label>
+        <link refid="GamepadManager_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>core/GamepadManager.h</label>
+        <link refid="GamepadManager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="8">
+        <label>chrono</label>
+      </node>
+      <node id="11">
+        <label>format</label>
+      </node>
+      <node id="7">
+        <label>fstream</label>
+      </node>
+      <node id="9">
+        <label>iomanip</label>
+      </node>
+      <node id="10">
+        <label>sstream</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GamepadManager_8h" kindref="compound">core/GamepadManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Log_8h" kindref="compound">diagnostics/Log.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;format&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//Singleton<sp/>instance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" refkind="member"><highlight class="normal"><ref refid="classGamepadManager_1a989db3a6f006163a230a138a028c0dd7" kindref="member">GamepadManager</ref>&amp;<sp/><ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GamepadManager::GetInstance</ref>(){</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a989db3a6f006163a230a138a028c0dd7" kindref="member">GamepadManager</ref><sp/>instance;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>instance;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="classGamepadManager_1a1413ab6313f7d89a6c42e42ac59c587c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a1413ab6313f7d89a6c42e42ac59c587c" kindref="member">GamepadManager::Initialize</ref>(){</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Try<sp/>gamepad<sp/>subsystem<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(SDL_InitSubSystem(SDL_INIT_GAMEPAD)<sp/>!=<sp/>0){</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(std::format(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>initialize<sp/>gamepad<sp/>subsystem:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>SDL_GetError()));</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Fallback<sp/>to<sp/>joystick<sp/>subsystem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Trying<sp/>to<sp/>initialize<sp/>joystick<sp/>subsystem<sp/>instead...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(SDL_InitSubSystem(SDL_INIT_JOYSTICK)<sp/>!=<sp/>0){</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(std::format(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>initialize<sp/>joystick<sp/>subsystem:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>SDL_GetError()));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Joystick<sp/>subsystem<sp/>initialized<sp/>successfully.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Gamepad<sp/>subsystem<sp/>initialized<sp/>successfully.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Get<sp/>list<sp/>of<sp/>connected<sp/>gamepads</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numGamepads<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_JoystickID*<sp/>gamepadIDs<sp/>=<sp/>SDL_GetGamepads(&amp;numGamepads);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!gamepadIDs){</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Fallback<sp/>to<sp/>joystick<sp/>if<sp/>gamepad<sp/>detection<sp/>fails</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a5a5a1c297ed72ab2f850d0d01ae00aaa" kindref="member">Log::Warning</ref>(</highlight><highlight class="stringliteral">&quot;SDL_GetGamepads<sp/>failed.<sp/>Trying<sp/>SDL_GetJoysticks...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numJoysticks<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_JoystickID*<sp/>joystickIDs<sp/>=<sp/>SDL_GetJoysticks(&amp;numJoysticks);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(joystickIDs){</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>numJoysticks;<sp/>++i){</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(SDL_IsGamepad(joystickIDs[i])){</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a186c1ce24c83a70e92e8440116a930e2" kindref="member">AddGamepad</ref>(joystickIDs[i]);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_free(joystickIDs);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(std::format(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>get<sp/>joystick<sp/>list:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>SDL_GetError()));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>numGamepads;<sp/>++i){</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(SDL_IsGamepad(gamepadIDs[i])){</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a186c1ce24c83a70e92e8440116a930e2" kindref="member">AddGamepad</ref>(gamepadIDs[i]);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_free(gamepadIDs);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(std::format(</highlight><highlight class="stringliteral">&quot;GamepadManager<sp/>initialized.<sp/>{}<sp/>gamepad(s)<sp/>connected.&quot;</highlight><highlight class="normal">,<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.size()));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classGamepadManager_1a55ac3f9f4cc6174f3143b176d348f0dc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a55ac3f9f4cc6174f3143b176d348f0dc" kindref="member">GamepadManager::Shutdown</ref>(){</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Close<sp/>all<sp/>open<sp/>gamepads</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>[playerIndex,<sp/>gamepad]<sp/>:<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>){</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_CloseGamepad(gamepad);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.clear();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Clear<sp/>button<sp/>states<sp/>for<sp/>each<sp/>player</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classGamepadManager_1a198e2ef559b545d3d7ee93167ab85117" kindref="member">MAX_PLAYERS</ref>;<sp/>++i){</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" kindref="member">m_ButtonState</ref>[i].clear();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1acde2ada37c2d93c15b8f2a834b59385f" kindref="member">m_ButtonPrevious</ref>[i].clear();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_QuitSubSystem(SDL_INIT_GAMEPAD);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;GamepadManager<sp/>shut<sp/>down.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classGamepadManager_1a6de10c692816a54eb47ea13a9b0786fc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a6de10c692816a54eb47ea13a9b0786fc" kindref="member">GamepadManager::Update</ref>(){</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>[playerIndex,<sp/>gamepad]<sp/>:<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>){</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1acde2ada37c2d93c15b8f2a834b59385f" kindref="member">m_ButtonPrevious</ref>[playerIndex]<sp/>=<sp/><ref refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" kindref="member">m_ButtonState</ref>[playerIndex];</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a3e65cf524ef558d0d9ee62283dbfed6b" kindref="member">UpdateButtonState</ref>(playerIndex);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="classGamepadManager_1a186c1ce24c83a70e92e8440116a930e2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a186c1ce24c83a70e92e8440116a930e2" kindref="member">GamepadManager::AddGamepad</ref>(SDL_JoystickID<sp/>deviceID){</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!SDL_IsGamepad(deviceID))<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Gamepad*<sp/>gamepad<sp/>=<sp/>SDL_OpenGamepad(deviceID);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!gamepad){</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(std::format(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>open<sp/>gamepad<sp/>{}:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>deviceID,<sp/>SDL_GetError()));</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Find<sp/>first<sp/>available<sp/>player<sp/>slot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(playerIndex<sp/>&lt;<sp/><ref refid="classGamepadManager_1a198e2ef559b545d3d7ee93167ab85117" kindref="member">MAX_PLAYERS</ref><sp/>&amp;&amp;<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.find(playerIndex)<sp/>!=<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.end()){</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>playerIndex++;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(playerIndex<sp/>&gt;=<sp/><ref refid="classGamepadManager_1a198e2ef559b545d3d7ee93167ab85117" kindref="member">MAX_PLAYERS</ref>){</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a5a5a1c297ed72ab2f850d0d01ae00aaa" kindref="member">Log::Warning</ref>(</highlight><highlight class="stringliteral">&quot;Maximum<sp/>number<sp/>of<sp/>gamepads<sp/>reached.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_CloseGamepad(gamepad);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Store<sp/>gamepad<sp/>and<sp/>initialize<sp/>button<sp/>states</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>[playerIndex]<sp/>=<sp/>gamepad;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" kindref="member">m_ButtonState</ref>[playerIndex][playerIndex]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1acde2ada37c2d93c15b8f2a834b59385f" kindref="member">m_ButtonPrevious</ref>[playerIndex][playerIndex]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name<sp/>=<sp/>SDL_GetGamepadName(gamepad);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(std::format(</highlight><highlight class="stringliteral">&quot;Gamepad<sp/>{}<sp/>connected:<sp/>{}<sp/>(Player<sp/>{})&quot;</highlight><highlight class="normal">,<sp/>deviceID,<sp/>name<sp/>?<sp/>name<sp/>:<sp/></highlight><highlight class="stringliteral">&quot;Unknown&quot;</highlight><highlight class="normal">,<sp/>playerIndex));</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="classGamepadManager_1ade0a3192b1570bbc2d5f72b0129dfef2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1ade0a3192b1570bbc2d5f72b0129dfef2" kindref="member">GamepadManager::RemoveGamepad</ref>(SDL_JoystickID<sp/>deviceID){</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>[idx,<sp/>gamepad]<sp/>:<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>){</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(SDL_GetGamepadID(gamepad)<sp/>==<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">SDL_JoystickID</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(deviceID)){</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>playerIndex<sp/>=<sp/>idx;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(playerIndex<sp/>!=<sp/>-1){</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_CloseGamepad(<ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>[playerIndex]);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.erase(playerIndex);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(std::format(</highlight><highlight class="stringliteral">&quot;Gamepad<sp/>{}<sp/>disconnected<sp/>(Player<sp/>{})&quot;</highlight><highlight class="normal">,<sp/>deviceID,<sp/>playerIndex));</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="classGamepadManager_1a3e65cf524ef558d0d9ee62283dbfed6b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a3e65cf524ef558d0d9ee62283dbfed6b" kindref="member">GamepadManager::UpdateButtonState</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex){</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.find(playerIndex);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(it<sp/>==<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.end())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Gamepad*<sp/>gamepad<sp/>=<sp/>it-&gt;second;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>Uint64<sp/>state<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Build<sp/>bitmask<sp/>of<sp/>all<sp/>buttons</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>SDL_GAMEPAD_BUTTON_COUNT;<sp/>++i){</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(SDL_GetGamepadButton(gamepad,<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">SDL_GamepadButton</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(i))){</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>|=<sp/>(1ULL<sp/>&lt;&lt;<sp/>i);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" kindref="member">m_ButtonState</ref>[playerIndex][playerIndex]<sp/>=<sp/>state;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="classGamepadManager_1a3f0b50a62302886b5672ea42fe3f888e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a3f0b50a62302886b5672ea42fe3f888e" kindref="member">GamepadManager::IsConnected</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.find(playerIndex)<sp/>!=<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.end();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="classGamepadManager_1ac0353ae7462fed666bd6983491f2979e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1ac0353ae7462fed666bd6983491f2979e" kindref="member">GamepadManager::IsButtonPressed</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/>SDL_GamepadButton<sp/>button)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itState<sp/>=<sp/><ref refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" kindref="member">m_ButtonState</ref>[playerIndex].find(playerIndex);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itPrev<sp/>=<sp/><ref refid="classGamepadManager_1acde2ada37c2d93c15b8f2a834b59385f" kindref="member">m_ButtonPrevious</ref>[playerIndex].find(playerIndex);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(itState<sp/>==<sp/><ref refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" kindref="member">m_ButtonState</ref>[playerIndex].end()<sp/>||<sp/>itPrev<sp/>==<sp/><ref refid="classGamepadManager_1acde2ada37c2d93c15b8f2a834b59385f" kindref="member">m_ButtonPrevious</ref>[playerIndex].end())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>Uint64<sp/>mask<sp/>=<sp/>1ULL<sp/>&lt;&lt;<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(button);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(itState-&gt;second<sp/>&amp;<sp/>mask)<sp/>&amp;&amp;<sp/>!(itPrev-&gt;second<sp/>&amp;<sp/>mask);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187" refid="classGamepadManager_1a49f21e7fc6fc0eb8749ab7b13e62982f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a49f21e7fc6fc0eb8749ab7b13e62982f" kindref="member">GamepadManager::IsButtonHeld</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/>SDL_GamepadButton<sp/>button)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itState<sp/>=<sp/><ref refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" kindref="member">m_ButtonState</ref>[playerIndex].find(playerIndex);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(itState<sp/>==<sp/><ref refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" kindref="member">m_ButtonState</ref>[playerIndex].end())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>Uint64<sp/>mask<sp/>=<sp/>1ULL<sp/>&lt;&lt;<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(button);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(itState-&gt;second<sp/>&amp;<sp/>mask);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="classGamepadManager_1a853ba537c60f9acb1d5ff90e1980fdd1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a853ba537c60f9acb1d5ff90e1980fdd1" kindref="member">GamepadManager::IsButtonReleased</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/>SDL_GamepadButton<sp/>button)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itState<sp/>=<sp/><ref refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" kindref="member">m_ButtonState</ref>[playerIndex].find(playerIndex);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itPrev<sp/>=<sp/><ref refid="classGamepadManager_1acde2ada37c2d93c15b8f2a834b59385f" kindref="member">m_ButtonPrevious</ref>[playerIndex].find(playerIndex);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(itState<sp/>==<sp/><ref refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" kindref="member">m_ButtonState</ref>[playerIndex].end()<sp/>||<sp/>itPrev<sp/>==<sp/><ref refid="classGamepadManager_1acde2ada37c2d93c15b8f2a834b59385f" kindref="member">m_ButtonPrevious</ref>[playerIndex].end())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>Uint64<sp/>mask<sp/>=<sp/>1ULL<sp/>&lt;&lt;<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(button);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(itState-&gt;second<sp/>&amp;<sp/>mask)<sp/>&amp;&amp;<sp/>(itPrev-&gt;second<sp/>&amp;<sp/>mask);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="classGamepadManager_1afc5533e2907a7356e1e7a34cbae3f872" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1afc5533e2907a7356e1e7a34cbae3f872" kindref="member">GamepadManager::GetAxis</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/>SDL_GamepadAxis<sp/>axis)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.find(playerIndex);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(it<sp/>==<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.end())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0f;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>Sint16<sp/>value<sp/>=<sp/>SDL_GetGamepadAxis(it-&gt;second,<sp/>axis);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value<sp/>/<sp/>32767.0f;<sp/></highlight><highlight class="comment">//Convert<sp/>from<sp/>raw<sp/>value<sp/>to<sp/>-1.0<sp/>to<sp/>1.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="classGamepadManager_1a66451577d794bf16cf3fdedddaef6523" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a66451577d794bf16cf3fdedddaef6523" kindref="member">GamepadManager::GetTrigger</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/>SDL_GamepadAxis<sp/>axis)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.find(playerIndex);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(it<sp/>==<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.end())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0f;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>Sint16<sp/>value<sp/>=<sp/>SDL_GetGamepadAxis(it-&gt;second,<sp/>axis);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value<sp/>/<sp/>32767.0f;<sp/></highlight><highlight class="comment">//Convert<sp/>from<sp/>raw<sp/>value<sp/>to<sp/>-1.0<sp/>to<sp/>1.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="classGamepadManager_1a84e1fc9b83d217de9d5160b065309c14" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a84e1fc9b83d217de9d5160b065309c14" kindref="member">GamepadManager::SetRumble</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>lowFrequency,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>highFrequency,<sp/>Uint32<sp/>durationMs){</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.find(playerIndex);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(it<sp/>==<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>.end())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>Uint16<sp/>low<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Uint16</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(lowFrequency<sp/>*<sp/>65535);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>Uint16<sp/>high<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Uint16</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(highFrequency<sp/>*<sp/>65535);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_RumbleGamepad(it-&gt;second,<sp/>low,<sp/>high,<sp/>durationMs);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="classGamepadManager_1a3d38e8583ad177eef9fecfda4d015826" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a3d38e8583ad177eef9fecfda4d015826" kindref="member">GamepadManager::ProcessEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Event&amp;<sp/>event){</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(event.type){</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SDL_EVENT_GAMEPAD_ADDED:</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(std::format(</highlight><highlight class="stringliteral">&quot;Gamepad<sp/>added:<sp/>device<sp/>index<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>event.gdevice.which));</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a186c1ce24c83a70e92e8440116a930e2" kindref="member">AddGamepad</ref>(event.gdevice.which);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SDL_EVENT_GAMEPAD_REMOVED:</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(std::format(</highlight><highlight class="stringliteral">&quot;Gamepad<sp/>removed:<sp/>device<sp/>index<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>event.gdevice.which));</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1ade0a3192b1570bbc2d5f72b0129dfef2" kindref="member">RemoveGamepad</ref>(event.gdevice.which);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/core/GamepadManager.cpp"/>
+  </compounddef>
+</doxygen>

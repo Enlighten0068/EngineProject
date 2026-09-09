@@ -1,0 +1,310 @@
+\doxysection{Camera\+Controller Class Reference}
+\hypertarget{classCameraController}{}\label{classCameraController}\index{CameraController@{CameraController}}
+
+
+Controls a 2D camera with follow and zoom capabilities.  
+
+
+
+
+{\ttfamily \+\#include $<$Camera\+Controller.\+h$>$}
+
+
+
+Collaboration diagram for Camera\+Controller:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classCameraController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classCameraController_a18c096c90c713bb7b7338fb26e0e34c3}{Camera\+Controller}} (\doxymbox{\hyperlink{classCamera2D}{Camera2D}} \&camera, const \doxymbox{\hyperlink{classGameWorld}{Game\+World}} \&world)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classCameraController}{Camera\+Controller}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classCameraController_a4bb6daa54712bc86cdd0e4c0aa820c93}{\texorpdfstring{$\sim$}{\string~}\+Camera\+Controller}} ()=default
+\item 
+void \doxymbox{\hyperlink{classCameraController_a417ac3fd698ce445d873b6b3db492bb0}{Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Updates the camera position and zoom. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classCameraController_a4e546021dba61f96a1520c156c1c3220}{Set\+Follow\+Entity}} (bool follow)
+\item 
+bool \doxymbox{\hyperlink{classCameraController_a9e8fabb83f2c9d2cd9fb28a0af391efd}{Is\+Following}} () const
+\item 
+void \doxymbox{\hyperlink{classCameraController_a388d9e413d4226fda071690d8d492af9}{Set\+Speed}} (float speed)
+\item 
+void \doxymbox{\hyperlink{classCameraController_a6052d48b7b3f21725333c07ba22f3af8}{Set\+Zoom\+Speed}} (float speed)
+\item 
+void \doxymbox{\hyperlink{classCameraController_a27a89b51cf5356658f002198f9e35acb}{Set\+Target\+Position}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&target)
+\item 
+void \doxymbox{\hyperlink{classCameraController_a7a87e066abd81799c29b2918b323b019}{Set\+Min\+Zoom}} (float min\+Zoom)
+\item 
+void \doxymbox{\hyperlink{classCameraController_a7b0a9ed91841b355a64813b88c293024}{Set\+Max\+Zoom}} (float max\+Zoom)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classCamera2D}{Camera2D}} \& \doxymbox{\hyperlink{classCameraController_aaf6e45805acb449c8c30c9637b759558}{m\+\_\+\+Camera}}
+\item 
+const \doxymbox{\hyperlink{classGameWorld}{Game\+World}} \& \doxymbox{\hyperlink{classCameraController_a8990c89b4d50923d183579a93c9923b1}{m\+\_\+\+World}}
+\item 
+bool \doxymbox{\hyperlink{classCameraController_a713bed4b6c44077872115b20f4ee1569}{m\+\_\+\+Follow\+Entity}} = false
+\item 
+float \doxymbox{\hyperlink{classCameraController_aed19f04d0186177f551755c8bf2ee496}{m\+\_\+\+Speed}} = 5.\+0f
+\item 
+float \doxymbox{\hyperlink{classCameraController_aa40b6ff354ed391b4ceba410b846ce63}{m\+\_\+\+Min\+Zoom}} = 0.\+5f
+\item 
+float \doxymbox{\hyperlink{classCameraController_acafdc8b66669d186a00eae8dd124fa64}{m\+\_\+\+Max\+Zoom}} = 5.\+0f
+\item 
+float \doxymbox{\hyperlink{classCameraController_ae27f89e7f25ba8330bab5bb13b0a5d0f}{m\+\_\+\+Zoom\+Speed}} = 1.\+0f
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{classCameraController_ae9f6f6f6ab6961e1ebb5bb1130521b45}{m\+\_\+\+Target\+Position}} \{0.\+0f, 0.\+0f, 0.\+0f\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls a 2D camera with follow and zoom capabilities. 
+
+The \doxylink{classCameraController}{Camera\+Controller} manages camera movement in two modes:
+\begin{DoxyItemize}
+\item Follow mode: smoothly tracks a target entity (player)
+\item Manual mode: controlled by WASD keys It also handles zoom via mouse scroll and clamps the camera to world boundaries.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+The camera position is smoothly interpolated (lerp) when in follow mode. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classCamera2D}{Camera2D}, \doxylink{classGameWorld}{Game\+World} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00018}{18}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+
+
+\label{classCameraController_doc-constructors}
+\Hypertarget{classCameraController_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCameraController_a18c096c90c713bb7b7338fb26e0e34c3}\index{CameraController@{CameraController}!CameraController@{CameraController}}
+\index{CameraController@{CameraController}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{CameraController()}{CameraController()}}
+{\footnotesize\ttfamily \label{classCameraController_a18c096c90c713bb7b7338fb26e0e34c3} 
+Camera\+Controller::\+\+Camera\+Controller (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classCamera2D}{Camera2D}} \&}]{camera}{, }\item[{const \doxymbox{\hyperlink{classGameWorld}{Game\+World}} \&}]{world}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classCameraController}{Camera\+Controller}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & Reference to the \doxylink{classCamera2D}{Camera2D} instance to control. \\
+\hline
+{\em world} & Reference to the \doxylink{classGameWorld}{Game\+World} for boundary clamping. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8cpp_source_l00009}{9}} of file \doxymbox{\hyperlink{CameraController_8cpp_source}{Camera\+Controller.\+cpp}}.
+
+\Hypertarget{classCameraController_a4bb6daa54712bc86cdd0e4c0aa820c93}\index{CameraController@{CameraController}!````~CameraController@{\texorpdfstring{$\sim$}{\string~}CameraController}}
+\index{````~CameraController@{\texorpdfstring{$\sim$}{\string~}CameraController}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CameraController()}{\string~CameraController()}}
+{\footnotesize\ttfamily \label{classCameraController_a4bb6daa54712bc86cdd0e4c0aa820c93} 
+Camera\+Controller::\+\texorpdfstring{$\sim$}{\string~}\+Camera\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{classCameraController_doc-func-members}
+\Hypertarget{classCameraController_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCameraController_a9e8fabb83f2c9d2cd9fb28a0af391efd}\index{CameraController@{CameraController}!IsFollowing@{IsFollowing}}
+\index{IsFollowing@{IsFollowing}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{IsFollowing()}{IsFollowing()}}
+{\footnotesize\ttfamily \label{classCameraController_a9e8fabb83f2c9d2cd9fb28a0af391efd} 
+bool Camera\+Controller::\+\+Is\+Following (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00036}{36}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_a4e546021dba61f96a1520c156c1c3220}\index{CameraController@{CameraController}!SetFollowEntity@{SetFollowEntity}}
+\index{SetFollowEntity@{SetFollowEntity}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{SetFollowEntity()}{SetFollowEntity()}}
+{\footnotesize\ttfamily \label{classCameraController_a4e546021dba61f96a1520c156c1c3220} 
+void Camera\+Controller::\+\+Set\+Follow\+Entity (\begin{DoxyParamCaption}\item[{bool}]{follow}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00035}{35}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_a7b0a9ed91841b355a64813b88c293024}\index{CameraController@{CameraController}!SetMaxZoom@{SetMaxZoom}}
+\index{SetMaxZoom@{SetMaxZoom}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{SetMaxZoom()}{SetMaxZoom()}}
+{\footnotesize\ttfamily \label{classCameraController_a7b0a9ed91841b355a64813b88c293024} 
+void Camera\+Controller::\+\+Set\+Max\+Zoom (\begin{DoxyParamCaption}\item[{float}]{max\+Zoom}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00047}{47}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_a7a87e066abd81799c29b2918b323b019}\index{CameraController@{CameraController}!SetMinZoom@{SetMinZoom}}
+\index{SetMinZoom@{SetMinZoom}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{SetMinZoom()}{SetMinZoom()}}
+{\footnotesize\ttfamily \label{classCameraController_a7a87e066abd81799c29b2918b323b019} 
+void Camera\+Controller::\+\+Set\+Min\+Zoom (\begin{DoxyParamCaption}\item[{float}]{min\+Zoom}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00046}{46}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_a388d9e413d4226fda071690d8d492af9}\index{CameraController@{CameraController}!SetSpeed@{SetSpeed}}
+\index{SetSpeed@{SetSpeed}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{SetSpeed()}{SetSpeed()}}
+{\footnotesize\ttfamily \label{classCameraController_a388d9e413d4226fda071690d8d492af9} 
+void Camera\+Controller::\+\+Set\+Speed (\begin{DoxyParamCaption}\item[{float}]{speed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00039}{39}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_a27a89b51cf5356658f002198f9e35acb}\index{CameraController@{CameraController}!SetTargetPosition@{SetTargetPosition}}
+\index{SetTargetPosition@{SetTargetPosition}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{SetTargetPosition()}{SetTargetPosition()}}
+{\footnotesize\ttfamily \label{classCameraController_a27a89b51cf5356658f002198f9e35acb} 
+void Camera\+Controller::\+\+Set\+Target\+Position (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00043}{43}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_a6052d48b7b3f21725333c07ba22f3af8}\index{CameraController@{CameraController}!SetZoomSpeed@{SetZoomSpeed}}
+\index{SetZoomSpeed@{SetZoomSpeed}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{SetZoomSpeed()}{SetZoomSpeed()}}
+{\footnotesize\ttfamily \label{classCameraController_a6052d48b7b3f21725333c07ba22f3af8} 
+void Camera\+Controller::\+\+Set\+Zoom\+Speed (\begin{DoxyParamCaption}\item[{float}]{speed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00040}{40}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_a417ac3fd698ce445d873b6b3db492bb0}\index{CameraController@{CameraController}!Update@{Update}}
+\index{Update@{Update}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classCameraController_a417ac3fd698ce445d873b6b3db492bb0} 
+void Camera\+Controller::\+\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Updates the camera position and zoom. 
+
+Updates the camera position and zoom based on input and mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \doxylink{classTime}{Time} elapsed since the last frame.\\
+\hline
+\end{DoxyParams}
+In follow mode, smoothly interpolates toward the target position. In manual mode, moves the camera with WASD keys. Also applies zoom from mouse scroll and clamps the camera to the world boundaries.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \doxylink{classTime}{Time} elapsed since the last frame. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8cpp_source_l00021}{21}} of file \doxymbox{\hyperlink{CameraController_8cpp_source}{Camera\+Controller.\+cpp}}.
+
+
+
+\label{classCameraController_doc-variable-members}
+\Hypertarget{classCameraController_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCameraController_aaf6e45805acb449c8c30c9637b759558}\index{CameraController@{CameraController}!m\_Camera@{m\_Camera}}
+\index{m\_Camera@{m\_Camera}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{m\_Camera}{m\_Camera}}
+{\footnotesize\ttfamily \label{classCameraController_aaf6e45805acb449c8c30c9637b759558} 
+\doxymbox{\hyperlink{classCamera2D}{Camera2D}}\& Camera\+Controller::\+m\+\_\+\+Camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00050}{50}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_a713bed4b6c44077872115b20f4ee1569}\index{CameraController@{CameraController}!m\_FollowEntity@{m\_FollowEntity}}
+\index{m\_FollowEntity@{m\_FollowEntity}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{m\_FollowEntity}{m\_FollowEntity}}
+{\footnotesize\ttfamily \label{classCameraController_a713bed4b6c44077872115b20f4ee1569} 
+bool Camera\+Controller::\+m\+\_\+\+Follow\+Entity = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00052}{52}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_acafdc8b66669d186a00eae8dd124fa64}\index{CameraController@{CameraController}!m\_MaxZoom@{m\_MaxZoom}}
+\index{m\_MaxZoom@{m\_MaxZoom}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{m\_MaxZoom}{m\_MaxZoom}}
+{\footnotesize\ttfamily \label{classCameraController_acafdc8b66669d186a00eae8dd124fa64} 
+float Camera\+Controller::\+m\+\_\+\+Max\+Zoom = 5.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00055}{55}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_aa40b6ff354ed391b4ceba410b846ce63}\index{CameraController@{CameraController}!m\_MinZoom@{m\_MinZoom}}
+\index{m\_MinZoom@{m\_MinZoom}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{m\_MinZoom}{m\_MinZoom}}
+{\footnotesize\ttfamily \label{classCameraController_aa40b6ff354ed391b4ceba410b846ce63} 
+float Camera\+Controller::\+m\+\_\+\+Min\+Zoom = 0.\+5f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00054}{54}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_aed19f04d0186177f551755c8bf2ee496}\index{CameraController@{CameraController}!m\_Speed@{m\_Speed}}
+\index{m\_Speed@{m\_Speed}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{m\_Speed}{m\_Speed}}
+{\footnotesize\ttfamily \label{classCameraController_aed19f04d0186177f551755c8bf2ee496} 
+float Camera\+Controller::\+m\+\_\+\+Speed = 5.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00053}{53}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_ae9f6f6f6ab6961e1ebb5bb1130521b45}\index{CameraController@{CameraController}!m\_TargetPosition@{m\_TargetPosition}}
+\index{m\_TargetPosition@{m\_TargetPosition}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{m\_TargetPosition}{m\_TargetPosition}}
+{\footnotesize\ttfamily \label{classCameraController_ae9f6f6f6ab6961e1ebb5bb1130521b45} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Camera\+Controller::\+m\+\_\+\+Target\+Position \{0.\+0f, 0.\+0f, 0.\+0f\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00057}{57}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_a8990c89b4d50923d183579a93c9923b1}\index{CameraController@{CameraController}!m\_World@{m\_World}}
+\index{m\_World@{m\_World}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{m\_World}{m\_World}}
+{\footnotesize\ttfamily \label{classCameraController_a8990c89b4d50923d183579a93c9923b1} 
+const \doxymbox{\hyperlink{classGameWorld}{Game\+World}}\& Camera\+Controller::\+m\+\_\+\+World\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00051}{51}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+\Hypertarget{classCameraController_ae27f89e7f25ba8330bab5bb13b0a5d0f}\index{CameraController@{CameraController}!m\_ZoomSpeed@{m\_ZoomSpeed}}
+\index{m\_ZoomSpeed@{m\_ZoomSpeed}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{m\_ZoomSpeed}{m\_ZoomSpeed}}
+{\footnotesize\ttfamily \label{classCameraController_ae27f89e7f25ba8330bab5bb13b0a5d0f} 
+float Camera\+Controller::\+m\+\_\+\+Zoom\+Speed = 1.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{CameraController_8h_source_l00056}{56}} of file \doxymbox{\hyperlink{CameraController_8h_source}{Camera\+Controller.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+core/\doxymbox{\hyperlink{CameraController_8h}{Camera\+Controller.\+h}}\item 
+engine/\+core/\doxymbox{\hyperlink{CameraController_8cpp}{Camera\+Controller.\+cpp}}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <format>
 
-SDLWindow::SDLWindow() : m_Window(nullptr), m_Context(nullptr) {}
+SDLWindow::SDLWindow() : m_Window(nullptr), m_Context(nullptr){}
 
 SDLWindow::~SDLWindow(){
   Destroy();
@@ -23,9 +23,10 @@ SDLWindow::~SDLWindow(){
  * @param title Window title.
  * @param width Window width in pixels.
  * @param height Window height in pixels.
+ * @param fullscreen Whether to start in fullscreen mode.
  * @return true if all steps succeeded, false otherwise.
  */
-bool SDLWindow::Create(const char* title, int width, int height, bool fullscreen = false){
+bool SDLWindow::Create(const char* title, int width, int height, bool fullscreen){
   //Set OpenGL Core Profile version 4.6
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
@@ -38,38 +39,36 @@ bool SDLWindow::Create(const char* title, int width, int height, bool fullscreen
   int displayWidth = displayMode->w;
   int displayHeight = displayMode->h;
 
-  if (width <= 0 || height <= 0){
+  //Use display resolution if invalid dimensions provided
+  if(width <= 0 || height <= 0){
     width = displayWidth;
     height = displayHeight;
   }
 
-  //Window creation
+  //Create SDL window with OpenGL support and resizable flag
   m_Window = SDL_CreateWindow(title, width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
   Log::Info(std::format("Window ID: {}", SDL_GetWindowID(m_Window)));
   Log::Info("Window successfully created.");
 
-  if (fullscreen){
-    if (SDL_SetWindowFullscreen(m_Window, SDL_WINDOW_FULLSCREEN) != 0){
+  //Validate window creation
+  if(!m_Window){
+    Log::Error(std::format("Window creation error: {}", SDL_GetError()));
+    return false;
+  }
+
+  //Set fullscreen mode if requested
+  if(fullscreen){
+    if(SDL_SetWindowFullscreen(m_Window, SDL_WINDOW_FULLSCREEN) != 0){
       Log::Warning(std::format("Failed to set fullscreen: {}", SDL_GetError()));
     } else{
       Log::Info("Fullscreen mode enabled.");
     }
   } else{
+    //Center window on screen
     SDL_SetWindowPosition(m_Window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
   }
 
-  
-  //ASSERT - Use only for debugging purposes
-  //ENGINE_ASSERT(m_Window, "Window creation failed.");
-  if (!m_Window){
-    Log::Error(std::format("Window creation error: {}", SDL_GetError()));
-    return false;
-  }
-
-  //Center window if not fullscreen
-  if (!fullscreen) SDL_SetWindowPosition(m_Window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
-
-  //OpenGL context creation
+  //Create OpenGL context
   m_Context = SDL_GL_CreateContext(m_Window);
   if(!m_Context){
     Log::Error(std::format("OpenGL context not created: {}", SDL_GetError()));
@@ -77,28 +76,27 @@ bool SDLWindow::Create(const char* title, int width, int height, bool fullscreen
     return false;
   }
 
-  //GLAD initialization
+  //Initialize GLAD (OpenGL function loader)
   if(!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)){
     Log::Error("GLAD initialization error.");
     Destroy();
     return false;
   }
 
-  //Set vsync
+  //Enable vsync (1 = on, 0 = off)
   SDL_GL_SetSwapInterval(1);
 
-  //Get window size
+  //Log OpenGL information
+  Log::Info(std::format("OpenGL Version: {}", reinterpret_cast<const char*>(glGetString(GL_VERSION))));
+  Log::Info(std::format("Renderer: {}", reinterpret_cast<const char*>(glGetString(GL_RENDERER))));
+
+  //Set viewport to match window size
   int realWidth, realHeight;
   SDL_GetWindowSize(m_Window, &realWidth, &realHeight);
   glViewport(0, 0, realWidth, realHeight);
 
-  Log::Info(std::format("OpenGL Version: {}", reinterpret_cast<const char*>(glGetString(GL_VERSION)))); //glGetString devolve GLubyte* - conversão para const char
-  Log::Info(std::format("Renderer: {}", reinterpret_cast<const char*>(glGetString(GL_RENDERER)))); //glGetString devolve GLubyte* - conversão para const char
-
-  //Set viewport to match window size
-  glViewport(0,0,width,height);
   return true;
-  }
+}
 
 /**
  * @brief Destroys the OpenGL context and the SDL window.

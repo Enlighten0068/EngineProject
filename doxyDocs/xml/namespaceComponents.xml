@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespaceComponents" kind="namespace" language="C++">
+    <compoundname>Components</compoundname>
+    <innerclass refid="structComponents_1_1Enemy" prot="public">Components::Enemy</innerclass>
+    <innerclass refid="structComponents_1_1Patrol" prot="public">Components::Patrol</innerclass>
+    <innerclass refid="structComponents_1_1PhysicsBody" prot="public">Components::PhysicsBody</innerclass>
+    <innerclass refid="structComponents_1_1SpriteRenderer" prot="public">Components::SpriteRenderer</innerclass>
+    <innerclass refid="structComponents_1_1TileScale" prot="public">Components::TileScale</innerclass>
+    <innerclass refid="structComponents_1_1Transform" prot="public">Components::Transform</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/components/Enemy.h" line="3" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structComponents_1_1TileScale" kind="struct" language="C++" prot="public">
+    <compoundname>Components::TileScale</compoundname>
+    <includes refid="TileScale_8h" local="no">TileScale.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structComponents_1_1TileScale_1a2056b13025a5feff66ba87bc66a3faca" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Components::TileScale::ScaleX</definition>
+        <argsstring></argsstring>
+        <name>ScaleX</name>
+        <qualifiedname>Components::TileScale::ScaleX</qualifiedname>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/TileScale.h" line="17" column="15" bodyfile="engine/components/TileScale.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structComponents_1_1TileScale_1aaefc4e78b1bcfc2ba99374370eade78c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Components::TileScale::ScaleY</definition>
+        <argsstring></argsstring>
+        <name>ScaleY</name>
+        <qualifiedname>Components::TileScale::ScaleY</qualifiedname>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/TileScale.h" line="18" column="15" bodyfile="engine/components/TileScale.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Component that controls texture tiling (repetition) for an entity. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Entities with this component will have their texture repeated according to the Scale value. The texture coordinates are multiplied by this scale in the vertex shader, causing the texture to tile across the surface.</para>
+<para><simplesect kind="note"><para>A value of 1.0f means no repetition (texture stretches to fill the quad). Values &gt; 1.0f cause the texture to repeat that many times across the quad. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classRenderSystem" kindref="compound">RenderSystem</ref>, <ref refid="classShader" kindref="compound">Shader</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Components::TileScale</label>
+        <link refid="structComponents_1_1TileScale"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/components/TileScale.h" line="16" column="5" bodyfile="engine/components/TileScale.h" bodystart="16" bodyend="19"/>
+    <listofallmembers>
+      <member refid="structComponents_1_1TileScale_1a2056b13025a5feff66ba87bc66a3faca" prot="public" virt="non-virtual"><scope>Components::TileScale</scope><name>ScaleX</name></member>
+      <member refid="structComponents_1_1TileScale_1aaefc4e78b1bcfc2ba99374370eade78c" prot="public" virt="non-virtual"><scope>Components::TileScale</scope><name>ScaleY</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

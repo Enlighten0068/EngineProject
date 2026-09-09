@@ -18,9 +18,22 @@
  * This scene implements Super Mario-style enemy stomping: jumping on top
  * of an enemy destroys it, while touching it from the sides or below
  * kills the player. Enemies respawn when the player dies.
+ *
+ * The camera is fixed to show the entire world, making it suitable for
+ * small platformer levels where the whole level is visible on screen.
+ *
+ * @see Demo2DScene, EnemySystem, PlayerController
  */
 class Demo2DFixedScene : public Scene{
 public:
+    /**
+     * @brief Constructs the fixed camera demo scene.
+     * @param shader Reference to the main shader.
+     * @param va Reference to the vertex array.
+     * @param ib Reference to the index buffer.
+     * @param camera Reference to the 2D camera.
+     * @param lineShader Reference to the line shader for world borders.
+     */
     Demo2DFixedScene(Shader& shader, VertexArray& va, IndexBuffer& ib,
                      Camera2D& camera, Shader& lineShader);
     ~Demo2DFixedScene();
@@ -40,42 +53,41 @@ public:
     void RespawnEnemies();
 
 private:
-
     /**
      * @brief Definition of an enemy for spawning and respawning.
      *
      * Stores all the data needed to recreate an enemy entity.
      */
     struct EnemyDefinition{
-        Vector3D Position;
-        Vector3D Scale;
-        std::shared_ptr<Texture2D> Texture;
-        Vector3D PatrolStart;
-        Vector3D PatrolEnd;
-        float PatrolSpeed;
+        Vector3D Position; //Spawn position
+        Vector3D Scale; //Size of the enemy
+        std::shared_ptr<Texture2D> Texture; //Enemy texture
+        Vector3D PatrolStart; //Start of patrol range
+        Vector3D PatrolEnd; //End of patrol range
+        float PatrolSpeed; //Movement speed during patrol
     };
 
-    Shader& m_Shader;
-    VertexArray& m_VertexArray;
-    IndexBuffer& m_IndexBuffer;
+    Shader& m_Shader; //Main shader for rendering
+    VertexArray& m_VertexArray; //Vertex array for geometry
+    IndexBuffer& m_IndexBuffer; //Index buffer for geometry
 
-    Camera2D& m_Camera;
-    Shader& m_LineShader;
+    Camera2D& m_Camera; //Fixed camera
+    Shader& m_LineShader; //Line shader for world borders
 
-    std::unique_ptr<ECSScene> m_ECSScene;
-    std::unique_ptr<GameWorld> m_World;
-    std::unique_ptr<PlayerController> m_PlayerController;
+    std::unique_ptr<ECSScene> m_ECSScene; //ECS scene containing all entities
+    std::unique_ptr<GameWorld> m_World; //World boundaries
+    std::unique_ptr<PlayerController> m_PlayerController; //Player controller
 
-    std::unique_ptr<FpsCounter> m_FpsCounter;
+    std::unique_ptr<FpsCounter> m_FpsCounter; //FPS counter
 
-    entt::entity m_PlayerEntity;
+    entt::entity m_PlayerEntity; //Player entity ID
     std::vector<entt::entity> m_EnemyEntities; //Active enemy entities
-    std::vector<EnemyDefinition> m_EnemyDefinitions; //Saved initial enemy entities for respawn
-    std::vector<entt::entity> m_PlatformEntities;
+    std::vector<EnemyDefinition> m_EnemyDefinitions; //Saved enemy definitions for respawn
+    std::vector<entt::entity> m_PlatformEntities; //Platform entities for collision
 
-    void ResolveCollisions();
-    void SetupScene();
-    void SpawnEnemies();
-    void CheckEnemyCollisions();
-    void DestroyEnemy(entt::entity enemy);
+    void ResolveCollisions(); //Resolves player-platform collisions
+    void SetupScene(); //Sets up the scene with all entities
+    void SpawnEnemies(); //Spawns all enemies
+    void CheckEnemyCollisions(); //Checks player-enemy collisions
+    void DestroyEnemy(entt::entity enemy); //Destroys an enemy entity
 };

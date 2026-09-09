@@ -1,0 +1,183 @@
+\doxysection{Index\+Buffer Class Reference}
+\hypertarget{classIndexBuffer}{}\label{classIndexBuffer}\index{IndexBuffer@{IndexBuffer}}
+
+
+Open\+GL Index Buffer Object (EBO/\+\+IBO) wrapper.  
+
+
+
+
+{\ttfamily \+\#include $<$Index\+Buffer.\+h$>$}
+
+
+
+Collaboration diagram for Index\+Buffer:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{classIndexBuffer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classIndexBuffer_ad88171bcb24ca515393f7ae86822b3e8}{Index\+Buffer}} (const uint32\+\_\+t \texorpdfstring{$\ast$}{*}indices, uint32\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Constructs an index buffer and uploads indices to the GPU. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classIndexBuffer_a348889936f378b7942c1e01d83e42866}{\texorpdfstring{$\sim$}{\string~}\+Index\+Buffer}} ()
+\item 
+void \doxymbox{\hyperlink{classIndexBuffer_ac8bdd0495f718173fb46691ad1b7e4af}{Bind}} () const
+\begin{DoxyCompactList}\small\item\em Binds the buffer as the current GL\+\_\+\+ELEMENT\+\_\+\+ARRAY\+\_\+\+BUFFER. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classIndexBuffer_a5a1cfc46339ea7d6e72d22a096da5a77}{Unbind}} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the buffer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \doxymbox{\hyperlink{classIndexBuffer_a3ba6f17fc6a2efa79c3b58f98e9cf0d8}{Get\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of indices stored. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{classIndexBuffer_ae819041807551f8df4276aefcfce6505}{m\+\_\+\+Renderer\+ID}}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{classIndexBuffer_a5272b565abe244ea28d5cfa4c390b893}{m\+\_\+\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Open\+GL Index Buffer Object (EBO/\+\+IBO) wrapper. 
+
+An index buffer stores vertex indices for indexed drawing (gl\+Draw\+Elements). This allows reusing vertices and reduces memory usage.
+
+\begin{DoxyNote}{Note}
+The buffer is created with GL\+\_\+\+STATIC\+\_\+\+DRAW usage. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classVertexBuffer}{Vertex\+Buffer}, \doxylink{classVertexArray}{Vertex\+Array} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{IndexBuffer_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{IndexBuffer_8h_source}{Index\+Buffer.\+h}}.
+
+
+
+\label{classIndexBuffer_doc-constructors}
+\Hypertarget{classIndexBuffer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classIndexBuffer_ad88171bcb24ca515393f7ae86822b3e8}\index{IndexBuffer@{IndexBuffer}!IndexBuffer@{IndexBuffer}}
+\index{IndexBuffer@{IndexBuffer}!IndexBuffer@{IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{IndexBuffer()}{IndexBuffer()}}
+{\footnotesize\ttfamily \label{classIndexBuffer_ad88171bcb24ca515393f7ae86822b3e8} 
+Index\+Buffer::\+\+Index\+Buffer (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{indices}{, }\item[{uint32\+\_\+t}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an index buffer and uploads indices to the GPU. 
+
+Creates an index buffer and uploads indices to the GPU.
+
+
+\begin{DoxyParams}{Parameters}
+{\em indices} & Pointer to index data (uint32\+\_\+t values). \\
+\hline
+{\em count} & Number of indices.\\
+\hline
+{\em indices} & Pointer to index data. \\
+\hline
+{\em count} & Number of indices. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{IndexBuffer_8cpp_source_l00011}{11}} of file \doxymbox{\hyperlink{IndexBuffer_8cpp_source}{Index\+Buffer.\+cpp}}.
+
+\Hypertarget{classIndexBuffer_a348889936f378b7942c1e01d83e42866}\index{IndexBuffer@{IndexBuffer}!````~IndexBuffer@{\texorpdfstring{$\sim$}{\string~}IndexBuffer}}
+\index{````~IndexBuffer@{\texorpdfstring{$\sim$}{\string~}IndexBuffer}!IndexBuffer@{IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IndexBuffer()}{\string~IndexBuffer()}}
+{\footnotesize\ttfamily \label{classIndexBuffer_a348889936f378b7942c1e01d83e42866} 
+Index\+Buffer::\+\texorpdfstring{$\sim$}{\string~}\+Index\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{IndexBuffer_8cpp_source_l00023}{23}} of file \doxymbox{\hyperlink{IndexBuffer_8cpp_source}{Index\+Buffer.\+cpp}}.
+
+
+
+\label{classIndexBuffer_doc-func-members}
+\Hypertarget{classIndexBuffer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIndexBuffer_ac8bdd0495f718173fb46691ad1b7e4af}\index{IndexBuffer@{IndexBuffer}!Bind@{Bind}}
+\index{Bind@{Bind}!IndexBuffer@{IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{classIndexBuffer_ac8bdd0495f718173fb46691ad1b7e4af} 
+void Index\+Buffer::\+\+Bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Binds the buffer as the current GL\+\_\+\+ELEMENT\+\_\+\+ARRAY\+\_\+\+BUFFER. 
+
+Binds the buffer as the active GL\+\_\+\+ELEMENT\+\_\+\+ARRAY\+\_\+\+BUFFER. 
+
+Definition at line \doxymbox{\hyperlink{IndexBuffer_8cpp_source_l00030}{30}} of file \doxymbox{\hyperlink{IndexBuffer_8cpp_source}{Index\+Buffer.\+cpp}}.
+
+\Hypertarget{classIndexBuffer_a3ba6f17fc6a2efa79c3b58f98e9cf0d8}\index{IndexBuffer@{IndexBuffer}!GetCount@{GetCount}}
+\index{GetCount@{GetCount}!IndexBuffer@{IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{GetCount()}{GetCount()}}
+{\footnotesize\ttfamily \label{classIndexBuffer_a3ba6f17fc6a2efa79c3b58f98e9cf0d8} 
+uint32\+\_\+t Index\+Buffer::\+\+Get\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of indices stored. 
+
+Returns the number of indices.
+
+\begin{DoxyReturn}{Returns}
+Number of indices. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{IndexBuffer_8cpp_source_l00045}{45}} of file \doxymbox{\hyperlink{IndexBuffer_8cpp_source}{Index\+Buffer.\+cpp}}.
+
+\Hypertarget{classIndexBuffer_a5a1cfc46339ea7d6e72d22a096da5a77}\index{IndexBuffer@{IndexBuffer}!Unbind@{Unbind}}
+\index{Unbind@{Unbind}!IndexBuffer@{IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{Unbind()}{Unbind()}}
+{\footnotesize\ttfamily \label{classIndexBuffer_a5a1cfc46339ea7d6e72d22a096da5a77} 
+void Index\+Buffer::\+\+Unbind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Unbinds the buffer. 
+
+
+
+Definition at line \doxymbox{\hyperlink{IndexBuffer_8cpp_source_l00037}{37}} of file \doxymbox{\hyperlink{IndexBuffer_8cpp_source}{Index\+Buffer.\+cpp}}.
+
+
+
+\label{classIndexBuffer_doc-variable-members}
+\Hypertarget{classIndexBuffer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classIndexBuffer_a5272b565abe244ea28d5cfa4c390b893}\index{IndexBuffer@{IndexBuffer}!m\_Count@{m\_Count}}
+\index{m\_Count@{m\_Count}!IndexBuffer@{IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_Count}{m\_Count}}
+{\footnotesize\ttfamily \label{classIndexBuffer_a5272b565abe244ea28d5cfa4c390b893} 
+uint32\+\_\+t Index\+Buffer::\+m\+\_\+\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{IndexBuffer_8h_source_l00043}{43}} of file \doxymbox{\hyperlink{IndexBuffer_8h_source}{Index\+Buffer.\+h}}.
+
+\Hypertarget{classIndexBuffer_ae819041807551f8df4276aefcfce6505}\index{IndexBuffer@{IndexBuffer}!m\_RendererID@{m\_RendererID}}
+\index{m\_RendererID@{m\_RendererID}!IndexBuffer@{IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_RendererID}{m\_RendererID}}
+{\footnotesize\ttfamily \label{classIndexBuffer_ae819041807551f8df4276aefcfce6505} 
+uint32\+\_\+t Index\+Buffer::\+m\+\_\+\+Renderer\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{IndexBuffer_8h_source_l00042}{42}} of file \doxymbox{\hyperlink{IndexBuffer_8h_source}{Index\+Buffer.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+graphics/\doxymbox{\hyperlink{IndexBuffer_8h}{Index\+Buffer.\+h}}\item 
+engine/\+graphics/\doxymbox{\hyperlink{IndexBuffer_8cpp}{Index\+Buffer.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,3 @@
+<map id="Components::TileScale" name="Components::TileScale">
+<area shape="rect" id="Node000001" title="Component that controls texture tiling (repetition) for an entity." alt="" coords="5,5,164,100"/>
+</map>

@@ -1,0 +1,385 @@
+\doxysection{Input Class Reference}
+\hypertarget{classInput}{}\label{classInput}\index{Input@{Input}}
+
+
+Static input manager for keyboard, mouse, and window state.  
+
+
+
+
+{\ttfamily \+\#include $<$Input.\+h$>$}
+
+
+
+Collaboration diagram for Input:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classInput__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{classInput_af80dcfde6dbfe39bf3bc0345c75595ce}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the input state (should be called once per frame). \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classInput_abe4504868f560362185f020c471e9a84}{Process\+Event}} (const SDL\+\_\+\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Processes an SDL event and updates the input state. \end{DoxyCompactList}\item 
+static bool \doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Is\+Key\+Pressed}} (SDL\+\_\+\+Scancode key)
+\item 
+static bool \doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Is\+Key\+Held}} (SDL\+\_\+\+Scancode key)
+\item 
+static bool \doxymbox{\hyperlink{classInput_a21e529cf7720b4df2906bd44aa73e889}{Is\+Key\+Released}} (SDL\+\_\+\+Scancode key)
+\item 
+static \doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classInput_a58652e658e6b2a088d0bfbd07753c914}{Get\+Mouse\+Position}} ()
+\item 
+static \doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classInput_a53bdc3cb0c879a60bd99396872eb6dcb}{Get\+Mouse\+Delta}} ()
+\item 
+static bool \doxymbox{\hyperlink{classInput_a1915a90124c915e35e04bc9044d3b575}{Is\+Mouse\+Button\+Pressed}} (uint8\+\_\+t button)
+\item 
+static bool \doxymbox{\hyperlink{classInput_aec38619f1a5a330430756de75db0aff2}{Is\+Mouse\+Button\+Held}} (uint8\+\_\+t button)
+\item 
+static bool \doxymbox{\hyperlink{classInput_acf61c1a35081151e6d382272ba07d051}{Is\+Mouse\+Button\+Released}} (uint8\+\_\+t button)
+\item 
+static \doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classInput_af4fb33ee8a3ae10ad92ad2adc7e00ebf}{Get\+Scroll\+Delta}} ()
+\item 
+static bool \doxymbox{\hyperlink{classInput_a4ddd4e0a717ca4b564a0491e32e6e280}{Was\+Window\+Resized}} ()
+\item 
+static int \doxymbox{\hyperlink{classInput_a6fa97576489b0946ce0bcc88e8cbb46a}{Get\+Window\+Width}} ()
+\item 
+static int \doxymbox{\hyperlink{classInput_a73ac35d323c9c62b29a0fdb7cd10c84f}{Get\+Window\+Height}} ()
+\item 
+static void \doxymbox{\hyperlink{classInput_a4d970dee00ab2bbe858a7758cc167d07}{Set\+Window\+Size}} (int width, int height)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \doxymbox{\hyperlink{classInput_ae35589903d5dd57f1b29df2039bbe562}{s\+\_\+\+Key\+State}} \+[SDL\+\_\+\+SCANCODE\+\_\+\+COUNT] = \{\}
+\item 
+static bool \doxymbox{\hyperlink{classInput_a101419ed1564201345669b7dc3aceab9}{s\+\_\+\+Key\+State\+Previous}} \+[SDL\+\_\+\+SCANCODE\+\_\+\+COUNT] = \{\}
+\item 
+static \doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classInput_ab00b8236f27ec4750c2f7445cb1b10f6}{s\+\_\+\+Mouse\+Position}}
+\item 
+static \doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classInput_a3d3d10de42d33da3c4b05ffdb39795d2}{s\+\_\+\+Mouse\+Delta}}
+\item 
+static bool \doxymbox{\hyperlink{classInput_a38cbcc583b20863850fd3f552d9bf460}{s\+\_\+\+Mouse\+Button\+State}} \+[5] = \{\}
+\item 
+static bool \doxymbox{\hyperlink{classInput_a4e47ca136800ff0fdb2ff45cbd4d6e1b}{s\+\_\+\+Mouse\+Button\+Previous}} \+[5] = \{\}
+\item 
+static \doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classInput_ab41e893697e72075e87d4beb5e827155}{s\+\_\+\+Scroll\+Delta}}
+\item 
+static bool \doxymbox{\hyperlink{classInput_aead1b302f92f40508f394030fb96ff43}{s\+\_\+\+Window\+Resized}} = false
+\item 
+static int \doxymbox{\hyperlink{classInput_ac9f8548524960a49842cc0a16ec9ac96}{s\+\_\+\+Window\+Width}} = 0
+\item 
+static int \doxymbox{\hyperlink{classInput_ac2a9b120cf7963ce08709b5aa96fd8b2}{s\+\_\+\+Window\+Height}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Static input manager for keyboard, mouse, and window state. 
+
+Provides polling-\/based input detection with support for detecting pressed, held, and released states. Also tracks mouse position, delta movement, and window size changes.
+
+\begin{DoxyNote}{Note}
+All methods are static; no instantiation is required. 
+
+The \doxylink{classInput_af80dcfde6dbfe39bf3bc0345c75595ce}{Update()} method should be called once per frame to reset deltas. 
+\end{DoxyNote}
+
+
+Definition at line \doxymbox{\hyperlink{Input_8h_source_l00017}{17}} of file \doxymbox{\hyperlink{Input_8h_source}{Input.\+h}}.
+
+
+
+\label{classInput_doc-func-members}
+\Hypertarget{classInput_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classInput_a53bdc3cb0c879a60bd99396872eb6dcb}\index{Input@{Input}!GetMouseDelta@{GetMouseDelta}}
+\index{GetMouseDelta@{GetMouseDelta}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{GetMouseDelta()}{GetMouseDelta()}}
+{\footnotesize\ttfamily \label{classInput_a53bdc3cb0c879a60bd99396872eb6dcb} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Input::\+\+Get\+Mouse\+Delta (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00097}{97}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_a58652e658e6b2a088d0bfbd07753c914}\index{Input@{Input}!GetMousePosition@{GetMousePosition}}
+\index{GetMousePosition@{GetMousePosition}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{GetMousePosition()}{GetMousePosition()}}
+{\footnotesize\ttfamily \label{classInput_a58652e658e6b2a088d0bfbd07753c914} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Input::\+\+Get\+Mouse\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00096}{96}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_af4fb33ee8a3ae10ad92ad2adc7e00ebf}\index{Input@{Input}!GetScrollDelta@{GetScrollDelta}}
+\index{GetScrollDelta@{GetScrollDelta}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{GetScrollDelta()}{GetScrollDelta()}}
+{\footnotesize\ttfamily \label{classInput_af4fb33ee8a3ae10ad92ad2adc7e00ebf} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Input::\+\+Get\+Scroll\+Delta (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00116}{116}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_a73ac35d323c9c62b29a0fdb7cd10c84f}\index{Input@{Input}!GetWindowHeight@{GetWindowHeight}}
+\index{GetWindowHeight@{GetWindowHeight}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{GetWindowHeight()}{GetWindowHeight()}}
+{\footnotesize\ttfamily \label{classInput_a73ac35d323c9c62b29a0fdb7cd10c84f} 
+int Input::\+\+Get\+Window\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00121}{121}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_a6fa97576489b0946ce0bcc88e8cbb46a}\index{Input@{Input}!GetWindowWidth@{GetWindowWidth}}
+\index{GetWindowWidth@{GetWindowWidth}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{GetWindowWidth()}{GetWindowWidth()}}
+{\footnotesize\ttfamily \label{classInput_a6fa97576489b0946ce0bcc88e8cbb46a} 
+int Input::\+\+Get\+Window\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00120}{120}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_a745b3db0f4100ff52f8597b407bcb55e}\index{Input@{Input}!IsKeyHeld@{IsKeyHeld}}
+\index{IsKeyHeld@{IsKeyHeld}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsKeyHeld()}{IsKeyHeld()}}
+{\footnotesize\ttfamily \label{classInput_a745b3db0f4100ff52f8597b407bcb55e} 
+bool Input::\+\+Is\+Key\+Held (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Scancode}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00085}{85}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_a6f730bd93702cfca7ed7d2619e4340d7}\index{Input@{Input}!IsKeyPressed@{IsKeyPressed}}
+\index{IsKeyPressed@{IsKeyPressed}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsKeyPressed()}{IsKeyPressed()}}
+{\footnotesize\ttfamily \label{classInput_a6f730bd93702cfca7ed7d2619e4340d7} 
+bool Input::\+\+Is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Scancode}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00080}{80}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_a21e529cf7720b4df2906bd44aa73e889}\index{Input@{Input}!IsKeyReleased@{IsKeyReleased}}
+\index{IsKeyReleased@{IsKeyReleased}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsKeyReleased()}{IsKeyReleased()}}
+{\footnotesize\ttfamily \label{classInput_a21e529cf7720b4df2906bd44aa73e889} 
+bool Input::\+\+Is\+Key\+Released (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Scancode}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00090}{90}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_aec38619f1a5a330430756de75db0aff2}\index{Input@{Input}!IsMouseButtonHeld@{IsMouseButtonHeld}}
+\index{IsMouseButtonHeld@{IsMouseButtonHeld}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsMouseButtonHeld()}{IsMouseButtonHeld()}}
+{\footnotesize\ttfamily \label{classInput_aec38619f1a5a330430756de75db0aff2} 
+bool Input::\+\+Is\+Mouse\+Button\+Held (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00105}{105}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_a1915a90124c915e35e04bc9044d3b575}\index{Input@{Input}!IsMouseButtonPressed@{IsMouseButtonPressed}}
+\index{IsMouseButtonPressed@{IsMouseButtonPressed}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsMouseButtonPressed()}{IsMouseButtonPressed()}}
+{\footnotesize\ttfamily \label{classInput_a1915a90124c915e35e04bc9044d3b575} 
+bool Input::\+\+Is\+Mouse\+Button\+Pressed (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00100}{100}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_acf61c1a35081151e6d382272ba07d051}\index{Input@{Input}!IsMouseButtonReleased@{IsMouseButtonReleased}}
+\index{IsMouseButtonReleased@{IsMouseButtonReleased}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsMouseButtonReleased()}{IsMouseButtonReleased()}}
+{\footnotesize\ttfamily \label{classInput_acf61c1a35081151e6d382272ba07d051} 
+bool Input::\+\+Is\+Mouse\+Button\+Released (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00110}{110}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_abe4504868f560362185f020c471e9a84}\index{Input@{Input}!ProcessEvent@{ProcessEvent}}
+\index{ProcessEvent@{ProcessEvent}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{ProcessEvent()}{ProcessEvent()}}
+{\footnotesize\ttfamily \label{classInput_abe4504868f560362185f020c471e9a84} 
+void Input::\+\+Process\+Event (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Processes an SDL event and updates the input state. 
+
+Processes an SDL event and updates internal state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & SDL event to process.\\
+\hline
+\end{DoxyParams}
+This method is called for each event in the event queue. It updates key states, mouse position, button states, scroll delta, and window size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The SDL event to process. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00047}{47}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_a4d970dee00ab2bbe858a7758cc167d07}\index{Input@{Input}!SetWindowSize@{SetWindowSize}}
+\index{SetWindowSize@{SetWindowSize}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{SetWindowSize()}{SetWindowSize()}}
+{\footnotesize\ttfamily \label{classInput_a4d970dee00ab2bbe858a7758cc167d07} 
+void Input::\+\+Set\+Window\+Size (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00122}{122}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_af80dcfde6dbfe39bf3bc0345c75595ce}\index{Input@{Input}!Update@{Update}}
+\index{Update@{Update}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classInput_af80dcfde6dbfe39bf3bc0345c75595ce} 
+void Input::\+\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Updates the input state (should be called once per frame). 
+
+Updates input state for the current frame.
+
+Saves the previous state of keys and mouse buttons, then fetches the current keyboard state. Resets mouse delta and scroll delta.
+
+This method should be called once per frame, after processing events. It saves the previous state of keys and mouse buttons for transition detection, fetches the current keyboard state, and resets all delta values. 
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00024}{24}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+\Hypertarget{classInput_a4ddd4e0a717ca4b564a0491e32e6e280}\index{Input@{Input}!WasWindowResized@{WasWindowResized}}
+\index{WasWindowResized@{WasWindowResized}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{WasWindowResized()}{WasWindowResized()}}
+{\footnotesize\ttfamily \label{classInput_a4ddd4e0a717ca4b564a0491e32e6e280} 
+bool Input::\+\+Was\+Window\+Resized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8cpp_source_l00119}{119}} of file \doxymbox{\hyperlink{Input_8cpp_source}{Input.\+cpp}}.
+
+
+
+\label{classInput_doc-variable-members}
+\Hypertarget{classInput_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classInput_ae35589903d5dd57f1b29df2039bbe562}\index{Input@{Input}!s\_KeyState@{s\_KeyState}}
+\index{s\_KeyState@{s\_KeyState}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{s\_KeyState}{s\_KeyState}}
+{\footnotesize\ttfamily \label{classInput_ae35589903d5dd57f1b29df2039bbe562} 
+bool Input::\+s\+\_\+\+Key\+State = \{\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8h_source_l00006}{6}} of file \doxymbox{\hyperlink{Input_8h_source}{Input.\+h}}.
+
+\Hypertarget{classInput_a101419ed1564201345669b7dc3aceab9}\index{Input@{Input}!s\_KeyStatePrevious@{s\_KeyStatePrevious}}
+\index{s\_KeyStatePrevious@{s\_KeyStatePrevious}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{s\_KeyStatePrevious}{s\_KeyStatePrevious}}
+{\footnotesize\ttfamily \label{classInput_a101419ed1564201345669b7dc3aceab9} 
+bool Input::\+s\+\_\+\+Key\+State\+Previous = \{\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8h_source_l00007}{7}} of file \doxymbox{\hyperlink{Input_8h_source}{Input.\+h}}.
+
+\Hypertarget{classInput_a4e47ca136800ff0fdb2ff45cbd4d6e1b}\index{Input@{Input}!s\_MouseButtonPrevious@{s\_MouseButtonPrevious}}
+\index{s\_MouseButtonPrevious@{s\_MouseButtonPrevious}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{s\_MouseButtonPrevious}{s\_MouseButtonPrevious}}
+{\footnotesize\ttfamily \label{classInput_a4e47ca136800ff0fdb2ff45cbd4d6e1b} 
+bool Input::\+s\+\_\+\+Mouse\+Button\+Previous = \{\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8h_source_l00011}{11}} of file \doxymbox{\hyperlink{Input_8h_source}{Input.\+h}}.
+
+\Hypertarget{classInput_a38cbcc583b20863850fd3f552d9bf460}\index{Input@{Input}!s\_MouseButtonState@{s\_MouseButtonState}}
+\index{s\_MouseButtonState@{s\_MouseButtonState}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{s\_MouseButtonState}{s\_MouseButtonState}}
+{\footnotesize\ttfamily \label{classInput_a38cbcc583b20863850fd3f552d9bf460} 
+bool Input::\+s\+\_\+\+Mouse\+Button\+State = \{\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8h_source_l00010}{10}} of file \doxymbox{\hyperlink{Input_8h_source}{Input.\+h}}.
+
+\Hypertarget{classInput_a3d3d10de42d33da3c4b05ffdb39795d2}\index{Input@{Input}!s\_MouseDelta@{s\_MouseDelta}}
+\index{s\_MouseDelta@{s\_MouseDelta}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{s\_MouseDelta}{s\_MouseDelta}}
+{\footnotesize\ttfamily \label{classInput_a3d3d10de42d33da3c4b05ffdb39795d2} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Input::\+s\+\_\+\+Mouse\+Delta\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8h_source_l00061}{61}} of file \doxymbox{\hyperlink{Input_8h_source}{Input.\+h}}.
+
+\Hypertarget{classInput_ab00b8236f27ec4750c2f7445cb1b10f6}\index{Input@{Input}!s\_MousePosition@{s\_MousePosition}}
+\index{s\_MousePosition@{s\_MousePosition}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{s\_MousePosition}{s\_MousePosition}}
+{\footnotesize\ttfamily \label{classInput_ab00b8236f27ec4750c2f7445cb1b10f6} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Input::\+s\+\_\+\+Mouse\+Position\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8h_source_l00060}{60}} of file \doxymbox{\hyperlink{Input_8h_source}{Input.\+h}}.
+
+\Hypertarget{classInput_ab41e893697e72075e87d4beb5e827155}\index{Input@{Input}!s\_ScrollDelta@{s\_ScrollDelta}}
+\index{s\_ScrollDelta@{s\_ScrollDelta}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{s\_ScrollDelta}{s\_ScrollDelta}}
+{\footnotesize\ttfamily \label{classInput_ab41e893697e72075e87d4beb5e827155} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Input::\+s\+\_\+\+Scroll\+Delta\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8h_source_l00064}{64}} of file \doxymbox{\hyperlink{Input_8h_source}{Input.\+h}}.
+
+\Hypertarget{classInput_ac2a9b120cf7963ce08709b5aa96fd8b2}\index{Input@{Input}!s\_WindowHeight@{s\_WindowHeight}}
+\index{s\_WindowHeight@{s\_WindowHeight}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{s\_WindowHeight}{s\_WindowHeight}}
+{\footnotesize\ttfamily \label{classInput_ac2a9b120cf7963ce08709b5aa96fd8b2} 
+int Input::\+s\+\_\+\+Window\+Height = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8h_source_l00069}{69}} of file \doxymbox{\hyperlink{Input_8h_source}{Input.\+h}}.
+
+\Hypertarget{classInput_aead1b302f92f40508f394030fb96ff43}\index{Input@{Input}!s\_WindowResized@{s\_WindowResized}}
+\index{s\_WindowResized@{s\_WindowResized}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{s\_WindowResized}{s\_WindowResized}}
+{\footnotesize\ttfamily \label{classInput_aead1b302f92f40508f394030fb96ff43} 
+bool Input::\+s\+\_\+\+Window\+Resized = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8h_source_l00067}{67}} of file \doxymbox{\hyperlink{Input_8h_source}{Input.\+h}}.
+
+\Hypertarget{classInput_ac9f8548524960a49842cc0a16ec9ac96}\index{Input@{Input}!s\_WindowWidth@{s\_WindowWidth}}
+\index{s\_WindowWidth@{s\_WindowWidth}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{s\_WindowWidth}{s\_WindowWidth}}
+{\footnotesize\ttfamily \label{classInput_ac9f8548524960a49842cc0a16ec9ac96} 
+int Input::\+s\+\_\+\+Window\+Width = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Input_8h_source_l00068}{68}} of file \doxymbox{\hyperlink{Input_8h_source}{Input.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+core/\doxymbox{\hyperlink{Input_8h}{Input.\+h}}\item 
+engine/\+core/\doxymbox{\hyperlink{Input_8cpp}{Input.\+cpp}}\end{DoxyCompactItemize}

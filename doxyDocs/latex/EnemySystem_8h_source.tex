@@ -1,0 +1,117 @@
+\doxysection{Enemy\+System.\+h}
+\hypertarget{EnemySystem_8h_source}{}\label{EnemySystem_8h_source}\index{engine/systems/EnemySystem.h@{engine/systems/EnemySystem.h}}
+\doxymbox{\hyperlink{EnemySystem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{components_2Transform_8h}{components/Transform.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Enemy_8h}{components/Enemy.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Patrol_8h}{components/Patrol.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{SpriteRenderer_8h}{components/SpriteRenderer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{PhysicsBody_8h}{components/PhysicsBody.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Time_8h}{core/Time.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Vector3D_8h}{math/Vector3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <entt.hpp>}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00028}\doxymbox{\hyperlink{classEnemySystem}{00028}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classEnemySystem}{EnemySystem}}\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00029}00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00046}\doxymbox{\hyperlink{classEnemySystem_a122dd4911d2670f242ec120e6a82081e}{00046}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classEnemySystem_a122dd4911d2670f242ec120e6a82081e}{Update}}(entt::registry\&\ registry,\ \textcolor{keywordtype}{float}\ deltaTime,}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<entt::entity>\&\ platforms,\ \textcolor{keywordtype}{float}\ worldMinY)\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//View:\ entities\ with\ Transform,\ Enemy,\ Patrol,\ and\ PhysicsBody}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ view\ =\ registry.view<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}},\ \doxymbox{\hyperlink{structComponents_1_1Enemy}{Components::Enemy}},}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structComponents_1_1Patrol}{Components::Patrol}},\ \doxymbox{\hyperlink{structComponents_1_1PhysicsBody}{Components::PhysicsBody}}>();}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [entity,\ transform,\ enemy,\ patrol,\ physics]\ :\ view.each())\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!enemy.IsActive)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Enemy\ patrol\ movement}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ speed\ =\ patrol.Speed\ *\ deltaTime;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(patrol.MovingRight)\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transform.Position.x\ +=\ speed;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(transform.Position.x\ >=\ patrol.EndPosition.x)\ patrol.MovingRight\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transform.Position.x\ -\/=\ speed;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(transform.Position.x\ <=\ patrol.StartPosition.x)\ patrol.MovingRight\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Apply\ gravity}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ gravity\ =\ -\/9.8f\ *\ physics.GravityScale;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ physics.Velocity.y\ +=\ gravity\ *\ deltaTime;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ transform.Position.y\ +=\ physics.Velocity.y\ *\ deltaTime;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Collision\ detection\ and\ resolution\ with\ platforms}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ enemyHalfSize\ =\ transform.Scale\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ grounded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(entt::entity\ platform\ :\ platforms)\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ platformTransform\ =\ registry.get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(platform);}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ platformHalfSize\ =\ platformTransform.Scale\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Calculate\ AABB\ bounds}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ enemyLeft\ =\ transform.Position.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ -\/\ enemyHalfSize.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ enemyRight\ =\ transform.Position.x\ +\ enemyHalfSize.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ enemyBottom\ =\ transform.Position.y\ -\/\ enemyHalfSize.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ enemyTop\ =\ transform.Position.y\ +\ enemyHalfSize.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformLeft\ =\ platformTransform.Position.x\ -\/\ platformHalfSize.x;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformRight\ =\ platformTransform.Position.x\ +\ platformHalfSize.x;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformTop\ =\ platformTransform.Position.y\ +\ platformHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformBottom\ =\ platformTransform.Position.y\ -\/\ platformHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ overlapX\ =\ (enemyRight\ >\ platformLeft\ \&\&\ enemyLeft\ <\ platformRight);}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ overlapY\ =\ (enemyTop\ >\ platformBottom\ \&\&\ enemyBottom\ <\ platformTop);}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(overlapX\ \&\&\ overlapY)\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Resolve\ collision}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ delta\ =\ transform.Position\ -\/\ platformTransform.Position;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ overlap\ =\ enemyHalfSize\ +\ platformHalfSize\ -\/}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(std::abs(delta.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}),\ std::abs(delta.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}),\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(overlap.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ <\ overlap.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}})\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Vertical\ collision}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(delta.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ >\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transform.Position.y\ +=\ overlap.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ physics.Velocity.y\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grounded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transform.Position.y\ -\/=\ overlap.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(physics.Velocity.y\ >\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ physics.Velocity.y\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Horizontal\ collision}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(delta.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ >\ 0.0f)\ transform.Position.x\ +=\ overlap.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ transform.Position.x\ -\/=\ overlap.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Clamp\ to\ world\ floor}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ worldFloor\ =\ worldMinY\ +\ enemyHalfSize.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(transform.Position.y\ <\ worldFloor)\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transform.Position.y\ =\ worldFloor;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ physics.Velocity.y\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grounded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Update\ grounded\ state}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ physics.IsGrounded\ =\ grounded;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00129}00129\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00143}\doxymbox{\hyperlink{classEnemySystem_ae6879f0cea50154a47a3ba26eec29bde}{00143}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classEnemySystem_ae6879f0cea50154a47a3ba26eec29bde}{CheckCollision}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ playerPos,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ playerSize,}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ enemyPos,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ enemySize)\{}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00145}00145\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ playerHalf\ =\ playerSize\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00146}00146\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ enemyHalf\ =\ enemySize\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dx\ =\ std::abs(playerPos.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ -\/\ enemyPos.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}});}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dy\ =\ std::abs(playerPos.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ -\/\ enemyPos.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}});}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (dx\ <\ (playerHalf.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ +\ enemyHalf.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}))\ \&\&}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ (dy\ <\ (playerHalf.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ +\ enemyHalf.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}));}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EnemySystem_8h_source_l00154}00154\ \};}
+
+\end{DoxyCode}

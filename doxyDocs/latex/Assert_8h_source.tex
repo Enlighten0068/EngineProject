@@ -1,0 +1,18 @@
+\doxysection{Assert.\+h}
+\hypertarget{Assert_8h_source}{}\label{Assert_8h_source}\index{engine/diagnostics/Assert.h@{engine/diagnostics/Assert.h}}
+\doxymbox{\hyperlink{Assert_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00019}\doxymbox{\hyperlink{Assert_8h_a8cd446f746bfa7d25787eb94290c900d}{00019}}\ \textcolor{preprocessor}{\#define\ ENGINE\_ASSERT(condition,\ message)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00020}00020\ \textcolor{preprocessor}{do\{\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00021}00021\ \textcolor{preprocessor}{\ \ \ \ if(!(condition))\{\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00022}00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ Log::Error(std::format("{}Assertion\ Failed:\ \{\}\(\backslash\)nFile:\ \{\}\(\backslash\)n\ Line:\ \{\}"{},\ message,\ \_\_FILE\_\_,\ \_\_LINE\_\_));\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00023}00023\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::abort();\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00024}00024\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{Assert_8h_source_l00025}00025\ \textcolor{preprocessor}{\}\ while(false)}}
+
+\end{DoxyCode}

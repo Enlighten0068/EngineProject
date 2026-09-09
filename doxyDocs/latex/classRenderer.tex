@@ -1,0 +1,152 @@
+\doxysection{Renderer Class Reference}
+\hypertarget{classRenderer}{}\label{classRenderer}\index{Renderer@{Renderer}}
+
+
+Static rendering API for drawing 2D geometry.  
+
+
+
+
+{\ttfamily \+\#include $<$Renderer.\+h$>$}
+
+
+
+Collaboration diagram for Renderer:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classRenderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{classRenderer_a62a84dbdb97eed1c5fcc0cfa545ab281}{Draw\+Quad}} (\doxymbox{\hyperlink{classShader}{Shader}} \&shader, \doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&vertex\+Array, \doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&index\+Buffer)
+\begin{DoxyCompactList}\small\item\em Draws a flat (untextured) quad. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classRenderer_a71992cf4acf88e30dd0abaaa6cda23b4}{Draw\+Textured\+Quad}} (\doxymbox{\hyperlink{classShader}{Shader}} \&shader, \doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&vertex\+Array, \doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&index\+Buffer, \doxymbox{\hyperlink{classTexture2D}{Texture2D}} \&texture, const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&model, const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&view, const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&projection, float tile\+ScaleX=1.\+0f, float tile\+ScaleY=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Draws a textured quad with transformation matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Static rendering API for drawing 2D geometry. 
+
+The \doxylink{classRenderer}{Renderer} provides a simple interface for drawing textured or untextured quads using the engine\textquotesingle{}s shader and buffer objects. All methods are static, making it easy to use from anywhere in the engine.
+
+\begin{DoxyNote}{Note}
+The \doxylink{classRenderer}{Renderer} assumes that the shader already has the correct uniforms for the model, view, and projection matrices, as well as a texture sampler. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classShader}{Shader}, \doxylink{classVertexArray}{Vertex\+Array}, \doxylink{classIndexBuffer}{Index\+Buffer}, \doxylink{classTexture2D}{Texture2D} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Renderer_8h_source_l00022}{22}} of file \doxymbox{\hyperlink{Renderer_8h_source}{Renderer.\+h}}.
+
+
+
+\label{classRenderer_doc-func-members}
+\Hypertarget{classRenderer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRenderer_a62a84dbdb97eed1c5fcc0cfa545ab281}\index{Renderer@{Renderer}!DrawQuad@{DrawQuad}}
+\index{DrawQuad@{DrawQuad}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawQuad()}{DrawQuad()}}
+{\footnotesize\ttfamily \label{classRenderer_a62a84dbdb97eed1c5fcc0cfa545ab281} 
+void Renderer::\+\+Draw\+Quad (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{shader}{, }\item[{\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&}]{vertex\+Array}{, }\item[{\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&}]{index\+Buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws a flat (untextured) quad. 
+
+Binds the shader, vertex array, and index buffer, then issues a draw call.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader program to use. \\
+\hline
+{\em vertex\+Array} & The vertex array object containing vertex data. \\
+\hline
+{\em index\+Buffer} & The index buffer containing the quad indices.\\
+\hline
+\end{DoxyParams}
+This method is used for simple geometry that does not require texturing. It binds the shader, VAO, and IBO, then issues a single draw call.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader program to use. \\
+\hline
+{\em vertex\+Array} & The vertex array object. \\
+\hline
+{\em index\+Buffer} & The index buffer containing the quad indices. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Renderer_8cpp_source_l00020}{20}} of file \doxymbox{\hyperlink{Renderer_8cpp_source}{Renderer.\+cpp}}.
+
+\Hypertarget{classRenderer_a71992cf4acf88e30dd0abaaa6cda23b4}\index{Renderer@{Renderer}!DrawTexturedQuad@{DrawTexturedQuad}}
+\index{DrawTexturedQuad@{DrawTexturedQuad}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawTexturedQuad()}{DrawTexturedQuad()}}
+{\footnotesize\ttfamily \label{classRenderer_a71992cf4acf88e30dd0abaaa6cda23b4} 
+void Renderer::\+\+Draw\+Textured\+Quad (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{shader}{, }\item[{\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&}]{vertex\+Array}{, }\item[{\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&}]{index\+Buffer}{, }\item[{\doxymbox{\hyperlink{classTexture2D}{Texture2D}} \&}]{texture}{, }\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{model}{, }\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{view}{, }\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{projection}{, }\item[{float}]{tile\+ScaleX}{ = {\ttfamily 1.0f}, }\item[{float}]{tile\+ScaleY}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws a textured quad with transformation matrices. 
+
+Binds the shader, texture, vertex array, and index buffer, then sets the model, view, projection, and tile scale uniforms before drawing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader program to use. \\
+\hline
+{\em vertex\+Array} & The vertex array object containing vertex data. \\
+\hline
+{\em index\+Buffer} & The index buffer containing the quad indices. \\
+\hline
+{\em texture} & The texture to apply to the quad. \\
+\hline
+{\em model} & The model matrix (position, rotation, scale). \\
+\hline
+{\em view} & The view matrix (camera position). \\
+\hline
+{\em projection} & The projection matrix (orthographic or perspective). \\
+\hline
+{\em tile\+ScaleX} & Number of texture repetitions along the X axis (default: 1.\+0). \\
+\hline
+{\em tile\+ScaleY} & Number of texture repetitions along the Y axis (default: 1.\+0).\\
+\hline
+\end{DoxyParams}
+This is the primary rendering method for 2D sprites. It applies the model, view, and projection matrices to position the quad in world space, and uses a tile scale to repeat the texture across the quad surface.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader program to use. \\
+\hline
+{\em vertex\+Array} & The vertex array object. \\
+\hline
+{\em index\+Buffer} & The index buffer containing the quad indices. \\
+\hline
+{\em texture} & The texture to apply to the quad. \\
+\hline
+{\em model} & The model matrix (position, rotation, scale). \\
+\hline
+{\em view} & The view matrix (camera position). \\
+\hline
+{\em projection} & The projection matrix (orthographic or perspective). \\
+\hline
+{\em tile\+ScaleX} & Number of texture repetitions along the X axis. \\
+\hline
+{\em tile\+ScaleY} & Number of texture repetitions along the Y axis. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Renderer_8cpp_source_l00045}{45}} of file \doxymbox{\hyperlink{Renderer_8cpp_source}{Renderer.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+renderer/\doxymbox{\hyperlink{Renderer_8h}{Renderer.\+h}}\item 
+engine/\+renderer/\doxymbox{\hyperlink{Renderer_8cpp}{Renderer.\+cpp}}\end{DoxyCompactItemize}

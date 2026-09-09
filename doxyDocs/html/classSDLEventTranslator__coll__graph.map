@@ -1,0 +1,3 @@
+<map id="SDLEventTranslator" name="SDLEventTranslator">
+<area shape="rect" id="Node000001" title="Translates SDL events into engine events and dispatches them via EventBus." alt="" coords="5,5,224,256"/>
+</map>

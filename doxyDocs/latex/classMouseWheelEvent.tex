@@ -1,0 +1,160 @@
+\doxysection{Mouse\+Wheel\+Event Class Reference}
+\hypertarget{classMouseWheelEvent}{}\label{classMouseWheelEvent}\index{MouseWheelEvent@{MouseWheelEvent}}
+
+
+\doxylink{classEvent}{Event} representing mouse wheel scroll.  
+
+
+
+
+{\ttfamily \+\#include $<$Mouse\+Event.\+h$>$}
+
+
+
+Inheritance diagram for Mouse\+Wheel\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classMouseWheelEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mouse\+Wheel\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classMouseWheelEvent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classMouseWheelEvent_a24649c86c3b950852edb4397319ab4ef}{Mouse\+Wheel\+Event}} (const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&delta)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classMouseWheelEvent}{Mouse\+Wheel\+Event}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classMouseWheelEvent_aa352d3c294b1a4b7fd429186608ef00a}{Get\+Delta}} () const
+\item 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classMouseWheelEvent_a9673269c5bc0480fa716c51b35b3047a}{Get\+Event\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classEvent_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classMouseWheelEvent_a43a82b6feb18741e3125a9e9113f2ae9}{Get\+Static\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classMouseWheelEvent_a14570610d7ca40818d1501418f45560c}{m\+\_\+\+Delta}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classEvent_a8ad0c350a8f569dbb05cf845caa4737e}{Handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classEvent}{Event} representing mouse wheel scroll. 
+
+Contains the scroll delta. 
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00090}{90}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+\label{classMouseWheelEvent_doc-constructors}
+\Hypertarget{classMouseWheelEvent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMouseWheelEvent_a24649c86c3b950852edb4397319ab4ef}\index{MouseWheelEvent@{MouseWheelEvent}!MouseWheelEvent@{MouseWheelEvent}}
+\index{MouseWheelEvent@{MouseWheelEvent}!MouseWheelEvent@{MouseWheelEvent}}
+\doxysubsubsection{\texorpdfstring{MouseWheelEvent()}{MouseWheelEvent()}}
+{\footnotesize\ttfamily \label{classMouseWheelEvent_a24649c86c3b950852edb4397319ab4ef} 
+Mouse\+Wheel\+Event::\+\+Mouse\+Wheel\+Event (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&}]{delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classMouseWheelEvent}{Mouse\+Wheel\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & Scroll delta (x = horizontal, y = vertical). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00096}{96}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+\label{classMouseWheelEvent_doc-func-members}
+\Hypertarget{classMouseWheelEvent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMouseWheelEvent_aa352d3c294b1a4b7fd429186608ef00a}\index{MouseWheelEvent@{MouseWheelEvent}!GetDelta@{GetDelta}}
+\index{GetDelta@{GetDelta}!MouseWheelEvent@{MouseWheelEvent}}
+\doxysubsubsection{\texorpdfstring{GetDelta()}{GetDelta()}}
+{\footnotesize\ttfamily \label{classMouseWheelEvent_aa352d3c294b1a4b7fd429186608ef00a} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Mouse\+Wheel\+Event::\+\+Get\+Delta (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00098}{98}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseWheelEvent_a9673269c5bc0480fa716c51b35b3047a}\index{MouseWheelEvent@{MouseWheelEvent}!GetEventType@{GetEventType}}
+\index{GetEventType@{GetEventType}!MouseWheelEvent@{MouseWheelEvent}}
+\doxysubsubsection{\texorpdfstring{GetEventType()}{GetEventType()}}
+{\footnotesize\ttfamily \label{classMouseWheelEvent_a9673269c5bc0480fa716c51b35b3047a} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Mouse\+Wheel\+Event::\+\+Get\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the event. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type} enum value identifying the event. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classEvent_af14bbd8f69c2778def9462375a0e70f2}{Event}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00101}{101}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseWheelEvent_a43a82b6feb18741e3125a9e9113f2ae9}\index{MouseWheelEvent@{MouseWheelEvent}!GetStaticType@{GetStaticType}}
+\index{GetStaticType@{GetStaticType}!MouseWheelEvent@{MouseWheelEvent}}
+\doxysubsubsection{\texorpdfstring{GetStaticType()}{GetStaticType()}}
+{\footnotesize\ttfamily \label{classMouseWheelEvent_a43a82b6feb18741e3125a9e9113f2ae9} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Mouse\+Wheel\+Event::\+\+Get\+Static\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00100}{100}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+\label{classMouseWheelEvent_doc-variable-members}
+\Hypertarget{classMouseWheelEvent_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMouseWheelEvent_a14570610d7ca40818d1501418f45560c}\index{MouseWheelEvent@{MouseWheelEvent}!m\_Delta@{m\_Delta}}
+\index{m\_Delta@{m\_Delta}!MouseWheelEvent@{MouseWheelEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Delta}{m\_Delta}}
+{\footnotesize\ttfamily \label{classMouseWheelEvent_a14570610d7ca40818d1501418f45560c} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Mouse\+Wheel\+Event::\+m\+\_\+\+Delta\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00104}{104}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+events/\doxymbox{\hyperlink{MouseEvent_8h}{Mouse\+Event.\+h}}\end{DoxyCompactItemize}

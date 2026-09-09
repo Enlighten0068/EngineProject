@@ -1,0 +1,9 @@
+<map id="ECSScene" name="ECSScene">
+<area shape="rect" id="Node000001" title="Scene class that manages an ECS registry with sprite entities." alt="" coords="166,396,322,558"/>
+<area shape="rect" id="Node000002" href="$classShader.html" title="OpenGL shader program wrapper." alt="" coords="5,5,157,323"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,321,163,371,170,383,164,383,158,374,135,326"/>
+<area shape="rect" id="Node000003" href="$classVertexArray.html" title="OpenGL Vertex Array Object (VAO) wrapper." alt="" coords="181,95,307,234"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,232,247,380,241,379,242,236"/>
+<area shape="rect" id="Node000004" href="$classIndexBuffer.html" title="OpenGL Index Buffer Object (EBO/IBO) wrapper." alt="" coords="331,72,455,256"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="394,254,384,316,375,346,362,374,336,410,332,406,358,371,370,344,379,314,390,258"/>
+</map>

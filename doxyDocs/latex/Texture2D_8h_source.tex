@@ -1,0 +1,37 @@
+\doxysection{Texture2\+D.\+h}
+\hypertarget{Texture2D_8h_source}{}\label{Texture2D_8h_source}\index{engine/graphics/Texture2D.h@{engine/graphics/Texture2D.h}}
+\doxymbox{\hyperlink{Texture2D_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00016}\doxymbox{\hyperlink{classTexture2D}{00016}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classTexture2D_ab62c7c5172a4800b4629cd475147819d}{Texture2D}}\{}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00017}00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00018}00018\ \ \ \ \ \doxymbox{\hyperlink{classTexture2D_ab62c7c5172a4800b4629cd475147819d}{Texture2D}}();}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00019}00019\ \ \ \ \ \doxymbox{\hyperlink{classTexture2D_ab62c7c5172a4800b4629cd475147819d}{\string~Texture2D}}();}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classTexture2D_ac70d133f5d75f03b471c6107d5f27ee1}{Load}}(\textcolor{keyword}{const}\ std::string\&\ filepath);}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classTexture2D_a185324994184bca2479fbbc1fcb7f5ec}{LoadFromSurface}}(SDL\_Surface*\ surface);}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classTexture2D_ae3aec86ebdc50bf233eef52668a029ce}{Bind}}(uint32\_t\ slot\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classTexture2D_a9758668e9a0a0810bc03195a65497426}{Unbind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//Getters}}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classTexture2D_adc9c5c07e3715910107e817283262564}{GetWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classTexture2D_a83d2555038cf0390415adf558629c176}{GetHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classTexture2D_adfa893526e2b5378b22c74387bf43491}{GetChannels}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00057}\doxymbox{\hyperlink{classTexture2D_af877ad4b2d68d7e39ba2799bf345ab1e}{00057}}\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{classTexture2D_af877ad4b2d68d7e39ba2799bf345ab1e}{GetRendererID}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classTexture2D_a08bc9aed013a941384db82972b91704c}{m\_RendererID}};\ \}}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00059}00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00060}\doxymbox{\hyperlink{classTexture2D_a08bc9aed013a941384db82972b91704c}{00060}}\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{classTexture2D_a08bc9aed013a941384db82972b91704c}{m\_RendererID}};\ \textcolor{comment}{//OpenGL\ texture\ ID}}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00061}\doxymbox{\hyperlink{classTexture2D_a72fb2ef7cf77006a4860ef1700036e96}{00061}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classTexture2D_a72fb2ef7cf77006a4860ef1700036e96}{m\_Width}};\ \textcolor{comment}{//Texture\ width\ in\ pixels}}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00062}\doxymbox{\hyperlink{classTexture2D_a50e9da52d931a0f9c9ace3ccb646292b}{00062}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classTexture2D_a50e9da52d931a0f9c9ace3ccb646292b}{m\_Height}};\ \textcolor{comment}{//Texture\ height\ in\ pixels}}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00063}\doxymbox{\hyperlink{classTexture2D_a9003e6b742c84c9a34a8516cda4b9412}{00063}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classTexture2D_a9003e6b742c84c9a34a8516cda4b9412}{m\_Channels}};\ \textcolor{comment}{//Number\ of\ color\ channels\ (3\ =\ RGB,\ 4\ =\ RGBA)}}
+\DoxyCodeLine{\Hypertarget{Texture2D_8h_source_l00064}00064\ \};}
+
+\end{DoxyCode}

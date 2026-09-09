@@ -1,0 +1,554 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classCamera2D" kind="class" language="C++" prot="public">
+    <compoundname>Camera2D</compoundname>
+    <includes refid="Camera2D_8h" local="no">Camera2D.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classCamera2D_1a651b5a30b9359cc06ebd5d0a6270775c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera2D::m_Near</definition>
+        <argsstring></argsstring>
+        <name>m_Near</name>
+        <qualifiedname>Camera2D::m_Near</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="74" column="11" bodyfile="engine/scene/Camera2D.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera2D_1a302aa156fb2c542f00dfeef40e51752e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera2D::m_Far</definition>
+        <argsstring></argsstring>
+        <name>m_Far</name>
+        <qualifiedname>Camera2D::m_Far</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="75" column="11" bodyfile="engine/scene/Camera2D.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera2D_1a3895006dcd93f387d2cdb9ebdda506c0" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera2D::m_Width</definition>
+        <argsstring></argsstring>
+        <name>m_Width</name>
+        <qualifiedname>Camera2D::m_Width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="76" column="11" bodyfile="engine/scene/Camera2D.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera2D_1a7093ce0f3db7658bd5c7e579c1e8cf47" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera2D::m_Height</definition>
+        <argsstring></argsstring>
+        <name>m_Height</name>
+        <qualifiedname>Camera2D::m_Height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="77" column="11" bodyfile="engine/scene/Camera2D.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera2D_1ac5b66f8164de772cefb2dd90d18199d3" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Camera2D::m_Position</definition>
+        <argsstring></argsstring>
+        <name>m_Position</name>
+        <qualifiedname>Camera2D::m_Position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="79" column="14" bodyfile="engine/scene/Camera2D.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera2D_1a9eef4aba3d315743afb6afbb89bae3c6" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera2D::m_Rotation</definition>
+        <argsstring></argsstring>
+        <name>m_Rotation</name>
+        <qualifiedname>Camera2D::m_Rotation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="80" column="11" bodyfile="engine/scene/Camera2D.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera2D_1a591fefdf777617222afbfa7b9d0a70bc" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera2D::m_Zoom</definition>
+        <argsstring></argsstring>
+        <name>m_Zoom</name>
+        <qualifiedname>Camera2D::m_Zoom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="81" column="11" bodyfile="engine/scene/Camera2D.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera2D_1a260d3283fabe527248217099823cc25f" prot="private" static="no" mutable="no">
+        <type><ref refid="classMatrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 Camera2D::m_ProjectionMatrix</definition>
+        <argsstring></argsstring>
+        <name>m_ProjectionMatrix</name>
+        <qualifiedname>Camera2D::m_ProjectionMatrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="83" column="13" bodyfile="engine/scene/Camera2D.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera2D_1a15183741d20d595084a1984a84968254" prot="private" static="no" mutable="no">
+        <type><ref refid="classMatrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 Camera2D::m_ViewMatrix</definition>
+        <argsstring></argsstring>
+        <name>m_ViewMatrix</name>
+        <qualifiedname>Camera2D::m_ViewMatrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="84" column="13" bodyfile="engine/scene/Camera2D.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera2D_1a5418a2d219a54844b223106e1170db5c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera2D::m_IsDirty</definition>
+        <argsstring></argsstring>
+        <name>m_IsDirty</name>
+        <qualifiedname>Camera2D::m_IsDirty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="85" column="10" bodyfile="engine/scene/Camera2D.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCamera2D_1a08e4985039e813d649881fc1e9de295e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Camera2D::Camera2D</definition>
+        <argsstring>(float left, float right, float bottom, float top, float nearPlane=-1.0f, float farPlane=1.0f)</argsstring>
+        <name>Camera2D</name>
+        <qualifiedname>Camera2D::Camera2D</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>right</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>bottom</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>top</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>nearPlane</declname>
+          <defval>-1.0f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>farPlane</declname>
+          <defval>1.0f</defval>
+        </param>
+        <briefdescription>
+<para>Constructs a 2D camera with specified view volume. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left boundary of the view volume. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right boundary of the view volume. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bottom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bottom boundary of the view volume. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>top</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Top boundary of the view volume. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nearPlane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Near clipping plane (default: -1.0). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>farPlane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Far clipping plane (default: 1.0).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Initializes the camera with the given view volume, sets default position to (0,0,0), with no rotation, zoom=1, and calculates the initial projection matrix. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="27" column="5" bodyfile="engine/scene/Camera2D.cpp" bodystart="12" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera2D_1add37aa370c8718e7d38a0de2f8b86b10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera2D::SetPosition</definition>
+        <argsstring>(const Vector3D &amp;position)</argsstring>
+        <name>SetPosition</name>
+        <qualifiedname>Camera2D::SetPosition</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>Sets the camera position in world space. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the camera position and marks the view matrix as dirty.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New position. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="33" column="10" bodyfile="engine/scene/Camera2D.cpp" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera2D_1acd244eddd3322e8aca89338cbdd18725" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera2D::SetRotation</definition>
+        <argsstring>(float angleRadians)</argsstring>
+        <name>SetRotation</name>
+        <qualifiedname>Camera2D::SetRotation</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>angleRadians</declname>
+        </param>
+        <briefdescription>
+<para>Sets the camera rotation around the Z-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the camera rotation and marks the view matrix as dirty.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>angleRadians</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rotation angle in radians. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="39" column="10" bodyfile="engine/scene/Camera2D.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera2D_1aed0e07c98dcc2dab4cfb46021c5af4f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera2D::SetProjection</definition>
+        <argsstring>(float left, float right, float bottom, float top)</argsstring>
+        <name>SetProjection</name>
+        <qualifiedname>Camera2D::SetProjection</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>right</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>bottom</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>top</declname>
+        </param>
+        <briefdescription>
+<para>Sets the camera projection volume. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left boundary. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right boundary. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bottom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bottom boundary. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>top</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Top boundary. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="48" column="10" bodyfile="engine/scene/Camera2D.cpp" bodystart="54" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera2D_1a2dacc853f7361a368c53571932c5bee1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera2D::SetZoom</definition>
+        <argsstring>(float zoom)</argsstring>
+        <name>SetZoom</name>
+        <qualifiedname>Camera2D::SetZoom</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>zoom</declname>
+        </param>
+        <briefdescription>
+<para>Sets the camera zoom level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the camera zoom level and recalculates the projection matrix.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>zoom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Zoom factor (clamped to a minimum of 0.1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="54" column="10" bodyfile="engine/scene/Camera2D.cpp" bodystart="41" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera2D_1a81735ad622947ceecfe836d2f855cfc8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Camera2D::GetPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPosition</name>
+        <qualifiedname>Camera2D::GetPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="57" column="14" bodyfile="engine/scene/Camera2D.h" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera2D_1af8d9ff1e06b780cc2917b9559ab4a369" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Camera2D::GetZoom</definition>
+        <argsstring>() const</argsstring>
+        <name>GetZoom</name>
+        <qualifiedname>Camera2D::GetZoom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="58" column="11" bodyfile="engine/scene/Camera2D.h" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera2D_1ae3168f69ca945882e188e8afd65c3df0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classMatrix4" kindref="compound">Matrix4</ref> &amp;</type>
+        <definition>const Matrix4 &amp; Camera2D::GetViewMatrix</definition>
+        <argsstring>() const</argsstring>
+        <name>GetViewMatrix</name>
+        <qualifiedname>Camera2D::GetViewMatrix</qualifiedname>
+        <briefdescription>
+<para>Gets the view matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Const reference to the view matrix. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="59" column="19" bodyfile="engine/scene/Camera2D.cpp" bodystart="98" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera2D_1ab701ef4c77ac12b75120d37dd84f6cfa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classMatrix4" kindref="compound">Matrix4</ref> &amp;</type>
+        <definition>const Matrix4 &amp; Camera2D::GetProjectionMatrix</definition>
+        <argsstring>() const</argsstring>
+        <name>GetProjectionMatrix</name>
+        <qualifiedname>Camera2D::GetProjectionMatrix</qualifiedname>
+        <briefdescription>
+<para>Gets the projection matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Const reference to the projection matrix. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="60" column="19" bodyfile="engine/scene/Camera2D.cpp" bodystart="106" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera2D_1adab7c2dd541f23c9e20ce54c73520f03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera2D::Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>Camera2D::Update</qualifiedname>
+        <briefdescription>
+<para>Updates the view matrix if the camera is dirty. Should be called before rendering if the camera has moved or rotated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates the view matrix ONLY when the camera is dirty.</para>
+<para>The view matrix is the inverse of the camera&apos;s transform:<orderedlist>
+<listitem><para>Apply translation to -position</para>
+</listitem><listitem><para>Apply rotation around Z-axis (inverse angle) </para>
+</listitem></orderedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="66" column="10" bodyfile="engine/scene/Camera2D.cpp" bodystart="69" bodyend="81"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classCamera2D_1a2f6f0e9b8c1ed59d3cbaf54e45d6d4f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera2D::UpdateProjection</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateProjection</name>
+        <qualifiedname>Camera2D::UpdateProjection</qualifiedname>
+        <briefdescription>
+<para>Recalculates the projection matrix based on zoom level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Recalculates the orthographic projection matrix based on zoom. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Camera2D.h" line="72" column="10" bodyfile="engine/scene/Camera2D.cpp" bodystart="86" bodyend="92"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>2D camera with orthographic projection, position, rotation, and zoom. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classCamera2D" kindref="compound">Camera2D</ref> class manages an orthographic projection matrix and a view matrix based on the camera&apos;s position, rotation (around Z-axis), and zoom level. It is used to define what part of the world is visible on screen.</para>
+<para><simplesect kind="note"><para>The camera uses a dirty flag to avoid recalculating the view matrix every frame unless the position or rotation has changed. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Camera2D</label>
+        <link refid="classCamera2D"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-m_Position</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_ProjectionMatrix</edgelabel>
+          <edgelabel>-m_ViewMatrix</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Matrix4</label>
+        <link refid="classMatrix4"/>
+      </node>
+      <node id="2">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/scene/Camera2D.h" line="16" column="1" bodyfile="engine/scene/Camera2D.h" bodystart="16" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classCamera2D_1a08e4985039e813d649881fc1e9de295e" prot="public" virt="non-virtual"><scope>Camera2D</scope><name>Camera2D</name></member>
+      <member refid="classCamera2D_1a81735ad622947ceecfe836d2f855cfc8" prot="public" virt="non-virtual"><scope>Camera2D</scope><name>GetPosition</name></member>
+      <member refid="classCamera2D_1ab701ef4c77ac12b75120d37dd84f6cfa" prot="public" virt="non-virtual"><scope>Camera2D</scope><name>GetProjectionMatrix</name></member>
+      <member refid="classCamera2D_1ae3168f69ca945882e188e8afd65c3df0" prot="public" virt="non-virtual"><scope>Camera2D</scope><name>GetViewMatrix</name></member>
+      <member refid="classCamera2D_1af8d9ff1e06b780cc2917b9559ab4a369" prot="public" virt="non-virtual"><scope>Camera2D</scope><name>GetZoom</name></member>
+      <member refid="classCamera2D_1a302aa156fb2c542f00dfeef40e51752e" prot="private" virt="non-virtual"><scope>Camera2D</scope><name>m_Far</name></member>
+      <member refid="classCamera2D_1a7093ce0f3db7658bd5c7e579c1e8cf47" prot="private" virt="non-virtual"><scope>Camera2D</scope><name>m_Height</name></member>
+      <member refid="classCamera2D_1a5418a2d219a54844b223106e1170db5c" prot="private" virt="non-virtual"><scope>Camera2D</scope><name>m_IsDirty</name></member>
+      <member refid="classCamera2D_1a651b5a30b9359cc06ebd5d0a6270775c" prot="private" virt="non-virtual"><scope>Camera2D</scope><name>m_Near</name></member>
+      <member refid="classCamera2D_1ac5b66f8164de772cefb2dd90d18199d3" prot="private" virt="non-virtual"><scope>Camera2D</scope><name>m_Position</name></member>
+      <member refid="classCamera2D_1a260d3283fabe527248217099823cc25f" prot="private" virt="non-virtual"><scope>Camera2D</scope><name>m_ProjectionMatrix</name></member>
+      <member refid="classCamera2D_1a9eef4aba3d315743afb6afbb89bae3c6" prot="private" virt="non-virtual"><scope>Camera2D</scope><name>m_Rotation</name></member>
+      <member refid="classCamera2D_1a15183741d20d595084a1984a84968254" prot="private" virt="non-virtual"><scope>Camera2D</scope><name>m_ViewMatrix</name></member>
+      <member refid="classCamera2D_1a3895006dcd93f387d2cdb9ebdda506c0" prot="private" virt="non-virtual"><scope>Camera2D</scope><name>m_Width</name></member>
+      <member refid="classCamera2D_1a591fefdf777617222afbfa7b9d0a70bc" prot="private" virt="non-virtual"><scope>Camera2D</scope><name>m_Zoom</name></member>
+      <member refid="classCamera2D_1add37aa370c8718e7d38a0de2f8b86b10" prot="public" virt="non-virtual"><scope>Camera2D</scope><name>SetPosition</name></member>
+      <member refid="classCamera2D_1aed0e07c98dcc2dab4cfb46021c5af4f6" prot="public" virt="non-virtual"><scope>Camera2D</scope><name>SetProjection</name></member>
+      <member refid="classCamera2D_1acd244eddd3322e8aca89338cbdd18725" prot="public" virt="non-virtual"><scope>Camera2D</scope><name>SetRotation</name></member>
+      <member refid="classCamera2D_1a2dacc853f7361a368c53571932c5bee1" prot="public" virt="non-virtual"><scope>Camera2D</scope><name>SetZoom</name></member>
+      <member refid="classCamera2D_1adab7c2dd541f23c9e20ce54c73520f03" prot="public" virt="non-virtual"><scope>Camera2D</scope><name>Update</name></member>
+      <member refid="classCamera2D_1a2f6f0e9b8c1ed59d3cbaf54e45d6d4f5" prot="private" virt="non-virtual"><scope>Camera2D</scope><name>UpdateProjection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

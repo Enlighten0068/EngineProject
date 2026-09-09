@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classRenderSystem" kind="class" language="C++" prot="public">
+    <compoundname>RenderSystem</compoundname>
+    <includes refid="RenderSystem_8h" local="no">RenderSystem.h</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classRenderSystem_1a0dee88c7afdb4acfa6ad44e3902ce7a3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RenderSystem::Render</definition>
+        <argsstring>(entt::registry &amp;registry, Shader &amp;shader, const Matrix4 &amp;view, const Matrix4 &amp;projection, VertexArray &amp;va, IndexBuffer &amp;ib)</argsstring>
+        <name>Render</name>
+        <qualifiedname>RenderSystem::Render</qualifiedname>
+        <param>
+          <type>entt::registry &amp;</type>
+          <declname>registry</declname>
+        </param>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classMatrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>view</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classMatrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>projection</declname>
+        </param>
+        <param>
+          <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+          <declname>va</declname>
+        </param>
+        <param>
+          <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+          <declname>ib</declname>
+        </param>
+        <briefdescription>
+<para>Renders all entities with <ref refid="structTransform" kindref="compound">Transform</ref> and SpriteRenderer components. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method iterates over all entities that have both <ref refid="structTransform" kindref="compound">Transform</ref> and SpriteRenderer components. For each entity, it checks if the texture is valid, builds the model matrix, and calls DrawTexturedQuad on the <ref refid="classRenderer" kindref="compound">Renderer</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>registry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the ECS registry containing all entities. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The shader program to use for rendering. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The view matrix (camera position). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>projection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The projection matrix (orthographic or perspective). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>va</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertex array object containing geometry data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ib</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index buffer containing the quad indices. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/RenderSystem.h" line="44" column="17" bodyfile="engine/systems/RenderSystem.h" bodystart="44" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>System that renders all entities with <ref refid="structTransform" kindref="compound">Transform</ref> and SpriteRenderer components. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classRenderSystem" kindref="compound">RenderSystem</ref> is responsible for drawing all visible entities in the scene. It processes entities that have both a <ref refid="structTransform" kindref="compound">Transform</ref> (position, rotation, scale) and a SpriteRenderer (texture) component, calculates the model matrix, and calls the <ref refid="classRenderer" kindref="compound">Renderer</ref> to draw each entity.</para>
+<para>Entities with a TileScale component use its value; entities without TileScale default to 1.0f (no repetition, texture stretches to fill the quad).</para>
+<para><simplesect kind="note"><para>This system should be called once per frame from the scene&apos;s <ref refid="classRenderSystem_1a0dee88c7afdb4acfa6ad44e3902ce7a3" kindref="member">Render()</ref> method. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structComponents_1_1Transform" kindref="compound">Components::Transform</ref>, <ref refid="structComponents_1_1SpriteRenderer" kindref="compound">Components::SpriteRenderer</ref>, <ref refid="structComponents_1_1TileScale" kindref="compound">Components::TileScale</ref>, <ref refid="classRenderer" kindref="compound">Renderer</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>RenderSystem</label>
+        <link refid="classRenderSystem"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/systems/RenderSystem.h" line="28" column="1" bodyfile="engine/systems/RenderSystem.h" bodystart="28" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classRenderSystem_1a0dee88c7afdb4acfa6ad44e3902ce7a3" prot="public" virt="non-virtual"><scope>RenderSystem</scope><name>Render</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

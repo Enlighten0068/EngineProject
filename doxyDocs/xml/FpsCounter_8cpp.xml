@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="FpsCounter_8cpp" kind="file" language="C++">
+    <compoundname>FpsCounter.cpp</compoundname>
+    <includes refid="FpsCounter_8h" local="yes">core/FpsCounter.h</includes>
+    <includes refid="Time_8h" local="yes">core/Time.h</includes>
+    <includes refid="Log_8h" local="yes">diagnostics/Log.h</includes>
+    <includes local="no">format</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/core/FpsCounter.cpp</label>
+        <link refid="FpsCounter_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>core/FpsCounter.h</label>
+        <link refid="FpsCounter_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>core/Time.h</label>
+        <link refid="Time_8h"/>
+      </node>
+      <node id="5">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>chrono</label>
+      </node>
+      <node id="11">
+        <label>format</label>
+      </node>
+      <node id="6">
+        <label>fstream</label>
+      </node>
+      <node id="8">
+        <label>iomanip</label>
+      </node>
+      <node id="9">
+        <label>sstream</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="10">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="FpsCounter_8h" kindref="compound">core/FpsCounter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Time_8h" kindref="compound">core/Time.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Log_8h" kindref="compound">diagnostics/Log.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;format&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><ref refid="classFpsCounter_1a82dfe73642a613c6f4bc7e38781360d7" kindref="member">FpsCounter::FpsCounter</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classFpsCounter_1ac7e47e9bfff65ac4e4aaa232669bcfd6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFpsCounter_1ac7e47e9bfff65ac4e4aaa232669bcfd6" kindref="member">FpsCounter::Update</ref>(){</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Store<sp/>current<sp/>frame<sp/>timing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFpsCounter_1a64d4c0efc68ad7c887c0eee9358b3e53" kindref="member">m_DeltaTime</ref><sp/>=<sp/><ref refid="classTime_1ad543732facbdbe2aa7298de13cb2a12b" kindref="member">Time::DeltaTime</ref>();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFpsCounter_1a74593eaaf5f829cd339ad37ee4f8206c" kindref="member">m_ElapsedTime</ref><sp/>=<sp/><ref refid="classTime_1a78df68c0498044fa62fdeb6b9e9e8b63" kindref="member">Time::ElapsedTime</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Accumulate<sp/>time<sp/>and<sp/>frame<sp/>count</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFpsCounter_1a28be3cb1111af1665b4655ed911fe3f5" kindref="member">m_Timer</ref><sp/>+=<sp/><ref refid="classFpsCounter_1a64d4c0efc68ad7c887c0eee9358b3e53" kindref="member">m_DeltaTime</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFpsCounter_1af170200b8c16cb824e1cf0eadc9b432f" kindref="member">m_FrameCount</ref>++;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Log<sp/>FPS<sp/>when<sp/>interval<sp/>is<sp/>reached</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classFpsCounter_1a28be3cb1111af1665b4655ed911fe3f5" kindref="member">m_Timer</ref><sp/>&gt;=<sp/><ref refid="classFpsCounter_1ab2f9ef76e8b93e25ea75c22f27435a58" kindref="member">m_LogInterval</ref>){</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFpsCounter_1a3c97e1b7092c2ff93fc0e2c18888ca5e" kindref="member">m_FPS</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classFpsCounter_1af170200b8c16cb824e1cf0eadc9b432f" kindref="member">m_FrameCount</ref>)<sp/>/<sp/><ref refid="classFpsCounter_1a28be3cb1111af1665b4655ed911fe3f5" kindref="member">m_Timer</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(std::format(</highlight><highlight class="stringliteral">&quot;FPS:<sp/>{:.1f}<sp/>|<sp/>Delta:<sp/>{:.4f}s<sp/>|<sp/>Elapsed:<sp/>{:.2f}s&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFpsCounter_1a3c97e1b7092c2ff93fc0e2c18888ca5e" kindref="member">m_FPS</ref>,<sp/><ref refid="classFpsCounter_1a64d4c0efc68ad7c887c0eee9358b3e53" kindref="member">m_DeltaTime</ref>,<sp/><ref refid="classFpsCounter_1a74593eaaf5f829cd339ad37ee4f8206c" kindref="member">m_ElapsedTime</ref>));</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Reset<sp/>counters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFpsCounter_1a28be3cb1111af1665b4655ed911fe3f5" kindref="member">m_Timer</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classFpsCounter_1af170200b8c16cb824e1cf0eadc9b432f" kindref="member">m_FrameCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/core/FpsCounter.cpp"/>
+  </compounddef>
+</doxygen>

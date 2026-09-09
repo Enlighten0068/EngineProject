@@ -1,0 +1,83 @@
+\doxysection{engine/\+diagnostics/\+\+Log.h File Reference}
+\hypertarget{Log_8h}{}\label{Log_8h}\index{engine/diagnostics/Log.h@{engine/diagnostics/Log.h}}
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$chrono$>$}\newline
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$unordered\+\_\+map$>$}\newline
+Include dependency graph for Log.\+h:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Log_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Log_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classLog}{Log}}
+\begin{DoxyCompactList}\small\item\em Centralized logging system with file output and throttling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} \{ \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9aa603905470e2a5b8c13e96b579ef0dba}{Debug}}
+, \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a4059b0251f66a18cb56f544728796875}{Info}}
+, \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a0eaadb4fcb48a0a0ed7bc9868be9fbaa}{Warning}}
+, \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a902b0d55fddef6f8d651fe1035b7d4bd}{Error}}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{classLog}{Log} levels for filtering messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{Log_8h_doc-enum-members}
+\Hypertarget{Log_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9}\index{Log.h@{Log.h}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!Log.h@{Log.h}}
+\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
+{\footnotesize\ttfamily \label{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9} 
+enum class \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+\doxylink{classLog}{Log} levels for filtering messages. 
+
+The log level determines which messages are written to the console and log file. Messages with a level below the current minimum level are ignored. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Debug@{Debug}!Log.h@{Log.h}}
+\index{Log.h@{Log.h}!Debug@{Debug}}
+}\Hypertarget{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9aa603905470e2a5b8c13e96b579ef0dba}\label{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9aa603905470e2a5b8c13e96b579ef0dba} 
+Debug&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Info@{Info}!Log.h@{Log.h}}
+\index{Log.h@{Log.h}!Info@{Info}}
+}\Hypertarget{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a4059b0251f66a18cb56f544728796875}\label{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a4059b0251f66a18cb56f544728796875} 
+Info&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Warning@{Warning}!Log.h@{Log.h}}
+\index{Log.h@{Log.h}!Warning@{Warning}}
+}\Hypertarget{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a0eaadb4fcb48a0a0ed7bc9868be9fbaa}\label{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a0eaadb4fcb48a0a0ed7bc9868be9fbaa} 
+Warning&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!Log.h@{Log.h}}
+\index{Log.h@{Log.h}!Error@{Error}}
+}\Hypertarget{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a902b0d55fddef6f8d651fe1035b7d4bd}\label{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a902b0d55fddef6f8d651fe1035b7d4bd} 
+Error&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \doxymbox{\hyperlink{Log_8h_source_l00017}{17}} of file \doxymbox{\hyperlink{Log_8h_source}{Log.\+h}}.
+

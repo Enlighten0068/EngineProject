@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structComponents_1_1Patrol" kind="struct" language="C++" prot="public">
+    <compoundname>Components::Patrol</compoundname>
+    <includes refid="Patrol_8h" local="no">Patrol.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structComponents_1_1Patrol_1acdb7e56ff34a14dbd8500c29bec0affe" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Components::Patrol::StartPosition</definition>
+        <argsstring></argsstring>
+        <name>StartPosition</name>
+        <qualifiedname>Components::Patrol::StartPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/Patrol.h" line="18" column="18" bodyfile="engine/components/Patrol.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structComponents_1_1Patrol_1a6c28272ebcacf6843b3c3ab318db5700" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Components::Patrol::EndPosition</definition>
+        <argsstring></argsstring>
+        <name>EndPosition</name>
+        <qualifiedname>Components::Patrol::EndPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/Patrol.h" line="19" column="18" bodyfile="engine/components/Patrol.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structComponents_1_1Patrol_1a6e941f16bb4b4dbcefd9dddd2055ad2c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Components::Patrol::Speed</definition>
+        <argsstring></argsstring>
+        <name>Speed</name>
+        <qualifiedname>Components::Patrol::Speed</qualifiedname>
+        <initializer>= 2.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/Patrol.h" line="20" column="15" bodyfile="engine/components/Patrol.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structComponents_1_1Patrol_1a7b930b9777aa350bac7447257cd4d6bf" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Components::Patrol::MovingRight</definition>
+        <argsstring></argsstring>
+        <name>MovingRight</name>
+        <qualifiedname>Components::Patrol::MovingRight</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/Patrol.h" line="21" column="14" bodyfile="engine/components/Patrol.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Defines patrol behavior for an entity. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>An entity with this component will move back and forth between two positions at a specified speed. Used primarily for enemy AI in platformer games.</para>
+<para><simplesect kind="note"><para>The movement direction (MovingRight) is automatically toggled when the entity reaches either end of the patrol range. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structComponents_1_1Enemy" kindref="compound">Enemy</ref>, <ref refid="structComponents_1_1PhysicsBody" kindref="compound">PhysicsBody</ref>, <ref refid="classEnemySystem" kindref="compound">EnemySystem</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Components::Patrol</label>
+        <link refid="structComponents_1_1Patrol"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+EndPosition</edgelabel>
+          <edgelabel>+StartPosition</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/components/Patrol.h" line="17" column="5" bodyfile="engine/components/Patrol.h" bodystart="17" bodyend="22"/>
+    <listofallmembers>
+      <member refid="structComponents_1_1Patrol_1a6c28272ebcacf6843b3c3ab318db5700" prot="public" virt="non-virtual"><scope>Components::Patrol</scope><name>EndPosition</name></member>
+      <member refid="structComponents_1_1Patrol_1a7b930b9777aa350bac7447257cd4d6bf" prot="public" virt="non-virtual"><scope>Components::Patrol</scope><name>MovingRight</name></member>
+      <member refid="structComponents_1_1Patrol_1a6e941f16bb4b4dbcefd9dddd2055ad2c" prot="public" virt="non-virtual"><scope>Components::Patrol</scope><name>Speed</name></member>
+      <member refid="structComponents_1_1Patrol_1acdb7e56ff34a14dbd8500c29bec0affe" prot="public" virt="non-virtual"><scope>Components::Patrol</scope><name>StartPosition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

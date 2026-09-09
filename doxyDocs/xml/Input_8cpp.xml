@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Input_8cpp" kind="file" language="C++">
+    <compoundname>Input.cpp</compoundname>
+    <includes refid="Input_8h" local="yes">core/Input.h</includes>
+    <includes refid="Log_8h" local="yes">diagnostics/Log.h</includes>
+    <includes local="no">format</includes>
+    <includes local="no">cstring</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/core/Input.cpp</label>
+        <link refid="Input_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>core/Input.h</label>
+        <link refid="Input_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="10">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>cmath</label>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="15">
+        <label>cstring</label>
+      </node>
+      <node id="14">
+        <label>format</label>
+      </node>
+      <node id="9">
+        <label>fstream</label>
+      </node>
+      <node id="11">
+        <label>iomanip</label>
+      </node>
+      <node id="12">
+        <label>sstream</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="13">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Input_8h" kindref="compound">core/Input.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Log_8h" kindref="compound">diagnostics/Log.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;format&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1ae35589903d5dd57f1b29df2039bbe562" kindref="member">Input::s_KeyState</ref>[SDL_SCANCODE_COUNT]<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1a101419ed1564201345669b7dc3aceab9" kindref="member">Input::s_KeyStatePrevious</ref>[SDL_SCANCODE_COUNT]<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classInput_1ab00b8236f27ec4750c2f7445cb1b10f6" kindref="member">Input::s_MousePosition</ref>(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classInput_1a3d3d10de42d33da3c4b05ffdb39795d2" kindref="member">Input::s_MouseDelta</ref>(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1a38cbcc583b20863850fd3f552d9bf460" kindref="member">Input::s_MouseButtonState</ref>[5]<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1a4e47ca136800ff0fdb2ff45cbd4d6e1b" kindref="member">Input::s_MouseButtonPrevious</ref>[5]<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classInput_1ab41e893697e72075e87d4beb5e827155" kindref="member">Input::s_ScrollDelta</ref>(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1aead1b302f92f40508f394030fb96ff43" kindref="member">Input::s_WindowResized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classInput_1ac9f8548524960a49842cc0a16ec9ac96" kindref="member">Input::s_WindowWidth</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classInput_1ac2a9b120cf7963ce08709b5aa96fd8b2" kindref="member">Input::s_WindowHeight</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classInput_1af80dcfde6dbfe39bf3bc0345c75595ce" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classInput_1af80dcfde6dbfe39bf3bc0345c75595ce" kindref="member">Input::Update</ref>(){</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Save<sp/>previous<sp/>states<sp/>for<sp/>transition<sp/>detection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>std::memcpy(<ref refid="classInput_1a101419ed1564201345669b7dc3aceab9" kindref="member">s_KeyStatePrevious</ref>,<sp/><ref refid="classInput_1ae35589903d5dd57f1b29df2039bbe562" kindref="member">s_KeyState</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classInput_1ae35589903d5dd57f1b29df2039bbe562" kindref="member">s_KeyState</ref>));</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>std::memcpy(<ref refid="classInput_1a4e47ca136800ff0fdb2ff45cbd4d6e1b" kindref="member">s_MouseButtonPrevious</ref>,<sp/><ref refid="classInput_1a38cbcc583b20863850fd3f552d9bf460" kindref="member">s_MouseButtonState</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classInput_1a38cbcc583b20863850fd3f552d9bf460" kindref="member">s_MouseButtonState</ref>));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Fetch<sp/>current<sp/>keyboard<sp/>state<sp/>from<sp/>SDL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>keyboardState<sp/>=<sp/>SDL_GetKeyboardState(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>SDL_SCANCODE_COUNT;<sp/>++i)<sp/><ref refid="classInput_1ae35589903d5dd57f1b29df2039bbe562" kindref="member">s_KeyState</ref>[i]<sp/>=<sp/>keyboardState[i]<sp/>!=<sp/>0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Reset<sp/>all<sp/>delta<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classInput_1a3d3d10de42d33da3c4b05ffdb39795d2" kindref="member">s_MouseDelta</ref><sp/>=<sp/><ref refid="structVector2D_1a98e9997ebb7a629f4db52397d4e0d653" kindref="member">Vector2D</ref>(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classInput_1ab41e893697e72075e87d4beb5e827155" kindref="member">s_ScrollDelta</ref><sp/>=<sp/><ref refid="structVector2D_1a98e9997ebb7a629f4db52397d4e0d653" kindref="member">Vector2D</ref>(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classInput_1aead1b302f92f40508f394030fb96ff43" kindref="member">s_WindowResized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classInput_1abe4504868f560362185f020c471e9a84" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classInput_1abe4504868f560362185f020c471e9a84" kindref="member">Input::ProcessEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Event&amp;<sp/>event){</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(event.type){</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SDL_EVENT_MOUSE_MOTION:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1ab00b8236f27ec4750c2f7445cb1b10f6" kindref="member">s_MousePosition</ref>.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="keyword">event</highlight><highlight class="normal">.motion.x);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1ab00b8236f27ec4750c2f7445cb1b10f6" kindref="member">s_MousePosition</ref>.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="keyword">event</highlight><highlight class="normal">.motion.y);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1a3d3d10de42d33da3c4b05ffdb39795d2" kindref="member">s_MouseDelta</ref>.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>+=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="keyword">event</highlight><highlight class="normal">.motion.xrel);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1a3d3d10de42d33da3c4b05ffdb39795d2" kindref="member">s_MouseDelta</ref>.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>+=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="keyword">event</highlight><highlight class="normal">.motion.yrel);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SDL_EVENT_MOUSE_BUTTON_DOWN:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(event.button.button<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>event.button.button<sp/>&lt;=<sp/>5){</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1a38cbcc583b20863850fd3f552d9bf460" kindref="member">s_MouseButtonState</ref>[</highlight><highlight class="keyword">event</highlight><highlight class="normal">.button.button<sp/>-<sp/>1]<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SDL_EVENT_MOUSE_BUTTON_UP:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(event.button.button<sp/>&gt;=<sp/>1<sp/>&amp;&amp;<sp/>event.button.button<sp/>&lt;=<sp/>5){</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1a38cbcc583b20863850fd3f552d9bf460" kindref="member">s_MouseButtonState</ref>[</highlight><highlight class="keyword">event</highlight><highlight class="normal">.button.button<sp/>-<sp/>1]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SDL_EVENT_MOUSE_WHEEL:</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1ab41e893697e72075e87d4beb5e827155" kindref="member">s_ScrollDelta</ref>.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>+=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="keyword">event</highlight><highlight class="normal">.wheel.x);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1ab41e893697e72075e87d4beb5e827155" kindref="member">s_ScrollDelta</ref>.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>+=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="keyword">event</highlight><highlight class="normal">.wheel.y);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SDL_EVENT_WINDOW_RESIZED:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1aead1b302f92f40508f394030fb96ff43" kindref="member">s_WindowResized</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1ac9f8548524960a49842cc0a16ec9ac96" kindref="member">s_WindowWidth</ref><sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.window.data1;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1ac2a9b120cf7963ce08709b5aa96fd8b2" kindref="member">s_WindowHeight</ref><sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.window.data2;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//Keyboard<sp/>transition<sp/>detection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_Scancode<sp/>key){</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>&lt;<sp/>0<sp/>||<sp/>key<sp/>&gt;=<sp/>SDL_SCANCODE_COUNT)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classInput_1ae35589903d5dd57f1b29df2039bbe562" kindref="member">s_KeyState</ref>[key]<sp/>&amp;&amp;<sp/>!<ref refid="classInput_1a101419ed1564201345669b7dc3aceab9" kindref="member">s_KeyStatePrevious</ref>[key];</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classInput_1a745b3db0f4100ff52f8597b407bcb55e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1a745b3db0f4100ff52f8597b407bcb55e" kindref="member">Input::IsKeyHeld</ref>(SDL_Scancode<sp/>key){</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>&lt;<sp/>0<sp/>||<sp/>key<sp/>&gt;=<sp/>SDL_SCANCODE_COUNT)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classInput_1ae35589903d5dd57f1b29df2039bbe562" kindref="member">s_KeyState</ref>[key];</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classInput_1a21e529cf7720b4df2906bd44aa73e889" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1a21e529cf7720b4df2906bd44aa73e889" kindref="member">Input::IsKeyReleased</ref>(SDL_Scancode<sp/>key){</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>&lt;<sp/>0<sp/>||<sp/>key<sp/>&gt;=<sp/>SDL_SCANCODE_COUNT)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!<ref refid="classInput_1ae35589903d5dd57f1b29df2039bbe562" kindref="member">s_KeyState</ref>[key]<sp/>&amp;&amp;<sp/><ref refid="classInput_1a101419ed1564201345669b7dc3aceab9" kindref="member">s_KeyStatePrevious</ref>[key];</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">//Mouse<sp/>getters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classInput_1a58652e658e6b2a088d0bfbd07753c914" refkind="member"><highlight class="normal"><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classInput_1a58652e658e6b2a088d0bfbd07753c914" kindref="member">Input::GetMousePosition</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classInput_1ab00b8236f27ec4750c2f7445cb1b10f6" kindref="member">s_MousePosition</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="97" refid="classInput_1a53bdc3cb0c879a60bd99396872eb6dcb" refkind="member"><highlight class="normal"><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classInput_1a53bdc3cb0c879a60bd99396872eb6dcb" kindref="member">Input::GetMouseDelta</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classInput_1a3d3d10de42d33da3c4b05ffdb39795d2" kindref="member">s_MouseDelta</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">//Mouse<sp/>button<sp/>transition<sp/>detection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classInput_1a1915a90124c915e35e04bc9044d3b575" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1a1915a90124c915e35e04bc9044d3b575" kindref="member">Input::IsMouseButtonPressed</ref>(uint8_t<sp/>button){</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(button<sp/>&lt;<sp/>1<sp/>||<sp/>button<sp/>&gt;<sp/>5)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classInput_1a38cbcc583b20863850fd3f552d9bf460" kindref="member">s_MouseButtonState</ref>[button<sp/>-<sp/>1]<sp/>&amp;&amp;<sp/>!<ref refid="classInput_1a4e47ca136800ff0fdb2ff45cbd4d6e1b" kindref="member">s_MouseButtonPrevious</ref>[button<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classInput_1aec38619f1a5a330430756de75db0aff2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1aec38619f1a5a330430756de75db0aff2" kindref="member">Input::IsMouseButtonHeld</ref>(uint8_t<sp/>button){</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(button<sp/>&lt;<sp/>1<sp/>||<sp/>button<sp/>&gt;<sp/>5)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classInput_1a38cbcc583b20863850fd3f552d9bf460" kindref="member">s_MouseButtonState</ref>[button<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classInput_1acf61c1a35081151e6d382272ba07d051" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1acf61c1a35081151e6d382272ba07d051" kindref="member">Input::IsMouseButtonReleased</ref>(uint8_t<sp/>button){</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(button<sp/>&lt;<sp/>1<sp/>||<sp/>button<sp/>&gt;<sp/>5)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!<ref refid="classInput_1a38cbcc583b20863850fd3f552d9bf460" kindref="member">s_MouseButtonState</ref>[button<sp/>-<sp/>1]<sp/>&amp;&amp;<sp/><ref refid="classInput_1a4e47ca136800ff0fdb2ff45cbd4d6e1b" kindref="member">s_MouseButtonPrevious</ref>[button<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">//Scroll<sp/>getter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="classInput_1af4fb33ee8a3ae10ad92ad2adc7e00ebf" refkind="member"><highlight class="normal"><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classInput_1af4fb33ee8a3ae10ad92ad2adc7e00ebf" kindref="member">Input::GetScrollDelta</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classInput_1ab41e893697e72075e87d4beb5e827155" kindref="member">s_ScrollDelta</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment">//Window<sp/>state<sp/>getters/setters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="classInput_1a4ddd4e0a717ca4b564a0491e32e6e280" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classInput_1a4ddd4e0a717ca4b564a0491e32e6e280" kindref="member">Input::WasWindowResized</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classInput_1aead1b302f92f40508f394030fb96ff43" kindref="member">s_WindowResized</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="120" refid="classInput_1a6fa97576489b0946ce0bcc88e8cbb46a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classInput_1a6fa97576489b0946ce0bcc88e8cbb46a" kindref="member">Input::GetWindowWidth</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classInput_1ac9f8548524960a49842cc0a16ec9ac96" kindref="member">s_WindowWidth</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="121" refid="classInput_1a73ac35d323c9c62b29a0fdb7cd10c84f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classInput_1a73ac35d323c9c62b29a0fdb7cd10c84f" kindref="member">Input::GetWindowHeight</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classInput_1ac2a9b120cf7963ce08709b5aa96fd8b2" kindref="member">s_WindowHeight</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="122" refid="classInput_1a4d970dee00ab2bbe858a7758cc167d07" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classInput_1a4d970dee00ab2bbe858a7758cc167d07" kindref="member">Input::SetWindowSize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height){</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classInput_1ac9f8548524960a49842cc0a16ec9ac96" kindref="member">s_WindowWidth</ref><sp/>=<sp/>width;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classInput_1ac2a9b120cf7963ce08709b5aa96fd8b2" kindref="member">s_WindowHeight</ref><sp/>=<sp/>height;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/core/Input.cpp"/>
+  </compounddef>
+</doxygen>

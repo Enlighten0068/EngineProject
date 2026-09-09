@@ -15,10 +15,10 @@
  * Messages with a level below the current minimum level are ignored.
  */
 enum class LogLevel{
-    Debug,
-    Info,
-    Warning,
-    Error
+    Debug,   //Debug messages (lowest priority)
+    Info,    //Informational messages
+    Warning, //Warning messages
+    Error    //Error messages (highest priority)
 };
 
 /**
@@ -33,7 +33,6 @@ enum class LogLevel{
  */
 class Log{
 public:
-
     /**
      * @brief Initializes the logging system.
      *
@@ -65,7 +64,7 @@ public:
      *
      * @param message The message to log.
      * @param key Unique identifier for this throttled message.
-     * @param intervalSeconds Minimum time between logs.
+     * @param intervalSeconds Minimum time between logs (default: 2.0).
      */
     static void InfoThrottled(const std::string& message, const std::string& key, float intervalSeconds = 2.0f);
 
@@ -79,14 +78,14 @@ public:
     static void SetMinLevel(LogLevel level){ s_MinLevel = level; }
 
 private:
-    static std::ofstream s_File;
-    static LogLevel s_MinLevel;
-    static bool s_Initialized;
+    static std::ofstream s_File; //Log file stream
+    static LogLevel s_MinLevel; //Minimum log level for filtering
+    static bool s_Initialized; //Flag indicating if logging is initialized
 
-    static void Write(LogLevel level, const std::string& message);
-    static std::string GenerateTimestampFilename(const std::string& logDir);
-    static const char* LevelToString(LogLevel level);
+    static void Write(LogLevel level, const std::string& message); //Writes a log message
+    static std::string GenerateTimestampFilename(const std::string& logDir); //Generates log filename
+    static const char* LevelToString(LogLevel level); //Converts LogLevel to string
 
-    static std::unordered_map<std::string, float> s_LastLogTime;
+    static std::unordered_map<std::string, float> s_LastLogTime; //Last log time per key for throttling
     //static std::mutex s_LogMutex;
 };

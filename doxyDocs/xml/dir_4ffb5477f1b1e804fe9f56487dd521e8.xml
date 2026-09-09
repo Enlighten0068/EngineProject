@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_4ffb5477f1b1e804fe9f56487dd521e8" kind="dir">
+    <compoundname>engine/events</compoundname>
+    <innerfile refid="EnemyEvents_8h">EnemyEvents.h</innerfile>
+    <innerfile refid="Event_8h">Event.h</innerfile>
+    <innerfile refid="EventBus_8cpp">EventBus.cpp</innerfile>
+    <innerfile refid="EventBus_8h">EventBus.h</innerfile>
+    <innerfile refid="EventDispatcher_8h">EventDispatcher.h</innerfile>
+    <innerfile refid="EventType_8h">EventType.h</innerfile>
+    <innerfile refid="KeyEvent_8h">KeyEvent.h</innerfile>
+    <innerfile refid="MouseEvent_8h">MouseEvent.h</innerfile>
+    <innerfile refid="PlayerEvents_8h">PlayerEvents.h</innerfile>
+    <innerfile refid="SDLEventTranslator_8cpp">SDLEventTranslator.cpp</innerfile>
+    <innerfile refid="SDLEventTranslator_8h">SDLEventTranslator.h</innerfile>
+    <innerfile refid="WindowEvent_8h">WindowEvent.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/events/"/>
+  </compounddef>
+</doxygen>

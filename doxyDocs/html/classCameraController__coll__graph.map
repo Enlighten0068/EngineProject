@@ -1,0 +1,12 @@
+<map id="CameraController" name="CameraController">
+<area shape="rect" id="Node000001" title="Controls a 2D camera with follow and zoom capabilities." alt="" coords="182,832,345,1195"/>
+<area shape="rect" id="Node000002" href="$classCamera2D.html" title="2D camera with orthographic projection, position, rotation, and zoom." alt="" coords="180,329,347,759"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="264,756,266,816,260,815,262,761"/>
+<area shape="rect" id="Node000003" href="$structVector3D.html" title="3D vector struct with basic arithmetic operations." alt="" coords="28,16,131,223"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="48,225,27,336,17,402,10,472,8,544,13,617,24,689,45,758,68,808,99,854,135,896,172,934,167,936,131,900,95,857,64,810,40,760,19,690,7,618,3,545,5,472,11,401,21,335,49,220"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="123,220,175,336,170,337,124,225"/>
+<area shape="rect" id="Node000004" href="$classMatrix4.html" title="4x4 matrix class for 3D transformations and projections." alt="" coords="203,5,324,234"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="263,231,266,313,260,312,263,236"/>
+<area shape="rect" id="Node000005" href="$classGameWorld.html" title="Defines the boundaries of the game world and provides clamping." alt="" coords="370,340,513,748"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="376,745,355,809,351,818,347,815,350,807,373,750"/>
+</map>

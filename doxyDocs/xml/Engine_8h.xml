@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Engine_8h" kind="file" language="C++">
+    <compoundname>Engine.h</compoundname>
+    <includes refid="SDLWindow_8h" local="yes">platform/sdl/SDLWindow.h</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="Application_8cpp" local="yes">engine/core/Application.cpp</includedby>
+    <includedby refid="Application_8h" local="yes">engine/core/Application.h</includedby>
+    <includedby refid="Engine_8cpp" local="yes">engine/core/Engine.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/core/Engine.h</label>
+        <link refid="Engine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>platform/sdl/SDLWindow.h</label>
+        <link refid="SDLWindow_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/core/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>engine/core/Engine.cpp</label>
+        <link refid="Engine_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/core/Engine.h</label>
+        <link refid="Engine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>engine/core/Time.cpp</label>
+        <link refid="Time_8cpp"/>
+      </node>
+      <node id="5">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classEngine" prot="public">Engine</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SDLWindow_8h" kindref="compound">platform/sdl/SDLWindow.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classEngine" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classEngine_1a8c98683b0a3aa28d8ab72a8bcd0d52f2" kindref="member">Engine</ref>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEngine_1a8c98683b0a3aa28d8ab72a8bcd0d52f2" kindref="member">Engine</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEngine_1a8c98683b0a3aa28d8ab72a8bcd0d52f2" kindref="member">~Engine</ref>();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classEngine_1a253fc356293f0a5228b6d7ab143540b3" kindref="member">Initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>title,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>fullscreen<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEngine_1a3dbd2c0a65e642baa7eaa97caa6e4e64" kindref="member">Shutdown</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSDLWindow" kindref="compound">SDLWindow</ref>&amp;<sp/><ref refid="classEngine_1a531f887d1b7f38525d0c21d20e216e6c" kindref="member">GetWindow</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="classEngine_1a96fbaebec1936cf4440f93b59a7c5148" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classEngine_1a96fbaebec1936cf4440f93b59a7c5148" kindref="member">IsRunning</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classEngine_1a9702c44e02c02eb256ede54a6f259782" kindref="member">m_Running</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classEngine_1a75cf7e8499772e2a46c9bb747ce1f4e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEngine_1a75cf7e8499772e2a46c9bb747ce1f4e9" kindref="member">SetRunning</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>running){<sp/><ref refid="classEngine_1a9702c44e02c02eb256ede54a6f259782" kindref="member">m_Running</ref><sp/>=<sp/>running;<sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53" refid="classEngine_1a6bbcb94d19650accc1e62492c82178e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSDLWindow" kindref="compound">SDLWindow</ref><sp/><ref refid="classEngine_1a6bbcb94d19650accc1e62492c82178e2" kindref="member">m_Window</ref>;<sp/></highlight><highlight class="comment">//SDL<sp/>window<sp/>wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classEngine_1a9702c44e02c02eb256ede54a6f259782" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classEngine_1a9702c44e02c02eb256ede54a6f259782" kindref="member">m_Running</ref>;<sp/></highlight><highlight class="comment">//Flag<sp/>indicating<sp/>if<sp/>engine<sp/>is<sp/>running</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/core/Engine.h"/>
+  </compounddef>
+</doxygen>

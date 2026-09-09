@@ -1,0 +1,56 @@
+\doxysection{Input.\+h}
+\hypertarget{Input_8h_source}{}\label{Input_8h_source}\index{engine/core/Input.h@{engine/core/Input.h}}
+\doxymbox{\hyperlink{Input_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Vector2D_8h}{math/Vector2D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00006}\doxymbox{\hyperlink{classInput_ae35589903d5dd57f1b29df2039bbe562}{00006}}\ }
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00017}\doxymbox{\hyperlink{classInput}{00017}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classInput}{Input}}\{}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00018}00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classInput_af80dcfde6dbfe39bf3bc0345c75595ce}{Update}}();}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classInput_abe4504868f560362185f020c471e9a84}{ProcessEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ event);}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//Keyboard\ handling}}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{IsKeyPressed}}(SDL\_Scancode\ key);}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{IsKeyHeld}}(SDL\_Scancode\ key);}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a21e529cf7720b4df2906bd44aa73e889}{IsKeyReleased}}(SDL\_Scancode\ key);}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//Mouse\ handling}}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_a58652e658e6b2a088d0bfbd07753c914}{GetMousePosition}}();}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_a53bdc3cb0c879a60bd99396872eb6dcb}{GetMouseDelta}}();}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a1915a90124c915e35e04bc9044d3b575}{IsMouseButtonPressed}}(uint8\_t\ button);}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_aec38619f1a5a330430756de75db0aff2}{IsMouseButtonHeld}}(uint8\_t\ button);}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_acf61c1a35081151e6d382272ba07d051}{IsMouseButtonReleased}}(uint8\_t\ button);}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//Mouse\ scroll}}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_af4fb33ee8a3ae10ad92ad2adc7e00ebf}{GetScrollDelta}}();}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//Window\ state}}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a4ddd4e0a717ca4b564a0491e32e6e280}{WasWindowResized}}();}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classInput_a6fa97576489b0946ce0bcc88e8cbb46a}{GetWindowWidth}}();}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classInput_a73ac35d323c9c62b29a0fdb7cd10c84f}{GetWindowHeight}}();}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classInput_a4d970dee00ab2bbe858a7758cc167d07}{SetWindowSize}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00054}00054\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//Keyboard\ state\ arrays}}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_ae35589903d5dd57f1b29df2039bbe562}{s\_KeyState}}[SDL\_SCANCODE\_COUNT];}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a101419ed1564201345669b7dc3aceab9}{s\_KeyStatePrevious}}[SDL\_SCANCODE\_COUNT];}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//Mouse\ state\ and\ scroll}}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00060}\doxymbox{\hyperlink{classInput_ab00b8236f27ec4750c2f7445cb1b10f6}{00060}}\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_ab00b8236f27ec4750c2f7445cb1b10f6}{s\_MousePosition}};}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00061}\doxymbox{\hyperlink{classInput_a3d3d10de42d33da3c4b05ffdb39795d2}{00061}}\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_a3d3d10de42d33da3c4b05ffdb39795d2}{s\_MouseDelta}};}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a38cbcc583b20863850fd3f552d9bf460}{s\_MouseButtonState}}[5];}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_a4e47ca136800ff0fdb2ff45cbd4d6e1b}{s\_MouseButtonPrevious}}[5];}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00064}\doxymbox{\hyperlink{classInput_ab41e893697e72075e87d4beb5e827155}{00064}}\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ \doxymbox{\hyperlink{classInput_ab41e893697e72075e87d4beb5e827155}{s\_ScrollDelta}};}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//Window\ state}}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00067}\doxymbox{\hyperlink{classInput_aead1b302f92f40508f394030fb96ff43}{00067}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classInput_aead1b302f92f40508f394030fb96ff43}{s\_WindowResized}};}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00068}\doxymbox{\hyperlink{classInput_ac9f8548524960a49842cc0a16ec9ac96}{00068}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classInput_ac9f8548524960a49842cc0a16ec9ac96}{s\_WindowWidth}};}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00069}\doxymbox{\hyperlink{classInput_ac2a9b120cf7963ce08709b5aa96fd8b2}{00069}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classInput_ac2a9b120cf7963ce08709b5aa96fd8b2}{s\_WindowHeight}};}
+\DoxyCodeLine{\Hypertarget{Input_8h_source_l00070}00070\ \};}
+
+\end{DoxyCode}

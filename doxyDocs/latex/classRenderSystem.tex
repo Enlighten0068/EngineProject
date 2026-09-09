@@ -1,0 +1,86 @@
+\doxysection{Render\+System Class Reference}
+\hypertarget{classRenderSystem}{}\label{classRenderSystem}\index{RenderSystem@{RenderSystem}}
+
+
+System that renders all entities with \doxylink{structTransform}{Transform} and Sprite\+Renderer components.  
+
+
+
+
+{\ttfamily \+\#include $<$Render\+System.\+h$>$}
+
+
+
+Collaboration diagram for Render\+System:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classRenderSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{classRenderSystem_a0dee88c7afdb4acfa6ad44e3902ce7a3}{Render}} (entt::\+registry \&registry, \doxymbox{\hyperlink{classShader}{Shader}} \&shader, const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&view, const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&projection, \doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&va, \doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&ib)
+\begin{DoxyCompactList}\small\item\em Renders all entities with \doxylink{structTransform}{Transform} and Sprite\+Renderer components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+System that renders all entities with \doxylink{structTransform}{Transform} and Sprite\+Renderer components. 
+
+The \doxylink{classRenderSystem}{Render\+System} is responsible for drawing all visible entities in the scene. It processes entities that have both a \doxylink{structTransform}{Transform} (position, rotation, scale) and a Sprite\+Renderer (texture) component, calculates the model matrix, and calls the \doxylink{classRenderer}{Renderer} to draw each entity.
+
+Entities with a Tile\+Scale component use its value; entities without Tile\+Scale default to 1.\+0f (no repetition, texture stretches to fill the quad).
+
+\begin{DoxyNote}{Note}
+This system should be called once per frame from the scene\textquotesingle{}s \doxylink{classRenderSystem_a0dee88c7afdb4acfa6ad44e3902ce7a3}{Render()} method. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structComponents_1_1Transform}{Components::\+\+Transform}, \doxylink{structComponents_1_1SpriteRenderer}{Components::\+\+Sprite\+Renderer}, \doxylink{structComponents_1_1TileScale}{Components::\+\+Tile\+Scale}, \doxylink{classRenderer}{Renderer} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{RenderSystem_8h_source_l00028}{28}} of file \doxymbox{\hyperlink{RenderSystem_8h_source}{Render\+System.\+h}}.
+
+
+
+\label{classRenderSystem_doc-func-members}
+\Hypertarget{classRenderSystem_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRenderSystem_a0dee88c7afdb4acfa6ad44e3902ce7a3}\index{RenderSystem@{RenderSystem}!Render@{Render}}
+\index{Render@{Render}!RenderSystem@{RenderSystem}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{classRenderSystem_a0dee88c7afdb4acfa6ad44e3902ce7a3} 
+void Render\+System::\+\+Render (\begin{DoxyParamCaption}\item[{entt::\+registry \&}]{registry}{, }\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{shader}{, }\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{view}{, }\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{projection}{, }\item[{\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&}]{va}{, }\item[{\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&}]{ib}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Renders all entities with \doxylink{structTransform}{Transform} and Sprite\+Renderer components. 
+
+This method iterates over all entities that have both \doxylink{structTransform}{Transform} and Sprite\+Renderer components. For each entity, it checks if the texture is valid, builds the model matrix, and calls Draw\+Textured\+Quad on the \doxylink{classRenderer}{Renderer}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em registry} & Reference to the ECS registry containing all entities. \\
+\hline
+{\em shader} & The shader program to use for rendering. \\
+\hline
+{\em view} & The view matrix (camera position). \\
+\hline
+{\em projection} & The projection matrix (orthographic or perspective). \\
+\hline
+{\em va} & The vertex array object containing geometry data. \\
+\hline
+{\em ib} & The index buffer containing the quad indices. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{RenderSystem_8h_source_l00044}{44}} of file \doxymbox{\hyperlink{RenderSystem_8h_source}{Render\+System.\+h}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+systems/\doxymbox{\hyperlink{RenderSystem_8h}{Render\+System.\+h}}\end{DoxyCompactItemize}

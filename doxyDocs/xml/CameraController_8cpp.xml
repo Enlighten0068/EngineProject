@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="CameraController_8cpp" kind="file" language="C++">
+    <compoundname>CameraController.cpp</compoundname>
+    <includes refid="CameraController_8h" local="yes">core/CameraController.h</includes>
+    <includes refid="Input_8h" local="yes">core/Input.h</includes>
+    <includes refid="Time_8h" local="yes">core/Time.h</includes>
+    <includes refid="Log_8h" local="yes">diagnostics/Log.h</includes>
+    <includes refid="EventBus_8h" local="yes">events/EventBus.h</includes>
+    <includes refid="MouseEvent_8h" local="yes">events/MouseEvent.h</includes>
+    <includes local="no">algorithm</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/core/CameraController.cpp</label>
+        <link refid="CameraController_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>core/CameraController.h</label>
+        <link refid="CameraController_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>core/Input.h</label>
+        <link refid="Input_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>core/Time.h</label>
+        <link refid="Time_8h"/>
+      </node>
+      <node id="19">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>events/Event.h</label>
+        <link refid="Event_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>events/EventBus.h</label>
+        <link refid="EventBus_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>events/EventType.h</label>
+        <link refid="EventType_8h"/>
+      </node>
+      <node id="31">
+        <label>events/MouseEvent.h</label>
+        <link refid="MouseEvent_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>graphics/VertexArray.h</label>
+        <link refid="VertexArray_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>graphics/VertexBuffer.h</label>
+        <link refid="VertexBuffer_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="4">
+        <label>scene/Camera2D.h</label>
+        <link refid="Camera2D_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>scene/GameWorld.h</label>
+        <link refid="GameWorld_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="32">
+        <label>algorithm</label>
+      </node>
+      <node id="21">
+        <label>chrono</label>
+      </node>
+      <node id="6">
+        <label>cmath</label>
+      </node>
+      <node id="11">
+        <label>cstdint</label>
+      </node>
+      <node id="20">
+        <label>fstream</label>
+      </node>
+      <node id="29">
+        <label>functional</label>
+      </node>
+      <node id="22">
+        <label>iomanip</label>
+      </node>
+      <node id="15">
+        <label>memory</label>
+      </node>
+      <node id="23">
+        <label>sstream</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="30">
+        <label>typeindex</label>
+      </node>
+      <node id="24">
+        <label>unordered_map</label>
+      </node>
+      <node id="28">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CameraController_8h" kindref="compound">core/CameraController.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Input_8h" kindref="compound">core/Input.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Time_8h" kindref="compound">core/Time.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Log_8h" kindref="compound">diagnostics/Log.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="EventBus_8h" kindref="compound">events/EventBus.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MouseEvent_8h" kindref="compound">events/MouseEvent.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classCameraController_1a18c096c90c713bb7b7338fb26e0e34c3" refkind="member"><highlight class="normal"><ref refid="classCameraController_1a18c096c90c713bb7b7338fb26e0e34c3" kindref="member">CameraController::CameraController</ref>(<ref refid="classCamera2D" kindref="compound">Camera2D</ref>&amp;<sp/>camera,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classGameWorld" kindref="compound">GameWorld</ref>&amp;<sp/>world)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">:<sp/><ref refid="classCameraController_1aaf6e45805acb449c8c30c9637b759558" kindref="member">m_Camera</ref>(camera),<sp/><ref refid="classCameraController_1a8990c89b4d50923d183579a93c9923b1" kindref="member">m_World</ref>(world){}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classCameraController_1a417ac3fd698ce445d873b6b3db492bb0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCameraController_1a417ac3fd698ce445d873b6b3db492bb0" kindref="member">CameraController::Update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime){</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Follow<sp/>Mode<sp/>-<sp/>smoothly<sp/>interpolate<sp/>to<sp/>target</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classCameraController_1a713bed4b6c44077872115b20f4ee1569" kindref="member">m_FollowEntity</ref>){</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/>pos<sp/>=<sp/><ref refid="classCameraController_1aaf6e45805acb449c8c30c9637b759558" kindref="member">m_Camera</ref>.<ref refid="classCamera2D_1a81735ad622947ceecfe836d2f855cfc8" kindref="member">GetPosition</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/>diff<sp/>=<sp/><ref refid="classCameraController_1ae9f6f6f6ab6961e1ebb5bb1130521b45" kindref="member">m_TargetPosition</ref><sp/>-<sp/>pos;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(diff.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>!=<sp/>0.0f<sp/>||<sp/>diff.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>!=<sp/>0.0f){</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>lerpFactor<sp/>=<sp/>0.05f;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>+=<sp/>diff.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>*<sp/>lerpFactor;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>+=<sp/>diff.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>*<sp/>lerpFactor;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCameraController_1aaf6e45805acb449c8c30c9637b759558" kindref="member">m_Camera</ref>.<ref refid="classCamera2D_1add37aa370c8718e7d38a0de2f8b86b10" kindref="member">SetPosition</ref>(pos);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Manual<sp/>Mode<sp/>-<sp/>WASD<sp/>controls</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/>pos<sp/>=<sp/><ref refid="classCameraController_1aaf6e45805acb449c8c30c9637b759558" kindref="member">m_Camera</ref>.<ref refid="classCamera2D_1a81735ad622947ceecfe836d2f855cfc8" kindref="member">GetPosition</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed<sp/>=<sp/><ref refid="classCameraController_1aed19f04d0186177f551755c8bf2ee496" kindref="member">m_Speed</ref><sp/>*<sp/>deltaTime;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a745b3db0f4100ff52f8597b407bcb55e" kindref="member">Input::IsKeyHeld</ref>(SDL_SCANCODE_W))<sp/>pos.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>+=<sp/>speed;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a745b3db0f4100ff52f8597b407bcb55e" kindref="member">Input::IsKeyHeld</ref>(SDL_SCANCODE_S))<sp/>pos.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>-=<sp/>speed;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a745b3db0f4100ff52f8597b407bcb55e" kindref="member">Input::IsKeyHeld</ref>(SDL_SCANCODE_A))<sp/>pos.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>-=<sp/>speed;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a745b3db0f4100ff52f8597b407bcb55e" kindref="member">Input::IsKeyHeld</ref>(SDL_SCANCODE_D))<sp/>pos.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>+=<sp/>speed;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCameraController_1aaf6e45805acb449c8c30c9637b759558" kindref="member">m_Camera</ref>.<ref refid="classCamera2D_1add37aa370c8718e7d38a0de2f8b86b10" kindref="member">SetPosition</ref>(pos);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//World<sp/>boundary<sp/>clamping<sp/>-<sp/>prevents<sp/>the<sp/>camera<sp/>from<sp/>showing<sp/>the<sp/>void<sp/>beyond<sp/>the<sp/>world<sp/>edges</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/>pos<sp/>=<sp/><ref refid="classCameraController_1aaf6e45805acb449c8c30c9637b759558" kindref="member">m_Camera</ref>.<ref refid="classCamera2D_1a81735ad622947ceecfe836d2f855cfc8" kindref="member">GetPosition</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>marginX<sp/>=<sp/>5.0f;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>marginY<sp/>=<sp/>3.0f;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Clamp<sp/>X<sp/>axis<sp/>with<sp/>safety<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minX<sp/>=<sp/><ref refid="classCameraController_1a8990c89b4d50923d183579a93c9923b1" kindref="member">m_World</ref>.<ref refid="classGameWorld_1a099be0356a0cea9620ccd151dffc00a2" kindref="member">GetMinX</ref>()<sp/>+<sp/>marginX;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>maxX<sp/>=<sp/><ref refid="classCameraController_1a8990c89b4d50923d183579a93c9923b1" kindref="member">m_World</ref>.<ref refid="classGameWorld_1a60de5cbf4bd843be6370b2e61f18020f" kindref="member">GetMaxX</ref>()<sp/>-<sp/>marginX;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(minX<sp/>&lt;<sp/>maxX)<sp/>pos.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>=<sp/>std::clamp(pos.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref>,<sp/>minX,<sp/>maxX);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Clamp<sp/>Y<sp/>axis<sp/>with<sp/>safety<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minY<sp/>=<sp/><ref refid="classCameraController_1a8990c89b4d50923d183579a93c9923b1" kindref="member">m_World</ref>.<ref refid="classGameWorld_1a509019005800fd39a25ed20e25f670e4" kindref="member">GetMinY</ref>()<sp/>+<sp/>marginY;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>maxY<sp/>=<sp/><ref refid="classCameraController_1a8990c89b4d50923d183579a93c9923b1" kindref="member">m_World</ref>.<ref refid="classGameWorld_1a17c3daa62412f90d7549f38a51f2acad" kindref="member">GetMaxY</ref>()<sp/>-<sp/>marginY;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(minY<sp/>&lt;<sp/>maxY)<sp/>pos.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>=<sp/>std::clamp(pos.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>,<sp/>minY,<sp/>maxY);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCameraController_1aaf6e45805acb449c8c30c9637b759558" kindref="member">m_Camera</ref>.<ref refid="classCamera2D_1add37aa370c8718e7d38a0de2f8b86b10" kindref="member">SetPosition</ref>(pos);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Zoom<sp/>with<sp/>mouse<sp/>scroll</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/>scroll<sp/>=<sp/><ref refid="classInput_1af4fb33ee8a3ae10ad92ad2adc7e00ebf" kindref="member">Input::GetScrollDelta</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(scroll.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>!=<sp/>0.0f){</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>zoom<sp/>=<sp/><ref refid="classCameraController_1aaf6e45805acb449c8c30c9637b759558" kindref="member">m_Camera</ref>.<ref refid="classCamera2D_1af8d9ff1e06b780cc2917b9559ab4a369" kindref="member">GetZoom</ref>()<sp/>+<sp/>scroll.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>*<sp/>0.1f;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zoom<sp/>=<sp/>std::clamp(zoom,<sp/><ref refid="classCameraController_1aa40b6ff354ed391b4ceba410b846ce63" kindref="member">m_MinZoom</ref>,<sp/><ref refid="classCameraController_1acafdc8b66669d186a00eae8dd124fa64" kindref="member">m_MaxZoom</ref>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCameraController_1aaf6e45805acb449c8c30c9637b759558" kindref="member">m_Camera</ref>.<ref refid="classCamera2D_1a2dacc853f7361a368c53571932c5bee1" kindref="member">SetZoom</ref>(zoom);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCameraController_1aaf6e45805acb449c8c30c9637b759558" kindref="member">m_Camera</ref>.<ref refid="classCamera2D_1adab7c2dd541f23c9e20ce54c73520f03" kindref="member">Update</ref>();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/core/CameraController.cpp"/>
+  </compounddef>
+</doxygen>

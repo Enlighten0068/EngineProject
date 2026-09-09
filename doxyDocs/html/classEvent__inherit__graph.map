@@ -1,0 +1,23 @@
+<map id="Event" name="Event">
+<area shape="rect" id="Node000001" title="Base class for all events in the engine." alt="" coords="804,5,931,100"/>
+<area shape="rect" id="Node000002" href="$classEnemyDiedEvent.html" title="Event dispatched when an enemy dies." alt="" coords="5,215,154,399"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="787,57,638,65,455,81,365,93,284,108,216,127,168,150,137,180,114,217,109,214,133,177,165,146,214,122,283,103,365,87,455,75,638,60,792,55"/>
+<area shape="rect" id="Node000003" href="$classKeyEvent.html" title="Event representing a keyboard key press/release." alt="" coords="178,148,307,466"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="787,60,670,72,532,89,405,115,355,131,320,150,309,160,305,156,317,146,353,126,403,110,531,84,669,66,792,58"/>
+<area shape="rect" id="Node000004" href="$classMouseButtonEvent.html" title="Event representing a mouse button press/release." alt="" coords="330,193,490,421"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="787,58,723,68,648,84,573,110,537,128,504,150,482,170,463,195,459,191,478,167,501,146,534,124,571,105,647,79,722,62,792,56"/>
+<area shape="rect" id="Node000005" href="$classMouseMotionEvent.html" title="Event representing mouse movement." alt="" coords="515,215,677,399"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="793,82,740,113,691,150,663,181,640,217,636,213,659,178,687,146,737,109,788,84"/>
+<area shape="rect" id="Node000006" href="$classMouseWheelEvent.html" title="Event representing mouse wheel scroll." alt="" coords="701,237,859,377"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="849,112,806,239,802,236,845,115"/>
+<area shape="rect" id="Node000007" href="$classPlayerDiedEvent.html" title="Event dispatched when the player dies." alt="" coords="883,215,1028,399"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="890,112,927,216,922,214,887,116"/>
+<area shape="rect" id="Node000008" href="$classPlayerJumpedEvent.html" title="Event dispatched when the player jumps." alt="" coords="1052,215,1216,399"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="945,83,996,110,1042,146,1070,178,1094,216,1089,215,1066,182,1038,150,993,115,945,88"/>
+<area shape="rect" id="Node000009" href="$classPlayerLandedEvent.html" title="Event dispatched when the player lands on a surface." alt="" coords="1240,215,1402,399"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="946,55,1013,63,1087,79,1162,106,1198,124,1231,146,1262,177,1287,216,1282,214,1258,181,1227,150,1195,129,1160,111,1086,84,1012,68,947,60"/>
+<area shape="rect" id="Node000010" href="$classWindowCloseEvent.html" title="Event dispatched when the window close button is clicked or a SDL_EVENT_QUIT is received." alt="" coords="1427,260,1562,354"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="946,56,1066,67,1203,84,1330,110,1380,127,1416,146,1441,170,1461,199,1486,261,1481,259,1456,202,1437,174,1413,150,1378,132,1329,115,1203,90,1065,72,947,62"/>
+<area shape="rect" id="Node000011" href="$classWindowResizeEvent.html" title="Event dispatched when the window is resized." alt="" coords="1586,226,1755,388"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="946,53,1098,61,1283,76,1374,88,1456,104,1526,123,1576,146,1596,162,1614,182,1642,227,1637,225,1610,185,1593,166,1573,150,1524,128,1455,109,1373,94,1282,82,1098,66,946,59"/>
+</map>

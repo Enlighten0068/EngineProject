@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classSDLEventTranslator" kind="class" language="C++" prot="public">
+    <compoundname>SDLEventTranslator</compoundname>
+    <includes refid="SDLEventTranslator_8h" local="no">SDLEventTranslator.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classSDLEventTranslator_1a38596334139d7ed6215d334ddd0d9dd4" prot="public" static="no">
+        <type>std::function&lt; void(const SDL_Event &amp;)&gt;</type>
+        <definition>using SDLEventTranslator::UnhandledCallback = std::function&lt;void(const SDL_Event&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>UnhandledCallback</name>
+        <qualifiedname>SDLEventTranslator::UnhandledCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/SDLEventTranslator.h" line="21" column="5" bodyfile="engine/events/SDLEventTranslator.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classSDLEventTranslator_1a20e49284964400b64b5ab2978c84d0af" prot="private" static="yes" mutable="no">
+        <type><ref refid="classSDLEventTranslator_1a38596334139d7ed6215d334ddd0d9dd4" kindref="member">UnhandledCallback</ref></type>
+        <definition>SDLEventTranslator::UnhandledCallback SDLEventTranslator::s_UnhandledCallback</definition>
+        <argsstring></argsstring>
+        <name>s_UnhandledCallback</name>
+        <qualifiedname>SDLEventTranslator::s_UnhandledCallback</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/SDLEventTranslator.h" line="40" column="30" bodyfile="engine/events/SDLEventTranslator.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classSDLEventTranslator_1a3f9759218967a1c0aa87e8e8208de25d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDLEventTranslator::TranslateAndDispatch</definition>
+        <argsstring>(const SDL_Event &amp;sdlEvent)</argsstring>
+        <name>TranslateAndDispatch</name>
+        <qualifiedname>SDLEventTranslator::TranslateAndDispatch</qualifiedname>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>sdlEvent</declname>
+        </param>
+        <briefdescription>
+<para>Translates an SDL event and dispatches it to the <ref refid="classEventBus" kindref="compound">EventBus</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the event was handled, false if it was unhandled.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sdlEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SDL event to translate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the event was translated, false otherwise.</para>
+</simplesect>
+This method checks the event type and calls the appropriate dispatch function. If the event type is unknown, the unhandled callback (if set) is invoked.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sdlEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SDL event to translate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the event was translated, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/SDLEventTranslator.h" line="31" column="17" bodyfile="engine/events/SDLEventTranslator.cpp" bodystart="16" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLEventTranslator_1a3667c0593acbe43be9c7e88fc1c1d05a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDLEventTranslator::SetUnhandledCallback</definition>
+        <argsstring>(const UnhandledCallback &amp;callback)</argsstring>
+        <name>SetUnhandledCallback</name>
+        <qualifiedname>SDLEventTranslator::SetUnhandledCallback</qualifiedname>
+        <param>
+          <type>const <ref refid="classSDLEventTranslator_1a38596334139d7ed6215d334ddd0d9dd4" kindref="member">UnhandledCallback</ref> &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Sets a callback for unhandled SDL events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the callback for unhandled SDL events.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function to call for unhandled events. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/SDLEventTranslator.h" line="37" column="17" bodyfile="engine/events/SDLEventTranslator.cpp" bodystart="48" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classSDLEventTranslator_1ab8c64c13f07e44ec781e7a4122f3bbae" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDLEventTranslator::DispatchKeyEvent</definition>
+        <argsstring>(const SDL_Event &amp;sdlEvent)</argsstring>
+        <name>DispatchKeyEvent</name>
+        <qualifiedname>SDLEventTranslator::DispatchKeyEvent</qualifiedname>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>sdlEvent</declname>
+        </param>
+        <briefdescription>
+<para>Translates an SDL key event into a <ref refid="classKeyEvent" kindref="compound">KeyEvent</ref> and dispatches it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sdlEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SDL key event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/SDLEventTranslator.h" line="43" column="17" bodyfile="engine/events/SDLEventTranslator.cpp" bodystart="56" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLEventTranslator_1a680ae74d8df0178b6f12b2060041fd48" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDLEventTranslator::DispatchMouseMotionEvent</definition>
+        <argsstring>(const SDL_Event &amp;sdlEvent)</argsstring>
+        <name>DispatchMouseMotionEvent</name>
+        <qualifiedname>SDLEventTranslator::DispatchMouseMotionEvent</qualifiedname>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>sdlEvent</declname>
+        </param>
+        <briefdescription>
+<para>Translates an SDL mouse motion event into a <ref refid="classMouseMotionEvent" kindref="compound">MouseMotionEvent</ref> and dispatches it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sdlEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SDL mouse motion event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/SDLEventTranslator.h" line="44" column="17" bodyfile="engine/events/SDLEventTranslator.cpp" bodystart="78" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLEventTranslator_1ae9e18c1d2fed7acb98e42d7b66de8977" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDLEventTranslator::DispatchMouseButtonEvent</definition>
+        <argsstring>(const SDL_Event &amp;sdlEvent)</argsstring>
+        <name>DispatchMouseButtonEvent</name>
+        <qualifiedname>SDLEventTranslator::DispatchMouseButtonEvent</qualifiedname>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>sdlEvent</declname>
+        </param>
+        <briefdescription>
+<para>Translates an SDL mouse button event into a <ref refid="classMouseButtonEvent" kindref="compound">MouseButtonEvent</ref> and dispatches it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sdlEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SDL mouse button event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/SDLEventTranslator.h" line="45" column="17" bodyfile="engine/events/SDLEventTranslator.cpp" bodystart="90" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLEventTranslator_1a35af4df9452cb3de586453ccbf851e34" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDLEventTranslator::DispatchMouseWheelEvent</definition>
+        <argsstring>(const SDL_Event &amp;sdlEvent)</argsstring>
+        <name>DispatchMouseWheelEvent</name>
+        <qualifiedname>SDLEventTranslator::DispatchMouseWheelEvent</qualifiedname>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>sdlEvent</declname>
+        </param>
+        <briefdescription>
+<para>Translates an SDL mouse wheel event into a <ref refid="classMouseWheelEvent" kindref="compound">MouseWheelEvent</ref> and dispatches it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sdlEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SDL mouse wheel event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/SDLEventTranslator.h" line="46" column="17" bodyfile="engine/events/SDLEventTranslator.cpp" bodystart="108" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLEventTranslator_1ac79ddf4fb80535293db3ea36f5e96907" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDLEventTranslator::DispatchWindowEvent</definition>
+        <argsstring>(const SDL_Event &amp;sdlEvent)</argsstring>
+        <name>DispatchWindowEvent</name>
+        <qualifiedname>SDLEventTranslator::DispatchWindowEvent</qualifiedname>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>sdlEvent</declname>
+        </param>
+        <briefdescription>
+<para>Translates an SDL window event (quit or resize) and dispatches it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sdlEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SDL window event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/SDLEventTranslator.h" line="47" column="17" bodyfile="engine/events/SDLEventTranslator.cpp" bodystart="119" bodyend="127"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSDLEventTranslator_1a5ee49053d4da68c3516eb8457140b0c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SDLEventTranslator::SDLEventTranslator</definition>
+        <argsstring>()=delete</argsstring>
+        <name>SDLEventTranslator</name>
+        <qualifiedname>SDLEventTranslator::SDLEventTranslator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/SDLEventTranslator.h" line="49" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLEventTranslator_1aa29f382112025cf21607da25366a8b64" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SDLEventTranslator::~SDLEventTranslator</definition>
+        <argsstring>()=delete</argsstring>
+        <name>~SDLEventTranslator</name>
+        <qualifiedname>SDLEventTranslator::~SDLEventTranslator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/SDLEventTranslator.h" line="50" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Translates SDL events into engine events and dispatches them via <ref refid="classEventBus" kindref="compound">EventBus</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class is responsible for converting low-level SDL events (SDL_Event) into engine-specific event objects and dispatching them to the <ref refid="classEventBus" kindref="compound">EventBus</ref>.</para>
+<para><simplesect kind="note"><para>All methods are static; this class is not meant to be instantiated. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>SDLEventTranslator</label>
+        <link refid="classSDLEventTranslator"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/events/SDLEventTranslator.h" line="19" column="1" bodyfile="engine/events/SDLEventTranslator.h" bodystart="19" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classSDLEventTranslator_1ab8c64c13f07e44ec781e7a4122f3bbae" prot="private" virt="non-virtual"><scope>SDLEventTranslator</scope><name>DispatchKeyEvent</name></member>
+      <member refid="classSDLEventTranslator_1ae9e18c1d2fed7acb98e42d7b66de8977" prot="private" virt="non-virtual"><scope>SDLEventTranslator</scope><name>DispatchMouseButtonEvent</name></member>
+      <member refid="classSDLEventTranslator_1a680ae74d8df0178b6f12b2060041fd48" prot="private" virt="non-virtual"><scope>SDLEventTranslator</scope><name>DispatchMouseMotionEvent</name></member>
+      <member refid="classSDLEventTranslator_1a35af4df9452cb3de586453ccbf851e34" prot="private" virt="non-virtual"><scope>SDLEventTranslator</scope><name>DispatchMouseWheelEvent</name></member>
+      <member refid="classSDLEventTranslator_1ac79ddf4fb80535293db3ea36f5e96907" prot="private" virt="non-virtual"><scope>SDLEventTranslator</scope><name>DispatchWindowEvent</name></member>
+      <member refid="classSDLEventTranslator_1a20e49284964400b64b5ab2978c84d0af" prot="private" virt="non-virtual"><scope>SDLEventTranslator</scope><name>s_UnhandledCallback</name></member>
+      <member refid="classSDLEventTranslator_1a5ee49053d4da68c3516eb8457140b0c8" prot="private" virt="non-virtual"><scope>SDLEventTranslator</scope><name>SDLEventTranslator</name></member>
+      <member refid="classSDLEventTranslator_1a3667c0593acbe43be9c7e88fc1c1d05a" prot="public" virt="non-virtual"><scope>SDLEventTranslator</scope><name>SetUnhandledCallback</name></member>
+      <member refid="classSDLEventTranslator_1a3f9759218967a1c0aa87e8e8208de25d" prot="public" virt="non-virtual"><scope>SDLEventTranslator</scope><name>TranslateAndDispatch</name></member>
+      <member refid="classSDLEventTranslator_1a38596334139d7ed6215d334ddd0d9dd4" prot="public" virt="non-virtual"><scope>SDLEventTranslator</scope><name>UnhandledCallback</name></member>
+      <member refid="classSDLEventTranslator_1aa29f382112025cf21607da25366a8b64" prot="private" virt="non-virtual"><scope>SDLEventTranslator</scope><name>~SDLEventTranslator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

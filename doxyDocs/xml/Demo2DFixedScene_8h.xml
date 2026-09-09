@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Demo2DFixedScene_8h" kind="file" language="C++">
+    <compoundname>Demo2DFixedScene.h</compoundname>
+    <includes refid="Enemy_8h" local="yes">components/Enemy.h</includes>
+    <includes refid="Patrol_8h" local="yes">components/Patrol.h</includes>
+    <includes refid="PlayerController_8h" local="yes">core/PlayerController.h</includes>
+    <includes refid="CameraController_8h" local="yes">core/CameraController.h</includes>
+    <includes refid="FpsCounter_8h" local="yes">core/FpsCounter.h</includes>
+    <includes refid="Scene_8h" local="yes">scene/Scene.h</includes>
+    <includes refid="ECSScene_8h" local="yes">scene/ECSScene.h</includes>
+    <includes refid="GameWorld_8h" local="yes">scene/GameWorld.h</includes>
+    <includes refid="EnemySystem_8h" local="yes">systems/EnemySystem.h</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="Application_8cpp" local="yes">engine/core/Application.cpp</includedby>
+    <includedby refid="Demo2DFixedScene_8cpp" local="yes">engine/demo/Demo2DFixedScene.cpp</includedby>
+    <includedby refid="MenuScene_8cpp" local="yes">engine/scene/MenuScene.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">game/src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>components/Enemy.h</label>
+        <link refid="Enemy_8h"/>
+      </node>
+      <node id="3">
+        <label>components/Patrol.h</label>
+        <link refid="Patrol_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>components/PhysicsBody.h</label>
+        <link refid="PhysicsBody_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>components/SpriteRenderer.h</label>
+        <link refid="SpriteRenderer_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>components/Transform.h</label>
+        <link refid="components_2Transform_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>core/CameraController.h</label>
+        <link refid="CameraController_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>core/FpsCounter.h</label>
+        <link refid="FpsCounter_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>core/PlayerController.h</label>
+        <link refid="PlayerController_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>core/Time.h</label>
+        <link refid="Time_8h"/>
+      </node>
+      <node id="1">
+        <label>engine/demo/Demo2DFixedScene.h</label>
+        <link refid="Demo2DFixedScene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>graphics/Texture2D.h</label>
+        <link refid="Texture2D_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>graphics/VertexArray.h</label>
+        <link refid="VertexArray_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>graphics/VertexBuffer.h</label>
+        <link refid="VertexBuffer_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="20">
+        <label>scene/Camera2D.h</label>
+        <link refid="Camera2D_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>scene/ECSScene.h</label>
+        <link refid="ECSScene_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>scene/GameWorld.h</label>
+        <link refid="GameWorld_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>scene/Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>systems/EnemySystem.h</label>
+        <link refid="EnemySystem_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="32">
+        <label>chrono</label>
+      </node>
+      <node id="10">
+        <label>cmath</label>
+      </node>
+      <node id="13">
+        <label>cstdint</label>
+      </node>
+      <node id="18">
+        <label>entt.hpp</label>
+      </node>
+      <node id="31">
+        <label>fstream</label>
+      </node>
+      <node id="33">
+        <label>iomanip</label>
+      </node>
+      <node id="17">
+        <label>memory</label>
+      </node>
+      <node id="34">
+        <label>sstream</label>
+      </node>
+      <node id="12">
+        <label>string</label>
+      </node>
+      <node id="35">
+        <label>unordered_map</label>
+      </node>
+      <node id="36">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/demo/Demo2DFixedScene.cpp</label>
+        <link refid="Demo2DFixedScene_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/demo/Demo2DFixedScene.h</label>
+        <link refid="Demo2DFixedScene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>engine/scene/MenuScene.cpp</label>
+        <link refid="MenuScene_8cpp"/>
+      </node>
+      <node id="5">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDemo2DFixedScene" prot="public">Demo2DFixedScene</innerclass>
+    <innerclass refid="structDemo2DFixedScene_1_1EnemyDefinition" prot="private">Demo2DFixedScene::EnemyDefinition</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Enemy_8h" kindref="compound">components/Enemy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Patrol_8h" kindref="compound">components/Patrol.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PlayerController_8h" kindref="compound">core/PlayerController.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CameraController_8h" kindref="compound">core/CameraController.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="FpsCounter_8h" kindref="compound">core/FpsCounter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Scene_8h" kindref="compound">scene/Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ECSScene_8h" kindref="compound">scene/ECSScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameWorld_8h" kindref="compound">scene/GameWorld.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="EnemySystem_8h" kindref="compound">systems/EnemySystem.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classDemo2DFixedScene" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDemo2DFixedScene_1a492ba9953dd92d3b3536c44b1d7c2b2f" kindref="member">Demo2DFixedScene</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDemo2DFixedScene_1a492ba9953dd92d3b3536c44b1d7c2b2f" kindref="member">Demo2DFixedScene</ref>(<ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>shader,<sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/>va,<sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/>ib,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera2D" kindref="compound">Camera2D</ref>&amp;<sp/>camera,<sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>lineShader);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDemo2DFixedScene_1a492ba9953dd92d3b3536c44b1d7c2b2f" kindref="member">~Demo2DFixedScene</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDemo2DFixedScene_1a1daab876b813800575999e0a5374d899" kindref="member">OnEnter</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDemo2DFixedScene_1a327f00eb5155cd0b30138787babecba2" kindref="member">OnExit</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDemo2DFixedScene_1ac626aa848bd8d98054f7d2b21a724ac9" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDemo2DFixedScene_1ad938c557aa7ad055aee8d25171fafad5" kindref="member">Render</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45" refid="classDemo2DFixedScene_1a67590905026e92be48a1e864db868eb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classDemo2DFixedScene_1a67590905026e92be48a1e864db868eb9" kindref="member">GetName</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Demo2D_FixedCamera&quot;</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDemo2DFixedScene_1a52b58c77935f74c69ec27e6a48ad9187" kindref="member">RespawnEnemies</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61" refid="structDemo2DFixedScene_1_1EnemyDefinition" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDemo2DFixedScene_1_1EnemyDefinition" kindref="compound">EnemyDefinition</ref>{</highlight></codeline>
+<codeline lineno="62" refid="structDemo2DFixedScene_1_1EnemyDefinition_1ac382e2dead6b8018245fe1978f4b1668" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structDemo2DFixedScene_1_1EnemyDefinition_1ac382e2dead6b8018245fe1978f4b1668" kindref="member">Position</ref>;<sp/></highlight><highlight class="comment">//Spawn<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="structDemo2DFixedScene_1_1EnemyDefinition_1ab9c519376bbec771cc02ad437a914ae6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structDemo2DFixedScene_1_1EnemyDefinition_1ab9c519376bbec771cc02ad437a914ae6" kindref="member">Scale</ref>;<sp/></highlight><highlight class="comment">//Size<sp/>of<sp/>the<sp/>enemy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="structDemo2DFixedScene_1_1EnemyDefinition_1a2c9b9c09496bb2ba40bf1e865cd1c797" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/><ref refid="structDemo2DFixedScene_1_1EnemyDefinition_1a2c9b9c09496bb2ba40bf1e865cd1c797" kindref="member">Texture</ref>;<sp/></highlight><highlight class="comment">//Enemy<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="structDemo2DFixedScene_1_1EnemyDefinition_1ac5bd35d617b44cdb96a7bd3416cff056" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structDemo2DFixedScene_1_1EnemyDefinition_1ac5bd35d617b44cdb96a7bd3416cff056" kindref="member">PatrolStart</ref>;<sp/></highlight><highlight class="comment">//Start<sp/>of<sp/>patrol<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="structDemo2DFixedScene_1_1EnemyDefinition_1a85327057cec5de5bbdeb8810237d397b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structDemo2DFixedScene_1_1EnemyDefinition_1a85327057cec5de5bbdeb8810237d397b" kindref="member">PatrolEnd</ref>;<sp/></highlight><highlight class="comment">//End<sp/>of<sp/>patrol<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="structDemo2DFixedScene_1_1EnemyDefinition_1a21f2328a2619d085f532e5c550a279f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDemo2DFixedScene_1_1EnemyDefinition_1a21f2328a2619d085f532e5c550a279f8" kindref="member">PatrolSpeed</ref>;<sp/></highlight><highlight class="comment">//Movement<sp/>speed<sp/>during<sp/>patrol</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classDemo2DFixedScene_1a72eb5c39b6d923aef977f431e0988b8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/><ref refid="classDemo2DFixedScene_1a72eb5c39b6d923aef977f431e0988b8a" kindref="member">m_Shader</ref>;<sp/></highlight><highlight class="comment">//Main<sp/>shader<sp/>for<sp/>rendering</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classDemo2DFixedScene_1a77804f6fb699219b0143b0b8f001a8c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/><ref refid="classDemo2DFixedScene_1a77804f6fb699219b0143b0b8f001a8c4" kindref="member">m_VertexArray</ref>;<sp/></highlight><highlight class="comment">//Vertex<sp/>array<sp/>for<sp/>geometry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classDemo2DFixedScene_1a2ced53f08d393097dbcc9d3626aa2067" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/><ref refid="classDemo2DFixedScene_1a2ced53f08d393097dbcc9d3626aa2067" kindref="member">m_IndexBuffer</ref>;<sp/></highlight><highlight class="comment">//Index<sp/>buffer<sp/>for<sp/>geometry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classDemo2DFixedScene_1a3ab92e6d343904b8e4b28e017fa46b9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D" kindref="compound">Camera2D</ref>&amp;<sp/><ref refid="classDemo2DFixedScene_1a3ab92e6d343904b8e4b28e017fa46b9f" kindref="member">m_Camera</ref>;<sp/></highlight><highlight class="comment">//Fixed<sp/>camera</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classDemo2DFixedScene_1a787fa04b8244b3ae73716afc235a5a62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/><ref refid="classDemo2DFixedScene_1a787fa04b8244b3ae73716afc235a5a62" kindref="member">m_LineShader</ref>;<sp/></highlight><highlight class="comment">//Line<sp/>shader<sp/>for<sp/>world<sp/>borders</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classDemo2DFixedScene_1abf62eae1501faa926e757267ca05fd24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;ECSScene&gt;<sp/><ref refid="classDemo2DFixedScene_1abf62eae1501faa926e757267ca05fd24" kindref="member">m_ECSScene</ref>;<sp/></highlight><highlight class="comment">//ECS<sp/>scene<sp/>containing<sp/>all<sp/>entities</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classDemo2DFixedScene_1afbb0d5066454921f90e85a0533374fd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GameWorld&gt;<sp/><ref refid="classDemo2DFixedScene_1afbb0d5066454921f90e85a0533374fd3" kindref="member">m_World</ref>;<sp/></highlight><highlight class="comment">//World<sp/>boundaries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classDemo2DFixedScene_1a3e97beb9d39b2739299f5b69e313a476" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;PlayerController&gt;<sp/><ref refid="classDemo2DFixedScene_1a3e97beb9d39b2739299f5b69e313a476" kindref="member">m_PlayerController</ref>;<sp/></highlight><highlight class="comment">//Player<sp/>controller</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classDemo2DFixedScene_1a3d03cc75e7581e3c6dd7867a09efc071" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;FpsCounter&gt;<sp/><ref refid="classDemo2DFixedScene_1a3d03cc75e7581e3c6dd7867a09efc071" kindref="member">m_FpsCounter</ref>;<sp/></highlight><highlight class="comment">//FPS<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classDemo2DFixedScene_1ae18f7410197aaf02aa761a54fe3d9dab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>entt::entity<sp/><ref refid="classDemo2DFixedScene_1ae18f7410197aaf02aa761a54fe3d9dab" kindref="member">m_PlayerEntity</ref>;<sp/></highlight><highlight class="comment">//Player<sp/>entity<sp/>ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="classDemo2DFixedScene_1ab52acc6df50d92a733ca96c0917f5a63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;entt::entity&gt;<sp/><ref refid="classDemo2DFixedScene_1ab52acc6df50d92a733ca96c0917f5a63" kindref="member">m_EnemyEntities</ref>;<sp/></highlight><highlight class="comment">//Active<sp/>enemy<sp/>entities</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classDemo2DFixedScene_1a372f55e9f96ee108c3b358650b3160a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;EnemyDefinition&gt;<sp/><ref refid="classDemo2DFixedScene_1a372f55e9f96ee108c3b358650b3160a1" kindref="member">m_EnemyDefinitions</ref>;<sp/></highlight><highlight class="comment">//Saved<sp/>enemy<sp/>definitions<sp/>for<sp/>respawn</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classDemo2DFixedScene_1a8e149e818044f82568f4fcb0a2375ae0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;entt::entity&gt;<sp/><ref refid="classDemo2DFixedScene_1a8e149e818044f82568f4fcb0a2375ae0" kindref="member">m_PlatformEntities</ref>;<sp/></highlight><highlight class="comment">//Platform<sp/>entities<sp/>for<sp/>collision</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDemo2DFixedScene_1abe838d285b6b2bc5277c613b39943d19" kindref="member">ResolveCollisions</ref>();<sp/></highlight><highlight class="comment">//Resolves<sp/>player-platform<sp/>collisions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDemo2DFixedScene_1a72b82e82afbbd9c98718549f5c4c3e83" kindref="member">SetupScene</ref>();<sp/></highlight><highlight class="comment">//Sets<sp/>up<sp/>the<sp/>scene<sp/>with<sp/>all<sp/>entities</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDemo2DFixedScene_1ac513fcf662cef5ea0db8f3c361be058d" kindref="member">SpawnEnemies</ref>();<sp/></highlight><highlight class="comment">//Spawns<sp/>all<sp/>enemies</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDemo2DFixedScene_1ae4c2705e2db95258b513cfe674f9c797" kindref="member">CheckEnemyCollisions</ref>();<sp/></highlight><highlight class="comment">//Checks<sp/>player-enemy<sp/>collisions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDemo2DFixedScene_1a54aa78702f3655ce33457462b421a94c" kindref="member">DestroyEnemy</ref>(entt::entity<sp/>enemy);<sp/></highlight><highlight class="comment">//Destroys<sp/>an<sp/>enemy<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/demo/Demo2DFixedScene.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classMouseMotionEvent" kind="class" language="C++" prot="public">
+    <compoundname>MouseMotionEvent</compoundname>
+    <basecompoundref refid="classEvent" prot="public" virt="non-virtual">Event</basecompoundref>
+    <includes refid="MouseEvent_8h" local="no">MouseEvent.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMouseMotionEvent_1a5d81a69936ee2ba03ade02b561c12057" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D MouseMotionEvent::m_Position</definition>
+        <argsstring></argsstring>
+        <name>m_Position</name>
+        <qualifiedname>MouseMotionEvent::m_Position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="32" column="14" bodyfile="engine/events/MouseEvent.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMouseMotionEvent_1a93e06baad08ae0e8e9bba34af7fc36a7" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D MouseMotionEvent::m_Delta</definition>
+        <argsstring></argsstring>
+        <name>m_Delta</name>
+        <qualifiedname>MouseMotionEvent::m_Delta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="33" column="14" bodyfile="engine/events/MouseEvent.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMouseMotionEvent_1a1bdabca2300cd77ee0166a48fd5a7c9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MouseMotionEvent::MouseMotionEvent</definition>
+        <argsstring>(const Vector2D &amp;position, const Vector2D &amp;delta)</argsstring>
+        <name>MouseMotionEvent</name>
+        <qualifiedname>MouseMotionEvent::MouseMotionEvent</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector2D" kindref="compound">Vector2D</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector2D" kindref="compound">Vector2D</ref> &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classMouseMotionEvent" kindref="compound">MouseMotionEvent</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current mouse position in screen coordinates. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Movement since last frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="22" column="5" bodyfile="engine/events/MouseEvent.h" bodystart="22" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classMouseMotionEvent_1ae26e8d1f348784c25d68dd9fb691eeb1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D MouseMotionEvent::GetPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPosition</name>
+        <qualifiedname>MouseMotionEvent::GetPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="25" column="14" bodyfile="engine/events/MouseEvent.h" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classMouseMotionEvent_1ab75755aade6aed87c74176e642a44a54" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D MouseMotionEvent::GetDelta</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDelta</name>
+        <qualifiedname>MouseMotionEvent::GetDelta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="26" column="14" bodyfile="engine/events/MouseEvent.h" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classMouseMotionEvent_1a966916d6e4e738f508fb746249908612" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>EventType MouseMotionEvent::GetEventType</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetEventType</name>
+        <qualifiedname>MouseMotionEvent::GetEventType</qualifiedname>
+        <reimplements refid="classEvent_1af14bbd8f69c2778def9462375a0e70f2">GetEventType</reimplements>
+        <briefdescription>
+<para>Returns the type of the event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref> enum value identifying the event. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="29" column="15" bodyfile="engine/events/MouseEvent.h" bodystart="29" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classMouseMotionEvent_1aadf068b5e7bd1080ddbcf1217108c05b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>static EventType MouseMotionEvent::GetStaticType</definition>
+        <argsstring>()</argsstring>
+        <name>GetStaticType</name>
+        <qualifiedname>MouseMotionEvent::GetStaticType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="28" column="22" bodyfile="engine/events/MouseEvent.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classEvent" kindref="compound">Event</ref> representing mouse movement. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contains the current mouse position and the delta (movement since last frame).</para>
+<para><simplesect kind="note"><para>This event is dispatched by <ref refid="classSDLEventTranslator" kindref="compound">SDLEventTranslator</ref>. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classSDLEventTranslator" kindref="compound">SDLEventTranslator</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>MouseMotionEvent</label>
+        <link refid="classMouseMotionEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>MouseMotionEvent</label>
+        <link refid="classMouseMotionEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_Delta</edgelabel>
+          <edgelabel>-m_Position</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Vector2D</label>
+        <link refid="structVector2D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/events/MouseEvent.h" line="15" column="1" bodyfile="engine/events/MouseEvent.h" bodystart="15" bodyend="34"/>
+    <listofallmembers>
+      <member refid="classMouseMotionEvent_1ab75755aade6aed87c74176e642a44a54" prot="public" virt="non-virtual"><scope>MouseMotionEvent</scope><name>GetDelta</name></member>
+      <member refid="classMouseMotionEvent_1a966916d6e4e738f508fb746249908612" prot="public" virt="virtual"><scope>MouseMotionEvent</scope><name>GetEventType</name></member>
+      <member refid="classMouseMotionEvent_1ae26e8d1f348784c25d68dd9fb691eeb1" prot="public" virt="non-virtual"><scope>MouseMotionEvent</scope><name>GetPosition</name></member>
+      <member refid="classMouseMotionEvent_1aadf068b5e7bd1080ddbcf1217108c05b" prot="public" virt="non-virtual"><scope>MouseMotionEvent</scope><name>GetStaticType</name></member>
+      <member refid="classEvent_1a8ad0c350a8f569dbb05cf845caa4737e" prot="public" virt="non-virtual"><scope>MouseMotionEvent</scope><name>Handled</name></member>
+      <member refid="classMouseMotionEvent_1a93e06baad08ae0e8e9bba34af7fc36a7" prot="private" virt="non-virtual"><scope>MouseMotionEvent</scope><name>m_Delta</name></member>
+      <member refid="classMouseMotionEvent_1a5d81a69936ee2ba03ade02b561c12057" prot="private" virt="non-virtual"><scope>MouseMotionEvent</scope><name>m_Position</name></member>
+      <member refid="classMouseMotionEvent_1a1bdabca2300cd77ee0166a48fd5a7c9e" prot="public" virt="non-virtual"><scope>MouseMotionEvent</scope><name>MouseMotionEvent</name></member>
+      <member refid="classEvent_1a105223995bbf1a1e4714d0c77f91cf0b" prot="public" virt="virtual"><scope>MouseMotionEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

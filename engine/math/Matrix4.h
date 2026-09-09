@@ -14,11 +14,10 @@
  * where each column is a Vector4.
  *
  * @note All static methods return a new Matrix4 instance.
- * @see Vector3D, Vector4 (if available)
+ * @see Vector3D
  */
 class Matrix4{
 public:
-
     /**
      * @brief Constructs a zero-initialized matrix.
      */
@@ -31,7 +30,7 @@ public:
     const float* Data() const;
 
     /**
-     * @brief Creates an identity matrix (value 1 on the main diagonal elements, value 0 elsewhere).
+     * @brief Creates an identity matrix (1 on the main diagonal, 0 elsewhere).
      * @return Identity matrix.
      */
     static Matrix4 Identity();
@@ -55,19 +54,19 @@ public:
      * @param other Matrix to multiply with (on the right).
      * @return Result of `this * other`.
      */
-    Matrix4 operator*(const Matrix4 & other) const;
+    Matrix4 operator*(const Matrix4& other) const;
 
     /**
      * @brief Creates an orthographic projection matrix.
      *
      * This maps a 3D volume (left-right, bottom-top, near-far) to a 2D screen.
      *
-     * @param left   Left clipping plane.
-     * @param right  Right clipping plane.
+     * @param left Left clipping plane.
+     * @param right Right clipping plane.
      * @param bottom Bottom clipping plane.
-     * @param top    Top clipping plane.
+     * @param top Top clipping plane.
      * @param nearPlane Near clipping plane.
-     * @param farPlane  Far clipping plane.
+     * @param farPlane Far clipping plane.
      * @return Orthographic projection matrix.
      */
     static Matrix4 Orthographic(float left, float right, float bottom, float top, float nearPlane, float farPlane);
@@ -80,5 +79,5 @@ public:
     static Matrix4 RotationZ(float angleRadians);
 
 private:
-    float m_Data[16];
+    float m_Data[16]; //Matrix data in column-major order
 };

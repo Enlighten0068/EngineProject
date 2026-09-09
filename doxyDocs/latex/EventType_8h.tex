@@ -1,0 +1,121 @@
+\doxysection{engine/\+events/\+\+Event\+Type.h File Reference}
+\hypertarget{EventType_8h}{}\label{EventType_8h}\index{engine/events/EventType.h@{engine/events/EventType.h}}
+This graph shows which files directly or indirectly include this file:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{EventType_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \{ \newline
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa6adf97f83acf6453d4a6a4b1070f3754}{None}} = 0
+, \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faac984201d37197ab297a14d19efee4b07}{Window\+Close}}
+, \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa9f8f27bff2915738c4fe1b970e12f89c}{Window\+Resize}}
+, \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa897356954c2cd3d41b221e3f24f99bba}{Key}}
+, \newline
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faae22334c0cac2399971712cf9ae02fa4f}{Mouse\+Motion}}
+, \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa49dabe49d62a3521f7c10400138c38d5}{Mouse\+Button}}
+, \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa6924f81750ac471df87fed683bcea516}{Mouse\+Wheel}}
+, \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faab5c0a7ab2a398f3a7df87c95544a919f}{Player\+Jumped}}
+, \newline
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa837a531a271bad47902b6d66c0398bcf}{Player\+Landed}}
+, \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faaee1ded5ee510cf5f4c605debf346a9b2}{Player\+Died}}
+, \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faae59ed6209af6696edabb7eddf66bd2eb}{Enemy\+Died}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of all event types supported by the engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{EventType_8h_doc-enum-members}
+\Hypertarget{EventType_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}\index{EventType.h@{EventType.h}!EventType@{EventType}}
+\index{EventType@{EventType}!EventType.h@{EventType.h}}
+\doxysubsubsection{\texorpdfstring{EventType}{EventType}}
+{\footnotesize\ttfamily \label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa} 
+enum class \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeration of all event types supported by the engine. 
+
+Each event class has a corresponding \doxylink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type} value. This allows fast type checking without RTTI.
+
+\begin{DoxyNote}{Note}
+Add new event types here when creating new event classes. 
+\end{DoxyNote}
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!EventType.h@{EventType.h}}
+\index{EventType.h@{EventType.h}!None@{None}}
+}\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa6adf97f83acf6453d4a6a4b1070f3754}\label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa6adf97f83acf6453d4a6a4b1070f3754} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WindowClose@{WindowClose}!EventType.h@{EventType.h}}
+\index{EventType.h@{EventType.h}!WindowClose@{WindowClose}}
+}\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faac984201d37197ab297a14d19efee4b07}\label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faac984201d37197ab297a14d19efee4b07} 
+Window\+Close&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WindowResize@{WindowResize}!EventType.h@{EventType.h}}
+\index{EventType.h@{EventType.h}!WindowResize@{WindowResize}}
+}\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa9f8f27bff2915738c4fe1b970e12f89c}\label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa9f8f27bff2915738c4fe1b970e12f89c} 
+Window\+Resize&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Key@{Key}!EventType.h@{EventType.h}}
+\index{EventType.h@{EventType.h}!Key@{Key}}
+}\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa897356954c2cd3d41b221e3f24f99bba}\label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa897356954c2cd3d41b221e3f24f99bba} 
+Key&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MouseMotion@{MouseMotion}!EventType.h@{EventType.h}}
+\index{EventType.h@{EventType.h}!MouseMotion@{MouseMotion}}
+}\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faae22334c0cac2399971712cf9ae02fa4f}\label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faae22334c0cac2399971712cf9ae02fa4f} 
+Mouse\+Motion&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MouseButton@{MouseButton}!EventType.h@{EventType.h}}
+\index{EventType.h@{EventType.h}!MouseButton@{MouseButton}}
+}\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa49dabe49d62a3521f7c10400138c38d5}\label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa49dabe49d62a3521f7c10400138c38d5} 
+Mouse\+Button&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MouseWheel@{MouseWheel}!EventType.h@{EventType.h}}
+\index{EventType.h@{EventType.h}!MouseWheel@{MouseWheel}}
+}\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa6924f81750ac471df87fed683bcea516}\label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa6924f81750ac471df87fed683bcea516} 
+Mouse\+Wheel&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PlayerJumped@{PlayerJumped}!EventType.h@{EventType.h}}
+\index{EventType.h@{EventType.h}!PlayerJumped@{PlayerJumped}}
+}\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faab5c0a7ab2a398f3a7df87c95544a919f}\label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faab5c0a7ab2a398f3a7df87c95544a919f} 
+Player\+Jumped&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PlayerLanded@{PlayerLanded}!EventType.h@{EventType.h}}
+\index{EventType.h@{EventType.h}!PlayerLanded@{PlayerLanded}}
+}\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa837a531a271bad47902b6d66c0398bcf}\label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faa837a531a271bad47902b6d66c0398bcf} 
+Player\+Landed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PlayerDied@{PlayerDied}!EventType.h@{EventType.h}}
+\index{EventType.h@{EventType.h}!PlayerDied@{PlayerDied}}
+}\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faaee1ded5ee510cf5f4c605debf346a9b2}\label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faaee1ded5ee510cf5f4c605debf346a9b2} 
+Player\+Died&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EnemyDied@{EnemyDied}!EventType.h@{EventType.h}}
+\index{EventType.h@{EventType.h}!EnemyDied@{EnemyDied}}
+}\Hypertarget{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faae59ed6209af6696edabb7eddf66bd2eb}\label{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6faae59ed6209af6696edabb7eddf66bd2eb} 
+Enemy\+Died&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \doxymbox{\hyperlink{EventType_8h_source_l00011}{11}} of file \doxymbox{\hyperlink{EventType_8h_source}{Event\+Type.\+h}}.
+

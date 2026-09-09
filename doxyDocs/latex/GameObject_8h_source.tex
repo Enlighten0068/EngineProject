@@ -1,0 +1,28 @@
+\doxysection{Game\+Object.\+h}
+\hypertarget{GameObject_8h_source}{}\label{GameObject_8h_source}\index{engine/scene/GameObject.h@{engine/scene/GameObject.h}}
+\doxymbox{\hyperlink{GameObject_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00001}00001\ /}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00002}00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{math_2Transform_8h}{math/Transform.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Texture2D_8h}{graphics/Texture2D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00007}00007\ \textcolor{keyword}{class\ }SpriteRenderer;}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00015}\doxymbox{\hyperlink{classGameObject}{00015}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classGameObject_a0348e3ee2e83d56eafca7a3547f432c4}{GameObject}}\{}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00016}00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00017}00017\ \ \ \ \ \doxymbox{\hyperlink{classGameObject_a0348e3ee2e83d56eafca7a3547f432c4}{GameObject}}();}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00018}\doxymbox{\hyperlink{classGameObject_ab82dfdb656f9051c0587e6593b2dda97}{00018}}\ \ \ \ \ \doxymbox{\hyperlink{classGameObject_ab82dfdb656f9051c0587e6593b2dda97}{\string~GameObject}}();}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGameObject_a444676806efb12b6944fbd525b0b8da5}{SetTexture}}(\textcolor{keyword}{const}\ std::shared\_ptr<Texture2D>\&\ texture);}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00021}00021\ \ \ \ \ \doxymbox{\hyperlink{structTransform}{Transform}}\&\ \doxymbox{\hyperlink{classGameObject_ad0ff6c403c9a323598de86a28204601f}{GetTransform}}();}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGameObject_ab63d5908c6fb124b2564fba447b2867b}{Update}}(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGameObject_aa530173b4762b107d91c29d4706293f3}{Render}}(\doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ view,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ projection);}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00025}00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00026}\doxymbox{\hyperlink{classGameObject_a62f1f74b2808644306d7aa8c347e055d}{00026}}\ \ \ \ \ \doxymbox{\hyperlink{structTransform}{Transform}}\ \doxymbox{\hyperlink{classGameObject_a62f1f74b2808644306d7aa8c347e055d}{m\_Transform}};\ \textcolor{comment}{//Transform\ component}}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00027}\doxymbox{\hyperlink{classGameObject_acbb0a4d33f73d96da43083ac1a57082f}{00027}}\ \ \ \ \ std::shared\_ptr<Texture2D>\ \doxymbox{\hyperlink{classGameObject_acbb0a4d33f73d96da43083ac1a57082f}{m\_Texture}};\ \textcolor{comment}{//Texture}}
+\DoxyCodeLine{\Hypertarget{GameObject_8h_source_l00028}00028\ \};}
+
+\end{DoxyCode}

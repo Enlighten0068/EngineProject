@@ -20,7 +20,7 @@ public:
     static SoundManager& GetInstance();
 
     /**
-     * @brief Load a sound effect from file, caching it for future use.
+     * @brief Loads a sound effect from file, caching it for future use.
      *
      * If the sound is already loaded, returns the cached instance.
      * Otherwise, loads the file and stores it in the cache.
@@ -31,7 +31,7 @@ public:
     std::shared_ptr<SoundEffect> LoadSound(const std::string& filepath);
 
     /**
-     * @brief Play a sound effect (loads it if not already cached).
+     * @brief Plays a sound effect (loads it if not already cached).
      *
      * Convenience method that combines LoadSound and Play.
      *
@@ -41,9 +41,10 @@ public:
     void PlaySound(const std::string& filepath, int volume = 128);
 
     /**
-     * @brief Clear all cached sound effects, releasing their resources.
+     * @brief Clears all cached sound effects, releasing their resources.
      */
     void Clear();
+
 private:
-    std::unordered_map<std::string, std::shared_ptr<SoundEffect>> m_Sounds;
+    std::unordered_map<std::string, std::shared_ptr<SoundEffect>> m_Sounds; //Cache of loaded sounds
 };

@@ -9,8 +9,8 @@
  * All operators are const and return a new vector.
  */
 struct Vector2D{
-    float x;
-    float y;
+    float x; //X component
+    float y; //Y component
 
     /**
      * @brief Default constructor: zero vector.
@@ -22,7 +22,7 @@ struct Vector2D{
      * @param xValue X component.
      * @param yValue Y component.
      */
-    Vector2D(float xValue,float yValue) : x(xValue), y(yValue){}
+    Vector2D(float xValue, float yValue) : x(xValue), y(yValue){}
 
     /**
      * @brief Vector addition.
@@ -74,9 +74,7 @@ struct Vector2D{
      */
     Vector2D Normalized() const{
         float len = Length();
-        if (len > 0.0f){
-            return *this / len;
-        }
+        if(len > 0.0f) return *this / len;
         return *this;
     }
 };

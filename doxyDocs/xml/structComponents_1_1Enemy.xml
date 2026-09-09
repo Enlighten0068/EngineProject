@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structComponents_1_1Enemy" kind="struct" language="C++" prot="public">
+    <compoundname>Components::Enemy</compoundname>
+    <includes refid="Enemy_8h" local="no">Enemy.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structComponents_1_1Enemy_1add79bf2acc05e16201c29fec98027afd" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Components::Enemy::IsActive</definition>
+        <argsstring></argsstring>
+        <name>IsActive</name>
+        <qualifiedname>Components::Enemy::IsActive</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/Enemy.h" line="15" column="14" bodyfile="engine/components/Enemy.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Marks an entity as an enemy. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This is a tag component used by the <ref refid="classEnemySystem" kindref="compound">EnemySystem</ref> to identify and process enemy entities. It contains a flag to enable/disable the enemy without destroying the entity.</para>
+<para><simplesect kind="note"><para>This component is used in conjunction with <ref refid="structComponents_1_1Transform" kindref="compound">Transform</ref>, <ref refid="structComponents_1_1Patrol" kindref="compound">Patrol</ref>, and <ref refid="structComponents_1_1PhysicsBody" kindref="compound">PhysicsBody</ref>. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structComponents_1_1Patrol" kindref="compound">Patrol</ref>, <ref refid="structComponents_1_1PhysicsBody" kindref="compound">PhysicsBody</ref>, <ref refid="classEnemySystem" kindref="compound">EnemySystem</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Components::Enemy</label>
+        <link refid="structComponents_1_1Enemy"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/components/Enemy.h" line="14" column="5" bodyfile="engine/components/Enemy.h" bodystart="14" bodyend="16"/>
+    <listofallmembers>
+      <member refid="structComponents_1_1Enemy_1add79bf2acc05e16201c29fec98027afd" prot="public" virt="non-virtual"><scope>Components::Enemy</scope><name>IsActive</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

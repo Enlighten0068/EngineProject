@@ -1,0 +1,45 @@
+\doxysection{Font.\+cpp}
+\hypertarget{Font_8cpp_source}{}\label{Font_8cpp_source}\index{engine/graphics/Font.cpp@{engine/graphics/Font.cpp}}
+\doxymbox{\hyperlink{Font_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Font_8h}{graphics/Font.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <SDL3\_ttf/SDL\_ttf.h>}}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00006}00006\ \doxymbox{\hyperlink{classFont_a4e6a119206f505522100221c1fafde45}{Font::Font}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00008}\doxymbox{\hyperlink{classFont_a134aaa2f78af0c12d3ce504957169768}{00008}}\ \doxymbox{\hyperlink{classFont_a134aaa2f78af0c12d3ce504957169768}{Font::\string~Font}}()\{}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}{m\_Font}})\{}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ TTF\_CloseFont(\doxymbox{\hyperlink{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}{m\_Font}});}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}{m\_Font}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00012}00012\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00021}\doxymbox{\hyperlink{classFont_a4d8b450779ecae61899cfebae34c8f4e}{00021}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classFont_a4d8b450779ecae61899cfebae34c8f4e}{Font::Load}}(\textcolor{keyword}{const}\ std::string\&\ filepath,\ \textcolor{keywordtype}{int}\ pointSize)\{}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00022}00022\ \ \ \ \ \doxymbox{\hyperlink{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}{m\_Font}}\ =\ TTF\_OpenFont(filepath.c\_str(),\ pointSize);}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}{m\_Font}})\{}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(std::format(\textcolor{stringliteral}{"{}Failed\ to\ load\ font\ '\{\}':\ \{\}"{}},\ filepath,\ SDL\_GetError()));}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00028}00028\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Font\ loaded:\ \{\}\ (\{\}pt)"{}},\ filepath,\ pointSize));}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00043}\doxymbox{\hyperlink{classFont_a75f569c89614b2f1132d7d5bee98db8d}{00043}}\ SDL\_Surface*\ \doxymbox{\hyperlink{classFont_a75f569c89614b2f1132d7d5bee98db8d}{Font::RenderText}}(\textcolor{keyword}{const}\ std::string\&\ text,\ \textcolor{keyword}{const}\ SDL\_Color\&\ color)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}{m\_Font}})\{}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a5a5a1c297ed72ab2f850d0d01ae00aaa}{Log::Warning}}(\textcolor{stringliteral}{"{}Attempted\ to\ render\ text\ with\ no\ font\ loaded."{}});}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00049}00049\ \ \ \ \ SDL\_Surface*\ surface\ =\ TTF\_RenderText\_Blended(\doxymbox{\hyperlink{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}{m\_Font}},\ text.c\_str(),\ text.length(),\ color);}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}(!surface)\{}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(std::format(\textcolor{stringliteral}{"{}Failed\ to\ render\ text\ '\{\}':\ \{\}"{}},\ text,\ SDL\_GetError()));}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{return}\ surface;}
+\DoxyCodeLine{\Hypertarget{Font_8cpp_source_l00056}00056\ \}}
+
+\end{DoxyCode}

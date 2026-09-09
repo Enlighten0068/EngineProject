@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_84eddfbd71a801ae1452dbb3739588a3" kind="dir">
+    <compoundname>engine/resources</compoundname>
+    <innerfile refid="ResourceManager_8cpp">ResourceManager.cpp</innerfile>
+    <innerfile refid="ResourceManager_8h">ResourceManager.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/resources/"/>
+  </compounddef>
+</doxygen>

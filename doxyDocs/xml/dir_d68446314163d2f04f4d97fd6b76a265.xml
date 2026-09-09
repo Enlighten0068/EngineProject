@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_d68446314163d2f04f4d97fd6b76a265" kind="dir">
+    <compoundname>engine/audio</compoundname>
+    <innerfile refid="SoundEffect_8cpp">SoundEffect.cpp</innerfile>
+    <innerfile refid="SoundEffect_8h">SoundEffect.h</innerfile>
+    <innerfile refid="SoundManager_8cpp">SoundManager.cpp</innerfile>
+    <innerfile refid="SoundManager_8h">SoundManager.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/audio/"/>
+  </compounddef>
+</doxygen>

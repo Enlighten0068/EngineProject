@@ -1,0 +1,5 @@
+<map id="Input" name="Input">
+<area shape="rect" id="Node000001" title="Static input manager for keyboard, mouse, and window state." alt="" coords="5,374,199,893"/>
+<area shape="rect" id="Node000002" href="$structVector2D.html" title="2D vector struct with basic arithmetic operations." alt="" coords="46,5,158,256"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,253,105,357,100,357,102,258"/>
+</map>

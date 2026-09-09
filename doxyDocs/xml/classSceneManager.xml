@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classSceneManager" kind="class" language="C++" prot="public">
+    <compoundname>SceneManager</compoundname>
+    <includes refid="SceneManager_8h" local="no">SceneManager.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSceneManager_1a08ef808828ceeb144b289987309f328e" prot="private" static="no" mutable="no">
+        <type>std::stack&lt; std::unique_ptr&lt; <ref refid="classScene" kindref="compound">Scene</ref> &gt; &gt;</type>
+        <definition>std::stack&lt;std::unique_ptr&lt;Scene&gt; &gt; SceneManager::m_SceneStack</definition>
+        <argsstring></argsstring>
+        <name>m_SceneStack</name>
+        <qualifiedname>SceneManager::m_SceneStack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/SceneManager.h" line="64" column="16" bodyfile="engine/scene/SceneManager.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSceneManager_1ae0003097b2a7ccd3f63758fcf8734bfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneManager::SetScene</definition>
+        <argsstring>(std::unique_ptr&lt; Scene &gt; scene)</argsstring>
+        <name>SetScene</name>
+        <qualifiedname>SceneManager::SetScene</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classScene" kindref="compound">Scene</ref> &gt;</type>
+          <declname>scene</declname>
+        </param>
+        <briefdescription>
+<para>Replaces the current scene with a new one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Exits the current scene (if any) and enters the new scene.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scene</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new scene to set.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scene</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new scene to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/SceneManager.h" line="25" column="10" bodyfile="engine/scene/SceneManager.cpp" bodystart="8" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classSceneManager_1a41636a6ebf257eaa823c4af31e71e4c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneManager::PushScene</definition>
+        <argsstring>(std::unique_ptr&lt; Scene &gt; scene)</argsstring>
+        <name>PushScene</name>
+        <qualifiedname>SceneManager::PushScene</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classScene" kindref="compound">Scene</ref> &gt;</type>
+          <declname>scene</declname>
+        </param>
+        <briefdescription>
+<para>Pushes a new scene onto the stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The current scene is paused (not exited) and the new scene becomes active.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scene</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scene to push.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scene</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scene to push. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/SceneManager.h" line="34" column="10" bodyfile="engine/scene/SceneManager.cpp" bodystart="27" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classSceneManager_1a5a3440850e459813d5d05fd85f2344b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneManager::PopScene</definition>
+        <argsstring>()</argsstring>
+        <name>PopScene</name>
+        <qualifiedname>SceneManager::PopScene</qualifiedname>
+        <briefdescription>
+<para>Pops the current scene from the stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Exits the current scene and returns to the previous scene. Does nothing if only one scene remains. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/SceneManager.h" line="42" column="10" bodyfile="engine/scene/SceneManager.cpp" bodystart="38" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classSceneManager_1adbede64d5706507e65f0e9dd0eaddd6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneManager::Update</definition>
+        <argsstring>(float deltaTime)</argsstring>
+        <name>Update</name>
+        <qualifiedname>SceneManager::Update</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+<para>Updates the active scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classTime" kindref="compound">Time</ref> elapsed since the last frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/SceneManager.h" line="48" column="10" bodyfile="engine/scene/SceneManager.cpp" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classSceneManager_1a61329955734e0c8a67796ef2b041b5a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneManager::Render</definition>
+        <argsstring>()</argsstring>
+        <name>Render</name>
+        <qualifiedname>SceneManager::Render</qualifiedname>
+        <briefdescription>
+<para>Renders the active scene. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/SceneManager.h" line="53" column="10" bodyfile="engine/scene/SceneManager.cpp" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classSceneManager_1a6881ef515af1d01c0a35e9b40b4a7555" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classScene" kindref="compound">Scene</ref> *</type>
+        <definition>Scene * SceneManager::GetCurrentScene</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentScene</name>
+        <qualifiedname>SceneManager::GetCurrentScene</qualifiedname>
+        <briefdescription>
+<para>Gets the current active scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the current scene, or nullptr if no scene is active. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/SceneManager.h" line="59" column="11" bodyfile="engine/scene/SceneManager.h" bodystart="59" bodyend="61"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Manages a stack of scenes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classSceneManager" kindref="compound">SceneManager</ref> handles scene transitions by maintaining a stack of scenes. Only the top scene is active (receives Update and Render calls).</para>
+<para><simplesect kind="note"><para>Supports pushing, popping, and setting scenes. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classScene" kindref="compound">Scene</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>SceneManager</label>
+        <link refid="classSceneManager"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/scene/SceneManager.h" line="16" column="1" bodyfile="engine/scene/SceneManager.h" bodystart="16" bodyend="65"/>
+    <listofallmembers>
+      <member refid="classSceneManager_1a6881ef515af1d01c0a35e9b40b4a7555" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>GetCurrentScene</name></member>
+      <member refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" prot="private" virt="non-virtual"><scope>SceneManager</scope><name>m_SceneStack</name></member>
+      <member refid="classSceneManager_1a5a3440850e459813d5d05fd85f2344b2" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>PopScene</name></member>
+      <member refid="classSceneManager_1a41636a6ebf257eaa823c4af31e71e4c2" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>PushScene</name></member>
+      <member refid="classSceneManager_1a61329955734e0c8a67796ef2b041b5a2" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>Render</name></member>
+      <member refid="classSceneManager_1ae0003097b2a7ccd3f63758fcf8734bfd" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>SetScene</name></member>
+      <member refid="classSceneManager_1adbede64d5706507e65f0e9dd0eaddd6b" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

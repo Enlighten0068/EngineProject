@@ -4,24 +4,9 @@
  * @brief Default constructor: initializes all matrix elements to zero.
  */
 Matrix4::Matrix4(){
-    for (int i = 0; i < 16; i++){
+    for(int i = 0; i < 16; ++i){
         m_Data[i] = 0.0f;
     }
-}
-
-/**
- * @brief Creates an identity matrix.
- * @return Identity matrix.
- */
-Matrix4 Matrix4::Identity(){
-    Matrix4 result;
-
-    result.m_Data[0]  = 1.0f;
-    result.m_Data[5]  = 1.0f;
-    result.m_Data[10] = 1.0f;
-    result.m_Data[15] = 1.0f;
-
-    return result;
 }
 
 /**
@@ -30,6 +15,19 @@ Matrix4 Matrix4::Identity(){
  */
 const float* Matrix4::Data() const{
     return m_Data;
+}
+
+/**
+ * @brief Creates an identity matrix.
+ * @return Identity matrix.
+ */
+Matrix4 Matrix4::Identity(){
+    Matrix4 result;
+    result.m_Data[0] = 1.0f;
+    result.m_Data[5] = 1.0f;
+    result.m_Data[10] = 1.0f;
+    result.m_Data[15] = 1.0f;
+    return result;
 }
 
 /**
@@ -42,11 +40,9 @@ const float* Matrix4::Data() const{
  */
 Matrix4 Matrix4::Translation(const Vector3D& position){
     Matrix4 result = Identity();
-
     result.m_Data[12] = position.x;
     result.m_Data[13] = position.y;
     result.m_Data[14] = position.z;
-
     return result;
 }
 
@@ -60,11 +56,9 @@ Matrix4 Matrix4::Translation(const Vector3D& position){
  */
 Matrix4 Matrix4::Scale(const Vector3D& scale){
     Matrix4 result = Identity();
-
-    result.m_Data[0]  = scale.x;
-    result.m_Data[5]  = scale.y;
+    result.m_Data[0] = scale.x;
+    result.m_Data[5] = scale.y;
     result.m_Data[10] = scale.z;
-
     return result;
 }
 
@@ -78,67 +72,68 @@ Matrix4 Matrix4::Scale(const Vector3D& scale){
  * @return Result of this * other.
  */
 Matrix4 Matrix4::operator*(const Matrix4& other) const{
-        Matrix4 result;
+    Matrix4 result;
 
-        for (int row = 0; row < 4; row++){
-            for (int column = 0; column < 4; column++){
-                result.m_Data[column * 4 + row] =
-                m_Data[0 * 4 + row] * other.m_Data[column * 4 + 0] +
-                m_Data[1 * 4 + row] * other.m_Data[column * 4 + 1] +
-                m_Data[2 * 4 + row] * other.m_Data[column * 4 + 2] +
-                m_Data[3 * 4 + row] * other.m_Data[column * 4 + 3];
-            }
+    for(int row = 0; row < 4; ++row){
+        for(int col = 0; col < 4; ++col){
+            result.m_Data[col * 4 + row] =
+            m_Data[0 * 4 + row] * other.m_Data[col * 4 + 0] +
+            m_Data[1 * 4 + row] * other.m_Data[col * 4 + 1] +
+            m_Data[2 * 4 + row] * other.m_Data[col * 4 + 2] +
+            m_Data[3 * 4 + row] * other.m_Data[col * 4 + 3];
         }
-        return result;
     }
+    return result;
+}
 
-    /**
-     * @brief Creates an orthographic projection matrix.
-     *
-     * This maps a 3D region (a box) to a 2D projection.
-     * The near and far planes are positive distances.
-     *
-     * @param left   Left clipping plane.
-     * @param right  Right clipping plane.
-     * @param bottom Bottom clipping plane.
-     * @param top    Top clipping plane.
-     * @param nearPlane Near clipping plane (positive).
-     * @param farPlane  Far clipping plane (positive).
-     * @return Orthographic projection matrix.
-     */
+/**
+ * @brief Creates an orthographic projection matrix.
+ *
+ * This maps a 3D region (a box) to a 2D projection.
+ * The near and far planes are positive distances.
+ *
+ * @param left Left clipping plane.
+ * @param right Right clipping plane.
+ * @param bottom Bottom clipping plane.
+ * @param top Top clipping plane.
+ * @param nearPlane Near clipping plane (positive).
+ * @param farPlane Far clipping plane (positive).
+ * @return Orthographic projection matrix.
+ */
 Matrix4 Matrix4::Orthographic(float left, float right, float bottom, float top, float nearPlane, float farPlane){
-        Matrix4 result = Identity();
+    Matrix4 result = Identity();
 
-        //Scale
-        result.m_Data[0] = 2.0f / (right - left);
-        result.m_Data[5] = 2.0f / (top - bottom);
-        result.m_Data[10] = -2.0f / (farPlane - nearPlane);
+    //Scale components
+    result.m_Data[0] = 2.0f / (right - left);
+    result.m_Data[5] = 2.0f / (top - bottom);
+    result.m_Data[10] = -2.0f / (farPlane - nearPlane);
 
-        //Translation
-        result.m_Data[12] =-(right + left) / (right - left);
-        result.m_Data[13] =-(top + bottom) /(top - bottom);
-        result.m_Data[14] =-(farPlane + nearPlane) /(farPlane - nearPlane);
+    //Translation components
+    result.m_Data[12] = -(right + left) / (right - left);
+    result.m_Data[13] = -(top + bottom) / (top - bottom);
+    result.m_Data[14] = -(farPlane + nearPlane) / (farPlane - nearPlane);
 
-        return result;
-    }
+    return result;
+}
 
-    /**
-     * @brief Creates a rotation matrix around the Z-axis.
-     *
-     * This rotates points in the coordinate plane by the given angle.
-     *
-     * @param angleRadians Rotation angle in radians.
-     * @return Rotation matrix (Z-axis roll).
-     */
-Matrix4 Matrix4::RotationZ(float angle) {
-        Matrix4 result = Identity();
+/**
+ * @brief Creates a rotation matrix around the Z-axis.
+ *
+ * This rotates points in the coordinate plane by the given angle.
+ *
+ * @param angleRadians Rotation angle in radians.
+ * @return Rotation matrix (Z-axis roll).
+ */
+Matrix4 Matrix4::RotationZ(float angleRadians){
+    Matrix4 result = Identity();
 
-        float c = std::cos(angle);
-        float s = std::sin(angle);
-        result.m_Data[0] = c;
-        result.m_Data[1] = -s;
-        result.m_Data[4] = s;
-        result.m_Data[5] = c;
+    float c = std::cos(angleRadians);
+    float s = std::sin(angleRadians);
 
-        return result;
-    }
+    result.m_Data[0] = c;
+    result.m_Data[1] = -s;
+    result.m_Data[4] = s;
+    result.m_Data[5] = c;
+
+    return result;
+}

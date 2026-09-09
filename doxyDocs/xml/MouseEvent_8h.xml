@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="MouseEvent_8h" kind="file" language="C++">
+    <compoundname>MouseEvent.h</compoundname>
+    <includes refid="Event_8h" local="yes">events/Event.h</includes>
+    <includes refid="Vector2D_8h" local="yes">math/Vector2D.h</includes>
+    <includes local="no">SDL3/SDL.h</includes>
+    <includedby refid="Application_8h" local="yes">engine/core/Application.h</includedby>
+    <includedby refid="CameraController_8cpp" local="yes">engine/core/CameraController.cpp</includedby>
+    <includedby refid="SDLEventTranslator_8h" local="yes">engine/events/SDLEventTranslator.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>events/Event.h</label>
+        <link refid="Event_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>events/EventType.h</label>
+        <link refid="EventType_8h"/>
+      </node>
+      <node id="1">
+        <label>engine/events/MouseEvent.h</label>
+        <link refid="MouseEvent_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="5">
+        <label>cmath</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="2">
+        <label>engine/core/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>engine/core/CameraController.cpp</label>
+        <link refid="CameraController_8cpp"/>
+      </node>
+      <node id="4">
+        <label>engine/core/Time.cpp</label>
+        <link refid="Time_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/events/MouseEvent.h</label>
+        <link refid="MouseEvent_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>engine/events/SDLEventTranslator.cpp</label>
+        <link refid="SDLEventTranslator_8cpp"/>
+      </node>
+      <node id="7">
+        <label>engine/events/SDLEventTranslator.h</label>
+        <link refid="SDLEventTranslator_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classMouseMotionEvent" prot="public">MouseMotionEvent</innerclass>
+    <innerclass refid="classMouseButtonEvent" prot="public">MouseButtonEvent</innerclass>
+    <innerclass refid="classMouseWheelEvent" prot="public">MouseWheelEvent</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>MouseButton</name>
+        <enumvalue id="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711a945d5e233cf7d6240f6b783b36a374ff" prot="public">
+          <name>Left</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711ab1ca34f82e83c52b010f86955f264e05" prot="public">
+          <name>Middle</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711a92b09c7c48c520c3c55e497875da437c" prot="public">
+          <name>Right</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711abb7f5ae6220c9828e5ec91faf054197c" prot="public">
+          <name>X1</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711a54105bddbfe3f639d49cbe8f5182c958" prot="public">
+          <name>X2</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Mouse button identifiers (matches SDL button numbers). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="39" column="1" bodyfile="engine/events/MouseEvent.h" bodystart="39" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="enum" id="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>MouseButtonAction</name>
+        <enumvalue id="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224ad78a68f6a85421ae121c2cb5b73a1040" prot="public">
+          <name>Pressed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224aea1e34304a5d8ffa7c9b0ed8ede4ef1a" prot="public">
+          <name>Released</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Mouse button action types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="50" column="1" bodyfile="engine/events/MouseEvent.h" bodystart="50" bodyend="53"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Event_8h" kindref="compound">events/Event.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector2D_8h" kindref="compound">math/Vector2D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL3/SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classMouseMotionEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMouseMotionEvent_1a1bdabca2300cd77ee0166a48fd5a7c9e" kindref="member">MouseMotionEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classEvent" kindref="compound">Event</ref>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22" refid="classMouseMotionEvent_1a1bdabca2300cd77ee0166a48fd5a7c9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMouseMotionEvent_1a1bdabca2300cd77ee0166a48fd5a7c9e" kindref="member">MouseMotionEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref>&amp;<sp/>position,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref>&amp;<sp/>delta)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classMouseMotionEvent_1a5d81a69936ee2ba03ade02b561c12057" kindref="member">m_Position</ref>(position),<sp/><ref refid="classMouseMotionEvent_1a93e06baad08ae0e8e9bba34af7fc36a7" kindref="member">m_Delta</ref>(delta){}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classMouseMotionEvent_1ae26e8d1f348784c25d68dd9fb691eeb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classMouseMotionEvent_1ae26e8d1f348784c25d68dd9fb691eeb1" kindref="member">GetPosition</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classMouseMotionEvent_1a5d81a69936ee2ba03ade02b561c12057" kindref="member">m_Position</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="26" refid="classMouseMotionEvent_1ab75755aade6aed87c74176e642a44a54" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classMouseMotionEvent_1ab75755aade6aed87c74176e642a44a54" kindref="member">GetDelta</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classMouseMotionEvent_1a93e06baad08ae0e8e9bba34af7fc36a7" kindref="member">m_Delta</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classMouseMotionEvent_1aadf068b5e7bd1080ddbcf1217108c05b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classMouseMotionEvent_1aadf068b5e7bd1080ddbcf1217108c05b" kindref="member">GetStaticType</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faae22334c0cac2399971712cf9ae02fa4f" kindref="member">EventType::MouseMotion</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="29" refid="classMouseMotionEvent_1a966916d6e4e738f508fb746249908612" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classMouseMotionEvent_1a966916d6e4e738f508fb746249908612" kindref="member">GetEventType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faae22334c0cac2399971712cf9ae02fa4f" kindref="member">EventType::MouseMotion</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32" refid="classMouseMotionEvent_1a5d81a69936ee2ba03ade02b561c12057" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classMouseMotionEvent_1a5d81a69936ee2ba03ade02b561c12057" kindref="member">m_Position</ref>;<sp/></highlight><highlight class="comment">//Current<sp/>mouse<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classMouseMotionEvent_1a93e06baad08ae0e8e9bba34af7fc36a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classMouseMotionEvent_1a93e06baad08ae0e8e9bba34af7fc36a7" kindref="member">m_Delta</ref>;<sp/></highlight><highlight class="comment">//Mouse<sp/>movement<sp/>delta</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711" kindref="member">MouseButton</ref>{</highlight></codeline>
+<codeline lineno="40" refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711a945d5e233cf7d6240f6b783b36a374ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711a945d5e233cf7d6240f6b783b36a374ff" kindref="member">Left</ref><sp/>=<sp/>1,<sp/><sp/><sp/></highlight><highlight class="comment">//Left<sp/>mouse<sp/>button</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711ab1ca34f82e83c52b010f86955f264e05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711ab1ca34f82e83c52b010f86955f264e05" kindref="member">Middle</ref><sp/>=<sp/>2,<sp/></highlight><highlight class="comment">//Middle<sp/>mouse<sp/>button</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711a92b09c7c48c520c3c55e497875da437c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711a92b09c7c48c520c3c55e497875da437c" kindref="member">Right</ref><sp/>=<sp/>3,<sp/><sp/></highlight><highlight class="comment">//Right<sp/>mouse<sp/>button</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711abb7f5ae6220c9828e5ec91faf054197c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711abb7f5ae6220c9828e5ec91faf054197c" kindref="member">X1</ref><sp/>=<sp/>4,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//X1<sp/>mouse<sp/>button<sp/>(back)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711a54105bddbfe3f639d49cbe8f5182c958" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711a54105bddbfe3f639d49cbe8f5182c958" kindref="member">X2</ref><sp/>=<sp/>5<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//X2<sp/>mouse<sp/>button<sp/>(forward)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224" kindref="member">MouseButtonAction</ref>{</highlight></codeline>
+<codeline lineno="51" refid="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224ad78a68f6a85421ae121c2cb5b73a1040" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1ad78a68f6a85421ae121c2cb5b73a1040" kindref="member">Pressed</ref>,<sp/><sp/></highlight><highlight class="comment">//Button<sp/>was<sp/>pressed<sp/>down</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224aea1e34304a5d8ffa7c9b0ed8ede4ef1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1aea1e34304a5d8ffa7c9b0ed8ede4ef1a" kindref="member">Released</ref><sp/><sp/></highlight><highlight class="comment">//Button<sp/>was<sp/>released</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classMouseButtonEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMouseButtonEvent_1a789cf2cf6cfe1d76413c397950cd128b" kindref="member">MouseButtonEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classEvent" kindref="compound">Event</ref>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="69" refid="classMouseButtonEvent_1a789cf2cf6cfe1d76413c397950cd128b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMouseButtonEvent_1a789cf2cf6cfe1d76413c397950cd128b" kindref="member">MouseButtonEvent</ref>(<ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711" kindref="member">MouseButton</ref><sp/>button,<sp/><ref refid="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224" kindref="member">MouseButtonAction</ref><sp/>action,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref>&amp;<sp/>position)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classMouseButtonEvent_1aeb7e0639c6bf9d4d427784152113b6ad" kindref="member">m_Button</ref>(button),<sp/><ref refid="classMouseButtonEvent_1a73d4f8d32af734e233bcc6f33116de08" kindref="member">m_Action</ref>(action),<sp/><ref refid="classMouseButtonEvent_1ab5e7ca136eb4f1cf266a45cc852cfb4a" kindref="member">m_Position</ref>(position){}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classMouseButtonEvent_1ab60dceaeb707317ab267ffacde3b6c1b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711" kindref="member">MouseButton</ref><sp/><ref refid="classMouseButtonEvent_1ab60dceaeb707317ab267ffacde3b6c1b" kindref="member">GetButton</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classMouseButtonEvent_1aeb7e0639c6bf9d4d427784152113b6ad" kindref="member">m_Button</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="73" refid="classMouseButtonEvent_1ac54f1bb65b817b818e310526ca8aed97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224" kindref="member">MouseButtonAction</ref><sp/><ref refid="classMouseButtonEvent_1ac54f1bb65b817b818e310526ca8aed97" kindref="member">GetAction</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classMouseButtonEvent_1a73d4f8d32af734e233bcc6f33116de08" kindref="member">m_Action</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="74" refid="classMouseButtonEvent_1aee204344f9ab0de4d3448017846d2dcc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classMouseButtonEvent_1aee204344f9ab0de4d3448017846d2dcc" kindref="member">GetPosition</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classMouseButtonEvent_1ab5e7ca136eb4f1cf266a45cc852cfb4a" kindref="member">m_Position</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classMouseButtonEvent_1a9c56ce7622039fc9a191fa72b779655b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classMouseButtonEvent_1a9c56ce7622039fc9a191fa72b779655b" kindref="member">GetStaticType</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa49dabe49d62a3521f7c10400138c38d5" kindref="member">EventType::MouseButton</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="77" refid="classMouseButtonEvent_1ac6b8e90d0d6ed6bc07199726f209b72e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classMouseButtonEvent_1ac6b8e90d0d6ed6bc07199726f209b72e" kindref="member">GetEventType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa49dabe49d62a3521f7c10400138c38d5" kindref="member">EventType::MouseButton</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="80" refid="classMouseButtonEvent_1aeb7e0639c6bf9d4d427784152113b6ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711" kindref="member">MouseButton</ref><sp/><ref refid="classMouseButtonEvent_1aeb7e0639c6bf9d4d427784152113b6ad" kindref="member">m_Button</ref>;<sp/></highlight><highlight class="comment">//Button<sp/>identifier</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classMouseButtonEvent_1a73d4f8d32af734e233bcc6f33116de08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MouseEvent_8h_1abe9b53e1b348725f697f5e443cb3c224" kindref="member">MouseButtonAction</ref><sp/><ref refid="classMouseButtonEvent_1a73d4f8d32af734e233bcc6f33116de08" kindref="member">m_Action</ref>;<sp/></highlight><highlight class="comment">//Action<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classMouseButtonEvent_1ab5e7ca136eb4f1cf266a45cc852cfb4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classMouseButtonEvent_1ab5e7ca136eb4f1cf266a45cc852cfb4a" kindref="member">m_Position</ref>;<sp/></highlight><highlight class="comment">//Mouse<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classMouseWheelEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMouseWheelEvent_1a24649c86c3b950852edb4397319ab4ef" kindref="member">MouseWheelEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classEvent" kindref="compound">Event</ref>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="96" refid="classMouseWheelEvent_1a24649c86c3b950852edb4397319ab4ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMouseWheelEvent_1a24649c86c3b950852edb4397319ab4ef" kindref="member">MouseWheelEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref>&amp;<sp/>delta)<sp/>:<sp/><ref refid="classMouseWheelEvent_1a14570610d7ca40818d1501418f45560c" kindref="member">m_Delta</ref>(delta){}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="classMouseWheelEvent_1aa352d3c294b1a4b7fd429186608ef00a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classMouseWheelEvent_1aa352d3c294b1a4b7fd429186608ef00a" kindref="member">GetDelta</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classMouseWheelEvent_1a14570610d7ca40818d1501418f45560c" kindref="member">m_Delta</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classMouseWheelEvent_1a43a82b6feb18741e3125a9e9113f2ae9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classMouseWheelEvent_1a43a82b6feb18741e3125a9e9113f2ae9" kindref="member">GetStaticType</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa6924f81750ac471df87fed683bcea516" kindref="member">EventType::MouseWheel</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="101" refid="classMouseWheelEvent_1a9673269c5bc0480fa716c51b35b3047a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classMouseWheelEvent_1a9673269c5bc0480fa716c51b35b3047a" kindref="member">GetEventType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa6924f81750ac471df87fed683bcea516" kindref="member">EventType::MouseWheel</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="104" refid="classMouseWheelEvent_1a14570610d7ca40818d1501418f45560c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/><ref refid="classMouseWheelEvent_1a14570610d7ca40818d1501418f45560c" kindref="member">m_Delta</ref>;<sp/></highlight><highlight class="comment">//Scroll<sp/>delta</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/events/MouseEvent.h"/>
+  </compounddef>
+</doxygen>

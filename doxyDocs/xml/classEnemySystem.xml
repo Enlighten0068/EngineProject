@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classEnemySystem" kind="class" language="C++" prot="public">
+    <compoundname>EnemySystem</compoundname>
+    <includes refid="EnemySystem_8h" local="no">EnemySystem.h</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classEnemySystem_1a122dd4911d2670f242ec120e6a82081e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EnemySystem::Update</definition>
+        <argsstring>(entt::registry &amp;registry, float deltaTime, const std::vector&lt; entt::entity &gt; &amp;platforms, float worldMinY)</argsstring>
+        <name>Update</name>
+        <qualifiedname>EnemySystem::Update</qualifiedname>
+        <param>
+          <type>entt::registry &amp;</type>
+          <declname>registry</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; entt::entity &gt; &amp;</type>
+          <declname>platforms</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>worldMinY</declname>
+        </param>
+        <briefdescription>
+<para>Updates all active enemy entities. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method iterates over all entities with <ref refid="structTransform" kindref="compound">Transform</ref>, Enemy, Patrol, and PhysicsBody components. For each active enemy, it:<orderedlist>
+<listitem><para>Moves the enemy horizontally according to its patrol path.</para>
+</listitem><listitem><para>Applies gravity to the enemy&apos;s vertical velocity.</para>
+</listitem><listitem><para>Checks and resolves collisions with platforms.</para>
+</listitem><listitem><para>Clamps the enemy to the world floor.</para>
+</listitem><listitem><para>Updates the grounded state.</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>registry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the ECS registry containing all entities. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classTime" kindref="compound">Time</ref> elapsed since the last frame (seconds). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>platforms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of entity IDs that act as collision platforms. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>worldMinY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum Y coordinate of the world (floor level). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/EnemySystem.h" line="46" column="17" bodyfile="engine/systems/EnemySystem.h" bodystart="46" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classEnemySystem_1ae6879f0cea50154a47a3ba26eec29bde" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool EnemySystem::CheckCollision</definition>
+        <argsstring>(const Vector3D &amp;playerPos, const Vector3D &amp;playerSize, const Vector3D &amp;enemyPos, const Vector3D &amp;enemySize)</argsstring>
+        <name>CheckCollision</name>
+        <qualifiedname>EnemySystem::CheckCollision</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>playerPos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>playerSize</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>enemyPos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>enemySize</declname>
+        </param>
+        <briefdescription>
+<para>Performs AABB collision detection between the player and an enemy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method checks if the player&apos;s bounding box overlaps with an enemy&apos;s bounding box using the Axis-Aligned Bounding Box (AABB) algorithm.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player&apos;s world position. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>playerSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player&apos;s scale (width and height). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enemyPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enemy&apos;s world position. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enemySize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enemy&apos;s scale (width and height). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the player and enemy are overlapping, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/EnemySystem.h" line="143" column="17" bodyfile="engine/systems/EnemySystem.h" bodystart="143" bodyend="153"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>System that updates enemy entities with patrol, physics, and collision. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classEnemySystem" kindref="compound">EnemySystem</ref> processes all entities that have the Enemy, Patrol, and PhysicsBody components. It handles:</para>
+<para><itemizedlist>
+<listitem><para>Horizontal patrol movement between two points</para>
+</listitem><listitem><para>Gravity and vertical velocity</para>
+</listitem><listitem><para>Collision detection and resolution with platforms</para>
+</listitem><listitem><para>Grounded state detection</para>
+</listitem><listitem><para>World boundary clamping</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="note"><para>This system is designed to be called once per frame from the scene&apos;s <ref refid="classEnemySystem_1a122dd4911d2670f242ec120e6a82081e" kindref="member">Update()</ref>. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structComponents_1_1Enemy" kindref="compound">Components::Enemy</ref>, <ref refid="structComponents_1_1Patrol" kindref="compound">Components::Patrol</ref>, <ref refid="structComponents_1_1PhysicsBody" kindref="compound">Components::PhysicsBody</ref>, <ref refid="structComponents_1_1Transform" kindref="compound">Components::Transform</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>EnemySystem</label>
+        <link refid="classEnemySystem"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/systems/EnemySystem.h" line="28" column="1" bodyfile="engine/systems/EnemySystem.h" bodystart="28" bodyend="154"/>
+    <listofallmembers>
+      <member refid="classEnemySystem_1ae6879f0cea50154a47a3ba26eec29bde" prot="public" virt="non-virtual"><scope>EnemySystem</scope><name>CheckCollision</name></member>
+      <member refid="classEnemySystem_1a122dd4911d2670f242ec120e6a82081e" prot="public" virt="non-virtual"><scope>EnemySystem</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

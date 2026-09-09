@@ -1,0 +1,100 @@
+\doxysection{SDLEvent\+Translator.\+cpp}
+\hypertarget{SDLEventTranslator_8cpp_source}{}\label{SDLEventTranslator_8cpp_source}\index{engine/events/SDLEventTranslator.cpp@{engine/events/SDLEventTranslator.cpp}}
+\doxymbox{\hyperlink{SDLEventTranslator_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{SDLEventTranslator_8h}{events/SDLEventTranslator.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00005}00005\ \doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{SDLEventTranslator::UnhandledCallback}}\ \doxymbox{\hyperlink{classSDLEventTranslator_a20e49284964400b64b5ab2978c84d0af}{SDLEventTranslator::s\_UnhandledCallback}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00016}\doxymbox{\hyperlink{classSDLEventTranslator_a3f9759218967a1c0aa87e8e8208de25d}{00016}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classSDLEventTranslator_a3f9759218967a1c0aa87e8e8208de25d}{SDLEventTranslator::TranslateAndDispatch}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent)\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{switch}(sdlEvent.type)\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_QUIT:}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_WINDOW\_RESIZED:}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSDLEventTranslator_ac79ddf4fb80535293db3ea36f5e96907}{DispatchWindowEvent}}(sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_KEY\_DOWN:}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_KEY\_UP:}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSDLEventTranslator_ab8c64c13f07e44ec781e7a4122f3bbae}{DispatchKeyEvent}}(sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_MOUSE\_MOTION:}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSDLEventTranslator_a680ae74d8df0178b6f12b2060041fd48}{DispatchMouseMotionEvent}}(sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_MOUSE\_BUTTON\_DOWN:}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_MOUSE\_BUTTON\_UP:}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSDLEventTranslator_ae9e18c1d2fed7acb98e42d7b66de8977}{DispatchMouseButtonEvent}}(sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_EVENT\_MOUSE\_WHEEL:}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSDLEventTranslator_a35af4df9452cb3de586453ccbf851e34}{DispatchMouseWheelEvent}}(sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classSDLEventTranslator_a20e49284964400b64b5ab2978c84d0af}{s\_UnhandledCallback}})\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSDLEventTranslator_a20e49284964400b64b5ab2978c84d0af}{s\_UnhandledCallback}}(sdlEvent);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00048}\doxymbox{\hyperlink{classSDLEventTranslator_a3667c0593acbe43be9c7e88fc1c1d05a}{00048}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_a3667c0593acbe43be9c7e88fc1c1d05a}{SDLEventTranslator::SetUnhandledCallback}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{UnhandledCallback}}\&\ callback)\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00049}00049\ \ \ \ \ \doxymbox{\hyperlink{classSDLEventTranslator_a20e49284964400b64b5ab2978c84d0af}{s\_UnhandledCallback}}\ =\ callback;}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00056}\doxymbox{\hyperlink{classSDLEventTranslator_ab8c64c13f07e44ec781e7a4122f3bbae}{00056}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_ab8c64c13f07e44ec781e7a4122f3bbae}{SDLEventTranslator::DispatchKeyEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent)\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00057}00057\ \ \ \ \ \doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1}{KeyAction}}\ action;}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{if}(sdlEvent.type\ ==\ SDL\_EVENT\_KEY\_DOWN)\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ action\ =\ (sdlEvent.key.repeat)\ ?\ \doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1a7f7309d5a83099309ac04dcb795ad0ce}{KeyAction::Repeated}}\ :\ \doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1ad78a68f6a85421ae121c2cb5b73a1040}{KeyAction::Pressed}};}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00060}00060\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ action\ =\ \doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1aea1e34304a5d8ffa7c9b0ed8ede4ef1a}{KeyAction::Released}};}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00064}00064\ \ \ \ \ \doxymbox{\hyperlink{classKeyEvent}{KeyEvent}}\ event(}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ sdlEvent.key.scancode,}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ action,}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ (sdlEvent.key.mod\ \&\ SDL\_KMOD\_CTRL)\ !=\ 0,}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (sdlEvent.key.mod\ \&\ SDL\_KMOD\_SHIFT)\ !=\ 0,}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (sdlEvent.key.mod\ \&\ SDL\_KMOD\_ALT)\ !=\ 0}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00070}00070\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00071}00071\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}}(event);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00078}\doxymbox{\hyperlink{classSDLEventTranslator_a680ae74d8df0178b6f12b2060041fd48}{00078}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_a680ae74d8df0178b6f12b2060041fd48}{SDLEventTranslator::DispatchMouseMotionEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent)\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00079}00079\ \ \ \ \ \doxymbox{\hyperlink{classMouseMotionEvent}{MouseMotionEvent}}\ event(}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector2D_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sdlEvent.motion.x),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sdlEvent.motion.y)),}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector2D}{Vector2D}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sdlEvent.motion.xrel),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sdlEvent.motion.yrel))}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00082}00082\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00083}00083\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}}(event);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00090}\doxymbox{\hyperlink{classSDLEventTranslator_ae9e18c1d2fed7acb98e42d7b66de8977}{00090}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_ae9e18c1d2fed7acb98e42d7b66de8977}{SDLEventTranslator::DispatchMouseButtonEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent)\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00091}00091\ \ \ \ \ \doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711}{MouseButton}}\ button\ =\ \textcolor{keyword}{static\_cast<}\doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711}{MouseButton}}\textcolor{keyword}{>}(sdlEvent.button.button);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00092}00092\ \ \ \ \ \doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224}{MouseButtonAction}}\ action\ =\ (sdlEvent.type\ ==\ SDL\_EVENT\_MOUSE\_BUTTON\_DOWN)}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00093}00093\ \ \ \ \ ?\ \doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224ad78a68f6a85421ae121c2cb5b73a1040}{MouseButtonAction::Pressed}}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00094}00094\ \ \ \ \ :\ \doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224aea1e34304a5d8ffa7c9b0ed8ede4ef1a}{MouseButtonAction::Released}};}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00096}00096\ \ \ \ \ \doxymbox{\hyperlink{classMouseButtonEvent}{MouseButtonEvent}}\ event(}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ button,}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ action,}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector2D_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sdlEvent.button.x),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sdlEvent.button.y))}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00100}00100\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00101}00101\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}}(event);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00108}\doxymbox{\hyperlink{classSDLEventTranslator_a35af4df9452cb3de586453ccbf851e34}{00108}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_a35af4df9452cb3de586453ccbf851e34}{SDLEventTranslator::DispatchMouseWheelEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent)\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00109}00109\ \ \ \ \ \doxymbox{\hyperlink{classMouseWheelEvent}{MouseWheelEvent}}\ event(}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector2D_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sdlEvent.wheel.x),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sdlEvent.wheel.y))}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00111}00111\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00112}00112\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}}(event);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00113}00113\ \}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00119}\doxymbox{\hyperlink{classSDLEventTranslator_ac79ddf4fb80535293db3ea36f5e96907}{00119}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSDLEventTranslator_ac79ddf4fb80535293db3ea36f5e96907}{SDLEventTranslator::DispatchWindowEvent}}(\textcolor{keyword}{const}\ SDL\_Event\&\ sdlEvent)\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{if}(sdlEvent.type\ ==\ SDL\_EVENT\_QUIT)\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classWindowCloseEvent}{WindowCloseEvent}}\ event;}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}}(event);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00123}00123\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(sdlEvent.type\ ==\ SDL\_EVENT\_WINDOW\_RESIZED)\{}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classWindowResizeEvent}{WindowResizeEvent}}\ event(sdlEvent.window.data1,\ sdlEvent.window.data2);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}}(event);}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SDLEventTranslator_8cpp_source_l00127}00127\ \}}
+
+\end{DoxyCode}

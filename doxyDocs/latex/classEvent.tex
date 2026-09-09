@@ -1,0 +1,113 @@
+\doxysection{Event Class Reference}
+\hypertarget{classEvent}{}\label{classEvent}\index{Event@{Event}}
+
+
+Base class for all events in the engine.  
+
+
+
+
+{\ttfamily \+\#include $<$Event.\+h$>$}
+
+
+
+Inheritance diagram for Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classEvent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classEvent_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\item 
+virtual \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classEvent_af14bbd8f69c2778def9462375a0e70f2}{Get\+Event\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the type of the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classEvent_a8ad0c350a8f569dbb05cf845caa4737e}{Handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all events in the engine. 
+
+All events derive from this class and must implement \doxylink{classEvent_af14bbd8f69c2778def9462375a0e70f2}{Get\+Event\+Type()}. The Handled flag can be used by event dispatchers to mark an event as processed.
+
+\begin{DoxyNote}{Note}
+Events are typically dispatched via \doxylink{classEventBus}{Event\+Bus} or \doxylink{classEventDispatcher}{Event\+Dispatcher}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}, \doxylink{classEventBus}{Event\+Bus}, \doxylink{classEventDispatcher}{Event\+Dispatcher} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Event_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{Event_8h_source}{Event.\+h}}.
+
+
+
+\label{classEvent_doc-constructors}
+\Hypertarget{classEvent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEvent_a105223995bbf1a1e4714d0c77f91cf0b}\index{Event@{Event}!````~Event@{\texorpdfstring{$\sim$}{\string~}Event}}
+\index{````~Event@{\texorpdfstring{$\sim$}{\string~}Event}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Event()}{\string~Event()}}
+{\footnotesize\ttfamily \label{classEvent_a105223995bbf1a1e4714d0c77f91cf0b} 
+virtual Event::\+\texorpdfstring{$\sim$}{\string~}\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{classEvent_doc-func-members}
+\Hypertarget{classEvent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEvent_af14bbd8f69c2778def9462375a0e70f2}\index{Event@{Event}!GetEventType@{GetEventType}}
+\index{GetEventType@{GetEventType}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{GetEventType()}{GetEventType()}}
+{\footnotesize\ttfamily \label{classEvent_af14bbd8f69c2778def9462375a0e70f2} 
+virtual \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Event::\+\+Get\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the type of the event. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type} enum value identifying the event. 
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{classEnemyDiedEvent_a71e2fc9fee13d00be1838a8f6fd46419}{Enemy\+Died\+Event}}, \doxymbox{\hyperlink{classKeyEvent_aba1bc77a6676e8a62dd26a14670a69e1}{Key\+Event}}, \doxymbox{\hyperlink{classMouseButtonEvent_ac6b8e90d0d6ed6bc07199726f209b72e}{Mouse\+Button\+Event}}, \doxymbox{\hyperlink{classMouseMotionEvent_a966916d6e4e738f508fb746249908612}{Mouse\+Motion\+Event}}, \doxymbox{\hyperlink{classMouseWheelEvent_a9673269c5bc0480fa716c51b35b3047a}{Mouse\+Wheel\+Event}}, \doxymbox{\hyperlink{classPlayerDiedEvent_ac1f5345b6ae2df9d1daedcf1ecd995d6}{Player\+Died\+Event}}, \doxymbox{\hyperlink{classPlayerJumpedEvent_aeb76e414cb90a82b356478a33d30447f}{Player\+Jumped\+Event}}, \doxymbox{\hyperlink{classPlayerLandedEvent_aec8a4bc83cf439244e3a813c2361a92c}{Player\+Landed\+Event}}, \doxymbox{\hyperlink{classWindowCloseEvent_a4ad7d8ef5ba544c908e1a59a74b40492}{Window\+Close\+Event}}, and \doxymbox{\hyperlink{classWindowResizeEvent_a60b310d95bea3bfa3b53ce70fb9a98f2}{Window\+Resize\+Event}}.
+
+
+
+\label{classEvent_doc-variable-members}
+\Hypertarget{classEvent_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classEvent_a8ad0c350a8f569dbb05cf845caa4737e}\index{Event@{Event}!Handled@{Handled}}
+\index{Handled@{Handled}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{Handled}{Handled}}
+{\footnotesize\ttfamily \label{classEvent_a8ad0c350a8f569dbb05cf845caa4737e} 
+bool Event::\+\+Handled = false}
+
+
+
+Definition at line \doxymbox{\hyperlink{Event_8h_source_l00024}{24}} of file \doxymbox{\hyperlink{Event_8h_source}{Event.\+h}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+events/\doxymbox{\hyperlink{Event_8h}{Event.\+h}}\end{DoxyCompactItemize}

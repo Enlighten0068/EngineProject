@@ -1,0 +1,5 @@
+<map id="MouseButtonEvent" name="MouseButtonEvent">
+<area shape="rect" id="Node000001" title="Event representing a mouse button press/release." alt="" coords="5,148,165,377"/>
+<area shape="rect" id="Node000002" href="$classEvent.html" title="Base class for all events in the engine." alt="" coords="22,5,149,100"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,113,88,149,83,148,85,118"/>
+</map>

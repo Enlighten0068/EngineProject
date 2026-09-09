@@ -1,0 +1,34 @@
+\doxysection{Vertex\+Buffer.\+cpp}
+\hypertarget{VertexBuffer_8cpp_source}{}\label{VertexBuffer_8cpp_source}\index{engine/graphics/VertexBuffer.cpp@{engine/graphics/VertexBuffer.cpp}}
+\doxymbox{\hyperlink{VertexBuffer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{VertexBuffer_8h}{graphics/VertexBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00011}\doxymbox{\hyperlink{classVertexBuffer_a643ef11059827722b264d13fbecf97ea}{00011}}\ \doxymbox{\hyperlink{classVertexBuffer_a643ef11059827722b264d13fbecf97ea}{VertexBuffer::VertexBuffer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ vertices,\ uint32\_t\ size)\ :\ \doxymbox{\hyperlink{classVertexBuffer_abe01f36db0dddcb4b5b0ca10f6793407}{m\_RendererID}}(0)\{}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00012}00012\ \ \ \ \ glGenBuffers(1,\ \&\doxymbox{\hyperlink{classVertexBuffer_abe01f36db0dddcb4b5b0ca10f6793407}{m\_RendererID}});}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00013}00013\ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,\ \doxymbox{\hyperlink{classVertexBuffer_abe01f36db0dddcb4b5b0ca10f6793407}{m\_RendererID}});}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00014}00014\ \ \ \ \ glBufferData(GL\_ARRAY\_BUFFER,\ size,\ vertices,\ GL\_STATIC\_DRAW);}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classVertexBuffer_abe01f36db0dddcb4b5b0ca10f6793407}{m\_RendererID}}\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(\textcolor{stringliteral}{"{}VertexBuffer\ creation\ failed."{}});}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00018}00018\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}VertexBuffer\ created.\ ID:\ \{\}"{}},\ \doxymbox{\hyperlink{classVertexBuffer_abe01f36db0dddcb4b5b0ca10f6793407}{m\_RendererID}}));}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00023}\doxymbox{\hyperlink{classVertexBuffer_a5216726fdd43b2ae8e1439e347717fdd}{00023}}\ \doxymbox{\hyperlink{classVertexBuffer_a5216726fdd43b2ae8e1439e347717fdd}{VertexBuffer::\string~VertexBuffer}}()\{}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00024}00024\ \ \ \ \ glDeleteBuffers(1,\ \&\doxymbox{\hyperlink{classVertexBuffer_abe01f36db0dddcb4b5b0ca10f6793407}{m\_RendererID}});}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00030}\doxymbox{\hyperlink{classVertexBuffer_a13019e8580ca3e369fad4166500ad2b9}{00030}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classVertexBuffer_a13019e8580ca3e369fad4166500ad2b9}{VertexBuffer::Bind}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00031}00031\ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,\ \doxymbox{\hyperlink{classVertexBuffer_abe01f36db0dddcb4b5b0ca10f6793407}{m\_RendererID}});}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00037}\doxymbox{\hyperlink{classVertexBuffer_abfdb36238d60f2cd7bf63093f914b61f}{00037}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classVertexBuffer_abfdb36238d60f2cd7bf63093f914b61f}{VertexBuffer::Unbind}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00038}00038\ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,\ 0);}
+\DoxyCodeLine{\Hypertarget{VertexBuffer_8cpp_source_l00039}00039\ \}}
+
+\end{DoxyCode}

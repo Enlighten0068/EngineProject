@@ -1,0 +1,67 @@
+\doxysection{Camera\+Controller.\+cpp}
+\hypertarget{CameraController_8cpp_source}{}\label{CameraController_8cpp_source}\index{engine/core/CameraController.cpp@{engine/core/CameraController.cpp}}
+\doxymbox{\hyperlink{CameraController_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{CameraController_8h}{core/CameraController.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Input_8h}{core/Input.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Time_8h}{core/Time.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{EventBus_8h}{events/EventBus.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{MouseEvent_8h}{events/MouseEvent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00009}\doxymbox{\hyperlink{classCameraController_a18c096c90c713bb7b7338fb26e0e34c3}{00009}}\ \doxymbox{\hyperlink{classCameraController_a18c096c90c713bb7b7338fb26e0e34c3}{CameraController::CameraController}}(\doxymbox{\hyperlink{classCamera2D}{Camera2D}}\&\ camera,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classGameWorld}{GameWorld}}\&\ world)}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00010}00010\ :\ \doxymbox{\hyperlink{classCameraController_aaf6e45805acb449c8c30c9637b759558}{m\_Camera}}(camera),\ \doxymbox{\hyperlink{classCameraController_a8990c89b4d50923d183579a93c9923b1}{m\_World}}(world)\{\}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00021}\doxymbox{\hyperlink{classCameraController_a417ac3fd698ce445d873b6b3db492bb0}{00021}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classCameraController_a417ac3fd698ce445d873b6b3db492bb0}{CameraController::Update}}(\textcolor{keywordtype}{float}\ deltaTime)\{}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//Follow\ Mode\ -\/\ smoothly\ interpolate\ to\ target}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classCameraController_a713bed4b6c44077872115b20f4ee1569}{m\_FollowEntity}})\{}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ pos\ =\ \doxymbox{\hyperlink{classCameraController_aaf6e45805acb449c8c30c9637b759558}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_a81735ad622947ceecfe836d2f855cfc8}{GetPosition}}();}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ diff\ =\ \doxymbox{\hyperlink{classCameraController_ae9f6f6f6ab6961e1ebb5bb1130521b45}{m\_TargetPosition}}\ -\/\ pos;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(diff.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ !=\ 0.0f\ ||\ diff.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ !=\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lerpFactor\ =\ 0.05f;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ pos.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ +=\ diff.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ *\ lerpFactor;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ pos.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ +=\ diff.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ *\ lerpFactor;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classCameraController_aaf6e45805acb449c8c30c9637b759558}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_add37aa370c8718e7d38a0de2f8b86b10}{SetPosition}}(pos);}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//Manual\ Mode\ -\/\ WASD\ controls}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ pos\ =\ \doxymbox{\hyperlink{classCameraController_aaf6e45805acb449c8c30c9637b759558}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_a81735ad622947ceecfe836d2f855cfc8}{GetPosition}}();}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ speed\ =\ \doxymbox{\hyperlink{classCameraController_aed19f04d0186177f551755c8bf2ee496}{m\_Speed}}\ *\ deltaTime;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Input::IsKeyHeld}}(SDL\_SCANCODE\_W))\ pos.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ +=\ speed;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Input::IsKeyHeld}}(SDL\_SCANCODE\_S))\ pos.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ -\/=\ speed;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Input::IsKeyHeld}}(SDL\_SCANCODE\_A))\ pos.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ -\/=\ speed;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Input::IsKeyHeld}}(SDL\_SCANCODE\_D))\ pos.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ +=\ speed;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classCameraController_aaf6e45805acb449c8c30c9637b759558}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_add37aa370c8718e7d38a0de2f8b86b10}{SetPosition}}(pos);}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//World\ boundary\ clamping\ -\/\ prevents\ the\ camera\ from\ showing\ the\ void\ beyond\ the\ world\ edges}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00045}00045\ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ pos\ =\ \doxymbox{\hyperlink{classCameraController_aaf6e45805acb449c8c30c9637b759558}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_a81735ad622947ceecfe836d2f855cfc8}{GetPosition}}();}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{float}\ marginX\ =\ 5.0f;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{float}\ marginY\ =\ 3.0f;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//Clamp\ X\ axis\ with\ safety\ check}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{float}\ minX\ =\ \doxymbox{\hyperlink{classCameraController_a8990c89b4d50923d183579a93c9923b1}{m\_World}}.\doxymbox{\hyperlink{classGameWorld_a099be0356a0cea9620ccd151dffc00a2}{GetMinX}}()\ +\ marginX;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{float}\ maxX\ =\ \doxymbox{\hyperlink{classCameraController_a8990c89b4d50923d183579a93c9923b1}{m\_World}}.\doxymbox{\hyperlink{classGameWorld_a60de5cbf4bd843be6370b2e61f18020f}{GetMaxX}}()\ -\/\ marginX;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}(minX\ <\ maxX)\ pos.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ =\ std::clamp(pos.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}},\ minX,\ maxX);}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//Clamp\ Y\ axis\ with\ safety\ check}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{float}\ minY\ =\ \doxymbox{\hyperlink{classCameraController_a8990c89b4d50923d183579a93c9923b1}{m\_World}}.\doxymbox{\hyperlink{classGameWorld_a509019005800fd39a25ed20e25f670e4}{GetMinY}}()\ +\ marginY;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{float}\ maxY\ =\ \doxymbox{\hyperlink{classCameraController_a8990c89b4d50923d183579a93c9923b1}{m\_World}}.\doxymbox{\hyperlink{classGameWorld_a17c3daa62412f90d7549f38a51f2acad}{GetMaxY}}()\ -\/\ marginY;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}(minY\ <\ maxY)\ pos.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ =\ std::clamp(pos.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}},\ minY,\ maxY);}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00059}00059\ \ \ \ \ \doxymbox{\hyperlink{classCameraController_aaf6e45805acb449c8c30c9637b759558}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_add37aa370c8718e7d38a0de2f8b86b10}{SetPosition}}(pos);}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//Zoom\ with\ mouse\ scroll}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00062}00062\ \ \ \ \ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ scroll\ =\ \doxymbox{\hyperlink{classInput_af4fb33ee8a3ae10ad92ad2adc7e00ebf}{Input::GetScrollDelta}}();}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{if}(scroll.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ !=\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ zoom\ =\ \doxymbox{\hyperlink{classCameraController_aaf6e45805acb449c8c30c9637b759558}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_af8d9ff1e06b780cc2917b9559ab4a369}{GetZoom}}()\ +\ scroll.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ *\ 0.1f;}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ zoom\ =\ std::clamp(zoom,\ \doxymbox{\hyperlink{classCameraController_aa40b6ff354ed391b4ceba410b846ce63}{m\_MinZoom}},\ \doxymbox{\hyperlink{classCameraController_acafdc8b66669d186a00eae8dd124fa64}{m\_MaxZoom}});}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classCameraController_aaf6e45805acb449c8c30c9637b759558}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_a2dacc853f7361a368c53571932c5bee1}{SetZoom}}(zoom);}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00069}00069\ \ \ \ \ \doxymbox{\hyperlink{classCameraController_aaf6e45805acb449c8c30c9637b759558}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_adab7c2dd541f23c9e20ce54c73520f03}{Update}}();}
+\DoxyCodeLine{\Hypertarget{CameraController_8cpp_source_l00070}00070\ \}}
+
+\end{DoxyCode}

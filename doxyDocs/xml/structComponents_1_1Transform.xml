@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structComponents_1_1Transform" kind="struct" language="C++" prot="public">
+    <compoundname>Components::Transform</compoundname>
+    <includes refid="components_2Transform_8h" local="no">Transform.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structComponents_1_1Transform_1aa2a3a1979b171ef97e29461f9ce52cc1" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Components::Transform::Position</definition>
+        <argsstring></argsstring>
+        <name>Position</name>
+        <qualifiedname>Components::Transform::Position</qualifiedname>
+        <initializer>{0.0f, 0.0f, 0.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/Transform.h" line="17" column="18" bodyfile="engine/components/Transform.h" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="structComponents_1_1Transform_1abbdaf3e3edb9be26b24c6a9a902f3809" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Components::Transform::Rotation</definition>
+        <argsstring></argsstring>
+        <name>Rotation</name>
+        <qualifiedname>Components::Transform::Rotation</qualifiedname>
+        <initializer>{0.0f, 0.0f, 0.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/Transform.h" line="18" column="18" bodyfile="engine/components/Transform.h" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="variable" id="structComponents_1_1Transform_1a6c5ad13eaf7c41f4e9abc5d3dead3f96" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Components::Transform::Scale</definition>
+        <argsstring></argsstring>
+        <name>Scale</name>
+        <qualifiedname>Components::Transform::Scale</qualifiedname>
+        <initializer>{1.0f, 1.0f, 1.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/components/Transform.h" line="19" column="18" bodyfile="engine/components/Transform.h" bodystart="19" bodyend="19"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Defines the position, rotation, and scale of an entity. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This is the most fundamental component for any entity that exists in the world. It defines where the entity is located, how it is oriented, and its size.</para>
+<para><simplesect kind="note"><para>Rotation is stored in radians for mathematical consistency. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structComponents_1_1SpriteRenderer" kindref="compound">SpriteRenderer</ref>, <ref refid="structComponents_1_1PhysicsBody" kindref="compound">PhysicsBody</ref>, <ref refid="classRenderSystem" kindref="compound">RenderSystem</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Components::Transform</label>
+        <link refid="structComponents_1_1Transform"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+Position</edgelabel>
+          <edgelabel>+Rotation</edgelabel>
+          <edgelabel>+Scale</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/components/Transform.h" line="16" column="5" bodyfile="engine/components/Transform.h" bodystart="16" bodyend="20"/>
+    <listofallmembers>
+      <member refid="structComponents_1_1Transform_1aa2a3a1979b171ef97e29461f9ce52cc1" prot="public" virt="non-virtual"><scope>Components::Transform</scope><name>Position</name></member>
+      <member refid="structComponents_1_1Transform_1abbdaf3e3edb9be26b24c6a9a902f3809" prot="public" virt="non-virtual"><scope>Components::Transform</scope><name>Rotation</name></member>
+      <member refid="structComponents_1_1Transform_1a6c5ad13eaf7c41f4e9abc5d3dead3f96" prot="public" virt="non-virtual"><scope>Components::Transform</scope><name>Scale</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

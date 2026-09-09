@@ -1,0 +1,5 @@
+<map id="Components::Patrol" name="Components::Patrol">
+<area shape="rect" id="Node000001" title="Defines patrol behavior for an entity." alt="" coords="5,307,144,402"/>
+<area shape="rect" id="Node000002" href="$structVector3D.html" title="3D vector struct with basic arithmetic operations." alt="" coords="23,5,126,212"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,209,77,291,72,290,73,214"/>
+</map>

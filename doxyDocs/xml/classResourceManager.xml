@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classResourceManager" kind="class" language="C++" prot="public">
+    <compoundname>ResourceManager</compoundname>
+    <includes refid="ResourceManager_8h" local="no">ResourceManager.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classResourceManager_1a71964307b18876b6c549658b91bb4fb6" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::shared_ptr&lt;Texture2D&gt; &gt; ResourceManager::m_Textures</definition>
+        <argsstring></argsstring>
+        <name>m_Textures</name>
+        <qualifiedname>ResourceManager::m_Textures</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/resources/ResourceManager.h" line="71" column="24" bodyfile="engine/resources/ResourceManager.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classResourceManager_1a8688e902916642bf611a35954a539ab9" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::shared_ptr&lt; <ref refid="classShader" kindref="compound">Shader</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::shared_ptr&lt;Shader&gt; &gt; ResourceManager::m_Shaders</definition>
+        <argsstring></argsstring>
+        <name>m_Shaders</name>
+        <qualifiedname>ResourceManager::m_Shaders</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/resources/ResourceManager.h" line="72" column="24" bodyfile="engine/resources/ResourceManager.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classResourceManager_1a98b11a6302bf0db4ffc81eea70512ee2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classResourceManager" kindref="compound">ResourceManager</ref> &amp;</type>
+        <definition>ResourceManager &amp; ResourceManager::GetInstance</definition>
+        <argsstring>()</argsstring>
+        <name>GetInstance</name>
+        <qualifiedname>ResourceManager::GetInstance</qualifiedname>
+        <briefdescription>
+<para>Gets the singleton instance of <ref refid="classResourceManager" kindref="compound">ResourceManager</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the singleton instance of <ref refid="classResourceManager" kindref="compound">ResourceManager</ref>.</para>
+<para><simplesect kind="return"><para>Reference to the <ref refid="classResourceManager" kindref="compound">ResourceManager</ref> instance.</para>
+</simplesect>
+The instance is created on first call and destroyed automatically when the program exits.</para>
+<para><simplesect kind="return"><para>Reference to the <ref refid="classResourceManager" kindref="compound">ResourceManager</ref> instance. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/resources/ResourceManager.h" line="27" column="28" bodyfile="engine/resources/ResourceManager.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classResourceManager_1ab4f1fc4151670863ad470b5e138dfd1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Texture2D &gt; ResourceManager::LoadTexture</definition>
+        <argsstring>(const std::string &amp;filepath)</argsstring>
+        <name>LoadTexture</name>
+        <qualifiedname>ResourceManager::LoadTexture</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+<para>Loads a texture from a file path, with caching. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the texture has already been loaded, returns the cached instance. Otherwise, loads the texture from the file system and stores it in the cache.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the texture file (e.g., &quot;assets/textures/player.png&quot;). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Shared pointer to the loaded <ref refid="classTexture2D" kindref="compound">Texture2D</ref>, or nullptr on failure.</para>
+</simplesect>
+This method checks the cache first to avoid loading the same texture twice. If the texture is not already loaded, it creates a new <ref refid="classTexture2D" kindref="compound">Texture2D</ref> instance and attempts to load the file. On success, the texture is added to the cache.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the texture file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Shared pointer to the loaded <ref refid="classTexture2D" kindref="compound">Texture2D</ref>, or nullptr on failure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/resources/ResourceManager.h" line="38" column="21" bodyfile="engine/resources/ResourceManager.cpp" bodystart="28" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classResourceManager_1a04610bfda86d5a2b7e4d574929eeb478" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classShader" kindref="compound">Shader</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Shader &gt; ResourceManager::LoadShader</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;vertexSource, const std::string &amp;fragmentSource)</argsstring>
+        <name>LoadShader</name>
+        <qualifiedname>ResourceManager::LoadShader</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>vertexSource</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fragmentSource</declname>
+        </param>
+        <briefdescription>
+<para>Loads or retrieves a shader program by name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the shader has already been compiled and cached under the given name, returns the cached instance. Otherwise, compiles the shader from source strings and stores it in the cache.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unique identifier for this shader (e.g., &quot;sprite&quot;, &quot;ui&quot;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vertexSource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GLSL source code for the vertex shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fragmentSource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GLSL source code for the fragment shader. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Shared pointer to the loaded <ref refid="classShader" kindref="compound">Shader</ref>, or nullptr on compilation failure.</para>
+</simplesect>
+This method caches shaders by name, allowing the same shader to be used by multiple entities without recompiling. This is particularly useful for shaders that are used frequently (e.g., the standard sprite shader).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unique identifier for this shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vertexSource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GLSL source code for the vertex shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fragmentSource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GLSL source code for the fragment shader. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Shared pointer to the loaded <ref refid="classShader" kindref="compound">Shader</ref>, or nullptr on compilation failure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/resources/ResourceManager.h" line="52" column="21" bodyfile="engine/resources/ResourceManager.cpp" bodystart="61" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classResourceManager_1aecd08b92634fad3316442c267a04e8c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResourceManager::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <qualifiedname>ResourceManager::Clear</qualifiedname>
+        <briefdescription>
+<para>Clears all cached resources. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases all textures and shaders from the cache. This should be called during application shutdown or when switching to a completely different game state that requires different assets.</para>
+<para>Releases all shared pointers to textures and shaders, allowing their memory to be freed if no other references exist. This is useful for level transitions or application shutdown. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/resources/ResourceManager.h" line="63" column="10" bodyfile="engine/resources/ResourceManager.cpp" bodystart="91" bodyend="95"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classResourceManager_1a2d9db4c26c604834c60702ded80947d8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResourceManager::ResourceManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>ResourceManager</name>
+        <qualifiedname>ResourceManager::ResourceManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/resources/ResourceManager.h" line="66" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classResourceManager_1a611e031031ad668b7c462a463577b65c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResourceManager::~ResourceManager</definition>
+        <argsstring>()=default</argsstring>
+        <name>~ResourceManager</name>
+        <qualifiedname>ResourceManager::~ResourceManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/resources/ResourceManager.h" line="67" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classResourceManager_1ab69f63d44bed2b736ac816d9a2bf84c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResourceManager::ResourceManager</definition>
+        <argsstring>(const ResourceManager &amp;)=delete</argsstring>
+        <name>ResourceManager</name>
+        <qualifiedname>ResourceManager::ResourceManager</qualifiedname>
+        <param>
+          <type>const <ref refid="classResourceManager" kindref="compound">ResourceManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/resources/ResourceManager.h" line="68" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classResourceManager_1ac213fb8bed90e40d1ba8018563f9e4b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classResourceManager" kindref="compound">ResourceManager</ref> &amp;</type>
+        <definition>ResourceManager &amp; ResourceManager::operator=</definition>
+        <argsstring>(const ResourceManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>ResourceManager::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classResourceManager" kindref="compound">ResourceManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/resources/ResourceManager.h" line="69" column="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton resource manager for loading and caching assets. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classResourceManager" kindref="compound">ResourceManager</ref> provides a centralized system for loading and caching assets such as textures and shaders. It ensures that each asset is loaded only once and shared across the engine, reducing memory usage and load times.</para>
+<para>Supported assets: textures and shaders.</para>
+<para><simplesect kind="note"><para>This is a singleton; use <ref refid="classResourceManager_1a98b11a6302bf0db4ffc81eea70512ee2" kindref="member">GetInstance()</ref> to access it. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classTexture2D" kindref="compound">Texture2D</ref>, <ref refid="classShader" kindref="compound">Shader</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ResourceManager</label>
+        <link refid="classResourceManager"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/resources/ResourceManager.h" line="21" column="1" bodyfile="engine/resources/ResourceManager.h" bodystart="21" bodyend="73"/>
+    <listofallmembers>
+      <member refid="classResourceManager_1aecd08b92634fad3316442c267a04e8c4" prot="public" virt="non-virtual"><scope>ResourceManager</scope><name>Clear</name></member>
+      <member refid="classResourceManager_1a98b11a6302bf0db4ffc81eea70512ee2" prot="public" virt="non-virtual"><scope>ResourceManager</scope><name>GetInstance</name></member>
+      <member refid="classResourceManager_1a04610bfda86d5a2b7e4d574929eeb478" prot="public" virt="non-virtual"><scope>ResourceManager</scope><name>LoadShader</name></member>
+      <member refid="classResourceManager_1ab4f1fc4151670863ad470b5e138dfd1b" prot="public" virt="non-virtual"><scope>ResourceManager</scope><name>LoadTexture</name></member>
+      <member refid="classResourceManager_1a8688e902916642bf611a35954a539ab9" prot="private" virt="non-virtual"><scope>ResourceManager</scope><name>m_Shaders</name></member>
+      <member refid="classResourceManager_1a71964307b18876b6c549658b91bb4fb6" prot="private" virt="non-virtual"><scope>ResourceManager</scope><name>m_Textures</name></member>
+      <member refid="classResourceManager_1ac213fb8bed90e40d1ba8018563f9e4b0" prot="private" virt="non-virtual"><scope>ResourceManager</scope><name>operator=</name></member>
+      <member refid="classResourceManager_1a2d9db4c26c604834c60702ded80947d8" prot="private" virt="non-virtual"><scope>ResourceManager</scope><name>ResourceManager</name></member>
+      <member refid="classResourceManager_1ab69f63d44bed2b736ac816d9a2bf84c1" prot="private" virt="non-virtual"><scope>ResourceManager</scope><name>ResourceManager</name></member>
+      <member refid="classResourceManager_1a611e031031ad668b7c462a463577b65c" prot="private" virt="non-virtual"><scope>ResourceManager</scope><name>~ResourceManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

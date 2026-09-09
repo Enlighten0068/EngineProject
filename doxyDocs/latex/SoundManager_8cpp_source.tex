@@ -1,0 +1,40 @@
+\doxysection{Sound\+Manager.\+cpp}
+\hypertarget{SoundManager_8cpp_source}{}\label{SoundManager_8cpp_source}\index{engine/audio/SoundManager.cpp@{engine/audio/SoundManager.cpp}}
+\doxymbox{\hyperlink{SoundManager_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{SoundManager_8h}{audio/SoundManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00011}\doxymbox{\hyperlink{classSoundManager_a9102852e83b623b6fbf733bcfe610653}{00011}}\ \doxymbox{\hyperlink{classSoundManager}{SoundManager}}\&\ \doxymbox{\hyperlink{classSoundManager_a9102852e83b623b6fbf733bcfe610653}{SoundManager::GetInstance}}()\{}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{classSoundManager}{SoundManager}}\ instance;}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00025}\doxymbox{\hyperlink{classSoundManager_aadcdbd4ba53b8216fb36da39ee0791c1}{00025}}\ std::shared\_ptr<SoundEffect>\ \doxymbox{\hyperlink{classSoundManager_aadcdbd4ba53b8216fb36da39ee0791c1}{SoundManager::LoadSound}}(\textcolor{keyword}{const}\ std::string\&\ filepath)\{}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//Checks\ if\ the\ sound\ is\ cached}}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \doxymbox{\hyperlink{classSoundManager_af182f69bba2ed952ebc5f0ce85e3a2c0}{m\_Sounds}}.find(filepath);}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}(it\ !=\ \doxymbox{\hyperlink{classSoundManager_af182f69bba2ed952ebc5f0ce85e3a2c0}{m\_Sounds}}.end())\ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{auto}\ sound\ =\ std::make\_shared<SoundEffect>();}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}(!sound-\/>Load(filepath))\{}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(std::format(\textcolor{stringliteral}{"{}Failed\ to\ load\ sound:\ \{\}"{}},\ filepath));}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//Stores\ the\ loaded\ file\ above\ into\ cache}}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00037}00037\ \ \ \ \ \doxymbox{\hyperlink{classSoundManager_af182f69bba2ed952ebc5f0ce85e3a2c0}{m\_Sounds}}[filepath]\ =\ sound;}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00038}00038\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Sound\ cached:\ \{\}"{}},\ filepath));}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ sound;}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00047}\doxymbox{\hyperlink{classSoundManager_a9a672ed95a515097bcea2f57a8eb3569}{00047}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSoundManager_a9a672ed95a515097bcea2f57a8eb3569}{SoundManager::PlaySound}}(\textcolor{keyword}{const}\ std::string\&\ filepath,\ \textcolor{keywordtype}{int}\ volume)\{}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{auto}\ sound\ =\ \doxymbox{\hyperlink{classSoundManager_aadcdbd4ba53b8216fb36da39ee0791c1}{LoadSound}}(filepath);}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}(sound)\ sound-\/>Play(volume);}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00057}\doxymbox{\hyperlink{classSoundManager_aa738faac1e2df8c2cc7dfc72c3fc7e99}{00057}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classSoundManager_aa738faac1e2df8c2cc7dfc72c3fc7e99}{SoundManager::Clear}}()\{}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00058}00058\ \ \ \ \ \doxymbox{\hyperlink{classSoundManager_af182f69bba2ed952ebc5f0ce85e3a2c0}{m\_Sounds}}.clear();}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00059}00059\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}SoundManager\ cleared."{}});}
+\DoxyCodeLine{\Hypertarget{SoundManager_8cpp_source_l00060}00060\ \}}
+
+\end{DoxyCode}

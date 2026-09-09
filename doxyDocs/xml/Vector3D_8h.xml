@@ -1,0 +1,420 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Vector3D_8h" kind="file" language="C++">
+    <compoundname>Vector3D.h</compoundname>
+    <includedby refid="Patrol_8h" local="yes">engine/components/Patrol.h</includedby>
+    <includedby refid="PhysicsBody_8h" local="yes">engine/components/PhysicsBody.h</includedby>
+    <includedby refid="components_2Transform_8h" local="yes">engine/components/Transform.h</includedby>
+    <includedby refid="CameraController_8h" local="yes">engine/core/CameraController.h</includedby>
+    <includedby refid="PlayerController_8h" local="yes">engine/core/PlayerController.h</includedby>
+    <includedby refid="EnemyEvents_8h" local="yes">engine/events/EnemyEvents.h</includedby>
+    <includedby refid="PlayerEvents_8h" local="yes">engine/events/PlayerEvents.h</includedby>
+    <includedby refid="Shader_8h" local="yes">engine/graphics/Shader.h</includedby>
+    <includedby refid="Matrix4_8h" local="yes">engine/math/Matrix4.h</includedby>
+    <includedby refid="math_2Transform_8h" local="yes">engine/math/Transform.h</includedby>
+    <includedby refid="Camera2D_8h" local="yes">engine/scene/Camera2D.h</includedby>
+    <includedby refid="ECSScene_8h" local="yes">engine/scene/ECSScene.h</includedby>
+    <includedby refid="GameWorld_8h" local="yes">engine/scene/GameWorld.h</includedby>
+    <includedby refid="MenuScene_8h" local="yes">engine/scene/MenuScene.h</includedby>
+    <includedby refid="EnemySystem_8h" local="yes">engine/systems/EnemySystem.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/components/Patrol.h</label>
+        <link refid="Patrol_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>engine/components/PhysicsBody.h</label>
+        <link refid="PhysicsBody_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>engine/components/Transform.h</label>
+        <link refid="components_2Transform_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="13">
+        <label>engine/core/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>engine/core/CameraController.cpp</label>
+        <link refid="CameraController_8cpp"/>
+      </node>
+      <node id="20">
+        <label>engine/core/CameraController.h</label>
+        <link refid="CameraController_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>engine/core/PlayerController.cpp</label>
+        <link refid="PlayerController_8cpp"/>
+      </node>
+      <node id="12">
+        <label>engine/core/PlayerController.h</label>
+        <link refid="PlayerController_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>engine/core/Time.cpp</label>
+        <link refid="Time_8cpp"/>
+      </node>
+      <node id="5">
+        <label>engine/demo/Demo2DFixedScene.cpp</label>
+        <link refid="Demo2DFixedScene_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/demo/Demo2DFixedScene.h</label>
+        <link refid="Demo2DFixedScene_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>engine/demo/Demo2DScene.cpp</label>
+        <link refid="Demo2DScene_8cpp"/>
+      </node>
+      <node id="15">
+        <label>engine/demo/Demo2DScene.h</label>
+        <link refid="Demo2DScene_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>engine/events/EnemyEvents.h</label>
+        <link refid="EnemyEvents_8h"/>
+      </node>
+      <node id="23">
+        <label>engine/events/PlayerEvents.h</label>
+        <link refid="PlayerEvents_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>engine/graphics/GraphicsContext.cpp</label>
+        <link refid="GraphicsContext_8cpp"/>
+      </node>
+      <node id="25">
+        <label>engine/graphics/GraphicsContext.h</label>
+        <link refid="GraphicsContext_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>engine/graphics/Shader.cpp</label>
+        <link refid="Shader_8cpp"/>
+      </node>
+      <node id="24">
+        <label>engine/graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>engine/math/Matrix4.cpp</label>
+        <link refid="Matrix4_8cpp"/>
+      </node>
+      <node id="35">
+        <label>engine/math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>engine/math/Transform.h</label>
+        <link refid="math_2Transform_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>engine/renderer/Renderer.cpp</label>
+        <link refid="Renderer_8cpp"/>
+      </node>
+      <node id="37">
+        <label>engine/renderer/Renderer.h</label>
+        <link refid="Renderer_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>engine/resources/ResourceManager.cpp</label>
+        <link refid="ResourceManager_8cpp"/>
+      </node>
+      <node id="29">
+        <label>engine/resources/ResourceManager.h</label>
+        <link refid="ResourceManager_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>engine/scene/Camera2D.cpp</label>
+        <link refid="Camera2D_8cpp"/>
+      </node>
+      <node id="39">
+        <label>engine/scene/Camera2D.h</label>
+        <link refid="Camera2D_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>engine/scene/ECSScene.cpp</label>
+        <link refid="ECSScene_8cpp"/>
+      </node>
+      <node id="17">
+        <label>engine/scene/ECSScene.h</label>
+        <link refid="ECSScene_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>engine/scene/GameObject.cpp</label>
+        <link refid="GameObject_8cpp"/>
+      </node>
+      <node id="41">
+        <label>engine/scene/GameObject.h</label>
+        <link refid="GameObject_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>engine/scene/GameWorld.cpp</label>
+        <link refid="GameWorld_8cpp"/>
+      </node>
+      <node id="32">
+        <label>engine/scene/GameWorld.h</label>
+        <link refid="GameWorld_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>engine/scene/MenuScene.cpp</label>
+        <link refid="MenuScene_8cpp"/>
+      </node>
+      <node id="34">
+        <label>engine/scene/MenuScene.h</label>
+        <link refid="MenuScene_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>engine/systems/EnemySystem.h</label>
+        <link refid="EnemySystem_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>engine/systems/RenderSystem.h</label>
+        <link refid="RenderSystem_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structVector3D" prot="public">Vector3D</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="structVector3D" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>{</highlight></codeline>
+<codeline lineno="10" refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref>;<sp/></highlight><highlight class="comment">//X<sp/>component</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>;<sp/></highlight><highlight class="comment">//Y<sp/>component</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="structVector3D_1af9728f1eba23b9ee091755346214f391" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structVector3D_1af9728f1eba23b9ee091755346214f391" kindref="member">z</ref>;<sp/></highlight><highlight class="comment">//Z<sp/>component</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>()<sp/>:<sp/><ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref>(0.0f),<sp/><ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>(0.0f),<sp/><ref refid="structVector3D_1af9728f1eba23b9ee091755346214f391" kindref="member">z</ref>(0.0f){}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="structVector3D_1a09ca256cebe94be3abf43cae2ce09abb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D_1a09ca256cebe94be3abf43cae2ce09abb" kindref="member">Vector3D</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>xValue,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yValue,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>zValue)<sp/>:<sp/><ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref>(xValue),<sp/><ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>(yValue),<sp/><ref refid="structVector3D_1af9728f1eba23b9ee091755346214f391" kindref="member">z</ref>(zValue){}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="structVector3D_1ae5153e5e26852627ccea88d399e13c6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref><sp/><ref refid="structVector3D_1ae5153e5e26852627ccea88d399e13c6e" kindref="member">operator+</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>+<sp/>other.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref>,<sp/><ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>+<sp/>other.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>,<sp/><ref refid="structVector3D_1af9728f1eba23b9ee091755346214f391" kindref="member">z</ref><sp/>+<sp/>other.<ref refid="structVector3D_1af9728f1eba23b9ee091755346214f391" kindref="member">z</ref>};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="structVector3D_1a2d77fde2d4f484a639cb4dfd500c3540" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref><sp/><ref refid="structVector3D_1a2d77fde2d4f484a639cb4dfd500c3540" kindref="member">operator-</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>-<sp/>other.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref>,<sp/><ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>-<sp/>other.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>,<sp/><ref refid="structVector3D_1af9728f1eba23b9ee091755346214f391" kindref="member">z</ref><sp/>-<sp/>other.<ref refid="structVector3D_1af9728f1eba23b9ee091755346214f391" kindref="member">z</ref>};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="structVector3D_1a5a1ef0aee8e6c18619cda870c757f91e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref><sp/><ref refid="structVector3D_1a5a1ef0aee8e6c18619cda870c757f91e" kindref="member">operator*</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scalar)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>*<sp/>scalar,<sp/><ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>*<sp/>scalar,<sp/><ref refid="structVector3D_1af9728f1eba23b9ee091755346214f391" kindref="member">z</ref><sp/>*<sp/>scalar};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/math/Vector3D.h"/>
+  </compounddef>
+</doxygen>

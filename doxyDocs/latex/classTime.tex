@@ -1,0 +1,143 @@
+\doxysection{Time Class Reference}
+\hypertarget{classTime}{}\label{classTime}\index{Time@{Time}}
+
+
+Utility class for time management.  
+
+
+
+
+{\ttfamily \+\#include $<$Time.\+h$>$}
+
+
+
+Collaboration diagram for Time:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{classTime__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \doxymbox{\hyperlink{classTime_ad543732facbdbe2aa7298de13cb2a12b}{Delta\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Gets the time elapsed since the last frame. \end{DoxyCompactList}\item 
+static float \doxymbox{\hyperlink{classTime_a78df68c0498044fa62fdeb6b9e9e8b63}{Elapsed\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total time elapsed since application startup. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classTime_a7e9cf31048064a9aedfee885807b1b56}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the time system (should be called once per frame). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static float \doxymbox{\hyperlink{classTime_a2b684243784e6daedfa7ec3ce4b57ea5}{s\+\_\+\+Delta\+Time}} = 0.\+0f
+\item 
+static float \doxymbox{\hyperlink{classTime_a6595aadb1feae1ea8f4058682ee8c27d}{s\+\_\+\+Elapsed\+Time}} = 0.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class for time management. 
+
+Provides static methods to access delta time (time between frames) and total elapsed time.
+
+\begin{DoxyNote}{Note}
+All times are in seconds. 
+\end{DoxyNote}
+
+
+Definition at line \doxymbox{\hyperlink{Time_8h_source_l00011}{11}} of file \doxymbox{\hyperlink{Time_8h_source}{Time.\+h}}.
+
+
+
+\label{classTime_doc-func-members}
+\Hypertarget{classTime_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTime_ad543732facbdbe2aa7298de13cb2a12b}\index{Time@{Time}!DeltaTime@{DeltaTime}}
+\index{DeltaTime@{DeltaTime}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{DeltaTime()}{DeltaTime()}}
+{\footnotesize\ttfamily \label{classTime_ad543732facbdbe2aa7298de13cb2a12b} 
+float Time::\+\+Delta\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the time elapsed since the last frame. 
+
+Returns the delta time for the current frame.
+
+\begin{DoxyReturn}{Returns}
+Delta time in seconds. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Time_8cpp_source_l00029}{29}} of file \doxymbox{\hyperlink{Time_8cpp_source}{Time.\+cpp}}.
+
+\Hypertarget{classTime_a78df68c0498044fa62fdeb6b9e9e8b63}\index{Time@{Time}!ElapsedTime@{ElapsedTime}}
+\index{ElapsedTime@{ElapsedTime}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{ElapsedTime()}{ElapsedTime()}}
+{\footnotesize\ttfamily \label{classTime_a78df68c0498044fa62fdeb6b9e9e8b63} 
+float Time::\+\+Elapsed\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the total time elapsed since application startup. 
+
+Returns the total elapsed time.
+
+\begin{DoxyReturn}{Returns}
+Elapsed time in seconds. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Time_8cpp_source_l00037}{37}} of file \doxymbox{\hyperlink{Time_8cpp_source}{Time.\+cpp}}.
+
+\Hypertarget{classTime_a7e9cf31048064a9aedfee885807b1b56}\index{Time@{Time}!Update@{Update}}
+\index{Update@{Update}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classTime_a7e9cf31048064a9aedfee885807b1b56} 
+void Time::\+\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Updates the time system (should be called once per frame). 
+
+Updates delta time and elapsed time.
+
+This method updates both the delta time and elapsed time using SDL performance counter.
+
+Uses SDL\textquotesingle{}s counters to measure time accurately. Should be called once per frame at the start of the frame. 
+
+Definition at line \doxymbox{\hyperlink{Time_8cpp_source_l00014}{14}} of file \doxymbox{\hyperlink{Time_8cpp_source}{Time.\+cpp}}.
+
+
+
+\label{classTime_doc-variable-members}
+\Hypertarget{classTime_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTime_a2b684243784e6daedfa7ec3ce4b57ea5}\index{Time@{Time}!s\_DeltaTime@{s\_DeltaTime}}
+\index{s\_DeltaTime@{s\_DeltaTime}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{s\_DeltaTime}{s\_DeltaTime}}
+{\footnotesize\ttfamily \label{classTime_a2b684243784e6daedfa7ec3ce4b57ea5} 
+float Time::\+s\+\_\+\+Delta\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Time_8h_source_l00034}{34}} of file \doxymbox{\hyperlink{Time_8h_source}{Time.\+h}}.
+
+\Hypertarget{classTime_a6595aadb1feae1ea8f4058682ee8c27d}\index{Time@{Time}!s\_ElapsedTime@{s\_ElapsedTime}}
+\index{s\_ElapsedTime@{s\_ElapsedTime}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{s\_ElapsedTime}{s\_ElapsedTime}}
+{\footnotesize\ttfamily \label{classTime_a6595aadb1feae1ea8f4058682ee8c27d} 
+float Time::\+s\+\_\+\+Elapsed\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Time_8h_source_l00035}{35}} of file \doxymbox{\hyperlink{Time_8h_source}{Time.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+core/\doxymbox{\hyperlink{Time_8h}{Time.\+h}}\item 
+engine/\+core/\doxymbox{\hyperlink{Time_8cpp}{Time.\+cpp}}\end{DoxyCompactItemize}

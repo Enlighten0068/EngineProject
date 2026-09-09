@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classVertexBuffer" kind="class" language="C++" prot="public">
+    <compoundname>VertexBuffer</compoundname>
+    <includes refid="VertexBuffer_8h" local="no">VertexBuffer.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classVertexBuffer_1abe01f36db0dddcb4b5b0ca10f6793407" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t VertexBuffer::m_RendererID</definition>
+        <argsstring></argsstring>
+        <name>m_RendererID</name>
+        <qualifiedname>VertexBuffer::m_RendererID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/VertexBuffer.h" line="36" column="14" bodyfile="engine/graphics/VertexBuffer.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classVertexBuffer_1a643ef11059827722b264d13fbecf97ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VertexBuffer::VertexBuffer</definition>
+        <argsstring>(const void *vertices, uint32_t size)</argsstring>
+        <name>VertexBuffer</name>
+        <qualifiedname>VertexBuffer::VertexBuffer</qualifiedname>
+        <param>
+          <type>const void *</type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a vertex buffer and uploads data to the GPU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a vertex buffer and uploads vertex data to the GPU.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to vertex data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the vertex data in bytes. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/VertexBuffer.h" line="21" column="5" bodyfile="engine/graphics/VertexBuffer.cpp" bodystart="11" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classVertexBuffer_1a5216726fdd43b2ae8e1439e347717fdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VertexBuffer::~VertexBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>~VertexBuffer</name>
+        <qualifiedname>VertexBuffer::~VertexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/VertexBuffer.h" line="23" column="5" bodyfile="engine/graphics/VertexBuffer.cpp" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classVertexBuffer_1a13019e8580ca3e369fad4166500ad2b9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VertexBuffer::Bind</definition>
+        <argsstring>() const</argsstring>
+        <name>Bind</name>
+        <qualifiedname>VertexBuffer::Bind</qualifiedname>
+        <briefdescription>
+<para>Binds the buffer as the current GL_ARRAY_BUFFER. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Binds the buffer as the active GL_ARRAY_BUFFER. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/VertexBuffer.h" line="28" column="10" bodyfile="engine/graphics/VertexBuffer.cpp" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classVertexBuffer_1abfdb36238d60f2cd7bf63093f914b61f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VertexBuffer::Unbind</definition>
+        <argsstring>() const</argsstring>
+        <name>Unbind</name>
+        <qualifiedname>VertexBuffer::Unbind</qualifiedname>
+        <briefdescription>
+<para>Unbinds the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/VertexBuffer.h" line="33" column="10" bodyfile="engine/graphics/VertexBuffer.cpp" bodystart="37" bodyend="39"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>OpenGL Vertex Buffer Object (VBO) wrapper. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A VBO stores vertex data (positions, texture coordinates, normals, etc.) in GPU memory.</para>
+<para><simplesect kind="note"><para>The buffer is created with GL_STATIC_DRAW usage. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classVertexArray" kindref="compound">VertexArray</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>VertexBuffer</label>
+        <link refid="classVertexBuffer"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/graphics/VertexBuffer.h" line="14" column="1" bodyfile="engine/graphics/VertexBuffer.h" bodystart="14" bodyend="37"/>
+    <listofallmembers>
+      <member refid="classVertexBuffer_1a13019e8580ca3e369fad4166500ad2b9" prot="public" virt="non-virtual"><scope>VertexBuffer</scope><name>Bind</name></member>
+      <member refid="classVertexBuffer_1abe01f36db0dddcb4b5b0ca10f6793407" prot="private" virt="non-virtual"><scope>VertexBuffer</scope><name>m_RendererID</name></member>
+      <member refid="classVertexBuffer_1abfdb36238d60f2cd7bf63093f914b61f" prot="public" virt="non-virtual"><scope>VertexBuffer</scope><name>Unbind</name></member>
+      <member refid="classVertexBuffer_1a643ef11059827722b264d13fbecf97ea" prot="public" virt="non-virtual"><scope>VertexBuffer</scope><name>VertexBuffer</name></member>
+      <member refid="classVertexBuffer_1a5216726fdd43b2ae8e1439e347717fdd" prot="public" virt="non-virtual"><scope>VertexBuffer</scope><name>~VertexBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

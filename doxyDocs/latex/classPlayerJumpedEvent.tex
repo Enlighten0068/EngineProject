@@ -1,0 +1,194 @@
+\doxysection{Player\+Jumped\+Event Class Reference}
+\hypertarget{classPlayerJumpedEvent}{}\label{classPlayerJumpedEvent}\index{PlayerJumpedEvent@{PlayerJumpedEvent}}
+
+
+\doxylink{classEvent}{Event} dispatched when the player jumps.  
+
+
+
+
+{\ttfamily \+\#include $<$Player\+Events.\+h$>$}
+
+
+
+Inheritance diagram for Player\+Jumped\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classPlayerJumpedEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Player\+Jumped\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classPlayerJumpedEvent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classPlayerJumpedEvent_a12a9989f299bffdeef421ec6af93a333}{Player\+Jumped\+Event}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&position, float jump\+Force)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classPlayerJumpedEvent}{Player\+Jumped\+Event}. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \& \doxymbox{\hyperlink{classPlayerJumpedEvent_a0187e7315c5587f82da1340cbc6d8f18}{Get\+Position}} () const
+\item 
+float \doxymbox{\hyperlink{classPlayerJumpedEvent_a353bd271c6351774254b7022b9e64f69}{Get\+Jump\+Force}} () const
+\item 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classPlayerJumpedEvent_aeb76e414cb90a82b356478a33d30447f}{Get\+Event\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classEvent_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classPlayerJumpedEvent_a603d6b6089366b6d33511498fc7fb1e8}{Get\+Static\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{classPlayerJumpedEvent_a2aee8016ddddb0f57de63c958d21d8a7}{m\+\_\+\+Position}}
+\item 
+float \doxymbox{\hyperlink{classPlayerJumpedEvent_a7fe7c1e208d79666f386e1d9d83c94a1}{m\+\_\+\+Jump\+Force}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classEvent_a8ad0c350a8f569dbb05cf845caa4737e}{Handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classEvent}{Event} dispatched when the player jumps. 
+
+Contains the player\textquotesingle{}s position at the time of the jump and the jump force.
+
+\begin{DoxyNote}{Note}
+Dispatched by \doxylink{classPlayerController}{Player\+Controller}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classPlayerController}{Player\+Controller} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+
+
+\label{classPlayerJumpedEvent_doc-constructors}
+\Hypertarget{classPlayerJumpedEvent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPlayerJumpedEvent_a12a9989f299bffdeef421ec6af93a333}\index{PlayerJumpedEvent@{PlayerJumpedEvent}!PlayerJumpedEvent@{PlayerJumpedEvent}}
+\index{PlayerJumpedEvent@{PlayerJumpedEvent}!PlayerJumpedEvent@{PlayerJumpedEvent}}
+\doxysubsubsection{\texorpdfstring{PlayerJumpedEvent()}{PlayerJumpedEvent()}}
+{\footnotesize\ttfamily \label{classPlayerJumpedEvent_a12a9989f299bffdeef421ec6af93a333} 
+Player\+Jumped\+Event::\+\+Player\+Jumped\+Event (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{position}{, }\item[{float}]{jump\+Force}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classPlayerJumpedEvent}{Player\+Jumped\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Player position at jump time. \\
+\hline
+{\em jump\+Force} & The vertical force applied. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00021}{21}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+
+
+\label{classPlayerJumpedEvent_doc-func-members}
+\Hypertarget{classPlayerJumpedEvent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPlayerJumpedEvent_aeb76e414cb90a82b356478a33d30447f}\index{PlayerJumpedEvent@{PlayerJumpedEvent}!GetEventType@{GetEventType}}
+\index{GetEventType@{GetEventType}!PlayerJumpedEvent@{PlayerJumpedEvent}}
+\doxysubsubsection{\texorpdfstring{GetEventType()}{GetEventType()}}
+{\footnotesize\ttfamily \label{classPlayerJumpedEvent_aeb76e414cb90a82b356478a33d30447f} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Player\+Jumped\+Event::\+\+Get\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the event. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type} enum value identifying the event. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classEvent_af14bbd8f69c2778def9462375a0e70f2}{Event}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00028}{28}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+\Hypertarget{classPlayerJumpedEvent_a353bd271c6351774254b7022b9e64f69}\index{PlayerJumpedEvent@{PlayerJumpedEvent}!GetJumpForce@{GetJumpForce}}
+\index{GetJumpForce@{GetJumpForce}!PlayerJumpedEvent@{PlayerJumpedEvent}}
+\doxysubsubsection{\texorpdfstring{GetJumpForce()}{GetJumpForce()}}
+{\footnotesize\ttfamily \label{classPlayerJumpedEvent_a353bd271c6351774254b7022b9e64f69} 
+float Player\+Jumped\+Event::\+\+Get\+Jump\+Force (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00025}{25}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+\Hypertarget{classPlayerJumpedEvent_a0187e7315c5587f82da1340cbc6d8f18}\index{PlayerJumpedEvent@{PlayerJumpedEvent}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!PlayerJumpedEvent@{PlayerJumpedEvent}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{classPlayerJumpedEvent_a0187e7315c5587f82da1340cbc6d8f18} 
+const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \& Player\+Jumped\+Event::\+\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00024}{24}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+\Hypertarget{classPlayerJumpedEvent_a603d6b6089366b6d33511498fc7fb1e8}\index{PlayerJumpedEvent@{PlayerJumpedEvent}!GetStaticType@{GetStaticType}}
+\index{GetStaticType@{GetStaticType}!PlayerJumpedEvent@{PlayerJumpedEvent}}
+\doxysubsubsection{\texorpdfstring{GetStaticType()}{GetStaticType()}}
+{\footnotesize\ttfamily \label{classPlayerJumpedEvent_a603d6b6089366b6d33511498fc7fb1e8} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Player\+Jumped\+Event::\+\+Get\+Static\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00027}{27}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+
+
+\label{classPlayerJumpedEvent_doc-variable-members}
+\Hypertarget{classPlayerJumpedEvent_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPlayerJumpedEvent_a7fe7c1e208d79666f386e1d9d83c94a1}\index{PlayerJumpedEvent@{PlayerJumpedEvent}!m\_JumpForce@{m\_JumpForce}}
+\index{m\_JumpForce@{m\_JumpForce}!PlayerJumpedEvent@{PlayerJumpedEvent}}
+\doxysubsubsection{\texorpdfstring{m\_JumpForce}{m\_JumpForce}}
+{\footnotesize\ttfamily \label{classPlayerJumpedEvent_a7fe7c1e208d79666f386e1d9d83c94a1} 
+float Player\+Jumped\+Event::\+m\+\_\+\+Jump\+Force\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00032}{32}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+\Hypertarget{classPlayerJumpedEvent_a2aee8016ddddb0f57de63c958d21d8a7}\index{PlayerJumpedEvent@{PlayerJumpedEvent}!m\_Position@{m\_Position}}
+\index{m\_Position@{m\_Position}!PlayerJumpedEvent@{PlayerJumpedEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Position}{m\_Position}}
+{\footnotesize\ttfamily \label{classPlayerJumpedEvent_a2aee8016ddddb0f57de63c958d21d8a7} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Player\+Jumped\+Event::\+m\+\_\+\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00031}{31}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+events/\doxymbox{\hyperlink{PlayerEvents_8h}{Player\+Events.\+h}}\end{DoxyCompactItemize}

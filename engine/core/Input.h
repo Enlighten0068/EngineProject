@@ -8,15 +8,14 @@
  * @brief Static input manager for keyboard, mouse, and window state.
  *
  * Provides polling-based input detection with support for detecting
- * ressed, held, and released states. Also tracks mouse position,
+ * pressed, held, and released states. Also tracks mouse position,
  * delta movement, and window size changes.
  *
  * @note All methods are static; no instantiation is required.
  * @note The Update() method should be called once per frame to reset deltas.
  */
-class Input {
+class Input{
 public:
-
     /**
      * @brief Updates the input state (should be called once per frame).
      *
@@ -46,20 +45,18 @@ public:
     //Mouse scroll
     static Vector2D GetScrollDelta();
 
-    //Window
+    //Window state
     static bool WasWindowResized();
-    static int  GetWindowWidth();
-    static int  GetWindowHeight();
-
-
+    static int GetWindowWidth();
+    static int GetWindowHeight();
     static void SetWindowSize(int width, int height);
 
 private:
-    //Keyboard state
+    //Keyboard state arrays
     static bool s_KeyState[SDL_SCANCODE_COUNT];
     static bool s_KeyStatePrevious[SDL_SCANCODE_COUNT];
 
-    //Mouse state and Scroll
+    //Mouse state and scroll
     static Vector2D s_MousePosition;
     static Vector2D s_MouseDelta;
     static bool s_MouseButtonState[5];

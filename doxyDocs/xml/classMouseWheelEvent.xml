@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classMouseWheelEvent" kind="class" language="C++" prot="public">
+    <compoundname>MouseWheelEvent</compoundname>
+    <basecompoundref refid="classEvent" prot="public" virt="non-virtual">Event</basecompoundref>
+    <includes refid="MouseEvent_8h" local="no">MouseEvent.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMouseWheelEvent_1a14570610d7ca40818d1501418f45560c" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D MouseWheelEvent::m_Delta</definition>
+        <argsstring></argsstring>
+        <name>m_Delta</name>
+        <qualifiedname>MouseWheelEvent::m_Delta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="104" column="14" bodyfile="engine/events/MouseEvent.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMouseWheelEvent_1a24649c86c3b950852edb4397319ab4ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MouseWheelEvent::MouseWheelEvent</definition>
+        <argsstring>(const Vector2D &amp;delta)</argsstring>
+        <name>MouseWheelEvent</name>
+        <qualifiedname>MouseWheelEvent::MouseWheelEvent</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector2D" kindref="compound">Vector2D</ref> &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classMouseWheelEvent" kindref="compound">MouseWheelEvent</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scroll delta (x = horizontal, y = vertical). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="96" column="5" bodyfile="engine/events/MouseEvent.h" bodystart="96" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classMouseWheelEvent_1aa352d3c294b1a4b7fd429186608ef00a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D MouseWheelEvent::GetDelta</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDelta</name>
+        <qualifiedname>MouseWheelEvent::GetDelta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="98" column="14" bodyfile="engine/events/MouseEvent.h" bodystart="98" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classMouseWheelEvent_1a9673269c5bc0480fa716c51b35b3047a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>EventType MouseWheelEvent::GetEventType</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetEventType</name>
+        <qualifiedname>MouseWheelEvent::GetEventType</qualifiedname>
+        <reimplements refid="classEvent_1af14bbd8f69c2778def9462375a0e70f2">GetEventType</reimplements>
+        <briefdescription>
+<para>Returns the type of the event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref> enum value identifying the event. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="101" column="15" bodyfile="engine/events/MouseEvent.h" bodystart="101" bodyend="101"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classMouseWheelEvent_1a43a82b6feb18741e3125a9e9113f2ae9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>static EventType MouseWheelEvent::GetStaticType</definition>
+        <argsstring>()</argsstring>
+        <name>GetStaticType</name>
+        <qualifiedname>MouseWheelEvent::GetStaticType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/MouseEvent.h" line="100" column="22" bodyfile="engine/events/MouseEvent.h" bodystart="100" bodyend="100"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classEvent" kindref="compound">Event</ref> representing mouse wheel scroll. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contains the scroll delta. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>MouseWheelEvent</label>
+        <link refid="classMouseWheelEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>MouseWheelEvent</label>
+        <link refid="classMouseWheelEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_Delta</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Vector2D</label>
+        <link refid="structVector2D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/events/MouseEvent.h" line="90" column="1" bodyfile="engine/events/MouseEvent.h" bodystart="90" bodyend="105"/>
+    <listofallmembers>
+      <member refid="classMouseWheelEvent_1aa352d3c294b1a4b7fd429186608ef00a" prot="public" virt="non-virtual"><scope>MouseWheelEvent</scope><name>GetDelta</name></member>
+      <member refid="classMouseWheelEvent_1a9673269c5bc0480fa716c51b35b3047a" prot="public" virt="virtual"><scope>MouseWheelEvent</scope><name>GetEventType</name></member>
+      <member refid="classMouseWheelEvent_1a43a82b6feb18741e3125a9e9113f2ae9" prot="public" virt="non-virtual"><scope>MouseWheelEvent</scope><name>GetStaticType</name></member>
+      <member refid="classEvent_1a8ad0c350a8f569dbb05cf845caa4737e" prot="public" virt="non-virtual"><scope>MouseWheelEvent</scope><name>Handled</name></member>
+      <member refid="classMouseWheelEvent_1a14570610d7ca40818d1501418f45560c" prot="private" virt="non-virtual"><scope>MouseWheelEvent</scope><name>m_Delta</name></member>
+      <member refid="classMouseWheelEvent_1a24649c86c3b950852edb4397319ab4ef" prot="public" virt="non-virtual"><scope>MouseWheelEvent</scope><name>MouseWheelEvent</name></member>
+      <member refid="classEvent_1a105223995bbf1a1e4714d0c77f91cf0b" prot="public" virt="virtual"><scope>MouseWheelEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

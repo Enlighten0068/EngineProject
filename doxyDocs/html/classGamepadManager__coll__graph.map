@@ -1,0 +1,3 @@
+<map id="GamepadManager" name="GamepadManager">
+<area shape="rect" id="Node000001" title="Singleton manager for gamepad input using SDL3 Gamepad API." alt="" coords="5,5,173,547"/>
+</map>

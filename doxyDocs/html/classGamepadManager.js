@@ -1,0 +1,26 @@
+var classGamepadManager =
+[
+    [ "GamepadManager", "classGamepadManager.html#a989db3a6f006163a230a138a028c0dd7", null ],
+    [ "~GamepadManager", "classGamepadManager.html#ac64e78c1c9b6dccd3b979233aaf817e1", null ],
+    [ "GamepadManager", "classGamepadManager.html#a359e8a0c182f344041952b4c4f1bb446", null ],
+    [ "AddGamepad", "classGamepadManager.html#a186c1ce24c83a70e92e8440116a930e2", null ],
+    [ "GetAxis", "classGamepadManager.html#afc5533e2907a7356e1e7a34cbae3f872", null ],
+    [ "GetInstance", "classGamepadManager.html#a7ed1fa9ba985dc62cba0c796992689e8", null ],
+    [ "GetTrigger", "classGamepadManager.html#a66451577d794bf16cf3fdedddaef6523", null ],
+    [ "Initialize", "classGamepadManager.html#a1413ab6313f7d89a6c42e42ac59c587c", null ],
+    [ "IsButtonHeld", "classGamepadManager.html#a49f21e7fc6fc0eb8749ab7b13e62982f", null ],
+    [ "IsButtonPressed", "classGamepadManager.html#ac0353ae7462fed666bd6983491f2979e", null ],
+    [ "IsButtonReleased", "classGamepadManager.html#a853ba537c60f9acb1d5ff90e1980fdd1", null ],
+    [ "IsConnected", "classGamepadManager.html#a3f0b50a62302886b5672ea42fe3f888e", null ],
+    [ "operator=", "classGamepadManager.html#a2930e5f0279ea6ccc589dfcfeb2d4271", null ],
+    [ "ProcessEvent", "classGamepadManager.html#a3d38e8583ad177eef9fecfda4d015826", null ],
+    [ "RemoveGamepad", "classGamepadManager.html#ade0a3192b1570bbc2d5f72b0129dfef2", null ],
+    [ "SetRumble", "classGamepadManager.html#a84e1fc9b83d217de9d5160b065309c14", null ],
+    [ "Shutdown", "classGamepadManager.html#a55ac3f9f4cc6174f3143b176d348f0dc", null ],
+    [ "Update", "classGamepadManager.html#a6de10c692816a54eb47ea13a9b0786fc", null ],
+    [ "UpdateButtonState", "classGamepadManager.html#a3e65cf524ef558d0d9ee62283dbfed6b", null ],
+    [ "m_ButtonPrevious", "classGamepadManager.html#acde2ada37c2d93c15b8f2a834b59385f", null ],
+    [ "m_ButtonState", "classGamepadManager.html#ad86d9929ec0b5ac35c6b32903a5bcb3c", null ],
+    [ "m_Gamepads", "classGamepadManager.html#a68b06a2e5a93cf739c5bdf9851c2d381", null ],
+    [ "MAX_PLAYERS", "classGamepadManager.html#a198e2ef559b545d3d7ee93167ab85117", null ]
+];

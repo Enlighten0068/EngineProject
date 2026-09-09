@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="GamepadManager_8h" kind="file" language="C++">
+    <compoundname>GamepadManager.h</compoundname>
+    <includes local="no">SDL3/SDL.h</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">string</includes>
+    <includedby refid="Application_8h" local="yes">engine/core/Application.h</includedby>
+    <includedby refid="GamepadManager_8cpp" local="yes">engine/core/GamepadManager.cpp</includedby>
+    <includedby refid="PlayerController_8cpp" local="yes">engine/core/PlayerController.cpp</includedby>
+    <includedby refid="MenuScene_8cpp" local="yes">engine/scene/MenuScene.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/core/GamepadManager.h</label>
+        <link refid="GamepadManager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="2">
+        <label>engine/core/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>engine/core/GamepadManager.cpp</label>
+        <link refid="GamepadManager_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/core/GamepadManager.h</label>
+        <link refid="GamepadManager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>engine/core/PlayerController.cpp</label>
+        <link refid="PlayerController_8cpp"/>
+      </node>
+      <node id="4">
+        <label>engine/core/Time.cpp</label>
+        <link refid="Time_8cpp"/>
+      </node>
+      <node id="8">
+        <label>engine/scene/MenuScene.cpp</label>
+        <link refid="MenuScene_8cpp"/>
+      </node>
+      <node id="5">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classGamepadManager" prot="public">GamepadManager</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL3/SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classGamepadManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classGamepadManager_1a989db3a6f006163a230a138a028c0dd7" kindref="member">GamepadManager</ref>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a989db3a6f006163a230a138a028c0dd7" kindref="member">GamepadManager</ref>&amp;<sp/><ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GetInstance</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a1413ab6313f7d89a6c42e42ac59c587c" kindref="member">Initialize</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a55ac3f9f4cc6174f3143b176d348f0dc" kindref="member">Shutdown</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a6de10c692816a54eb47ea13a9b0786fc" kindref="member">Update</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a3f0b50a62302886b5672ea42fe3f888e" kindref="member">IsConnected</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex<sp/>=<sp/>0)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Button<sp/>state<sp/>queries<sp/>(returns<sp/>true/false)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1ac0353ae7462fed666bd6983491f2979e" kindref="member">IsButtonPressed</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/>SDL_GamepadButton<sp/>button)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a49f21e7fc6fc0eb8749ab7b13e62982f" kindref="member">IsButtonHeld</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/>SDL_GamepadButton<sp/>button)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a853ba537c60f9acb1d5ff90e1980fdd1" kindref="member">IsButtonReleased</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/>SDL_GamepadButton<sp/>button)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Axis<sp/>and<sp/>trigger<sp/>queries<sp/>(returns<sp/>-1.0<sp/>to<sp/>1.0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1afc5533e2907a7356e1e7a34cbae3f872" kindref="member">GetAxis</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/>SDL_GamepadAxis<sp/>axis)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a66451577d794bf16cf3fdedddaef6523" kindref="member">GetTrigger</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/>SDL_GamepadAxis<sp/>axis)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a84e1fc9b83d217de9d5160b065309c14" kindref="member">SetRumble</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>lowFrequency,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>highFrequency,<sp/>Uint32<sp/>durationMs);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a3d38e8583ad177eef9fecfda4d015826" kindref="member">ProcessEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Event&amp;<sp/>event);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="76" refid="classGamepadManager_1a989db3a6f006163a230a138a028c0dd7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a989db3a6f006163a230a138a028c0dd7" kindref="member">GamepadManager</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77" refid="classGamepadManager_1ac64e78c1c9b6dccd3b979233aaf817e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1ac64e78c1c9b6dccd3b979233aaf817e1" kindref="member">~GamepadManager</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78" refid="classGamepadManager_1a359e8a0c182f344041952b4c4f1bb446" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a359e8a0c182f344041952b4c4f1bb446" kindref="member">GamepadManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a989db3a6f006163a230a138a028c0dd7" kindref="member">GamepadManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79" refid="classGamepadManager_1a2930e5f0279ea6ccc589dfcfeb2d4271" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a989db3a6f006163a230a138a028c0dd7" kindref="member">GamepadManager</ref>&amp;<sp/><ref refid="classGamepadManager_1a2930e5f0279ea6ccc589dfcfeb2d4271" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a989db3a6f006163a230a138a028c0dd7" kindref="member">GamepadManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;int,<sp/>SDL_Gamepad*&gt;<sp/><ref refid="classGamepadManager_1a68b06a2e5a93cf739c5bdf9851c2d381" kindref="member">m_Gamepads</ref>;<sp/></highlight><highlight class="comment">//Map<sp/>of<sp/>player<sp/>index<sp/>to<sp/>gamepad</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;int,<sp/>Uint64&gt;<sp/><ref refid="classGamepadManager_1ad86d9929ec0b5ac35c6b32903a5bcb3c" kindref="member">m_ButtonState</ref>[4];<sp/></highlight><highlight class="comment">//Current<sp/>button<sp/>state<sp/>per<sp/>player</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classGamepadManager_1acde2ada37c2d93c15b8f2a834b59385f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;int,<sp/>Uint64&gt;<sp/><ref refid="classGamepadManager_1acde2ada37c2d93c15b8f2a834b59385f" kindref="member">m_ButtonPrevious</ref>[4];<sp/></highlight><highlight class="comment">//Previous<sp/>button<sp/>state<sp/>per<sp/>player</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classGamepadManager_1a198e2ef559b545d3d7ee93167ab85117" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a198e2ef559b545d3d7ee93167ab85117" kindref="member">MAX_PLAYERS</ref><sp/>=<sp/>4;<sp/></highlight><highlight class="comment">//Maximum<sp/>number<sp/>of<sp/>supported<sp/>players</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a186c1ce24c83a70e92e8440116a930e2" kindref="member">AddGamepad</ref>(SDL_JoystickID<sp/>deviceID);<sp/></highlight><highlight class="comment">//Add<sp/>a<sp/>gamepad</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1ade0a3192b1570bbc2d5f72b0129dfef2" kindref="member">RemoveGamepad</ref>(SDL_JoystickID<sp/>deviceID);<sp/></highlight><highlight class="comment">//Remove<sp/>a<sp/>gamepad</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classGamepadManager_1a3e65cf524ef558d0d9ee62283dbfed6b" kindref="member">UpdateButtonState</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>playerIndex);<sp/></highlight><highlight class="comment">//Update<sp/>button<sp/>states<sp/>for<sp/>a<sp/>player</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/core/GamepadManager.h"/>
+  </compounddef>
+</doxygen>

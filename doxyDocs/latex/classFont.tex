@@ -1,0 +1,182 @@
+\doxysection{Font Class Reference}
+\hypertarget{classFont}{}\label{classFont}\index{Font@{Font}}
+
+
+Wrapper for a True\+Type font using SDL\+\_\+ttf.  
+
+
+
+
+{\ttfamily \+\#include $<$Font.\+h$>$}
+
+
+
+Collaboration diagram for Font:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classFont__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classFont_a4e6a119206f505522100221c1fafde45}{Font}} ()
+\item 
+\doxymbox{\hyperlink{classFont_a134aaa2f78af0c12d3ce504957169768}{\texorpdfstring{$\sim$}{\string~}\+Font}} ()
+\item 
+bool \doxymbox{\hyperlink{classFont_a4d8b450779ecae61899cfebae34c8f4e}{Load}} (const std::\+string \&filepath, int point\+Size)
+\begin{DoxyCompactList}\small\item\em Loads a True\+Type font from a file. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Surface \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classFont_a75f569c89614b2f1132d7d5bee98db8d}{Render\+Text}} (const std::\+string \&text, const SDL\+\_\+\+Color \&color) const
+\begin{DoxyCompactList}\small\item\em Renders a string to an SDL\+\_\+\+Surface. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classFont_af691b307fad7de811621c465467e98cd}{Is\+Loaded}} () const
+\begin{DoxyCompactList}\small\item\em Checks if a font is loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}{m\+\_\+\+Font}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper for a True\+Type font using SDL\+\_\+ttf. 
+
+This class manages loading a font from a file and rendering text to Open\+GL textures. It supports setting font size and style.
+
+\begin{DoxyNote}{Note}
+The font is loaded from a TTF file and rendered to SDL\+\_\+\+Surface, which can then be converted to an Open\+GL texture. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classTexture2D}{Texture2D} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Font_8h_source_l00018}{18}} of file \doxymbox{\hyperlink{Font_8h_source}{Font.\+h}}.
+
+
+
+\label{classFont_doc-constructors}
+\Hypertarget{classFont_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFont_a4e6a119206f505522100221c1fafde45}\index{Font@{Font}!Font@{Font}}
+\index{Font@{Font}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{Font()}{Font()}}
+{\footnotesize\ttfamily \label{classFont_a4e6a119206f505522100221c1fafde45} 
+Font::\+\+Font (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classFont_a134aaa2f78af0c12d3ce504957169768}\index{Font@{Font}!````~Font@{\texorpdfstring{$\sim$}{\string~}Font}}
+\index{````~Font@{\texorpdfstring{$\sim$}{\string~}Font}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Font()}{\string~Font()}}
+{\footnotesize\ttfamily \label{classFont_a134aaa2f78af0c12d3ce504957169768} 
+Font::\+\texorpdfstring{$\sim$}{\string~}\+Font (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{Font_8cpp_source_l00008}{8}} of file \doxymbox{\hyperlink{Font_8cpp_source}{Font.\+cpp}}.
+
+
+
+\label{classFont_doc-func-members}
+\Hypertarget{classFont_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFont_af691b307fad7de811621c465467e98cd}\index{Font@{Font}!IsLoaded@{IsLoaded}}
+\index{IsLoaded@{IsLoaded}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{IsLoaded()}{IsLoaded()}}
+{\footnotesize\ttfamily \label{classFont_af691b307fad7de811621c465467e98cd} 
+bool Font::\+\+Is\+Loaded (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a font is loaded. 
+
+\begin{DoxyReturn}{Returns}
+true if a font is loaded, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Font_8h_source_l00047}{47}} of file \doxymbox{\hyperlink{Font_8h_source}{Font.\+h}}.
+
+\Hypertarget{classFont_a4d8b450779ecae61899cfebae34c8f4e}\index{Font@{Font}!Load@{Load}}
+\index{Load@{Load}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily \label{classFont_a4d8b450779ecae61899cfebae34c8f4e} 
+bool Font::\+\+Load (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filepath}{, }\item[{int}]{point\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Loads a True\+Type font from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the TTF font file. \\
+\hline
+{\em point\+Size} & \doxylink{classFont}{Font} size in points. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the font was loaded successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Font_8cpp_source_l00021}{21}} of file \doxymbox{\hyperlink{Font_8cpp_source}{Font.\+cpp}}.
+
+\Hypertarget{classFont_a75f569c89614b2f1132d7d5bee98db8d}\index{Font@{Font}!RenderText@{RenderText}}
+\index{RenderText@{RenderText}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{RenderText()}{RenderText()}}
+{\footnotesize\ttfamily \label{classFont_a75f569c89614b2f1132d7d5bee98db8d} 
+SDL\+\_\+\+Surface \texorpdfstring{$\ast$}{*} Font::\+\+Render\+Text (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{text}{, }\item[{const SDL\+\_\+\+Color \&}]{color}{}\end{DoxyParamCaption}) const}
+
+
+
+Renders a string to an SDL\+\_\+\+Surface. 
+
+The surface can be converted to an Open\+GL texture for rendering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The string to render. \\
+\hline
+{\em color} & The color of the text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+Surface\texorpdfstring{$\ast$}{*} containing the rendered text, or nullptr on failure. The caller is responsible for freeing the surface.
+\end{DoxyReturn}
+Uses SDL\+\_\+ttf to render the text with the specified color. The surface is in SDL\+\_\+\+PIXELFORMAT\+\_\+\+ARGB8888 format, which can be converted to an Open\+GL texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The string to render. \\
+\hline
+{\em color} & The color of the text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+Surface\texorpdfstring{$\ast$}{*} containing the rendered text, or nullptr on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Font_8cpp_source_l00043}{43}} of file \doxymbox{\hyperlink{Font_8cpp_source}{Font.\+cpp}}.
+
+
+
+\label{classFont_doc-variable-members}
+\Hypertarget{classFont_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classFont_ac66e145f6d04eaa624e22d1a727d2fd1}\index{Font@{Font}!m\_Font@{m\_Font}}
+\index{m\_Font@{m\_Font}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{m\_Font}{m\_Font}}
+{\footnotesize\ttfamily \label{classFont_ac66e145f6d04eaa624e22d1a727d2fd1} 
+TTF\+\_\+\+Font\texorpdfstring{$\ast$}{*} Font::\+m\+\_\+\+Font = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Font_8h_source_l00050}{50}} of file \doxymbox{\hyperlink{Font_8h_source}{Font.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+graphics/\doxymbox{\hyperlink{Font_8h}{Font.\+h}}\item 
+engine/\+graphics/\doxymbox{\hyperlink{Font_8cpp}{Font.\+cpp}}\end{DoxyCompactItemize}

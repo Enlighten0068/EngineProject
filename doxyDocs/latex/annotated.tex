@@ -1,0 +1,61 @@
+\doxysection{Class List}
+Here are the classes, structs, unions and interfaces with brief descriptions:\begin{DoxyCompactList}
+\item\contentsline{section}{\doxymbox{\hyperlink{classApplication}{Application}} \\*Main application class that orchestrates the entire game engine }{\pageref{classApplication}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classCamera2D}{Camera2D}} \\*2D camera with orthographic projection, position, rotation, and zoom }{\pageref{classCamera2D}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classCameraController}{Camera\+Controller}} \\*Controls a 2D camera with follow and zoom capabilities }{\pageref{classCameraController}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classDemo2DFixedScene}{Demo2\+DFixed\+Scene}} \\*Demo 2D \doxylink{classScene}{Scene} with a fixed camera and enemy stomping mechanics }{\pageref{classDemo2DFixedScene}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classDemo2DScene}{Demo2\+DScene}} \\*Demo 2D \doxylink{classScene}{Scene} with a dynamic camera that follows the player }{\pageref{classDemo2DScene}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classECSScene}{ECSScene}} \\*\doxylink{classScene}{Scene} class that manages an ECS registry with sprite entities }{\pageref{classECSScene}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{structComponents_1_1Enemy}{Components::\+\+Enemy}} \\*Marks an entity as an enemy }{\pageref{structComponents_1_1Enemy}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{structDemo2DFixedScene_1_1EnemyDefinition}{Demo2\+DFixed\+Scene::\+\+Enemy\+Definition}} \\*Definition of an enemy for spawning and respawning }{\pageref{structDemo2DFixedScene_1_1EnemyDefinition}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classEnemyDiedEvent}{Enemy\+Died\+Event}} \\*\doxylink{classEvent}{Event} dispatched when an enemy dies }{\pageref{classEnemyDiedEvent}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classEnemySystem}{Enemy\+System}} \\*System that updates enemy entities with patrol, physics, and collision }{\pageref{classEnemySystem}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classEngine}{Engine}} \\*Core engine class responsible for window creation and SDL lifecycle }{\pageref{classEngine}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classEvent}{Event}} \\*Base class for all events in the engine }{\pageref{classEvent}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classEventBus}{Event\+Bus}} \\*Singleton event bus for global event dispatching }{\pageref{classEventBus}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classEventDispatcher}{Event\+Dispatcher}} \\*Utility class for dispatching events to specific handlers }{\pageref{classEventDispatcher}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classFont}{Font}} \\*Wrapper for a True\+Type font using SDL\+\_\+ttf }{\pageref{classFont}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classFpsCounter}{Fps\+Counter}} \\*Utility class for measuring and logging frames per second }{\pageref{classFpsCounter}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classGameObject}{Game\+Object}} \\*Legacy \doxylink{classGameObject}{Game\+Object} class (not currently used) }{\pageref{classGameObject}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classGamepadManager}{Gamepad\+Manager}} \\*Singleton manager for gamepad input using SDL3 Gamepad API }{\pageref{classGamepadManager}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classGameWorld}{Game\+World}} \\*Defines the boundaries of the game world and provides clamping }{\pageref{classGameWorld}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classGraphicsContext}{Graphics\+Context}} \\*Centralized manager for Open\+GL graphics resources }{\pageref{classGraphicsContext}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \\*Open\+GL Index Buffer Object (EBO/\+\+IBO) wrapper }{\pageref{classIndexBuffer}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classInput}{Input}} \\*Static input manager for keyboard, mouse, and window state }{\pageref{classInput}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classKeyEvent}{Key\+Event}} \\*\doxylink{classEvent}{Event} representing a keyboard key press/\+release }{\pageref{classKeyEvent}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classLog}{Log}} \\*Centralized logging system with file output and throttling }{\pageref{classLog}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classMatrix4}{Matrix4}} \\*4x4 matrix class for 3D transformations and projections }{\pageref{classMatrix4}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{structMenuScene_1_1MenuOption}{Menu\+Scene::\+\+Menu\+Option}} \\*Menu option data }{\pageref{structMenuScene_1_1MenuOption}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classMenuScene}{Menu\+Scene}} \\*Main menu scene with visual text rendering }{\pageref{classMenuScene}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classMouseButtonEvent}{Mouse\+Button\+Event}} \\*\doxylink{classEvent}{Event} representing a mouse button press/\+release }{\pageref{classMouseButtonEvent}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classMouseMotionEvent}{Mouse\+Motion\+Event}} \\*\doxylink{classEvent}{Event} representing mouse movement }{\pageref{classMouseMotionEvent}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classMouseWheelEvent}{Mouse\+Wheel\+Event}} \\*\doxylink{classEvent}{Event} representing mouse wheel scroll }{\pageref{classMouseWheelEvent}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{structComponents_1_1Patrol}{Components::\+\+Patrol}} \\*Defines patrol behavior for an entity }{\pageref{structComponents_1_1Patrol}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{structComponents_1_1PhysicsBody}{Components::\+\+Physics\+Body}} \\*Adds physics properties to an entity }{\pageref{structComponents_1_1PhysicsBody}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classPlayerController}{Player\+Controller}} \\*Controller for the player entity, handling movement, jumping, and physics }{\pageref{classPlayerController}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classPlayerDiedEvent}{Player\+Died\+Event}} \\*\doxylink{classEvent}{Event} dispatched when the player dies }{\pageref{classPlayerDiedEvent}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classPlayerJumpedEvent}{Player\+Jumped\+Event}} \\*\doxylink{classEvent}{Event} dispatched when the player jumps }{\pageref{classPlayerJumpedEvent}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classPlayerLandedEvent}{Player\+Landed\+Event}} \\*\doxylink{classEvent}{Event} dispatched when the player lands on a surface }{\pageref{classPlayerLandedEvent}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classRenderer}{Renderer}} \\*Static rendering API for drawing 2D geometry }{\pageref{classRenderer}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classRenderSystem}{Render\+System}} \\*System that renders all entities with \doxylink{structTransform}{Transform} and Sprite\+Renderer components }{\pageref{classRenderSystem}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classResourceManager}{Resource\+Manager}} \\*Singleton resource manager for loading and caching assets }{\pageref{classResourceManager}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classScene}{Scene}} \\*Abstract base class for all scenes in the engine }{\pageref{classScene}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}} \\*Manages a stack of scenes }{\pageref{classSceneManager}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classSDLEventTranslator}{SDLEvent\+Translator}} \\*Translates SDL events into engine events and dispatches them via \doxylink{classEventBus}{Event\+Bus} }{\pageref{classSDLEventTranslator}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classSDLWindow}{SDLWindow}} \\*Wrapper for an SDL3 window with Open\+GL context }{\pageref{classSDLWindow}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classShader}{Shader}} \\*Open\+GL shader program wrapper }{\pageref{classShader}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classSoundEffect}{Sound\+Effect}} \\*Handles a sound effect that is loaded from a .wav file }{\pageref{classSoundEffect}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classSoundManager}{Sound\+Manager}} \\*Manager for loading, caching, and playing sound effects }{\pageref{classSoundManager}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{structComponents_1_1SpriteRenderer}{Components::\+\+Sprite\+Renderer}} \\*Associates a texture with an entity for 2D rendering }{\pageref{structComponents_1_1SpriteRenderer}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classTexture2D}{Texture2D}} \\*2D texture wrapper for Open\+GL textures }{\pageref{classTexture2D}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{structComponents_1_1TileScale}{Components::\+\+Tile\+Scale}} \\*Component that controls texture tiling (repetition) for an entity }{\pageref{structComponents_1_1TileScale}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classTime}{Time}} \\*Utility class for time management }{\pageref{classTime}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::\+\+Transform}} \\*Defines the position, rotation, and scale of an entity }{\pageref{structComponents_1_1Transform}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{structTransform}{Transform}} \\*Represents a 3D transformation: position, rotation, and scale }{\pageref{structTransform}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{structVector2D}{Vector2D}} \\*2D vector struct with basic arithmetic operations }{\pageref{structVector2D}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{structVector3D}{Vector3D}} \\*3D vector struct with basic arithmetic operations }{\pageref{structVector3D}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \\*Open\+GL Vertex Array Object (VAO) wrapper }{\pageref{classVertexArray}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classVertexBuffer}{Vertex\+Buffer}} \\*Open\+GL Vertex Buffer Object (VBO) wrapper }{\pageref{classVertexBuffer}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classWindowCloseEvent}{Window\+Close\+Event}} \\*\doxylink{classEvent}{Event} dispatched when the window close button is clicked or a SDL\+\_\+\+EVENT\+\_\+\+QUIT is received }{\pageref{classWindowCloseEvent}}{}
+\item\contentsline{section}{\doxymbox{\hyperlink{classWindowResizeEvent}{Window\+Resize\+Event}} \\*\doxylink{classEvent}{Event} dispatched when the window is resized }{\pageref{classWindowResizeEvent}}{}
+\end{DoxyCompactList}

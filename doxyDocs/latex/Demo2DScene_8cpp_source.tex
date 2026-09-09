@@ -1,0 +1,224 @@
+\doxysection{Demo2\+DScene.\+cpp}
+\hypertarget{Demo2DScene_8cpp_source}{}\label{Demo2DScene_8cpp_source}\index{engine/demo/Demo2DScene.cpp@{engine/demo/Demo2DScene.cpp}}
+\doxymbox{\hyperlink{Demo2DScene_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Input_8h}{core/Input.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Demo2DScene_8h}{demo/Demo2DScene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{ResourceManager_8h}{resources/ResourceManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00008}\doxymbox{\hyperlink{classDemo2DScene_add40385f9fe2a12d44b8a02336a8ea2a}{00008}}\ \doxymbox{\hyperlink{classDemo2DScene_add40385f9fe2a12d44b8a02336a8ea2a}{Demo2DScene::Demo2DScene}}(\doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ va,\ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ ib)}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00009}00009\ :\ \doxymbox{\hyperlink{classDemo2DScene_ac0fb2242739ad3f82ed75d227e9345a8}{m\_Shader}}(shader),\ \doxymbox{\hyperlink{classDemo2DScene_a1df48e8d11e82a73fe80fbeaf8baa865}{m\_VertexArray}}(va),\ \doxymbox{\hyperlink{classDemo2DScene_a21e4a1ff58a2078dca4e3960cd711ee1}{m\_IndexBuffer}}(ib)\{\}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00011}\doxymbox{\hyperlink{classDemo2DScene_a7cd67f927980cb296ba9b3148fad4ef2}{00011}}\ \doxymbox{\hyperlink{classDemo2DScene_a7cd67f927980cb296ba9b3148fad4ef2}{Demo2DScene::\string~Demo2DScene}}()\{\ \doxymbox{\hyperlink{classDemo2DScene_afce546436c8328555a6c548dcb3a9d90}{OnExit}}();\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00019}\doxymbox{\hyperlink{classDemo2DScene_a8ffa82c6772da7121ff4d812d9d1c1e5}{00019}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_a8ffa82c6772da7121ff4d812d9d1c1e5}{Demo2DScene::OnEnter}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00020}00020\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Entering\ Demo2DScene"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00021}00021\ \ \ \ \ glClearColor(0.3f,\ 0.5f,\ 0.7f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00022}00022\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_af7cdfcef2f6bede3ffe930dba96f4812}{SetupScene}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00023}00023\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Entered\ Demo\ successfully."{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00031}\doxymbox{\hyperlink{classDemo2DScene_afce546436c8328555a6c548dcb3a9d90}{00031}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_afce546436c8328555a6c548dcb3a9d90}{Demo2DScene::OnExit}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00032}00032\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}}.reset();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00033}00033\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}{m\_CameraController}}.reset();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00034}00034\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_aeb9849fda70cb52780bc4db9eae68a24}{m\_FpsCounter}}.reset();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00035}00035\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_aef6643910216af035868027d99a24b82}{m\_Camera}}.reset();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00036}00036\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}.reset();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00037}00037\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}.reset();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00038}00038\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Exiting\ Demo2DScene"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00047}\doxymbox{\hyperlink{classDemo2DScene_af7cdfcef2f6bede3ffe930dba96f4812}{00047}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_af7cdfcef2f6bede3ffe930dba96f4812}{Demo2DScene::SetupScene}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//Create\ ECS\ scene\ and\ world}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00049}00049\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}\ =\ std::make\_unique<ECSScene>(\doxymbox{\hyperlink{classDemo2DScene_ac0fb2242739ad3f82ed75d227e9345a8}{m\_Shader}},\ \doxymbox{\hyperlink{classDemo2DScene_a1df48e8d11e82a73fe80fbeaf8baa865}{m\_VertexArray}},\ \doxymbox{\hyperlink{classDemo2DScene_a21e4a1ff58a2078dca4e3960cd711ee1}{m\_IndexBuffer}});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00050}00050\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}\ =\ std::make\_unique<GameWorld>(-\/20.0f,\ 20.0f,\ -\/10.0f,\ 10.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//Create\ camera\ with\ aspect\ ratio}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{int}\ winWidth\ =\ \doxymbox{\hyperlink{classInput_a6fa97576489b0946ce0bcc88e8cbb46a}{Input::GetWindowWidth}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{int}\ winHeight\ =\ \doxymbox{\hyperlink{classInput_a73ac35d323c9c62b29a0fdb7cd10c84f}{Input::GetWindowHeight}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{float}\ aspect\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(winWidth)\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(winHeight);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{float}\ height\ =\ 5.0f;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{float}\ width\ =\ height\ *\ aspect;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00058}00058\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_aef6643910216af035868027d99a24b82}{m\_Camera}}\ =\ std::make\_unique<Camera2D>(-\/width,\ width,\ -\/height,\ height);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00059}00059\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_aef6643910216af035868027d99a24b82}{m\_Camera}}-\/>SetPosition(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ 0.0f,\ 0.0f));}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//Load\ textures}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{auto}\ playerTex\ =\ \doxymbox{\hyperlink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{ResourceManager::GetInstance}}().\doxymbox{\hyperlink{classResourceManager_ab4f1fc4151670863ad470b5e138dfd1b}{LoadTexture}}(\textcolor{stringliteral}{"{}assets/textures/test.png"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{auto}\ tileTex\ =\ \doxymbox{\hyperlink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{ResourceManager::GetInstance}}().\doxymbox{\hyperlink{classResourceManager_ab4f1fc4151670863ad470b5e138dfd1b}{LoadTexture}}(\textcolor{stringliteral}{"{}assets/textures/tile.png"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{if}(!playerTex\ ||\ !tileTex)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(\textcolor{stringliteral}{"{}Failed\ to\ load\ one\ or\ more\ textures."{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{auto}\ wallTex\ =\ tileTex;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//Create\ player\ entity}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00071}00071\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_a1a61e61b8e799326f91368f32f765f2a}{m\_PlayerEntity}}\ =\ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ 0.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(5.0f,\ 5.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{comment}{//Create\ platform\ entities}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//Left\ Wall}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{auto}\ left\_wall\ =\ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(\doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMinX()\ +\ 0.25f,\ 0.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}(1.0f,\ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMaxY()\ -\/\ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMinY(),\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wallTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00080}00080\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}{m\_PlatformEntities}}.push\_back(left\_wall);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//Right\ Wall}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{auto}\ rgt\_wall\ =\ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(\doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMaxX()\ -\/\ 0.25f,\ 0.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}(1.0f,\ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMaxY()\ -\/\ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMinY(),\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wallTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00086}00086\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}{m\_PlatformEntities}}.push\_back(rgt\_wall);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//Ceiling}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{auto}\ ceiling\ =\ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMaxY()\ -\/\ 0.25f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}(\doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMaxX()\ -\/\ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMinX(),\ 1.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wallTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00092}00092\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}{m\_PlatformEntities}}.push\_back(ceiling);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//Floor}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keyword}{auto}\ plt\_floor\ =\ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMinY()\ +\ 0.25f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}(\doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMaxX()\ -\/\ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMinX(),\ 1.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tileTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00098}00098\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}{m\_PlatformEntities}}.push\_back(plt\_floor);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{comment}{//Floating\ platform\ 1}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keyword}{auto}\ plt\_float1\ =\ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(-\/8.0f,\ -\/3.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(4.0f,\ 1.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tileTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00104}00104\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}{m\_PlatformEntities}}.push\_back(plt\_float1);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{comment}{//Floating\ platform\ 2}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keyword}{auto}\ plt\_float2\ =\ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(8.0f,\ -\/3.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(4.0f,\ 1.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tileTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00110}00110\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}{m\_PlatformEntities}}.push\_back(plt\_float2);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{comment}{//Central\ platform}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keyword}{auto}\ plt\_floatcenter\ =\ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ 2.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(6.0f,\ 1.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tileTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00116}00116\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}{m\_PlatformEntities}}.push\_back(plt\_floatcenter);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{comment}{//Initialize\ player\ controller}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00119}00119\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}}\ =\ std::make\_unique<PlayerController>(\doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>GetRegistry(),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_a1a61e61b8e799326f91368f32f765f2a}{m\_PlayerEntity}},\ *\doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00121}00121\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}}-\/>SetSpeed(4.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{comment}{//Initialize\ camera\ controller\ with\ follow\ mode}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00124}00124\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}{m\_CameraController}}\ =\ std::make\_unique<CameraController>(*\doxymbox{\hyperlink{classDemo2DScene_aef6643910216af035868027d99a24b82}{m\_Camera}},\ *\doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00125}00125\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}{m\_CameraController}}-\/>SetFollowEntity(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00126}00126\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}{m\_CameraController}}-\/>SetMinZoom(0.2f);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00127}00127\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}{m\_CameraController}}-\/>SetMaxZoom(1.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00128}00128\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}{m\_CameraController}}-\/>SetZoomSpeed(1.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{comment}{//Initialize\ FPS\ counter}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00131}00131\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_aeb9849fda70cb52780bc4db9eae68a24}{m\_FpsCounter}}\ =\ std::make\_unique<FpsCounter>();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00132}00132\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00138}\doxymbox{\hyperlink{classDemo2DScene_a960e0d534e6e05bda39f3d9eaaf30deb}{00138}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_a960e0d534e6e05bda39f3d9eaaf30deb}{Demo2DScene::Update}}(\textcolor{keywordtype}{float}\ deltaTime)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00139}00139\ \ \ \ \ \doxymbox{\hyperlink{classLog_a112833cbd05320dac0790f50eb4ab25e}{Log::InfoThrottled}}(\textcolor{stringliteral}{"{}Update\ running..."{}},\ \textcolor{stringliteral}{"{}update\_diagnostic"{}},\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{comment}{//Update\ player}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00142}00142\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}}-\/>Update();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00143}00143\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_aac72f489fe5514f29e315acfd7851a06}{ResolveCollisions}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{comment}{//Update\ camera\ to\ follow\ player}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>GetRegistry().get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(\doxymbox{\hyperlink{classDemo2DScene_a1a61e61b8e799326f91368f32f765f2a}{m\_PlayerEntity}});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00147}00147\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}{m\_CameraController}}-\/>SetTargetPosition(transform.Position);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00148}00148\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}{m\_CameraController}}-\/>Update(deltaTime);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//Update\ FPS\ counter}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00151}00151\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_aeb9849fda70cb52780bc4db9eae68a24}{m\_FpsCounter}}-\/>Update();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00153}00153\ \ \ \ \ \textcolor{comment}{//Log\ player\ position\ for\ debugging}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00154}00154\ \ \ \ \ \doxymbox{\hyperlink{classLog_a112833cbd05320dac0790f50eb4ab25e}{Log::InfoThrottled}}(std::format(\textcolor{stringliteral}{"{}Player:\ (\{:.2f\},\ \{:.2f\})"{}},\ transform.Position.x,\ transform.Position.y),}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}player\_pos"{}},\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00156}00156\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00163}\doxymbox{\hyperlink{classDemo2DScene_aa04f40209bc6b113df30f9dcf03bd80c}{00163}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_aa04f40209bc6b113df30f9dcf03bd80c}{Demo2DScene::Render}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ view\ =\ \doxymbox{\hyperlink{classDemo2DScene_aef6643910216af035868027d99a24b82}{m\_Camera}}-\/>GetViewMatrix();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00165}00165\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ projection\ =\ \doxymbox{\hyperlink{classDemo2DScene_aef6643910216af035868027d99a24b82}{m\_Camera}}-\/>GetProjectionMatrix();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00167}00167\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>Render(view,\ projection);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00168}00168\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00176}\doxymbox{\hyperlink{classDemo2DScene_aac72f489fe5514f29e315acfd7851a06}{00176}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DScene_aac72f489fe5514f29e315acfd7851a06}{Demo2DScene::ResolveCollisions}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00177}00177\ \ \ \ \ \textcolor{keyword}{auto}\&\ registry\ =\ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\_ECSScene}}-\/>GetRegistry();}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keyword}{auto}\&\ playerTransform\ =\ registry.get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(\doxymbox{\hyperlink{classDemo2DScene_a1a61e61b8e799326f91368f32f765f2a}{m\_PlayerEntity}});}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00179}00179\ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ playerHalfSize\ =\ playerTransform.Scale\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordtype}{bool}\ grounded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00182}00182\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ GROUND\_MARGIN\ =\ 0.1f;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordtype}{float}\ playerLeft\ =\ playerTransform.Position.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ -\/\ playerHalfSize.x;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00185}00185\ \ \ \ \ \textcolor{keywordtype}{float}\ playerRight\ =\ playerTransform.Position.x\ +\ playerHalfSize.x;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00186}00186\ \ \ \ \ \textcolor{keywordtype}{float}\ playerBottom\ =\ playerTransform.Position.y\ -\/\ playerHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00187}00187\ \ \ \ \ \textcolor{keywordtype}{float}\ playerTop\ =\ playerTransform.Position.y\ +\ playerHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00189}00189\ \ \ \ \ \textcolor{keywordflow}{for}(entt::entity\ platform\ :\ \doxymbox{\hyperlink{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}{m\_PlatformEntities}})\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ platformTransform\ =\ registry.get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(platform);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ platformHalfSize\ =\ platformTransform.Scale\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformLeft\ =\ platformTransform.Position.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ -\/\ platformHalfSize.x;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformRight\ =\ platformTransform.Position.x\ +\ platformHalfSize.x;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformTop\ =\ platformTransform.Position.y\ +\ platformHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformBottom\ =\ platformTransform.Position.y\ -\/\ platformHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ overlapX\ =\ (playerRight\ >\ platformLeft\ \&\&\ playerLeft\ <\ platformRight);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ overlapY\ =\ (playerTop\ >\ platformBottom\ \&\&\ playerBottom\ <\ platformTop);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Check\ if\ player\ is\ landing\ on\ top\ of\ platform}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(overlapX)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanceToTop\ =\ playerBottom\ -\/\ platformTop;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(distanceToTop\ <=\ GROUND\_MARGIN\ \&\&\ distanceToTop\ >=\ -\/GROUND\_MARGIN)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}}-\/>GetVelocity().y\ <=\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grounded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerTransform.Position.y\ =\ platformTop\ +\ playerHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}}-\/>GetVelocity().y\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{comment}{//General\ collision\ resolution}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!grounded\ \&\&\ overlapX\ \&\&\ overlapY)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ delta\ =\ playerTransform.Position\ -\/\ platformTransform.Position;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ overlap\ =\ playerHalfSize\ +\ platformHalfSize\ -\/\ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(std::abs(delta.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}),\ std::abs(delta.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}),\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(overlap.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ >\ 0.0f\ \&\&\ overlap.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ >\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(overlap.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ <\ overlap.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}})\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Horizontal\ collision}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(delta.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ >\ 0.0f)\ playerTransform.Position.x\ +=\ overlap.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ playerTransform.Position.x\ -\/=\ overlap.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Vertical\ collision}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(delta.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ <\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerTransform.Position.y\ -\/=\ overlap.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}}-\/>GetVelocity().y\ >\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}}-\/>GetVelocity().y\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00235}00235\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00237}00237\ \ \ \ \ \textcolor{comment}{//Clamp\ to\ world\ floor}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00238}00238\ \ \ \ \ \textcolor{keywordflow}{if}(!grounded)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ worldFloor\ =\ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\_World}}-\/>GetMinY()\ +\ playerHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(playerTransform.Position.y\ <=\ worldFloor\ +\ GROUND\_MARGIN)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ playerTransform.Position.y\ =\ worldFloor;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}}-\/>GetVelocity().y\ <=\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}}-\/>GetVelocity().y\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ grounded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00247}00247\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00249}00249\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\_PlayerController}}-\/>SetGrounded(grounded);}
+\DoxyCodeLine{\Hypertarget{Demo2DScene_8cpp_source_l00250}00250\ \}}
+
+\end{DoxyCode}

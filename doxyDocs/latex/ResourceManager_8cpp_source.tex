@@ -1,0 +1,64 @@
+\doxysection{Resource\+Manager.\+cpp}
+\hypertarget{ResourceManager_8cpp_source}{}\label{ResourceManager_8cpp_source}\index{engine/resources/ResourceManager.cpp@{engine/resources/ResourceManager.cpp}}
+\doxymbox{\hyperlink{ResourceManager_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{ResourceManager_8h}{resources/ResourceManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00013}\doxymbox{\hyperlink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{00013}}\ \doxymbox{\hyperlink{classResourceManager_a2d9db4c26c604834c60702ded80947d8}{ResourceManager}}\&\ \doxymbox{\hyperlink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{ResourceManager::GetInstance}}()\{}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{classResourceManager_a2d9db4c26c604834c60702ded80947d8}{ResourceManager}}\ instance;}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00028}\doxymbox{\hyperlink{classResourceManager_ab4f1fc4151670863ad470b5e138dfd1b}{00028}}\ std::shared\_ptr<Texture2D>\ \doxymbox{\hyperlink{classResourceManager_ab4f1fc4151670863ad470b5e138dfd1b}{ResourceManager::LoadTexture}}(\textcolor{keyword}{const}\ std::string\&\ filepath)\{}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//Check\ if\ texture\ is\ already\ cached}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \doxymbox{\hyperlink{classResourceManager_a71964307b18876b6c549658b91bb4fb6}{m\_Textures}}.find(filepath);}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}(it\ !=\ \doxymbox{\hyperlink{classResourceManager_a71964307b18876b6c549658b91bb4fb6}{m\_Textures}}.end())\{}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Texture\ already\ loaded:\ \{\}"{}},\ filepath));}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//Load\ texture\ from\ disk}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{auto}\ texture\ =\ std::make\_shared<Texture2D>();}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}(!texture-\/>Load(filepath))\{}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(std::format(\textcolor{stringliteral}{"{}Failed\ to\ load\ texture:\ \{\}"{}},\ filepath));}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//Add\ texture\ to\ cache}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00044}00044\ \ \ \ \ \doxymbox{\hyperlink{classResourceManager_a71964307b18876b6c549658b91bb4fb6}{m\_Textures}}[filepath]\ =\ texture;}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00045}00045\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Texture\ loaded\ and\ cached:\ \{\}"{}},\ filepath));}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{return}\ texture;}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00061}\doxymbox{\hyperlink{classResourceManager_a04610bfda86d5a2b7e4d574929eeb478}{00061}}\ std::shared\_ptr<Shader>\ \doxymbox{\hyperlink{classResourceManager_a04610bfda86d5a2b7e4d574929eeb478}{ResourceManager::LoadShader}}(\textcolor{keyword}{const}\ std::string\&\ name,}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ vertexSource,}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ fragmentSource)\{}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//Check\ if\ shader\ is\ already\ cached}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \doxymbox{\hyperlink{classResourceManager_a8688e902916642bf611a35954a539ab9}{m\_Shaders}}.find(name);}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{if}(it\ !=\ \doxymbox{\hyperlink{classResourceManager_a8688e902916642bf611a35954a539ab9}{m\_Shaders}}.end())\{}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Shader\ already\ loaded:\ \{\}"{}},\ name));}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{comment}{//Compile\ shader\ from\ source}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{auto}\ shader\ =\ std::make\_shared<Shader>();}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{if}(!shader-\/>Compile(vertexSource,\ fragmentSource))\{}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(std::format(\textcolor{stringliteral}{"{}Failed\ to\ compile\ shader:\ \{\}"{}},\ name));}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{comment}{//Add\ shader\ to\ cache}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00079}00079\ \ \ \ \ \doxymbox{\hyperlink{classResourceManager_a8688e902916642bf611a35954a539ab9}{m\_Shaders}}[name]\ =\ shader;}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00080}00080\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Shader\ loaded\ and\ cached:\ \{\}"{}},\ name));}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{return}\ shader;}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00082}00082\ \}}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00091}\doxymbox{\hyperlink{classResourceManager_aecd08b92634fad3316442c267a04e8c4}{00091}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classResourceManager_aecd08b92634fad3316442c267a04e8c4}{ResourceManager::Clear}}()\{}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00092}00092\ \ \ \ \ \doxymbox{\hyperlink{classResourceManager_a71964307b18876b6c549658b91bb4fb6}{m\_Textures}}.clear();}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00093}00093\ \ \ \ \ \doxymbox{\hyperlink{classResourceManager_a8688e902916642bf611a35954a539ab9}{m\_Shaders}}.clear();}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00094}00094\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}ResourceManager\ cleared."{}});}
+\DoxyCodeLine{\Hypertarget{ResourceManager_8cpp_source_l00095}00095\ \}}
+
+\end{DoxyCode}

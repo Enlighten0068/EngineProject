@@ -1,0 +1,180 @@
+\doxysection{Sound\+Manager Class Reference}
+\hypertarget{classSoundManager}{}\label{classSoundManager}\index{SoundManager@{SoundManager}}
+
+
+Manager for loading, caching, and playing sound effects.  
+
+
+
+
+{\ttfamily \+\#include $<$Sound\+Manager.\+h$>$}
+
+
+
+Collaboration diagram for Sound\+Manager:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classSoundManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classSoundEffect}{Sound\+Effect}} $>$ \doxymbox{\hyperlink{classSoundManager_aadcdbd4ba53b8216fb36da39ee0791c1}{Load\+Sound}} (const std::\+string \&filepath)
+\begin{DoxyCompactList}\small\item\em Loads a sound effect from file, caching it for future use. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classSoundManager_a9a672ed95a515097bcea2f57a8eb3569}{Play\+Sound}} (const std::\+string \&filepath, int volume=128)
+\begin{DoxyCompactList}\small\item\em Plays a sound effect (loads it if not already cached). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classSoundManager_aa738faac1e2df8c2cc7dfc72c3fc7e99}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears all cached sound effects, releasing their resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{classSoundManager}{Sound\+Manager}} \& \doxymbox{\hyperlink{classSoundManager_a9102852e83b623b6fbf733bcfe610653}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of \doxylink{classSoundManager}{Sound\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+unordered\+\_\+map$<$ std::\+string, std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classSoundEffect}{Sound\+Effect}} $>$ $>$ \doxymbox{\hyperlink{classSoundManager_af182f69bba2ed952ebc5f0ce85e3a2c0}{m\+\_\+\+Sounds}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manager for loading, caching, and playing sound effects. 
+
+Provides a centralized interface for sound management, ensuring that sound files are loaded only once and reused across multiple playback requests. 
+
+Definition at line \doxymbox{\hyperlink{SoundManager_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{SoundManager_8h_source}{Sound\+Manager.\+h}}.
+
+
+
+\label{classSoundManager_doc-func-members}
+\Hypertarget{classSoundManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSoundManager_aa738faac1e2df8c2cc7dfc72c3fc7e99}\index{SoundManager@{SoundManager}!Clear@{Clear}}
+\index{Clear@{Clear}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{classSoundManager_aa738faac1e2df8c2cc7dfc72c3fc7e99} 
+void Sound\+Manager::\+\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears all cached sound effects, releasing their resources. 
+
+Clears all cached sound effects.
+
+Removes all entries from the sound cache, releasing the shared pointers. 
+
+Definition at line \doxymbox{\hyperlink{SoundManager_8cpp_source_l00057}{57}} of file \doxymbox{\hyperlink{SoundManager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{classSoundManager_a9102852e83b623b6fbf733bcfe610653}\index{SoundManager@{SoundManager}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classSoundManager_a9102852e83b623b6fbf733bcfe610653} 
+\doxymbox{\hyperlink{classSoundManager}{Sound\+Manager}} \& Sound\+Manager::\+\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the singleton instance of \doxylink{classSoundManager}{Sound\+Manager}. 
+
+Returns the singleton instance of \doxylink{classSoundManager}{Sound\+Manager}.
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classSoundManager}{Sound\+Manager} instance.
+\end{DoxyReturn}
+The instance is created lazily (on first call) and destroyed automatically when the program exits.
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classSoundManager}{Sound\+Manager} instance. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SoundManager_8cpp_source_l00011}{11}} of file \doxymbox{\hyperlink{SoundManager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{classSoundManager_aadcdbd4ba53b8216fb36da39ee0791c1}\index{SoundManager@{SoundManager}!LoadSound@{LoadSound}}
+\index{LoadSound@{LoadSound}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{LoadSound()}{LoadSound()}}
+{\footnotesize\ttfamily \label{classSoundManager_aadcdbd4ba53b8216fb36da39ee0791c1} 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classSoundEffect}{Sound\+Effect}} $>$ Sound\+Manager::\+\+Load\+Sound (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filepath}{}\end{DoxyParamCaption})}
+
+
+
+Loads a sound effect from file, caching it for future use. 
+
+Loads a sound effect from file, with caching.
+
+If the sound is already loaded, returns the cached instance. Otherwise, loads the file and stores it in the cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the WAV file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shared pointer to the loaded \doxylink{classSoundEffect}{Sound\+Effect}, or nullptr on failure.
+\end{DoxyReturn}
+If the sound is already in the cache, returns the cached shared pointer. Otherwise, creates a new \doxylink{classSoundEffect}{Sound\+Effect} instance, loads the file, and stores it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the WAV file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shared pointer to the loaded \doxylink{classSoundEffect}{Sound\+Effect}, or nullptr on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SoundManager_8cpp_source_l00025}{25}} of file \doxymbox{\hyperlink{SoundManager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+\Hypertarget{classSoundManager_a9a672ed95a515097bcea2f57a8eb3569}\index{SoundManager@{SoundManager}!PlaySound@{PlaySound}}
+\index{PlaySound@{PlaySound}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{PlaySound()}{PlaySound()}}
+{\footnotesize\ttfamily \label{classSoundManager_a9a672ed95a515097bcea2f57a8eb3569} 
+void Sound\+Manager::\+\+Play\+Sound (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filepath}{, }\item[{int}]{volume}{ = {\ttfamily 128}}\end{DoxyParamCaption})}
+
+
+
+Plays a sound effect (loads it if not already cached). 
+
+Plays a sound effect, loading it if not already cached.
+
+Convenience method that combines Load\+Sound and Play.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the WAV file. \\
+\hline
+{\em volume} & Volume level (0-\/128, default 128 = full volume).\\
+\hline
+{\em filepath} & Path to the .wav file. \\
+\hline
+{\em volume} & Volume level (0-\/128, default 128 = full volume). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{SoundManager_8cpp_source_l00047}{47}} of file \doxymbox{\hyperlink{SoundManager_8cpp_source}{Sound\+Manager.\+cpp}}.
+
+
+
+\label{classSoundManager_doc-variable-members}
+\Hypertarget{classSoundManager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSoundManager_af182f69bba2ed952ebc5f0ce85e3a2c0}\index{SoundManager@{SoundManager}!m\_Sounds@{m\_Sounds}}
+\index{m\_Sounds@{m\_Sounds}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{m\_Sounds}{m\_Sounds}}
+{\footnotesize\ttfamily \label{classSoundManager_af182f69bba2ed952ebc5f0ce85e3a2c0} 
+std::\+unordered\+\_\+map$<$std::\+string, std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classSoundEffect}{Sound\+Effect}}$>$ $>$ Sound\+Manager::\+m\+\_\+\+Sounds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{SoundManager_8h_source_l00049}{49}} of file \doxymbox{\hyperlink{SoundManager_8h_source}{Sound\+Manager.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+audio/\doxymbox{\hyperlink{SoundManager_8h}{Sound\+Manager.\+h}}\item 
+engine/\+audio/\doxymbox{\hyperlink{SoundManager_8cpp}{Sound\+Manager.\+cpp}}\end{DoxyCompactItemize}

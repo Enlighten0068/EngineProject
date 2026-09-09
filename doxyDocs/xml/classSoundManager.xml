@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classSoundManager" kind="class" language="C++" prot="public">
+    <compoundname>SoundManager</compoundname>
+    <includes refid="SoundManager_8h" local="no">SoundManager.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSoundManager_1af182f69bba2ed952ebc5f0ce85e3a2c0" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::shared_ptr&lt; <ref refid="classSoundEffect" kindref="compound">SoundEffect</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::shared_ptr&lt;SoundEffect&gt; &gt; SoundManager::m_Sounds</definition>
+        <argsstring></argsstring>
+        <name>m_Sounds</name>
+        <qualifiedname>SoundManager::m_Sounds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundManager.h" line="49" column="24" bodyfile="engine/audio/SoundManager.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classSoundManager_1a9102852e83b623b6fbf733bcfe610653" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classSoundManager" kindref="compound">SoundManager</ref> &amp;</type>
+        <definition>SoundManager &amp; SoundManager::GetInstance</definition>
+        <argsstring>()</argsstring>
+        <name>GetInstance</name>
+        <qualifiedname>SoundManager::GetInstance</qualifiedname>
+        <briefdescription>
+<para>Gets the singleton instance of <ref refid="classSoundManager" kindref="compound">SoundManager</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the singleton instance of <ref refid="classSoundManager" kindref="compound">SoundManager</ref>.</para>
+<para><simplesect kind="return"><para>Reference to the <ref refid="classSoundManager" kindref="compound">SoundManager</ref> instance.</para>
+</simplesect>
+The instance is created lazily (on first call) and destroyed automatically when the program exits.</para>
+<para><simplesect kind="return"><para>Reference to the <ref refid="classSoundManager" kindref="compound">SoundManager</ref> instance. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundManager.h" line="20" column="25" bodyfile="engine/audio/SoundManager.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSoundManager_1aadcdbd4ba53b8216fb36da39ee0791c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classSoundEffect" kindref="compound">SoundEffect</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; SoundEffect &gt; SoundManager::LoadSound</definition>
+        <argsstring>(const std::string &amp;filepath)</argsstring>
+        <name>LoadSound</name>
+        <qualifiedname>SoundManager::LoadSound</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+<para>Loads a sound effect from file, caching it for future use. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads a sound effect from file, with caching.</para>
+<para>If the sound is already loaded, returns the cached instance. Otherwise, loads the file and stores it in the cache.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the WAV file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Shared pointer to the loaded <ref refid="classSoundEffect" kindref="compound">SoundEffect</ref>, or nullptr on failure.</para>
+</simplesect>
+If the sound is already in the cache, returns the cached shared pointer. Otherwise, creates a new <ref refid="classSoundEffect" kindref="compound">SoundEffect</ref> instance, loads the file, and stores it.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the WAV file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Shared pointer to the loaded <ref refid="classSoundEffect" kindref="compound">SoundEffect</ref>, or nullptr on failure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundManager.h" line="31" column="21" bodyfile="engine/audio/SoundManager.cpp" bodystart="25" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classSoundManager_1a9a672ed95a515097bcea2f57a8eb3569" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SoundManager::PlaySound</definition>
+        <argsstring>(const std::string &amp;filepath, int volume=128)</argsstring>
+        <name>PlaySound</name>
+        <qualifiedname>SoundManager::PlaySound</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>volume</declname>
+          <defval>128</defval>
+        </param>
+        <briefdescription>
+<para>Plays a sound effect (loads it if not already cached). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Plays a sound effect, loading it if not already cached.</para>
+<para>Convenience method that combines LoadSound and Play.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the WAV file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Volume level (0-128, default 128 = full volume).</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the .wav file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>volume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Volume level (0-128, default 128 = full volume). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundManager.h" line="41" column="10" bodyfile="engine/audio/SoundManager.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classSoundManager_1aa738faac1e2df8c2cc7dfc72c3fc7e99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SoundManager::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <qualifiedname>SoundManager::Clear</qualifiedname>
+        <briefdescription>
+<para>Clears all cached sound effects, releasing their resources. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Clears all cached sound effects.</para>
+<para>Removes all entries from the sound cache, releasing the shared pointers. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/audio/SoundManager.h" line="46" column="10" bodyfile="engine/audio/SoundManager.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Manager for loading, caching, and playing sound effects. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides a centralized interface for sound management, ensuring that sound files are loaded only once and reused across multiple playback requests. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>SoundManager</label>
+        <link refid="classSoundManager"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/audio/SoundManager.h" line="14" column="1" bodyfile="engine/audio/SoundManager.h" bodystart="14" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classSoundManager_1aa738faac1e2df8c2cc7dfc72c3fc7e99" prot="public" virt="non-virtual"><scope>SoundManager</scope><name>Clear</name></member>
+      <member refid="classSoundManager_1a9102852e83b623b6fbf733bcfe610653" prot="public" virt="non-virtual"><scope>SoundManager</scope><name>GetInstance</name></member>
+      <member refid="classSoundManager_1aadcdbd4ba53b8216fb36da39ee0791c1" prot="public" virt="non-virtual"><scope>SoundManager</scope><name>LoadSound</name></member>
+      <member refid="classSoundManager_1af182f69bba2ed952ebc5f0ce85e3a2c0" prot="private" virt="non-virtual"><scope>SoundManager</scope><name>m_Sounds</name></member>
+      <member refid="classSoundManager_1a9a672ed95a515097bcea2f57a8eb3569" prot="public" virt="non-virtual"><scope>SoundManager</scope><name>PlaySound</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

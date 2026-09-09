@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classGraphicsContext" kind="class" language="C++" prot="public">
+    <compoundname>GraphicsContext</compoundname>
+    <includes refid="GraphicsContext_8h" local="no">GraphicsContext.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classGraphicsContext_1ab662bdd94fa5b2daef1dca119d3423af" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classShader" kindref="compound">Shader</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Shader&gt; GraphicsContext::m_Shader</definition>
+        <argsstring></argsstring>
+        <name>m_Shader</name>
+        <qualifiedname>GraphicsContext::m_Shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="47" column="21" bodyfile="engine/graphics/GraphicsContext.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGraphicsContext_1ac2acd7387eaed15cfdebc3b7f6577a98" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classVertexArray" kindref="compound">VertexArray</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;VertexArray&gt; GraphicsContext::m_VertexArray</definition>
+        <argsstring></argsstring>
+        <name>m_VertexArray</name>
+        <qualifiedname>GraphicsContext::m_VertexArray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="48" column="21" bodyfile="engine/graphics/GraphicsContext.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGraphicsContext_1a8ce73fa81f3c21abdb541ba6f3c95c04" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classVertexBuffer" kindref="compound">VertexBuffer</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;VertexBuffer&gt; GraphicsContext::m_VertexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_VertexBuffer</name>
+        <qualifiedname>GraphicsContext::m_VertexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="49" column="21" bodyfile="engine/graphics/GraphicsContext.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGraphicsContext_1a5e9b71e185b7c14435050f5337b59df2" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;IndexBuffer&gt; GraphicsContext::m_IndexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_IndexBuffer</name>
+        <qualifiedname>GraphicsContext::m_IndexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="50" column="21" bodyfile="engine/graphics/GraphicsContext.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGraphicsContext_1a539dff391f3e386ec987bf179024e0b7" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classShader" kindref="compound">Shader</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Shader&gt; GraphicsContext::m_LineShader</definition>
+        <argsstring></argsstring>
+        <name>m_LineShader</name>
+        <qualifiedname>GraphicsContext::m_LineShader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="51" column="21" bodyfile="engine/graphics/GraphicsContext.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classGraphicsContext_1ad40a8e479ca7f377ea6d4adfed3ba3e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GraphicsContext::GraphicsContext</definition>
+        <argsstring>()</argsstring>
+        <name>GraphicsContext</name>
+        <qualifiedname>GraphicsContext::GraphicsContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="22" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classGraphicsContext_1adf561cc173ce8824f27854c04ee0effc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GraphicsContext::~GraphicsContext</definition>
+        <argsstring>()</argsstring>
+        <name>~GraphicsContext</name>
+        <qualifiedname>GraphicsContext::~GraphicsContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="23" column="5" bodyfile="engine/graphics/GraphicsContext.cpp" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classGraphicsContext_1aadcd5eebbfec1be436549ad4ed909a60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GraphicsContext::Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>GraphicsContext::Initialize</qualifiedname>
+        <briefdescription>
+<para>Initializes all graphics resources. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the graphics context.</para>
+<para>Creates buffers, compiles shaders, and sets up vertex attribute layouts.</para>
+<para><simplesect kind="return"><para>true if initialization succeeded, false otherwise.</para>
+</simplesect>
+Creates the vertex/index buffers, compiles the shaders, and sets up the vertex attribute layout.</para>
+<para><simplesect kind="return"><para>true if all resources were created successfully, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="32" column="10" bodyfile="engine/graphics/GraphicsContext.cpp" bodystart="17" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classGraphicsContext_1ab79b1ec7a5d63666aad24ff086705828" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GraphicsContext::Shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>Shutdown</name>
+        <qualifiedname>GraphicsContext::Shutdown</qualifiedname>
+        <briefdescription>
+<para>Shuts down and releases all graphics resources. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Shuts down the graphics context and releases resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="37" column="10" bodyfile="engine/graphics/GraphicsContext.cpp" bodystart="39" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classGraphicsContext_1ac72c010277ef084de5d680bcd58a223e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader &amp; GraphicsContext::GetShader</definition>
+        <argsstring>()</argsstring>
+        <name>GetShader</name>
+        <qualifiedname>GraphicsContext::GetShader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="40" column="12" bodyfile="engine/graphics/GraphicsContext.h" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classGraphicsContext_1a82dfe9bc5bd032e4a32e1736cf85ccf6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+        <definition>VertexArray &amp; GraphicsContext::GetVertexArray</definition>
+        <argsstring>()</argsstring>
+        <name>GetVertexArray</name>
+        <qualifiedname>GraphicsContext::GetVertexArray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="41" column="17" bodyfile="engine/graphics/GraphicsContext.h" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classGraphicsContext_1ad9ec3d04af96d1a4d805852109bd9e8c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classVertexBuffer" kindref="compound">VertexBuffer</ref> &amp;</type>
+        <definition>VertexBuffer &amp; GraphicsContext::GetVertexBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>GetVertexBuffer</name>
+        <qualifiedname>GraphicsContext::GetVertexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="42" column="18" bodyfile="engine/graphics/GraphicsContext.h" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classGraphicsContext_1a1e99a7cb43ec5c9ae6cc5059663de7fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+        <definition>IndexBuffer &amp; GraphicsContext::GetIndexBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>GetIndexBuffer</name>
+        <qualifiedname>GraphicsContext::GetIndexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="43" column="17" bodyfile="engine/graphics/GraphicsContext.h" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classGraphicsContext_1a04dd74301ef00fda5b0d157df90ae39e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader &amp; GraphicsContext::GetLineShader</definition>
+        <argsstring>()</argsstring>
+        <name>GetLineShader</name>
+        <qualifiedname>GraphicsContext::GetLineShader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="44" column="12" bodyfile="engine/graphics/GraphicsContext.h" bodystart="44" bodyend="44"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classGraphicsContext_1a64a20e75ab42bb9b959ba8f6ac077991" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GraphicsContext::CreateBuffers</definition>
+        <argsstring>()</argsstring>
+        <name>CreateBuffers</name>
+        <qualifiedname>GraphicsContext::CreateBuffers</qualifiedname>
+        <briefdescription>
+<para>Creates the vertex and index buffers for a quad. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates vertex and index buffers for a unit quad.</para>
+<para>Quads are a unit square centered at the origin with texture coordinates.</para>
+<para><simplesect kind="return"><para>true if buffers were created successfully, false otherwise.</para>
+</simplesect>
+<simplesect kind="return"><para>true if buffers were created successfully, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="60" column="10" bodyfile="engine/graphics/GraphicsContext.cpp" bodystart="51" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classGraphicsContext_1a92739ce6618c156223091aa5b37f2f93" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GraphicsContext::CompileShaders</definition>
+        <argsstring>()</argsstring>
+        <name>CompileShaders</name>
+        <qualifiedname>GraphicsContext::CompileShaders</qualifiedname>
+        <briefdescription>
+<para>Compiles the vertex and fragment shaders for sprite rendering. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if shaders compiled and linked successfully, false otherwise.</para>
+</simplesect>
+The vertex shader transforms vertices using model, view, and projection matrices. It also passes texture coordinates (scaled by u_TileScale) to the fragment shader. The fragment shader samples a texture at the given coordinates.</para>
+<para><simplesect kind="return"><para>true if shaders compiled and linked successfully, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="66" column="10" bodyfile="engine/graphics/GraphicsContext.cpp" bodystart="90" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classGraphicsContext_1a1e40666b05cab4ede2e01bf3ab6487f0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GraphicsContext::CompileLineShader</definition>
+        <argsstring>()</argsstring>
+        <name>CompileLineShader</name>
+        <qualifiedname>GraphicsContext::CompileLineShader</qualifiedname>
+        <briefdescription>
+<para>Compiles the vertex and fragment shaders for line rendering. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if shaders compiled and linked successfully, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/GraphicsContext.h" line="72" column="10" bodyfile="engine/graphics/GraphicsContext.cpp" bodystart="108" bodyend="121"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Centralized manager for OpenGL graphics resources. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classGraphicsContext" kindref="compound">GraphicsContext</ref> is responsible for creating and managing all OpenGL resources used by the engine: shaders, vertex array objects, vertex buffers, and index buffers. It encapsulates the OpenGL initialization and provides access to these resources.</para>
+<para><simplesect kind="note"><para>This class should be initialized after the OpenGL context is created. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classShader" kindref="compound">Shader</ref>, <ref refid="classVertexArray" kindref="compound">VertexArray</ref>, <ref refid="classVertexBuffer" kindref="compound">VertexBuffer</ref>, <ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>GraphicsContext</label>
+        <link refid="classGraphicsContext"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/graphics/GraphicsContext.h" line="20" column="1" bodyfile="engine/graphics/GraphicsContext.h" bodystart="20" bodyend="73"/>
+    <listofallmembers>
+      <member refid="classGraphicsContext_1a1e40666b05cab4ede2e01bf3ab6487f0" prot="private" virt="non-virtual"><scope>GraphicsContext</scope><name>CompileLineShader</name></member>
+      <member refid="classGraphicsContext_1a92739ce6618c156223091aa5b37f2f93" prot="private" virt="non-virtual"><scope>GraphicsContext</scope><name>CompileShaders</name></member>
+      <member refid="classGraphicsContext_1a64a20e75ab42bb9b959ba8f6ac077991" prot="private" virt="non-virtual"><scope>GraphicsContext</scope><name>CreateBuffers</name></member>
+      <member refid="classGraphicsContext_1a1e99a7cb43ec5c9ae6cc5059663de7fe" prot="public" virt="non-virtual"><scope>GraphicsContext</scope><name>GetIndexBuffer</name></member>
+      <member refid="classGraphicsContext_1a04dd74301ef00fda5b0d157df90ae39e" prot="public" virt="non-virtual"><scope>GraphicsContext</scope><name>GetLineShader</name></member>
+      <member refid="classGraphicsContext_1ac72c010277ef084de5d680bcd58a223e" prot="public" virt="non-virtual"><scope>GraphicsContext</scope><name>GetShader</name></member>
+      <member refid="classGraphicsContext_1a82dfe9bc5bd032e4a32e1736cf85ccf6" prot="public" virt="non-virtual"><scope>GraphicsContext</scope><name>GetVertexArray</name></member>
+      <member refid="classGraphicsContext_1ad9ec3d04af96d1a4d805852109bd9e8c" prot="public" virt="non-virtual"><scope>GraphicsContext</scope><name>GetVertexBuffer</name></member>
+      <member refid="classGraphicsContext_1ad40a8e479ca7f377ea6d4adfed3ba3e7" prot="public" virt="non-virtual"><scope>GraphicsContext</scope><name>GraphicsContext</name></member>
+      <member refid="classGraphicsContext_1aadcd5eebbfec1be436549ad4ed909a60" prot="public" virt="non-virtual"><scope>GraphicsContext</scope><name>Initialize</name></member>
+      <member refid="classGraphicsContext_1a5e9b71e185b7c14435050f5337b59df2" prot="private" virt="non-virtual"><scope>GraphicsContext</scope><name>m_IndexBuffer</name></member>
+      <member refid="classGraphicsContext_1a539dff391f3e386ec987bf179024e0b7" prot="private" virt="non-virtual"><scope>GraphicsContext</scope><name>m_LineShader</name></member>
+      <member refid="classGraphicsContext_1ab662bdd94fa5b2daef1dca119d3423af" prot="private" virt="non-virtual"><scope>GraphicsContext</scope><name>m_Shader</name></member>
+      <member refid="classGraphicsContext_1ac2acd7387eaed15cfdebc3b7f6577a98" prot="private" virt="non-virtual"><scope>GraphicsContext</scope><name>m_VertexArray</name></member>
+      <member refid="classGraphicsContext_1a8ce73fa81f3c21abdb541ba6f3c95c04" prot="private" virt="non-virtual"><scope>GraphicsContext</scope><name>m_VertexBuffer</name></member>
+      <member refid="classGraphicsContext_1ab79b1ec7a5d63666aad24ff086705828" prot="public" virt="non-virtual"><scope>GraphicsContext</scope><name>Shutdown</name></member>
+      <member refid="classGraphicsContext_1adf561cc173ce8824f27854c04ee0effc" prot="public" virt="non-virtual"><scope>GraphicsContext</scope><name>~GraphicsContext</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

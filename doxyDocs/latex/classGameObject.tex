@@ -1,0 +1,154 @@
+\doxysection{Game\+Object Class Reference}
+\hypertarget{classGameObject}{}\label{classGameObject}\index{GameObject@{GameObject}}
+
+
+Legacy \doxylink{classGameObject}{Game\+Object} class (not currently used).  
+
+
+
+
+{\ttfamily \+\#include $<$Game\+Object.\+h$>$}
+
+
+
+Collaboration diagram for Game\+Object:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGameObject__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classGameObject_a0348e3ee2e83d56eafca7a3547f432c4}{Game\+Object}} ()
+\item 
+\doxymbox{\hyperlink{classGameObject_ab82dfdb656f9051c0587e6593b2dda97}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\item 
+void \doxymbox{\hyperlink{classGameObject_a444676806efb12b6944fbd525b0b8da5}{Set\+Texture}} (const std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \&texture)
+\item 
+\doxymbox{\hyperlink{structTransform}{Transform}} \& \doxymbox{\hyperlink{classGameObject_ad0ff6c403c9a323598de86a28204601f}{Get\+Transform}} ()
+\item 
+void \doxymbox{\hyperlink{classGameObject_ab63d5908c6fb124b2564fba447b2867b}{Update}} (float delta\+Time)
+\item 
+void \doxymbox{\hyperlink{classGameObject_aa530173b4762b107d91c29d4706293f3}{Render}} (\doxymbox{\hyperlink{classShader}{Shader}} \&shader, const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&view, const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&projection)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structTransform}{Transform}} \doxymbox{\hyperlink{classGameObject_a62f1f74b2808644306d7aa8c347e055d}{m\+\_\+\+Transform}}
+\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \doxymbox{\hyperlink{classGameObject_acbb0a4d33f73d96da43083ac1a57082f}{m\+\_\+\+Texture}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Legacy \doxylink{classGameObject}{Game\+Object} class (not currently used). 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\doxymbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]This class has been superseded by the ECS system. \end{DoxyRefDesc}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classECSScene}{ECSScene}, \doxylink{structComponents_1_1Transform}{Components::\+\+Transform}, \doxylink{structComponents_1_1SpriteRenderer}{Components::\+\+Sprite\+Renderer} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{GameObject_8h_source_l00015}{15}} of file \doxymbox{\hyperlink{GameObject_8h_source}{Game\+Object.\+h}}.
+
+
+
+\label{classGameObject_doc-constructors}
+\Hypertarget{classGameObject_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGameObject_a0348e3ee2e83d56eafca7a3547f432c4}\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}}
+{\footnotesize\ttfamily \label{classGameObject_a0348e3ee2e83d56eafca7a3547f432c4} 
+Game\+Object::\+\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameObject_8cpp_source_l00007}{7}} of file \doxymbox{\hyperlink{GameObject_8cpp_source}{Game\+Object.\+cpp}}.
+
+\Hypertarget{classGameObject_ab82dfdb656f9051c0587e6593b2dda97}\index{GameObject@{GameObject}!````~GameObject@{\texorpdfstring{$\sim$}{\string~}GameObject}}
+\index{````~GameObject@{\texorpdfstring{$\sim$}{\string~}GameObject}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameObject()}{\string~GameObject()}}
+{\footnotesize\ttfamily \label{classGameObject_ab82dfdb656f9051c0587e6593b2dda97} 
+Game\+Object::\+\texorpdfstring{$\sim$}{\string~}\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{classGameObject_doc-func-members}
+\Hypertarget{classGameObject_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGameObject_ad0ff6c403c9a323598de86a28204601f}\index{GameObject@{GameObject}!GetTransform@{GetTransform}}
+\index{GetTransform@{GetTransform}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GetTransform()}{GetTransform()}}
+{\footnotesize\ttfamily \label{classGameObject_ad0ff6c403c9a323598de86a28204601f} 
+\doxymbox{\hyperlink{structTransform}{Transform}} \& Game\+Object::\+\+Get\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameObject_8cpp_source_l00015}{15}} of file \doxymbox{\hyperlink{GameObject_8cpp_source}{Game\+Object.\+cpp}}.
+
+\Hypertarget{classGameObject_aa530173b4762b107d91c29d4706293f3}\index{GameObject@{GameObject}!Render@{Render}}
+\index{Render@{Render}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{classGameObject_aa530173b4762b107d91c29d4706293f3} 
+void Game\+Object::\+\+Render (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{shader}{, }\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{view}{, }\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{projection}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameObject_8cpp_source_l00023}{23}} of file \doxymbox{\hyperlink{GameObject_8cpp_source}{Game\+Object.\+cpp}}.
+
+\Hypertarget{classGameObject_a444676806efb12b6944fbd525b0b8da5}\index{GameObject@{GameObject}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}}
+{\footnotesize\ttfamily \label{classGameObject_a444676806efb12b6944fbd525b0b8da5} 
+void Game\+Object::\+\+Set\+Texture (\begin{DoxyParamCaption}\item[{const std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \&}]{texture}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameObject_8cpp_source_l00011}{11}} of file \doxymbox{\hyperlink{GameObject_8cpp_source}{Game\+Object.\+cpp}}.
+
+\Hypertarget{classGameObject_ab63d5908c6fb124b2564fba447b2867b}\index{GameObject@{GameObject}!Update@{Update}}
+\index{Update@{Update}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classGameObject_ab63d5908c6fb124b2564fba447b2867b} 
+void Game\+Object::\+\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameObject_8cpp_source_l00019}{19}} of file \doxymbox{\hyperlink{GameObject_8cpp_source}{Game\+Object.\+cpp}}.
+
+
+
+\label{classGameObject_doc-variable-members}
+\Hypertarget{classGameObject_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGameObject_acbb0a4d33f73d96da43083ac1a57082f}\index{GameObject@{GameObject}!m\_Texture@{m\_Texture}}
+\index{m\_Texture@{m\_Texture}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{m\_Texture}{m\_Texture}}
+{\footnotesize\ttfamily \label{classGameObject_acbb0a4d33f73d96da43083ac1a57082f} 
+std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classTexture2D}{Texture2D}}$>$ Game\+Object::\+m\+\_\+\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameObject_8h_source_l00027}{27}} of file \doxymbox{\hyperlink{GameObject_8h_source}{Game\+Object.\+h}}.
+
+\Hypertarget{classGameObject_a62f1f74b2808644306d7aa8c347e055d}\index{GameObject@{GameObject}!m\_Transform@{m\_Transform}}
+\index{m\_Transform@{m\_Transform}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{m\_Transform}{m\_Transform}}
+{\footnotesize\ttfamily \label{classGameObject_a62f1f74b2808644306d7aa8c347e055d} 
+\doxymbox{\hyperlink{structTransform}{Transform}} Game\+Object::\+m\+\_\+\+Transform\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GameObject_8h_source_l00026}{26}} of file \doxymbox{\hyperlink{GameObject_8h_source}{Game\+Object.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+scene/\doxymbox{\hyperlink{GameObject_8h}{Game\+Object.\+h}}\item 
+engine/\+scene/\doxymbox{\hyperlink{GameObject_8cpp}{Game\+Object.\+cpp}}\end{DoxyCompactItemize}

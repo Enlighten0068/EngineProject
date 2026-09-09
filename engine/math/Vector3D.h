@@ -7,9 +7,9 @@
  * All operators are const and return a new vector.
  */
 struct Vector3D{
-    float x;
-    float y;
-    float z;
+    float x; //X component
+    float y; //Y component
+    float z; //Z component
 
     /**
      * @brief Default constructor: zero vector.
@@ -30,11 +30,7 @@ struct Vector3D{
      * @return New vector with component-wise sum.
      */
     Vector3D operator+(const Vector3D& other) const{
-        return{
-            x + other.x,
-            y + other.y,
-            z + other.z
-        };
+        return {x + other.x, y + other.y, z + other.z};
     }
 
     /**
@@ -43,11 +39,7 @@ struct Vector3D{
      * @return New vector with component-wise difference.
      */
     Vector3D operator-(const Vector3D& other) const{
-        return{
-            x - other.x,
-            y - other.y,
-            z - other.z
-        };
+        return {x - other.x, y - other.y, z - other.z};
     }
 
     /**
@@ -56,10 +48,6 @@ struct Vector3D{
      * @return New vector with components multiplied by scalar.
      */
     Vector3D operator*(float scalar) const{
-        return{
-            x * scalar,
-            y * scalar,
-            z * scalar
-        };
+        return {x * scalar, y * scalar, z * scalar};
     }
 };

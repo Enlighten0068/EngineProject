@@ -1,5 +1,3 @@
-#define GLAD_GL_IMPLEMENTATION
-
 #include "audio/SoundManager.h"
 #include "audio/SoundEffect.h"
 #include "components/Transform.h"
@@ -48,57 +46,54 @@ Application::~Application(){ Shutdown(); }
  * @return true if all subsystems initialized successfully, false otherwise.
  */
 bool Application::Initialize(){
-    //Logging
+    //Initialize logging system
     Log::Initialize("logs/");
-    //For testing purposes - uncomment to validate logging initialization
-    /*Log::Info("Logging...");
-    Log::Warning("Warning test.");
-    Log::Error("Error test.");*/
     Log::Info("Application: Initializing...");
 
-    //Audio initialization
-    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0){
+    //Initialize SDL with video and audio subsystems
+    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0){
         Log::Error(std::format("SDL Init failed: {}", SDL_GetError()));
         return false;
     }
 
-    //SDL_ttf initialization
-    if (TTF_Init() != 0) {
+    //Initialize SDL_ttf for font rendering
+    if(TTF_Init() != 0){
         Log::Error(std::format("SDL_ttf initialization failed: {}", SDL_GetError()));
     } else{
         Log::Info("SDL_ttf initialized successfully.");
     }
 
-    //Game window initialization (engine), change last parameter to true if fullscreen
-    if (!m_Engine.Initialize("Game Window", 1920, 1080, false)){
+    //Create the game window
+    if(!m_Engine.Initialize("Game Window", 1920, 1080, false)){
         Log::Error("Failed to initialize Engine.");
         return false;
     }
 
-    //Event Handling System initialization
-    EventBus::GetInstance().Subscribe<WindowCloseEvent>([this](Event& e) {
+    //Subscribe to window close event
+    EventBus::GetInstance().Subscribe<WindowCloseEvent>([this](Event& e){
         Log::Info("WindowCloseEvent received, shutting down game.");
         m_Engine.SetRunning(false);
     });
 
-    EventBus::GetInstance().Subscribe<WindowResizeEvent>([](Event& e) {
+    //Subscribe to window resize event
+    EventBus::GetInstance().Subscribe<WindowResizeEvent>([](Event& e){
         WindowResizeEvent& resize = static_cast<WindowResizeEvent&>(e);
         Log::Info(std::format("Window resized to {}x{}", resize.GetWidth(), resize.GetHeight()));
     });
 
-
-    SDLEventTranslator::SetUnhandledCallback([](const SDL_Event& event) {
+    //Set callback for unhandled SDL events
+    SDLEventTranslator::SetUnhandledCallback([](const SDL_Event& event){
         Log::Warning(std::format("Unhandled SDL event type: {}", event.type));
     });
 
-    //GraphicsContext initialization
+    //Initialize OpenGL graphics context
     m_Graphics = std::make_unique<GraphicsContext>();
-    if (!m_Graphics->Initialize()) {
+    if(!m_Graphics->Initialize()){
         Log::Error("GraphicsContext initialization failed.");
         return false;
     }
 
-    //Camera initialization
+    //Initialize camera with aspect ratio
     int winWidth, winHeight;
     SDL_GetWindowSize(m_Engine.GetWindow().GetNativeWindow(), &winWidth, &winHeight);
     Input::SetWindowSize(winWidth, winHeight);
@@ -108,37 +103,18 @@ bool Application::Initialize(){
     m_Camera = std::make_unique<Camera2D>(-width, width, -height, height);
     m_Camera->SetPosition(Vector3D(0.0f, 0.0f, 0.0f));
 
-    //World initialization
+    //Initialize game world boundaries
     m_World = std::make_unique<GameWorld>(-20.0f, 20.0f, -10.0f, 10.0f);
 
-    //Scene initialization
-    /*m_Scene = std::make_unique<ECSScene>(m_Graphics->GetShader(),
-                                      m_Graphics->GetVertexArray(),
-                                      m_Graphics->GetIndexBuffer());*/
-
-
-
-    //Player Entity
-    auto texture = ResourceManager::GetInstance().LoadTexture("assets/textures/test.png");
-    if (!texture){
-        Log::Error("Failed to load texture.");
-        return false;
-    }
-    //m_PlayerEntity = m_Scene->CreateSpriteEntity(
-    //    Vector3D(0.0f, 0.0f, 0.0f), Vector3D(5.0f, 5.0f, 1.0f),texture);
-
-    //Controllers
-    //SetupControllers();
-
-
-    //Check if any gamepad is available
-    if (!GamepadManager::GetInstance().Initialize()) {
+    //Initialize gamepad manager
+    if(!GamepadManager::GetInstance().Initialize()){
         Log::Warning("Gamepad initialization failed. Continuing without gamepad support.");
     }
 
-    //FPS Counter
+    //Initialize FPS counter
     m_FpsCounter = std::make_unique<FpsCounter>();
 
+    //Subscribe to window resize events for camera updates
     EventBus::GetInstance().Subscribe<WindowResizeEvent>([this](Event& e){
         WindowResizeEvent& resizeEvent = static_cast<WindowResizeEvent&>(e);
         int newWidth = resizeEvent.GetWidth();
@@ -146,14 +122,14 @@ bool Application::Initialize(){
 
         Input::SetWindowSize(newWidth, newHeight);
 
-        //Verifies if the scene is the fixed 2D Scene, skips camera update if true
+        //Skip camera update for fixed camera scenes
         Scene* currentScene = m_SceneManager.GetCurrentScene();
-        if (currentScene && currentScene->GetName() == "Demo2D_FixedCamera"){
+        if(currentScene && currentScene->GetName() == "Demo2D_FixedCamera"){
             Log::Info("Fixed camera scene active: skipping camera projection update.");
             return;
         }
 
-        if (m_Camera){
+        if(m_Camera){
             float aspect = static_cast<float>(newWidth) / static_cast<float>(newHeight);
             float height = 5.0f;
             float width = height * aspect;
@@ -163,14 +139,14 @@ bool Application::Initialize(){
 
     Log::Info("Application initialized successfully.");
 
-    //Initial scene
-    auto initialScene = std::make_unique<Demo2DFixedScene>(m_Graphics->GetShader(),
-                                                           m_Graphics->GetVertexArray(), m_Graphics->GetIndexBuffer(),
-                                                           *m_Camera, m_Graphics->GetLineShader());
-
-    //Initial Menu scene - to be implemented
-    /*auto menuScene = std::make_unique<MenuScene>(m_SceneManager);
-    m_SceneManager.SetScene(std::move(menuScene));*/
+    //Initial scene - Demo2DFixedScene
+    auto initialScene = std::make_unique<Demo2DFixedScene>(
+        m_Graphics->GetShader(),
+                                                           m_Graphics->GetVertexArray(),
+                                                           m_Graphics->GetIndexBuffer(),
+                                                           *m_Camera,
+                                                           m_Graphics->GetLineShader()
+    );
 
     return true;
 }
@@ -183,12 +159,12 @@ bool Application::Initialize(){
  * time then event handling, system updates, input state, rendering.
  */
 void Application::Run(){
-    while (m_Engine.IsRunning()){
-        Time::Update();
-        ProcessEvents();
-        Update();
+    while(m_Engine.IsRunning()){
+        Time::Update(); //Update time system
+        ProcessEvents(); //Process SDL events
+        Update(); //Update game logic
         Input::Update(); //Reset input deltas
-        Render();
+        Render(); //Render the scene
     }
 }
 
@@ -203,14 +179,11 @@ void Application::Shutdown(){
 
     m_FpsCounter.reset();
     GamepadManager::GetInstance().Shutdown();
-
-    //m_PlayerController.reset();
     ResourceManager::GetInstance().Clear();
-    //m_Scene.reset();
     m_World.reset();
     m_Camera.reset();
 
-    if (m_Graphics){
+    if(m_Graphics){
         m_Graphics->Shutdown();
         m_Graphics.reset();
     }
@@ -261,31 +234,11 @@ void Application::Update(){
  * Clears buffers and delegates rendering to the Scene Manager.
  */
 void Application::Render(){
-    //Update viewport to window size
     int winWidth = Input::GetWindowWidth();
     int winHeight = Input::GetWindowHeight();
     glViewport(0, 0, winWidth, winHeight);
 
-    glClear(GL_COLOR_BUFFER_BIT); //Buffer clearing
+    glClear(GL_COLOR_BUFFER_BIT);
     m_SceneManager.Render();
     m_Engine.GetWindow().SwapBuffers();
 }
-
-/**
- * @brief Initializes the player and camera controllers.
- *
- * Currently sets up the player controller with the world and entity.
- */
-/*void Application::SetupControllers(){
-    //Player controller
-    m_PlayerController = std::make_unique<PlayerController>(m_Scene->GetRegistry(), m_PlayerEntity, *m_World);
-    m_PlayerController->SetSpeed(3.0f);
-
-    //For 2D demo with follow Camera
-    m_CameraController = std::make_unique<CameraController>(*m_Camera);
-    m_CameraController->SetSpeed(5.0f);
-    m_CameraController->SetFollowEntity(true);
-    m_CameraController->SetZoomSpeed(1.0f);
-
-    Log::Info("Controllers initialized.");
-}*/

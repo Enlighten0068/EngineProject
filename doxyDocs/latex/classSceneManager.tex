@@ -1,0 +1,194 @@
+\doxysection{Scene\+Manager Class Reference}
+\hypertarget{classSceneManager}{}\label{classSceneManager}\index{SceneManager@{SceneManager}}
+
+
+Manages a stack of scenes.  
+
+
+
+
+{\ttfamily \+\#include $<$Scene\+Manager.\+h$>$}
+
+
+
+Collaboration diagram for Scene\+Manager:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classSceneManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classSceneManager_ae0003097b2a7ccd3f63758fcf8734bfd}{Set\+Scene}} (std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classScene}{Scene}} $>$ scene)
+\begin{DoxyCompactList}\small\item\em Replaces the current scene with a new one. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classSceneManager_a41636a6ebf257eaa823c4af31e71e4c2}{Push\+Scene}} (std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classScene}{Scene}} $>$ scene)
+\begin{DoxyCompactList}\small\item\em Pushes a new scene onto the stack. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classSceneManager_a5a3440850e459813d5d05fd85f2344b2}{Pop\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Pops the current scene from the stack. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classSceneManager_adbede64d5706507e65f0e9dd0eaddd6b}{Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Updates the active scene. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classSceneManager_a61329955734e0c8a67796ef2b041b5a2}{Render}} ()
+\begin{DoxyCompactList}\small\item\em Renders the active scene. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classScene}{Scene}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classSceneManager_a6881ef515af1d01c0a35e9b40b4a7555}{Get\+Current\+Scene}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current active scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+stack$<$ std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classScene}{Scene}} $>$ $>$ \doxymbox{\hyperlink{classSceneManager_a08ef808828ceeb144b289987309f328e}{m\+\_\+\+Scene\+Stack}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a stack of scenes. 
+
+The \doxylink{classSceneManager}{Scene\+Manager} handles scene transitions by maintaining a stack of scenes. Only the top scene is active (receives Update and Render calls).
+
+\begin{DoxyNote}{Note}
+Supports pushing, popping, and setting scenes. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classScene}{Scene} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{SceneManager_8h_source_l00016}{16}} of file \doxymbox{\hyperlink{SceneManager_8h_source}{Scene\+Manager.\+h}}.
+
+
+
+\label{classSceneManager_doc-func-members}
+\Hypertarget{classSceneManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSceneManager_a6881ef515af1d01c0a35e9b40b4a7555}\index{SceneManager@{SceneManager}!GetCurrentScene@{GetCurrentScene}}
+\index{GetCurrentScene@{GetCurrentScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{GetCurrentScene()}{GetCurrentScene()}}
+{\footnotesize\ttfamily \label{classSceneManager_a6881ef515af1d01c0a35e9b40b4a7555} 
+\doxymbox{\hyperlink{classScene}{Scene}} \texorpdfstring{$\ast$}{*} Scene\+Manager::\+\+Get\+Current\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current active scene. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current scene, or nullptr if no scene is active. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SceneManager_8h_source_l00059}{59}} of file \doxymbox{\hyperlink{SceneManager_8h_source}{Scene\+Manager.\+h}}.
+
+\Hypertarget{classSceneManager_a5a3440850e459813d5d05fd85f2344b2}\index{SceneManager@{SceneManager}!PopScene@{PopScene}}
+\index{PopScene@{PopScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{PopScene()}{PopScene()}}
+{\footnotesize\ttfamily \label{classSceneManager_a5a3440850e459813d5d05fd85f2344b2} 
+void Scene\+Manager::\+\+Pop\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pops the current scene from the stack. 
+
+Exits the current scene and returns to the previous scene. Does nothing if only one scene remains. 
+
+Definition at line \doxymbox{\hyperlink{SceneManager_8cpp_source_l00038}{38}} of file \doxymbox{\hyperlink{SceneManager_8cpp_source}{Scene\+Manager.\+cpp}}.
+
+\Hypertarget{classSceneManager_a41636a6ebf257eaa823c4af31e71e4c2}\index{SceneManager@{SceneManager}!PushScene@{PushScene}}
+\index{PushScene@{PushScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{PushScene()}{PushScene()}}
+{\footnotesize\ttfamily \label{classSceneManager_a41636a6ebf257eaa823c4af31e71e4c2} 
+void Scene\+Manager::\+\+Push\+Scene (\begin{DoxyParamCaption}\item[{std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classScene}{Scene}} $>$}]{scene}{}\end{DoxyParamCaption})}
+
+
+
+Pushes a new scene onto the stack. 
+
+The current scene is paused (not exited) and the new scene becomes active.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & The scene to push.\\
+\hline
+{\em scene} & The scene to push. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{SceneManager_8cpp_source_l00027}{27}} of file \doxymbox{\hyperlink{SceneManager_8cpp_source}{Scene\+Manager.\+cpp}}.
+
+\Hypertarget{classSceneManager_a61329955734e0c8a67796ef2b041b5a2}\index{SceneManager@{SceneManager}!Render@{Render}}
+\index{Render@{Render}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{classSceneManager_a61329955734e0c8a67796ef2b041b5a2} 
+void Scene\+Manager::\+\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Renders the active scene. 
+
+
+
+Definition at line \doxymbox{\hyperlink{SceneManager_8cpp_source_l00059}{59}} of file \doxymbox{\hyperlink{SceneManager_8cpp_source}{Scene\+Manager.\+cpp}}.
+
+\Hypertarget{classSceneManager_ae0003097b2a7ccd3f63758fcf8734bfd}\index{SceneManager@{SceneManager}!SetScene@{SetScene}}
+\index{SetScene@{SetScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{SetScene()}{SetScene()}}
+{\footnotesize\ttfamily \label{classSceneManager_ae0003097b2a7ccd3f63758fcf8734bfd} 
+void Scene\+Manager::\+\+Set\+Scene (\begin{DoxyParamCaption}\item[{std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classScene}{Scene}} $>$}]{scene}{}\end{DoxyParamCaption})}
+
+
+
+Replaces the current scene with a new one. 
+
+Exits the current scene (if any) and enters the new scene.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & The new scene to set.\\
+\hline
+{\em scene} & The new scene to set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{SceneManager_8cpp_source_l00008}{8}} of file \doxymbox{\hyperlink{SceneManager_8cpp_source}{Scene\+Manager.\+cpp}}.
+
+\Hypertarget{classSceneManager_adbede64d5706507e65f0e9dd0eaddd6b}\index{SceneManager@{SceneManager}!Update@{Update}}
+\index{Update@{Update}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classSceneManager_adbede64d5706507e65f0e9dd0eaddd6b} 
+void Scene\+Manager::\+\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Updates the active scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \doxylink{classTime}{Time} elapsed since the last frame. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{SceneManager_8cpp_source_l00052}{52}} of file \doxymbox{\hyperlink{SceneManager_8cpp_source}{Scene\+Manager.\+cpp}}.
+
+
+
+\label{classSceneManager_doc-variable-members}
+\Hypertarget{classSceneManager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSceneManager_a08ef808828ceeb144b289987309f328e}\index{SceneManager@{SceneManager}!m\_SceneStack@{m\_SceneStack}}
+\index{m\_SceneStack@{m\_SceneStack}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{m\_SceneStack}{m\_SceneStack}}
+{\footnotesize\ttfamily \label{classSceneManager_a08ef808828ceeb144b289987309f328e} 
+std::\+stack$<$std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classScene}{Scene}}$>$ $>$ Scene\+Manager::\+m\+\_\+\+Scene\+Stack\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{SceneManager_8h_source_l00064}{64}} of file \doxymbox{\hyperlink{SceneManager_8h_source}{Scene\+Manager.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+scene/\doxymbox{\hyperlink{SceneManager_8h}{Scene\+Manager.\+h}}\item 
+engine/\+scene/\doxymbox{\hyperlink{SceneManager_8cpp}{Scene\+Manager.\+cpp}}\end{DoxyCompactItemize}

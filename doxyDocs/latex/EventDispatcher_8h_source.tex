@@ -1,0 +1,26 @@
+\doxysection{Event\+Dispatcher.\+h}
+\hypertarget{EventDispatcher_8h_source}{}\label{EventDispatcher_8h_source}\index{engine/events/EventDispatcher.h@{engine/events/EventDispatcher.h}}
+\doxymbox{\hyperlink{EventDispatcher_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Event_8h}{events/Event.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00014}\doxymbox{\hyperlink{classEventDispatcher}{00014}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classEventDispatcher_a14b98277653a576b21c0cd46c3ce4838}{EventDispatcher}}\{}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00015}00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00020}\doxymbox{\hyperlink{classEventDispatcher_a14b98277653a576b21c0cd46c3ce4838}{00020}}\ \ \ \ \ \doxymbox{\hyperlink{classEventDispatcher_a14b98277653a576b21c0cd46c3ce4838}{EventDispatcher}}(\doxymbox{\hyperlink{classEvent}{Event}}\&\ event)\ :\ \doxymbox{\hyperlink{classEventDispatcher_a8c924988641e1ecbdfd2da84d89c8889}{m\_Event}}(event)\{\}}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ F>}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00034}\doxymbox{\hyperlink{classEventDispatcher_a1786380511e001fdd2c73511abf7660a}{00034}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classEventDispatcher_a1786380511e001fdd2c73511abf7660a}{Dispatch}}(\textcolor{keyword}{const}\ F\&\ function)\{}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classEventDispatcher_a8c924988641e1ecbdfd2da84d89c8889}{m\_Event}}.\doxymbox{\hyperlink{classEvent_af14bbd8f69c2778def9462375a0e70f2}{GetEventType}}()\ ==\ T::GetStaticType())\{}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classEventDispatcher_a8c924988641e1ecbdfd2da84d89c8889}{m\_Event}}.\doxymbox{\hyperlink{classEvent_a8ad0c350a8f569dbb05cf845caa4737e}{Handled}}\ =\ function(\textcolor{keyword}{static\_cast<}T\&\textcolor{keyword}{>}(\doxymbox{\hyperlink{classEventDispatcher_a8c924988641e1ecbdfd2da84d89c8889}{m\_Event}}));}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00042}00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00043}\doxymbox{\hyperlink{classEventDispatcher_a8c924988641e1ecbdfd2da84d89c8889}{00043}}\ \ \ \ \ \doxymbox{\hyperlink{classEvent}{Event}}\&\ \doxymbox{\hyperlink{classEventDispatcher_a8c924988641e1ecbdfd2da84d89c8889}{m\_Event}};\ \textcolor{comment}{//Reference\ to\ the\ event\ being\ dispatched}}
+\DoxyCodeLine{\Hypertarget{EventDispatcher_8h_source_l00044}00044\ \};}
+
+\end{DoxyCode}

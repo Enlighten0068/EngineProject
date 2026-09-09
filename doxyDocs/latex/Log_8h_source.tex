@@ -1,0 +1,50 @@
+\doxysection{Log.\+h}
+\hypertarget{Log_8h_source}{}\label{Log_8h_source}\index{engine/diagnostics/Log.h@{engine/diagnostics/Log.h}}
+\doxymbox{\hyperlink{Log_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00006}00006\ \textcolor{comment}{//\#include\ <mutex>}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00017}\doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9}{00017}}\ \textcolor{keyword}{enum\ class}\ \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\{}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00018}\doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9aa603905470e2a5b8c13e96b579ef0dba}{00018}}\ \ \ \ \ \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9aa603905470e2a5b8c13e96b579ef0dba}{Debug}},\ \ \ \textcolor{comment}{//Debug\ messages\ (lowest\ priority)}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00019}\doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a4059b0251f66a18cb56f544728796875}{00019}}\ \ \ \ \ \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a4059b0251f66a18cb56f544728796875}{Info}},\ \ \ \ \textcolor{comment}{//Informational\ messages}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00020}\doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a0eaadb4fcb48a0a0ed7bc9868be9fbaa}{00020}}\ \ \ \ \ \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a0eaadb4fcb48a0a0ed7bc9868be9fbaa}{Warning}},\ \textcolor{comment}{//Warning\ messages}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00021}\doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a902b0d55fddef6f8d651fe1035b7d4bd}{00021}}\ \ \ \ \ \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9a902b0d55fddef6f8d651fe1035b7d4bd}{Error}}\ \ \ \ \textcolor{comment}{//Error\ messages\ (highest\ priority)}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00022}00022\ \};}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00034}\doxymbox{\hyperlink{classLog}{00034}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classLog}{Log}}\{}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00035}00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLog_af3ff6e05d74f1950e7ee991ae4fa7461}{Initialize}}(\textcolor{keyword}{const}\ std::string\&\ logDir\ =\ \textcolor{stringliteral}{"{}logs/"{}});}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLog_ae32d1e5b199330781e5ce6b87f5e61c8}{Shutdown}}();}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//Logging\ Methods}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Info}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLog_a5a5a1c297ed72ab2f850d0d01ae00aaa}{Warning}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Error}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLog_a112833cbd05320dac0790f50eb4ab25e}{InfoThrottled}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \textcolor{keyword}{const}\ std::string\&\ key,\ \textcolor{keywordtype}{float}\ intervalSeconds\ =\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00078}\doxymbox{\hyperlink{classLog_a9d61d43e442e0298e48185c7568708c5}{00078}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLog_a9d61d43e442e0298e48185c7568708c5}{SetMinLevel}}(\doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level)\{\ \doxymbox{\hyperlink{classLog_a3dd36397bb30af3c6ccd514d3e8468e0}{s\_MinLevel}}\ =\ level;\ \}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00080}00080\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00081}\doxymbox{\hyperlink{classLog_a10767fd008319be02fc0125dd20ba948}{00081}}\ \ \ \ \ \textcolor{keyword}{static}\ std::ofstream\ \doxymbox{\hyperlink{classLog_a10767fd008319be02fc0125dd20ba948}{s\_File}};\ \textcolor{comment}{//Log\ file\ stream}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00082}\doxymbox{\hyperlink{classLog_a3dd36397bb30af3c6ccd514d3e8468e0}{00082}}\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ \doxymbox{\hyperlink{classLog_a3dd36397bb30af3c6ccd514d3e8468e0}{s\_MinLevel}};\ \textcolor{comment}{//Minimum\ log\ level\ for\ filtering}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00083}\doxymbox{\hyperlink{classLog_ae21d84fef839b5bfb9e1f18fa0c3f6b4}{00083}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classLog_ae21d84fef839b5bfb9e1f18fa0c3f6b4}{s\_Initialized}};\ \textcolor{comment}{//Flag\ indicating\ if\ logging\ is\ initialized}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00085}00085\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLog_ad0e82be038f63f7959e64333f73fbf13}{Write}}(\doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level,\ \textcolor{keyword}{const}\ std::string\&\ message);\ \textcolor{comment}{//Writes\ a\ log\ message}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00086}00086\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \doxymbox{\hyperlink{classLog_a90dd7d410a46e5b840949f3260555f10}{GenerateTimestampFilename}}(\textcolor{keyword}{const}\ std::string\&\ logDir);\ \textcolor{comment}{//Generates\ log\ filename}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \doxymbox{\hyperlink{classLog_a323ff35e896a21198efc5e472d3ac113}{LevelToString}}(\doxymbox{\hyperlink{Log_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level);\ \textcolor{comment}{//Converts\ LogLevel\ to\ string}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00089}\doxymbox{\hyperlink{classLog_ab91281939d32cf870499a85edcb820e3}{00089}}\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<std::string,\ float>\ \doxymbox{\hyperlink{classLog_ab91281939d32cf870499a85edcb820e3}{s\_LastLogTime}};\ \textcolor{comment}{//Last\ log\ time\ per\ key\ for\ throttling}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00090}00090\ \ \ \ \ \textcolor{comment}{//static\ std::mutex\ s\_LogMutex;}}
+\DoxyCodeLine{\Hypertarget{Log_8h_source_l00091}00091\ \};}
+
+\end{DoxyCode}

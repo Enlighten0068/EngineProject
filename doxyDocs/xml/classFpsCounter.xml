@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classFpsCounter" kind="class" language="C++" prot="public">
+    <compoundname>FpsCounter</compoundname>
+    <includes refid="FpsCounter_8h" local="no">FpsCounter.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classFpsCounter_1a28be3cb1111af1665b4655ed911fe3f5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FpsCounter::m_Timer</definition>
+        <argsstring></argsstring>
+        <name>m_Timer</name>
+        <qualifiedname>FpsCounter::m_Timer</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="39" column="11" bodyfile="engine/core/FpsCounter.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFpsCounter_1a3c97e1b7092c2ff93fc0e2c18888ca5e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FpsCounter::m_FPS</definition>
+        <argsstring></argsstring>
+        <name>m_FPS</name>
+        <qualifiedname>FpsCounter::m_FPS</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="40" column="11" bodyfile="engine/core/FpsCounter.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFpsCounter_1af170200b8c16cb824e1cf0eadc9b432f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FpsCounter::m_FrameCount</definition>
+        <argsstring></argsstring>
+        <name>m_FrameCount</name>
+        <qualifiedname>FpsCounter::m_FrameCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="41" column="9" bodyfile="engine/core/FpsCounter.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFpsCounter_1a64d4c0efc68ad7c887c0eee9358b3e53" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FpsCounter::m_DeltaTime</definition>
+        <argsstring></argsstring>
+        <name>m_DeltaTime</name>
+        <qualifiedname>FpsCounter::m_DeltaTime</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="42" column="11" bodyfile="engine/core/FpsCounter.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFpsCounter_1a74593eaaf5f829cd339ad37ee4f8206c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FpsCounter::m_ElapsedTime</definition>
+        <argsstring></argsstring>
+        <name>m_ElapsedTime</name>
+        <qualifiedname>FpsCounter::m_ElapsedTime</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="43" column="11" bodyfile="engine/core/FpsCounter.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFpsCounter_1ab2f9ef76e8b93e25ea75c22f27435a58" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FpsCounter::m_LogInterval</definition>
+        <argsstring></argsstring>
+        <name>m_LogInterval</name>
+        <qualifiedname>FpsCounter::m_LogInterval</qualifiedname>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="44" column="11" bodyfile="engine/core/FpsCounter.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classFpsCounter_1a82dfe73642a613c6f4bc7e38781360d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FpsCounter::FpsCounter</definition>
+        <argsstring>()</argsstring>
+        <name>FpsCounter</name>
+        <qualifiedname>FpsCounter::FpsCounter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="16" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classFpsCounter_1ad8ac6ac5c70fe8ca7cca097ba98aba9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FpsCounter::~FpsCounter</definition>
+        <argsstring>()=default</argsstring>
+        <name>~FpsCounter</name>
+        <qualifiedname>FpsCounter::~FpsCounter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="17" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classFpsCounter_1ac7e47e9bfff65ac4e4aaa232669bcfd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FpsCounter::Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>FpsCounter::Update</qualifiedname>
+        <briefdescription>
+<para>Updates the FPS counter (should be called once per frame). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates the FPS counter and logs when interval elapses.</para>
+<para>This method increments the frame count and, when the interval has elapsed, calculates and logs the average FPS.</para>
+<para>This method should be called once per frame. It accumulates delta time and frame count, and when the interval is reached, it calculates the average FPS and logs it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="25" column="10" bodyfile="engine/core/FpsCounter.cpp" bodystart="15" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classFpsCounter_1a63034f292080e07963a1fef86ae40f0a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float FpsCounter::GetFPS</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFPS</name>
+        <qualifiedname>FpsCounter::GetFPS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="28" column="11" bodyfile="engine/core/FpsCounter.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classFpsCounter_1ae92842565f6134b6cfd7a72c52634643" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float FpsCounter::GetDeltaTime</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDeltaTime</name>
+        <qualifiedname>FpsCounter::GetDeltaTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="29" column="11" bodyfile="engine/core/FpsCounter.h" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classFpsCounter_1a01086d67fcb14cdbf85ae217441569c2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float FpsCounter::GetElapsedTime</definition>
+        <argsstring>() const</argsstring>
+        <name>GetElapsedTime</name>
+        <qualifiedname>FpsCounter::GetElapsedTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="30" column="11" bodyfile="engine/core/FpsCounter.h" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classFpsCounter_1af46f79cc7cf4476db2553c22e932ea7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void FpsCounter::SetLogInterval</definition>
+        <argsstring>(float interval)</argsstring>
+        <name>SetLogInterval</name>
+        <qualifiedname>FpsCounter::SetLogInterval</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>interval</declname>
+        </param>
+        <briefdescription>
+<para>Sets the logging interval. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interval in seconds between FPS logs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/FpsCounter.h" line="36" column="10" bodyfile="engine/core/FpsCounter.h" bodystart="36" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Utility class for measuring and logging frames per second. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class calculates the average FPS over a configurable interval, and logs it to the console. It also provides access to delta time and elapsed time values.</para>
+<para><simplesect kind="note"><para>FPS is calculated as frame count divided by elapsed time over the logging interval. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>FpsCounter</label>
+        <link refid="classFpsCounter"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/core/FpsCounter.h" line="14" column="1" bodyfile="engine/core/FpsCounter.h" bodystart="14" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classFpsCounter_1a82dfe73642a613c6f4bc7e38781360d7" prot="public" virt="non-virtual"><scope>FpsCounter</scope><name>FpsCounter</name></member>
+      <member refid="classFpsCounter_1ae92842565f6134b6cfd7a72c52634643" prot="public" virt="non-virtual"><scope>FpsCounter</scope><name>GetDeltaTime</name></member>
+      <member refid="classFpsCounter_1a01086d67fcb14cdbf85ae217441569c2" prot="public" virt="non-virtual"><scope>FpsCounter</scope><name>GetElapsedTime</name></member>
+      <member refid="classFpsCounter_1a63034f292080e07963a1fef86ae40f0a" prot="public" virt="non-virtual"><scope>FpsCounter</scope><name>GetFPS</name></member>
+      <member refid="classFpsCounter_1a64d4c0efc68ad7c887c0eee9358b3e53" prot="private" virt="non-virtual"><scope>FpsCounter</scope><name>m_DeltaTime</name></member>
+      <member refid="classFpsCounter_1a74593eaaf5f829cd339ad37ee4f8206c" prot="private" virt="non-virtual"><scope>FpsCounter</scope><name>m_ElapsedTime</name></member>
+      <member refid="classFpsCounter_1a3c97e1b7092c2ff93fc0e2c18888ca5e" prot="private" virt="non-virtual"><scope>FpsCounter</scope><name>m_FPS</name></member>
+      <member refid="classFpsCounter_1af170200b8c16cb824e1cf0eadc9b432f" prot="private" virt="non-virtual"><scope>FpsCounter</scope><name>m_FrameCount</name></member>
+      <member refid="classFpsCounter_1ab2f9ef76e8b93e25ea75c22f27435a58" prot="private" virt="non-virtual"><scope>FpsCounter</scope><name>m_LogInterval</name></member>
+      <member refid="classFpsCounter_1a28be3cb1111af1665b4655ed911fe3f5" prot="private" virt="non-virtual"><scope>FpsCounter</scope><name>m_Timer</name></member>
+      <member refid="classFpsCounter_1af46f79cc7cf4476db2553c22e932ea7a" prot="public" virt="non-virtual"><scope>FpsCounter</scope><name>SetLogInterval</name></member>
+      <member refid="classFpsCounter_1ac7e47e9bfff65ac4e4aaa232669bcfd6" prot="public" virt="non-virtual"><scope>FpsCounter</scope><name>Update</name></member>
+      <member refid="classFpsCounter_1ad8ac6ac5c70fe8ca7cca097ba98aba9b" prot="public" virt="non-virtual"><scope>FpsCounter</scope><name>~FpsCounter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

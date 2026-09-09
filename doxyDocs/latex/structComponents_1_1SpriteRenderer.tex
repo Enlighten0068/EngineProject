@@ -1,0 +1,63 @@
+\doxysection{Components::Sprite\+Renderer Struct Reference}
+\hypertarget{structComponents_1_1SpriteRenderer}{}\label{structComponents_1_1SpriteRenderer}\index{Components::SpriteRenderer@{Components::SpriteRenderer}}
+
+
+Associates a texture with an entity for 2D rendering.  
+
+
+
+
+{\ttfamily \+\#include $<$Sprite\+Renderer.\+h$>$}
+
+
+
+Collaboration diagram for Components::Sprite\+Renderer:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{structComponents_1_1SpriteRenderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \doxymbox{\hyperlink{structComponents_1_1SpriteRenderer_a7f430566c6a661fa1973ad364f6ba744}{Texture}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Associates a texture with an entity for 2D rendering. 
+
+Entities with this component will be rendered as a sprite using the assigned texture. The \doxylink{classRenderSystem}{Render\+System} reads this component along with \doxylink{structComponents_1_1Transform}{Transform} to draw the entity.
+
+\begin{DoxyNote}{Note}
+The texture is stored as a shared\+\_\+ptr, allowing multiple entities to share the same texture (efficient for tilemaps or repeated sprites). 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structComponents_1_1Transform}{Transform}, \doxylink{classRenderSystem}{Render\+System} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{SpriteRenderer_8h_source_l00018}{18}} of file \doxymbox{\hyperlink{SpriteRenderer_8h_source}{Sprite\+Renderer.\+h}}.
+
+
+
+\label{structComponents_1_1SpriteRenderer_doc-variable-members}
+\Hypertarget{structComponents_1_1SpriteRenderer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structComponents_1_1SpriteRenderer_a7f430566c6a661fa1973ad364f6ba744}\index{Components::SpriteRenderer@{Components::SpriteRenderer}!Texture@{Texture}}
+\index{Texture@{Texture}!Components::SpriteRenderer@{Components::SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{Texture}{Texture}}
+{\footnotesize\ttfamily \label{structComponents_1_1SpriteRenderer_a7f430566c6a661fa1973ad364f6ba744} 
+std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classTexture2D}{Texture2D}}$>$ Components::\+\+Sprite\+Renderer::\+\+Texture}
+
+
+
+Definition at line \doxymbox{\hyperlink{SpriteRenderer_8h_source_l00019}{19}} of file \doxymbox{\hyperlink{SpriteRenderer_8h_source}{Sprite\+Renderer.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+components/\doxymbox{\hyperlink{SpriteRenderer_8h}{Sprite\+Renderer.\+h}}\end{DoxyCompactItemize}

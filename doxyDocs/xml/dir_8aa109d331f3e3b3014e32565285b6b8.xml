@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_8aa109d331f3e3b3014e32565285b6b8" kind="dir">
+    <compoundname>engine/graphics</compoundname>
+    <innerfile refid="Font_8cpp">Font.cpp</innerfile>
+    <innerfile refid="Font_8h">Font.h</innerfile>
+    <innerfile refid="GraphicsContext_8cpp">GraphicsContext.cpp</innerfile>
+    <innerfile refid="GraphicsContext_8h">GraphicsContext.h</innerfile>
+    <innerfile refid="IndexBuffer_8cpp">IndexBuffer.cpp</innerfile>
+    <innerfile refid="IndexBuffer_8h">IndexBuffer.h</innerfile>
+    <innerfile refid="Shader_8cpp">Shader.cpp</innerfile>
+    <innerfile refid="Shader_8h">Shader.h</innerfile>
+    <innerfile refid="Texture2D_8cpp">Texture2D.cpp</innerfile>
+    <innerfile refid="Texture2D_8h">Texture2D.h</innerfile>
+    <innerfile refid="VertexArray_8cpp">VertexArray.cpp</innerfile>
+    <innerfile refid="VertexArray_8h">VertexArray.h</innerfile>
+    <innerfile refid="VertexBuffer_8cpp">VertexBuffer.cpp</innerfile>
+    <innerfile refid="VertexBuffer_8h">VertexBuffer.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/graphics/"/>
+  </compounddef>
+</doxygen>

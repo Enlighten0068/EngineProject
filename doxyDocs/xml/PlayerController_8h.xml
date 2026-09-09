@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="PlayerController_8h" kind="file" language="C++">
+    <compoundname>PlayerController.h</compoundname>
+    <includes refid="components_2Transform_8h" local="yes">components/Transform.h</includes>
+    <includes refid="Vector3D_8h" local="yes">math/Vector3D.h</includes>
+    <includes refid="GameWorld_8h" local="yes">scene/GameWorld.h</includes>
+    <includes local="no">entt.hpp</includes>
+    <includedby refid="Application_8cpp" local="yes">engine/core/Application.cpp</includedby>
+    <includedby refid="Application_8h" local="yes">engine/core/Application.h</includedby>
+    <includedby refid="PlayerController_8cpp" local="yes">engine/core/PlayerController.cpp</includedby>
+    <includedby refid="Demo2DFixedScene_8h" local="yes">engine/demo/Demo2DFixedScene.h</includedby>
+    <includedby refid="Demo2DScene_8h" local="yes">engine/demo/Demo2DScene.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>components/Transform.h</label>
+        <link refid="components_2Transform_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/core/PlayerController.h</label>
+        <link refid="PlayerController_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>graphics/VertexArray.h</label>
+        <link refid="VertexArray_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>graphics/VertexBuffer.h</label>
+        <link refid="VertexBuffer_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="4">
+        <label>scene/GameWorld.h</label>
+        <link refid="GameWorld_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cmath</label>
+      </node>
+      <node id="10">
+        <label>cstdint</label>
+      </node>
+      <node id="15">
+        <label>entt.hpp</label>
+      </node>
+      <node id="14">
+        <label>memory</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/core/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>engine/core/PlayerController.cpp</label>
+        <link refid="PlayerController_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/core/PlayerController.h</label>
+        <link refid="PlayerController_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>engine/core/Time.cpp</label>
+        <link refid="Time_8cpp"/>
+      </node>
+      <node id="8">
+        <label>engine/demo/Demo2DFixedScene.cpp</label>
+        <link refid="Demo2DFixedScene_8cpp"/>
+      </node>
+      <node id="7">
+        <label>engine/demo/Demo2DFixedScene.h</label>
+        <link refid="Demo2DFixedScene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>engine/demo/Demo2DScene.cpp</label>
+        <link refid="Demo2DScene_8cpp"/>
+      </node>
+      <node id="10">
+        <label>engine/demo/Demo2DScene.h</label>
+        <link refid="Demo2DScene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>engine/scene/MenuScene.cpp</label>
+        <link refid="MenuScene_8cpp"/>
+      </node>
+      <node id="5">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classPlayerController" prot="public">PlayerController</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="components_2Transform_8h" kindref="compound">components/Transform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3D_8h" kindref="compound">math/Vector3D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameWorld_8h" kindref="compound">scene/GameWorld.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;entt.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classPlayerController" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classPlayerController_1a526dbbbce5f9567a8558b5366445b4f7" kindref="member">PlayerController</ref>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1a526dbbbce5f9567a8558b5366445b4f7" kindref="member">PlayerController</ref>(entt::registry&amp;<sp/>registry,<sp/>entt::entity<sp/>playerEntity,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classGameWorld" kindref="compound">GameWorld</ref>&amp;<sp/>world);</highlight></codeline>
+<codeline lineno="29" refid="classPlayerController_1ab89c90498ca2285d7f0ef0b83a091966" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1ab89c90498ca2285d7f0ef0b83a091966" kindref="member">~PlayerController</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1a2e0c380d64a88c8cfe60ce8452921227" kindref="member">Update</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classPlayerController_1abc200ae4a92f7fb881a6dfeb395c1f11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1abc200ae4a92f7fb881a6dfeb395c1f11" kindref="member">SetSpeed</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed){<sp/><ref refid="classPlayerController_1a552c0308cb0226c7862d99c04f68357a" kindref="member">m_Speed</ref><sp/>=<sp/>speed;<sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="classPlayerController_1ab4060eac83a61cfcb0e527a1494b8a23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1ab4060eac83a61cfcb0e527a1494b8a23" kindref="member">GetSpeed</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1a552c0308cb0226c7862d99c04f68357a" kindref="member">m_Speed</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1a41c1071503dfa351b2e028389476529b" kindref="member">Die</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>cause<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Unknown.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Physics<sp/>state<sp/>accessors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classPlayerController_1ade1bb93004235d430154378ed6306afa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/><ref refid="classPlayerController_1ade1bb93004235d430154378ed6306afa" kindref="member">GetVelocity</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="59" refid="classPlayerController_1a8e1f16bbd03a85df6db3922c46d03552" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/><ref refid="classPlayerController_1a8e1f16bbd03a85df6db3922c46d03552" kindref="member">GetVelocity</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="60" refid="classPlayerController_1a1fa66a69ec5d0c51bedf8ca25b69629a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1a1fa66a69ec5d0c51bedf8ca25b69629a" kindref="member">SetGrounded</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>grounded){<sp/><ref refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kindref="member">m_IsGrounded</ref><sp/>=<sp/>grounded;<sp/>}</highlight></codeline>
+<codeline lineno="61" refid="classPlayerController_1a6df72345dcec81954352df7e19763057" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1a6df72345dcec81954352df7e19763057" kindref="member">IsGrounded</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kindref="member">m_IsGrounded</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1ab1593f66b3a70d2ce2c99d2898b27300" kindref="member">SetupEventSubscriptions</ref>();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classPlayerController_1ad586858eeaf73156678220adde0dfc65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>entt::registry&amp;<sp/><ref refid="classPlayerController_1ad586858eeaf73156678220adde0dfc65" kindref="member">m_Registry</ref>;<sp/></highlight><highlight class="comment">//ECS<sp/>registry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classPlayerController_1a91f7e14f412fb0a338d50227b8d77dc7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>entt::entity<sp/><ref refid="classPlayerController_1a91f7e14f412fb0a338d50227b8d77dc7" kindref="member">m_PlayerEntity</ref>;<sp/></highlight><highlight class="comment">//Player<sp/>entity<sp/>ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>{0.0f,<sp/>0.0f,<sp/>0.0f};<sp/></highlight><highlight class="comment">//Current<sp/>velocity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classPlayerController_1a552c0308cb0226c7862d99c04f68357a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1a552c0308cb0226c7862d99c04f68357a" kindref="member">m_Speed</ref><sp/>=<sp/>3.0f;<sp/></highlight><highlight class="comment">//Movement<sp/>speed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Physics<sp/>state<sp/>flags</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classPlayerController_1a4a2c41cdd7c80c8eef1805188a36f541" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1a4a2c41cdd7c80c8eef1805188a36f541" kindref="member">m_IsJumping</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Currently<sp/>jumping</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classPlayerController_1ae0e4240a0fad2c55cdf0b96e4450e83d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1ae0e4240a0fad2c55cdf0b96e4450e83d" kindref="member">m_JumpTimer</ref><sp/>=<sp/>0.0f;<sp/></highlight><highlight class="comment">//Time<sp/>spent<sp/>in<sp/>current<sp/>jump</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classPlayerController_1a1e9b40f2e626532f9d49c66dd256990f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1a1e9b40f2e626532f9d49c66dd256990f" kindref="member">m_IsDead</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Dead<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kindref="member">m_IsGrounded</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Touching<sp/>ground</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classPlayerController_1a2b4f8434fdc256669b54c8ac8f7d6aeb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1a2b4f8434fdc256669b54c8ac8f7d6aeb" kindref="member">m_WasGrounded</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Previous<sp/>frame<sp/>grounded<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classPlayerController_1a0741e03ee1239165e1a12ab2fdc818db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classGameWorld" kindref="compound">GameWorld</ref>&amp;<sp/><ref refid="classPlayerController_1a0741e03ee1239165e1a12ab2fdc818db" kindref="member">m_World</ref>;<sp/></highlight><highlight class="comment">//World<sp/>for<sp/>boundary<sp/>clamping</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/core/PlayerController.h"/>
+  </compounddef>
+</doxygen>

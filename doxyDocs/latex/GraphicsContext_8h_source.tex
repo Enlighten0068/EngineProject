@@ -1,0 +1,43 @@
+\doxysection{Graphics\+Context.\+h}
+\hypertarget{GraphicsContext_8h_source}{}\label{GraphicsContext_8h_source}\index{engine/graphics/GraphicsContext.h@{engine/graphics/GraphicsContext.h}}
+\doxymbox{\hyperlink{GraphicsContext_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Shader_8h}{graphics/Shader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{VertexArray_8h}{graphics/VertexArray.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{VertexBuffer_8h}{graphics/VertexBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{IndexBuffer_8h}{graphics/IndexBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00020}\doxymbox{\hyperlink{classGraphicsContext}{00020}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classGraphicsContext_ad40a8e479ca7f377ea6d4adfed3ba3e7}{GraphicsContext}}\{}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00021}00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00022}\doxymbox{\hyperlink{classGraphicsContext_ad40a8e479ca7f377ea6d4adfed3ba3e7}{00022}}\ \ \ \ \ \doxymbox{\hyperlink{classGraphicsContext_ad40a8e479ca7f377ea6d4adfed3ba3e7}{GraphicsContext}}();}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00023}00023\ \ \ \ \ \doxymbox{\hyperlink{classGraphicsContext_ad40a8e479ca7f377ea6d4adfed3ba3e7}{\string~GraphicsContext}}();}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classGraphicsContext_aadcd5eebbfec1be436549ad4ed909a60}{Initialize}}();}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classGraphicsContext_ab79b1ec7a5d63666aad24ff086705828}{Shutdown}}();}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//Getters\ for\ graphics\ resources}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00040}\doxymbox{\hyperlink{classGraphicsContext_ac72c010277ef084de5d680bcd58a223e}{00040}}\ \ \ \ \ \doxymbox{\hyperlink{classShader}{Shader}}\&\ \doxymbox{\hyperlink{classGraphicsContext_ac72c010277ef084de5d680bcd58a223e}{GetShader}}()\{\ \textcolor{keywordflow}{return}\ *\doxymbox{\hyperlink{classGraphicsContext_ab662bdd94fa5b2daef1dca119d3423af}{m\_Shader}};\ \}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00041}\doxymbox{\hyperlink{classGraphicsContext_a82dfe9bc5bd032e4a32e1736cf85ccf6}{00041}}\ \ \ \ \ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ \doxymbox{\hyperlink{classGraphicsContext_a82dfe9bc5bd032e4a32e1736cf85ccf6}{GetVertexArray}}()\{\ \textcolor{keywordflow}{return}\ *\doxymbox{\hyperlink{classGraphicsContext_ac2acd7387eaed15cfdebc3b7f6577a98}{m\_VertexArray}};\ \}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00042}\doxymbox{\hyperlink{classGraphicsContext_ad9ec3d04af96d1a4d805852109bd9e8c}{00042}}\ \ \ \ \ \doxymbox{\hyperlink{classVertexBuffer}{VertexBuffer}}\&\ \doxymbox{\hyperlink{classGraphicsContext_ad9ec3d04af96d1a4d805852109bd9e8c}{GetVertexBuffer}}()\{\ \textcolor{keywordflow}{return}\ *\doxymbox{\hyperlink{classGraphicsContext_a8ce73fa81f3c21abdb541ba6f3c95c04}{m\_VertexBuffer}};\ \}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00043}\doxymbox{\hyperlink{classGraphicsContext_a1e99a7cb43ec5c9ae6cc5059663de7fe}{00043}}\ \ \ \ \ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ \doxymbox{\hyperlink{classGraphicsContext_a1e99a7cb43ec5c9ae6cc5059663de7fe}{GetIndexBuffer}}()\{\ \textcolor{keywordflow}{return}\ *\doxymbox{\hyperlink{classGraphicsContext_a5e9b71e185b7c14435050f5337b59df2}{m\_IndexBuffer}};\ \}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00044}\doxymbox{\hyperlink{classGraphicsContext_a04dd74301ef00fda5b0d157df90ae39e}{00044}}\ \ \ \ \ \doxymbox{\hyperlink{classShader}{Shader}}\&\ \doxymbox{\hyperlink{classGraphicsContext_a04dd74301ef00fda5b0d157df90ae39e}{GetLineShader}}()\{\ \textcolor{keywordflow}{return}\ *\doxymbox{\hyperlink{classGraphicsContext_a539dff391f3e386ec987bf179024e0b7}{m\_LineShader}};\ \}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00046}00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00047}\doxymbox{\hyperlink{classGraphicsContext_ab662bdd94fa5b2daef1dca119d3423af}{00047}}\ \ \ \ \ std::unique\_ptr<Shader>\ \doxymbox{\hyperlink{classGraphicsContext_ab662bdd94fa5b2daef1dca119d3423af}{m\_Shader}};\ \textcolor{comment}{//Main\ shader\ for\ sprite\ rendering}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00048}\doxymbox{\hyperlink{classGraphicsContext_ac2acd7387eaed15cfdebc3b7f6577a98}{00048}}\ \ \ \ \ std::unique\_ptr<VertexArray>\ \doxymbox{\hyperlink{classGraphicsContext_ac2acd7387eaed15cfdebc3b7f6577a98}{m\_VertexArray}};\ \textcolor{comment}{//Vertex\ array\ object}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00049}\doxymbox{\hyperlink{classGraphicsContext_a8ce73fa81f3c21abdb541ba6f3c95c04}{00049}}\ \ \ \ \ std::unique\_ptr<VertexBuffer>\ \doxymbox{\hyperlink{classGraphicsContext_a8ce73fa81f3c21abdb541ba6f3c95c04}{m\_VertexBuffer}};\ \textcolor{comment}{//Vertex\ buffer\ for\ quad\ geometry}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00050}\doxymbox{\hyperlink{classGraphicsContext_a5e9b71e185b7c14435050f5337b59df2}{00050}}\ \ \ \ \ std::unique\_ptr<IndexBuffer>\ \doxymbox{\hyperlink{classGraphicsContext_a5e9b71e185b7c14435050f5337b59df2}{m\_IndexBuffer}};\ \textcolor{comment}{//Index\ buffer\ for\ quad\ geometry}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00051}\doxymbox{\hyperlink{classGraphicsContext_a539dff391f3e386ec987bf179024e0b7}{00051}}\ \ \ \ \ std::unique\_ptr<Shader>\ \doxymbox{\hyperlink{classGraphicsContext_a539dff391f3e386ec987bf179024e0b7}{m\_LineShader}};\ \textcolor{comment}{//Line\ shader\ for\ debug/wireframe\ rendering}}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classGraphicsContext_a64a20e75ab42bb9b959ba8f6ac077991}{CreateBuffers}}();}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classGraphicsContext_a92739ce6618c156223091aa5b37f2f93}{CompileShaders}}();}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classGraphicsContext_a1e40666b05cab4ede2e01bf3ab6487f0}{CompileLineShader}}();}
+\DoxyCodeLine{\Hypertarget{GraphicsContext_8h_source_l00073}00073\ \};}
+
+\end{DoxyCode}

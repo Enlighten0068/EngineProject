@@ -23,17 +23,16 @@
  * default to 1.0f (no repetition, texture stretches to fill the quad).
  *
  * @note This system should be called once per frame from the scene's Render() method.
- * @see Transform, SpriteRenderer, TileScale, Renderer
+ * @see Components::Transform, Components::SpriteRenderer, Components::TileScale, Renderer
  */
 class RenderSystem{
 public:
-
     /**
      * @brief Renders all entities with Transform and SpriteRenderer components.
      *
      * This method iterates over all entities that have both Transform and SpriteRenderer
-     * components. For each entity checks if texture is valid, build the model matrix,
-     * and calls the Draw Textured Quad Function.
+     * components. For each entity, it checks if the texture is valid, builds the model
+     * matrix, and calls DrawTexturedQuad on the Renderer.
      *
      * @param registry Reference to the ECS registry containing all entities.
      * @param shader The shader program to use for rendering.
@@ -44,39 +43,29 @@ public:
      */
     static void Render(entt::registry& registry, Shader& shader, const Matrix4& view,
                        const Matrix4& projection, VertexArray& va, IndexBuffer& ib){
-
-
-
         auto view_entities = registry.view<Components::Transform, Components::SpriteRenderer>();
-        //Log::Info(std::format("RenderSystem: {} entities to render", view_entities.size()));
 
-        //Debugging - log the number of entities being rendered
-        //Log::Info(std::format("RenderSystem: {} entities to render", view_entities.size()));
-
-        for (auto [entity, transform, sprite] : view_entities.each()){
-
+        for(auto [entity, transform, sprite] : view_entities.each()){
             //Skip entities without texture
-            if (!sprite.Texture) continue;
+            if(!sprite.Texture) continue;
 
+            //Build model matrix: translation * rotation * scale
             Matrix4 model = Matrix4::Translation(transform.Position);
             model = model * Matrix4::RotationZ(transform.Rotation.z);
             model = model * Matrix4::Scale(transform.Scale);
 
-            //Log::Info(std::format("[RenderSystem] Entity scale: ({}, {}), Rotation Z: {}",
-                                  //transform.Scale.x, transform.Scale.y, transform.Rotation.z));
-            //Log::Info(std::format("[RenderSystem] Model[0]={}, Model[5]={}",
-                                  //model.Data()[0], model.Data()[5]));
-
+            //Get tile scale (default to 1.0 if not present)
             float tileScaleX = 1.0f;
             float tileScaleY = 1.0f;
-
-            if (registry.all_of<TileScale>(entity)){
-                const auto& ts = registry.get<TileScale>(entity);
+            if(registry.all_of<Components::TileScale>(entity)){
+                const auto& ts = registry.get<Components::TileScale>(entity);
                 tileScaleX = ts.ScaleX;
                 tileScaleY = ts.ScaleY;
             }
 
-            Renderer::DrawTexturedQuad(shader, va, ib, *sprite.Texture, model, view, projection, tileScaleX, tileScaleY);
-            }
+            //Draw the textured quad
+            Renderer::DrawTexturedQuad(shader, va, ib, *sprite.Texture,
+                                       model, view, projection, tileScaleX, tileScaleY);
         }
+    }
 };

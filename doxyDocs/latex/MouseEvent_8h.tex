@@ -1,0 +1,125 @@
+\doxysection{engine/\+events/\+\+Mouse\+Event.h File Reference}
+\hypertarget{MouseEvent_8h}{}\label{MouseEvent_8h}\index{engine/events/MouseEvent.h@{engine/events/MouseEvent.h}}
+{\ttfamily \+\#include "{}events/\+\+Event.\+h"{}}\newline
+{\ttfamily \+\#include "{}math/\+\+Vector2\+D.\+h"{}}\newline
+{\ttfamily \+\#include $<$SDL3/\+\+SDL.\+h$>$}\newline
+Include dependency graph for Mouse\+Event.\+h:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MouseEvent_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MouseEvent_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classMouseMotionEvent}{Mouse\+Motion\+Event}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classEvent}{Event} representing mouse movement. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{classMouseButtonEvent}{Mouse\+Button\+Event}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classEvent}{Event} representing a mouse button press/\+release. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{classMouseWheelEvent}{Mouse\+Wheel\+Event}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classEvent}{Event} representing mouse wheel scroll. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}} \{ \newline
+\doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711a945d5e233cf7d6240f6b783b36a374ff}{Left}} = 1
+, \doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711ab1ca34f82e83c52b010f86955f264e05}{Middle}} = 2
+, \doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711a92b09c7c48c520c3c55e497875da437c}{Right}} = 3
+, \doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711abb7f5ae6220c9828e5ec91faf054197c}{X1}} = 4
+, \newline
+\doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711a54105bddbfe3f639d49cbe8f5182c958}{X2}} = 5
+ \}
+\begin{DoxyCompactList}\small\item\em Mouse button identifiers (matches SDL button numbers). \end{DoxyCompactList}\item 
+enum class \doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224}{Mouse\+Button\+Action}} \{ \doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224ad78a68f6a85421ae121c2cb5b73a1040}{Pressed}}
+, \doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224aea1e34304a5d8ffa7c9b0ed8ede4ef1a}{Released}}
+ \}
+\begin{DoxyCompactList}\small\item\em Mouse button action types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{MouseEvent_8h_doc-enum-members}
+\Hypertarget{MouseEvent_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711}\index{MouseEvent.h@{MouseEvent.h}!MouseButton@{MouseButton}}
+\index{MouseButton@{MouseButton}!MouseEvent.h@{MouseEvent.h}}
+\doxysubsubsection{\texorpdfstring{MouseButton}{MouseButton}}
+{\footnotesize\ttfamily \label{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711} 
+enum class \doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Mouse button identifiers (matches SDL button numbers). 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!MouseEvent.h@{MouseEvent.h}}
+\index{MouseEvent.h@{MouseEvent.h}!Left@{Left}}
+}\Hypertarget{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711a945d5e233cf7d6240f6b783b36a374ff}\label{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711a945d5e233cf7d6240f6b783b36a374ff} 
+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Middle@{Middle}!MouseEvent.h@{MouseEvent.h}}
+\index{MouseEvent.h@{MouseEvent.h}!Middle@{Middle}}
+}\Hypertarget{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711ab1ca34f82e83c52b010f86955f264e05}\label{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711ab1ca34f82e83c52b010f86955f264e05} 
+Middle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!MouseEvent.h@{MouseEvent.h}}
+\index{MouseEvent.h@{MouseEvent.h}!Right@{Right}}
+}\Hypertarget{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711a92b09c7c48c520c3c55e497875da437c}\label{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711a92b09c7c48c520c3c55e497875da437c} 
+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X1@{X1}!MouseEvent.h@{MouseEvent.h}}
+\index{MouseEvent.h@{MouseEvent.h}!X1@{X1}}
+}\Hypertarget{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711abb7f5ae6220c9828e5ec91faf054197c}\label{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711abb7f5ae6220c9828e5ec91faf054197c} 
+X1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X2@{X2}!MouseEvent.h@{MouseEvent.h}}
+\index{MouseEvent.h@{MouseEvent.h}!X2@{X2}}
+}\Hypertarget{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711a54105bddbfe3f639d49cbe8f5182c958}\label{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711a54105bddbfe3f639d49cbe8f5182c958} 
+X2&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00039}{39}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224}\index{MouseEvent.h@{MouseEvent.h}!MouseButtonAction@{MouseButtonAction}}
+\index{MouseButtonAction@{MouseButtonAction}!MouseEvent.h@{MouseEvent.h}}
+\doxysubsubsection{\texorpdfstring{MouseButtonAction}{MouseButtonAction}}
+{\footnotesize\ttfamily \label{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224} 
+enum class \doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224}{Mouse\+Button\+Action}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Mouse button action types. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pressed@{Pressed}!MouseEvent.h@{MouseEvent.h}}
+\index{MouseEvent.h@{MouseEvent.h}!Pressed@{Pressed}}
+}\Hypertarget{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224ad78a68f6a85421ae121c2cb5b73a1040}\label{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224ad78a68f6a85421ae121c2cb5b73a1040} 
+Pressed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Released@{Released}!MouseEvent.h@{MouseEvent.h}}
+\index{MouseEvent.h@{MouseEvent.h}!Released@{Released}}
+}\Hypertarget{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224aea1e34304a5d8ffa7c9b0ed8ede4ef1a}\label{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224aea1e34304a5d8ffa7c9b0ed8ede4ef1a} 
+Released&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00050}{50}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+

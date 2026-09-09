@@ -1,0 +1,212 @@
+\doxysection{Mouse\+Button\+Event Class Reference}
+\hypertarget{classMouseButtonEvent}{}\label{classMouseButtonEvent}\index{MouseButtonEvent@{MouseButtonEvent}}
+
+
+\doxylink{classEvent}{Event} representing a mouse button press/\+release.  
+
+
+
+
+{\ttfamily \+\#include $<$Mouse\+Event.\+h$>$}
+
+
+
+Inheritance diagram for Mouse\+Button\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classMouseButtonEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mouse\+Button\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classMouseButtonEvent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classMouseButtonEvent_a789cf2cf6cfe1d76413c397950cd128b}{Mouse\+Button\+Event}} (\doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}} button, \doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224}{Mouse\+Button\+Action}} action, const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&position)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classMouseButtonEvent}{Mouse\+Button\+Event}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}} \doxymbox{\hyperlink{classMouseButtonEvent_ab60dceaeb707317ab267ffacde3b6c1b}{Get\+Button}} () const
+\item 
+\doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224}{Mouse\+Button\+Action}} \doxymbox{\hyperlink{classMouseButtonEvent_ac54f1bb65b817b818e310526ca8aed97}{Get\+Action}} () const
+\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classMouseButtonEvent_aee204344f9ab0de4d3448017846d2dcc}{Get\+Position}} () const
+\item 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classMouseButtonEvent_ac6b8e90d0d6ed6bc07199726f209b72e}{Get\+Event\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classEvent_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classMouseButtonEvent_a9c56ce7622039fc9a191fa72b779655b}{Get\+Static\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}} \doxymbox{\hyperlink{classMouseButtonEvent_aeb7e0639c6bf9d4d427784152113b6ad}{m\+\_\+\+Button}}
+\item 
+\doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224}{Mouse\+Button\+Action}} \doxymbox{\hyperlink{classMouseButtonEvent_a73d4f8d32af734e233bcc6f33116de08}{m\+\_\+\+Action}}
+\item 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} \doxymbox{\hyperlink{classMouseButtonEvent_ab5e7ca136eb4f1cf266a45cc852cfb4a}{m\+\_\+\+Position}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classEvent_a8ad0c350a8f569dbb05cf845caa4737e}{Handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classEvent}{Event} representing a mouse button press/\+release. 
+
+Contains which button was pressed/\+released, the action type, and the mouse position at the time of the event. 
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00061}{61}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+\label{classMouseButtonEvent_doc-constructors}
+\Hypertarget{classMouseButtonEvent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMouseButtonEvent_a789cf2cf6cfe1d76413c397950cd128b}\index{MouseButtonEvent@{MouseButtonEvent}!MouseButtonEvent@{MouseButtonEvent}}
+\index{MouseButtonEvent@{MouseButtonEvent}!MouseButtonEvent@{MouseButtonEvent}}
+\doxysubsubsection{\texorpdfstring{MouseButtonEvent()}{MouseButtonEvent()}}
+{\footnotesize\ttfamily \label{classMouseButtonEvent_a789cf2cf6cfe1d76413c397950cd128b} 
+Mouse\+Button\+Event::\+\+Mouse\+Button\+Event (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}}}]{button}{, }\item[{\doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224}{Mouse\+Button\+Action}}}]{action}{, }\item[{const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classMouseButtonEvent}{Mouse\+Button\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & The mouse button. \\
+\hline
+{\em action} & Action type (pressed or released). \\
+\hline
+{\em position} & Mouse position at the time of the event. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00069}{69}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+\label{classMouseButtonEvent_doc-func-members}
+\Hypertarget{classMouseButtonEvent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMouseButtonEvent_ac54f1bb65b817b818e310526ca8aed97}\index{MouseButtonEvent@{MouseButtonEvent}!GetAction@{GetAction}}
+\index{GetAction@{GetAction}!MouseButtonEvent@{MouseButtonEvent}}
+\doxysubsubsection{\texorpdfstring{GetAction()}{GetAction()}}
+{\footnotesize\ttfamily \label{classMouseButtonEvent_ac54f1bb65b817b818e310526ca8aed97} 
+\doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224}{Mouse\+Button\+Action}} Mouse\+Button\+Event::\+\+Get\+Action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00073}{73}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseButtonEvent_ab60dceaeb707317ab267ffacde3b6c1b}\index{MouseButtonEvent@{MouseButtonEvent}!GetButton@{GetButton}}
+\index{GetButton@{GetButton}!MouseButtonEvent@{MouseButtonEvent}}
+\doxysubsubsection{\texorpdfstring{GetButton()}{GetButton()}}
+{\footnotesize\ttfamily \label{classMouseButtonEvent_ab60dceaeb707317ab267ffacde3b6c1b} 
+\doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}} Mouse\+Button\+Event::\+\+Get\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00072}{72}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseButtonEvent_ac6b8e90d0d6ed6bc07199726f209b72e}\index{MouseButtonEvent@{MouseButtonEvent}!GetEventType@{GetEventType}}
+\index{GetEventType@{GetEventType}!MouseButtonEvent@{MouseButtonEvent}}
+\doxysubsubsection{\texorpdfstring{GetEventType()}{GetEventType()}}
+{\footnotesize\ttfamily \label{classMouseButtonEvent_ac6b8e90d0d6ed6bc07199726f209b72e} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Mouse\+Button\+Event::\+\+Get\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the event. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type} enum value identifying the event. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classEvent_af14bbd8f69c2778def9462375a0e70f2}{Event}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00077}{77}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseButtonEvent_aee204344f9ab0de4d3448017846d2dcc}\index{MouseButtonEvent@{MouseButtonEvent}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!MouseButtonEvent@{MouseButtonEvent}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{classMouseButtonEvent_aee204344f9ab0de4d3448017846d2dcc} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Mouse\+Button\+Event::\+\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00074}{74}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseButtonEvent_a9c56ce7622039fc9a191fa72b779655b}\index{MouseButtonEvent@{MouseButtonEvent}!GetStaticType@{GetStaticType}}
+\index{GetStaticType@{GetStaticType}!MouseButtonEvent@{MouseButtonEvent}}
+\doxysubsubsection{\texorpdfstring{GetStaticType()}{GetStaticType()}}
+{\footnotesize\ttfamily \label{classMouseButtonEvent_a9c56ce7622039fc9a191fa72b779655b} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Mouse\+Button\+Event::\+\+Get\+Static\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00076}{76}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+\label{classMouseButtonEvent_doc-variable-members}
+\Hypertarget{classMouseButtonEvent_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMouseButtonEvent_a73d4f8d32af734e233bcc6f33116de08}\index{MouseButtonEvent@{MouseButtonEvent}!m\_Action@{m\_Action}}
+\index{m\_Action@{m\_Action}!MouseButtonEvent@{MouseButtonEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Action}{m\_Action}}
+{\footnotesize\ttfamily \label{classMouseButtonEvent_a73d4f8d32af734e233bcc6f33116de08} 
+\doxymbox{\hyperlink{MouseEvent_8h_abe9b53e1b348725f697f5e443cb3c224}{Mouse\+Button\+Action}} Mouse\+Button\+Event::\+m\+\_\+\+Action\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00081}{81}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseButtonEvent_aeb7e0639c6bf9d4d427784152113b6ad}\index{MouseButtonEvent@{MouseButtonEvent}!m\_Button@{m\_Button}}
+\index{m\_Button@{m\_Button}!MouseButtonEvent@{MouseButtonEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Button}{m\_Button}}
+{\footnotesize\ttfamily \label{classMouseButtonEvent_aeb7e0639c6bf9d4d427784152113b6ad} 
+\doxymbox{\hyperlink{MouseEvent_8h_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}} Mouse\+Button\+Event::\+m\+\_\+\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00080}{80}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+\Hypertarget{classMouseButtonEvent_ab5e7ca136eb4f1cf266a45cc852cfb4a}\index{MouseButtonEvent@{MouseButtonEvent}!m\_Position@{m\_Position}}
+\index{m\_Position@{m\_Position}!MouseButtonEvent@{MouseButtonEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Position}{m\_Position}}
+{\footnotesize\ttfamily \label{classMouseButtonEvent_ab5e7ca136eb4f1cf266a45cc852cfb4a} 
+\doxymbox{\hyperlink{structVector2D}{Vector2D}} Mouse\+Button\+Event::\+m\+\_\+\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MouseEvent_8h_source_l00082}{82}} of file \doxymbox{\hyperlink{MouseEvent_8h_source}{Mouse\+Event.\+h}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+events/\doxymbox{\hyperlink{MouseEvent_8h}{Mouse\+Event.\+h}}\end{DoxyCompactItemize}

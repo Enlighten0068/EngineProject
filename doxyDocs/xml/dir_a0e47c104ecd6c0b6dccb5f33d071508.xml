@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_a0e47c104ecd6c0b6dccb5f33d071508" kind="dir">
+    <compoundname>engine/core</compoundname>
+    <innerfile refid="Application_8cpp">Application.cpp</innerfile>
+    <innerfile refid="Application_8h">Application.h</innerfile>
+    <innerfile refid="CameraController_8cpp">CameraController.cpp</innerfile>
+    <innerfile refid="CameraController_8h">CameraController.h</innerfile>
+    <innerfile refid="Engine_8cpp">Engine.cpp</innerfile>
+    <innerfile refid="Engine_8h">Engine.h</innerfile>
+    <innerfile refid="FpsCounter_8cpp">FpsCounter.cpp</innerfile>
+    <innerfile refid="FpsCounter_8h">FpsCounter.h</innerfile>
+    <innerfile refid="GamepadManager_8cpp">GamepadManager.cpp</innerfile>
+    <innerfile refid="GamepadManager_8h">GamepadManager.h</innerfile>
+    <innerfile refid="Input_8cpp">Input.cpp</innerfile>
+    <innerfile refid="Input_8h">Input.h</innerfile>
+    <innerfile refid="PlayerController_8cpp">PlayerController.cpp</innerfile>
+    <innerfile refid="PlayerController_8h">PlayerController.h</innerfile>
+    <innerfile refid="Time_8cpp">Time.cpp</innerfile>
+    <innerfile refid="Time_8h">Time.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/core/"/>
+  </compounddef>
+</doxygen>

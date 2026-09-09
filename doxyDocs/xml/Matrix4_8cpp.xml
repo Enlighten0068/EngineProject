@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Matrix4_8cpp" kind="file" language="C++">
+    <compoundname>Matrix4.cpp</compoundname>
+    <includes refid="Matrix4_8h" local="yes">math/Matrix4.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/math/Matrix4.cpp</label>
+        <link refid="Matrix4_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="4">
+        <label>cmath</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Matrix4_8h" kindref="compound">math/Matrix4.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" refkind="member"><highlight class="normal"><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4::Matrix4</ref>(){</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>16;<sp/>++i){</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[i]<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="classMatrix4_1a8ac4bc2827badac74be9b12d788e4d1c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/><ref refid="classMatrix4_1a8ac4bc2827badac74be9b12d788e4d1c" kindref="member">Matrix4::Data</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classMatrix4_1ae114a47efddacad2207eadac5f532098" refkind="member"><highlight class="normal"><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/><ref refid="classMatrix4_1ae114a47efddacad2207eadac5f532098" kindref="member">Matrix4::Identity</ref>(){</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/>result;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[0]<sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[5]<sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[10]<sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[15]<sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classMatrix4_1a35fb272e82fbfc17cdf2d75c858f5da7" refkind="member"><highlight class="normal"><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/><ref refid="classMatrix4_1a35fb272e82fbfc17cdf2d75c858f5da7" kindref="member">Matrix4::Translation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>position){</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/>result<sp/>=<sp/><ref refid="classMatrix4_1ae114a47efddacad2207eadac5f532098" kindref="member">Identity</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[12]<sp/>=<sp/>position.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[13]<sp/>=<sp/>position.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[14]<sp/>=<sp/>position.<ref refid="structVector3D_1af9728f1eba23b9ee091755346214f391" kindref="member">z</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classMatrix4_1aa3a30984ce9f309c23827d5e1cde0fdc" refkind="member"><highlight class="normal"><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/><ref refid="classMatrix4_1aa3a30984ce9f309c23827d5e1cde0fdc" kindref="member">Matrix4::Scale</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>scale){</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/>result<sp/>=<sp/><ref refid="classMatrix4_1ae114a47efddacad2207eadac5f532098" kindref="member">Identity</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[0]<sp/>=<sp/>scale.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[5]<sp/>=<sp/>scale.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[10]<sp/>=<sp/>scale.<ref refid="structVector3D_1af9728f1eba23b9ee091755346214f391" kindref="member">z</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classMatrix4_1a07a0a50c8e4d085e289a9d383040202d" refkind="member"><highlight class="normal"><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/><ref refid="classMatrix4_1a07a0a50c8e4d085e289a9d383040202d" kindref="member">Matrix4::operator*</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/>result;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row<sp/>=<sp/>0;<sp/>row<sp/>&lt;<sp/>4;<sp/>++row){</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>col<sp/>=<sp/>0;<sp/>col<sp/>&lt;<sp/>4;<sp/>++col){</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[col<sp/>*<sp/>4<sp/>+<sp/>row]<sp/>=</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[0<sp/>*<sp/>4<sp/>+<sp/>row]<sp/>*<sp/>other.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[col<sp/>*<sp/>4<sp/>+<sp/>0]<sp/>+</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[1<sp/>*<sp/>4<sp/>+<sp/>row]<sp/>*<sp/>other.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[col<sp/>*<sp/>4<sp/>+<sp/>1]<sp/>+</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[2<sp/>*<sp/>4<sp/>+<sp/>row]<sp/>*<sp/>other.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[col<sp/>*<sp/>4<sp/>+<sp/>2]<sp/>+</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[3<sp/>*<sp/>4<sp/>+<sp/>row]<sp/>*<sp/>other.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[col<sp/>*<sp/>4<sp/>+<sp/>3];</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classMatrix4_1a8cc70f5111adc0c13fed0521a31b80b6" refkind="member"><highlight class="normal"><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/><ref refid="classMatrix4_1a8cc70f5111adc0c13fed0521a31b80b6" kindref="member">Matrix4::Orthographic</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>right,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottom,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>nearPlane,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>farPlane){</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/>result<sp/>=<sp/><ref refid="classMatrix4_1ae114a47efddacad2207eadac5f532098" kindref="member">Identity</ref>();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Scale<sp/>components</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[0]<sp/>=<sp/>2.0f<sp/>/<sp/>(right<sp/>-<sp/>left);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[5]<sp/>=<sp/>2.0f<sp/>/<sp/>(top<sp/>-<sp/>bottom);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[10]<sp/>=<sp/>-2.0f<sp/>/<sp/>(farPlane<sp/>-<sp/>nearPlane);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Translation<sp/>components</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[12]<sp/>=<sp/>-(right<sp/>+<sp/>left)<sp/>/<sp/>(right<sp/>-<sp/>left);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[13]<sp/>=<sp/>-(top<sp/>+<sp/>bottom)<sp/>/<sp/>(top<sp/>-<sp/>bottom);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[14]<sp/>=<sp/>-(farPlane<sp/>+<sp/>nearPlane)<sp/>/<sp/>(farPlane<sp/>-<sp/>nearPlane);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="classMatrix4_1aaa53c3d6bcda5ac9c4d8568a54d3d543" refkind="member"><highlight class="normal"><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/><ref refid="classMatrix4_1aaa53c3d6bcda5ac9c4d8568a54d3d543" kindref="member">Matrix4::RotationZ</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>angleRadians){</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4_1a21e70a74447b9b05cf9a06400bc9c661" kindref="member">Matrix4</ref><sp/>result<sp/>=<sp/><ref refid="classMatrix4_1ae114a47efddacad2207eadac5f532098" kindref="member">Identity</ref>();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>c<sp/>=<sp/>std::cos(angleRadians);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>s<sp/>=<sp/>std::sin(angleRadians);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[0]<sp/>=<sp/>c;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[1]<sp/>=<sp/>-s;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[4]<sp/>=<sp/>s;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="classMatrix4_1a7ae7521ab1dd94119349dcbf408cb004" kindref="member">m_Data</ref>[5]<sp/>=<sp/>c;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/math/Matrix4.cpp"/>
+  </compounddef>
+</doxygen>

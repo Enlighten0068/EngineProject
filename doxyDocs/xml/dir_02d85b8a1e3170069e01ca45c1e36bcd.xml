@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_02d85b8a1e3170069e01ca45c1e36bcd" kind="dir">
+    <compoundname>engine/diagnostics</compoundname>
+    <innerfile refid="Assert_8h">Assert.h</innerfile>
+    <innerfile refid="Log_8cpp">Log.cpp</innerfile>
+    <innerfile refid="Log_8h">Log.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/diagnostics/"/>
+  </compounddef>
+</doxygen>

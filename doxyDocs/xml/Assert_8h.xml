@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Assert_8h" kind="file" language="C++">
+    <compoundname>Assert.h</compoundname>
+    <includes refid="Log_8h" local="yes">diagnostics/Log.h</includes>
+    <includes local="no">cstdlib</includes>
+    <includedby refid="SDLWindow_8cpp" local="yes">engine/platform/sdl/SDLWindow.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>engine/diagnostics/Assert.h</label>
+        <link refid="Assert_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>chrono</label>
+      </node>
+      <node id="9">
+        <label>cstdlib</label>
+      </node>
+      <node id="4">
+        <label>fstream</label>
+      </node>
+      <node id="6">
+        <label>iomanip</label>
+      </node>
+      <node id="7">
+        <label>sstream</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>engine/diagnostics/Assert.h</label>
+        <link refid="Assert_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>engine/platform/sdl/SDLWindow.cpp</label>
+        <link refid="SDLWindow_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="Assert_8h_1a8cd446f746bfa7d25787eb94290c900d" prot="public" static="no">
+        <name>ENGINE_ASSERT</name>
+        <param><defname>condition</defname></param>
+        <param><defname>message</defname></param>
+        <initializer>do{ \
+    if(!(condition)){ \
+        <ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(std::format(&quot;Assertion Failed: {}\nFile: {}\n Line: {}&quot;, message, __FILE__, __LINE__)); \
+        std::abort(); \
+    } \
+} while(false)</initializer>
+        <briefdescription>
+<para>Asserts a condition and aborts the program if it fails. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the condition evaluates to false, logs an error message with the file name and line number, then terminates the program with std::abort().</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>condition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The condition to evaluate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error message to log if the condition fails.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Should be used only in debug builds. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Assert.h" line="19" column="9" bodyfile="engine/diagnostics/Assert.h" bodystart="19" bodyend="25"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Log_8h" kindref="compound">diagnostics/Log.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="Assert_8h_1a8cd446f746bfa7d25787eb94290c900d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENGINE_ASSERT(condition,<sp/>message)<sp/>\</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor">do{<sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if(!(condition)){<sp/>\</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log::Error(std::format(&quot;Assertion<sp/>Failed:<sp/>{}\nFile:<sp/>{}\n<sp/>Line:<sp/>{}&quot;,<sp/>message,<sp/>__FILE__,<sp/>__LINE__));<sp/>\</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::abort();<sp/>\</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor">}<sp/>while(false)</highlight></codeline>
+    </programlisting>
+    <location file="engine/diagnostics/Assert.h"/>
+  </compounddef>
+</doxygen>

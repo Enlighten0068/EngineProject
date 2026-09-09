@@ -1,0 +1,7 @@
+<map id="MouseWheelEvent" name="MouseWheelEvent">
+<area shape="rect" id="Node000001" title="Event representing mouse wheel scroll." alt="" coords="62,329,220,469"/>
+<area shape="rect" id="Node000002" href="$classEvent.html" title="Base class for all events in the engine." alt="" coords="5,84,132,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,190,125,330,120,330,84,194"/>
+<area shape="rect" id="Node000003" href="$structVector2D.html" title="2D vector struct with basic arithmetic operations." alt="" coords="157,5,269,256"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,254,166,314,161,312,178,258"/>
+</map>

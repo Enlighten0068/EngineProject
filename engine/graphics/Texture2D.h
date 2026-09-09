@@ -11,6 +11,7 @@
  * Supports wrapping modes (GL_REPEAT) and mipmap generation.
  *
  * @note Textures are loaded with vertical flip enabled (stbi_set_flip_vertically_on_load).
+ * @see ResourceManager
  */
 class Texture2D{
 public:
@@ -40,7 +41,7 @@ public:
 
     /**
      * @brief Binds the texture to a texture unit.
-     * @param slot Texture unit index.
+     * @param slot Texture unit index (default: 0).
      */
     void Bind(uint32_t slot = 0) const;
 
@@ -53,14 +54,11 @@ public:
     int GetWidth() const;
     int GetHeight() const;
     int GetChannels() const;
-    uint32_t GetRendererID() const { return m_RendererID; }
+    uint32_t GetRendererID() const{ return m_RendererID; }
 
 private:
-    uint32_t m_RendererID;
-
-    //Height and width in pixels
-    int m_Width;
-    int m_Height;
-
-    int m_Channels;
+    uint32_t m_RendererID; //OpenGL texture ID
+    int m_Width; //Texture width in pixels
+    int m_Height; //Texture height in pixels
+    int m_Channels; //Number of color channels (3 = RGB, 4 = RGBA)
 };

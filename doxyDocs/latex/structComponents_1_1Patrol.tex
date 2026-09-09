@@ -1,0 +1,99 @@
+\doxysection{Components::Patrol Struct Reference}
+\hypertarget{structComponents_1_1Patrol}{}\label{structComponents_1_1Patrol}\index{Components::Patrol@{Components::Patrol}}
+
+
+Defines patrol behavior for an entity.  
+
+
+
+
+{\ttfamily \+\#include $<$Patrol.\+h$>$}
+
+
+
+Collaboration diagram for Components::Patrol:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{structComponents_1_1Patrol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{structComponents_1_1Patrol_acdb7e56ff34a14dbd8500c29bec0affe}{Start\+Position}}
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{structComponents_1_1Patrol_a6c28272ebcacf6843b3c3ab318db5700}{End\+Position}}
+\item 
+float \doxymbox{\hyperlink{structComponents_1_1Patrol_a6e941f16bb4b4dbcefd9dddd2055ad2c}{Speed}} = 2.\+0f
+\item 
+bool \doxymbox{\hyperlink{structComponents_1_1Patrol_a7b930b9777aa350bac7447257cd4d6bf}{Moving\+Right}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines patrol behavior for an entity. 
+
+An entity with this component will move back and forth between two positions at a specified speed. Used primarily for enemy AI in platformer games.
+
+\begin{DoxyNote}{Note}
+The movement direction (Moving\+Right) is automatically toggled when the entity reaches either end of the patrol range. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structComponents_1_1Enemy}{Enemy}, \doxylink{structComponents_1_1PhysicsBody}{Physics\+Body}, \doxylink{classEnemySystem}{Enemy\+System} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Patrol_8h_source_l00017}{17}} of file \doxymbox{\hyperlink{Patrol_8h_source}{Patrol.\+h}}.
+
+
+
+\label{structComponents_1_1Patrol_doc-variable-members}
+\Hypertarget{structComponents_1_1Patrol_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structComponents_1_1Patrol_a6c28272ebcacf6843b3c3ab318db5700}\index{Components::Patrol@{Components::Patrol}!EndPosition@{EndPosition}}
+\index{EndPosition@{EndPosition}!Components::Patrol@{Components::Patrol}}
+\doxysubsubsection{\texorpdfstring{EndPosition}{EndPosition}}
+{\footnotesize\ttfamily \label{structComponents_1_1Patrol_a6c28272ebcacf6843b3c3ab318db5700} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Components::\+\+Patrol::\+\+End\+Position}
+
+
+
+Definition at line \doxymbox{\hyperlink{Patrol_8h_source_l00019}{19}} of file \doxymbox{\hyperlink{Patrol_8h_source}{Patrol.\+h}}.
+
+\Hypertarget{structComponents_1_1Patrol_a7b930b9777aa350bac7447257cd4d6bf}\index{Components::Patrol@{Components::Patrol}!MovingRight@{MovingRight}}
+\index{MovingRight@{MovingRight}!Components::Patrol@{Components::Patrol}}
+\doxysubsubsection{\texorpdfstring{MovingRight}{MovingRight}}
+{\footnotesize\ttfamily \label{structComponents_1_1Patrol_a7b930b9777aa350bac7447257cd4d6bf} 
+bool Components::\+\+Patrol::\+\+Moving\+Right = true}
+
+
+
+Definition at line \doxymbox{\hyperlink{Patrol_8h_source_l00021}{21}} of file \doxymbox{\hyperlink{Patrol_8h_source}{Patrol.\+h}}.
+
+\Hypertarget{structComponents_1_1Patrol_a6e941f16bb4b4dbcefd9dddd2055ad2c}\index{Components::Patrol@{Components::Patrol}!Speed@{Speed}}
+\index{Speed@{Speed}!Components::Patrol@{Components::Patrol}}
+\doxysubsubsection{\texorpdfstring{Speed}{Speed}}
+{\footnotesize\ttfamily \label{structComponents_1_1Patrol_a6e941f16bb4b4dbcefd9dddd2055ad2c} 
+float Components::\+\+Patrol::\+\+Speed = 2.\+0f}
+
+
+
+Definition at line \doxymbox{\hyperlink{Patrol_8h_source_l00020}{20}} of file \doxymbox{\hyperlink{Patrol_8h_source}{Patrol.\+h}}.
+
+\Hypertarget{structComponents_1_1Patrol_acdb7e56ff34a14dbd8500c29bec0affe}\index{Components::Patrol@{Components::Patrol}!StartPosition@{StartPosition}}
+\index{StartPosition@{StartPosition}!Components::Patrol@{Components::Patrol}}
+\doxysubsubsection{\texorpdfstring{StartPosition}{StartPosition}}
+{\footnotesize\ttfamily \label{structComponents_1_1Patrol_acdb7e56ff34a14dbd8500c29bec0affe} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Components::\+\+Patrol::\+\+Start\+Position}
+
+
+
+Definition at line \doxymbox{\hyperlink{Patrol_8h_source_l00018}{18}} of file \doxymbox{\hyperlink{Patrol_8h_source}{Patrol.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+components/\doxymbox{\hyperlink{Patrol_8h}{Patrol.\+h}}\end{DoxyCompactItemize}

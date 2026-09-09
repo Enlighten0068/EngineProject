@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="PlayerEvents_8h" kind="file" language="C++">
+    <compoundname>PlayerEvents.h</compoundname>
+    <includes refid="Event_8h" local="yes">events/Event.h</includes>
+    <includes refid="Vector3D_8h" local="yes">math/Vector3D.h</includes>
+    <includedby refid="PlayerController_8cpp" local="yes">engine/core/PlayerController.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>events/Event.h</label>
+        <link refid="Event_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>events/EventType.h</label>
+        <link refid="EventType_8h"/>
+      </node>
+      <node id="1">
+        <label>engine/events/PlayerEvents.h</label>
+        <link refid="PlayerEvents_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/core/PlayerController.cpp</label>
+        <link refid="PlayerController_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/events/PlayerEvents.h</label>
+        <link refid="PlayerEvents_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classPlayerJumpedEvent" prot="public">PlayerJumpedEvent</innerclass>
+    <innerclass refid="classPlayerLandedEvent" prot="public">PlayerLandedEvent</innerclass>
+    <innerclass refid="classPlayerDiedEvent" prot="public">PlayerDiedEvent</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Event_8h" kindref="compound">events/Event.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3D_8h" kindref="compound">math/Vector3D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classPlayerJumpedEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classPlayerJumpedEvent_1a12a9989f299bffdeef421ec6af93a333" kindref="member">PlayerJumpedEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classEvent" kindref="compound">Event</ref>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21" refid="classPlayerJumpedEvent_1a12a9989f299bffdeef421ec6af93a333" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerJumpedEvent_1a12a9989f299bffdeef421ec6af93a333" kindref="member">PlayerJumpedEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>position,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>jumpForce)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classPlayerJumpedEvent_1a2aee8016ddddb0f57de63c958d21d8a7" kindref="member">m_Position</ref>(position),<sp/><ref refid="classPlayerJumpedEvent_1a7fe7c1e208d79666f386e1d9d83c94a1" kindref="member">m_JumpForce</ref>(jumpForce){}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classPlayerJumpedEvent_1a0187e7315c5587f82da1340cbc6d8f18" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/><ref refid="classPlayerJumpedEvent_1a0187e7315c5587f82da1340cbc6d8f18" kindref="member">GetPosition</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPlayerJumpedEvent_1a2aee8016ddddb0f57de63c958d21d8a7" kindref="member">m_Position</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="25" refid="classPlayerJumpedEvent_1a353bd271c6351774254b7022b9e64f69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classPlayerJumpedEvent_1a353bd271c6351774254b7022b9e64f69" kindref="member">GetJumpForce</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPlayerJumpedEvent_1a7fe7c1e208d79666f386e1d9d83c94a1" kindref="member">m_JumpForce</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classPlayerJumpedEvent_1a603d6b6089366b6d33511498fc7fb1e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classPlayerJumpedEvent_1a603d6b6089366b6d33511498fc7fb1e8" kindref="member">GetStaticType</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faab5c0a7ab2a398f3a7df87c95544a919f" kindref="member">EventType::PlayerJumped</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="28" refid="classPlayerJumpedEvent_1aeb76e414cb90a82b356478a33d30447f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classPlayerJumpedEvent_1aeb76e414cb90a82b356478a33d30447f" kindref="member">GetEventType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faab5c0a7ab2a398f3a7df87c95544a919f" kindref="member">EventType::PlayerJumped</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31" refid="classPlayerJumpedEvent_1a2aee8016ddddb0f57de63c958d21d8a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="classPlayerJumpedEvent_1a2aee8016ddddb0f57de63c958d21d8a7" kindref="member">m_Position</ref>;<sp/></highlight><highlight class="comment">//Player<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classPlayerJumpedEvent_1a7fe7c1e208d79666f386e1d9d83c94a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classPlayerJumpedEvent_1a7fe7c1e208d79666f386e1d9d83c94a1" kindref="member">m_JumpForce</ref>;<sp/></highlight><highlight class="comment">//Jump<sp/>force<sp/>applied</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classPlayerLandedEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classPlayerLandedEvent_1a43b714a3239fbc1a9df2c32c7b82fbcd" kindref="member">PlayerLandedEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classEvent" kindref="compound">Event</ref>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="49" refid="classPlayerLandedEvent_1a43b714a3239fbc1a9df2c32c7b82fbcd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerLandedEvent_1a43b714a3239fbc1a9df2c32c7b82fbcd" kindref="member">PlayerLandedEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>position,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fallSpeed)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classPlayerLandedEvent_1a112b2471c9a765002bcb2e6ed6edbf3e" kindref="member">m_Position</ref>(position),<sp/><ref refid="classPlayerLandedEvent_1aa8bb505e3f27f9c59c802d1f1b254002" kindref="member">m_FallSpeed</ref>(fallSpeed){}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classPlayerLandedEvent_1a4df4022912dd5fe3f431619aec1aa62a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/><ref refid="classPlayerLandedEvent_1a4df4022912dd5fe3f431619aec1aa62a" kindref="member">GetPosition</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPlayerLandedEvent_1a112b2471c9a765002bcb2e6ed6edbf3e" kindref="member">m_Position</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="53" refid="classPlayerLandedEvent_1a6c71ec39bca8e3db05340273cc860935" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classPlayerLandedEvent_1a6c71ec39bca8e3db05340273cc860935" kindref="member">GetFallSpeed</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPlayerLandedEvent_1aa8bb505e3f27f9c59c802d1f1b254002" kindref="member">m_FallSpeed</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classPlayerLandedEvent_1a31183b8860e3bf6e6f96334b4a9fc07f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classPlayerLandedEvent_1a31183b8860e3bf6e6f96334b4a9fc07f" kindref="member">GetStaticType</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa837a531a271bad47902b6d66c0398bcf" kindref="member">EventType::PlayerLanded</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="56" refid="classPlayerLandedEvent_1aec8a4bc83cf439244e3a813c2361a92c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classPlayerLandedEvent_1aec8a4bc83cf439244e3a813c2361a92c" kindref="member">GetEventType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa837a531a271bad47902b6d66c0398bcf" kindref="member">EventType::PlayerLanded</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="59" refid="classPlayerLandedEvent_1a112b2471c9a765002bcb2e6ed6edbf3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="classPlayerLandedEvent_1a112b2471c9a765002bcb2e6ed6edbf3e" kindref="member">m_Position</ref>;<sp/></highlight><highlight class="comment">//Player<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classPlayerLandedEvent_1aa8bb505e3f27f9c59c802d1f1b254002" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classPlayerLandedEvent_1aa8bb505e3f27f9c59c802d1f1b254002" kindref="member">m_FallSpeed</ref>;<sp/></highlight><highlight class="comment">//Fall<sp/>speed<sp/>at<sp/>landing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classPlayerDiedEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classPlayerDiedEvent_1a8a4f0b9ade87bdfd12dc6ac513e6b5b0" kindref="member">PlayerDiedEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classEvent" kindref="compound">Event</ref>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="77" refid="classPlayerDiedEvent_1a8a4f0b9ade87bdfd12dc6ac513e6b5b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerDiedEvent_1a8a4f0b9ade87bdfd12dc6ac513e6b5b0" kindref="member">PlayerDiedEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>position,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>cause<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Unknown&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classPlayerDiedEvent_1af0126b578a40bbeeea494e2ce9553e57" kindref="member">m_Position</ref>(position),<sp/><ref refid="classPlayerDiedEvent_1af321781cd6aee7765122cf374365da9e" kindref="member">m_Cause</ref>(cause){}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classPlayerDiedEvent_1a9a55e7cacb69fcce9dc853b6e999c026" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/><ref refid="classPlayerDiedEvent_1a9a55e7cacb69fcce9dc853b6e999c026" kindref="member">GetPosition</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPlayerDiedEvent_1af0126b578a40bbeeea494e2ce9553e57" kindref="member">m_Position</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="81" refid="classPlayerDiedEvent_1a26e9b49610a461a1cd85a473e6672dfe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classPlayerDiedEvent_1a26e9b49610a461a1cd85a473e6672dfe" kindref="member">GetCause</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classPlayerDiedEvent_1af321781cd6aee7765122cf374365da9e" kindref="member">m_Cause</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classPlayerDiedEvent_1aca9f974851c1f4ef8279d4151f10a76f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classPlayerDiedEvent_1aca9f974851c1f4ef8279d4151f10a76f" kindref="member">GetStaticType</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faaee1ded5ee510cf5f4c605debf346a9b2" kindref="member">EventType::PlayerDied</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="84" refid="classPlayerDiedEvent_1ac1f5345b6ae2df9d1daedcf1ecd995d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref><sp/><ref refid="classPlayerDiedEvent_1ac1f5345b6ae2df9d1daedcf1ecd995d6" kindref="member">GetEventType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faaee1ded5ee510cf5f4c605debf346a9b2" kindref="member">EventType::PlayerDied</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="87" refid="classPlayerDiedEvent_1af0126b578a40bbeeea494e2ce9553e57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="classPlayerDiedEvent_1af0126b578a40bbeeea494e2ce9553e57" kindref="member">m_Position</ref>;<sp/></highlight><highlight class="comment">//Player<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classPlayerDiedEvent_1af321781cd6aee7765122cf374365da9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classPlayerDiedEvent_1af321781cd6aee7765122cf374365da9e" kindref="member">m_Cause</ref>;<sp/></highlight><highlight class="comment">//Death<sp/>cause</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/events/PlayerEvents.h"/>
+  </compounddef>
+</doxygen>

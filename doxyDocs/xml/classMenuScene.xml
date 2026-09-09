@@ -1,0 +1,631 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classMenuScene" kind="class" language="C++" prot="public">
+    <compoundname>MenuScene</compoundname>
+    <basecompoundref refid="classScene" prot="public" virt="non-virtual">Scene</basecompoundref>
+    <includes refid="MenuScene_8h" local="no">MenuScene.h</includes>
+    <innerclass refid="structMenuScene_1_1MenuOption" prot="private">MenuScene::MenuOption</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMenuScene_1a42392ac9ca92d2c766daef724b6ab131" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera2D" kindref="compound">Camera2D</ref> &amp;</type>
+        <definition>Camera2D&amp; MenuScene::m_Camera</definition>
+        <argsstring></argsstring>
+        <name>m_Camera</name>
+        <qualifiedname>MenuScene::m_Camera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="56" column="14" bodyfile="engine/scene/MenuScene.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMenuScene_1a46e28a18551c53cff67144bb9ffe6057" prot="private" static="no" mutable="no">
+        <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader&amp; MenuScene::m_LineShader</definition>
+        <argsstring></argsstring>
+        <name>m_LineShader</name>
+        <qualifiedname>MenuScene::m_LineShader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="57" column="12" bodyfile="engine/scene/MenuScene.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMenuScene_1aafe8fc8c4b77426e8edbc443283c6dda" prot="private" static="no" mutable="no">
+        <type><ref refid="classSceneManager" kindref="compound">SceneManager</ref> &amp;</type>
+        <definition>SceneManager&amp; MenuScene::m_SceneManager</definition>
+        <argsstring></argsstring>
+        <name>m_SceneManager</name>
+        <qualifiedname>MenuScene::m_SceneManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="59" column="18" bodyfile="engine/scene/MenuScene.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMenuScene_1a9efeacffbcd00dea280ccf3703321f71" prot="private" static="no" mutable="no">
+        <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader&amp; MenuScene::m_Shader</definition>
+        <argsstring></argsstring>
+        <name>m_Shader</name>
+        <qualifiedname>MenuScene::m_Shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="60" column="12" bodyfile="engine/scene/MenuScene.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMenuScene_1aee526af82a75d255d1b6fd6d3d499e92" prot="private" static="no" mutable="no">
+        <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+        <definition>VertexArray&amp; MenuScene::m_VertexArray</definition>
+        <argsstring></argsstring>
+        <name>m_VertexArray</name>
+        <qualifiedname>MenuScene::m_VertexArray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="61" column="17" bodyfile="engine/scene/MenuScene.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMenuScene_1af61d24fa8a94de5b0282fce6af54e0c4" prot="private" static="no" mutable="no">
+        <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+        <definition>IndexBuffer&amp; MenuScene::m_IndexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_IndexBuffer</name>
+        <qualifiedname>MenuScene::m_IndexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="62" column="17" bodyfile="engine/scene/MenuScene.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classFont" kindref="compound">Font</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Font&gt; MenuScene::m_Font</definition>
+        <argsstring></argsstring>
+        <name>m_Font</name>
+        <qualifiedname>MenuScene::m_Font</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="64" column="21" bodyfile="engine/scene/MenuScene.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structMenuScene_1_1MenuOption" kindref="compound">MenuOption</ref> &gt;</type>
+        <definition>std::vector&lt;MenuOption&gt; MenuScene::m_Options</definition>
+        <argsstring></argsstring>
+        <name>m_Options</name>
+        <qualifiedname>MenuScene::m_Options</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="65" column="17" bodyfile="engine/scene/MenuScene.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MenuScene::m_SelectedOption</definition>
+        <argsstring></argsstring>
+        <name>m_SelectedOption</name>
+        <qualifiedname>MenuScene::m_SelectedOption</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="66" column="9" bodyfile="engine/scene/MenuScene.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMenuScene_1acfabc7d7b96c85747e56c6c11f9077c1" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2D&gt; MenuScene::m_BackgroundTexture</definition>
+        <argsstring></argsstring>
+        <name>m_BackgroundTexture</name>
+        <qualifiedname>MenuScene::m_BackgroundTexture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="68" column="21" bodyfile="engine/scene/MenuScene.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMenuScene_1a0ad6ec8522307042405a1e14b6d7e72e" prot="private" static="no" mutable="no">
+        <type>SDL_Color</type>
+        <definition>SDL_Color MenuScene::m_NormalColor</definition>
+        <argsstring></argsstring>
+        <name>m_NormalColor</name>
+        <qualifiedname>MenuScene::m_NormalColor</qualifiedname>
+        <initializer>= {255, 255, 255, 255}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="69" column="15" bodyfile="engine/scene/MenuScene.h" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMenuScene_1af46c6487c84f609a1fea2f0c98c0d2f7" prot="private" static="no" mutable="no">
+        <type>SDL_Color</type>
+        <definition>SDL_Color MenuScene::m_SelectedColor</definition>
+        <argsstring></argsstring>
+        <name>m_SelectedColor</name>
+        <qualifiedname>MenuScene::m_SelectedColor</qualifiedname>
+        <initializer>= {255, 255, 0, 255}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="70" column="15" bodyfile="engine/scene/MenuScene.h" bodystart="70" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMenuScene_1a76e19b60d3334d7697f7d29bab6708d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MenuScene::MenuScene</definition>
+        <argsstring>(SceneManager &amp;sceneManager, Shader &amp;shader, VertexArray &amp;va, IndexBuffer &amp;ib, Camera2D &amp;camera, Shader &amp;lineShader)</argsstring>
+        <name>MenuScene</name>
+        <qualifiedname>MenuScene::MenuScene</qualifiedname>
+        <param>
+          <type><ref refid="classSceneManager" kindref="compound">SceneManager</ref> &amp;</type>
+          <declname>sceneManager</declname>
+        </param>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+          <declname>va</declname>
+        </param>
+        <param>
+          <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+          <declname>ib</declname>
+        </param>
+        <param>
+          <type><ref refid="classCamera2D" kindref="compound">Camera2D</ref> &amp;</type>
+          <declname>camera</declname>
+        </param>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>lineShader</declname>
+        </param>
+        <briefdescription>
+<para>Constructs the <ref refid="classMenuScene" kindref="compound">MenuScene</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sceneManager</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the <ref refid="classSceneManager" kindref="compound">SceneManager</ref> for transitions. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the shader for rendering. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>va</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the vertex array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ib</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the index buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>camera</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the camera. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lineShader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the line shader. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="33" column="5" bodyfile="engine/scene/MenuScene.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classMenuScene_1a9b8d7fd2c641191231e9d352932be80d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MenuScene::~MenuScene</definition>
+        <argsstring>()</argsstring>
+        <name>~MenuScene</name>
+        <qualifiedname>MenuScene::~MenuScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="35" column="5" bodyfile="engine/scene/MenuScene.cpp" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classMenuScene_1a015085736912c87c4e28ab54ab056e6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MenuScene::OnEnter</definition>
+        <argsstring>() override</argsstring>
+        <name>OnEnter</name>
+        <qualifiedname>MenuScene::OnEnter</qualifiedname>
+        <reimplements refid="classScene_1ad09d42329f52df55fad0467cd092c9aa">OnEnter</reimplements>
+        <briefdescription>
+<para>Called when the menu becomes active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads the font, creates the menu options, and sets up the background. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="37" column="10" bodyfile="engine/scene/MenuScene.cpp" bodystart="26" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classMenuScene_1a834e7aa54dd72502876d30114e47cc9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MenuScene::OnExit</definition>
+        <argsstring>() override</argsstring>
+        <name>OnExit</name>
+        <qualifiedname>MenuScene::OnExit</qualifiedname>
+        <reimplements refid="classScene_1a9824fefa923e5a9db4dca5a23343609b">OnExit</reimplements>
+        <briefdescription>
+<para>Called when the menu is exited. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases resources used by the menu. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="38" column="10" bodyfile="engine/scene/MenuScene.cpp" bodystart="71" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classMenuScene_1af2b1e0e9e1c783c8b058f60906add842" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MenuScene::Update</definition>
+        <argsstring>(float deltaTime) override</argsstring>
+        <name>Update</name>
+        <qualifiedname>MenuScene::Update</qualifiedname>
+        <reimplements refid="classScene_1aaede6346f58776bd40efffd55885ab02">Update</reimplements>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+<para>Updates the menu: navigation and selection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classTime" kindref="compound">Time</ref> elapsed since the last frame (unused). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="39" column="10" bodyfile="engine/scene/MenuScene.cpp" bodystart="117" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classMenuScene_1a57787dac0643417ddd147c940c36b93a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MenuScene::Render</definition>
+        <argsstring>() override</argsstring>
+        <name>Render</name>
+        <qualifiedname>MenuScene::Render</qualifiedname>
+        <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
+        <briefdescription>
+<para>Renders the menu. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="40" column="10" bodyfile="engine/scene/MenuScene.cpp" bodystart="170" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classMenuScene_1a8bb0e3e014de1ba6912dc937de6a2a69" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string MenuScene::GetName</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetName</name>
+        <qualifiedname>MenuScene::GetName</qualifiedname>
+        <reimplements refid="classScene_1ad93511100250c3f3ed736b9ed69fdc6f">GetName</reimplements>
+        <briefdescription>
+<para>Gets the name of the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>String containing the scene name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="41" column="17" bodyfile="engine/scene/MenuScene.h" bodystart="41" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classMenuScene_1a329504c5161fa328040b3f3092df2bae" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MenuScene::IsMouseOverOption</definition>
+        <argsstring>(const MenuOption &amp;option) const</argsstring>
+        <name>IsMouseOverOption</name>
+        <qualifiedname>MenuScene::IsMouseOverOption</qualifiedname>
+        <param>
+          <type>const <ref refid="structMenuScene_1_1MenuOption" kindref="compound">MenuOption</ref> &amp;</type>
+          <declname>option</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the mouse is over a menu option. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>option</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The menu option to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the mouse is over the option, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="72" column="10" bodyfile="engine/scene/MenuScene.cpp" bodystart="185" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classMenuScene_1a4e1a9cdb5e0dedaab5c9f780f54d4f67" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Texture2D &gt; MenuScene::CreateTextTexture</definition>
+        <argsstring>(const std::string &amp;text, const SDL_Color &amp;color)</argsstring>
+        <name>CreateTextTexture</name>
+        <qualifiedname>MenuScene::CreateTextTexture</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const SDL_Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Creates a texture from rendered text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to render. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color of the text. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Shared pointer to the <ref refid="classTexture2D" kindref="compound">Texture2D</ref>, or nullptr on failure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="74" column="21" bodyfile="engine/scene/MenuScene.cpp" bodystart="84" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classMenuScene_1a46a3159d25cbdd8710abf3a1a67bfca0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MenuScene::HandleSelection</definition>
+        <argsstring>()</argsstring>
+        <name>HandleSelection</name>
+        <qualifiedname>MenuScene::HandleSelection</qualifiedname>
+        <briefdescription>
+<para>Handles the selection of the current menu option. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="75" column="10" bodyfile="engine/scene/MenuScene.cpp" bodystart="238" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classMenuScene_1a1e7a918b520265294fd74c1d9d086795" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MenuScene::RenderOption</definition>
+        <argsstring>(const MenuOption &amp;option, bool isSelected)</argsstring>
+        <name>RenderOption</name>
+        <qualifiedname>MenuScene::RenderOption</qualifiedname>
+        <param>
+          <type>const <ref refid="structMenuScene_1_1MenuOption" kindref="compound">MenuOption</ref> &amp;</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isSelected</declname>
+        </param>
+        <briefdescription>
+<para>Renders a single menu option. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>option</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The menu option to render. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isSelected</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether this option is currently selected. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/MenuScene.h" line="76" column="10" bodyfile="engine/scene/MenuScene.cpp" bodystart="209" bodyend="233"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Main menu scene with visual text rendering. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classMenuScene" kindref="compound">MenuScene</ref> provides a graphical menu with options rendered using SDL_ttf. Navigation is done with arrow keys / D-pad, mouse clicks, and selection with Enter / Space / A button.</para>
+<para><simplesect kind="note"><para>This scene requires a font file to be present in assets. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classFont" kindref="compound">Font</ref>, <ref refid="classSceneManager" kindref="compound">SceneManager</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>MenuScene</label>
+        <link refid="classMenuScene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Camera2D</label>
+        <link refid="classCamera2D"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>-m_Position</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-m_ProjectionMatrix</edgelabel>
+          <edgelabel>-m_ViewMatrix</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>IndexBuffer</label>
+        <link refid="classIndexBuffer"/>
+      </node>
+      <node id="5">
+        <label>Matrix4</label>
+        <link refid="classMatrix4"/>
+      </node>
+      <node id="1">
+        <label>MenuScene</label>
+        <link refid="classMenuScene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_Camera</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>-m_LineShader</edgelabel>
+          <edgelabel>-m_Shader</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>-m_SceneManager</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>-m_VertexArray</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>-m_IndexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="7">
+        <label>SceneManager</label>
+        <link refid="classSceneManager"/>
+      </node>
+      <node id="6">
+        <label>Shader</label>
+        <link refid="classShader"/>
+      </node>
+      <node id="4">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+      <node id="8">
+        <label>VertexArray</label>
+        <link refid="classVertexArray"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/scene/MenuScene.h" line="22" column="1" bodyfile="engine/scene/MenuScene.h" bodystart="22" bodyend="77"/>
+    <listofallmembers>
+      <member refid="classMenuScene_1a4e1a9cdb5e0dedaab5c9f780f54d4f67" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>CreateTextTexture</name></member>
+      <member refid="classMenuScene_1a8bb0e3e014de1ba6912dc937de6a2a69" prot="public" virt="virtual"><scope>MenuScene</scope><name>GetName</name></member>
+      <member refid="classMenuScene_1a46a3159d25cbdd8710abf3a1a67bfca0" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>HandleSelection</name></member>
+      <member refid="classMenuScene_1a329504c5161fa328040b3f3092df2bae" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>IsMouseOverOption</name></member>
+      <member refid="classMenuScene_1acfabc7d7b96c85747e56c6c11f9077c1" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_BackgroundTexture</name></member>
+      <member refid="classMenuScene_1a42392ac9ca92d2c766daef724b6ab131" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_Camera</name></member>
+      <member refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_Font</name></member>
+      <member refid="classMenuScene_1af61d24fa8a94de5b0282fce6af54e0c4" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_IndexBuffer</name></member>
+      <member refid="classMenuScene_1a46e28a18551c53cff67144bb9ffe6057" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_LineShader</name></member>
+      <member refid="classMenuScene_1a0ad6ec8522307042405a1e14b6d7e72e" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_NormalColor</name></member>
+      <member refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_Options</name></member>
+      <member refid="classMenuScene_1aafe8fc8c4b77426e8edbc443283c6dda" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_SceneManager</name></member>
+      <member refid="classMenuScene_1af46c6487c84f609a1fea2f0c98c0d2f7" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_SelectedColor</name></member>
+      <member refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_SelectedOption</name></member>
+      <member refid="classMenuScene_1a9efeacffbcd00dea280ccf3703321f71" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_Shader</name></member>
+      <member refid="classMenuScene_1aee526af82a75d255d1b6fd6d3d499e92" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>m_VertexArray</name></member>
+      <member refid="classMenuScene_1a76e19b60d3334d7697f7d29bab6708d3" prot="public" virt="non-virtual"><scope>MenuScene</scope><name>MenuScene</name></member>
+      <member refid="classMenuScene_1a015085736912c87c4e28ab54ab056e6d" prot="public" virt="virtual"><scope>MenuScene</scope><name>OnEnter</name></member>
+      <member refid="classMenuScene_1a834e7aa54dd72502876d30114e47cc9e" prot="public" virt="virtual"><scope>MenuScene</scope><name>OnExit</name></member>
+      <member refid="classMenuScene_1a57787dac0643417ddd147c940c36b93a" prot="public" virt="virtual"><scope>MenuScene</scope><name>Render</name></member>
+      <member refid="classMenuScene_1a1e7a918b520265294fd74c1d9d086795" prot="private" virt="non-virtual"><scope>MenuScene</scope><name>RenderOption</name></member>
+      <member refid="classMenuScene_1af2b1e0e9e1c783c8b058f60906add842" prot="public" virt="virtual"><scope>MenuScene</scope><name>Update</name></member>
+      <member refid="classMenuScene_1a9b8d7fd2c641191231e9d352932be80d" prot="public" virt="non-virtual"><scope>MenuScene</scope><name>~MenuScene</name></member>
+      <member refid="classScene_1af6e09d91ebd10ae9cc7c12c39d06386c" prot="public" virt="virtual"><scope>MenuScene</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

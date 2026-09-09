@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="EventType_8h" kind="file" language="C++">
+    <compoundname>EventType.h</compoundname>
+    <includedby refid="Application_8cpp" local="yes">engine/core/Application.cpp</includedby>
+    <includedby refid="Engine_8cpp" local="yes">engine/core/Engine.cpp</includedby>
+    <includedby refid="Event_8h" local="yes">engine/events/Event.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="5">
+        <label>engine/core/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>engine/core/CameraController.cpp</label>
+        <link refid="CameraController_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/core/Engine.cpp</label>
+        <link refid="Engine_8cpp"/>
+      </node>
+      <node id="11">
+        <label>engine/core/PlayerController.cpp</label>
+        <link refid="PlayerController_8cpp"/>
+      </node>
+      <node id="6">
+        <label>engine/core/Time.cpp</label>
+        <link refid="Time_8cpp"/>
+      </node>
+      <node id="8">
+        <label>engine/events/EnemyEvents.h</label>
+        <link refid="EnemyEvents_8h"/>
+      </node>
+      <node id="4">
+        <label>engine/events/Event.h</label>
+        <link refid="Event_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>engine/events/EventBus.cpp</label>
+        <link refid="EventBus_8cpp"/>
+      </node>
+      <node id="9">
+        <label>engine/events/EventBus.h</label>
+        <link refid="EventBus_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>engine/events/EventDispatcher.h</label>
+        <link refid="EventDispatcher_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/events/EventType.h</label>
+        <link refid="EventType_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>engine/events/KeyEvent.h</label>
+        <link refid="KeyEvent_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>engine/events/MouseEvent.h</label>
+        <link refid="MouseEvent_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>engine/events/PlayerEvents.h</label>
+        <link refid="PlayerEvents_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>engine/events/SDLEventTranslator.cpp</label>
+        <link refid="SDLEventTranslator_8cpp"/>
+      </node>
+      <node id="13">
+        <label>engine/events/SDLEventTranslator.h</label>
+        <link refid="SDLEventTranslator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>engine/events/WindowEvent.h</label>
+        <link refid="WindowEvent_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>EventType</name>
+        <enumvalue id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faac984201d37197ab297a14d19efee4b07" prot="public">
+          <name>WindowClose</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa9f8f27bff2915738c4fe1b970e12f89c" prot="public">
+          <name>WindowResize</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa897356954c2cd3d41b221e3f24f99bba" prot="public">
+          <name>Key</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faae22334c0cac2399971712cf9ae02fa4f" prot="public">
+          <name>MouseMotion</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa49dabe49d62a3521f7c10400138c38d5" prot="public">
+          <name>MouseButton</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa6924f81750ac471df87fed683bcea516" prot="public">
+          <name>MouseWheel</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faab5c0a7ab2a398f3a7df87c95544a919f" prot="public">
+          <name>PlayerJumped</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa837a531a271bad47902b6d66c0398bcf" prot="public">
+          <name>PlayerLanded</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faaee1ded5ee510cf5f4c605debf346a9b2" prot="public">
+          <name>PlayerDied</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faae59ed6209af6696edabb7eddf66bd2eb" prot="public">
+          <name>EnemyDied</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of all event types supported by the engine. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each event class has a corresponding <ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref> value. This allows fast type checking without RTTI.</para>
+<para><simplesect kind="note"><para>Add new event types here when creating new event classes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/EventType.h" line="11" column="1" bodyfile="engine/events/EventType.h" bodystart="11" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref>{</highlight></codeline>
+<codeline lineno="12" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa6adf97f83acf6453d4a6a4b1070f3754" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa6adf97f83acf6453d4a6a4b1070f3754" kindref="member">None</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Window<sp/>events</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faac984201d37197ab297a14d19efee4b07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faac984201d37197ab297a14d19efee4b07" kindref="member">WindowClose</ref>,<sp/><sp/><sp/></highlight><highlight class="comment">//Window<sp/>close<sp/>requested</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa9f8f27bff2915738c4fe1b970e12f89c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa9f8f27bff2915738c4fe1b970e12f89c" kindref="member">WindowResize</ref>,<sp/><sp/></highlight><highlight class="comment">//Window<sp/>resized</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Input<sp/>events</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa897356954c2cd3d41b221e3f24f99bba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa897356954c2cd3d41b221e3f24f99bba" kindref="member">Key</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Keyboard<sp/>key<sp/>event</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faae22334c0cac2399971712cf9ae02fa4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faae22334c0cac2399971712cf9ae02fa4f" kindref="member">MouseMotion</ref>,<sp/><sp/><sp/></highlight><highlight class="comment">//Mouse<sp/>movement<sp/>event</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa49dabe49d62a3521f7c10400138c38d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MouseEvent_8h_1ac1ec3647c005eacad401b06e7e18f711" kindref="member">MouseButton</ref>,<sp/><sp/><sp/></highlight><highlight class="comment">//Mouse<sp/>button<sp/>event</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa6924f81750ac471df87fed683bcea516" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa6924f81750ac471df87fed683bcea516" kindref="member">MouseWheel</ref>,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Mouse<sp/>wheel<sp/>event</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Gameplay<sp/>events</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faab5c0a7ab2a398f3a7df87c95544a919f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faab5c0a7ab2a398f3a7df87c95544a919f" kindref="member">PlayerJumped</ref>,<sp/><sp/></highlight><highlight class="comment">//Player<sp/>jumped</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa837a531a271bad47902b6d66c0398bcf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faa837a531a271bad47902b6d66c0398bcf" kindref="member">PlayerLanded</ref>,<sp/><sp/></highlight><highlight class="comment">//Player<sp/>landed<sp/>on<sp/>surface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faaee1ded5ee510cf5f4c605debf346a9b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faaee1ded5ee510cf5f4c605debf346a9b2" kindref="member">PlayerDied</ref>,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Player<sp/>died</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faae59ed6209af6696edabb7eddf66bd2eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6faae59ed6209af6696edabb7eddf66bd2eb" kindref="member">EnemyDied</ref><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Enemy<sp/>died</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/events/EventType.h"/>
+  </compounddef>
+</doxygen>

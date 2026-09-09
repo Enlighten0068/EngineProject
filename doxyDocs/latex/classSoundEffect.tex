@@ -1,0 +1,326 @@
+\doxysection{Sound\+Effect Class Reference}
+\hypertarget{classSoundEffect}{}\label{classSoundEffect}\index{SoundEffect@{SoundEffect}}
+
+
+Handles a sound effect that is loaded from a .wav file.  
+
+
+
+
+{\ttfamily \+\#include $<$Sound\+Effect.\+h$>$}
+
+
+
+Collaboration diagram for Sound\+Effect:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classSoundEffect__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classSoundEffect_aa779f253615cd049725b4998e0de88b7}{Sound\+Effect}} ()
+\item 
+\doxymbox{\hyperlink{classSoundEffect_a5e03a7a8eb4c5b9d0548fb178b76a44c}{\texorpdfstring{$\sim$}{\string~}\+Sound\+Effect}} ()
+\item 
+bool \doxymbox{\hyperlink{classSoundEffect_aa759a5f6e53d18c9b7447b3e856c0bd1}{Load}} (const std::\+string \&filepath)
+\begin{DoxyCompactList}\small\item\em Loads a .wav file from a specified location. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classSoundEffect_a4a39a296b2231b690985dade9ce7733a}{Play}} (int volume=128)
+\begin{DoxyCompactList}\small\item\em Plays the loaded sound effect once. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classSoundEffect_aac80ead03ebef197b679e6edbc10fc99}{Unload}} ()
+\begin{DoxyCompactList}\small\item\em Unloads the sound data and releases resources. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classSoundEffect_a9ad602d2d962fb031553174c5bc73661}{Is\+Loaded}} () const
+\begin{DoxyCompactList}\small\item\em Checks if a sound is currently loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static SDL\+\_\+\+Audio\+Device\+ID \doxymbox{\hyperlink{classSoundEffect_a2394c50d77422ecd0cca27d9016a5868}{Get\+Audio\+Device}} ()
+\begin{DoxyCompactList}\small\item\em Gets the shared audio device ID used by all \doxylink{classSoundEffect}{Sound\+Effect} instances. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classSoundEffect_abc204c2f7c0a891eb671821d23b38bc7}{Close\+Audio\+Device}} ()
+\begin{DoxyCompactList}\small\item\em Closes the shared audio device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classSoundEffect_a82797947050d4f08f80406ee9a9987a8}{Open\+Device}} ()
+\begin{DoxyCompactList}\small\item\em Opens the shared audio device if not already open. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+vector$<$ Uint8 $>$ \doxymbox{\hyperlink{classSoundEffect_ab9c4c95f7087e7a777d1b77233236cf0}{m\+\_\+\+Data}}
+\item 
+SDL\+\_\+\+Audio\+Spec \doxymbox{\hyperlink{classSoundEffect_a19a66ea9ad7c306554bf58ce68283814}{m\+\_\+\+Spec}}
+\item 
+SDL\+\_\+\+Audio\+Stream \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classSoundEffect_a834510bdbcad1236e1b70646016346a5}{m\+\_\+\+Stream}} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static SDL\+\_\+\+Audio\+Spec \doxymbox{\hyperlink{classSoundEffect_aae475e32a6dc801f92706191709dfe48}{m\+\_\+\+Device\+Spec}} \{\}
+\item 
+static SDL\+\_\+\+Audio\+Device\+ID \doxymbox{\hyperlink{classSoundEffect_a133e312b04f01d6835286ed69b667951}{s\+\_\+\+Audio\+Device}} = 0
+\item 
+static bool \doxymbox{\hyperlink{classSoundEffect_ad1201573d75db7d3f6128d38dbde4c6a}{s\+\_\+\+Device\+Open}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles a sound effect that is loaded from a .wav file. 
+
+It uses SDL3 audio stream API to manage the loading, playback and unloading of audio data. 
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8h_source_l00012}{12}} of file \doxymbox{\hyperlink{SoundEffect_8h_source}{Sound\+Effect.\+h}}.
+
+
+
+\label{classSoundEffect_doc-constructors}
+\Hypertarget{classSoundEffect_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSoundEffect_aa779f253615cd049725b4998e0de88b7}\index{SoundEffect@{SoundEffect}!SoundEffect@{SoundEffect}}
+\index{SoundEffect@{SoundEffect}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{SoundEffect()}{SoundEffect()}}
+{\footnotesize\ttfamily \label{classSoundEffect_aa779f253615cd049725b4998e0de88b7} 
+Sound\+Effect::\+\+Sound\+Effect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8cpp_source_l00011}{11}} of file \doxymbox{\hyperlink{SoundEffect_8cpp_source}{Sound\+Effect.\+cpp}}.
+
+\Hypertarget{classSoundEffect_a5e03a7a8eb4c5b9d0548fb178b76a44c}\index{SoundEffect@{SoundEffect}!````~SoundEffect@{\texorpdfstring{$\sim$}{\string~}SoundEffect}}
+\index{````~SoundEffect@{\texorpdfstring{$\sim$}{\string~}SoundEffect}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SoundEffect()}{\string~SoundEffect()}}
+{\footnotesize\ttfamily \label{classSoundEffect_a5e03a7a8eb4c5b9d0548fb178b76a44c} 
+Sound\+Effect::\+\texorpdfstring{$\sim$}{\string~}\+Sound\+Effect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8cpp_source_l00013}{13}} of file \doxymbox{\hyperlink{SoundEffect_8cpp_source}{Sound\+Effect.\+cpp}}.
+
+
+
+\label{classSoundEffect_doc-func-members}
+\Hypertarget{classSoundEffect_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSoundEffect_abc204c2f7c0a891eb671821d23b38bc7}\index{SoundEffect@{SoundEffect}!CloseAudioDevice@{CloseAudioDevice}}
+\index{CloseAudioDevice@{CloseAudioDevice}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{CloseAudioDevice()}{CloseAudioDevice()}}
+{\footnotesize\ttfamily \label{classSoundEffect_abc204c2f7c0a891eb671821d23b38bc7} 
+void Sound\+Effect::\+\+Close\+Audio\+Device (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Closes the shared audio device. 
+
+Should be called during application shutdown for cleanup.
+
+This should be called during application shutdown to release the audio device and free its associated resources. 
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8cpp_source_l00179}{179}} of file \doxymbox{\hyperlink{SoundEffect_8cpp_source}{Sound\+Effect.\+cpp}}.
+
+\Hypertarget{classSoundEffect_a2394c50d77422ecd0cca27d9016a5868}\index{SoundEffect@{SoundEffect}!GetAudioDevice@{GetAudioDevice}}
+\index{GetAudioDevice@{GetAudioDevice}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{GetAudioDevice()}{GetAudioDevice()}}
+{\footnotesize\ttfamily \label{classSoundEffect_a2394c50d77422ecd0cca27d9016a5868} 
+SDL\+\_\+\+Audio\+Device\+ID Sound\+Effect::\+\+Get\+Audio\+Device (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the shared audio device ID used by all \doxylink{classSoundEffect}{Sound\+Effect} instances. 
+
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+Audio\+Device\+ID of the shared audio device. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8h_source_l00045}{45}} of file \doxymbox{\hyperlink{SoundEffect_8h_source}{Sound\+Effect.\+h}}.
+
+\Hypertarget{classSoundEffect_a9ad602d2d962fb031553174c5bc73661}\index{SoundEffect@{SoundEffect}!IsLoaded@{IsLoaded}}
+\index{IsLoaded@{IsLoaded}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{IsLoaded()}{IsLoaded()}}
+{\footnotesize\ttfamily \label{classSoundEffect_a9ad602d2d962fb031553174c5bc73661} 
+bool Sound\+Effect::\+\+Is\+Loaded (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a sound is currently loaded. 
+
+\begin{DoxyReturn}{Returns}
+true if sound data is loaded, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8h_source_l00039}{39}} of file \doxymbox{\hyperlink{SoundEffect_8h_source}{Sound\+Effect.\+h}}.
+
+\Hypertarget{classSoundEffect_aa759a5f6e53d18c9b7447b3e856c0bd1}\index{SoundEffect@{SoundEffect}!Load@{Load}}
+\index{Load@{Load}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily \label{classSoundEffect_aa759a5f6e53d18c9b7447b3e856c0bd1} 
+bool Sound\+Effect::\+\+Load (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filepath}{}\end{DoxyParamCaption})}
+
+
+
+Loads a .wav file from a specified location. 
+
+Loads a .wav file from a specified location on disk.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the .wav file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if loaded successfully, false otherwise.
+\end{DoxyReturn}
+Opens the shared audio device if not already open, then reads the .wav file into memory. The audio data is stored as raw PCM samples for later playback.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the .wav file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the file was loaded successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8cpp_source_l00062}{62}} of file \doxymbox{\hyperlink{SoundEffect_8cpp_source}{Sound\+Effect.\+cpp}}.
+
+\Hypertarget{classSoundEffect_a82797947050d4f08f80406ee9a9987a8}\index{SoundEffect@{SoundEffect}!OpenDevice@{OpenDevice}}
+\index{OpenDevice@{OpenDevice}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{OpenDevice()}{OpenDevice()}}
+{\footnotesize\ttfamily \label{classSoundEffect_a82797947050d4f08f80406ee9a9987a8} 
+bool Sound\+Effect::\+\+Open\+Device (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Opens the shared audio device if not already open. 
+
+Opens the shared audio device with default parameters.
+
+\begin{DoxyReturn}{Returns}
+true if the device is (or was) successfully opened, false otherwise.
+\end{DoxyReturn}
+The device is configured for 44.\+1 k\+Hz, 16-\/bit stereo audio. This is a one-\/time initialization -\/ subsequent calls are ignored if the device is already open.
+
+\begin{DoxyReturn}{Returns}
+true if the device was successfully opened or is already open, false on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8cpp_source_l00025}{25}} of file \doxymbox{\hyperlink{SoundEffect_8cpp_source}{Sound\+Effect.\+cpp}}.
+
+\Hypertarget{classSoundEffect_a4a39a296b2231b690985dade9ce7733a}\index{SoundEffect@{SoundEffect}!Play@{Play}}
+\index{Play@{Play}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{Play()}{Play()}}
+{\footnotesize\ttfamily \label{classSoundEffect_a4a39a296b2231b690985dade9ce7733a} 
+void Sound\+Effect::\+\+Play (\begin{DoxyParamCaption}\item[{int}]{volume}{ = {\ttfamily 128}}\end{DoxyParamCaption})}
+
+
+
+Plays the loaded sound effect once. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & Volume level (0-\/128).\\
+\hline
+\end{DoxyParams}
+Creates a new audio stream, pushes the audio data into it, and binds it to the shared device. If there\textquotesingle{}s a previous stream active, unbinds and destroys it to avoid errors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & Volume level (0-\/128). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8cpp_source_l00099}{99}} of file \doxymbox{\hyperlink{SoundEffect_8cpp_source}{Sound\+Effect.\+cpp}}.
+
+\Hypertarget{classSoundEffect_aac80ead03ebef197b679e6edbc10fc99}\index{SoundEffect@{SoundEffect}!Unload@{Unload}}
+\index{Unload@{Unload}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{Unload()}{Unload()}}
+{\footnotesize\ttfamily \label{classSoundEffect_aac80ead03ebef197b679e6edbc10fc99} 
+void Sound\+Effect::\+\+Unload (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Unloads the sound data and releases resources. 
+
+Unloads the sound effect and releases all resources.
+
+Unbinds and destroys the audio stream, clears the audio data, and resets the specification. 
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8cpp_source_l00162}{162}} of file \doxymbox{\hyperlink{SoundEffect_8cpp_source}{Sound\+Effect.\+cpp}}.
+
+
+
+\label{classSoundEffect_doc-variable-members}
+\Hypertarget{classSoundEffect_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSoundEffect_ab9c4c95f7087e7a777d1b77233236cf0}\index{SoundEffect@{SoundEffect}!m\_Data@{m\_Data}}
+\index{m\_Data@{m\_Data}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{m\_Data}{m\_Data}}
+{\footnotesize\ttfamily \label{classSoundEffect_ab9c4c95f7087e7a777d1b77233236cf0} 
+std::\+vector$<$Uint8$>$ Sound\+Effect::\+m\+\_\+\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8h_source_l00055}{55}} of file \doxymbox{\hyperlink{SoundEffect_8h_source}{Sound\+Effect.\+h}}.
+
+\Hypertarget{classSoundEffect_aae475e32a6dc801f92706191709dfe48}\index{SoundEffect@{SoundEffect}!m\_DeviceSpec@{m\_DeviceSpec}}
+\index{m\_DeviceSpec@{m\_DeviceSpec}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{m\_DeviceSpec}{m\_DeviceSpec}}
+{\footnotesize\ttfamily \label{classSoundEffect_aae475e32a6dc801f92706191709dfe48} 
+SDL\+\_\+\+Audio\+Spec Sound\+Effect::\+m\+\_\+\+Device\+Spec \{\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8h_source_l00009}{9}} of file \doxymbox{\hyperlink{SoundEffect_8h_source}{Sound\+Effect.\+h}}.
+
+\Hypertarget{classSoundEffect_a19a66ea9ad7c306554bf58ce68283814}\index{SoundEffect@{SoundEffect}!m\_Spec@{m\_Spec}}
+\index{m\_Spec@{m\_Spec}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{m\_Spec}{m\_Spec}}
+{\footnotesize\ttfamily \label{classSoundEffect_a19a66ea9ad7c306554bf58ce68283814} 
+SDL\+\_\+\+Audio\+Spec Sound\+Effect::\+m\+\_\+\+Spec\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8h_source_l00056}{56}} of file \doxymbox{\hyperlink{SoundEffect_8h_source}{Sound\+Effect.\+h}}.
+
+\Hypertarget{classSoundEffect_a834510bdbcad1236e1b70646016346a5}\index{SoundEffect@{SoundEffect}!m\_Stream@{m\_Stream}}
+\index{m\_Stream@{m\_Stream}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{m\_Stream}{m\_Stream}}
+{\footnotesize\ttfamily \label{classSoundEffect_a834510bdbcad1236e1b70646016346a5} 
+SDL\+\_\+\+Audio\+Stream\texorpdfstring{$\ast$}{*} Sound\+Effect::\+m\+\_\+\+Stream = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8h_source_l00058}{58}} of file \doxymbox{\hyperlink{SoundEffect_8h_source}{Sound\+Effect.\+h}}.
+
+\Hypertarget{classSoundEffect_a133e312b04f01d6835286ed69b667951}\index{SoundEffect@{SoundEffect}!s\_AudioDevice@{s\_AudioDevice}}
+\index{s\_AudioDevice@{s\_AudioDevice}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{s\_AudioDevice}{s\_AudioDevice}}
+{\footnotesize\ttfamily \label{classSoundEffect_a133e312b04f01d6835286ed69b667951} 
+SDL\+\_\+\+Audio\+Device\+ID Sound\+Effect::\+s\+\_\+\+Audio\+Device = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8h_source_l00059}{59}} of file \doxymbox{\hyperlink{SoundEffect_8h_source}{Sound\+Effect.\+h}}.
+
+\Hypertarget{classSoundEffect_ad1201573d75db7d3f6128d38dbde4c6a}\index{SoundEffect@{SoundEffect}!s\_DeviceOpen@{s\_DeviceOpen}}
+\index{s\_DeviceOpen@{s\_DeviceOpen}!SoundEffect@{SoundEffect}}
+\doxysubsubsection{\texorpdfstring{s\_DeviceOpen}{s\_DeviceOpen}}
+{\footnotesize\ttfamily \label{classSoundEffect_ad1201573d75db7d3f6128d38dbde4c6a} 
+bool Sound\+Effect::\+s\+\_\+\+Device\+Open = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{SoundEffect_8h_source_l00060}{60}} of file \doxymbox{\hyperlink{SoundEffect_8h_source}{Sound\+Effect.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+audio/\doxymbox{\hyperlink{SoundEffect_8h}{Sound\+Effect.\+h}}\item 
+engine/\+audio/\doxymbox{\hyperlink{SoundEffect_8cpp}{Sound\+Effect.\+cpp}}\end{DoxyCompactItemize}

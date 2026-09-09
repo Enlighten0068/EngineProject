@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classIndexBuffer" kind="class" language="C++" prot="public">
+    <compoundname>IndexBuffer</compoundname>
+    <includes refid="IndexBuffer_8h" local="no">IndexBuffer.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classIndexBuffer_1ae819041807551f8df4276aefcfce6505" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t IndexBuffer::m_RendererID</definition>
+        <argsstring></argsstring>
+        <name>m_RendererID</name>
+        <qualifiedname>IndexBuffer::m_RendererID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/IndexBuffer.h" line="42" column="14" bodyfile="engine/graphics/IndexBuffer.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIndexBuffer_1a5272b565abe244ea28d5cfa4c390b893" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t IndexBuffer::m_Count</definition>
+        <argsstring></argsstring>
+        <name>m_Count</name>
+        <qualifiedname>IndexBuffer::m_Count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/IndexBuffer.h" line="43" column="14" bodyfile="engine/graphics/IndexBuffer.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classIndexBuffer_1ad88171bcb24ca515393f7ae86822b3e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>IndexBuffer::IndexBuffer</definition>
+        <argsstring>(const uint32_t *indices, uint32_t count)</argsstring>
+        <name>IndexBuffer</name>
+        <qualifiedname>IndexBuffer::IndexBuffer</qualifiedname>
+        <param>
+          <type>const uint32_t *</type>
+          <declname>indices</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Constructs an index buffer and uploads indices to the GPU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an index buffer and uploads indices to the GPU.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to index data (uint32_t values). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of indices.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to index data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of indices. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/IndexBuffer.h" line="21" column="5" bodyfile="engine/graphics/IndexBuffer.cpp" bodystart="11" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classIndexBuffer_1a348889936f378b7942c1e01d83e42866" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>IndexBuffer::~IndexBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>~IndexBuffer</name>
+        <qualifiedname>IndexBuffer::~IndexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/IndexBuffer.h" line="23" column="5" bodyfile="engine/graphics/IndexBuffer.cpp" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classIndexBuffer_1ac8bdd0495f718173fb46691ad1b7e4af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IndexBuffer::Bind</definition>
+        <argsstring>() const</argsstring>
+        <name>Bind</name>
+        <qualifiedname>IndexBuffer::Bind</qualifiedname>
+        <briefdescription>
+<para>Binds the buffer as the current GL_ELEMENT_ARRAY_BUFFER. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Binds the buffer as the active GL_ELEMENT_ARRAY_BUFFER. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/IndexBuffer.h" line="28" column="10" bodyfile="engine/graphics/IndexBuffer.cpp" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classIndexBuffer_1a5a1cfc46339ea7d6e72d22a096da5a77" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IndexBuffer::Unbind</definition>
+        <argsstring>() const</argsstring>
+        <name>Unbind</name>
+        <qualifiedname>IndexBuffer::Unbind</qualifiedname>
+        <briefdescription>
+<para>Unbinds the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/IndexBuffer.h" line="33" column="10" bodyfile="engine/graphics/IndexBuffer.cpp" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classIndexBuffer_1a3ba6f17fc6a2efa79c3b58f98e9cf0d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t IndexBuffer::GetCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCount</name>
+        <qualifiedname>IndexBuffer::GetCount</qualifiedname>
+        <briefdescription>
+<para>Gets the number of indices stored. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the number of indices.</para>
+<para><simplesect kind="return"><para>Number of indices. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/IndexBuffer.h" line="39" column="14" bodyfile="engine/graphics/IndexBuffer.cpp" bodystart="45" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>OpenGL Index Buffer Object (EBO/IBO) wrapper. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>An index buffer stores vertex indices for indexed drawing (glDrawElements). This allows reusing vertices and reduces memory usage.</para>
+<para><simplesect kind="note"><para>The buffer is created with GL_STATIC_DRAW usage. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classVertexBuffer" kindref="compound">VertexBuffer</ref>, <ref refid="classVertexArray" kindref="compound">VertexArray</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>IndexBuffer</label>
+        <link refid="classIndexBuffer"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/graphics/IndexBuffer.h" line="14" column="1" bodyfile="engine/graphics/IndexBuffer.h" bodystart="14" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classIndexBuffer_1ac8bdd0495f718173fb46691ad1b7e4af" prot="public" virt="non-virtual"><scope>IndexBuffer</scope><name>Bind</name></member>
+      <member refid="classIndexBuffer_1a3ba6f17fc6a2efa79c3b58f98e9cf0d8" prot="public" virt="non-virtual"><scope>IndexBuffer</scope><name>GetCount</name></member>
+      <member refid="classIndexBuffer_1ad88171bcb24ca515393f7ae86822b3e8" prot="public" virt="non-virtual"><scope>IndexBuffer</scope><name>IndexBuffer</name></member>
+      <member refid="classIndexBuffer_1a5272b565abe244ea28d5cfa4c390b893" prot="private" virt="non-virtual"><scope>IndexBuffer</scope><name>m_Count</name></member>
+      <member refid="classIndexBuffer_1ae819041807551f8df4276aefcfce6505" prot="private" virt="non-virtual"><scope>IndexBuffer</scope><name>m_RendererID</name></member>
+      <member refid="classIndexBuffer_1a5a1cfc46339ea7d6e72d22a096da5a77" prot="public" virt="non-virtual"><scope>IndexBuffer</scope><name>Unbind</name></member>
+      <member refid="classIndexBuffer_1a348889936f378b7942c1e01d83e42866" prot="public" virt="non-virtual"><scope>IndexBuffer</scope><name>~IndexBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

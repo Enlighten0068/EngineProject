@@ -1,0 +1,32 @@
+\doxysection{Fps\+Counter.\+h}
+\hypertarget{FpsCounter_8h_source}{}\label{FpsCounter_8h_source}\index{engine/core/FpsCounter.h@{engine/core/FpsCounter.h}}
+\doxymbox{\hyperlink{FpsCounter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00014}\doxymbox{\hyperlink{classFpsCounter}{00014}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classFpsCounter_a82dfe73642a613c6f4bc7e38781360d7}{FpsCounter}}\{}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00015}00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00016}\doxymbox{\hyperlink{classFpsCounter_a82dfe73642a613c6f4bc7e38781360d7}{00016}}\ \ \ \ \ \doxymbox{\hyperlink{classFpsCounter_a82dfe73642a613c6f4bc7e38781360d7}{FpsCounter}}();}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00017}\doxymbox{\hyperlink{classFpsCounter_ad8ac6ac5c70fe8ca7cca097ba98aba9b}{00017}}\ \ \ \ \ \doxymbox{\hyperlink{classFpsCounter_ad8ac6ac5c70fe8ca7cca097ba98aba9b}{\string~FpsCounter}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classFpsCounter_ac7e47e9bfff65ac4e4aaa232669bcfd6}{Update}}();}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//Getters}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00028}\doxymbox{\hyperlink{classFpsCounter_a63034f292080e07963a1fef86ae40f0a}{00028}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classFpsCounter_a63034f292080e07963a1fef86ae40f0a}{GetFPS}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classFpsCounter_a3c97e1b7092c2ff93fc0e2c18888ca5e}{m\_FPS}};\ \}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00029}\doxymbox{\hyperlink{classFpsCounter_ae92842565f6134b6cfd7a72c52634643}{00029}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classFpsCounter_ae92842565f6134b6cfd7a72c52634643}{GetDeltaTime}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classFpsCounter_a64d4c0efc68ad7c887c0eee9358b3e53}{m\_DeltaTime}};\ \}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00030}\doxymbox{\hyperlink{classFpsCounter_a01086d67fcb14cdbf85ae217441569c2}{00030}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classFpsCounter_a01086d67fcb14cdbf85ae217441569c2}{GetElapsedTime}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classFpsCounter_a74593eaaf5f829cd339ad37ee4f8206c}{m\_ElapsedTime}};\ \}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00036}\doxymbox{\hyperlink{classFpsCounter_af46f79cc7cf4476db2553c22e932ea7a}{00036}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classFpsCounter_af46f79cc7cf4476db2553c22e932ea7a}{SetLogInterval}}(\textcolor{keywordtype}{float}\ interval)\{\ \doxymbox{\hyperlink{classFpsCounter_ab2f9ef76e8b93e25ea75c22f27435a58}{m\_LogInterval}}\ =\ interval;\ \}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00038}00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00039}\doxymbox{\hyperlink{classFpsCounter_a28be3cb1111af1665b4655ed911fe3f5}{00039}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classFpsCounter_a28be3cb1111af1665b4655ed911fe3f5}{m\_Timer}}\ =\ 0.0f;\ \textcolor{comment}{//Accumulated\ time\ since\ last\ log}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00040}\doxymbox{\hyperlink{classFpsCounter_a3c97e1b7092c2ff93fc0e2c18888ca5e}{00040}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classFpsCounter_a3c97e1b7092c2ff93fc0e2c18888ca5e}{m\_FPS}}\ =\ 0.0f;\ \textcolor{comment}{//Calculated\ FPS}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00041}\doxymbox{\hyperlink{classFpsCounter_af170200b8c16cb824e1cf0eadc9b432f}{00041}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classFpsCounter_af170200b8c16cb824e1cf0eadc9b432f}{m\_FrameCount}}\ =\ 0;\ \textcolor{comment}{//Number\ of\ frames\ since\ last\ log}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00042}\doxymbox{\hyperlink{classFpsCounter_a64d4c0efc68ad7c887c0eee9358b3e53}{00042}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classFpsCounter_a64d4c0efc68ad7c887c0eee9358b3e53}{m\_DeltaTime}}\ =\ 0.0f;\ \textcolor{comment}{//Current\ frame\ delta\ time}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00043}\doxymbox{\hyperlink{classFpsCounter_a74593eaaf5f829cd339ad37ee4f8206c}{00043}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classFpsCounter_a74593eaaf5f829cd339ad37ee4f8206c}{m\_ElapsedTime}}\ =\ 0.0f;\ \textcolor{comment}{//Total\ elapsed\ time}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00044}\doxymbox{\hyperlink{classFpsCounter_ab2f9ef76e8b93e25ea75c22f27435a58}{00044}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classFpsCounter_ab2f9ef76e8b93e25ea75c22f27435a58}{m\_LogInterval}}\ =\ 1.0f;\ \textcolor{comment}{//Interval\ between\ logs\ -\/\ used\ usually\ for\ FPS\ logging}}
+\DoxyCodeLine{\Hypertarget{FpsCounter_8h_source_l00045}00045\ \};}
+
+\end{DoxyCode}

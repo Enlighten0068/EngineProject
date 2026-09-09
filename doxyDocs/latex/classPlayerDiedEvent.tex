@@ -1,0 +1,191 @@
+\doxysection{Player\+Died\+Event Class Reference}
+\hypertarget{classPlayerDiedEvent}{}\label{classPlayerDiedEvent}\index{PlayerDiedEvent@{PlayerDiedEvent}}
+
+
+\doxylink{classEvent}{Event} dispatched when the player dies.  
+
+
+
+
+{\ttfamily \+\#include $<$Player\+Events.\+h$>$}
+
+
+
+Inheritance diagram for Player\+Died\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classPlayerDiedEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Player\+Died\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classPlayerDiedEvent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classPlayerDiedEvent_a8a4f0b9ade87bdfd12dc6ac513e6b5b0}{Player\+Died\+Event}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&position, const std::\+string \&cause="{}Unknown"{})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classPlayerDiedEvent}{Player\+Died\+Event}. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \& \doxymbox{\hyperlink{classPlayerDiedEvent_a9a55e7cacb69fcce9dc853b6e999c026}{Get\+Position}} () const
+\item 
+const std::\+string \& \doxymbox{\hyperlink{classPlayerDiedEvent_a26e9b49610a461a1cd85a473e6672dfe}{Get\+Cause}} () const
+\item 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classPlayerDiedEvent_ac1f5345b6ae2df9d1daedcf1ecd995d6}{Get\+Event\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classEvent_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classPlayerDiedEvent_aca9f974851c1f4ef8279d4151f10a76f}{Get\+Static\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{classPlayerDiedEvent_af0126b578a40bbeeea494e2ce9553e57}{m\+\_\+\+Position}}
+\item 
+std::\+string \doxymbox{\hyperlink{classPlayerDiedEvent_af321781cd6aee7765122cf374365da9e}{m\+\_\+\+Cause}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classEvent_a8ad0c350a8f569dbb05cf845caa4737e}{Handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classEvent}{Event} dispatched when the player dies. 
+
+Contains the player\textquotesingle{}s position at death and a cause string.
+
+\begin{DoxyNote}{Note}
+Dispatched by \doxylink{classPlayerController_a41c1071503dfa351b2e028389476529b}{Player\+Controller::\+\+Die()}. 
+\end{DoxyNote}
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00070}{70}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+
+
+\label{classPlayerDiedEvent_doc-constructors}
+\Hypertarget{classPlayerDiedEvent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPlayerDiedEvent_a8a4f0b9ade87bdfd12dc6ac513e6b5b0}\index{PlayerDiedEvent@{PlayerDiedEvent}!PlayerDiedEvent@{PlayerDiedEvent}}
+\index{PlayerDiedEvent@{PlayerDiedEvent}!PlayerDiedEvent@{PlayerDiedEvent}}
+\doxysubsubsection{\texorpdfstring{PlayerDiedEvent()}{PlayerDiedEvent()}}
+{\footnotesize\ttfamily \label{classPlayerDiedEvent_a8a4f0b9ade87bdfd12dc6ac513e6b5b0} 
+Player\+Died\+Event::\+\+Player\+Died\+Event (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{position}{, }\item[{const std::\+string \&}]{cause}{ = {\ttfamily "{}Unknown"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classPlayerDiedEvent}{Player\+Died\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Player position at death. \\
+\hline
+{\em cause} & Reason for death (e.\+g., "{}\+Killed by enemy"{}). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00077}{77}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+
+
+\label{classPlayerDiedEvent_doc-func-members}
+\Hypertarget{classPlayerDiedEvent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPlayerDiedEvent_a26e9b49610a461a1cd85a473e6672dfe}\index{PlayerDiedEvent@{PlayerDiedEvent}!GetCause@{GetCause}}
+\index{GetCause@{GetCause}!PlayerDiedEvent@{PlayerDiedEvent}}
+\doxysubsubsection{\texorpdfstring{GetCause()}{GetCause()}}
+{\footnotesize\ttfamily \label{classPlayerDiedEvent_a26e9b49610a461a1cd85a473e6672dfe} 
+const std::\+string \& Player\+Died\+Event::\+\+Get\+Cause (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00081}{81}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+\Hypertarget{classPlayerDiedEvent_ac1f5345b6ae2df9d1daedcf1ecd995d6}\index{PlayerDiedEvent@{PlayerDiedEvent}!GetEventType@{GetEventType}}
+\index{GetEventType@{GetEventType}!PlayerDiedEvent@{PlayerDiedEvent}}
+\doxysubsubsection{\texorpdfstring{GetEventType()}{GetEventType()}}
+{\footnotesize\ttfamily \label{classPlayerDiedEvent_ac1f5345b6ae2df9d1daedcf1ecd995d6} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Player\+Died\+Event::\+\+Get\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the event. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type} enum value identifying the event. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classEvent_af14bbd8f69c2778def9462375a0e70f2}{Event}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00084}{84}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+\Hypertarget{classPlayerDiedEvent_a9a55e7cacb69fcce9dc853b6e999c026}\index{PlayerDiedEvent@{PlayerDiedEvent}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!PlayerDiedEvent@{PlayerDiedEvent}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{classPlayerDiedEvent_a9a55e7cacb69fcce9dc853b6e999c026} 
+const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \& Player\+Died\+Event::\+\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00080}{80}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+\Hypertarget{classPlayerDiedEvent_aca9f974851c1f4ef8279d4151f10a76f}\index{PlayerDiedEvent@{PlayerDiedEvent}!GetStaticType@{GetStaticType}}
+\index{GetStaticType@{GetStaticType}!PlayerDiedEvent@{PlayerDiedEvent}}
+\doxysubsubsection{\texorpdfstring{GetStaticType()}{GetStaticType()}}
+{\footnotesize\ttfamily \label{classPlayerDiedEvent_aca9f974851c1f4ef8279d4151f10a76f} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Player\+Died\+Event::\+\+Get\+Static\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00083}{83}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+
+
+\label{classPlayerDiedEvent_doc-variable-members}
+\Hypertarget{classPlayerDiedEvent_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPlayerDiedEvent_af321781cd6aee7765122cf374365da9e}\index{PlayerDiedEvent@{PlayerDiedEvent}!m\_Cause@{m\_Cause}}
+\index{m\_Cause@{m\_Cause}!PlayerDiedEvent@{PlayerDiedEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Cause}{m\_Cause}}
+{\footnotesize\ttfamily \label{classPlayerDiedEvent_af321781cd6aee7765122cf374365da9e} 
+std::\+string Player\+Died\+Event::\+m\+\_\+\+Cause\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00088}{88}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+\Hypertarget{classPlayerDiedEvent_af0126b578a40bbeeea494e2ce9553e57}\index{PlayerDiedEvent@{PlayerDiedEvent}!m\_Position@{m\_Position}}
+\index{m\_Position@{m\_Position}!PlayerDiedEvent@{PlayerDiedEvent}}
+\doxysubsubsection{\texorpdfstring{m\_Position}{m\_Position}}
+{\footnotesize\ttfamily \label{classPlayerDiedEvent_af0126b578a40bbeeea494e2ce9553e57} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Player\+Died\+Event::\+m\+\_\+\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerEvents_8h_source_l00087}{87}} of file \doxymbox{\hyperlink{PlayerEvents_8h_source}{Player\+Events.\+h}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+events/\doxymbox{\hyperlink{PlayerEvents_8h}{Player\+Events.\+h}}\end{DoxyCompactItemize}

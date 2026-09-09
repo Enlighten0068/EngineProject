@@ -1,0 +1,280 @@
+\doxysection{SDLEvent\+Translator Class Reference}
+\hypertarget{classSDLEventTranslator}{}\label{classSDLEventTranslator}\index{SDLEventTranslator@{SDLEventTranslator}}
+
+
+Translates SDL events into engine events and dispatches them via \doxylink{classEventBus}{Event\+Bus}.  
+
+
+
+
+{\ttfamily \+\#include $<$SDLEvent\+Translator.\+h$>$}
+
+
+
+Collaboration diagram for SDLEvent\+Translator:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classSDLEventTranslator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{Unhandled\+Callback}} = std::\+function$<$void(const SDL\+\_\+\+Event\&)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \doxymbox{\hyperlink{classSDLEventTranslator_a3f9759218967a1c0aa87e8e8208de25d}{Translate\+And\+Dispatch}} (const SDL\+\_\+\+Event \&sdl\+Event)
+\begin{DoxyCompactList}\small\item\em Translates an SDL event and dispatches it to the \doxylink{classEventBus}{Event\+Bus}. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classSDLEventTranslator_a3667c0593acbe43be9c7e88fc1c1d05a}{Set\+Unhandled\+Callback}} (const \doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{Unhandled\+Callback}} \&callback)
+\begin{DoxyCompactList}\small\item\em Sets a callback for unhandled SDL events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classSDLEventTranslator_a5ee49053d4da68c3516eb8457140b0c8}{SDLEvent\+Translator}} ()=delete
+\item 
+\doxymbox{\hyperlink{classSDLEventTranslator_aa29f382112025cf21607da25366a8b64}{\texorpdfstring{$\sim$}{\string~}\+SDLEvent\+Translator}} ()=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{classSDLEventTranslator_ab8c64c13f07e44ec781e7a4122f3bbae}{Dispatch\+Key\+Event}} (const SDL\+\_\+\+Event \&sdl\+Event)
+\begin{DoxyCompactList}\small\item\em Translates an SDL key event into a \doxylink{classKeyEvent}{Key\+Event} and dispatches it. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classSDLEventTranslator_a680ae74d8df0178b6f12b2060041fd48}{Dispatch\+Mouse\+Motion\+Event}} (const SDL\+\_\+\+Event \&sdl\+Event)
+\begin{DoxyCompactList}\small\item\em Translates an SDL mouse motion event into a \doxylink{classMouseMotionEvent}{Mouse\+Motion\+Event} and dispatches it. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classSDLEventTranslator_ae9e18c1d2fed7acb98e42d7b66de8977}{Dispatch\+Mouse\+Button\+Event}} (const SDL\+\_\+\+Event \&sdl\+Event)
+\begin{DoxyCompactList}\small\item\em Translates an SDL mouse button event into a \doxylink{classMouseButtonEvent}{Mouse\+Button\+Event} and dispatches it. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classSDLEventTranslator_a35af4df9452cb3de586453ccbf851e34}{Dispatch\+Mouse\+Wheel\+Event}} (const SDL\+\_\+\+Event \&sdl\+Event)
+\begin{DoxyCompactList}\small\item\em Translates an SDL mouse wheel event into a \doxylink{classMouseWheelEvent}{Mouse\+Wheel\+Event} and dispatches it. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classSDLEventTranslator_ac79ddf4fb80535293db3ea36f5e96907}{Dispatch\+Window\+Event}} (const SDL\+\_\+\+Event \&sdl\+Event)
+\begin{DoxyCompactList}\small\item\em Translates an SDL window event (quit or resize) and dispatches it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{Unhandled\+Callback}} \doxymbox{\hyperlink{classSDLEventTranslator_a20e49284964400b64b5ab2978c84d0af}{s\+\_\+\+Unhandled\+Callback}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Translates SDL events into engine events and dispatches them via \doxylink{classEventBus}{Event\+Bus}. 
+
+This class is responsible for converting low-\/level SDL events (SDL\+\_\+\+Event) into engine-\/specific event objects and dispatching them to the \doxylink{classEventBus}{Event\+Bus}.
+
+\begin{DoxyNote}{Note}
+All methods are static; this class is not meant to be instantiated. 
+\end{DoxyNote}
+
+
+Definition at line \doxymbox{\hyperlink{SDLEventTranslator_8h_source_l00019}{19}} of file \doxymbox{\hyperlink{SDLEventTranslator_8h_source}{SDLEvent\+Translator.\+h}}.
+
+
+
+\label{classSDLEventTranslator_doc-typedef-members}
+\Hypertarget{classSDLEventTranslator_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}\index{SDLEventTranslator@{SDLEventTranslator}!UnhandledCallback@{UnhandledCallback}}
+\index{UnhandledCallback@{UnhandledCallback}!SDLEventTranslator@{SDLEventTranslator}}
+\doxysubsubsection{\texorpdfstring{UnhandledCallback}{UnhandledCallback}}
+{\footnotesize\ttfamily \label{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4} 
+using \doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{SDLEvent\+Translator::\+\+Unhandled\+Callback}} = std::\+function$<$void(const SDL\+\_\+\+Event\&)$>$}
+
+
+
+Definition at line \doxymbox{\hyperlink{SDLEventTranslator_8h_source_l00021}{21}} of file \doxymbox{\hyperlink{SDLEventTranslator_8h_source}{SDLEvent\+Translator.\+h}}.
+
+
+
+\label{classSDLEventTranslator_doc-constructors}
+\Hypertarget{classSDLEventTranslator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSDLEventTranslator_a5ee49053d4da68c3516eb8457140b0c8}\index{SDLEventTranslator@{SDLEventTranslator}!SDLEventTranslator@{SDLEventTranslator}}
+\index{SDLEventTranslator@{SDLEventTranslator}!SDLEventTranslator@{SDLEventTranslator}}
+\doxysubsubsection{\texorpdfstring{SDLEventTranslator()}{SDLEventTranslator()}}
+{\footnotesize\ttfamily \label{classSDLEventTranslator_a5ee49053d4da68c3516eb8457140b0c8} 
+SDLEvent\+Translator::\+\+SDLEvent\+Translator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\Hypertarget{classSDLEventTranslator_aa29f382112025cf21607da25366a8b64}\index{SDLEventTranslator@{SDLEventTranslator}!````~SDLEventTranslator@{\texorpdfstring{$\sim$}{\string~}SDLEventTranslator}}
+\index{````~SDLEventTranslator@{\texorpdfstring{$\sim$}{\string~}SDLEventTranslator}!SDLEventTranslator@{SDLEventTranslator}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SDLEventTranslator()}{\string~SDLEventTranslator()}}
+{\footnotesize\ttfamily \label{classSDLEventTranslator_aa29f382112025cf21607da25366a8b64} 
+SDLEvent\+Translator::\+\texorpdfstring{$\sim$}{\string~}\+SDLEvent\+Translator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\label{classSDLEventTranslator_doc-func-members}
+\Hypertarget{classSDLEventTranslator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSDLEventTranslator_ab8c64c13f07e44ec781e7a4122f3bbae}\index{SDLEventTranslator@{SDLEventTranslator}!DispatchKeyEvent@{DispatchKeyEvent}}
+\index{DispatchKeyEvent@{DispatchKeyEvent}!SDLEventTranslator@{SDLEventTranslator}}
+\doxysubsubsection{\texorpdfstring{DispatchKeyEvent()}{DispatchKeyEvent()}}
+{\footnotesize\ttfamily \label{classSDLEventTranslator_ab8c64c13f07e44ec781e7a4122f3bbae} 
+void SDLEvent\+Translator::\+\+Dispatch\+Key\+Event (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Event \&}]{sdl\+Event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Translates an SDL key event into a \doxylink{classKeyEvent}{Key\+Event} and dispatches it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\+Event} & The SDL key event. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source_l00056}{56}} of file \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source}{SDLEvent\+Translator.\+cpp}}.
+
+\Hypertarget{classSDLEventTranslator_ae9e18c1d2fed7acb98e42d7b66de8977}\index{SDLEventTranslator@{SDLEventTranslator}!DispatchMouseButtonEvent@{DispatchMouseButtonEvent}}
+\index{DispatchMouseButtonEvent@{DispatchMouseButtonEvent}!SDLEventTranslator@{SDLEventTranslator}}
+\doxysubsubsection{\texorpdfstring{DispatchMouseButtonEvent()}{DispatchMouseButtonEvent()}}
+{\footnotesize\ttfamily \label{classSDLEventTranslator_ae9e18c1d2fed7acb98e42d7b66de8977} 
+void SDLEvent\+Translator::\+\+Dispatch\+Mouse\+Button\+Event (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Event \&}]{sdl\+Event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Translates an SDL mouse button event into a \doxylink{classMouseButtonEvent}{Mouse\+Button\+Event} and dispatches it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\+Event} & The SDL mouse button event. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source_l00090}{90}} of file \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source}{SDLEvent\+Translator.\+cpp}}.
+
+\Hypertarget{classSDLEventTranslator_a680ae74d8df0178b6f12b2060041fd48}\index{SDLEventTranslator@{SDLEventTranslator}!DispatchMouseMotionEvent@{DispatchMouseMotionEvent}}
+\index{DispatchMouseMotionEvent@{DispatchMouseMotionEvent}!SDLEventTranslator@{SDLEventTranslator}}
+\doxysubsubsection{\texorpdfstring{DispatchMouseMotionEvent()}{DispatchMouseMotionEvent()}}
+{\footnotesize\ttfamily \label{classSDLEventTranslator_a680ae74d8df0178b6f12b2060041fd48} 
+void SDLEvent\+Translator::\+\+Dispatch\+Mouse\+Motion\+Event (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Event \&}]{sdl\+Event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Translates an SDL mouse motion event into a \doxylink{classMouseMotionEvent}{Mouse\+Motion\+Event} and dispatches it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\+Event} & The SDL mouse motion event. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source_l00078}{78}} of file \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source}{SDLEvent\+Translator.\+cpp}}.
+
+\Hypertarget{classSDLEventTranslator_a35af4df9452cb3de586453ccbf851e34}\index{SDLEventTranslator@{SDLEventTranslator}!DispatchMouseWheelEvent@{DispatchMouseWheelEvent}}
+\index{DispatchMouseWheelEvent@{DispatchMouseWheelEvent}!SDLEventTranslator@{SDLEventTranslator}}
+\doxysubsubsection{\texorpdfstring{DispatchMouseWheelEvent()}{DispatchMouseWheelEvent()}}
+{\footnotesize\ttfamily \label{classSDLEventTranslator_a35af4df9452cb3de586453ccbf851e34} 
+void SDLEvent\+Translator::\+\+Dispatch\+Mouse\+Wheel\+Event (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Event \&}]{sdl\+Event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Translates an SDL mouse wheel event into a \doxylink{classMouseWheelEvent}{Mouse\+Wheel\+Event} and dispatches it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\+Event} & The SDL mouse wheel event. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source_l00108}{108}} of file \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source}{SDLEvent\+Translator.\+cpp}}.
+
+\Hypertarget{classSDLEventTranslator_ac79ddf4fb80535293db3ea36f5e96907}\index{SDLEventTranslator@{SDLEventTranslator}!DispatchWindowEvent@{DispatchWindowEvent}}
+\index{DispatchWindowEvent@{DispatchWindowEvent}!SDLEventTranslator@{SDLEventTranslator}}
+\doxysubsubsection{\texorpdfstring{DispatchWindowEvent()}{DispatchWindowEvent()}}
+{\footnotesize\ttfamily \label{classSDLEventTranslator_ac79ddf4fb80535293db3ea36f5e96907} 
+void SDLEvent\+Translator::\+\+Dispatch\+Window\+Event (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Event \&}]{sdl\+Event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Translates an SDL window event (quit or resize) and dispatches it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\+Event} & The SDL window event. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source_l00119}{119}} of file \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source}{SDLEvent\+Translator.\+cpp}}.
+
+\Hypertarget{classSDLEventTranslator_a3667c0593acbe43be9c7e88fc1c1d05a}\index{SDLEventTranslator@{SDLEventTranslator}!SetUnhandledCallback@{SetUnhandledCallback}}
+\index{SetUnhandledCallback@{SetUnhandledCallback}!SDLEventTranslator@{SDLEventTranslator}}
+\doxysubsubsection{\texorpdfstring{SetUnhandledCallback()}{SetUnhandledCallback()}}
+{\footnotesize\ttfamily \label{classSDLEventTranslator_a3667c0593acbe43be9c7e88fc1c1d05a} 
+void SDLEvent\+Translator::\+\+Set\+Unhandled\+Callback (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{Unhandled\+Callback}} \&}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets a callback for unhandled SDL events. 
+
+Sets the callback for unhandled SDL events.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Function to call for unhandled events. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source_l00048}{48}} of file \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source}{SDLEvent\+Translator.\+cpp}}.
+
+\Hypertarget{classSDLEventTranslator_a3f9759218967a1c0aa87e8e8208de25d}\index{SDLEventTranslator@{SDLEventTranslator}!TranslateAndDispatch@{TranslateAndDispatch}}
+\index{TranslateAndDispatch@{TranslateAndDispatch}!SDLEventTranslator@{SDLEventTranslator}}
+\doxysubsubsection{\texorpdfstring{TranslateAndDispatch()}{TranslateAndDispatch()}}
+{\footnotesize\ttfamily \label{classSDLEventTranslator_a3f9759218967a1c0aa87e8e8208de25d} 
+bool SDLEvent\+Translator::\+\+Translate\+And\+Dispatch (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Event \&}]{sdl\+Event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Translates an SDL event and dispatches it to the \doxylink{classEventBus}{Event\+Bus}. 
+
+Returns true if the event was handled, false if it was unhandled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\+Event} & The SDL event to translate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the event was translated, false otherwise.
+\end{DoxyReturn}
+This method checks the event type and calls the appropriate dispatch function. If the event type is unknown, the unhandled callback (if set) is invoked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\+Event} & The SDL event to translate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the event was translated, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source_l00016}{16}} of file \doxymbox{\hyperlink{SDLEventTranslator_8cpp_source}{SDLEvent\+Translator.\+cpp}}.
+
+
+
+\label{classSDLEventTranslator_doc-variable-members}
+\Hypertarget{classSDLEventTranslator_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSDLEventTranslator_a20e49284964400b64b5ab2978c84d0af}\index{SDLEventTranslator@{SDLEventTranslator}!s\_UnhandledCallback@{s\_UnhandledCallback}}
+\index{s\_UnhandledCallback@{s\_UnhandledCallback}!SDLEventTranslator@{SDLEventTranslator}}
+\doxysubsubsection{\texorpdfstring{s\_UnhandledCallback}{s\_UnhandledCallback}}
+{\footnotesize\ttfamily \label{classSDLEventTranslator_a20e49284964400b64b5ab2978c84d0af} 
+\doxymbox{\hyperlink{classSDLEventTranslator_a38596334139d7ed6215d334ddd0d9dd4}{SDLEvent\+Translator::\+\+Unhandled\+Callback}} SDLEvent\+Translator::\+s\+\_\+\+Unhandled\+Callback = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{SDLEventTranslator_8h_source_l00040}{40}} of file \doxymbox{\hyperlink{SDLEventTranslator_8h_source}{SDLEvent\+Translator.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+events/\doxymbox{\hyperlink{SDLEventTranslator_8h}{SDLEvent\+Translator.\+h}}\item 
+engine/\+events/\doxymbox{\hyperlink{SDLEventTranslator_8cpp}{SDLEvent\+Translator.\+cpp}}\end{DoxyCompactItemize}

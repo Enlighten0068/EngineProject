@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="PlayerController_8cpp" kind="file" language="C++">
+    <compoundname>PlayerController.cpp</compoundname>
+    <includes refid="SoundManager_8h" local="yes">audio/SoundManager.h</includes>
+    <includes refid="components_2Transform_8h" local="yes">components/Transform.h</includes>
+    <includes refid="PlayerController_8h" local="yes">core/PlayerController.h</includes>
+    <includes refid="GamepadManager_8h" local="yes">core/GamepadManager.h</includes>
+    <includes refid="Input_8h" local="yes">core/Input.h</includes>
+    <includes refid="Time_8h" local="yes">core/Time.h</includes>
+    <includes refid="Log_8h" local="yes">diagnostics/Log.h</includes>
+    <includes refid="PlayerEvents_8h" local="yes">events/PlayerEvents.h</includes>
+    <includes refid="EventBus_8h" local="yes">events/EventBus.h</includes>
+    <includes refid="KeyEvent_8h" local="yes">events/KeyEvent.h</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">format</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>audio/SoundEffect.h</label>
+        <link refid="SoundEffect_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>audio/SoundManager.h</label>
+        <link refid="SoundManager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>components/Transform.h</label>
+        <link refid="components_2Transform_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>core/GamepadManager.h</label>
+        <link refid="GamepadManager_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>core/Input.h</label>
+        <link refid="Input_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/core/PlayerController.cpp</label>
+        <link refid="PlayerController_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>core/PlayerController.h</label>
+        <link refid="PlayerController_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>core/Time.h</label>
+        <link refid="Time_8h"/>
+      </node>
+      <node id="25">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>events/Event.h</label>
+        <link refid="Event_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>events/EventBus.h</label>
+        <link refid="EventBus_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>events/EventType.h</label>
+        <link refid="EventType_8h"/>
+      </node>
+      <node id="36">
+        <label>events/KeyEvent.h</label>
+        <link refid="KeyEvent_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>events/PlayerEvents.h</label>
+        <link refid="PlayerEvents_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>graphics/VertexArray.h</label>
+        <link refid="VertexArray_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>graphics/VertexBuffer.h</label>
+        <link refid="VertexBuffer_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="12">
+        <label>scene/GameWorld.h</label>
+        <link refid="GameWorld_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="37">
+        <label>algorithm</label>
+      </node>
+      <node id="27">
+        <label>chrono</label>
+      </node>
+      <node id="15">
+        <label>cmath</label>
+      </node>
+      <node id="17">
+        <label>cstdint</label>
+      </node>
+      <node id="21">
+        <label>entt.hpp</label>
+      </node>
+      <node id="38">
+        <label>format</label>
+      </node>
+      <node id="26">
+        <label>fstream</label>
+      </node>
+      <node id="34">
+        <label>functional</label>
+      </node>
+      <node id="28">
+        <label>iomanip</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="29">
+        <label>sstream</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="35">
+        <label>typeindex</label>
+      </node>
+      <node id="7">
+        <label>unordered_map</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SoundManager_8h" kindref="compound">audio/SoundManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="components_2Transform_8h" kindref="compound">components/Transform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PlayerController_8h" kindref="compound">core/PlayerController.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GamepadManager_8h" kindref="compound">core/GamepadManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Input_8h" kindref="compound">core/Input.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Time_8h" kindref="compound">core/Time.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Log_8h" kindref="compound">diagnostics/Log.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PlayerEvents_8h" kindref="compound">events/PlayerEvents.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="EventBus_8h" kindref="compound">events/EventBus.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="KeyEvent_8h" kindref="compound">events/KeyEvent.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;format&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classPlayerController_1a526dbbbce5f9567a8558b5366445b4f7" refkind="member"><highlight class="normal"><ref refid="classPlayerController_1a526dbbbce5f9567a8558b5366445b4f7" kindref="member">PlayerController::PlayerController</ref>(entt::registry&amp;<sp/>registry,<sp/>entt::entity<sp/>playerEntity,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classGameWorld" kindref="compound">GameWorld</ref>&amp;<sp/>world)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">:<sp/><ref refid="classPlayerController_1ad586858eeaf73156678220adde0dfc65" kindref="member">m_Registry</ref>(registry),<sp/><ref refid="classPlayerController_1a91f7e14f412fb0a338d50227b8d77dc7" kindref="member">m_PlayerEntity</ref>(playerEntity),<sp/><ref refid="classPlayerController_1a0741e03ee1239165e1a12ab2fdc818db" kindref="member">m_World</ref>(world){</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1ab1593f66b3a70d2ce2c99d2898b27300" kindref="member">SetupEventSubscriptions</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classPlayerController_1ab1593f66b3a70d2ce2c99d2898b27300" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1ab1593f66b3a70d2ce2c99d2898b27300" kindref="member">PlayerController::SetupEventSubscriptions</ref>(){</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEventBus_1abb3a69dd93dc265aec144024ab8ab3ed" kindref="member">EventBus::GetInstance</ref>().<ref refid="classEventBus_1aec7a1402c0f1789198cc9954639bac99" kindref="member">Subscribe</ref>&lt;<ref refid="classKeyEvent" kindref="compound">KeyEvent</ref>&gt;([</highlight><highlight class="keyword">this</highlight><highlight class="normal">](<ref refid="classEvent" kindref="compound">Event</ref>&amp;<sp/>e){</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classKeyEvent" kindref="compound">KeyEvent</ref>&amp;<sp/>keyEvent<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="classKeyEvent" kindref="compound">KeyEvent</ref>&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(e);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(keyEvent.<ref refid="classKeyEvent_1a83f1a67717c14fc58ab42c668425de0e" kindref="member">GetAction</ref>()<sp/>==<sp/><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1ad78a68f6a85421ae121c2cb5b73a1040" kindref="member">KeyAction::Pressed</ref><sp/>&amp;&amp;<sp/>keyEvent.<ref refid="classKeyEvent_1ad612ba1c06ae469951e06d4635ae256f" kindref="member">GetScancode</ref>()<sp/>==<sp/>SDL_SCANCODE_E){</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Interact<sp/>key<sp/>pressed.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classPlayerController_1a2e0c380d64a88c8cfe60ce8452921227" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1a2e0c380d64a88c8cfe60ce8452921227" kindref="member">PlayerController::Update</ref>(){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classPlayerController_1a1e9b40f2e626532f9d49c66dd256990f" kindref="member">m_IsDead</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dt<sp/>=<sp/><ref refid="classTime_1ad543732facbdbe2aa7298de13cb2a12b" kindref="member">Time::DeltaTime</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>transform<sp/>=<sp/><ref refid="classPlayerController_1ad586858eeaf73156678220adde0dfc65" kindref="member">m_Registry</ref>.get&lt;<ref refid="structComponents_1_1Transform" kindref="compound">Components::Transform</ref>&gt;(<ref refid="classPlayerController_1a91f7e14f412fb0a338d50227b8d77dc7" kindref="member">m_PlayerEntity</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Get<sp/>direction<sp/>from<sp/>keyboard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/>keyboardDirection(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a745b3db0f4100ff52f8597b407bcb55e" kindref="member">Input::IsKeyHeld</ref>(SDL_SCANCODE_LEFT))<sp/><sp/>keyboardDirection.x<sp/>-=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a745b3db0f4100ff52f8597b407bcb55e" kindref="member">Input::IsKeyHeld</ref>(SDL_SCANCODE_RIGHT))<sp/>keyboardDirection.x<sp/>+=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Normalize<sp/>diagonal<sp/>movement</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(keyboardDirection.x<sp/>!=<sp/>0.0f<sp/>&amp;&amp;<sp/>keyboardDirection.y<sp/>!=<sp/>0.0f){</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>keyboardDirection<sp/>=<sp/>keyboardDirection<sp/>*<sp/>0.7071f;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Get<sp/>gamepad<sp/>left<sp/>joystick<sp/>direction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/>gamepadDirection(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>gamepadActive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GamepadManager::GetInstance</ref>().IsConnected(0)){</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gamepadDirection.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>=<sp/><ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GamepadManager::GetInstance</ref>().<ref refid="classGamepadManager_1afc5533e2907a7356e1e7a34cbae3f872" kindref="member">GetAxis</ref>(0,<sp/>SDL_GAMEPAD_AXIS_LEFTX);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deadzone<sp/>=<sp/>0.2f;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(std::abs(gamepadDirection.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref>)<sp/>&lt;<sp/>deadzone)<sp/>gamepadDirection.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(std::abs(gamepadDirection.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref>)<sp/>&lt;<sp/>deadzone)<sp/>gamepadDirection.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>magnitude<sp/>=<sp/>std::sqrt(gamepadDirection.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>*<sp/>gamepadDirection.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>+<sp/>gamepadDirection.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>*<sp/>gamepadDirection.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(magnitude<sp/>&gt;<sp/>0.1f){</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gamepadActive<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gamepadDirection<sp/>=<sp/>gamepadDirection<sp/>/<sp/>magnitude;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Combine<sp/>directions:<sp/>gamepad<sp/>takes<sp/>priority<sp/>over<sp/>keyboard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/>inputDirection(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(gamepadActive)<sp/>inputDirection<sp/>=<sp/>gamepadDirection;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>inputDirection<sp/>=<sp/>keyboardDirection;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Apply<sp/>horizontal<sp/>movement</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed<sp/>=<sp/><ref refid="classPlayerController_1a552c0308cb0226c7862d99c04f68357a" kindref="member">m_Speed</ref><sp/>*<sp/>dt;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(inputDirection.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>!=<sp/>0.0f<sp/>||<sp/>inputDirection.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>!=<sp/>0.0f){</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform.Position.x<sp/>+=<sp/>inputDirection.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>*<sp/>speed;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform.Position.y<sp/>+=<sp/>inputDirection.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>*<sp/>speed;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Jump<sp/>detection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wantToJump<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_SPACE))<sp/>wantToJump<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GamepadManager::GetInstance</ref>().IsButtonPressed(0,<sp/>SDL_GAMEPAD_BUTTON_EAST))<sp/>wantToJump<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Execute<sp/>jump</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(wantToJump<sp/>&amp;&amp;<sp/><ref refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kindref="member">m_IsGrounded</ref>){</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1a4a2c41cdd7c80c8eef1805188a36f541" kindref="member">m_IsJumping</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kindref="member">m_IsGrounded</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1ae0e4240a0fad2c55cdf0b96e4450e83d" kindref="member">m_JumpTimer</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>=<sp/>12.0f;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Dispatch<sp/>jump<sp/>event<sp/>and<sp/>play<sp/>sound</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlayerJumpedEvent" kindref="compound">PlayerJumpedEvent</ref><sp/>jumpEvent(transform.Position,<sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEventBus_1abb3a69dd93dc265aec144024ab8ab3ed" kindref="member">EventBus::GetInstance</ref>().<ref refid="classEventBus_1a82238e13fe91bb5ed5bc1dbb1555c0af" kindref="member">Dispatch</ref>(jumpEvent);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSoundManager_1a9102852e83b623b6fbf733bcfe610653" kindref="member">SoundManager::GetInstance</ref>().<ref refid="classSoundManager_1a9a672ed95a515097bcea2f57a8eb3569" kindref="member">PlaySound</ref>(</highlight><highlight class="stringliteral">&quot;assets/sounds/jump.wav&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Jump<sp/>started.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Vertical<sp/>physics<sp/>(jumping<sp/>+<sp/>gravity)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classPlayerController_1a4a2c41cdd7c80c8eef1805188a36f541" kindref="member">m_IsJumping</ref>){</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a745b3db0f4100ff52f8597b407bcb55e" kindref="member">Input::IsKeyHeld</ref>(SDL_SCANCODE_SPACE)<sp/>||<sp/><ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GamepadManager::GetInstance</ref>().IsButtonHeld(0,<sp/>SDL_GAMEPAD_BUTTON_EAST)){</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1ae0e4240a0fad2c55cdf0b96e4450e83d" kindref="member">m_JumpTimer</ref><sp/>+=<sp/>dt;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>gravityReduction<sp/>=<sp/>1.0f<sp/>-<sp/>(<ref refid="classPlayerController_1ae0e4240a0fad2c55cdf0b96e4450e83d" kindref="member">m_JumpTimer</ref><sp/>/<sp/>0.5f);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(gravityReduction<sp/>&lt;<sp/>0.0f)<sp/>gravityReduction<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>+=<sp/>(gravityReduction<sp/>*<sp/>0.5f<sp/>-<sp/>9.8f)<sp/>*<sp/>dt;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>=<sp/>std::min(<ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1a4a2c41cdd7c80c8eef1805188a36f541" kindref="member">m_IsJumping</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kindref="member">m_IsGrounded</ref>)<sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>-=<sp/>9.8f<sp/>*<sp/>dt;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Apply<sp/>vertical<sp/>velocity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kindref="member">m_IsGrounded</ref><sp/>||<sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>&gt;<sp/>0.0f)<sp/>transform.Position.y<sp/>+=<sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>*<sp/>dt;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Landing<sp/>detection<sp/>and<sp/>sound</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kindref="member">m_IsGrounded</ref><sp/>&amp;&amp;<sp/>!<ref refid="classPlayerController_1a2b4f8434fdc256669b54c8ac8f7d6aeb" kindref="member">m_WasGrounded</ref>){</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSoundManager_1a9102852e83b623b6fbf733bcfe610653" kindref="member">SoundManager::GetInstance</ref>().<ref refid="classSoundManager_1a9a672ed95a515097bcea2f57a8eb3569" kindref="member">PlaySound</ref>(</highlight><highlight class="stringliteral">&quot;assets/sounds/landing.wav&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Landed<sp/>(sound<sp/>played)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1a2b4f8434fdc256669b54c8ac8f7d6aeb" kindref="member">m_WasGrounded</ref><sp/>=<sp/><ref refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kindref="member">m_IsGrounded</ref>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Clamp<sp/>player<sp/>position<sp/>to<sp/>world<sp/>boundaries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>transform.Position<sp/>=<sp/><ref refid="classPlayerController_1a0741e03ee1239165e1a12ab2fdc818db" kindref="member">m_World</ref>.<ref refid="classGameWorld_1a3e8ec719469deeee0e298939e85996b2" kindref="member">ClampPosition</ref>(transform.Position);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Log<sp/>player<sp/>state<sp/>for<sp/>debugging</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1a112833cbd05320dac0790f50eb4ab25e" kindref="member">Log::InfoThrottled</ref>(std::format(</highlight><highlight class="stringliteral">&quot;Player<sp/>grounded:<sp/>{},<sp/>Is<sp/>jumping:<sp/>{},<sp/>Vertical<sp/>velocity:<sp/>{:.2f}&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kindref="member">m_IsGrounded</ref>,<sp/><ref refid="classPlayerController_1a4a2c41cdd7c80c8eef1805188a36f541" kindref="member">m_IsJumping</ref>,<sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref>),<sp/></highlight><highlight class="stringliteral">&quot;check_grounded_state&quot;</highlight><highlight class="normal">,<sp/>2.0f);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Death<sp/>check<sp/>-<sp/>fell<sp/>off<sp/>the<sp/>world</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(transform.Position.y<sp/>&lt;<sp/>-15.0f)<sp/><ref refid="classPlayerController_1a41c1071503dfa351b2e028389476529b" kindref="member">Die</ref>(</highlight><highlight class="stringliteral">&quot;Fell<sp/>off<sp/>the<sp/>world&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kindref="member">m_IsGrounded</ref>)<sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="classPlayerController_1a41c1071503dfa351b2e028389476529b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classPlayerController_1a41c1071503dfa351b2e028389476529b" kindref="member">PlayerController::Die</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>cause){</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classPlayerController_1a1e9b40f2e626532f9d49c66dd256990f" kindref="member">m_IsDead</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1a1e9b40f2e626532f9d49c66dd256990f" kindref="member">m_IsDead</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>transform<sp/>=<sp/><ref refid="classPlayerController_1ad586858eeaf73156678220adde0dfc65" kindref="member">m_Registry</ref>.get&lt;<ref refid="structComponents_1_1Transform" kindref="compound">Components::Transform</ref>&gt;(<ref refid="classPlayerController_1a91f7e14f412fb0a338d50227b8d77dc7" kindref="member">m_PlayerEntity</ref>);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Dispatch<sp/>death<sp/>event</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerDiedEvent" kindref="compound">PlayerDiedEvent</ref><sp/>deathEvent(transform.Position,<sp/>cause);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEventBus_1abb3a69dd93dc265aec144024ab8ab3ed" kindref="member">EventBus::GetInstance</ref>().<ref refid="classEventBus_1a82238e13fe91bb5ed5bc1dbb1555c0af" kindref="member">Dispatch</ref>(deathEvent);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(std::format(</highlight><highlight class="stringliteral">&quot;Player<sp/>died:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>cause));</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Respawn<sp/>at<sp/>center</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>transform.Position<sp/>=<sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>(0.0f,<sp/>0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" kindref="member">m_Velocity</ref><sp/>=<sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>(0.0f,<sp/>0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1a4a2c41cdd7c80c8eef1805188a36f541" kindref="member">m_IsJumping</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPlayerController_1a1e9b40f2e626532f9d49c66dd256990f" kindref="member">m_IsDead</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Instant<sp/>respawn</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/core/PlayerController.cpp"/>
+  </compounddef>
+</doxygen>

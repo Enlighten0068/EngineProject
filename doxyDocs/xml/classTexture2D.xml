@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classTexture2D" kind="class" language="C++" prot="public">
+    <compoundname>Texture2D</compoundname>
+    <includes refid="Texture2D_8h" local="no">Texture2D.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classTexture2D_1a08bc9aed013a941384db82972b91704c" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Texture2D::m_RendererID</definition>
+        <argsstring></argsstring>
+        <name>m_RendererID</name>
+        <qualifiedname>Texture2D::m_RendererID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="60" column="14" bodyfile="engine/graphics/Texture2D.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTexture2D_1a72fb2ef7cf77006a4860ef1700036e96" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Texture2D::m_Width</definition>
+        <argsstring></argsstring>
+        <name>m_Width</name>
+        <qualifiedname>Texture2D::m_Width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="61" column="9" bodyfile="engine/graphics/Texture2D.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTexture2D_1a50e9da52d931a0f9c9ace3ccb646292b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Texture2D::m_Height</definition>
+        <argsstring></argsstring>
+        <name>m_Height</name>
+        <qualifiedname>Texture2D::m_Height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="62" column="9" bodyfile="engine/graphics/Texture2D.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTexture2D_1a9003e6b742c84c9a34a8516cda4b9412" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Texture2D::m_Channels</definition>
+        <argsstring></argsstring>
+        <name>m_Channels</name>
+        <qualifiedname>Texture2D::m_Channels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="63" column="9" bodyfile="engine/graphics/Texture2D.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTexture2D_1ab62c7c5172a4800b4629cd475147819d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Texture2D::Texture2D</definition>
+        <argsstring>()</argsstring>
+        <name>Texture2D</name>
+        <qualifiedname>Texture2D::Texture2D</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="18" column="5" bodyfile="engine/graphics/Texture2D.cpp" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classTexture2D_1a84210f27b55799a096b8abc36380a077" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Texture2D::~Texture2D</definition>
+        <argsstring>()</argsstring>
+        <name>~Texture2D</name>
+        <qualifiedname>Texture2D::~Texture2D</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="19" column="5" bodyfile="engine/graphics/Texture2D.cpp" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classTexture2D_1ac70d133f5d75f03b471c6107d5f27ee1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Texture2D::Load</definition>
+        <argsstring>(const std::string &amp;filepath)</argsstring>
+        <name>Load</name>
+        <qualifiedname>Texture2D::Load</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+<para>Loads a texture from a file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads a texture from a file using stb_image.</para>
+<para>Supports common formats (.png, .jpg, .bmp, etc.) via stb_image.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the image file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the texture was loaded successfully, false otherwise.</para>
+</simplesect>
+The image is flipped vertically to match OpenGL&apos;s coordinate system (origin at bottom-left). The texture is configured with: GL_REPEAT for wrapping (S and T axes) GL_LINEAR_MIPMAP_LINEAR for minification GL_LINEAR for magnification</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the image file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the texture was loaded successfully, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="29" column="10" bodyfile="engine/graphics/Texture2D.cpp" bodystart="30" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classTexture2D_1a185324994184bca2479fbbc1fcb7f5ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Texture2D::LoadFromSurface</definition>
+        <argsstring>(SDL_Surface *surface)</argsstring>
+        <name>LoadFromSurface</name>
+        <qualifiedname>Texture2D::LoadFromSurface</qualifiedname>
+        <param>
+          <type>SDL_Surface *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+<para>Loads a texture from an SDL_Surface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is useful for rendering text from SDL_ttf.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>surface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SDL_Surface containing the image data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the texture was loaded successfully, false otherwise. </para>
+</simplesect>
+<simplesect kind="note"><para>The surface is NOT freed by this method; the caller must free it.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>surface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SDL_Surface containing the image data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the texture was loaded successfully, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="40" column="10" bodyfile="engine/graphics/Texture2D.cpp" bodystart="64" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classTexture2D_1ae3aec86ebdc50bf233eef52668a029ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Texture2D::Bind</definition>
+        <argsstring>(uint32_t slot=0) const</argsstring>
+        <name>Bind</name>
+        <qualifiedname>Texture2D::Bind</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>slot</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Binds the texture to a texture unit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Texture unit index (default: 0).</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Texture unit index. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="46" column="10" bodyfile="engine/graphics/Texture2D.cpp" bodystart="111" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classTexture2D_1a9758668e9a0a0810bc03195a65497426" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Texture2D::Unbind</definition>
+        <argsstring>() const</argsstring>
+        <name>Unbind</name>
+        <qualifiedname>Texture2D::Unbind</qualifiedname>
+        <briefdescription>
+<para>Unbinds the texture. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="51" column="10" bodyfile="engine/graphics/Texture2D.cpp" bodystart="119" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classTexture2D_1adc9c5c07e3715910107e817283262564" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Texture2D::GetWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>GetWidth</name>
+        <qualifiedname>Texture2D::GetWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="54" column="9" bodyfile="engine/graphics/Texture2D.cpp" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classTexture2D_1a83d2555038cf0390415adf558629c176" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Texture2D::GetHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>GetHeight</name>
+        <qualifiedname>Texture2D::GetHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="55" column="9" bodyfile="engine/graphics/Texture2D.cpp" bodystart="124" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classTexture2D_1adfa893526e2b5378b22c74387bf43491" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Texture2D::GetChannels</definition>
+        <argsstring>() const</argsstring>
+        <name>GetChannels</name>
+        <qualifiedname>Texture2D::GetChannels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="56" column="9" bodyfile="engine/graphics/Texture2D.cpp" bodystart="125" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classTexture2D_1af877ad4b2d68d7e39ba2799bf345ab1e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Texture2D::GetRendererID</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRendererID</name>
+        <qualifiedname>Texture2D::GetRendererID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Texture2D.h" line="57" column="14" bodyfile="engine/graphics/Texture2D.h" bodystart="57" bodyend="57"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>2D texture wrapper for OpenGL textures. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Loads images from files (using stb_image) and manages the OpenGL texture object. Supports wrapping modes (GL_REPEAT) and mipmap generation.</para>
+<para><simplesect kind="note"><para>Textures are loaded with vertical flip enabled (stbi_set_flip_vertically_on_load). </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classResourceManager" kindref="compound">ResourceManager</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Texture2D</label>
+        <link refid="classTexture2D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/graphics/Texture2D.h" line="16" column="1" bodyfile="engine/graphics/Texture2D.h" bodystart="16" bodyend="64"/>
+    <listofallmembers>
+      <member refid="classTexture2D_1ae3aec86ebdc50bf233eef52668a029ce" prot="public" virt="non-virtual"><scope>Texture2D</scope><name>Bind</name></member>
+      <member refid="classTexture2D_1adfa893526e2b5378b22c74387bf43491" prot="public" virt="non-virtual"><scope>Texture2D</scope><name>GetChannels</name></member>
+      <member refid="classTexture2D_1a83d2555038cf0390415adf558629c176" prot="public" virt="non-virtual"><scope>Texture2D</scope><name>GetHeight</name></member>
+      <member refid="classTexture2D_1af877ad4b2d68d7e39ba2799bf345ab1e" prot="public" virt="non-virtual"><scope>Texture2D</scope><name>GetRendererID</name></member>
+      <member refid="classTexture2D_1adc9c5c07e3715910107e817283262564" prot="public" virt="non-virtual"><scope>Texture2D</scope><name>GetWidth</name></member>
+      <member refid="classTexture2D_1ac70d133f5d75f03b471c6107d5f27ee1" prot="public" virt="non-virtual"><scope>Texture2D</scope><name>Load</name></member>
+      <member refid="classTexture2D_1a185324994184bca2479fbbc1fcb7f5ec" prot="public" virt="non-virtual"><scope>Texture2D</scope><name>LoadFromSurface</name></member>
+      <member refid="classTexture2D_1a9003e6b742c84c9a34a8516cda4b9412" prot="private" virt="non-virtual"><scope>Texture2D</scope><name>m_Channels</name></member>
+      <member refid="classTexture2D_1a50e9da52d931a0f9c9ace3ccb646292b" prot="private" virt="non-virtual"><scope>Texture2D</scope><name>m_Height</name></member>
+      <member refid="classTexture2D_1a08bc9aed013a941384db82972b91704c" prot="private" virt="non-virtual"><scope>Texture2D</scope><name>m_RendererID</name></member>
+      <member refid="classTexture2D_1a72fb2ef7cf77006a4860ef1700036e96" prot="private" virt="non-virtual"><scope>Texture2D</scope><name>m_Width</name></member>
+      <member refid="classTexture2D_1ab62c7c5172a4800b4629cd475147819d" prot="public" virt="non-virtual"><scope>Texture2D</scope><name>Texture2D</name></member>
+      <member refid="classTexture2D_1a9758668e9a0a0810bc03195a65497426" prot="public" virt="non-virtual"><scope>Texture2D</scope><name>Unbind</name></member>
+      <member refid="classTexture2D_1a84210f27b55799a096b8abc36380a077" prot="public" virt="non-virtual"><scope>Texture2D</scope><name>~Texture2D</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

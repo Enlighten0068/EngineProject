@@ -1,0 +1,19 @@
+<map id="MenuScene" name="MenuScene">
+<area shape="rect" id="Node000001" title="Main menu scene with visual text rendering." alt="" coords="397,854,569,1262"/>
+<area shape="rect" id="Node000002" href="$classScene.html" title="Abstract base class for all scenes in the engine." alt="" coords="5,452,104,636"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,648,92,705,118,758,148,797,181,835,254,903,329,961,400,1008,394,1009,326,965,251,907,177,839,143,801,114,760,87,707,72,653"/>
+<area shape="rect" id="Node000003" href="$classCamera2D.html" title="2D camera with orthographic projection, position, rotation, and zoom." alt="" coords="129,329,296,759"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="296,741,341,829,390,914,385,914,336,832,295,746"/>
+<area shape="rect" id="Node000004" href="$structVector3D.html" title="3D vector struct with basic arithmetic operations." alt="" coords="93,16,196,223"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="155,220,168,305,170,312,164,312,163,306,155,225"/>
+<area shape="rect" id="Node000005" href="$classMatrix4.html" title="4x4 matrix class for 3D transformations and projections." alt="" coords="220,5,341,234"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="263,231,253,306,252,313,247,312,248,305,262,236"/>
+<area shape="rect" id="Node000006" href="$classShader.html" title="OpenGL shader program wrapper." alt="" coords="320,385,472,703"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="417,700,438,830,439,838,434,837,433,831,415,705"/>
+<area shape="rect" id="Node000007" href="$classSceneManager.html" title="Manages a stack of scenes." alt="" coords="496,452,643,636"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="565,633,557,730,543,831,541,839,537,837,538,830,552,730,562,638"/>
+<area shape="rect" id="Node000008" href="$classVertexArray.html" title="OpenGL Vertex Array Object (VAO) wrapper." alt="" coords="666,474,792,614"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="730,611,727,663,719,719,705,777,684,831,663,869,638,906,582,971,579,967,634,902,658,867,679,829,700,775,713,718,722,663,727,616"/>
+<area shape="rect" id="Node000009" href="$classIndexBuffer.html" title="OpenGL Index Buffer Object (EBO/IBO) wrapper." alt="" coords="817,452,941,636"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="877,633,872,684,860,735,842,785,817,832,767,891,708,941,645,983,585,1015,583,1011,642,978,705,937,763,887,813,829,837,783,855,733,866,683,874,638"/>
+</map>

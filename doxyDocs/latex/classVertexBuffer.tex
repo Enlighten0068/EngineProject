@@ -1,0 +1,146 @@
+\doxysection{Vertex\+Buffer Class Reference}
+\hypertarget{classVertexBuffer}{}\label{classVertexBuffer}\index{VertexBuffer@{VertexBuffer}}
+
+
+Open\+GL Vertex Buffer Object (VBO) wrapper.  
+
+
+
+
+{\ttfamily \+\#include $<$Vertex\+Buffer.\+h$>$}
+
+
+
+Collaboration diagram for Vertex\+Buffer:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classVertexBuffer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classVertexBuffer_a643ef11059827722b264d13fbecf97ea}{Vertex\+Buffer}} (const void \texorpdfstring{$\ast$}{*}vertices, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Constructs a vertex buffer and uploads data to the GPU. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classVertexBuffer_a5216726fdd43b2ae8e1439e347717fdd}{\texorpdfstring{$\sim$}{\string~}\+Vertex\+Buffer}} ()
+\item 
+void \doxymbox{\hyperlink{classVertexBuffer_a13019e8580ca3e369fad4166500ad2b9}{Bind}} () const
+\begin{DoxyCompactList}\small\item\em Binds the buffer as the current GL\+\_\+\+ARRAY\+\_\+\+BUFFER. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classVertexBuffer_abfdb36238d60f2cd7bf63093f914b61f}{Unbind}} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{classVertexBuffer_abe01f36db0dddcb4b5b0ca10f6793407}{m\+\_\+\+Renderer\+ID}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Open\+GL Vertex Buffer Object (VBO) wrapper. 
+
+A VBO stores vertex data (positions, texture coordinates, normals, etc.) in GPU memory.
+
+\begin{DoxyNote}{Note}
+The buffer is created with GL\+\_\+\+STATIC\+\_\+\+DRAW usage. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classVertexArray}{Vertex\+Array} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{VertexBuffer_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{VertexBuffer_8h_source}{Vertex\+Buffer.\+h}}.
+
+
+
+\label{classVertexBuffer_doc-constructors}
+\Hypertarget{classVertexBuffer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classVertexBuffer_a643ef11059827722b264d13fbecf97ea}\index{VertexBuffer@{VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\index{VertexBuffer@{VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{VertexBuffer()}{VertexBuffer()}}
+{\footnotesize\ttfamily \label{classVertexBuffer_a643ef11059827722b264d13fbecf97ea} 
+Vertex\+Buffer::\+\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{vertices}{, }\item[{uint32\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a vertex buffer and uploads data to the GPU. 
+
+Creates a vertex buffer and uploads vertex data to the GPU.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Pointer to vertex data. \\
+\hline
+{\em size} & Size of the vertex data in bytes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{VertexBuffer_8cpp_source_l00011}{11}} of file \doxymbox{\hyperlink{VertexBuffer_8cpp_source}{Vertex\+Buffer.\+cpp}}.
+
+\Hypertarget{classVertexBuffer_a5216726fdd43b2ae8e1439e347717fdd}\index{VertexBuffer@{VertexBuffer}!````~VertexBuffer@{\texorpdfstring{$\sim$}{\string~}VertexBuffer}}
+\index{````~VertexBuffer@{\texorpdfstring{$\sim$}{\string~}VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}VertexBuffer()}{\string~VertexBuffer()}}
+{\footnotesize\ttfamily \label{classVertexBuffer_a5216726fdd43b2ae8e1439e347717fdd} 
+Vertex\+Buffer::\+\texorpdfstring{$\sim$}{\string~}\+Vertex\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{VertexBuffer_8cpp_source_l00023}{23}} of file \doxymbox{\hyperlink{VertexBuffer_8cpp_source}{Vertex\+Buffer.\+cpp}}.
+
+
+
+\label{classVertexBuffer_doc-func-members}
+\Hypertarget{classVertexBuffer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVertexBuffer_a13019e8580ca3e369fad4166500ad2b9}\index{VertexBuffer@{VertexBuffer}!Bind@{Bind}}
+\index{Bind@{Bind}!VertexBuffer@{VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{classVertexBuffer_a13019e8580ca3e369fad4166500ad2b9} 
+void Vertex\+Buffer::\+\+Bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Binds the buffer as the current GL\+\_\+\+ARRAY\+\_\+\+BUFFER. 
+
+Binds the buffer as the active GL\+\_\+\+ARRAY\+\_\+\+BUFFER. 
+
+Definition at line \doxymbox{\hyperlink{VertexBuffer_8cpp_source_l00030}{30}} of file \doxymbox{\hyperlink{VertexBuffer_8cpp_source}{Vertex\+Buffer.\+cpp}}.
+
+\Hypertarget{classVertexBuffer_abfdb36238d60f2cd7bf63093f914b61f}\index{VertexBuffer@{VertexBuffer}!Unbind@{Unbind}}
+\index{Unbind@{Unbind}!VertexBuffer@{VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{Unbind()}{Unbind()}}
+{\footnotesize\ttfamily \label{classVertexBuffer_abfdb36238d60f2cd7bf63093f914b61f} 
+void Vertex\+Buffer::\+\+Unbind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Unbinds the buffer. 
+
+
+
+Definition at line \doxymbox{\hyperlink{VertexBuffer_8cpp_source_l00037}{37}} of file \doxymbox{\hyperlink{VertexBuffer_8cpp_source}{Vertex\+Buffer.\+cpp}}.
+
+
+
+\label{classVertexBuffer_doc-variable-members}
+\Hypertarget{classVertexBuffer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classVertexBuffer_abe01f36db0dddcb4b5b0ca10f6793407}\index{VertexBuffer@{VertexBuffer}!m\_RendererID@{m\_RendererID}}
+\index{m\_RendererID@{m\_RendererID}!VertexBuffer@{VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_RendererID}{m\_RendererID}}
+{\footnotesize\ttfamily \label{classVertexBuffer_abe01f36db0dddcb4b5b0ca10f6793407} 
+uint32\+\_\+t Vertex\+Buffer::\+m\+\_\+\+Renderer\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{VertexBuffer_8h_source_l00036}{36}} of file \doxymbox{\hyperlink{VertexBuffer_8h_source}{Vertex\+Buffer.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+graphics/\doxymbox{\hyperlink{VertexBuffer_8h}{Vertex\+Buffer.\+h}}\item 
+engine/\+graphics/\doxymbox{\hyperlink{VertexBuffer_8cpp}{Vertex\+Buffer.\+cpp}}\end{DoxyCompactItemize}

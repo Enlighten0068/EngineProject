@@ -1,0 +1,3 @@
+<map id="GameWorld" name="GameWorld">
+<area shape="rect" id="Node000001" title="Defines the boundaries of the game world and provides clamping." alt="" coords="5,5,148,413"/>
+</map>

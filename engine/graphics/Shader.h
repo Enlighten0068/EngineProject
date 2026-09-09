@@ -10,9 +10,10 @@
  * @brief OpenGL shader program wrapper.
  *
  * Manages the compilation, linking, and usage of vertex and fragment shaders.
- * Provides methods for setting uniform values (matrices and floats).
+ * Provides methods for setting uniform values (matrices, vectors, and floats).
  *
  * @note Shaders are compiled from source strings at runtime.
+ * @see GraphicsContext
  */
 class Shader{
 public:
@@ -21,14 +22,11 @@ public:
 
     /**
      * @brief Compiles and links the vertex and fragment shaders.
-     *
      * @param vertexSource GLSL source code for the vertex shader.
      * @param fragmentSource GLSL source code for the fragment shader.
      * @return true if compilation and linking succeeded, false otherwise.
      */
-    bool Compile(
-        const std::string& vertexSource,
-        const std::string& fragmentSource);
+    bool Compile(const std::string& vertexSource, const std::string& fragmentSource);
 
     /**
      * @brief Binds the shader program for use.
@@ -57,9 +55,9 @@ public:
     /**
      * @brief Sets a 3D vector uniform (three floats).
      * @param name Uniform name in the shader.
-     * @param x X component of the vector.
-     * @param y Y component of the vector.
-     * @param z Z component of the vector.
+     * @param x X component.
+     * @param y Y component.
+     * @param z Z component.
      */
     void SetUniformFloat3(const std::string& name, float x, float y, float z) const;
 
@@ -73,8 +71,8 @@ public:
     /**
      * @brief Sets a 2D vector uniform (two floats).
      * @param name Uniform name in the shader.
-     * @param x X component of the vector.
-     * @param y Y component of the vector.
+     * @param x X component.
+     * @param y Y component.
      */
     void SetUniformVec2(const std::string& name, float x, float y) const;
 
@@ -85,7 +83,11 @@ public:
      */
     void SetUniformVec2(const std::string& name, const Vector2D& value) const;
 
-    unsigned int GetRendererID() const{ return m_RendererID; } //Gets OpenGL program ID
+    /**
+     * @brief Gets the OpenGL program ID.
+     * @return OpenGL program ID.
+     */
+    unsigned int GetRendererID() const{ return m_RendererID; }
 
 private:
     unsigned int m_RendererID; //OpenGL program ID

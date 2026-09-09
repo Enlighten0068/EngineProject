@@ -17,9 +17,8 @@
  */
 class GamepadManager{
 public:
-
     /**
-     * @brief Get the singleton instance.
+     * @brief Gets the singleton instance.
      * @return Reference to the GamepadManager instance.
      */
     static GamepadManager& GetInstance();
@@ -30,7 +29,10 @@ public:
      */
     bool Initialize();
 
-    void Shutdown(); //Shutdown the gamepad system
+    /**
+     * @brief Shuts down the gamepad system and releases all devices.
+     */
+    void Shutdown();
 
     /**
      * @brief Updates the state of all connected gamepads.
@@ -40,17 +42,18 @@ public:
     void Update();
 
     /**
-     * @brief Check if a gamepad is connected for a specific player.
+     * @brief Checks if a gamepad is connected for a specific player.
      * @param playerIndex Player index (0-3).
      * @return true if a gamepad is connected, false otherwise.
      */
     bool IsConnected(int playerIndex = 0) const;
 
-    //Button states
+    //Button state queries (returns true/false)
     bool IsButtonPressed(int playerIndex, SDL_GamepadButton button) const;
     bool IsButtonHeld(int playerIndex, SDL_GamepadButton button) const;
     bool IsButtonReleased(int playerIndex, SDL_GamepadButton button) const;
 
+    //Axis and trigger queries (returns -1.0 to 1.0)
     float GetAxis(int playerIndex, SDL_GamepadAxis axis) const;
     float GetTrigger(int playerIndex, SDL_GamepadAxis axis) const;
 
@@ -75,13 +78,13 @@ private:
     GamepadManager(const GamepadManager&) = delete;
     GamepadManager& operator=(const GamepadManager&) = delete;
 
-    std::unordered_map<int, SDL_Gamepad*> m_Gamepads;
-    std::unordered_map<int, Uint64> m_ButtonState[4];
-    std::unordered_map<int, Uint64> m_ButtonPrevious[4];
+    std::unordered_map<int, SDL_Gamepad*> m_Gamepads; //Map of player index to gamepad
+    std::unordered_map<int, Uint64> m_ButtonState[4]; //Current button state per player
+    std::unordered_map<int, Uint64> m_ButtonPrevious[4]; //Previous button state per player
 
     static constexpr int MAX_PLAYERS = 4; //Maximum number of supported players
 
-    void AddGamepad(SDL_JoystickID deviceID);
-    void RemoveGamepad(SDL_JoystickID deviceID);
-    void UpdateButtonState(int playerIndex);
+    void AddGamepad(SDL_JoystickID deviceID); //Add a gamepad
+    void RemoveGamepad(SDL_JoystickID deviceID); //Remove a gamepad
+    void UpdateButtonState(int playerIndex); //Update button states for a player
 };

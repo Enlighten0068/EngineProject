@@ -1,0 +1,213 @@
+\doxysection{ECSScene Class Reference}
+\hypertarget{classECSScene}{}\label{classECSScene}\index{ECSScene@{ECSScene}}
+
+
+\doxylink{classScene}{Scene} class that manages an ECS registry with sprite entities.  
+
+
+
+
+{\ttfamily \+\#include $<$ECSScene.\+h$>$}
+
+
+
+Collaboration diagram for ECSScene:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classECSScene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classECSScene_a47e4a9a1d139379538ca65dd28c31e27}{ECSScene}} (\doxymbox{\hyperlink{classShader}{Shader}} \&shader, \doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&va, \doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&ib)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classECSScene}{ECSScene}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classECSScene_ae126bfdb0b37bf4b89f86f603c8f153f}{\texorpdfstring{$\sim$}{\string~}\+ECSScene}} ()
+\item 
+entt::\+entity \doxymbox{\hyperlink{classECSScene_a818d8b2200a44df7097c4eedaa1c6142}{Create\+Sprite\+Entity}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&position, const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&scale, std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ texture)
+\begin{DoxyCompactList}\small\item\em Creates a sprite entity with \doxylink{structTransform}{Transform} and Sprite\+Renderer components. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classECSScene_a1d0dd704f1aaf7012b20aa8644a1bf1f}{Render}} (const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&view, const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&projection)
+\begin{DoxyCompactList}\small\item\em Renders all sprite entities in the registry. \end{DoxyCompactList}\item 
+entt::\+registry \& \doxymbox{\hyperlink{classECSScene_a6261a3c0ab97b3a9fcfec09d0a02e45b}{Get\+Registry}} ()
+\begin{DoxyCompactList}\small\item\em Gets the ECS registry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+entt::\+registry \doxymbox{\hyperlink{classECSScene_a207e75960af3e48dc84ccb8b569dec94}{m\+\_\+\+Registry}}
+\item 
+\doxymbox{\hyperlink{classShader}{Shader}} \& \doxymbox{\hyperlink{classECSScene_a80f1088d363fcff611b334f2d45d183c}{m\+\_\+\+Shader}}
+\item 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \& \doxymbox{\hyperlink{classECSScene_a4a96793d8eb86e77608681f2bb3c40ce}{m\+\_\+\+Vertex\+Array}}
+\item 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \& \doxymbox{\hyperlink{classECSScene_a929d63f68e5c63da9444a788fe7390b8}{m\+\_\+\+Index\+Buffer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classScene}{Scene} class that manages an ECS registry with sprite entities. 
+
+\doxylink{classECSScene}{ECSScene} provides a high-\/level interface for creating and rendering sprite entities using the ECS pattern. It holds the registry, shader, and graphics buffers needed for rendering.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classRenderSystem}{Render\+System}, entt::\+registry 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{ECSScene_8h_source_l00022}{22}} of file \doxymbox{\hyperlink{ECSScene_8h_source}{ECSScene.\+h}}.
+
+
+
+\label{classECSScene_doc-constructors}
+\Hypertarget{classECSScene_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classECSScene_a47e4a9a1d139379538ca65dd28c31e27}\index{ECSScene@{ECSScene}!ECSScene@{ECSScene}}
+\index{ECSScene@{ECSScene}!ECSScene@{ECSScene}}
+\doxysubsubsection{\texorpdfstring{ECSScene()}{ECSScene()}}
+{\footnotesize\ttfamily \label{classECSScene_a47e4a9a1d139379538ca65dd28c31e27} 
+ECSScene::\+\+ECSScene (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{shader}{, }\item[{\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&}]{va}{, }\item[{\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&}]{ib}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{classECSScene}{ECSScene}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & Reference to the shader for rendering. \\
+\hline
+{\em va} & Reference to the vertex array. \\
+\hline
+{\em ib} & Reference to the index buffer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{ECSScene_8cpp_source_l00007}{7}} of file \doxymbox{\hyperlink{ECSScene_8cpp_source}{ECSScene.\+cpp}}.
+
+\Hypertarget{classECSScene_ae126bfdb0b37bf4b89f86f603c8f153f}\index{ECSScene@{ECSScene}!````~ECSScene@{\texorpdfstring{$\sim$}{\string~}ECSScene}}
+\index{````~ECSScene@{\texorpdfstring{$\sim$}{\string~}ECSScene}!ECSScene@{ECSScene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ECSScene()}{\string~ECSScene()}}
+{\footnotesize\ttfamily \label{classECSScene_ae126bfdb0b37bf4b89f86f603c8f153f} 
+ECSScene::\+\texorpdfstring{$\sim$}{\string~}\+ECSScene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{classECSScene_doc-func-members}
+\Hypertarget{classECSScene_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classECSScene_a818d8b2200a44df7097c4eedaa1c6142}\index{ECSScene@{ECSScene}!CreateSpriteEntity@{CreateSpriteEntity}}
+\index{CreateSpriteEntity@{CreateSpriteEntity}!ECSScene@{ECSScene}}
+\doxysubsubsection{\texorpdfstring{CreateSpriteEntity()}{CreateSpriteEntity()}}
+{\footnotesize\ttfamily \label{classECSScene_a818d8b2200a44df7097c4eedaa1c6142} 
+entt::\+entity ECSScene::\+\+Create\+Sprite\+Entity (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{position}{, }\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{scale}{, }\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$}]{texture}{}\end{DoxyParamCaption})}
+
+
+
+Creates a sprite entity with \doxylink{structTransform}{Transform} and Sprite\+Renderer components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Initial world position. \\
+\hline
+{\em scale} & Initial scale (width and height). \\
+\hline
+{\em texture} & Texture to render for this sprite. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Entity ID of the created entity. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{ECSScene_8cpp_source_l00019}{19}} of file \doxymbox{\hyperlink{ECSScene_8cpp_source}{ECSScene.\+cpp}}.
+
+\Hypertarget{classECSScene_a6261a3c0ab97b3a9fcfec09d0a02e45b}\index{ECSScene@{ECSScene}!GetRegistry@{GetRegistry}}
+\index{GetRegistry@{GetRegistry}!ECSScene@{ECSScene}}
+\doxysubsubsection{\texorpdfstring{GetRegistry()}{GetRegistry()}}
+{\footnotesize\ttfamily \label{classECSScene_a6261a3c0ab97b3a9fcfec09d0a02e45b} 
+entt::\+registry \& ECSScene::\+\+Get\+Registry (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the ECS registry. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the registry. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{ECSScene_8h_source_l00054}{54}} of file \doxymbox{\hyperlink{ECSScene_8h_source}{ECSScene.\+h}}.
+
+\Hypertarget{classECSScene_a1d0dd704f1aaf7012b20aa8644a1bf1f}\index{ECSScene@{ECSScene}!Render@{Render}}
+\index{Render@{Render}!ECSScene@{ECSScene}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{classECSScene_a1d0dd704f1aaf7012b20aa8644a1bf1f} 
+void ECSScene::\+\+Render (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{view}{, }\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{projection}{}\end{DoxyParamCaption})}
+
+
+
+Renders all sprite entities in the registry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & View matrix from the camera. \\
+\hline
+{\em projection} & Projection matrix from the camera. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{ECSScene_8cpp_source_l00035}{35}} of file \doxymbox{\hyperlink{ECSScene_8cpp_source}{ECSScene.\+cpp}}.
+
+
+
+\label{classECSScene_doc-variable-members}
+\Hypertarget{classECSScene_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classECSScene_a929d63f68e5c63da9444a788fe7390b8}\index{ECSScene@{ECSScene}!m\_IndexBuffer@{m\_IndexBuffer}}
+\index{m\_IndexBuffer@{m\_IndexBuffer}!ECSScene@{ECSScene}}
+\doxysubsubsection{\texorpdfstring{m\_IndexBuffer}{m\_IndexBuffer}}
+{\footnotesize\ttfamily \label{classECSScene_a929d63f68e5c63da9444a788fe7390b8} 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}}\& ECSScene::\+m\+\_\+\+Index\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{ECSScene_8h_source_l00060}{60}} of file \doxymbox{\hyperlink{ECSScene_8h_source}{ECSScene.\+h}}.
+
+\Hypertarget{classECSScene_a207e75960af3e48dc84ccb8b569dec94}\index{ECSScene@{ECSScene}!m\_Registry@{m\_Registry}}
+\index{m\_Registry@{m\_Registry}!ECSScene@{ECSScene}}
+\doxysubsubsection{\texorpdfstring{m\_Registry}{m\_Registry}}
+{\footnotesize\ttfamily \label{classECSScene_a207e75960af3e48dc84ccb8b569dec94} 
+entt::\+registry ECSScene::\+m\+\_\+\+Registry\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{ECSScene_8h_source_l00057}{57}} of file \doxymbox{\hyperlink{ECSScene_8h_source}{ECSScene.\+h}}.
+
+\Hypertarget{classECSScene_a80f1088d363fcff611b334f2d45d183c}\index{ECSScene@{ECSScene}!m\_Shader@{m\_Shader}}
+\index{m\_Shader@{m\_Shader}!ECSScene@{ECSScene}}
+\doxysubsubsection{\texorpdfstring{m\_Shader}{m\_Shader}}
+{\footnotesize\ttfamily \label{classECSScene_a80f1088d363fcff611b334f2d45d183c} 
+\doxymbox{\hyperlink{classShader}{Shader}}\& ECSScene::\+m\+\_\+\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{ECSScene_8h_source_l00058}{58}} of file \doxymbox{\hyperlink{ECSScene_8h_source}{ECSScene.\+h}}.
+
+\Hypertarget{classECSScene_a4a96793d8eb86e77608681f2bb3c40ce}\index{ECSScene@{ECSScene}!m\_VertexArray@{m\_VertexArray}}
+\index{m\_VertexArray@{m\_VertexArray}!ECSScene@{ECSScene}}
+\doxysubsubsection{\texorpdfstring{m\_VertexArray}{m\_VertexArray}}
+{\footnotesize\ttfamily \label{classECSScene_a4a96793d8eb86e77608681f2bb3c40ce} 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}}\& ECSScene::\+m\+\_\+\+Vertex\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{ECSScene_8h_source_l00059}{59}} of file \doxymbox{\hyperlink{ECSScene_8h_source}{ECSScene.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+scene/\doxymbox{\hyperlink{ECSScene_8h}{ECSScene.\+h}}\item 
+engine/\+scene/\doxymbox{\hyperlink{ECSScene_8cpp}{ECSScene.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="MouseMotionEvent" name="MouseMotionEvent">
+<area shape="rect" id="Node000001" title="Event representing mouse movement." alt="" coords="5,148,167,332"/>
+<area shape="rect" id="Node000002" href="$classEvent.html" title="Base class for all events in the engine." alt="" coords="23,5,150,100"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,112,89,149,84,148,86,117"/>
+</map>

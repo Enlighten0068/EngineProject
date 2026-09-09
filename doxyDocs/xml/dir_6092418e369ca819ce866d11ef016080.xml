@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_6092418e369ca819ce866d11ef016080" kind="dir">
+    <compoundname>engine/math</compoundname>
+    <innerfile refid="Matrix4_8cpp">Matrix4.cpp</innerfile>
+    <innerfile refid="Matrix4_8h">Matrix4.h</innerfile>
+    <innerfile refid="math_2Transform_8h">Transform.h</innerfile>
+    <innerfile refid="Vector2D_8h">Vector2D.h</innerfile>
+    <innerfile refid="Vector3D_8h">Vector3D.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/math/"/>
+  </compounddef>
+</doxygen>

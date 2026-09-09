@@ -1,0 +1,128 @@
+\doxysection{Enemy\+System Class Reference}
+\hypertarget{classEnemySystem}{}\label{classEnemySystem}\index{EnemySystem@{EnemySystem}}
+
+
+System that updates enemy entities with patrol, physics, and collision.  
+
+
+
+
+{\ttfamily \+\#include $<$Enemy\+System.\+h$>$}
+
+
+
+Collaboration diagram for Enemy\+System:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classEnemySystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{classEnemySystem_a122dd4911d2670f242ec120e6a82081e}{Update}} (entt::\+registry \&registry, float delta\+Time, const std::\+vector$<$ entt::\+entity $>$ \&platforms, float world\+MinY)
+\begin{DoxyCompactList}\small\item\em Updates all active enemy entities. \end{DoxyCompactList}\item 
+static bool \doxymbox{\hyperlink{classEnemySystem_ae6879f0cea50154a47a3ba26eec29bde}{Check\+Collision}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&player\+Pos, const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&player\+Size, const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&enemy\+Pos, const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&enemy\+Size)
+\begin{DoxyCompactList}\small\item\em Performs AABB collision detection between the player and an enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+System that updates enemy entities with patrol, physics, and collision. 
+
+The \doxylink{classEnemySystem}{Enemy\+System} processes all entities that have the Enemy, Patrol, and Physics\+Body components. It handles:
+
+
+\begin{DoxyItemize}
+\item Horizontal patrol movement between two points
+\item Gravity and vertical velocity
+\item Collision detection and resolution with platforms
+\item Grounded state detection
+\item World boundary clamping
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+This system is designed to be called once per frame from the scene\textquotesingle{}s \doxylink{classEnemySystem_a122dd4911d2670f242ec120e6a82081e}{Update()}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structComponents_1_1Enemy}{Components::\+\+Enemy}, \doxylink{structComponents_1_1Patrol}{Components::\+\+Patrol}, \doxylink{structComponents_1_1PhysicsBody}{Components::\+\+Physics\+Body}, \doxylink{structComponents_1_1Transform}{Components::\+\+Transform} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{EnemySystem_8h_source_l00028}{28}} of file \doxymbox{\hyperlink{EnemySystem_8h_source}{Enemy\+System.\+h}}.
+
+
+
+\label{classEnemySystem_doc-func-members}
+\Hypertarget{classEnemySystem_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEnemySystem_ae6879f0cea50154a47a3ba26eec29bde}\index{EnemySystem@{EnemySystem}!CheckCollision@{CheckCollision}}
+\index{CheckCollision@{CheckCollision}!EnemySystem@{EnemySystem}}
+\doxysubsubsection{\texorpdfstring{CheckCollision()}{CheckCollision()}}
+{\footnotesize\ttfamily \label{classEnemySystem_ae6879f0cea50154a47a3ba26eec29bde} 
+bool Enemy\+System::\+\+Check\+Collision (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{player\+Pos}{, }\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{player\+Size}{, }\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{enemy\+Pos}{, }\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{enemy\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Performs AABB collision detection between the player and an enemy. 
+
+This method checks if the player\textquotesingle{}s bounding box overlaps with an enemy\textquotesingle{}s bounding box using the Axis-\/\+Aligned Bounding Box (AABB) algorithm.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Pos} & The player\textquotesingle{}s world position. \\
+\hline
+{\em player\+Size} & The player\textquotesingle{}s scale (width and height). \\
+\hline
+{\em enemy\+Pos} & The enemy\textquotesingle{}s world position. \\
+\hline
+{\em enemy\+Size} & The enemy\textquotesingle{}s scale (width and height). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player and enemy are overlapping, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{EnemySystem_8h_source_l00143}{143}} of file \doxymbox{\hyperlink{EnemySystem_8h_source}{Enemy\+System.\+h}}.
+
+\Hypertarget{classEnemySystem_a122dd4911d2670f242ec120e6a82081e}\index{EnemySystem@{EnemySystem}!Update@{Update}}
+\index{Update@{Update}!EnemySystem@{EnemySystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classEnemySystem_a122dd4911d2670f242ec120e6a82081e} 
+void Enemy\+System::\+\+Update (\begin{DoxyParamCaption}\item[{entt::\+registry \&}]{registry}{, }\item[{float}]{delta\+Time}{, }\item[{const std::\+vector$<$ entt::\+entity $>$ \&}]{platforms}{, }\item[{float}]{world\+MinY}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Updates all active enemy entities. 
+
+This method iterates over all entities with \doxylink{structTransform}{Transform}, Enemy, Patrol, and Physics\+Body components. For each active enemy, it:
+\begin{DoxyEnumerate}
+\item Moves the enemy horizontally according to its patrol path.
+\item Applies gravity to the enemy\textquotesingle{}s vertical velocity.
+\item Checks and resolves collisions with platforms.
+\item Clamps the enemy to the world floor.
+\item Updates the grounded state.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em registry} & Reference to the ECS registry containing all entities. \\
+\hline
+{\em delta\+Time} & \doxylink{classTime}{Time} elapsed since the last frame (seconds). \\
+\hline
+{\em platforms} & List of entity IDs that act as collision platforms. \\
+\hline
+{\em world\+MinY} & The minimum Y coordinate of the world (floor level). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{EnemySystem_8h_source_l00046}{46}} of file \doxymbox{\hyperlink{EnemySystem_8h_source}{Enemy\+System.\+h}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+systems/\doxymbox{\hyperlink{EnemySystem_8h}{Enemy\+System.\+h}}\end{DoxyCompactItemize}

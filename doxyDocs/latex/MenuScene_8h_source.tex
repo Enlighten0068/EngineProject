@@ -1,0 +1,61 @@
+\doxysection{Menu\+Scene.\+h}
+\hypertarget{MenuScene_8h_source}{}\label{MenuScene_8h_source}\index{engine/scene/MenuScene.h@{engine/scene/MenuScene.h}}
+\doxymbox{\hyperlink{MenuScene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Font_8h}{graphics/Font.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Texture2D_8h}{graphics/Texture2D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Shader_8h}{graphics/Shader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Vector3D_8h}{math/Vector3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Scene_8h}{scene/Scene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{SceneManager_8h}{scene/SceneManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00022}\doxymbox{\hyperlink{classMenuScene}{00022}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classMenuScene_a76e19b60d3334d7697f7d29bab6708d3}{MenuScene}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classScene}{Scene}}\{}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00023}00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00033}00033\ \ \ \ \ \doxymbox{\hyperlink{classMenuScene_a76e19b60d3334d7697f7d29bab6708d3}{MenuScene}}(\doxymbox{\hyperlink{classSceneManager}{SceneManager}}\&\ sceneManager,\ \doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ va,\ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ ib,}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classCamera2D}{Camera2D}}\&\ camera,\ \doxymbox{\hyperlink{classShader}{Shader}}\&\ lineShader);}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00035}00035\ \ \ \ \ \doxymbox{\hyperlink{classMenuScene_a76e19b60d3334d7697f7d29bab6708d3}{\string~MenuScene}}();}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classMenuScene_a015085736912c87c4e28ab54ab056e6d}{OnEnter}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classMenuScene_a834e7aa54dd72502876d30114e47cc9e}{OnExit}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classMenuScene_af2b1e0e9e1c783c8b058f60906add842}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classMenuScene_a57787dac0643417ddd147c940c36b93a}{Render}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00041}\doxymbox{\hyperlink{classMenuScene_a8bb0e3e014de1ba6912dc937de6a2a69}{00041}}\ \ \ \ \ std::string\ \doxymbox{\hyperlink{classMenuScene_a8bb0e3e014de1ba6912dc937de6a2a69}{GetName}}()\textcolor{keyword}{\ const\ override}\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Menu"{}};\ \}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00043}00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00047}\doxymbox{\hyperlink{structMenuScene_1_1MenuOption}{00047}}\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structMenuScene_1_1MenuOption}{MenuOption}}\{}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00048}\doxymbox{\hyperlink{structMenuScene_1_1MenuOption_a2be42da1d855215326a50ed1b684c4c4}{00048}}\ \ \ \ \ \ \ \ \ std::string\ \doxymbox{\hyperlink{structMenuScene_1_1MenuOption_a2be42da1d855215326a50ed1b684c4c4}{Label}};\ \textcolor{comment}{//Display\ text}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00049}\doxymbox{\hyperlink{structMenuScene_1_1MenuOption_ae7196230c8420e3bbaaded73df24c0a1}{00049}}\ \ \ \ \ \ \ \ \ std::shared\_ptr<Texture2D>\ \doxymbox{\hyperlink{structMenuScene_1_1MenuOption_ae7196230c8420e3bbaaded73df24c0a1}{NormalTexture}};\ \textcolor{comment}{//Normal\ state\ texture}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00050}\doxymbox{\hyperlink{structMenuScene_1_1MenuOption_a351d76fc84f6056639f56d93556cc902}{00050}}\ \ \ \ \ \ \ \ \ std::shared\_ptr<Texture2D>\ \doxymbox{\hyperlink{structMenuScene_1_1MenuOption_a351d76fc84f6056639f56d93556cc902}{SelectedTexture}};\ \textcolor{comment}{//Selected/hover\ state\ texture}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00051}\doxymbox{\hyperlink{structMenuScene_1_1MenuOption_ab738cef47764835c217be65e8ad28a71}{00051}}\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ \doxymbox{\hyperlink{structMenuScene_1_1MenuOption_ab738cef47764835c217be65e8ad28a71}{Position}};\ \textcolor{comment}{//World\ position}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00052}\doxymbox{\hyperlink{structMenuScene_1_1MenuOption_af87421383fdb8457d9f5019ee5d07eaa}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{structMenuScene_1_1MenuOption_af87421383fdb8457d9f5019ee5d07eaa}{Width}};\ \textcolor{comment}{//Texture\ width}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00053}\doxymbox{\hyperlink{structMenuScene_1_1MenuOption_a0fd1eb2ae016bd9ef36cae3f22e30cb4}{00053}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{structMenuScene_1_1MenuOption_a0fd1eb2ae016bd9ef36cae3f22e30cb4}{Height}};\ \textcolor{comment}{//Texture\ height}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00054}00054\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00056}\doxymbox{\hyperlink{classMenuScene_a42392ac9ca92d2c766daef724b6ab131}{00056}}\ \ \ \ \ \doxymbox{\hyperlink{classCamera2D}{Camera2D}}\&\ \doxymbox{\hyperlink{classMenuScene_a42392ac9ca92d2c766daef724b6ab131}{m\_Camera}};\ \textcolor{comment}{//Camera\ reference}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00057}\doxymbox{\hyperlink{classMenuScene_a46e28a18551c53cff67144bb9ffe6057}{00057}}\ \ \ \ \ \doxymbox{\hyperlink{classShader}{Shader}}\&\ \doxymbox{\hyperlink{classMenuScene_a46e28a18551c53cff67144bb9ffe6057}{m\_LineShader}};\ \textcolor{comment}{//Line\ shader\ reference}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00059}\doxymbox{\hyperlink{classMenuScene_aafe8fc8c4b77426e8edbc443283c6dda}{00059}}\ \ \ \ \ \doxymbox{\hyperlink{classSceneManager}{SceneManager}}\&\ \doxymbox{\hyperlink{classMenuScene_aafe8fc8c4b77426e8edbc443283c6dda}{m\_SceneManager}};\ \textcolor{comment}{//Scene\ manager\ reference}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00060}\doxymbox{\hyperlink{classMenuScene_a9efeacffbcd00dea280ccf3703321f71}{00060}}\ \ \ \ \ \doxymbox{\hyperlink{classShader}{Shader}}\&\ \doxymbox{\hyperlink{classMenuScene_a9efeacffbcd00dea280ccf3703321f71}{m\_Shader}};\ \textcolor{comment}{//Main\ shader}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00061}\doxymbox{\hyperlink{classMenuScene_aee526af82a75d255d1b6fd6d3d499e92}{00061}}\ \ \ \ \ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ \doxymbox{\hyperlink{classMenuScene_aee526af82a75d255d1b6fd6d3d499e92}{m\_VertexArray}};\ \textcolor{comment}{//Vertex\ array}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00062}\doxymbox{\hyperlink{classMenuScene_af61d24fa8a94de5b0282fce6af54e0c4}{00062}}\ \ \ \ \ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ \doxymbox{\hyperlink{classMenuScene_af61d24fa8a94de5b0282fce6af54e0c4}{m\_IndexBuffer}};\ \textcolor{comment}{//Index\ buffer}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00064}\doxymbox{\hyperlink{classMenuScene_af6491cf56e85392de0bcf6e510afe9cf}{00064}}\ \ \ \ \ std::unique\_ptr<Font>\ \doxymbox{\hyperlink{classMenuScene_af6491cf56e85392de0bcf6e510afe9cf}{m\_Font}};\ \textcolor{comment}{//Font\ for\ rendering\ text}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00065}\doxymbox{\hyperlink{classMenuScene_aae06e56f01f32bab0f9b7262dad0f393}{00065}}\ \ \ \ \ std::vector<MenuOption>\ \doxymbox{\hyperlink{classMenuScene_aae06e56f01f32bab0f9b7262dad0f393}{m\_Options}};\ \textcolor{comment}{//Menu\ options}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00066}\doxymbox{\hyperlink{classMenuScene_aaa5474b6830601a4a96a15426cc915c7}{00066}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classMenuScene_aaa5474b6830601a4a96a15426cc915c7}{m\_SelectedOption}}\ =\ 0;\ \textcolor{comment}{//Currently\ selected\ option\ index}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00068}\doxymbox{\hyperlink{classMenuScene_acfabc7d7b96c85747e56c6c11f9077c1}{00068}}\ \ \ \ \ std::shared\_ptr<Texture2D>\ \doxymbox{\hyperlink{classMenuScene_acfabc7d7b96c85747e56c6c11f9077c1}{m\_BackgroundTexture}};\ \textcolor{comment}{//Background\ texture}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00069}\doxymbox{\hyperlink{classMenuScene_a0ad6ec8522307042405a1e14b6d7e72e}{00069}}\ \ \ \ \ SDL\_Color\ \doxymbox{\hyperlink{classMenuScene_a0ad6ec8522307042405a1e14b6d7e72e}{m\_NormalColor}}\ =\ \{255,\ 255,\ 255,\ 255\};\ \textcolor{comment}{//Normal\ text\ color}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00070}\doxymbox{\hyperlink{classMenuScene_af46c6487c84f609a1fea2f0c98c0d2f7}{00070}}\ \ \ \ \ SDL\_Color\ \doxymbox{\hyperlink{classMenuScene_af46c6487c84f609a1fea2f0c98c0d2f7}{m\_SelectedColor}}\ =\ \{255,\ 255,\ 0,\ 255\};\ \textcolor{comment}{//Selected\ text\ color}}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classMenuScene_a329504c5161fa328040b3f3092df2bae}{IsMouseOverOption}}(\textcolor{keyword}{const}\ MenuOption\&\ option)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00074}00074\ \ \ \ \ std::shared\_ptr<Texture2D>\ \doxymbox{\hyperlink{classMenuScene_a4e1a9cdb5e0dedaab5c9f780f54d4f67}{CreateTextTexture}}(\textcolor{keyword}{const}\ std::string\&\ text,\ \textcolor{keyword}{const}\ SDL\_Color\&\ color);}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classMenuScene_a46a3159d25cbdd8710abf3a1a67bfca0}{HandleSelection}}();}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classMenuScene_a1e7a918b520265294fd74c1d9d086795}{RenderOption}}(\textcolor{keyword}{const}\ MenuOption\&\ option,\ \textcolor{keywordtype}{bool}\ isSelected);}
+\DoxyCodeLine{\Hypertarget{MenuScene_8h_source_l00077}00077\ \};}
+
+\end{DoxyCode}

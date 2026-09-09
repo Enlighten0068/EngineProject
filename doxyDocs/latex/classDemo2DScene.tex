@@ -1,0 +1,392 @@
+\doxysection{Demo2\+DScene Class Reference}
+\hypertarget{classDemo2DScene}{}\label{classDemo2DScene}\index{Demo2DScene@{Demo2DScene}}
+
+
+Demo 2D \doxylink{classScene}{Scene} with a dynamic camera that follows the player.  
+
+
+
+
+{\ttfamily \+\#include $<$Demo2\+DScene.\+h$>$}
+
+
+
+Inheritance diagram for Demo2\+DScene:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDemo2DScene__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Demo2\+DScene:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDemo2DScene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classDemo2DScene_add40385f9fe2a12d44b8a02336a8ea2a}{Demo2\+DScene}} (\doxymbox{\hyperlink{classShader}{Shader}} \&shader, \doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&va, \doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&ib)
+\begin{DoxyCompactList}\small\item\em Constructs the demo scene. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classDemo2DScene_a7cd67f927980cb296ba9b3148fad4ef2}{\texorpdfstring{$\sim$}{\string~}\+Demo2\+DScene}} ()
+\item 
+void \doxymbox{\hyperlink{classDemo2DScene_a8ffa82c6772da7121ff4d812d9d1c1e5}{On\+Enter}} () override
+\begin{DoxyCompactList}\small\item\em Called when the scene becomes active. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classDemo2DScene_afce546436c8328555a6c548dcb3a9d90}{On\+Exit}} () override
+\begin{DoxyCompactList}\small\item\em Called when the scene is exited. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classDemo2DScene_a960e0d534e6e05bda39f3d9eaaf30deb}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Updates the scene logic. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classDemo2DScene_aa04f40209bc6b113df30f9dcf03bd80c}{Render}} () override
+\begin{DoxyCompactList}\small\item\em Renders the scene. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{classDemo2DScene_aa6caae608302b160ef184473e1ef0219}{Get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classScene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classScene_af6e09d91ebd10ae9cc7c12c39d06386c}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classDemo2DScene_aac72f489fe5514f29e315acfd7851a06}{Resolve\+Collisions}} ()
+\begin{DoxyCompactList}\small\item\em Resolves collisions between the player and platforms. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classDemo2DScene_af7cdfcef2f6bede3ffe930dba96f4812}{Setup\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the scene with all entities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classShader}{Shader}} \& \doxymbox{\hyperlink{classDemo2DScene_ac0fb2242739ad3f82ed75d227e9345a8}{m\+\_\+\+Shader}}
+\item 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \& \doxymbox{\hyperlink{classDemo2DScene_a1df48e8d11e82a73fe80fbeaf8baa865}{m\+\_\+\+Vertex\+Array}}
+\item 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \& \doxymbox{\hyperlink{classDemo2DScene_a21e4a1ff58a2078dca4e3960cd711ee1}{m\+\_\+\+Index\+Buffer}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classECSScene}{ECSScene}} $>$ \doxymbox{\hyperlink{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}{m\+\_\+\+ECSScene}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classGameWorld}{Game\+World}} $>$ \doxymbox{\hyperlink{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}{m\+\_\+\+World}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classCamera2D}{Camera2D}} $>$ \doxymbox{\hyperlink{classDemo2DScene_aef6643910216af035868027d99a24b82}{m\+\_\+\+Camera}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classCameraController}{Camera\+Controller}} $>$ \doxymbox{\hyperlink{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}{m\+\_\+\+Camera\+Controller}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classPlayerController}{Player\+Controller}} $>$ \doxymbox{\hyperlink{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}{m\+\_\+\+Player\+Controller}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classFpsCounter}{Fps\+Counter}} $>$ \doxymbox{\hyperlink{classDemo2DScene_aeb9849fda70cb52780bc4db9eae68a24}{m\+\_\+\+Fps\+Counter}}
+\item 
+entt::\+entity \doxymbox{\hyperlink{classDemo2DScene_a1a61e61b8e799326f91368f32f765f2a}{m\+\_\+\+Player\+Entity}}
+\item 
+std::\+vector$<$ entt::\+entity $>$ \doxymbox{\hyperlink{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}{m\+\_\+\+Platform\+Entities}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Demo 2D \doxylink{classScene}{Scene} with a dynamic camera that follows the player. 
+
+This scene features a camera that follows the player entity, making it suitable for larger levels where the player can move beyond the screen. It includes platform collision and player movement mechanics.
+
+\begin{DoxyNote}{Note}
+This scene does not include enemies (unlike \doxylink{classDemo2DFixedScene}{Demo2\+DFixed\+Scene}). 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classDemo2DFixedScene}{Demo2\+DFixed\+Scene}, \doxylink{classPlayerController}{Player\+Controller}, \doxylink{classCameraController}{Camera\+Controller} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00023}{23}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+
+
+\label{classDemo2DScene_doc-constructors}
+\Hypertarget{classDemo2DScene_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDemo2DScene_add40385f9fe2a12d44b8a02336a8ea2a}\index{Demo2DScene@{Demo2DScene}!Demo2DScene@{Demo2DScene}}
+\index{Demo2DScene@{Demo2DScene}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{Demo2DScene()}{Demo2DScene()}}
+{\footnotesize\ttfamily \label{classDemo2DScene_add40385f9fe2a12d44b8a02336a8ea2a} 
+Demo2\+DScene::\+\+Demo2\+DScene (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{shader}{, }\item[{\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&}]{va}{, }\item[{\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&}]{ib}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the demo scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & Reference to the main shader. \\
+\hline
+{\em va} & Reference to the vertex array. \\
+\hline
+{\em ib} & Reference to the index buffer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8cpp_source_l00008}{8}} of file \doxymbox{\hyperlink{Demo2DScene_8cpp_source}{Demo2\+DScene.\+cpp}}.
+
+\Hypertarget{classDemo2DScene_a7cd67f927980cb296ba9b3148fad4ef2}\index{Demo2DScene@{Demo2DScene}!````~Demo2DScene@{\texorpdfstring{$\sim$}{\string~}Demo2DScene}}
+\index{````~Demo2DScene@{\texorpdfstring{$\sim$}{\string~}Demo2DScene}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Demo2DScene()}{\string~Demo2DScene()}}
+{\footnotesize\ttfamily \label{classDemo2DScene_a7cd67f927980cb296ba9b3148fad4ef2} 
+Demo2\+DScene::\+\texorpdfstring{$\sim$}{\string~}\+Demo2\+DScene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8cpp_source_l00011}{11}} of file \doxymbox{\hyperlink{Demo2DScene_8cpp_source}{Demo2\+DScene.\+cpp}}.
+
+
+
+\label{classDemo2DScene_doc-func-members}
+\Hypertarget{classDemo2DScene_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDemo2DScene_aa6caae608302b160ef184473e1ef0219}\index{Demo2DScene@{Demo2DScene}!GetName@{GetName}}
+\index{GetName@{GetName}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily \label{classDemo2DScene_aa6caae608302b160ef184473e1ef0219} 
+std::\+string Demo2\+DScene::\+\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the scene. 
+
+\begin{DoxyReturn}{Returns}
+String containing the scene name. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classScene_ad93511100250c3f3ed736b9ed69fdc6f}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00038}{38}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+\Hypertarget{classDemo2DScene_a8ffa82c6772da7121ff4d812d9d1c1e5}\index{Demo2DScene@{Demo2DScene}!OnEnter@{OnEnter}}
+\index{OnEnter@{OnEnter}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{OnEnter()}{OnEnter()}}
+{\footnotesize\ttfamily \label{classDemo2DScene_a8ffa82c6772da7121ff4d812d9d1c1e5} 
+void Demo2\+DScene::\+\+On\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the scene becomes active. 
+
+Sets the clear color, sets up the scene with all entities, and logs the scene entry. 
+
+Implements \doxymbox{\hyperlink{classScene_ad09d42329f52df55fad0467cd092c9aa}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8cpp_source_l00019}{19}} of file \doxymbox{\hyperlink{Demo2DScene_8cpp_source}{Demo2\+DScene.\+cpp}}.
+
+\Hypertarget{classDemo2DScene_afce546436c8328555a6c548dcb3a9d90}\index{Demo2DScene@{Demo2DScene}!OnExit@{OnExit}}
+\index{OnExit@{OnExit}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{OnExit()}{OnExit()}}
+{\footnotesize\ttfamily \label{classDemo2DScene_afce546436c8328555a6c548dcb3a9d90} 
+void Demo2\+DScene::\+\+On\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the scene is exited. 
+
+Releases all resources used by the scene. 
+
+Implements \doxymbox{\hyperlink{classScene_a9824fefa923e5a9db4dca5a23343609b}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8cpp_source_l00031}{31}} of file \doxymbox{\hyperlink{Demo2DScene_8cpp_source}{Demo2\+DScene.\+cpp}}.
+
+\Hypertarget{classDemo2DScene_aa04f40209bc6b113df30f9dcf03bd80c}\index{Demo2DScene@{Demo2DScene}!Render@{Render}}
+\index{Render@{Render}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{classDemo2DScene_aa04f40209bc6b113df30f9dcf03bd80c} 
+void Demo2\+DScene::\+\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the scene. 
+
+Renders all entities in the ECS scene. 
+
+Implements \doxymbox{\hyperlink{classScene_ae24d21e12b34839994ad265662ea24d7}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8cpp_source_l00163}{163}} of file \doxymbox{\hyperlink{Demo2DScene_8cpp_source}{Demo2\+DScene.\+cpp}}.
+
+\Hypertarget{classDemo2DScene_aac72f489fe5514f29e315acfd7851a06}\index{Demo2DScene@{Demo2DScene}!ResolveCollisions@{ResolveCollisions}}
+\index{ResolveCollisions@{ResolveCollisions}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{ResolveCollisions()}{ResolveCollisions()}}
+{\footnotesize\ttfamily \label{classDemo2DScene_aac72f489fe5514f29e315acfd7851a06} 
+void Demo2\+DScene::\+\+Resolve\+Collisions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Resolves collisions between the player and platforms. 
+
+Performs AABB collision detection and resolution between the player and all platform entities. Updates the player\textquotesingle{}s grounded state. 
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8cpp_source_l00176}{176}} of file \doxymbox{\hyperlink{Demo2DScene_8cpp_source}{Demo2\+DScene.\+cpp}}.
+
+\Hypertarget{classDemo2DScene_af7cdfcef2f6bede3ffe930dba96f4812}\index{Demo2DScene@{Demo2DScene}!SetupScene@{SetupScene}}
+\index{SetupScene@{SetupScene}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{SetupScene()}{SetupScene()}}
+{\footnotesize\ttfamily \label{classDemo2DScene_af7cdfcef2f6bede3ffe930dba96f4812} 
+void Demo2\+DScene::\+\+Setup\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets up the scene with all entities. 
+
+Creates the ECS scene, world, camera, player, and platforms. Initializes the player controller, camera controller, and FPS counter. 
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8cpp_source_l00047}{47}} of file \doxymbox{\hyperlink{Demo2DScene_8cpp_source}{Demo2\+DScene.\+cpp}}.
+
+\Hypertarget{classDemo2DScene_a960e0d534e6e05bda39f3d9eaaf30deb}\index{Demo2DScene@{Demo2DScene}!Update@{Update}}
+\index{Update@{Update}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classDemo2DScene_a960e0d534e6e05bda39f3d9eaaf30deb} 
+void Demo2\+DScene::\+\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the scene logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \doxylink{classTime}{Time} elapsed since the last frame. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \doxymbox{\hyperlink{classScene_aaede6346f58776bd40efffd55885ab02}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8cpp_source_l00138}{138}} of file \doxymbox{\hyperlink{Demo2DScene_8cpp_source}{Demo2\+DScene.\+cpp}}.
+
+
+
+\label{classDemo2DScene_doc-variable-members}
+\Hypertarget{classDemo2DScene_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDemo2DScene_aef6643910216af035868027d99a24b82}\index{Demo2DScene@{Demo2DScene}!m\_Camera@{m\_Camera}}
+\index{m\_Camera@{m\_Camera}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{m\_Camera}{m\_Camera}}
+{\footnotesize\ttfamily \label{classDemo2DScene_aef6643910216af035868027d99a24b82} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classCamera2D}{Camera2D}}$>$ Demo2\+DScene::\+m\+\_\+\+Camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00047}{47}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+\Hypertarget{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07}\index{Demo2DScene@{Demo2DScene}!m\_CameraController@{m\_CameraController}}
+\index{m\_CameraController@{m\_CameraController}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{m\_CameraController}{m\_CameraController}}
+{\footnotesize\ttfamily \label{classDemo2DScene_ac2db1d3e28993e56e7e8dc23646afd07} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classCameraController}{Camera\+Controller}}$>$ Demo2\+DScene::\+m\+\_\+\+Camera\+Controller\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00048}{48}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+\Hypertarget{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1}\index{Demo2DScene@{Demo2DScene}!m\_ECSScene@{m\_ECSScene}}
+\index{m\_ECSScene@{m\_ECSScene}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{m\_ECSScene}{m\_ECSScene}}
+{\footnotesize\ttfamily \label{classDemo2DScene_adabb5c6e7c667fb73f4e7f658ac16bc1} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classECSScene}{ECSScene}}$>$ Demo2\+DScene::\+m\+\_\+\+ECSScene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00045}{45}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+\Hypertarget{classDemo2DScene_aeb9849fda70cb52780bc4db9eae68a24}\index{Demo2DScene@{Demo2DScene}!m\_FpsCounter@{m\_FpsCounter}}
+\index{m\_FpsCounter@{m\_FpsCounter}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{m\_FpsCounter}{m\_FpsCounter}}
+{\footnotesize\ttfamily \label{classDemo2DScene_aeb9849fda70cb52780bc4db9eae68a24} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classFpsCounter}{Fps\+Counter}}$>$ Demo2\+DScene::\+m\+\_\+\+Fps\+Counter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00051}{51}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+\Hypertarget{classDemo2DScene_a21e4a1ff58a2078dca4e3960cd711ee1}\index{Demo2DScene@{Demo2DScene}!m\_IndexBuffer@{m\_IndexBuffer}}
+\index{m\_IndexBuffer@{m\_IndexBuffer}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{m\_IndexBuffer}{m\_IndexBuffer}}
+{\footnotesize\ttfamily \label{classDemo2DScene_a21e4a1ff58a2078dca4e3960cd711ee1} 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}}\& Demo2\+DScene::\+m\+\_\+\+Index\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00043}{43}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+\Hypertarget{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410}\index{Demo2DScene@{Demo2DScene}!m\_PlatformEntities@{m\_PlatformEntities}}
+\index{m\_PlatformEntities@{m\_PlatformEntities}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{m\_PlatformEntities}{m\_PlatformEntities}}
+{\footnotesize\ttfamily \label{classDemo2DScene_a63f635c31e07444a4d0f83bfb7f3d410} 
+std::\+vector$<$entt::\+entity$>$ Demo2\+DScene::\+m\+\_\+\+Platform\+Entities\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00054}{54}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+\Hypertarget{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b}\index{Demo2DScene@{Demo2DScene}!m\_PlayerController@{m\_PlayerController}}
+\index{m\_PlayerController@{m\_PlayerController}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{m\_PlayerController}{m\_PlayerController}}
+{\footnotesize\ttfamily \label{classDemo2DScene_ad0106d2bb23c26d650934ed6d6bb444b} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classPlayerController}{Player\+Controller}}$>$ Demo2\+DScene::\+m\+\_\+\+Player\+Controller\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00049}{49}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+\Hypertarget{classDemo2DScene_a1a61e61b8e799326f91368f32f765f2a}\index{Demo2DScene@{Demo2DScene}!m\_PlayerEntity@{m\_PlayerEntity}}
+\index{m\_PlayerEntity@{m\_PlayerEntity}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{m\_PlayerEntity}{m\_PlayerEntity}}
+{\footnotesize\ttfamily \label{classDemo2DScene_a1a61e61b8e799326f91368f32f765f2a} 
+entt::\+entity Demo2\+DScene::\+m\+\_\+\+Player\+Entity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00052}{52}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+\Hypertarget{classDemo2DScene_ac0fb2242739ad3f82ed75d227e9345a8}\index{Demo2DScene@{Demo2DScene}!m\_Shader@{m\_Shader}}
+\index{m\_Shader@{m\_Shader}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{m\_Shader}{m\_Shader}}
+{\footnotesize\ttfamily \label{classDemo2DScene_ac0fb2242739ad3f82ed75d227e9345a8} 
+\doxymbox{\hyperlink{classShader}{Shader}}\& Demo2\+DScene::\+m\+\_\+\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00041}{41}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+\Hypertarget{classDemo2DScene_a1df48e8d11e82a73fe80fbeaf8baa865}\index{Demo2DScene@{Demo2DScene}!m\_VertexArray@{m\_VertexArray}}
+\index{m\_VertexArray@{m\_VertexArray}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{m\_VertexArray}{m\_VertexArray}}
+{\footnotesize\ttfamily \label{classDemo2DScene_a1df48e8d11e82a73fe80fbeaf8baa865} 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}}\& Demo2\+DScene::\+m\+\_\+\+Vertex\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00042}{42}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+\Hypertarget{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e}\index{Demo2DScene@{Demo2DScene}!m\_World@{m\_World}}
+\index{m\_World@{m\_World}!Demo2DScene@{Demo2DScene}}
+\doxysubsubsection{\texorpdfstring{m\_World}{m\_World}}
+{\footnotesize\ttfamily \label{classDemo2DScene_a7c3d302fcd9a919f137373c18a37117e} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classGameWorld}{Game\+World}}$>$ Demo2\+DScene::\+m\+\_\+\+World\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Demo2DScene_8h_source_l00046}{46}} of file \doxymbox{\hyperlink{Demo2DScene_8h_source}{Demo2\+DScene.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+demo/\doxymbox{\hyperlink{Demo2DScene_8h}{Demo2\+DScene.\+h}}\item 
+engine/\+demo/\doxymbox{\hyperlink{Demo2DScene_8cpp}{Demo2\+DScene.\+cpp}}\end{DoxyCompactItemize}

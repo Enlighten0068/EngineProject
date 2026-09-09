@@ -1,0 +1,75 @@
+\doxysection{Components::Tile\+Scale Struct Reference}
+\hypertarget{structComponents_1_1TileScale}{}\label{structComponents_1_1TileScale}\index{Components::TileScale@{Components::TileScale}}
+
+
+Component that controls texture tiling (repetition) for an entity.  
+
+
+
+
+{\ttfamily \+\#include $<$Tile\+Scale.\+h$>$}
+
+
+
+Collaboration diagram for Components::Tile\+Scale:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{structComponents_1_1TileScale__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \doxymbox{\hyperlink{structComponents_1_1TileScale_a2056b13025a5feff66ba87bc66a3faca}{ScaleX}} = 1.\+0f
+\item 
+float \doxymbox{\hyperlink{structComponents_1_1TileScale_aaefc4e78b1bcfc2ba99374370eade78c}{ScaleY}} = 1.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component that controls texture tiling (repetition) for an entity. 
+
+Entities with this component will have their texture repeated according to the Scale value. The texture coordinates are multiplied by this scale in the vertex shader, causing the texture to tile across the surface.
+
+\begin{DoxyNote}{Note}
+A value of 1.\+0f means no repetition (texture stretches to fill the quad). Values \texorpdfstring{$>$}{>} 1.\+0f cause the texture to repeat that many times across the quad. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classRenderSystem}{Render\+System}, \doxylink{classShader}{Shader} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{TileScale_8h_source_l00016}{16}} of file \doxymbox{\hyperlink{TileScale_8h_source}{Tile\+Scale.\+h}}.
+
+
+
+\label{structComponents_1_1TileScale_doc-variable-members}
+\Hypertarget{structComponents_1_1TileScale_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structComponents_1_1TileScale_a2056b13025a5feff66ba87bc66a3faca}\index{Components::TileScale@{Components::TileScale}!ScaleX@{ScaleX}}
+\index{ScaleX@{ScaleX}!Components::TileScale@{Components::TileScale}}
+\doxysubsubsection{\texorpdfstring{ScaleX}{ScaleX}}
+{\footnotesize\ttfamily \label{structComponents_1_1TileScale_a2056b13025a5feff66ba87bc66a3faca} 
+float Components::\+\+Tile\+Scale::\+\+ScaleX = 1.\+0f}
+
+
+
+Definition at line \doxymbox{\hyperlink{TileScale_8h_source_l00017}{17}} of file \doxymbox{\hyperlink{TileScale_8h_source}{Tile\+Scale.\+h}}.
+
+\Hypertarget{structComponents_1_1TileScale_aaefc4e78b1bcfc2ba99374370eade78c}\index{Components::TileScale@{Components::TileScale}!ScaleY@{ScaleY}}
+\index{ScaleY@{ScaleY}!Components::TileScale@{Components::TileScale}}
+\doxysubsubsection{\texorpdfstring{ScaleY}{ScaleY}}
+{\footnotesize\ttfamily \label{structComponents_1_1TileScale_aaefc4e78b1bcfc2ba99374370eade78c} 
+float Components::\+\+Tile\+Scale::\+\+ScaleY = 1.\+0f}
+
+
+
+Definition at line \doxymbox{\hyperlink{TileScale_8h_source_l00018}{18}} of file \doxymbox{\hyperlink{TileScale_8h_source}{Tile\+Scale.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+components/\doxymbox{\hyperlink{TileScale_8h}{Tile\+Scale.\+h}}\end{DoxyCompactItemize}

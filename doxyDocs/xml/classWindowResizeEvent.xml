@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classWindowResizeEvent" kind="class" language="C++" prot="public">
+    <compoundname>WindowResizeEvent</compoundname>
+    <basecompoundref refid="classEvent" prot="public" virt="non-virtual">Event</basecompoundref>
+    <includes refid="WindowEvent_8h" local="no">WindowEvent.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classWindowResizeEvent_1a15a7789119a3f52b90b5e622a6557869" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int WindowResizeEvent::m_Width</definition>
+        <argsstring></argsstring>
+        <name>m_Width</name>
+        <qualifiedname>WindowResizeEvent::m_Width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/WindowEvent.h" line="41" column="9" bodyfile="engine/events/WindowEvent.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWindowResizeEvent_1ac4adfd68bfdea73ef2291f38bf8e3170" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int WindowResizeEvent::m_Height</definition>
+        <argsstring></argsstring>
+        <name>m_Height</name>
+        <qualifiedname>WindowResizeEvent::m_Height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/WindowEvent.h" line="42" column="9" bodyfile="engine/events/WindowEvent.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classWindowResizeEvent_1a4bbcb192821b1ba82dfc1513ba890be9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>WindowResizeEvent::WindowResizeEvent</definition>
+        <argsstring>(int width, int height)</argsstring>
+        <name>WindowResizeEvent</name>
+        <qualifiedname>WindowResizeEvent::WindowResizeEvent</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classWindowResizeEvent" kindref="compound">WindowResizeEvent</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New window width in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New window height in pixels. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/WindowEvent.h" line="33" column="5" bodyfile="engine/events/WindowEvent.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classWindowResizeEvent_1a60b310d95bea3bfa3b53ce70fb9a98f2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>EventType WindowResizeEvent::GetEventType</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetEventType</name>
+        <qualifiedname>WindowResizeEvent::GetEventType</qualifiedname>
+        <reimplements refid="classEvent_1af14bbd8f69c2778def9462375a0e70f2">GetEventType</reimplements>
+        <briefdescription>
+<para>Returns the type of the event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref> enum value identifying the event. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/WindowEvent.h" line="35" column="15" bodyfile="engine/events/WindowEvent.h" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classWindowResizeEvent_1a9800bd5e7b5a84c59c68d9b2301ca159" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int WindowResizeEvent::GetWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>GetWidth</name>
+        <qualifiedname>WindowResizeEvent::GetWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/WindowEvent.h" line="37" column="9" bodyfile="engine/events/WindowEvent.h" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classWindowResizeEvent_1a13becd83abdc32de50c57664f64a5e55" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int WindowResizeEvent::GetHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>GetHeight</name>
+        <qualifiedname>WindowResizeEvent::GetHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/WindowEvent.h" line="38" column="9" bodyfile="engine/events/WindowEvent.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classEvent" kindref="compound">Event</ref> dispatched when the window is resized. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contains the new width and height of the window.</para>
+<para><simplesect kind="note"><para>Dispatched by <ref refid="classSDLEventTranslator" kindref="compound">SDLEventTranslator</ref> on SDL_EVENT_WINDOW_RESIZED. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>WindowResizeEvent</label>
+        <link refid="classWindowResizeEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>WindowResizeEvent</label>
+        <link refid="classWindowResizeEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="engine/events/WindowEvent.h" line="26" column="1" bodyfile="engine/events/WindowEvent.h" bodystart="26" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classWindowResizeEvent_1a60b310d95bea3bfa3b53ce70fb9a98f2" prot="public" virt="virtual"><scope>WindowResizeEvent</scope><name>GetEventType</name></member>
+      <member refid="classWindowResizeEvent_1a13becd83abdc32de50c57664f64a5e55" prot="public" virt="non-virtual"><scope>WindowResizeEvent</scope><name>GetHeight</name></member>
+      <member refid="classWindowResizeEvent_1a9800bd5e7b5a84c59c68d9b2301ca159" prot="public" virt="non-virtual"><scope>WindowResizeEvent</scope><name>GetWidth</name></member>
+      <member refid="classEvent_1a8ad0c350a8f569dbb05cf845caa4737e" prot="public" virt="non-virtual"><scope>WindowResizeEvent</scope><name>Handled</name></member>
+      <member refid="classWindowResizeEvent_1ac4adfd68bfdea73ef2291f38bf8e3170" prot="private" virt="non-virtual"><scope>WindowResizeEvent</scope><name>m_Height</name></member>
+      <member refid="classWindowResizeEvent_1a15a7789119a3f52b90b5e622a6557869" prot="private" virt="non-virtual"><scope>WindowResizeEvent</scope><name>m_Width</name></member>
+      <member refid="classWindowResizeEvent_1a4bbcb192821b1ba82dfc1513ba890be9" prot="public" virt="non-virtual"><scope>WindowResizeEvent</scope><name>WindowResizeEvent</name></member>
+      <member refid="classEvent_1a105223995bbf1a1e4714d0c77f91cf0b" prot="public" virt="virtual"><scope>WindowResizeEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,227 @@
+\doxysection{Fps\+Counter Class Reference}
+\hypertarget{classFpsCounter}{}\label{classFpsCounter}\index{FpsCounter@{FpsCounter}}
+
+
+Utility class for measuring and logging frames per second.  
+
+
+
+
+{\ttfamily \+\#include $<$Fps\+Counter.\+h$>$}
+
+
+
+Collaboration diagram for Fps\+Counter:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classFpsCounter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classFpsCounter_a82dfe73642a613c6f4bc7e38781360d7}{Fps\+Counter}} ()
+\item 
+\doxymbox{\hyperlink{classFpsCounter_ad8ac6ac5c70fe8ca7cca097ba98aba9b}{\texorpdfstring{$\sim$}{\string~}\+Fps\+Counter}} ()=default
+\item 
+void \doxymbox{\hyperlink{classFpsCounter_ac7e47e9bfff65ac4e4aaa232669bcfd6}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the FPS counter (should be called once per frame). \end{DoxyCompactList}\item 
+float \doxymbox{\hyperlink{classFpsCounter_a63034f292080e07963a1fef86ae40f0a}{Get\+FPS}} () const
+\item 
+float \doxymbox{\hyperlink{classFpsCounter_ae92842565f6134b6cfd7a72c52634643}{Get\+Delta\+Time}} () const
+\item 
+float \doxymbox{\hyperlink{classFpsCounter_a01086d67fcb14cdbf85ae217441569c2}{Get\+Elapsed\+Time}} () const
+\item 
+void \doxymbox{\hyperlink{classFpsCounter_af46f79cc7cf4476db2553c22e932ea7a}{Set\+Log\+Interval}} (float interval)
+\begin{DoxyCompactList}\small\item\em Sets the logging interval. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \doxymbox{\hyperlink{classFpsCounter_a28be3cb1111af1665b4655ed911fe3f5}{m\+\_\+\+Timer}} = 0.\+0f
+\item 
+float \doxymbox{\hyperlink{classFpsCounter_a3c97e1b7092c2ff93fc0e2c18888ca5e}{m\+\_\+\+FPS}} = 0.\+0f
+\item 
+int \doxymbox{\hyperlink{classFpsCounter_af170200b8c16cb824e1cf0eadc9b432f}{m\+\_\+\+Frame\+Count}} = 0
+\item 
+float \doxymbox{\hyperlink{classFpsCounter_a64d4c0efc68ad7c887c0eee9358b3e53}{m\+\_\+\+Delta\+Time}} = 0.\+0f
+\item 
+float \doxymbox{\hyperlink{classFpsCounter_a74593eaaf5f829cd339ad37ee4f8206c}{m\+\_\+\+Elapsed\+Time}} = 0.\+0f
+\item 
+float \doxymbox{\hyperlink{classFpsCounter_ab2f9ef76e8b93e25ea75c22f27435a58}{m\+\_\+\+Log\+Interval}} = 1.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class for measuring and logging frames per second. 
+
+This class calculates the average FPS over a configurable interval, and logs it to the console. It also provides access to delta time and elapsed time values.
+
+\begin{DoxyNote}{Note}
+FPS is calculated as frame count divided by elapsed time over the logging interval. 
+\end{DoxyNote}
+
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{FpsCounter_8h_source}{Fps\+Counter.\+h}}.
+
+
+
+\label{classFpsCounter_doc-constructors}
+\Hypertarget{classFpsCounter_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFpsCounter_a82dfe73642a613c6f4bc7e38781360d7}\index{FpsCounter@{FpsCounter}!FpsCounter@{FpsCounter}}
+\index{FpsCounter@{FpsCounter}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{FpsCounter()}{FpsCounter()}}
+{\footnotesize\ttfamily \label{classFpsCounter_a82dfe73642a613c6f4bc7e38781360d7} 
+Fps\+Counter::\+\+Fps\+Counter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classFpsCounter_ad8ac6ac5c70fe8ca7cca097ba98aba9b}\index{FpsCounter@{FpsCounter}!````~FpsCounter@{\texorpdfstring{$\sim$}{\string~}FpsCounter}}
+\index{````~FpsCounter@{\texorpdfstring{$\sim$}{\string~}FpsCounter}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FpsCounter()}{\string~FpsCounter()}}
+{\footnotesize\ttfamily \label{classFpsCounter_ad8ac6ac5c70fe8ca7cca097ba98aba9b} 
+Fps\+Counter::\+\texorpdfstring{$\sim$}{\string~}\+Fps\+Counter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{classFpsCounter_doc-func-members}
+\Hypertarget{classFpsCounter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFpsCounter_ae92842565f6134b6cfd7a72c52634643}\index{FpsCounter@{FpsCounter}!GetDeltaTime@{GetDeltaTime}}
+\index{GetDeltaTime@{GetDeltaTime}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{GetDeltaTime()}{GetDeltaTime()}}
+{\footnotesize\ttfamily \label{classFpsCounter_ae92842565f6134b6cfd7a72c52634643} 
+float Fps\+Counter::\+\+Get\+Delta\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8h_source_l00029}{29}} of file \doxymbox{\hyperlink{FpsCounter_8h_source}{Fps\+Counter.\+h}}.
+
+\Hypertarget{classFpsCounter_a01086d67fcb14cdbf85ae217441569c2}\index{FpsCounter@{FpsCounter}!GetElapsedTime@{GetElapsedTime}}
+\index{GetElapsedTime@{GetElapsedTime}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{GetElapsedTime()}{GetElapsedTime()}}
+{\footnotesize\ttfamily \label{classFpsCounter_a01086d67fcb14cdbf85ae217441569c2} 
+float Fps\+Counter::\+\+Get\+Elapsed\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8h_source_l00030}{30}} of file \doxymbox{\hyperlink{FpsCounter_8h_source}{Fps\+Counter.\+h}}.
+
+\Hypertarget{classFpsCounter_a63034f292080e07963a1fef86ae40f0a}\index{FpsCounter@{FpsCounter}!GetFPS@{GetFPS}}
+\index{GetFPS@{GetFPS}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{GetFPS()}{GetFPS()}}
+{\footnotesize\ttfamily \label{classFpsCounter_a63034f292080e07963a1fef86ae40f0a} 
+float Fps\+Counter::\+\+Get\+FPS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8h_source_l00028}{28}} of file \doxymbox{\hyperlink{FpsCounter_8h_source}{Fps\+Counter.\+h}}.
+
+\Hypertarget{classFpsCounter_af46f79cc7cf4476db2553c22e932ea7a}\index{FpsCounter@{FpsCounter}!SetLogInterval@{SetLogInterval}}
+\index{SetLogInterval@{SetLogInterval}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{SetLogInterval()}{SetLogInterval()}}
+{\footnotesize\ttfamily \label{classFpsCounter_af46f79cc7cf4476db2553c22e932ea7a} 
+void Fps\+Counter::\+\+Set\+Log\+Interval (\begin{DoxyParamCaption}\item[{float}]{interval}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the logging interval. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & Interval in seconds between FPS logs. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8h_source_l00036}{36}} of file \doxymbox{\hyperlink{FpsCounter_8h_source}{Fps\+Counter.\+h}}.
+
+\Hypertarget{classFpsCounter_ac7e47e9bfff65ac4e4aaa232669bcfd6}\index{FpsCounter@{FpsCounter}!Update@{Update}}
+\index{Update@{Update}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classFpsCounter_ac7e47e9bfff65ac4e4aaa232669bcfd6} 
+void Fps\+Counter::\+\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the FPS counter (should be called once per frame). 
+
+Updates the FPS counter and logs when interval elapses.
+
+This method increments the frame count and, when the interval has elapsed, calculates and logs the average FPS.
+
+This method should be called once per frame. It accumulates delta time and frame count, and when the interval is reached, it calculates the average FPS and logs it. 
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8cpp_source_l00015}{15}} of file \doxymbox{\hyperlink{FpsCounter_8cpp_source}{Fps\+Counter.\+cpp}}.
+
+
+
+\label{classFpsCounter_doc-variable-members}
+\Hypertarget{classFpsCounter_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classFpsCounter_a64d4c0efc68ad7c887c0eee9358b3e53}\index{FpsCounter@{FpsCounter}!m\_DeltaTime@{m\_DeltaTime}}
+\index{m\_DeltaTime@{m\_DeltaTime}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{m\_DeltaTime}{m\_DeltaTime}}
+{\footnotesize\ttfamily \label{classFpsCounter_a64d4c0efc68ad7c887c0eee9358b3e53} 
+float Fps\+Counter::\+m\+\_\+\+Delta\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8h_source_l00042}{42}} of file \doxymbox{\hyperlink{FpsCounter_8h_source}{Fps\+Counter.\+h}}.
+
+\Hypertarget{classFpsCounter_a74593eaaf5f829cd339ad37ee4f8206c}\index{FpsCounter@{FpsCounter}!m\_ElapsedTime@{m\_ElapsedTime}}
+\index{m\_ElapsedTime@{m\_ElapsedTime}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{m\_ElapsedTime}{m\_ElapsedTime}}
+{\footnotesize\ttfamily \label{classFpsCounter_a74593eaaf5f829cd339ad37ee4f8206c} 
+float Fps\+Counter::\+m\+\_\+\+Elapsed\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8h_source_l00043}{43}} of file \doxymbox{\hyperlink{FpsCounter_8h_source}{Fps\+Counter.\+h}}.
+
+\Hypertarget{classFpsCounter_a3c97e1b7092c2ff93fc0e2c18888ca5e}\index{FpsCounter@{FpsCounter}!m\_FPS@{m\_FPS}}
+\index{m\_FPS@{m\_FPS}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{m\_FPS}{m\_FPS}}
+{\footnotesize\ttfamily \label{classFpsCounter_a3c97e1b7092c2ff93fc0e2c18888ca5e} 
+float Fps\+Counter::\+m\+\_\+\+FPS = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8h_source_l00040}{40}} of file \doxymbox{\hyperlink{FpsCounter_8h_source}{Fps\+Counter.\+h}}.
+
+\Hypertarget{classFpsCounter_af170200b8c16cb824e1cf0eadc9b432f}\index{FpsCounter@{FpsCounter}!m\_FrameCount@{m\_FrameCount}}
+\index{m\_FrameCount@{m\_FrameCount}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{m\_FrameCount}{m\_FrameCount}}
+{\footnotesize\ttfamily \label{classFpsCounter_af170200b8c16cb824e1cf0eadc9b432f} 
+int Fps\+Counter::\+m\+\_\+\+Frame\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8h_source_l00041}{41}} of file \doxymbox{\hyperlink{FpsCounter_8h_source}{Fps\+Counter.\+h}}.
+
+\Hypertarget{classFpsCounter_ab2f9ef76e8b93e25ea75c22f27435a58}\index{FpsCounter@{FpsCounter}!m\_LogInterval@{m\_LogInterval}}
+\index{m\_LogInterval@{m\_LogInterval}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{m\_LogInterval}{m\_LogInterval}}
+{\footnotesize\ttfamily \label{classFpsCounter_ab2f9ef76e8b93e25ea75c22f27435a58} 
+float Fps\+Counter::\+m\+\_\+\+Log\+Interval = 1.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8h_source_l00044}{44}} of file \doxymbox{\hyperlink{FpsCounter_8h_source}{Fps\+Counter.\+h}}.
+
+\Hypertarget{classFpsCounter_a28be3cb1111af1665b4655ed911fe3f5}\index{FpsCounter@{FpsCounter}!m\_Timer@{m\_Timer}}
+\index{m\_Timer@{m\_Timer}!FpsCounter@{FpsCounter}}
+\doxysubsubsection{\texorpdfstring{m\_Timer}{m\_Timer}}
+{\footnotesize\ttfamily \label{classFpsCounter_a28be3cb1111af1665b4655ed911fe3f5} 
+float Fps\+Counter::\+m\+\_\+\+Timer = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{FpsCounter_8h_source_l00039}{39}} of file \doxymbox{\hyperlink{FpsCounter_8h_source}{Fps\+Counter.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+core/\doxymbox{\hyperlink{FpsCounter_8h}{Fps\+Counter.\+h}}\item 
+engine/\+core/\doxymbox{\hyperlink{FpsCounter_8cpp}{Fps\+Counter.\+cpp}}\end{DoxyCompactItemize}

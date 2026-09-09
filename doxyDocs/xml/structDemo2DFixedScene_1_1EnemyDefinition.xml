@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structDemo2DFixedScene_1_1EnemyDefinition" kind="struct" language="C++" prot="private">
+    <compoundname>Demo2DFixedScene::EnemyDefinition</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDemo2DFixedScene_1_1EnemyDefinition_1ac382e2dead6b8018245fe1978f4b1668" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Demo2DFixedScene::EnemyDefinition::Position</definition>
+        <argsstring></argsstring>
+        <name>Position</name>
+        <qualifiedname>Demo2DFixedScene::EnemyDefinition::Position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="62" column="18" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDemo2DFixedScene_1_1EnemyDefinition_1ab9c519376bbec771cc02ad437a914ae6" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Demo2DFixedScene::EnemyDefinition::Scale</definition>
+        <argsstring></argsstring>
+        <name>Scale</name>
+        <qualifiedname>Demo2DFixedScene::EnemyDefinition::Scale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="63" column="18" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDemo2DFixedScene_1_1EnemyDefinition_1a2c9b9c09496bb2ba40bf1e865cd1c797" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2D&gt; Demo2DFixedScene::EnemyDefinition::Texture</definition>
+        <argsstring></argsstring>
+        <name>Texture</name>
+        <qualifiedname>Demo2DFixedScene::EnemyDefinition::Texture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="64" column="25" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDemo2DFixedScene_1_1EnemyDefinition_1ac5bd35d617b44cdb96a7bd3416cff056" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Demo2DFixedScene::EnemyDefinition::PatrolStart</definition>
+        <argsstring></argsstring>
+        <name>PatrolStart</name>
+        <qualifiedname>Demo2DFixedScene::EnemyDefinition::PatrolStart</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="65" column="18" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDemo2DFixedScene_1_1EnemyDefinition_1a85327057cec5de5bbdeb8810237d397b" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Demo2DFixedScene::EnemyDefinition::PatrolEnd</definition>
+        <argsstring></argsstring>
+        <name>PatrolEnd</name>
+        <qualifiedname>Demo2DFixedScene::EnemyDefinition::PatrolEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="66" column="18" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDemo2DFixedScene_1_1EnemyDefinition_1a21f2328a2619d085f532e5c550a279f8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Demo2DFixedScene::EnemyDefinition::PatrolSpeed</definition>
+        <argsstring></argsstring>
+        <name>PatrolSpeed</name>
+        <qualifiedname>Demo2DFixedScene::EnemyDefinition::PatrolSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/Demo2DFixedScene.h" line="67" column="15" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Definition of an enemy for spawning and respawning. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Stores all the data needed to recreate an enemy entity. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Demo2DFixedScene::EnemyDefinition</label>
+        <link refid="structDemo2DFixedScene_1_1EnemyDefinition"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+PatrolEnd</edgelabel>
+          <edgelabel>+PatrolStart</edgelabel>
+          <edgelabel>+Position</edgelabel>
+          <edgelabel>+Scale</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/demo/Demo2DFixedScene.h" line="61" column="5" bodyfile="engine/demo/Demo2DFixedScene.h" bodystart="61" bodyend="68"/>
+    <listofallmembers>
+      <member refid="structDemo2DFixedScene_1_1EnemyDefinition_1a85327057cec5de5bbdeb8810237d397b" prot="public" virt="non-virtual"><scope>Demo2DFixedScene::EnemyDefinition</scope><name>PatrolEnd</name></member>
+      <member refid="structDemo2DFixedScene_1_1EnemyDefinition_1a21f2328a2619d085f532e5c550a279f8" prot="public" virt="non-virtual"><scope>Demo2DFixedScene::EnemyDefinition</scope><name>PatrolSpeed</name></member>
+      <member refid="structDemo2DFixedScene_1_1EnemyDefinition_1ac5bd35d617b44cdb96a7bd3416cff056" prot="public" virt="non-virtual"><scope>Demo2DFixedScene::EnemyDefinition</scope><name>PatrolStart</name></member>
+      <member refid="structDemo2DFixedScene_1_1EnemyDefinition_1ac382e2dead6b8018245fe1978f4b1668" prot="public" virt="non-virtual"><scope>Demo2DFixedScene::EnemyDefinition</scope><name>Position</name></member>
+      <member refid="structDemo2DFixedScene_1_1EnemyDefinition_1ab9c519376bbec771cc02ad437a914ae6" prot="public" virt="non-virtual"><scope>Demo2DFixedScene::EnemyDefinition</scope><name>Scale</name></member>
+      <member refid="structDemo2DFixedScene_1_1EnemyDefinition_1a2c9b9c09496bb2ba40bf1e865cd1c797" prot="public" virt="non-virtual"><scope>Demo2DFixedScene::EnemyDefinition</scope><name>Texture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

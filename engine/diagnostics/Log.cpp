@@ -23,14 +23,16 @@ std::unordered_map<std::string, float> Log::s_LastLogTime;
  * @param logDir Directory where log files will be stored.
  */
 void Log::Initialize(const std::string& logDir){
-    if (s_Initialized) return;
+    if(s_Initialized) return;
 
+    //Create log directory if it doesn't exist
     std::filesystem::create_directories(logDir);
     std::string filename = GenerateTimestampFilename(logDir);
     s_File.open(filename, std::ios::out | std::ios::trunc);
-    if (!s_File.is_open()) {
+
+    if(!s_File.is_open()){
         std::cerr << "[ERROR] Failed to open log file: " << filename << std::endl;
-    } else {
+    } else{
         s_Initialized = true;
         Info("Log system initialized. File: " + filename);
     }
@@ -42,21 +44,33 @@ void Log::Initialize(const std::string& logDir){
  * Writes a shutdown message, flushes the file, and closes it.
  */
 void Log::Shutdown(){
-    if (s_File.is_open()) {
+    if(s_File.is_open()){
         Info("Log system shutting down.");
         s_File.close();
     }
     s_Initialized = false;
 }
 
+/**
+ * @brief Logs an informational message.
+ * @param message The message to log.
+ */
 void Log::Info(const std::string& message){
     Write(LogLevel::Info, message);
 }
 
+/**
+ * @brief Logs a warning message.
+ * @param message The message to log.
+ */
 void Log::Warning(const std::string& message){
     Write(LogLevel::Warning, message);
 }
 
+/**
+ * @brief Logs an error message.
+ * @param message The message to log.
+ */
 void Log::Error(const std::string& message){
     Write(LogLevel::Error, message);
 }
@@ -77,7 +91,7 @@ void Log::InfoThrottled(const std::string& message, const std::string& key, floa
     float currentTime = std::chrono::duration<float>(now.time_since_epoch()).count();
 
     auto it = s_LastLogTime.find(key);
-    if (it == s_LastLogTime.end() || (currentTime - it->second) >= intervalSeconds){
+    if(it == s_LastLogTime.end() || (currentTime - it->second) >= intervalSeconds){
         s_LastLogTime[key] = currentTime;
         Write(LogLevel::Info, message);
     }
@@ -94,16 +108,18 @@ void Log::InfoThrottled(const std::string& message, const std::string& key, floa
  * @param level Log level of the message.
  * @param message The message to write.
  */
-void Log::Write(LogLevel level, const std::string& message) {
+void Log::Write(LogLevel level, const std::string& message){
     //std::lock_guard<std::mutex> lock(s_LogMutex);
-    if (level < s_MinLevel) return;
+    if(level < s_MinLevel) return;
 
+    //Get current time with milliseconds
     auto now = std::chrono::system_clock::now();
     auto time_t_now = std::chrono::system_clock::to_time_t(now);
     auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
         now.time_since_epoch()
     ) % 1000;
 
+    //Format time for local timezone
     std::tm tm_now;
     #if defined(_WIN32) || defined(_WIN64)
     localtime_s(&tm_now, &time_t_now);
@@ -111,18 +127,22 @@ void Log::Write(LogLevel level, const std::string& message) {
     localtime_r(&time_t_now, &tm_now);
     #endif
 
+    //Build timestamp string
     std::ostringstream oss;
     oss << std::put_time(&tm_now, "%Y-%m-%d %H:%M:%S") << "."
     << std::setw(3) << std::setfill('0') << ms.count();
 
     std::string timestamp = oss.str();
 
+    //Build log line
     std::string line = "[" + timestamp + "] [" + LevelToString(level) + "] " + message;
 
-    if (level == LogLevel::Error) std::cerr << line << std::endl;
+    //Output to console
+    if(level == LogLevel::Error) std::cerr << line << std::endl;
     else std::cout << line << std::endl;
 
-    if (s_Initialized && s_File.is_open()){
+    //Output to file
+    if(s_Initialized && s_File.is_open()){
         s_File << line << std::endl;
         s_File.flush();
     }
@@ -134,7 +154,7 @@ void Log::Write(LogLevel level, const std::string& message) {
  * @return String representation of the log level.
  */
 const char* Log::LevelToString(LogLevel level){
-    switch (level) {
+    switch(level){
         case LogLevel::Info:    return "INFO";
         case LogLevel::Warning: return "WARNING";
         case LogLevel::Error:   return "ERROR";
@@ -151,9 +171,11 @@ const char* Log::LevelToString(LogLevel level){
  * @return Full path to the log file.
  */
 std::string Log::GenerateTimestampFilename(const std::string& logDir){
-
+    //Get current time
     auto now = std::chrono::system_clock::now();
     auto time_t_now = std::chrono::system_clock::to_time_t(now);
+
+    //Format time for local timezone
     std::tm tm_now;
     #if defined(_WIN32) || defined(_WIN64)
     localtime_s(&tm_now, &time_t_now);
@@ -161,6 +183,7 @@ std::string Log::GenerateTimestampFilename(const std::string& logDir){
     localtime_r(&time_t_now, &tm_now);
     #endif
 
+    //Build filename with timestamp
     std::ostringstream oss;
     oss << logDir << "log_" << std::put_time(&tm_now, "%Y-%m-%d_%H-%M-%S") << ".log";
     return oss.str();

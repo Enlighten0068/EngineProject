@@ -1,0 +1,426 @@
+\doxysection{Gamepad\+Manager Class Reference}
+\hypertarget{classGamepadManager}{}\label{classGamepadManager}\index{GamepadManager@{GamepadManager}}
+
+
+Singleton manager for gamepad input using SDL3 Gamepad API.  
+
+
+
+
+{\ttfamily \+\#include $<$Gamepad\+Manager.\+h$>$}
+
+
+
+Collaboration diagram for Gamepad\+Manager:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classGamepadManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classGamepadManager_a1413ab6313f7d89a6c42e42ac59c587c}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the gamepad subsystem and detects connected devices. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classGamepadManager_a55ac3f9f4cc6174f3143b176d348f0dc}{Shutdown}} ()
+\begin{DoxyCompactList}\small\item\em Shuts down the gamepad system and releases all devices. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classGamepadManager_a6de10c692816a54eb47ea13a9b0786fc}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of all connected gamepads. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classGamepadManager_a3f0b50a62302886b5672ea42fe3f888e}{Is\+Connected}} (int player\+Index=0) const
+\begin{DoxyCompactList}\small\item\em Checks if a gamepad is connected for a specific player. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classGamepadManager_ac0353ae7462fed666bd6983491f2979e}{Is\+Button\+Pressed}} (int player\+Index, SDL\+\_\+\+Gamepad\+Button button) const
+\item 
+bool \doxymbox{\hyperlink{classGamepadManager_a49f21e7fc6fc0eb8749ab7b13e62982f}{Is\+Button\+Held}} (int player\+Index, SDL\+\_\+\+Gamepad\+Button button) const
+\item 
+bool \doxymbox{\hyperlink{classGamepadManager_a853ba537c60f9acb1d5ff90e1980fdd1}{Is\+Button\+Released}} (int player\+Index, SDL\+\_\+\+Gamepad\+Button button) const
+\item 
+float \doxymbox{\hyperlink{classGamepadManager_afc5533e2907a7356e1e7a34cbae3f872}{Get\+Axis}} (int player\+Index, SDL\+\_\+\+Gamepad\+Axis axis) const
+\item 
+float \doxymbox{\hyperlink{classGamepadManager_a66451577d794bf16cf3fdedddaef6523}{Get\+Trigger}} (int player\+Index, SDL\+\_\+\+Gamepad\+Axis axis) const
+\item 
+void \doxymbox{\hyperlink{classGamepadManager_a84e1fc9b83d217de9d5160b065309c14}{Set\+Rumble}} (int player\+Index, float low\+Frequency, float high\+Frequency, Uint32 duration\+Ms)
+\begin{DoxyCompactList}\small\item\em Triggers rumble/\+vibration on the gamepad. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classGamepadManager_a3d38e8583ad177eef9fecfda4d015826}{Process\+Event}} (const SDL\+\_\+\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Processes SDL gamepad events (added/\+removed). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{classGamepadManager}{Gamepad\+Manager}} \& \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classGamepadManager_a989db3a6f006163a230a138a028c0dd7}{Gamepad\+Manager}} ()=default
+\item 
+\doxymbox{\hyperlink{classGamepadManager_ac64e78c1c9b6dccd3b979233aaf817e1}{\texorpdfstring{$\sim$}{\string~}\+Gamepad\+Manager}} ()=default
+\item 
+\doxymbox{\hyperlink{classGamepadManager_a359e8a0c182f344041952b4c4f1bb446}{Gamepad\+Manager}} (const \doxymbox{\hyperlink{classGamepadManager}{Gamepad\+Manager}} \&)=delete
+\item 
+\doxymbox{\hyperlink{classGamepadManager}{Gamepad\+Manager}} \& \doxymbox{\hyperlink{classGamepadManager_a2930e5f0279ea6ccc589dfcfeb2d4271}{operator=}} (const \doxymbox{\hyperlink{classGamepadManager}{Gamepad\+Manager}} \&)=delete
+\item 
+void \doxymbox{\hyperlink{classGamepadManager_a186c1ce24c83a70e92e8440116a930e2}{Add\+Gamepad}} (SDL\+\_\+\+Joystick\+ID device\+ID)
+\begin{DoxyCompactList}\small\item\em Adds a new gamepad and assigns it to the first available player slot. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classGamepadManager_ade0a3192b1570bbc2d5f72b0129dfef2}{Remove\+Gamepad}} (SDL\+\_\+\+Joystick\+ID device\+ID)
+\begin{DoxyCompactList}\small\item\em Removes a gamepad and frees its resources. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classGamepadManager_a3e65cf524ef558d0d9ee62283dbfed6b}{Update\+Button\+State}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Updates the button state bitmask for a specific player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+unordered\+\_\+map$<$ int, SDL\+\_\+\+Gamepad \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{classGamepadManager_a68b06a2e5a93cf739c5bdf9851c2d381}{m\+\_\+\+Gamepads}}
+\item 
+std::\+unordered\+\_\+map$<$ int, Uint64 $>$ \doxymbox{\hyperlink{classGamepadManager_ad86d9929ec0b5ac35c6b32903a5bcb3c}{m\+\_\+\+Button\+State}} \+[4]
+\item 
+std::\+unordered\+\_\+map$<$ int, Uint64 $>$ \doxymbox{\hyperlink{classGamepadManager_acde2ada37c2d93c15b8f2a834b59385f}{m\+\_\+\+Button\+Previous}} \+[4]
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \doxymbox{\hyperlink{classGamepadManager_a198e2ef559b545d3d7ee93167ab85117}{MAX\+\_\+\+PLAYERS}} = 4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton manager for gamepad input using SDL3 Gamepad API. 
+
+Provides a unified interface for detecting and querying gamepad state (buttons, axes, triggers, and rumble). Supports multiple players and handles gamepad connection/\+disconnection events.
+
+\begin{DoxyNote}{Note}
+This class is a singleton to ensure a single point of control for all gamepad input across the engine. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+SDL\+\_\+\+Gamepad, SDL\+\_\+\+Joystick\+ID 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8h_source_l00018}{18}} of file \doxymbox{\hyperlink{GamepadManager_8h_source}{Gamepad\+Manager.\+h}}.
+
+
+
+\label{classGamepadManager_doc-constructors}
+\Hypertarget{classGamepadManager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGamepadManager_a989db3a6f006163a230a138a028c0dd7}\index{GamepadManager@{GamepadManager}!GamepadManager@{GamepadManager}}
+\index{GamepadManager@{GamepadManager}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{GamepadManager()}{GamepadManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classGamepadManager_a989db3a6f006163a230a138a028c0dd7} 
+Gamepad\+Manager::\+\+Gamepad\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}
+
+\Hypertarget{classGamepadManager_ac64e78c1c9b6dccd3b979233aaf817e1}\index{GamepadManager@{GamepadManager}!````~GamepadManager@{\texorpdfstring{$\sim$}{\string~}GamepadManager}}
+\index{````~GamepadManager@{\texorpdfstring{$\sim$}{\string~}GamepadManager}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GamepadManager()}{\string~GamepadManager()}}
+{\footnotesize\ttfamily \label{classGamepadManager_ac64e78c1c9b6dccd3b979233aaf817e1} 
+Gamepad\+Manager::\+\texorpdfstring{$\sim$}{\string~}\+Gamepad\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}
+
+\Hypertarget{classGamepadManager_a359e8a0c182f344041952b4c4f1bb446}\index{GamepadManager@{GamepadManager}!GamepadManager@{GamepadManager}}
+\index{GamepadManager@{GamepadManager}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{GamepadManager()}{GamepadManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classGamepadManager_a359e8a0c182f344041952b4c4f1bb446} 
+Gamepad\+Manager::\+\+Gamepad\+Manager (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classGamepadManager}{Gamepad\+Manager}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\label{classGamepadManager_doc-func-members}
+\Hypertarget{classGamepadManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGamepadManager_a186c1ce24c83a70e92e8440116a930e2}\index{GamepadManager@{GamepadManager}!AddGamepad@{AddGamepad}}
+\index{AddGamepad@{AddGamepad}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{AddGamepad()}{AddGamepad()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a186c1ce24c83a70e92e8440116a930e2} 
+void Gamepad\+Manager::\+\+Add\+Gamepad (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Joystick\+ID}]{device\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds a new gamepad and assigns it to the first available player slot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+ID} & SDL Joystick ID of the gamepad. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00104}{104}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_afc5533e2907a7356e1e7a34cbae3f872}\index{GamepadManager@{GamepadManager}!GetAxis@{GetAxis}}
+\index{GetAxis@{GetAxis}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{GetAxis()}{GetAxis()}}
+{\footnotesize\ttfamily \label{classGamepadManager_afc5533e2907a7356e1e7a34cbae3f872} 
+float Gamepad\+Manager::\+\+Get\+Axis (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{, }\item[{SDL\+\_\+\+Gamepad\+Axis}]{axis}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00204}{204}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}\index{GamepadManager@{GamepadManager}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8} 
+\doxymbox{\hyperlink{classGamepadManager}{Gamepad\+Manager}} \& Gamepad\+Manager::\+\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the singleton instance. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classGamepadManager}{Gamepad\+Manager} instance. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00006}{6}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_a66451577d794bf16cf3fdedddaef6523}\index{GamepadManager@{GamepadManager}!GetTrigger@{GetTrigger}}
+\index{GetTrigger@{GetTrigger}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{GetTrigger()}{GetTrigger()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a66451577d794bf16cf3fdedddaef6523} 
+float Gamepad\+Manager::\+\+Get\+Trigger (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{, }\item[{SDL\+\_\+\+Gamepad\+Axis}]{axis}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00212}{212}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_a1413ab6313f7d89a6c42e42ac59c587c}\index{GamepadManager@{GamepadManager}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a1413ab6313f7d89a6c42e42ac59c587c} 
+bool Gamepad\+Manager::\+\+Initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the gamepad subsystem and detects connected devices. 
+
+\begin{DoxyReturn}{Returns}
+true if initialization succeeded, false otherwise.
+\end{DoxyReturn}
+Tries SDL\+\_\+\+INIT\+\_\+\+GAMEPAD first; if that fails, falls back to SDL\+\_\+\+INIT\+\_\+\+JOYSTICK. This provides compatibility with systems that don\textquotesingle{}t fully support the gamepad API.
+
+\begin{DoxyReturn}{Returns}
+true if initialization succeeded, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00019}{19}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_a49f21e7fc6fc0eb8749ab7b13e62982f}\index{GamepadManager@{GamepadManager}!IsButtonHeld@{IsButtonHeld}}
+\index{IsButtonHeld@{IsButtonHeld}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{IsButtonHeld()}{IsButtonHeld()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a49f21e7fc6fc0eb8749ab7b13e62982f} 
+bool Gamepad\+Manager::\+\+Is\+Button\+Held (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{, }\item[{SDL\+\_\+\+Gamepad\+Button}]{button}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00187}{187}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_ac0353ae7462fed666bd6983491f2979e}\index{GamepadManager@{GamepadManager}!IsButtonPressed@{IsButtonPressed}}
+\index{IsButtonPressed@{IsButtonPressed}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{IsButtonPressed()}{IsButtonPressed()}}
+{\footnotesize\ttfamily \label{classGamepadManager_ac0353ae7462fed666bd6983491f2979e} 
+bool Gamepad\+Manager::\+\+Is\+Button\+Pressed (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{, }\item[{SDL\+\_\+\+Gamepad\+Button}]{button}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00178}{178}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_a853ba537c60f9acb1d5ff90e1980fdd1}\index{GamepadManager@{GamepadManager}!IsButtonReleased@{IsButtonReleased}}
+\index{IsButtonReleased@{IsButtonReleased}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{IsButtonReleased()}{IsButtonReleased()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a853ba537c60f9acb1d5ff90e1980fdd1} 
+bool Gamepad\+Manager::\+\+Is\+Button\+Released (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{, }\item[{SDL\+\_\+\+Gamepad\+Button}]{button}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00195}{195}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_a3f0b50a62302886b5672ea42fe3f888e}\index{GamepadManager@{GamepadManager}!IsConnected@{IsConnected}}
+\index{IsConnected@{IsConnected}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{IsConnected()}{IsConnected()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a3f0b50a62302886b5672ea42fe3f888e} 
+bool Gamepad\+Manager::\+\+Is\+Connected (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a gamepad is connected for a specific player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & Player index (0-\/3). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a gamepad is connected, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00174}{174}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_a2930e5f0279ea6ccc589dfcfeb2d4271}\index{GamepadManager@{GamepadManager}!operator=@{operator=}}
+\index{operator=@{operator=}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a2930e5f0279ea6ccc589dfcfeb2d4271} 
+\doxymbox{\hyperlink{classGamepadManager}{Gamepad\+Manager}} \& Gamepad\+Manager::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classGamepadManager}{Gamepad\+Manager}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\Hypertarget{classGamepadManager_a3d38e8583ad177eef9fecfda4d015826}\index{GamepadManager@{GamepadManager}!ProcessEvent@{ProcessEvent}}
+\index{ProcessEvent@{ProcessEvent}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{ProcessEvent()}{ProcessEvent()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a3d38e8583ad177eef9fecfda4d015826} 
+void Gamepad\+Manager::\+\+Process\+Event (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Event \&}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Processes SDL gamepad events (added/\+removed). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The SDL event to process. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00233}{233}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_ade0a3192b1570bbc2d5f72b0129dfef2}\index{GamepadManager@{GamepadManager}!RemoveGamepad@{RemoveGamepad}}
+\index{RemoveGamepad@{RemoveGamepad}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{RemoveGamepad()}{RemoveGamepad()}}
+{\footnotesize\ttfamily \label{classGamepadManager_ade0a3192b1570bbc2d5f72b0129dfef2} 
+void Gamepad\+Manager::\+\+Remove\+Gamepad (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Joystick\+ID}]{device\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Removes a gamepad and frees its resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+ID} & SDL Joystick ID of the gamepad to remove. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00138}{138}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_a84e1fc9b83d217de9d5160b065309c14}\index{GamepadManager@{GamepadManager}!SetRumble@{SetRumble}}
+\index{SetRumble@{SetRumble}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{SetRumble()}{SetRumble()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a84e1fc9b83d217de9d5160b065309c14} 
+void Gamepad\+Manager::\+\+Set\+Rumble (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{, }\item[{float}]{low\+Frequency}{, }\item[{float}]{high\+Frequency}{, }\item[{Uint32}]{duration\+Ms}{}\end{DoxyParamCaption})}
+
+
+
+Triggers rumble/\+vibration on the gamepad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & Player index (0-\/3). \\
+\hline
+{\em low\+Frequency} & Low-\/frequency rumble intensity (0.\+0 to 1.\+0). \\
+\hline
+{\em high\+Frequency} & High-\/frequency rumble intensity (0.\+0 to 1.\+0). \\
+\hline
+{\em duration\+Ms} & Duration of the rumble in milliseconds. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00220}{220}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_a55ac3f9f4cc6174f3143b176d348f0dc}\index{GamepadManager@{GamepadManager}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a55ac3f9f4cc6174f3143b176d348f0dc} 
+void Gamepad\+Manager::\+\+Shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Shuts down the gamepad system and releases all devices. 
+
+Shuts down the gamepad subsystem and releases all devices. 
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00071}{71}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_a6de10c692816a54eb47ea13a9b0786fc}\index{GamepadManager@{GamepadManager}!Update@{Update}}
+\index{Update@{Update}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a6de10c692816a54eb47ea13a9b0786fc} 
+void Gamepad\+Manager::\+\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the state of all connected gamepads. 
+
+Should be called once per frame to update button states and axes.
+
+Saves the previous button states and updates the current ones. Should be called once per frame. 
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00093}{93}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+\Hypertarget{classGamepadManager_a3e65cf524ef558d0d9ee62283dbfed6b}\index{GamepadManager@{GamepadManager}!UpdateButtonState@{UpdateButtonState}}
+\index{UpdateButtonState@{UpdateButtonState}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{UpdateButtonState()}{UpdateButtonState()}}
+{\footnotesize\ttfamily \label{classGamepadManager_a3e65cf524ef558d0d9ee62283dbfed6b} 
+void Gamepad\+Manager::\+\+Update\+Button\+State (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the button state bitmask for a specific player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & Player index (0-\/3). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8cpp_source_l00158}{158}} of file \doxymbox{\hyperlink{GamepadManager_8cpp_source}{Gamepad\+Manager.\+cpp}}.
+
+
+
+\label{classGamepadManager_doc-variable-members}
+\Hypertarget{classGamepadManager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGamepadManager_acde2ada37c2d93c15b8f2a834b59385f}\index{GamepadManager@{GamepadManager}!m\_ButtonPrevious@{m\_ButtonPrevious}}
+\index{m\_ButtonPrevious@{m\_ButtonPrevious}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{m\_ButtonPrevious}{m\_ButtonPrevious}}
+{\footnotesize\ttfamily \label{classGamepadManager_acde2ada37c2d93c15b8f2a834b59385f} 
+std::\+unordered\+\_\+map$<$int, Uint64$>$ Gamepad\+Manager::\+m\+\_\+\+Button\+Previous\+[4]\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8h_source_l00083}{83}} of file \doxymbox{\hyperlink{GamepadManager_8h_source}{Gamepad\+Manager.\+h}}.
+
+\Hypertarget{classGamepadManager_ad86d9929ec0b5ac35c6b32903a5bcb3c}\index{GamepadManager@{GamepadManager}!m\_ButtonState@{m\_ButtonState}}
+\index{m\_ButtonState@{m\_ButtonState}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{m\_ButtonState}{m\_ButtonState}}
+{\footnotesize\ttfamily \label{classGamepadManager_ad86d9929ec0b5ac35c6b32903a5bcb3c} 
+std::\+unordered\+\_\+map$<$int, Uint64$>$ Gamepad\+Manager::\+m\+\_\+\+Button\+State\+[4]\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8h_source_l00082}{82}} of file \doxymbox{\hyperlink{GamepadManager_8h_source}{Gamepad\+Manager.\+h}}.
+
+\Hypertarget{classGamepadManager_a68b06a2e5a93cf739c5bdf9851c2d381}\index{GamepadManager@{GamepadManager}!m\_Gamepads@{m\_Gamepads}}
+\index{m\_Gamepads@{m\_Gamepads}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{m\_Gamepads}{m\_Gamepads}}
+{\footnotesize\ttfamily \label{classGamepadManager_a68b06a2e5a93cf739c5bdf9851c2d381} 
+std::\+unordered\+\_\+map$<$int, SDL\+\_\+\+Gamepad\texorpdfstring{$\ast$}{*}$>$ Gamepad\+Manager::\+m\+\_\+\+Gamepads\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8h_source_l00081}{81}} of file \doxymbox{\hyperlink{GamepadManager_8h_source}{Gamepad\+Manager.\+h}}.
+
+\Hypertarget{classGamepadManager_a198e2ef559b545d3d7ee93167ab85117}\index{GamepadManager@{GamepadManager}!MAX\_PLAYERS@{MAX\_PLAYERS}}
+\index{MAX\_PLAYERS@{MAX\_PLAYERS}!GamepadManager@{GamepadManager}}
+\doxysubsubsection{\texorpdfstring{MAX\_PLAYERS}{MAX\_PLAYERS}}
+{\footnotesize\ttfamily \label{classGamepadManager_a198e2ef559b545d3d7ee93167ab85117} 
+int Gamepad\+Manager::\+\+MAX\+\_\+\+PLAYERS = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{GamepadManager_8h_source_l00085}{85}} of file \doxymbox{\hyperlink{GamepadManager_8h_source}{Gamepad\+Manager.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+core/\doxymbox{\hyperlink{GamepadManager_8h}{Gamepad\+Manager.\+h}}\item 
+engine/\+core/\doxymbox{\hyperlink{GamepadManager_8cpp}{Gamepad\+Manager.\+cpp}}\end{DoxyCompactItemize}

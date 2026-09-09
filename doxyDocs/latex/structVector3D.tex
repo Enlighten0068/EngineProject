@@ -1,0 +1,205 @@
+\doxysection{Vector3D Struct Reference}
+\hypertarget{structVector3D}{}\label{structVector3D}\index{Vector3D@{Vector3D}}
+
+
+3D vector struct with basic arithmetic operations.  
+
+
+
+
+{\ttfamily \+\#include $<$Vector3\+D.\+h$>$}
+
+
+
+Collaboration diagram for Vector3D:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{structVector3D__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor: zero vector. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector3D_a09ca256cebe94be3abf43cae2ce09abb}{Vector3D}} (float x\+Value, float y\+Value, float z\+Value)
+\begin{DoxyCompactList}\small\item\em Constructs a vector from three floats. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{structVector3D_ae5153e5e26852627ccea88d399e13c6e}{operator+}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&other) const
+\begin{DoxyCompactList}\small\item\em Vector addition. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{structVector3D_a2d77fde2d4f484a639cb4dfd500c3540}{operator-\/}} (const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&other) const
+\begin{DoxyCompactList}\small\item\em Vector subtraction. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{structVector3D_a5a1ef0aee8e6c18619cda870c757f91e}{operator\texorpdfstring{$\ast$}{*}}} (float scalar) const
+\begin{DoxyCompactList}\small\item\em Scalar multiplication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}
+\item 
+float \doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}
+\item 
+float \doxymbox{\hyperlink{structVector3D_af9728f1eba23b9ee091755346214f391}{z}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+3D vector struct with basic arithmetic operations. 
+
+Used for positions, directions, and other 3D spatial data. All operators are const and return a new vector. 
+
+Definition at line \doxymbox{\hyperlink{Vector3D_8h_source_l00009}{9}} of file \doxymbox{\hyperlink{Vector3D_8h_source}{Vector3\+D.\+h}}.
+
+
+
+\label{structVector3D_doc-constructors}
+\Hypertarget{structVector3D_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}\index{Vector3D@{Vector3D}!Vector3D@{Vector3D}}
+\index{Vector3D@{Vector3D}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{Vector3D()}{Vector3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{structVector3D_a0b11a8d75da427b27443d8a94d0d296c} 
+Vector3\+D::\+\+Vector3D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor: zero vector. 
+
+
+
+Definition at line \doxymbox{\hyperlink{Vector3D_8h_source_l00017}{17}} of file \doxymbox{\hyperlink{Vector3D_8h_source}{Vector3\+D.\+h}}.
+
+\Hypertarget{structVector3D_a09ca256cebe94be3abf43cae2ce09abb}\index{Vector3D@{Vector3D}!Vector3D@{Vector3D}}
+\index{Vector3D@{Vector3D}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{Vector3D()}{Vector3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{structVector3D_a09ca256cebe94be3abf43cae2ce09abb} 
+Vector3\+D::\+\+Vector3D (\begin{DoxyParamCaption}\item[{float}]{x\+Value}{, }\item[{float}]{y\+Value}{, }\item[{float}]{z\+Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a vector from three floats. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Value} & X component. \\
+\hline
+{\em y\+Value} & Y component. \\
+\hline
+{\em z\+Value} & Z component. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Vector3D_8h_source_l00025}{25}} of file \doxymbox{\hyperlink{Vector3D_8h_source}{Vector3\+D.\+h}}.
+
+
+
+\label{structVector3D_doc-func-members}
+\Hypertarget{structVector3D_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structVector3D_a5a1ef0aee8e6c18619cda870c757f91e}\index{Vector3D@{Vector3D}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{structVector3D_a5a1ef0aee8e6c18619cda870c757f91e} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Vector3\+D::\+operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{float}]{scalar}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Scalar multiplication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Multiplicand. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector with components multiplied by scalar. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Vector3D_8h_source_l00050}{50}} of file \doxymbox{\hyperlink{Vector3D_8h_source}{Vector3\+D.\+h}}.
+
+\Hypertarget{structVector3D_ae5153e5e26852627ccea88d399e13c6e}\index{Vector3D@{Vector3D}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{structVector3D_ae5153e5e26852627ccea88d399e13c6e} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Vector3\+D::\+operator+ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vector addition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Vector to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector with component-\/wise sum. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Vector3D_8h_source_l00032}{32}} of file \doxymbox{\hyperlink{Vector3D_8h_source}{Vector3\+D.\+h}}.
+
+\Hypertarget{structVector3D_a2d77fde2d4f484a639cb4dfd500c3540}\index{Vector3D@{Vector3D}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{structVector3D_a2d77fde2d4f484a639cb4dfd500c3540} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Vector3\+D::\+operator-\/ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vector subtraction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Vector to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector with component-\/wise difference. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Vector3D_8h_source_l00041}{41}} of file \doxymbox{\hyperlink{Vector3D_8h_source}{Vector3\+D.\+h}}.
+
+
+
+\label{structVector3D_doc-variable-members}
+\Hypertarget{structVector3D_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structVector3D_aca5d15bdb846448e3cb73b072783f329}\index{Vector3D@{Vector3D}!x@{x}}
+\index{x@{x}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{structVector3D_aca5d15bdb846448e3cb73b072783f329} 
+float Vector3\+D::\+x}
+
+
+
+Definition at line \doxymbox{\hyperlink{Vector3D_8h_source_l00010}{10}} of file \doxymbox{\hyperlink{Vector3D_8h_source}{Vector3\+D.\+h}}.
+
+\Hypertarget{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}\index{Vector3D@{Vector3D}!y@{y}}
+\index{y@{y}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{structVector3D_a9b6d194fcf526d7d4f9e902421285e94} 
+float Vector3\+D::\+y}
+
+
+
+Definition at line \doxymbox{\hyperlink{Vector3D_8h_source_l00011}{11}} of file \doxymbox{\hyperlink{Vector3D_8h_source}{Vector3\+D.\+h}}.
+
+\Hypertarget{structVector3D_af9728f1eba23b9ee091755346214f391}\index{Vector3D@{Vector3D}!z@{z}}
+\index{z@{z}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily \label{structVector3D_af9728f1eba23b9ee091755346214f391} 
+float Vector3\+D::\+z}
+
+
+
+Definition at line \doxymbox{\hyperlink{Vector3D_8h_source_l00012}{12}} of file \doxymbox{\hyperlink{Vector3D_8h_source}{Vector3\+D.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+math/\doxymbox{\hyperlink{Vector3D_8h}{Vector3\+D.\+h}}\end{DoxyCompactItemize}

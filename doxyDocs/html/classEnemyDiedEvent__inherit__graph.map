@@ -1,0 +1,5 @@
+<map id="EnemyDiedEvent" name="EnemyDiedEvent">
+<area shape="rect" id="Node000001" title="Event dispatched when an enemy dies." alt="" coords="5,148,154,332"/>
+<area shape="rect" id="Node000002" href="$classEvent.html" title="Base class for all events in the engine." alt="" coords="16,5,143,100"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,112,82,148,77,148,79,117"/>
+</map>

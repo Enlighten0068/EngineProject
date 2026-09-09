@@ -1,0 +1,396 @@
+\doxysection{Demo2\+DFixed\+Scene.\+cpp}
+\hypertarget{Demo2DFixedScene_8cpp_source}{}\label{Demo2DFixedScene_8cpp_source}\index{engine/demo/Demo2DFixedScene.cpp@{engine/demo/Demo2DFixedScene.cpp}}
+\doxymbox{\hyperlink{Demo2DFixedScene_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{TileScale_8h}{components/TileScale.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Input_8h}{core/Input.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Demo2DFixedScene_8h}{demo/Demo2DFixedScene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{ResourceManager_8h}{resources/ResourceManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00010}\doxymbox{\hyperlink{classDemo2DFixedScene_a492ba9953dd92d3b3536c44b1d7c2b2f}{00010}}\ \doxymbox{\hyperlink{classDemo2DFixedScene_a492ba9953dd92d3b3536c44b1d7c2b2f}{Demo2DFixedScene::Demo2DFixedScene}}(\doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ va,\ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ ib,}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classCamera2D}{Camera2D}}\&\ camera,\ \doxymbox{\hyperlink{classShader}{Shader}}\&\ lineShader)}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00012}00012\ :\ \doxymbox{\hyperlink{classDemo2DFixedScene_a72eb5c39b6d923aef977f431e0988b8a}{m\_Shader}}(shader),\ \doxymbox{\hyperlink{classDemo2DFixedScene_a77804f6fb699219b0143b0b8f001a8c4}{m\_VertexArray}}(va),\ \doxymbox{\hyperlink{classDemo2DFixedScene_a2ced53f08d393097dbcc9d3626aa2067}{m\_IndexBuffer}}(ib),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00013}00013\ \doxymbox{\hyperlink{classDemo2DFixedScene_a3ab92e6d343904b8e4b28e017fa46b9f}{m\_Camera}}(camera),\ \doxymbox{\hyperlink{classDemo2DFixedScene_a787fa04b8244b3ae73716afc235a5a62}{m\_LineShader}}(lineShader)\{\}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00015}\doxymbox{\hyperlink{classDemo2DFixedScene_af4168b94757ca0061d18f058efd2b5cc}{00015}}\ \doxymbox{\hyperlink{classDemo2DFixedScene_af4168b94757ca0061d18f058efd2b5cc}{Demo2DFixedScene::\string~Demo2DFixedScene}}()\{\ \doxymbox{\hyperlink{classDemo2DFixedScene_a327f00eb5155cd0b30138787babecba2}{OnExit}}();\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00023}\doxymbox{\hyperlink{classDemo2DFixedScene_a1daab876b813800575999e0a5374d899}{00023}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DFixedScene_a1daab876b813800575999e0a5374d899}{Demo2DFixedScene::OnEnter}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00024}00024\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Entering\ Demo2DFixedScene\ with\ fixed\ camera."{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00025}00025\ \ \ \ \ glClearColor(0.3f,\ 0.5f,\ 0.7f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00026}00026\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a72b82e82afbbd9c98718549f5c4c3e83}{SetupScene}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00027}00027\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Entered\ Demo(fixed)\ successfully."{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00035}\doxymbox{\hyperlink{classDemo2DFixedScene_a327f00eb5155cd0b30138787babecba2}{00035}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DFixedScene_a327f00eb5155cd0b30138787babecba2}{Demo2DFixedScene::OnExit}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00036}00036\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}.reset();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00037}00037\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3d03cc75e7581e3c6dd7867a09efc071}{m\_FpsCounter}}.reset();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00038}00038\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}.reset();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00039}00039\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}.reset();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00040}00040\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}}.clear();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00041}00041\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a372f55e9f96ee108c3b358650b3160a1}{m\_EnemyDefinitions}}.clear();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00042}00042\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Exiting\ Demo2DFixedScene"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00051}\doxymbox{\hyperlink{classDemo2DFixedScene_a72b82e82afbbd9c98718549f5c4c3e83}{00051}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DFixedScene_a72b82e82afbbd9c98718549f5c4c3e83}{Demo2DFixedScene::SetupScene}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//Create\ ECS\ scene\ and\ world}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00053}00053\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}\ =\ std::make\_unique<ECSScene>(\doxymbox{\hyperlink{classDemo2DFixedScene_a72eb5c39b6d923aef977f431e0988b8a}{m\_Shader}},\ \doxymbox{\hyperlink{classDemo2DFixedScene_a77804f6fb699219b0143b0b8f001a8c4}{m\_VertexArray}},\ \doxymbox{\hyperlink{classDemo2DFixedScene_a2ced53f08d393097dbcc9d3626aa2067}{m\_IndexBuffer}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00054}00054\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}\ =\ std::make\_unique<GameWorld>(-\/20.0f,\ 20.0f,\ -\/10.0f,\ 10.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//Set\ camera\ projection\ to\ show\ the\ entire\ world}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00057}00057\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3ab92e6d343904b8e4b28e017fa46b9f}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_aed0e07c98dcc2dab4cfb46021c5af4f6}{SetProjection}}(\doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinX(),\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMaxX(),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinY(),\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMaxY());}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{float}\ centerX\ =\ (\doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinX()\ +\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMaxX())\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{float}\ centerY\ =\ (\doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinY()\ +\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMaxY())\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00062}00062\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3ab92e6d343904b8e4b28e017fa46b9f}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_add37aa370c8718e7d38a0de2f8b86b10}{SetPosition}}(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(centerX,\ centerY,\ 0.0f));}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00063}00063\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3ab92e6d343904b8e4b28e017fa46b9f}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_adab7c2dd541f23c9e20ce54c73520f03}{Update}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00065}00065\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Camera\ projection\ set\ to\ world\ bounds."{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//Load\ textures}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{auto}\ playerTex\ =\ \doxymbox{\hyperlink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{ResourceManager::GetInstance}}().\doxymbox{\hyperlink{classResourceManager_ab4f1fc4151670863ad470b5e138dfd1b}{LoadTexture}}(\textcolor{stringliteral}{"{}assets/textures/player.png"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{auto}\ tileTex\ =\ \doxymbox{\hyperlink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{ResourceManager::GetInstance}}().\doxymbox{\hyperlink{classResourceManager_ab4f1fc4151670863ad470b5e138dfd1b}{LoadTexture}}(\textcolor{stringliteral}{"{}assets/textures/tile.png"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}(!playerTex\ ||\ !tileTex)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(\textcolor{stringliteral}{"{}Failed\ to\ load\ one\ or\ more\ textures."{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{auto}\ wallTex\ =\ tileTex;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//Create\ player\ entity}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00077}00077\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_ae18f7410197aaf02aa761a54fe3d9dab}{m\_PlayerEntity}}\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ 0.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(3.0f,\ 3.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//Create\ platform\ entities}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//Left\ Wall}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{auto}\ left\_wall\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(\doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinX()\ +\ 0.50f,\ 0.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}(1.0f,\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMaxY()\ -\/\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinY(),\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wallTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00086}00086\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a8e149e818044f82568f4fcb0a2375ae0}{m\_PlatformEntities}}.push\_back(left\_wall);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00087}00087\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry().emplace<\doxymbox{\hyperlink{structComponents_1_1TileScale}{Components::TileScale}}>(left\_wall,\ 1.0f,\ 20.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{comment}{//Right\ Wall}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{auto}\ rgt\_wall\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(\doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMaxX()\ -\/\ 0.50f,\ 0.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}(1.0f,\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMaxY()\ -\/\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinY(),\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wallTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00093}00093\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a8e149e818044f82568f4fcb0a2375ae0}{m\_PlatformEntities}}.push\_back(rgt\_wall);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00094}00094\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry().emplace<\doxymbox{\hyperlink{structComponents_1_1TileScale}{Components::TileScale}}>(rgt\_wall,\ 1.0f,\ 20.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//Ceiling}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{auto}\ ceiling\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMaxY()\ -\/\ 0.50f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}(\doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMaxX()\ -\/\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinX(),\ 1.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wallTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00100}00100\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a8e149e818044f82568f4fcb0a2375ae0}{m\_PlatformEntities}}.push\_back(ceiling);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00101}00101\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry().emplace<\doxymbox{\hyperlink{structComponents_1_1TileScale}{Components::TileScale}}>(ceiling,\ 39.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{comment}{//Floor}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keyword}{auto}\ plt\_floor\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinY()\ +\ 0.50f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}(\doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMaxX()\ -\/\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinX(),\ 1.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tileTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00107}00107\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a8e149e818044f82568f4fcb0a2375ae0}{m\_PlatformEntities}}.push\_back(plt\_floor);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00108}00108\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry().emplace<\doxymbox{\hyperlink{structComponents_1_1TileScale}{Components::TileScale}}>(plt\_floor,\ 39.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{comment}{//Floating\ platform\ 1}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keyword}{auto}\ plt\_float1\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(-\/8.0f,\ -\/3.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(4.0f,\ 1.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tileTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00114}00114\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a8e149e818044f82568f4fcb0a2375ae0}{m\_PlatformEntities}}.push\_back(plt\_float1);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00115}00115\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry().emplace<\doxymbox{\hyperlink{structComponents_1_1TileScale}{Components::TileScale}}>(plt\_float1,\ 4.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{comment}{//Floating\ platform\ 2}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keyword}{auto}\ plt\_float2\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(8.0f,\ -\/3.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(4.0f,\ 1.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tileTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00121}00121\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a8e149e818044f82568f4fcb0a2375ae0}{m\_PlatformEntities}}.push\_back(plt\_float2);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00122}00122\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry().emplace<\doxymbox{\hyperlink{structComponents_1_1TileScale}{Components::TileScale}}>(plt\_float2,\ 4.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{comment}{//Central\ platform}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{auto}\ plt\_floatcenter\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>CreateSpriteEntity(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ 2.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(8.0f,\ 1.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tileTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00128}00128\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a8e149e818044f82568f4fcb0a2375ae0}{m\_PlatformEntities}}.push\_back(plt\_floatcenter);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00129}00129\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry().emplace<\doxymbox{\hyperlink{structComponents_1_1TileScale}{Components::TileScale}}>(plt\_floatcenter,\ 8.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{comment}{//Spawn\ enemies}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00132}00132\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_ac513fcf662cef5ea0db8f3c361be058d}{SpawnEnemies}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{comment}{//Initialize\ player\ controller}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00135}00135\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}\ =\ std::make\_unique<PlayerController>(\doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry(),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_ae18f7410197aaf02aa761a54fe3d9dab}{m\_PlayerEntity}},\ *\doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00137}00137\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>SetSpeed(4.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{comment}{//Initialize\ FPS\ counter}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00140}00140\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3d03cc75e7581e3c6dd7867a09efc071}{m\_FpsCounter}}\ =\ std::make\_unique<FpsCounter>();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00141}00141\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00147}\doxymbox{\hyperlink{classDemo2DFixedScene_ac626aa848bd8d98054f7d2b21a724ac9}{00147}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DFixedScene_ac626aa848bd8d98054f7d2b21a724ac9}{Demo2DFixedScene::Update}}(\textcolor{keywordtype}{float}\ deltaTime)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00148}00148\ \ \ \ \ \doxymbox{\hyperlink{classLog_a112833cbd05320dac0790f50eb4ab25e}{Log::InfoThrottled}}(\textcolor{stringliteral}{"{}Update\ running..."{}},\ \textcolor{stringliteral}{"{}update\_diagnostic"{}},\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//Update\ player}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00151}00151\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>Update();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00152}00152\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_abe838d285b6b2bc5277c613b39943d19}{ResolveCollisions}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00154}00154\ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry().get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(\doxymbox{\hyperlink{classDemo2DFixedScene_ae18f7410197aaf02aa761a54fe3d9dab}{m\_PlayerEntity}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{comment}{//Update\ enemies}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00157}00157\ \ \ \ \ \doxymbox{\hyperlink{classEnemySystem_a122dd4911d2670f242ec120e6a82081e}{EnemySystem::Update}}(\doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry(),\ deltaTime,}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a8e149e818044f82568f4fcb0a2375ae0}{m\_PlatformEntities}},\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinY());}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{comment}{//Check\ enemy\ collisions}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00161}00161\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_ae4c2705e2db95258b513cfe674f9c797}{CheckEnemyCollisions}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00163}00163\ \ \ \ \ \textcolor{comment}{//Check\ player-\/enemy\ collisions}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keyword}{auto}\&\ registry\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00165}00165\ \ \ \ \ \textcolor{keyword}{auto}\&\ playerTransform\ =\ registry.get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(\doxymbox{\hyperlink{classDemo2DFixedScene_ae18f7410197aaf02aa761a54fe3d9dab}{m\_PlayerEntity}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00166}00166\ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ playerSize\ =\ playerTransform.Scale;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keyword}{auto}\ enemyView\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry().view<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}},\ \doxymbox{\hyperlink{structComponents_1_1Enemy}{Components::Enemy}}>();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [entity,\ transform,\ enemy]\ :\ enemyView.each())\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!enemy.IsActive)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classEnemySystem_ae6879f0cea50154a47a3ba26eec29bde}{EnemySystem::CheckCollision}}(playerTransform.Position,\ playerSize,\ transform.Position,\ transform.Scale))\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Player\ collided\ with\ enemy!"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>Die(\textcolor{stringliteral}{"{}Killed\ by\ enemy"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00176}00176\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{comment}{//Update\ FPS\ counter}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00179}00179\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3d03cc75e7581e3c6dd7867a09efc071}{m\_FpsCounter}}-\/>Update();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{comment}{//Log\ player\ position\ for\ debugging}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00182}00182\ \ \ \ \ \doxymbox{\hyperlink{classLog_a112833cbd05320dac0790f50eb4ab25e}{Log::InfoThrottled}}(std::format(\textcolor{stringliteral}{"{}Player:\ (\{:.2f\},\ \{:.2f\})"{}},\ transform.Position.x,\ transform.Position.y),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}player\_pos"{}},\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00184}00184\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00191}\doxymbox{\hyperlink{classDemo2DFixedScene_ad938c557aa7ad055aee8d25171fafad5}{00191}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DFixedScene_ad938c557aa7ad055aee8d25171fafad5}{Demo2DFixedScene::Render}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00192}00192\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ view\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_a3ab92e6d343904b8e4b28e017fa46b9f}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_ae3168f69ca945882e188e8afd65c3df0}{GetViewMatrix}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\&\ projection\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_a3ab92e6d343904b8e4b28e017fa46b9f}{m\_Camera}}.\doxymbox{\hyperlink{classCamera2D_ab701ef4c77ac12b75120d37dd84f6cfa}{GetProjectionMatrix}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{comment}{//Debug\ logging\ for\ camera\ matrices}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00196}00196\ \ \ \ \ \doxymbox{\hyperlink{classLog_a112833cbd05320dac0790f50eb4ab25e}{Log::InfoThrottled}}(std::format(\textcolor{stringliteral}{"{}View[12]=\{\},\ View[13]=\{\}"{}},}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ view.\doxymbox{\hyperlink{classMatrix4_a8ac4bc2827badac74be9b12d788e4d1c}{Data}}()[12],\ view.\doxymbox{\hyperlink{classMatrix4_a8ac4bc2827badac74be9b12d788e4d1c}{Data}}()[13]),\ \textcolor{stringliteral}{"{}view\_pos"{}},\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00198}00198\ \ \ \ \ \doxymbox{\hyperlink{classLog_a112833cbd05320dac0790f50eb4ab25e}{Log::InfoThrottled}}(std::format(\textcolor{stringliteral}{"{}Proj[0]=\{\},\ Proj[5]=\{\},\ Proj[12]=\{\},\ Proj[13]=\{\}"{}},}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ projection.\doxymbox{\hyperlink{classMatrix4_a8ac4bc2827badac74be9b12d788e4d1c}{Data}}()[0],\ projection.\doxymbox{\hyperlink{classMatrix4_a8ac4bc2827badac74be9b12d788e4d1c}{Data}}()[5],}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ projection.\doxymbox{\hyperlink{classMatrix4_a8ac4bc2827badac74be9b12d788e4d1c}{Data}}()[12],\ projection.\doxymbox{\hyperlink{classMatrix4_a8ac4bc2827badac74be9b12d788e4d1c}{Data}}()[13]),\ \textcolor{stringliteral}{"{}proj\_debug"{}},\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00202}00202\ \ \ \ \ \textcolor{comment}{//Render\ ECS\ scene\ and\ world\ borders}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00203}00203\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>Render(view,\ projection);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00204}00204\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>Render(\doxymbox{\hyperlink{classDemo2DFixedScene_a787fa04b8244b3ae73716afc235a5a62}{m\_LineShader}},\ view,\ projection);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00205}00205\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00213}\doxymbox{\hyperlink{classDemo2DFixedScene_abe838d285b6b2bc5277c613b39943d19}{00213}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DFixedScene_abe838d285b6b2bc5277c613b39943d19}{Demo2DFixedScene::ResolveCollisions}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keyword}{auto}\&\ registry\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00215}00215\ \ \ \ \ \textcolor{keyword}{auto}\&\ playerTransform\ =\ registry.get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(\doxymbox{\hyperlink{classDemo2DFixedScene_ae18f7410197aaf02aa761a54fe3d9dab}{m\_PlayerEntity}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00216}00216\ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ playerHalfSize\ =\ playerTransform.Scale\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00218}00218\ \ \ \ \ \textcolor{keywordtype}{bool}\ grounded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00219}00219\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ GROUND\_MARGIN\ =\ 0.1f;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{keywordtype}{float}\ playerLeft\ =\ playerTransform.Position.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ -\/\ playerHalfSize.x;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{keywordtype}{float}\ playerRight\ =\ playerTransform.Position.x\ +\ playerHalfSize.x;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordtype}{float}\ playerBottom\ =\ playerTransform.Position.y\ -\/\ playerHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00224}00224\ \ \ \ \ \textcolor{keywordtype}{float}\ playerTop\ =\ playerTransform.Position.y\ +\ playerHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00226}00226\ \ \ \ \ \textcolor{keywordflow}{for}(entt::entity\ platform\ :\ \doxymbox{\hyperlink{classDemo2DFixedScene_a8e149e818044f82568f4fcb0a2375ae0}{m\_PlatformEntities}})\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ platformTransform\ =\ registry.get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(platform);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ platformHalfSize\ =\ platformTransform.Scale\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformLeft\ =\ platformTransform.Position.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ -\/\ platformHalfSize.x;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformRight\ =\ platformTransform.Position.x\ +\ platformHalfSize.x;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformTop\ =\ platformTransform.Position.y\ +\ platformHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ platformBottom\ =\ platformTransform.Position.y\ -\/\ platformHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ overlapX\ =\ (playerRight\ >\ platformLeft\ \&\&\ playerLeft\ <\ platformRight);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ overlapY\ =\ (playerTop\ >\ platformBottom\ \&\&\ playerBottom\ <\ platformTop);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Check\ if\ player\ is\ landing\ on\ top\ of\ platform}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(overlapX)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanceToTop\ =\ playerBottom\ -\/\ platformTop;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(distanceToTop\ <=\ GROUND\_MARGIN\ \&\&\ distanceToTop\ >=\ -\/GROUND\_MARGIN)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>GetVelocity().y\ <=\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grounded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerTransform.Position.y\ =\ platformTop\ +\ playerHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>GetVelocity().y\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \textcolor{comment}{//General\ collision\ resolution}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!grounded\ \&\&\ overlapX\ \&\&\ overlapY)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ delta\ =\ playerTransform.Position\ -\/\ platformTransform.Position;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ overlap\ =\ playerHalfSize\ +\ platformHalfSize\ -\/\ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(std::abs(delta.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}),\ std::abs(delta.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}),\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(overlap.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ >\ 0.0f\ \&\&\ overlap.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ >\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(overlap.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ <\ overlap.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}})\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Horizontal\ collision}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(delta.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ >\ 0.0f)\ playerTransform.Position.x\ +=\ overlap.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ playerTransform.Position.x\ -\/=\ overlap.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Vertical\ collision}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(delta.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ <\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerTransform.Position.y\ -\/=\ overlap.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>GetVelocity().y\ >\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>GetVelocity().y\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00272}00272\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00274}00274\ \ \ \ \ \textcolor{comment}{//Clamp\ to\ world\ floor}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00275}00275\ \ \ \ \ \textcolor{keywordflow}{if}(!grounded)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ worldFloor\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_afbb0d5066454921f90e85a0533374fd3}{m\_World}}-\/>GetMinY()\ +\ playerHalfSize.y;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(playerTransform.Position.y\ <=\ worldFloor\ +\ GROUND\_MARGIN)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ playerTransform.Position.y\ =\ worldFloor;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>GetVelocity().y\ <=\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>GetVelocity().y\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ grounded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00284}00284\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00286}00286\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>SetGrounded(grounded);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00287}00287\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00288}00288\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00295}\doxymbox{\hyperlink{classDemo2DFixedScene_ac513fcf662cef5ea0db8f3c361be058d}{00295}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DFixedScene_ac513fcf662cef5ea0db8f3c361be058d}{Demo2DFixedScene::SpawnEnemies}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00296}00296\ \ \ \ \ \textcolor{comment}{//Clear\ previous\ enemies\ and\ definitions}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00297}00297\ \ \ \ \ \textcolor{keywordflow}{for}(entt::entity\ enemy\ :\ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}})\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry().destroy(enemy);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00298}00298\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}}.clear();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00299}00299\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a372f55e9f96ee108c3b358650b3160a1}{m\_EnemyDefinitions}}.clear();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00301}00301\ \ \ \ \ \textcolor{keyword}{auto}\&\ registry\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00302}00302\ \ \ \ \ \textcolor{keyword}{auto}\ enemyTex\ =\ \doxymbox{\hyperlink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{ResourceManager::GetInstance}}().\doxymbox{\hyperlink{classResourceManager_ab4f1fc4151670863ad470b5e138dfd1b}{LoadTexture}}(\textcolor{stringliteral}{"{}assets/textures/enemy.png"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00303}00303\ \ \ \ \ \textcolor{keywordflow}{if}(!enemyTex)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a5a5a1c297ed72ab2f850d0d01ae00aaa}{Log::Warning}}(\textcolor{stringliteral}{"{}Enemy\ texture\ not\ found.\ Using\ tile\ texture\ as\ fallback."{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ enemyTex\ =\ \doxymbox{\hyperlink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{ResourceManager::GetInstance}}().\doxymbox{\hyperlink{classResourceManager_ab4f1fc4151670863ad470b5e138dfd1b}{LoadTexture}}(\textcolor{stringliteral}{"{}assets/textures/tile.png"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!enemyTex)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00307}00307\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00309}00309\ \ \ \ \ \textcolor{comment}{//Helper\ lambda\ to\ create\ an\ enemy\ and\ store\ its\ definition}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00310}00310\ \ \ \ \ \textcolor{keyword}{auto}\ createEnemy\ =\ [\&](\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ pos,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ scale,}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ patrolStart,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ patrolEnd,}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ speed)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Create\ enemy\ entity}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ enemy\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>CreateSpriteEntity(pos,\ scale,\ enemyTex);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ registry.emplace<\doxymbox{\hyperlink{structComponents_1_1Enemy}{Components::Enemy}}>(enemy);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ registry.emplace<\doxymbox{\hyperlink{structComponents_1_1Patrol}{Components::Patrol}}>(enemy,\ patrolStart,\ patrolEnd,\ speed);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ registry.emplace<\doxymbox{\hyperlink{structComponents_1_1PhysicsBody}{Components::PhysicsBody}}>(enemy);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}}.push\_back(enemy);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Save\ definition\ for\ respawn}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structDemo2DFixedScene_1_1EnemyDefinition}{EnemyDefinition}}\ def;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ def.\doxymbox{\hyperlink{structDemo2DFixedScene_1_1EnemyDefinition_ac382e2dead6b8018245fe1978f4b1668}{Position}}\ =\ pos;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ def.\doxymbox{\hyperlink{structDemo2DFixedScene_1_1EnemyDefinition_ab9c519376bbec771cc02ad437a914ae6}{Scale}}\ =\ scale;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ def.\doxymbox{\hyperlink{structDemo2DFixedScene_1_1EnemyDefinition_a2c9b9c09496bb2ba40bf1e865cd1c797}{Texture}}\ =\ enemyTex;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ def.\doxymbox{\hyperlink{structDemo2DFixedScene_1_1EnemyDefinition_ac5bd35d617b44cdb96a7bd3416cff056}{PatrolStart}}\ =\ patrolStart;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ def.\doxymbox{\hyperlink{structDemo2DFixedScene_1_1EnemyDefinition_a85327057cec5de5bbdeb8810237d397b}{PatrolEnd}}\ =\ patrolEnd;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ def.\doxymbox{\hyperlink{structDemo2DFixedScene_1_1EnemyDefinition_a21f2328a2619d085f532e5c550a279f8}{PatrolSpeed}}\ =\ speed;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a372f55e9f96ee108c3b358650b3160a1}{m\_EnemyDefinitions}}.push\_back(def);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00329}00329\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Create\ enemies\ at\ different\ positions}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Enemy\ 1:\ ground\ level\ left\ side}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ createEnemy(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(-\/12.0f,\ -\/8.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(3.0f,\ 3.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(-\/15.0f,\ -\/8.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(-\/10.0f,\ -\/8.0f,\ 0.0f),\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Enemy\ 2:\ left\ floating\ platform}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ createEnemy(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(-\/8.0f,\ -\/2.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(3.0f,\ 3.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(-\/10.0f,\ -\/2.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(-\/6.0f,\ -\/2.0f,\ 0.0f),\ 1.5f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Enemy\ 3:\ central\ platform}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ createEnemy(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ 3.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(3.0f,\ 3.0f,\ 1.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(-\/2.0f,\ 3.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(2.0f,\ 3.0f,\ 0.0f),\ 1.8f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Spawned\ \{\}\ enemies"{}},\ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}}.size()));}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00351}00351\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00352}00352\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00359}\doxymbox{\hyperlink{classDemo2DFixedScene_a52b58c77935f74c69ec27e6a48ad9187}{00359}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DFixedScene_a52b58c77935f74c69ec27e6a48ad9187}{Demo2DFixedScene::RespawnEnemies}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00360}00360\ \ \ \ \ \textcolor{comment}{//Destroy\ existing\ enemy\ entities}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00361}00361\ \ \ \ \ \textcolor{keywordflow}{for}(entt::entity\ enemy\ :\ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}})\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry().destroy(enemy);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00362}00362\ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}}.clear();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00364}00364\ \ \ \ \ \textcolor{keyword}{auto}\&\ registry\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00365}00365\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00366}00366\ \ \ \ \ \textcolor{comment}{//Recreate\ enemies\ from\ stored\ definitions}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00367}00367\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ def\ :\ \doxymbox{\hyperlink{classDemo2DFixedScene_a372f55e9f96ee108c3b358650b3160a1}{m\_EnemyDefinitions}})\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ enemy\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>CreateSpriteEntity(def.Position,\ def.Scale,\ def.Texture);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ registry.emplace<\doxymbox{\hyperlink{structComponents_1_1Enemy}{Components::Enemy}}>(enemy);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ registry.emplace<\doxymbox{\hyperlink{structComponents_1_1Patrol}{Components::Patrol}}>(enemy,\ def.PatrolStart,\ def.PatrolEnd,\ def.PatrolSpeed);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ registry.emplace<\doxymbox{\hyperlink{structComponents_1_1PhysicsBody}{Components::PhysicsBody}}>(enemy);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}}.push\_back(enemy);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00373}00373\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00374}00374\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00375}00375\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Respawned\ \{\}\ enemies"{}},\ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}}.size()));}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00376}00376\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00385}\doxymbox{\hyperlink{classDemo2DFixedScene_ae4c2705e2db95258b513cfe674f9c797}{00385}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DFixedScene_ae4c2705e2db95258b513cfe674f9c797}{Demo2DFixedScene::CheckEnemyCollisions}}()\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00386}00386\ \ \ \ \ \textcolor{keyword}{auto}\&\ registry\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00387}00387\ \ \ \ \ \textcolor{keyword}{auto}\&\ playerTransform\ =\ registry.get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(\doxymbox{\hyperlink{classDemo2DFixedScene_ae18f7410197aaf02aa761a54fe3d9dab}{m\_PlayerEntity}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00388}00388\ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ playerSize\ =\ playerTransform.Scale;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00389}00389\ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ playerHalf\ =\ playerSize\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00390}00390\ \ \ \ \ \textcolor{keywordtype}{float}\ playerBottom\ =\ playerTransform.Position.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ -\/\ playerHalf.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00391}00391\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00392}00392\ \ \ \ \ \textcolor{keyword}{auto}\ enemyView\ =\ registry.view<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}},\ \doxymbox{\hyperlink{structComponents_1_1Enemy}{Components::Enemy}},\ \doxymbox{\hyperlink{structComponents_1_1PhysicsBody}{Components::PhysicsBody}}>();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00394}00394\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [entity,\ transform,\ enemy,\ physics]\ :\ enemyView.each())\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!enemy.IsActive)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\ enemyHalf\ =\ transform.Scale\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00398}00398\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \textcolor{comment}{//AABB\ collision\ check}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dx\ =\ std::abs(playerTransform.Position.x\ -\/\ transform.Position.x);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dy\ =\ std::abs(playerTransform.Position.y\ -\/\ transform.Position.y);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ colliding\ =\ (dx\ <\ (playerHalf.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ +\ enemyHalf.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}))\ \&\&}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ (dy\ <\ (playerHalf.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ +\ enemyHalf.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}));}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00404}00404\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!colliding)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00406}00406\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00407}00407\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Determine\ collision\ direction}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00408}00408\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Check\ if\ player\ is\ falling\ and\ the\ collision\ is\ from\ above\ the\ enemy\ -\/\ "{}stomping"{}}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ enemyTop\ =\ transform.Position.y\ +\ enemyHalf.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00410}00410\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isAbove\ =\ (playerBottom\ <\ enemyTop\ +\ 0.1f)\ \&\&\ (playerBottom\ >\ enemyTop\ -\/\ 0.2f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isFalling\ =\ (\doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>GetVelocity().y\ <\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00412}00412\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00413}00413\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isFalling\ \&\&\ isAbove)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Stomp\ enemy\ and\ bounce}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a54aa78702f3655ce33457462b421a94c}{DestroyEnemy}}(entity);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>GetVelocity().y\ =\ 5.0f;}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Enemy\ stomped!"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00418}00418\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Player\ dies\ and\ respawns\ all\ enemies}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Player\ collided\ with\ enemy!"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a3e97beb9d39b2739299f5b69e313a476}{m\_PlayerController}}-\/>Die(\textcolor{stringliteral}{"{}Killed\ by\ enemy"{}});}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classDemo2DFixedScene_a52b58c77935f74c69ec27e6a48ad9187}{RespawnEnemies}}();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00425}00425\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00426}00426\ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00432}\doxymbox{\hyperlink{classDemo2DFixedScene_a54aa78702f3655ce33457462b421a94c}{00432}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classDemo2DFixedScene_a54aa78702f3655ce33457462b421a94c}{Demo2DFixedScene::DestroyEnemy}}(entt::entity\ enemy)\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00433}00433\ \ \ \ \ \textcolor{keyword}{auto}\&\ registry\ =\ \doxymbox{\hyperlink{classDemo2DFixedScene_abf62eae1501faa926e757267ca05fd24}{m\_ECSScene}}-\/>GetRegistry();}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00434}00434\ \ \ \ \ \textcolor{comment}{//Mark\ enemy\ as\ inactive}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00435}00435\ \ \ \ \ \textcolor{keywordflow}{if}(registry.all\_of<\doxymbox{\hyperlink{structComponents_1_1Enemy}{Components::Enemy}}>(enemy))\{}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00436}00436\ \ \ \ \ \ \ \ \ registry.get<\doxymbox{\hyperlink{structComponents_1_1Enemy}{Components::Enemy}}>(enemy).IsActive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00437}00437\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00438}00438\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00439}00439\ \ \ \ \ \textcolor{comment}{//Remove\ enemy\ from\ list}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00440}00440\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find(\doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}}.begin(),\ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}}.end(),\ enemy);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00441}00441\ \ \ \ \ \textcolor{keywordflow}{if}(it\ !=\ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}}.end())\ \doxymbox{\hyperlink{classDemo2DFixedScene_ab52acc6df50d92a733ca96c0917f5a63}{m\_EnemyEntities}}.erase(it);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00442}00442\ }
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00443}00443\ \ \ \ \ \textcolor{comment}{//Destroy\ the\ entity}}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00444}00444\ \ \ \ \ registry.destroy(enemy);}
+\DoxyCodeLine{\Hypertarget{Demo2DFixedScene_8cpp_source_l00445}00445\ \}}
+
+\end{DoxyCode}

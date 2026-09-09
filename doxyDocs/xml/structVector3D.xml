@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structVector3D" kind="struct" language="C++" prot="public">
+    <compoundname>Vector3D</compoundname>
+    <includes refid="Vector3D_8h" local="no">Vector3D.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structVector3D_1aca5d15bdb846448e3cb73b072783f329" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Vector3D::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>Vector3D::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector3D.h" line="10" column="11" bodyfile="engine/math/Vector3D.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Vector3D::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>Vector3D::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector3D.h" line="11" column="11" bodyfile="engine/math/Vector3D.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structVector3D_1af9728f1eba23b9ee091755346214f391" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Vector3D::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>Vector3D::z</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector3D.h" line="12" column="11" bodyfile="engine/math/Vector3D.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Vector3D::Vector3D</definition>
+        <argsstring>()</argsstring>
+        <name>Vector3D</name>
+        <qualifiedname>Vector3D::Vector3D</qualifiedname>
+        <briefdescription>
+<para>Default constructor: zero vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector3D.h" line="17" column="5" bodyfile="engine/math/Vector3D.h" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector3D_1a09ca256cebe94be3abf43cae2ce09abb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Vector3D::Vector3D</definition>
+        <argsstring>(float xValue, float yValue, float zValue)</argsstring>
+        <name>Vector3D</name>
+        <qualifiedname>Vector3D::Vector3D</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>xValue</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>yValue</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>zValue</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a vector from three floats. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>zValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Z component. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector3D.h" line="25" column="5" bodyfile="engine/math/Vector3D.h" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector3D_1ae5153e5e26852627ccea88d399e13c6e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Vector3D::operator+</definition>
+        <argsstring>(const Vector3D &amp;other) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>Vector3D::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Vector addition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New vector with component-wise sum. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector3D.h" line="32" column="14" bodyfile="engine/math/Vector3D.h" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector3D_1a2d77fde2d4f484a639cb4dfd500c3540" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Vector3D::operator-</definition>
+        <argsstring>(const Vector3D &amp;other) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>Vector3D::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Vector subtraction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector to subtract. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New vector with component-wise difference. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector3D.h" line="41" column="14" bodyfile="engine/math/Vector3D.h" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="structVector3D_1a5a1ef0aee8e6c18619cda870c757f91e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D Vector3D::operator*</definition>
+        <argsstring>(float scalar) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>Vector3D::operator*</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>Scalar multiplication. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Multiplicand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New vector with components multiplied by scalar. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/math/Vector3D.h" line="50" column="14" bodyfile="engine/math/Vector3D.h" bodystart="50" bodyend="52"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>3D vector struct with basic arithmetic operations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Used for positions, directions, and other 3D spatial data. All operators are const and return a new vector. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/math/Vector3D.h" line="9" column="1" bodyfile="engine/math/Vector3D.h" bodystart="9" bodyend="53"/>
+    <listofallmembers>
+      <member refid="structVector3D_1a5a1ef0aee8e6c18619cda870c757f91e" prot="public" virt="non-virtual"><scope>Vector3D</scope><name>operator*</name></member>
+      <member refid="structVector3D_1ae5153e5e26852627ccea88d399e13c6e" prot="public" virt="non-virtual"><scope>Vector3D</scope><name>operator+</name></member>
+      <member refid="structVector3D_1a2d77fde2d4f484a639cb4dfd500c3540" prot="public" virt="non-virtual"><scope>Vector3D</scope><name>operator-</name></member>
+      <member refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" prot="public" virt="non-virtual"><scope>Vector3D</scope><name>Vector3D</name></member>
+      <member refid="structVector3D_1a09ca256cebe94be3abf43cae2ce09abb" prot="public" virt="non-virtual"><scope>Vector3D</scope><name>Vector3D</name></member>
+      <member refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" prot="public" virt="non-virtual"><scope>Vector3D</scope><name>x</name></member>
+      <member refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" prot="public" virt="non-virtual"><scope>Vector3D</scope><name>y</name></member>
+      <member refid="structVector3D_1af9728f1eba23b9ee091755346214f391" prot="public" virt="non-virtual"><scope>Vector3D</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

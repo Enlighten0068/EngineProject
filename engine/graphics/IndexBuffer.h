@@ -9,6 +9,7 @@
  * This allows reusing vertices and reduces memory usage.
  *
  * @note The buffer is created with GL_STATIC_DRAW usage.
+ * @see VertexBuffer, VertexArray
  */
 class IndexBuffer{
 public:
@@ -31,9 +32,13 @@ public:
      */
     void Unbind() const;
 
-    uint32_t GetCount() const; //Count number of indices stored
+    /**
+     * @brief Gets the number of indices stored.
+     * @return Number of indices.
+     */
+    uint32_t GetCount() const;
 
 private:
-    uint32_t m_RendererID;
-    uint32_t m_Count;
+    uint32_t m_RendererID; //OpenGL IBO ID
+    uint32_t m_Count; //Number of indices
 };

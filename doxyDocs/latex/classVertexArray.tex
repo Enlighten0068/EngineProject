@@ -1,0 +1,133 @@
+\doxysection{Vertex\+Array Class Reference}
+\hypertarget{classVertexArray}{}\label{classVertexArray}\index{VertexArray@{VertexArray}}
+
+
+Open\+GL Vertex Array Object (VAO) wrapper.  
+
+
+
+
+{\ttfamily \+\#include $<$Vertex\+Array.\+h$>$}
+
+
+
+Collaboration diagram for Vertex\+Array:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classVertexArray__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classVertexArray_ab8a2dcce9698f96dac5f9a19c6979d03}{Vertex\+Array}} ()
+\item 
+\doxymbox{\hyperlink{classVertexArray_a82597eb9daba5ad66dd3cf898e159a95}{\texorpdfstring{$\sim$}{\string~}\+Vertex\+Array}} ()
+\item 
+void \doxymbox{\hyperlink{classVertexArray_ad5059455f0864327028636c628d5a661}{Bind}} () const
+\begin{DoxyCompactList}\small\item\em Binds the VAO. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classVertexArray_a73f0d868a6c76622bcd57063a2c2d8d4}{Unbind}} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the VAO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{classVertexArray_a36bdccb065b3d1ca1c2cddfa5e65033c}{m\+\_\+\+Renderer\+ID}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Open\+GL Vertex Array Object (VAO) wrapper. 
+
+A VAO stores the vertex attribute configuration for a vertex buffer. It encapsulates the state of vertex attributes (position, texture coordinates, etc.).
+
+\begin{DoxyNote}{Note}
+The VAO must be bound before configuring vertex attributes. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classVertexBuffer}{Vertex\+Buffer}, \doxylink{classIndexBuffer}{Index\+Buffer} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{VertexArray_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{VertexArray_8h_source}{Vertex\+Array.\+h}}.
+
+
+
+\label{classVertexArray_doc-constructors}
+\Hypertarget{classVertexArray_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classVertexArray_ab8a2dcce9698f96dac5f9a19c6979d03}\index{VertexArray@{VertexArray}!VertexArray@{VertexArray}}
+\index{VertexArray@{VertexArray}!VertexArray@{VertexArray}}
+\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}}
+{\footnotesize\ttfamily \label{classVertexArray_ab8a2dcce9698f96dac5f9a19c6979d03} 
+Vertex\+Array::\+\+Vertex\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{VertexArray_8cpp_source_l00006}{6}} of file \doxymbox{\hyperlink{VertexArray_8cpp_source}{Vertex\+Array.\+cpp}}.
+
+\Hypertarget{classVertexArray_a82597eb9daba5ad66dd3cf898e159a95}\index{VertexArray@{VertexArray}!````~VertexArray@{\texorpdfstring{$\sim$}{\string~}VertexArray}}
+\index{````~VertexArray@{\texorpdfstring{$\sim$}{\string~}VertexArray}!VertexArray@{VertexArray}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}VertexArray()}{\string~VertexArray()}}
+{\footnotesize\ttfamily \label{classVertexArray_a82597eb9daba5ad66dd3cf898e159a95} 
+Vertex\+Array::\+\texorpdfstring{$\sim$}{\string~}\+Vertex\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{VertexArray_8cpp_source_l00016}{16}} of file \doxymbox{\hyperlink{VertexArray_8cpp_source}{Vertex\+Array.\+cpp}}.
+
+
+
+\label{classVertexArray_doc-func-members}
+\Hypertarget{classVertexArray_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVertexArray_ad5059455f0864327028636c628d5a661}\index{VertexArray@{VertexArray}!Bind@{Bind}}
+\index{Bind@{Bind}!VertexArray@{VertexArray}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{classVertexArray_ad5059455f0864327028636c628d5a661} 
+void Vertex\+Array::\+\+Bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Binds the VAO. 
+
+
+
+Definition at line \doxymbox{\hyperlink{VertexArray_8cpp_source_l00023}{23}} of file \doxymbox{\hyperlink{VertexArray_8cpp_source}{Vertex\+Array.\+cpp}}.
+
+\Hypertarget{classVertexArray_a73f0d868a6c76622bcd57063a2c2d8d4}\index{VertexArray@{VertexArray}!Unbind@{Unbind}}
+\index{Unbind@{Unbind}!VertexArray@{VertexArray}}
+\doxysubsubsection{\texorpdfstring{Unbind()}{Unbind()}}
+{\footnotesize\ttfamily \label{classVertexArray_a73f0d868a6c76622bcd57063a2c2d8d4} 
+void Vertex\+Array::\+\+Unbind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Unbinds the VAO. 
+
+
+
+Definition at line \doxymbox{\hyperlink{VertexArray_8cpp_source_l00030}{30}} of file \doxymbox{\hyperlink{VertexArray_8cpp_source}{Vertex\+Array.\+cpp}}.
+
+
+
+\label{classVertexArray_doc-variable-members}
+\Hypertarget{classVertexArray_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classVertexArray_a36bdccb065b3d1ca1c2cddfa5e65033c}\index{VertexArray@{VertexArray}!m\_RendererID@{m\_RendererID}}
+\index{m\_RendererID@{m\_RendererID}!VertexArray@{VertexArray}}
+\doxysubsubsection{\texorpdfstring{m\_RendererID}{m\_RendererID}}
+{\footnotesize\ttfamily \label{classVertexArray_a36bdccb065b3d1ca1c2cddfa5e65033c} 
+uint32\+\_\+t Vertex\+Array::\+m\+\_\+\+Renderer\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{VertexArray_8h_source_l00030}{30}} of file \doxymbox{\hyperlink{VertexArray_8h_source}{Vertex\+Array.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+graphics/\doxymbox{\hyperlink{VertexArray_8h}{Vertex\+Array.\+h}}\item 
+engine/\+graphics/\doxymbox{\hyperlink{VertexArray_8cpp}{Vertex\+Array.\+cpp}}\end{DoxyCompactItemize}

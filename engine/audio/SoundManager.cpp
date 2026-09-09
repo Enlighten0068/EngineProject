@@ -25,12 +25,10 @@ SoundManager& SoundManager::GetInstance(){
 std::shared_ptr<SoundEffect> SoundManager::LoadSound(const std::string& filepath){
     //Checks if the sound is cached
     auto it = m_Sounds.find(filepath);
-    if (it != m_Sounds.end()){
-        return it->second;
-    }
+    if(it != m_Sounds.end()) return it->second;
 
     auto sound = std::make_shared<SoundEffect>();
-    if (!sound->Load(filepath)){
+    if(!sound->Load(filepath)){
         Log::Error(std::format("Failed to load sound: {}", filepath));
         return nullptr;
     }
@@ -48,9 +46,7 @@ std::shared_ptr<SoundEffect> SoundManager::LoadSound(const std::string& filepath
  */
 void SoundManager::PlaySound(const std::string& filepath, int volume){
     auto sound = LoadSound(filepath);
-    if (sound) {
-        sound->Play(volume);
-    }
+    if(sound) sound->Play(volume);
 }
 
 /**

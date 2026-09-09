@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classTime" kind="class" language="C++" prot="public">
+    <compoundname>Time</compoundname>
+    <includes refid="Time_8h" local="no">Time.h</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classTime_1a2b684243784e6daedfa7ec3ce4b57ea5" prot="private" static="yes" mutable="no">
+        <type>float</type>
+        <definition>float Time::s_DeltaTime</definition>
+        <argsstring></argsstring>
+        <name>s_DeltaTime</name>
+        <qualifiedname>Time::s_DeltaTime</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Time.h" line="34" column="18" bodyfile="engine/core/Time.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTime_1a6595aadb1feae1ea8f4058682ee8c27d" prot="private" static="yes" mutable="no">
+        <type>float</type>
+        <definition>float Time::s_ElapsedTime</definition>
+        <argsstring></argsstring>
+        <name>s_ElapsedTime</name>
+        <qualifiedname>Time::s_ElapsedTime</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Time.h" line="35" column="18" bodyfile="engine/core/Time.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classTime_1ad543732facbdbe2aa7298de13cb2a12b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Time::DeltaTime</definition>
+        <argsstring>()</argsstring>
+        <name>DeltaTime</name>
+        <qualifiedname>Time::DeltaTime</qualifiedname>
+        <briefdescription>
+<para>Gets the time elapsed since the last frame. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the delta time for the current frame.</para>
+<para><simplesect kind="return"><para>Delta time in seconds. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Time.h" line="17" column="18" bodyfile="engine/core/Time.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classTime_1a78df68c0498044fa62fdeb6b9e9e8b63" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Time::ElapsedTime</definition>
+        <argsstring>()</argsstring>
+        <name>ElapsedTime</name>
+        <qualifiedname>Time::ElapsedTime</qualifiedname>
+        <briefdescription>
+<para>Gets the total time elapsed since application startup. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the total elapsed time.</para>
+<para><simplesect kind="return"><para>Elapsed time in seconds. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Time.h" line="23" column="18" bodyfile="engine/core/Time.cpp" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classTime_1a7e9cf31048064a9aedfee885807b1b56" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Time::Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>Time::Update</qualifiedname>
+        <briefdescription>
+<para>Updates the time system (should be called once per frame). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates delta time and elapsed time.</para>
+<para>This method updates both the delta time and elapsed time using SDL performance counter.</para>
+<para>Uses SDL&apos;s counters to measure time accurately. Should be called once per frame at the start of the frame. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Time.h" line="31" column="17" bodyfile="engine/core/Time.cpp" bodystart="14" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Utility class for time management. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides static methods to access delta time (time between frames) and total elapsed time.</para>
+<para><simplesect kind="note"><para>All times are in seconds. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Time</label>
+        <link refid="classTime"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/core/Time.h" line="11" column="1" bodyfile="engine/core/Time.h" bodystart="11" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classTime_1ad543732facbdbe2aa7298de13cb2a12b" prot="public" virt="non-virtual"><scope>Time</scope><name>DeltaTime</name></member>
+      <member refid="classTime_1a78df68c0498044fa62fdeb6b9e9e8b63" prot="public" virt="non-virtual"><scope>Time</scope><name>ElapsedTime</name></member>
+      <member refid="classTime_1a2b684243784e6daedfa7ec3ce4b57ea5" prot="private" virt="non-virtual"><scope>Time</scope><name>s_DeltaTime</name></member>
+      <member refid="classTime_1a6595aadb1feae1ea8f4058682ee8c27d" prot="private" virt="non-virtual"><scope>Time</scope><name>s_ElapsedTime</name></member>
+      <member refid="classTime_1a7e9cf31048064a9aedfee885807b1b56" prot="public" virt="non-virtual"><scope>Time</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

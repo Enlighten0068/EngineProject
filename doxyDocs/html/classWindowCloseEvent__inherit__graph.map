@@ -1,0 +1,5 @@
+<map id="WindowCloseEvent" name="WindowCloseEvent">
+<area shape="rect" id="Node000001" title="Event dispatched when the window close button is clicked or a SDL_EVENT_QUIT is received." alt="" coords="5,148,141,243"/>
+<area shape="rect" id="Node000002" href="$classEvent.html" title="Base class for all events in the engine." alt="" coords="10,5,137,100"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,113,76,149,71,148,72,118"/>
+</map>

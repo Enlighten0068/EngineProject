@@ -1,0 +1,334 @@
+\doxysection{Shader Class Reference}
+\hypertarget{classShader}{}\label{classShader}\index{Shader@{Shader}}
+
+
+Open\+GL shader program wrapper.  
+
+
+
+
+{\ttfamily \+\#include $<$Shader.\+h$>$}
+
+
+
+Collaboration diagram for Shader:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classShader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classShader_a0d654ebaca4e0555197c0724c6d30610}{Shader}} ()
+\item 
+\doxymbox{\hyperlink{classShader_aff01df87e8a102f270b5b135a295e59d}{\texorpdfstring{$\sim$}{\string~}\+Shader}} ()
+\item 
+bool \doxymbox{\hyperlink{classShader_a76b0876b9f7018273a1fe4c6a3717cc3}{Compile}} (const std::\+string \&vertex\+Source, const std::\+string \&fragment\+Source)
+\begin{DoxyCompactList}\small\item\em Compiles and links the vertex and fragment shaders. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classShader_a5a5a24f72050f46f03cb839b41490527}{Bind}} () const
+\begin{DoxyCompactList}\small\item\em Binds the shader program for use. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classShader_aebfe8baf7c63c605e0ed429085a4e06a}{Unbind}} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the shader program. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classShader_a1abb7c1fa7d1c58f82ba6544b2ae57bc}{Set\+Uniform\+Mat4}} (const std::\+string \&name, const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&matrix) const
+\begin{DoxyCompactList}\small\item\em Sets a 4x4 matrix uniform. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classShader_a1631958f43e9c0f6d8c706de11ed2ee6}{Set\+Uniform\+Float}} (const std::\+string \&name, float value) const
+\begin{DoxyCompactList}\small\item\em Sets a float uniform. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classShader_a317a09917f0a22884b3c6b96bbe0184d}{Set\+Uniform\+Float3}} (const std::\+string \&name, float x, float y, float z) const
+\begin{DoxyCompactList}\small\item\em Sets a 3D vector uniform (three floats). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classShader_aaf8f4c3d1c1a892f66b0141821697869}{Set\+Uniform\+Float3}} (const std::\+string \&name, const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&value) const
+\begin{DoxyCompactList}\small\item\em Sets a 3D vector uniform from a \doxylink{structVector3D}{Vector3D}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classShader_a382e9d0bb916f47a09f6a5a4b378e65d}{Set\+Uniform\+Vec2}} (const std::\+string \&name, float x, float y) const
+\begin{DoxyCompactList}\small\item\em Sets a 2D vector uniform (two floats). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classShader_a2ec513a8aeac4edde89ae006dac62368}{Set\+Uniform\+Vec2}} (const std::\+string \&name, const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&value) const
+\begin{DoxyCompactList}\small\item\em Sets a 2D vector uniform from a \doxylink{structVector2D}{Vector2D}. \end{DoxyCompactList}\item 
+unsigned int \doxymbox{\hyperlink{classShader_a72180929f60f8071527e75eb5d5add40}{Get\+Renderer\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Gets the Open\+GL program ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \doxymbox{\hyperlink{classShader_a1a5c07b2c962e5c31810cd7a5d93026d}{m\+\_\+\+Renderer\+ID}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Open\+GL shader program wrapper. 
+
+Manages the compilation, linking, and usage of vertex and fragment shaders. Provides methods for setting uniform values (matrices, vectors, and floats).
+
+\begin{DoxyNote}{Note}
+Shaders are compiled from source strings at runtime. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classGraphicsContext}{Graphics\+Context} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8h_source_l00018}{18}} of file \doxymbox{\hyperlink{Shader_8h_source}{Shader.\+h}}.
+
+
+
+\label{classShader_doc-constructors}
+\Hypertarget{classShader_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classShader_a0d654ebaca4e0555197c0724c6d30610}\index{Shader@{Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}}
+{\footnotesize\ttfamily \label{classShader_a0d654ebaca4e0555197c0724c6d30610} 
+Shader::\+\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8cpp_source_l00006}{6}} of file \doxymbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+\Hypertarget{classShader_aff01df87e8a102f270b5b135a295e59d}\index{Shader@{Shader}!````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}}
+\index{````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Shader()}{\string~Shader()}}
+{\footnotesize\ttfamily \label{classShader_aff01df87e8a102f270b5b135a295e59d} 
+Shader::\+\texorpdfstring{$\sim$}{\string~}\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8cpp_source_l00008}{8}} of file \doxymbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+
+
+\label{classShader_doc-func-members}
+\Hypertarget{classShader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classShader_a5a5a24f72050f46f03cb839b41490527}\index{Shader@{Shader}!Bind@{Bind}}
+\index{Bind@{Bind}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{classShader_a5a5a24f72050f46f03cb839b41490527} 
+void Shader::\+\+Bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Binds the shader program for use. 
+
+Binds the shader program. 
+
+Definition at line \doxymbox{\hyperlink{Shader_8cpp_source_l00086}{86}} of file \doxymbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+\Hypertarget{classShader_a76b0876b9f7018273a1fe4c6a3717cc3}\index{Shader@{Shader}!Compile@{Compile}}
+\index{Compile@{Compile}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{Compile()}{Compile()}}
+{\footnotesize\ttfamily \label{classShader_a76b0876b9f7018273a1fe4c6a3717cc3} 
+bool Shader::\+\+Compile (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{vertex\+Source}{, }\item[{const std::\+string \&}]{fragment\+Source}{}\end{DoxyParamCaption})}
+
+
+
+Compiles and links the vertex and fragment shaders. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Source} & GLSL source code for the vertex shader. \\
+\hline
+{\em fragment\+Source} & GLSL source code for the fragment shader. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if compilation and linking succeeded, false otherwise.
+\end{DoxyReturn}
+This method creates and compiles the vertex shader and then fragment shader. Then links both shaders into a program and then clears its objects. Also clears it in case of failure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Source} & GLSL source code for the vertex shader. \\
+\hline
+{\em fragment\+Source} & GLSL source code for the fragment shader. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if compilation and linking succeeded, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8cpp_source_l00023}{23}} of file \doxymbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+\Hypertarget{classShader_a72180929f60f8071527e75eb5d5add40}\index{Shader@{Shader}!GetRendererID@{GetRendererID}}
+\index{GetRendererID@{GetRendererID}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{GetRendererID()}{GetRendererID()}}
+{\footnotesize\ttfamily \label{classShader_a72180929f60f8071527e75eb5d5add40} 
+unsigned int Shader::\+\+Get\+Renderer\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the Open\+GL program ID. 
+
+\begin{DoxyReturn}{Returns}
+Open\+GL program ID. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8h_source_l00090}{90}} of file \doxymbox{\hyperlink{Shader_8h_source}{Shader.\+h}}.
+
+\Hypertarget{classShader_a1631958f43e9c0f6d8c706de11ed2ee6}\index{Shader@{Shader}!SetUniformFloat@{SetUniformFloat}}
+\index{SetUniformFloat@{SetUniformFloat}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{SetUniformFloat()}{SetUniformFloat()}}
+{\footnotesize\ttfamily \label{classShader_a1631958f43e9c0f6d8c706de11ed2ee6} 
+void Shader::\+\+Set\+Uniform\+Float (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{name}{, }\item[{float}]{value}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a float uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Uniform name in the shader. \\
+\hline
+{\em value} & Float value to set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8cpp_source_l00116}{116}} of file \doxymbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+\Hypertarget{classShader_aaf8f4c3d1c1a892f66b0141821697869}\index{Shader@{Shader}!SetUniformFloat3@{SetUniformFloat3}}
+\index{SetUniformFloat3@{SetUniformFloat3}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{SetUniformFloat3()}{SetUniformFloat3()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classShader_aaf8f4c3d1c1a892f66b0141821697869} 
+void Shader::\+\+Set\+Uniform\+Float3 (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{name}{, }\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{value}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a 3D vector uniform from a \doxylink{structVector3D}{Vector3D}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Uniform name in the shader. \\
+\hline
+{\em value} & \doxylink{structVector3D}{Vector3D} value to set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8cpp_source_l00138}{138}} of file \doxymbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+\Hypertarget{classShader_a317a09917f0a22884b3c6b96bbe0184d}\index{Shader@{Shader}!SetUniformFloat3@{SetUniformFloat3}}
+\index{SetUniformFloat3@{SetUniformFloat3}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{SetUniformFloat3()}{SetUniformFloat3()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classShader_a317a09917f0a22884b3c6b96bbe0184d} 
+void Shader::\+\+Set\+Uniform\+Float3 (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{name}{, }\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{z}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a 3D vector uniform (three floats). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Uniform name in the shader. \\
+\hline
+{\em x} & X component. \\
+\hline
+{\em y} & Y component. \\
+\hline
+{\em z} & Z component. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8cpp_source_l00128}{128}} of file \doxymbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+\Hypertarget{classShader_a1abb7c1fa7d1c58f82ba6544b2ae57bc}\index{Shader@{Shader}!SetUniformMat4@{SetUniformMat4}}
+\index{SetUniformMat4@{SetUniformMat4}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{SetUniformMat4()}{SetUniformMat4()}}
+{\footnotesize\ttfamily \label{classShader_a1abb7c1fa7d1c58f82ba6544b2ae57bc} 
+void Shader::\+\+Set\+Uniform\+Mat4 (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{name}{, }\item[{const \doxymbox{\hyperlink{classMatrix4}{Matrix4}} \&}]{matrix}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a 4x4 matrix uniform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Uniform name in the shader. \\
+\hline
+{\em matrix} & Matrix to set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8cpp_source_l00102}{102}} of file \doxymbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+\Hypertarget{classShader_a2ec513a8aeac4edde89ae006dac62368}\index{Shader@{Shader}!SetUniformVec2@{SetUniformVec2}}
+\index{SetUniformVec2@{SetUniformVec2}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{SetUniformVec2()}{SetUniformVec2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classShader_a2ec513a8aeac4edde89ae006dac62368} 
+void Shader::\+\+Set\+Uniform\+Vec2 (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{name}{, }\item[{const \doxymbox{\hyperlink{structVector2D}{Vector2D}} \&}]{value}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a 2D vector uniform from a \doxylink{structVector2D}{Vector2D}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Uniform name in the shader. \\
+\hline
+{\em value} & \doxylink{structVector2D}{Vector2D} value to set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8cpp_source_l00158}{158}} of file \doxymbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+\Hypertarget{classShader_a382e9d0bb916f47a09f6a5a4b378e65d}\index{Shader@{Shader}!SetUniformVec2@{SetUniformVec2}}
+\index{SetUniformVec2@{SetUniformVec2}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{SetUniformVec2()}{SetUniformVec2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classShader_a382e9d0bb916f47a09f6a5a4b378e65d} 
+void Shader::\+\+Set\+Uniform\+Vec2 (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{name}{, }\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a 2D vector uniform (two floats). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Uniform name in the shader. \\
+\hline
+{\em x} & X component. \\
+\hline
+{\em y} & Y component. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8cpp_source_l00148}{148}} of file \doxymbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+\Hypertarget{classShader_aebfe8baf7c63c605e0ed429085a4e06a}\index{Shader@{Shader}!Unbind@{Unbind}}
+\index{Unbind@{Unbind}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{Unbind()}{Unbind()}}
+{\footnotesize\ttfamily \label{classShader_aebfe8baf7c63c605e0ed429085a4e06a} 
+void Shader::\+\+Unbind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Unbinds the shader program. 
+
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8cpp_source_l00093}{93}} of file \doxymbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+
+
+\label{classShader_doc-variable-members}
+\Hypertarget{classShader_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classShader_a1a5c07b2c962e5c31810cd7a5d93026d}\index{Shader@{Shader}!m\_RendererID@{m\_RendererID}}
+\index{m\_RendererID@{m\_RendererID}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{m\_RendererID}{m\_RendererID}}
+{\footnotesize\ttfamily \label{classShader_a1a5c07b2c962e5c31810cd7a5d93026d} 
+unsigned int Shader::\+m\+\_\+\+Renderer\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Shader_8h_source_l00093}{93}} of file \doxymbox{\hyperlink{Shader_8h_source}{Shader.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+graphics/\doxymbox{\hyperlink{Shader_8h}{Shader.\+h}}\item 
+engine/\+graphics/\doxymbox{\hyperlink{Shader_8cpp}{Shader.\+cpp}}\end{DoxyCompactItemize}

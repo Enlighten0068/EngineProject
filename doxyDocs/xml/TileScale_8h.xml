@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="TileScale_8h" kind="file" language="C++">
+    <compoundname>TileScale.h</compoundname>
+    <includedby refid="Demo2DFixedScene_8cpp" local="yes">engine/demo/Demo2DFixedScene.cpp</includedby>
+    <includedby refid="RenderSystem_8h" local="yes">engine/systems/RenderSystem.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>engine/components/TileScale.h</label>
+        <link refid="TileScale_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="2">
+        <label>engine/demo/Demo2DFixedScene.cpp</label>
+        <link refid="Demo2DFixedScene_8cpp"/>
+      </node>
+      <node id="5">
+        <label>engine/scene/ECSScene.cpp</label>
+        <link refid="ECSScene_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/systems/RenderSystem.h</label>
+        <link refid="RenderSystem_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structComponents_1_1TileScale" prot="public">Components::TileScale</innerclass>
+    <innernamespace refid="namespaceComponents">Components</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceComponents" kindref="compound">Components</ref>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="structComponents_1_1TileScale" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structComponents_1_1TileScale" kindref="compound">TileScale</ref>{</highlight></codeline>
+<codeline lineno="17" refid="structComponents_1_1TileScale_1a2056b13025a5feff66ba87bc66a3faca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structComponents_1_1TileScale_1a2056b13025a5feff66ba87bc66a3faca" kindref="member">ScaleX</ref><sp/>=<sp/>1.0f;<sp/></highlight><highlight class="comment">//Texture<sp/>repetitions<sp/>per<sp/>unit<sp/>in<sp/>the<sp/>X-axis<sp/>(1.0<sp/>=<sp/>no<sp/>repetition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="structComponents_1_1TileScale_1aaefc4e78b1bcfc2ba99374370eade78c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structComponents_1_1TileScale_1aaefc4e78b1bcfc2ba99374370eade78c" kindref="member">ScaleY</ref><sp/>=<sp/>1.0f;<sp/></highlight><highlight class="comment">//Texture<sp/>repetitions<sp/>per<sp/>unit<sp/>in<sp/>the<sp/>Y-axis<sp/>(1.0<sp/>=<sp/>no<sp/>repetition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="engine/components/TileScale.h"/>
+  </compounddef>
+</doxygen>

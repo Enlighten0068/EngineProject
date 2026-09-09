@@ -1,0 +1,110 @@
+\doxysection{Window\+Close\+Event Class Reference}
+\hypertarget{classWindowCloseEvent}{}\label{classWindowCloseEvent}\index{WindowCloseEvent@{WindowCloseEvent}}
+
+
+\doxylink{classEvent}{Event} dispatched when the window close button is clicked or a SDL\+\_\+\+EVENT\+\_\+\+QUIT is received.  
+
+
+
+
+{\ttfamily \+\#include $<$Window\+Event.\+h$>$}
+
+
+
+Inheritance diagram for Window\+Close\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classWindowCloseEvent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Window\+Close\+Event:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classWindowCloseEvent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classWindowCloseEvent_a4ad7d8ef5ba544c908e1a59a74b40492}{Get\+Event\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classEvent_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \doxymbox{\hyperlink{classWindowCloseEvent_ad5b50a492d592ea6f0086a425a47b5a8}{Get\+Static\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classEvent}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classEvent_a8ad0c350a8f569dbb05cf845caa4737e}{Handled}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classEvent}{Event} dispatched when the window close button is clicked or a SDL\+\_\+\+EVENT\+\_\+\+QUIT is received. 
+
+This event is typically used to signal the application to shut down.
+
+\begin{DoxyNote}{Note}
+Dispatched by \doxylink{classSDLEventTranslator}{SDLEvent\+Translator}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classSDLEventTranslator}{SDLEvent\+Translator} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{WindowEvent_8h_source_l00013}{13}} of file \doxymbox{\hyperlink{WindowEvent_8h_source}{Window\+Event.\+h}}.
+
+
+
+\label{classWindowCloseEvent_doc-func-members}
+\Hypertarget{classWindowCloseEvent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWindowCloseEvent_a4ad7d8ef5ba544c908e1a59a74b40492}\index{WindowCloseEvent@{WindowCloseEvent}!GetEventType@{GetEventType}}
+\index{GetEventType@{GetEventType}!WindowCloseEvent@{WindowCloseEvent}}
+\doxysubsubsection{\texorpdfstring{GetEventType()}{GetEventType()}}
+{\footnotesize\ttfamily \label{classWindowCloseEvent_a4ad7d8ef5ba544c908e1a59a74b40492} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Window\+Close\+Event::\+\+Get\+Event\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of the event. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type} enum value identifying the event. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classEvent_af14bbd8f69c2778def9462375a0e70f2}{Event}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{WindowEvent_8h_source_l00016}{16}} of file \doxymbox{\hyperlink{WindowEvent_8h_source}{Window\+Event.\+h}}.
+
+\Hypertarget{classWindowCloseEvent_ad5b50a492d592ea6f0086a425a47b5a8}\index{WindowCloseEvent@{WindowCloseEvent}!GetStaticType@{GetStaticType}}
+\index{GetStaticType@{GetStaticType}!WindowCloseEvent@{WindowCloseEvent}}
+\doxysubsubsection{\texorpdfstring{GetStaticType()}{GetStaticType()}}
+{\footnotesize\ttfamily \label{classWindowCloseEvent_ad5b50a492d592ea6f0086a425a47b5a8} 
+\doxymbox{\hyperlink{EventType_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Window\+Close\+Event::\+\+Get\+Static\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{WindowEvent_8h_source_l00015}{15}} of file \doxymbox{\hyperlink{WindowEvent_8h_source}{Window\+Event.\+h}}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+events/\doxymbox{\hyperlink{WindowEvent_8h}{Window\+Event.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,471 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classLog" kind="class" language="C++" prot="public">
+    <compoundname>Log</compoundname>
+    <includes refid="Log_8h" local="no">Log.h</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classLog_1a10767fd008319be02fc0125dd20ba948" prot="private" static="yes" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream Log::s_File</definition>
+        <argsstring></argsstring>
+        <name>s_File</name>
+        <qualifiedname>Log::s_File</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="81" column="26" bodyfile="engine/diagnostics/Log.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLog_1a3dd36397bb30af3c6ccd514d3e8468e0" prot="private" static="yes" mutable="no">
+        <type><ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref></type>
+        <definition>LogLevel Log::s_MinLevel</definition>
+        <argsstring></argsstring>
+        <name>s_MinLevel</name>
+        <qualifiedname>Log::s_MinLevel</qualifiedname>
+        <initializer>= <ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9a4059b0251f66a18cb56f544728796875" kindref="member">LogLevel::Info</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="82" column="21" bodyfile="engine/diagnostics/Log.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLog_1ae21d84fef839b5bfb9e1f18fa0c3f6b4" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool Log::s_Initialized</definition>
+        <argsstring></argsstring>
+        <name>s_Initialized</name>
+        <qualifiedname>Log::s_Initialized</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="83" column="17" bodyfile="engine/diagnostics/Log.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLog_1ab91281939d32cf870499a85edcb820e3" prot="private" static="yes" mutable="no">
+        <type>std::unordered_map&lt; std::string, float &gt;</type>
+        <definition>std::unordered_map&lt; std::string, float &gt; Log::s_LastLogTime</definition>
+        <argsstring></argsstring>
+        <name>s_LastLogTime</name>
+        <qualifiedname>Log::s_LastLogTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="89" column="31" bodyfile="engine/diagnostics/Log.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classLog_1af3ff6e05d74f1950e7ee991ae4fa7461" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Log::Initialize</definition>
+        <argsstring>(const std::string &amp;logDir=&quot;logs/&quot;)</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>Log::Initialize</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>logDir</declname>
+          <defval>&quot;logs/&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Initializes the logging system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates the log directory (if it doesn&apos;t exist) and opens a new log file with a timestamped filename. Should be called once at application startup.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>logDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory where log files will be stored (default: &quot;logs/&quot;).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Creates the log directory if it doesn&apos;t exist, generates a timestamped filename, and opens the log file. The first log message written will be the initialization message.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>logDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory where log files will be stored. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="44" column="17" bodyfile="engine/diagnostics/Log.cpp" bodystart="25" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classLog_1ae32d1e5b199330781e5ce6b87f5e61c8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Log::Shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>Shutdown</name>
+        <qualifiedname>Log::Shutdown</qualifiedname>
+        <briefdescription>
+<para>Shuts down the logging system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Flushes and closes the log file. Should be called at application shutdown.</para>
+<para>Writes a shutdown message, flushes the file, and closes it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="51" column="17" bodyfile="engine/diagnostics/Log.cpp" bodystart="46" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classLog_1abc92ed5074f74feecedfac4f6dfa592c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Log::Info</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>Info</name>
+        <qualifiedname>Log::Info</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Logs an informational message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to log. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="54" column="17" bodyfile="engine/diagnostics/Log.cpp" bodystart="58" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classLog_1a5a5a1c297ed72ab2f850d0d01ae00aaa" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Log::Warning</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>Warning</name>
+        <qualifiedname>Log::Warning</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Logs a warning message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to log. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="55" column="17" bodyfile="engine/diagnostics/Log.cpp" bodystart="66" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classLog_1a860a6724a65c95001e3617ac6ae04e28" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Log::Error</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>Error</name>
+        <qualifiedname>Log::Error</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Logs an error message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to log. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="56" column="17" bodyfile="engine/diagnostics/Log.cpp" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classLog_1a112833cbd05320dac0790f50eb4ab25e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Log::InfoThrottled</definition>
+        <argsstring>(const std::string &amp;message, const std::string &amp;key, float intervalSeconds=2.0f)</argsstring>
+        <name>InfoThrottled</name>
+        <qualifiedname>Log::InfoThrottled</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>intervalSeconds</declname>
+          <defval>2.0f</defval>
+        </param>
+        <briefdescription>
+<para>Logs an informational message with throttling. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Prevents the same message from being logged too frequently. The message is logged only if the specified interval has elapsed since the last log with the same key.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to log. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unique identifier for this throttled message. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>intervalSeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum time between logs (default: 2.0).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Uses a key to track the last time a message was logged. If the current time minus the last log time is less than the interval, the message is skipped.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to log. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unique identifier for this throttled message. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>intervalSeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum time between logs (default: 2.0 seconds). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="69" column="17" bodyfile="engine/diagnostics/Log.cpp" bodystart="88" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classLog_1a9d61d43e442e0298e48185c7568708c5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Log::SetMinLevel</definition>
+        <argsstring>(LogLevel level)</argsstring>
+        <name>SetMinLevel</name>
+        <qualifiedname>Log::SetMinLevel</qualifiedname>
+        <param>
+          <type><ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Sets the minimum log level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Messages with a level below this value will be ignored.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum log level (default: <ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9a4059b0251f66a18cb56f544728796875" kindref="member">LogLevel::Info</ref>). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="78" column="17" bodyfile="engine/diagnostics/Log.h" bodystart="78" bodyend="78"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classLog_1ad0e82be038f63f7959e64333f73fbf13" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Log::Write</definition>
+        <argsstring>(LogLevel level, const std::string &amp;message)</argsstring>
+        <name>Write</name>
+        <qualifiedname>Log::Write</qualifiedname>
+        <param>
+          <type><ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref></type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Internal method that writes a log message to console and file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Formats the message with a timestamp and log level, then writes it to:<itemizedlist>
+<listitem><para>Standard output (std::cout) for Info and Warning</para>
+</listitem><listitem><para>Standard error (std::cerr) for Error</para>
+</listitem><listitem><para>The log file (if initialized and open)</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classLog" kindref="compound">Log</ref> level of the message. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to write. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="85" column="17" bodyfile="engine/diagnostics/Log.cpp" bodystart="111" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classLog_1a90dd7d410a46e5b840949f3260555f10" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Log::GenerateTimestampFilename</definition>
+        <argsstring>(const std::string &amp;logDir)</argsstring>
+        <name>GenerateTimestampFilename</name>
+        <qualifiedname>Log::GenerateTimestampFilename</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>logDir</declname>
+        </param>
+        <briefdescription>
+<para>Generates a timestamped filename for the log file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Format: logs/log_YYYY-MM-DD_HH-MM-SS.log</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>logDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory where the log file will be stored. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Full path to the log file. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="86" column="24" bodyfile="engine/diagnostics/Log.cpp" bodystart="173" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classLog_1a323ff35e896a21198efc5e472d3ac113" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * Log::LevelToString</definition>
+        <argsstring>(LogLevel level)</argsstring>
+        <name>LevelToString</name>
+        <qualifiedname>Log::LevelToString</qualifiedname>
+        <param>
+          <type><ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Converts a <ref refid="Log_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref> enum to a string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The log level. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String representation of the log level. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/diagnostics/Log.h" line="87" column="23" bodyfile="engine/diagnostics/Log.cpp" bodystart="156" bodyend="163"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Centralized logging system with file output and throttling. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classLog" kindref="compound">Log</ref> class provides static methods for logging messages to both the console and a timestamped log file. It supports different logging levels, log throttling to prevent spam, timestamped log files. Thread-safe file writing via mutex to be implemented later.</para>
+<para><simplesect kind="note"><para>All methods are static; no instantiation is required. </para>
+</simplesect>
+<simplesect kind="note"><para>The log file is created with a timestamp in the name: log_YYYY-MM-DD_HH-MM-SS.log </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Log</label>
+        <link refid="classLog"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/diagnostics/Log.h" line="34" column="1" bodyfile="engine/diagnostics/Log.h" bodystart="34" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" prot="public" virt="non-virtual"><scope>Log</scope><name>Error</name></member>
+      <member refid="classLog_1a90dd7d410a46e5b840949f3260555f10" prot="private" virt="non-virtual"><scope>Log</scope><name>GenerateTimestampFilename</name></member>
+      <member refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" prot="public" virt="non-virtual"><scope>Log</scope><name>Info</name></member>
+      <member refid="classLog_1a112833cbd05320dac0790f50eb4ab25e" prot="public" virt="non-virtual"><scope>Log</scope><name>InfoThrottled</name></member>
+      <member refid="classLog_1af3ff6e05d74f1950e7ee991ae4fa7461" prot="public" virt="non-virtual"><scope>Log</scope><name>Initialize</name></member>
+      <member refid="classLog_1a323ff35e896a21198efc5e472d3ac113" prot="private" virt="non-virtual"><scope>Log</scope><name>LevelToString</name></member>
+      <member refid="classLog_1a10767fd008319be02fc0125dd20ba948" prot="private" virt="non-virtual"><scope>Log</scope><name>s_File</name></member>
+      <member refid="classLog_1ae21d84fef839b5bfb9e1f18fa0c3f6b4" prot="private" virt="non-virtual"><scope>Log</scope><name>s_Initialized</name></member>
+      <member refid="classLog_1ab91281939d32cf870499a85edcb820e3" prot="private" virt="non-virtual"><scope>Log</scope><name>s_LastLogTime</name></member>
+      <member refid="classLog_1a3dd36397bb30af3c6ccd514d3e8468e0" prot="private" virt="non-virtual"><scope>Log</scope><name>s_MinLevel</name></member>
+      <member refid="classLog_1a9d61d43e442e0298e48185c7568708c5" prot="public" virt="non-virtual"><scope>Log</scope><name>SetMinLevel</name></member>
+      <member refid="classLog_1ae32d1e5b199330781e5ce6b87f5e61c8" prot="public" virt="non-virtual"><scope>Log</scope><name>Shutdown</name></member>
+      <member refid="classLog_1a5a5a1c297ed72ab2f850d0d01ae00aaa" prot="public" virt="non-virtual"><scope>Log</scope><name>Warning</name></member>
+      <member refid="classLog_1ad0e82be038f63f7959e64333f73fbf13" prot="private" virt="non-virtual"><scope>Log</scope><name>Write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

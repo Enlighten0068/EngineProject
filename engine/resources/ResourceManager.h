@@ -13,16 +13,15 @@
  * assets such as textures and shaders. It ensures that each asset is loaded
  * only once and shared across the engine, reducing memory usage and load times.
  *
- * Supported textures and shaders.
+ * Supported assets: textures and shaders.
  *
  * @note This is a singleton; use GetInstance() to access it.
  * @see Texture2D, Shader
  */
 class ResourceManager{
 public:
-
     /**
-     * @brief Get the singleton instance of ResourceManager.
+     * @brief Gets the singleton instance of ResourceManager.
      * @return Reference to the ResourceManager instance.
      */
     static ResourceManager& GetInstance();
@@ -51,7 +50,8 @@ public:
      * @return Shared pointer to the loaded Shader, or nullptr on compilation failure.
      */
     std::shared_ptr<Shader> LoadShader(const std::string& name,
-                                       const std::string& vertexSource, const std::string& fragmentSource);
+                                       const std::string& vertexSource,
+                                       const std::string& fragmentSource);
 
     /**
      * @brief Clears all cached resources.
@@ -68,7 +68,6 @@ private:
     ResourceManager(const ResourceManager&) = delete;
     ResourceManager& operator=(const ResourceManager&) = delete;
 
-    //Cache
-    std::unordered_map<std::string, std::shared_ptr<Texture2D>> m_Textures;
-    std::unordered_map<std::string, std::shared_ptr<Shader>> m_Shaders;
+    std::unordered_map<std::string, std::shared_ptr<Texture2D>> m_Textures; //Texture cache
+    std::unordered_map<std::string, std::shared_ptr<Shader>> m_Shaders; //Shader cache
 };

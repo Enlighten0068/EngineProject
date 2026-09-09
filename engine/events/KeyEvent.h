@@ -7,9 +7,9 @@
  * @brief Keyboard action types.
  */
 enum class KeyAction{
-    Pressed,
-    Released,
-    Repeated
+    Pressed,  //Key was pressed down
+    Released, //Key was released
+    Repeated  //Key is being held (repeat event)
 };
 
 /**
@@ -23,19 +23,18 @@ enum class KeyAction{
  */
 class KeyEvent : public Event{
 public:
+    /**
+     * @brief Constructs a KeyEvent.
+     * @param scancode SDL scancode of the key.
+     * @param action Action type (pressed, released, repeated).
+     * @param ctrl True if Ctrl key is held.
+     * @param shift True if Shift key is held.
+     * @param alt True if Alt key is held.
+     */
     KeyEvent(SDL_Scancode scancode, KeyAction action, bool ctrl, bool shift, bool alt)
-    : m_Scancode(scancode), m_Action(action), m_Ctrl(ctrl), m_Shift(shift), m_Alt(alt) {}
+    : m_Scancode(scancode), m_Action(action), m_Ctrl(ctrl), m_Shift(shift), m_Alt(alt){}
 
-    /**
-     * @brief Get the SDL scancode of the key.
-     * @return SDL_Scancode value.
-     */
     SDL_Scancode GetScancode() const{ return m_Scancode; }
-
-    /**
-     * @brief Get the action type (pressed, released, repeated).
-     * @return KeyAction enum value.
-     */
     KeyAction GetAction() const{ return m_Action; }
     bool IsCtrlPressed() const{ return m_Ctrl; }
     bool IsShiftPressed() const{ return m_Shift; }
@@ -46,8 +45,8 @@ public:
 
 private:
     SDL_Scancode m_Scancode; //SDL scancode of the key
-    KeyAction m_Action;
-    bool m_Ctrl;
-    bool m_Shift;
-    bool m_Alt;
+    KeyAction m_Action; //Action type
+    bool m_Ctrl; //Ctrl key held
+    bool m_Shift; //Shift key held
+    bool m_Alt; //Alt key held
 };

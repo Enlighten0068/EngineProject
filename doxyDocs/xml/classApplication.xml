@@ -1,0 +1,342 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classApplication" kind="class" language="C++" prot="public">
+    <compoundname>Application</compoundname>
+    <includes refid="Application_8h" local="no">Application.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classApplication_1a126a310227b213e720cc4596d7e1aadf" prot="private" static="no" mutable="no">
+        <type><ref refid="classEngine" kindref="compound">Engine</ref></type>
+        <definition>Engine Application::m_Engine</definition>
+        <argsstring></argsstring>
+        <name>m_Engine</name>
+        <qualifiedname>Application::m_Engine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="82" column="12" bodyfile="engine/core/Application.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1afb633069c0774e759f1d7cc1926983a8" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classGraphicsContext" kindref="compound">GraphicsContext</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GraphicsContext&gt; Application::m_Graphics</definition>
+        <argsstring></argsstring>
+        <name>m_Graphics</name>
+        <qualifiedname>Application::m_Graphics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="83" column="21" bodyfile="engine/core/Application.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1ab79c0f4ff811927c17530ab510f25481" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classCamera2D" kindref="compound">Camera2D</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Camera2D&gt; Application::m_Camera</definition>
+        <argsstring></argsstring>
+        <name>m_Camera</name>
+        <qualifiedname>Application::m_Camera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="84" column="21" bodyfile="engine/core/Application.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1a682a91f7e9cb6072807dd7a6f14ef345" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classFpsCounter" kindref="compound">FpsCounter</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;FpsCounter&gt; Application::m_FpsCounter</definition>
+        <argsstring></argsstring>
+        <name>m_FpsCounter</name>
+        <qualifiedname>Application::m_FpsCounter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="85" column="21" bodyfile="engine/core/Application.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1a3e23ce99f0bb67f879a477d73c046f96" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classGameWorld" kindref="compound">GameWorld</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GameWorld&gt; Application::m_World</definition>
+        <argsstring></argsstring>
+        <name>m_World</name>
+        <qualifiedname>Application::m_World</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="86" column="21" bodyfile="engine/core/Application.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1a515a967a0aba4f893e8738519dc00cec" prot="private" static="no" mutable="no">
+        <type><ref refid="classSceneManager" kindref="compound">SceneManager</ref></type>
+        <definition>SceneManager Application::m_SceneManager</definition>
+        <argsstring></argsstring>
+        <name>m_SceneManager</name>
+        <qualifiedname>Application::m_SceneManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="87" column="18" bodyfile="engine/core/Application.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::Application</definition>
+        <argsstring>()</argsstring>
+        <name>Application</name>
+        <qualifiedname>Application::Application</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="39" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a748bca84fefb9c12661cfaa2f623748d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::~Application</definition>
+        <argsstring>()</argsstring>
+        <name>~Application</name>
+        <qualifiedname>Application::~Application</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="40" column="5" bodyfile="engine/core/Application.cpp" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a00d10eb756046bb9a02494ca7362013e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Application::Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>Application::Initialize</qualifiedname>
+        <briefdescription>
+<para>Initializes all engine subsystems. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes all engine subsystems and sets up the initial scene.</para>
+<para><simplesect kind="return"><para>true if initialization succeeded, false otherwise.</para>
+</simplesect>
+It must follow an initialization order to work correctly starting from logging, audio, engine, SDL_TTF, event system, graphics context, camera/world, scene and controllers.</para>
+<para><simplesect kind="return"><para>true if all subsystems initialized successfully, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="46" column="10" bodyfile="engine/core/Application.cpp" bodystart="48" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <qualifiedname>Application::Run</qualifiedname>
+        <briefdescription>
+<para>Runs the main game loop until the engine is stopped. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Main game loop.</para>
+<para>The loop processes events, updates all systems, and renders the current scene.</para>
+<para>The loop runs while the engine is running, processing events, updating all systems, and rendering the current scene. It follows a strict order starting from time then event handling, system updates, input state, rendering. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="53" column="10" bodyfile="engine/core/Application.cpp" bodystart="161" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a817892cf56c1c333d53be31e73e8c2f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>Shutdown</name>
+        <qualifiedname>Application::Shutdown</qualifiedname>
+        <briefdescription>
+<para>Shuts down the application and releases all resources. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method ensures that all subsystems (graphics, audio, input, etc.) are properly cleaned up before exiting the application.</para>
+<para>The shutdown order is the reverse of initialization to ensure proper resource cleanup and avoid dangling references. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="61" column="10" bodyfile="engine/core/Application.cpp" bodystart="177" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a0f448032d2de38aaf84309848afd37c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classSceneManager" kindref="compound">SceneManager</ref> &amp;</type>
+        <definition>SceneManager &amp; Application::GetSceneManager</definition>
+        <argsstring>()</argsstring>
+        <name>GetSceneManager</name>
+        <qualifiedname>Application::GetSceneManager</qualifiedname>
+        <briefdescription>
+<para>Gets the <ref refid="classSceneManager" kindref="compound">SceneManager</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to the <ref refid="classSceneManager" kindref="compound">SceneManager</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="67" column="18" bodyfile="engine/core/Application.h" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a3ee5aff75ba546ab029d8ad0ca89e503" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classGraphicsContext" kindref="compound">GraphicsContext</ref> &amp;</type>
+        <definition>GraphicsContext &amp; Application::GetGraphicsContext</definition>
+        <argsstring>()</argsstring>
+        <name>GetGraphicsContext</name>
+        <qualifiedname>Application::GetGraphicsContext</qualifiedname>
+        <briefdescription>
+<para>Gets the <ref refid="classGraphicsContext" kindref="compound">GraphicsContext</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to the <ref refid="classGraphicsContext" kindref="compound">GraphicsContext</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="73" column="21" bodyfile="engine/core/Application.h" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a81b3570c39db00025f48b2714f9d52e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classCamera2D" kindref="compound">Camera2D</ref> &amp;</type>
+        <definition>Camera2D &amp; Application::GetCamera</definition>
+        <argsstring>()</argsstring>
+        <name>GetCamera</name>
+        <qualifiedname>Application::GetCamera</qualifiedname>
+        <briefdescription>
+<para>Gets the <ref refid="classCamera2D" kindref="compound">Camera2D</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to the <ref refid="classCamera2D" kindref="compound">Camera2D</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="79" column="14" bodyfile="engine/core/Application.h" bodystart="79" bodyend="79"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classApplication_1afe51e6248cd234f53bb78f18fb7c52e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::ProcessEvents</definition>
+        <argsstring>()</argsstring>
+        <name>ProcessEvents</name>
+        <qualifiedname>Application::ProcessEvents</qualifiedname>
+        <briefdescription>
+<para>Processes all pending SDL events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Events are passed to <ref refid="classInput" kindref="compound">Input</ref> (for state tracking), <ref refid="classGamepadManager" kindref="compound">GamepadManager</ref> (for gamepad events), and <ref refid="classSDLEventTranslator" kindref="compound">SDLEventTranslator</ref> (for converting to engine events and dispatching via <ref refid="classEventBus" kindref="compound">EventBus</ref>). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="89" column="10" bodyfile="engine/core/Application.cpp" bodystart="211" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a6f40ffdb97f3a938ae19ea4eae4882ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Render</definition>
+        <argsstring>()</argsstring>
+        <name>Render</name>
+        <qualifiedname>Application::Render</qualifiedname>
+        <briefdescription>
+<para>Renders the current scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Clears buffers and delegates rendering to the <ref refid="classScene" kindref="compound">Scene</ref> Manager. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="90" column="10" bodyfile="engine/core/Application.cpp" bodystart="236" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a72f9820ca25c093f6c2c4b2812f6a2a4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>Application::Update</qualifiedname>
+        <briefdescription>
+<para>Updates all systems for the current frame. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This includes the gamepad state and the current scene (which updates entities, physics, AI) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Application.h" line="91" column="10" bodyfile="engine/core/Application.cpp" bodystart="226" bodyend="229"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Main application class that orchestrates the entire game engine. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classApplication" kindref="compound">Application</ref> class is the central hub of the engine. It initializes all subsystems (graphics, audio, input, gamepad, ECS, scene management) needed then runs the main game loop, and handles shutdown. It delegates rendering and logic updates to the <ref refid="classSceneManager" kindref="compound">SceneManager</ref> and other systems.</para>
+<para><simplesect kind="note"><para>Even though it&apos;s not a Singleton class, keep no more than one instance active. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classEngine" kindref="compound">Engine</ref>, <ref refid="classGraphicsContext" kindref="compound">GraphicsContext</ref>, <ref refid="classSceneManager" kindref="compound">SceneManager</ref>, <ref refid="classPlayerController" kindref="compound">PlayerController</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Application</label>
+        <link refid="classApplication"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-m_Engine</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>-m_SceneManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Engine</label>
+        <link refid="classEngine"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_Window</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SDLWindow</label>
+        <link refid="classSDLWindow"/>
+      </node>
+      <node id="4">
+        <label>SceneManager</label>
+        <link refid="classSceneManager"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/core/Application.h" line="37" column="1" bodyfile="engine/core/Application.h" bodystart="37" bodyend="92"/>
+    <listofallmembers>
+      <member refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" prot="public" virt="non-virtual"><scope>Application</scope><name>Application</name></member>
+      <member refid="classApplication_1a81b3570c39db00025f48b2714f9d52e1" prot="public" virt="non-virtual"><scope>Application</scope><name>GetCamera</name></member>
+      <member refid="classApplication_1a3ee5aff75ba546ab029d8ad0ca89e503" prot="public" virt="non-virtual"><scope>Application</scope><name>GetGraphicsContext</name></member>
+      <member refid="classApplication_1a0f448032d2de38aaf84309848afd37c5" prot="public" virt="non-virtual"><scope>Application</scope><name>GetSceneManager</name></member>
+      <member refid="classApplication_1a00d10eb756046bb9a02494ca7362013e" prot="public" virt="non-virtual"><scope>Application</scope><name>Initialize</name></member>
+      <member refid="classApplication_1ab79c0f4ff811927c17530ab510f25481" prot="private" virt="non-virtual"><scope>Application</scope><name>m_Camera</name></member>
+      <member refid="classApplication_1a126a310227b213e720cc4596d7e1aadf" prot="private" virt="non-virtual"><scope>Application</scope><name>m_Engine</name></member>
+      <member refid="classApplication_1a682a91f7e9cb6072807dd7a6f14ef345" prot="private" virt="non-virtual"><scope>Application</scope><name>m_FpsCounter</name></member>
+      <member refid="classApplication_1afb633069c0774e759f1d7cc1926983a8" prot="private" virt="non-virtual"><scope>Application</scope><name>m_Graphics</name></member>
+      <member refid="classApplication_1a515a967a0aba4f893e8738519dc00cec" prot="private" virt="non-virtual"><scope>Application</scope><name>m_SceneManager</name></member>
+      <member refid="classApplication_1a3e23ce99f0bb67f879a477d73c046f96" prot="private" virt="non-virtual"><scope>Application</scope><name>m_World</name></member>
+      <member refid="classApplication_1afe51e6248cd234f53bb78f18fb7c52e5" prot="private" virt="non-virtual"><scope>Application</scope><name>ProcessEvents</name></member>
+      <member refid="classApplication_1a6f40ffdb97f3a938ae19ea4eae4882ed" prot="private" virt="non-virtual"><scope>Application</scope><name>Render</name></member>
+      <member refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" prot="public" virt="non-virtual"><scope>Application</scope><name>Run</name></member>
+      <member refid="classApplication_1a817892cf56c1c333d53be31e73e8c2f8" prot="public" virt="non-virtual"><scope>Application</scope><name>Shutdown</name></member>
+      <member refid="classApplication_1a72f9820ca25c093f6c2c4b2812f6a2a4" prot="private" virt="non-virtual"><scope>Application</scope><name>Update</name></member>
+      <member refid="classApplication_1a748bca84fefb9c12661cfaa2f623748d" prot="public" virt="non-virtual"><scope>Application</scope><name>~Application</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

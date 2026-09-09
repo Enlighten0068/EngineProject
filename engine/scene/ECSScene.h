@@ -21,12 +21,17 @@
  */
 class ECSScene{
 public:
+    /**
+     * @brief Constructs an ECSScene.
+     * @param shader Reference to the shader for rendering.
+     * @param va Reference to the vertex array.
+     * @param ib Reference to the index buffer.
+     */
     ECSScene(Shader& shader, VertexArray& va, IndexBuffer& ib);
     ~ECSScene();
 
     /**
      * @brief Creates a sprite entity with Transform and SpriteRenderer components.
-     *
      * @param position Initial world position.
      * @param scale Initial scale (width and height).
      * @param texture Texture to render for this sprite.
@@ -34,12 +39,6 @@ public:
      */
     entt::entity CreateSpriteEntity(const Vector3D& position, const Vector3D& scale,
                                     std::shared_ptr<Texture2D> texture);
-
-    /**
-     * @brief Updates the scene. Reserved for future use.
-     * @param deltaTime Time elapsed since the last frame.
-     */
-    //void Update(float deltaTime);
 
     /**
      * @brief Renders all sprite entities in the registry.
@@ -55,8 +54,8 @@ public:
     entt::registry& GetRegistry(){ return m_Registry; }
 
 private:
-    entt::registry m_Registry;
-    Shader& m_Shader;
-    VertexArray& m_VertexArray;
-    IndexBuffer& m_IndexBuffer;
+    entt::registry m_Registry; //ECS registry
+    Shader& m_Shader; //Shader for rendering
+    VertexArray& m_VertexArray; //Vertex array for geometry
+    IndexBuffer& m_IndexBuffer; //Index buffer for geometry
 };

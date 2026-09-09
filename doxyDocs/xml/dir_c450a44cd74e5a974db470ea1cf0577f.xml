@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_c450a44cd74e5a974db470ea1cf0577f" kind="dir">
+    <compoundname>engine/components</compoundname>
+    <innerfile refid="Enemy_8h">Enemy.h</innerfile>
+    <innerfile refid="Patrol_8h">Patrol.h</innerfile>
+    <innerfile refid="PhysicsBody_8h">PhysicsBody.h</innerfile>
+    <innerfile refid="SpriteRenderer_8h">SpriteRenderer.h</innerfile>
+    <innerfile refid="TileScale_8h">TileScale.h</innerfile>
+    <innerfile refid="components_2Transform_8h">Transform.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/components/"/>
+  </compounddef>
+</doxygen>

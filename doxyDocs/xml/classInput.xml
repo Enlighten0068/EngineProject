@@ -1,0 +1,484 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classInput" kind="class" language="C++" prot="public">
+    <compoundname>Input</compoundname>
+    <includes refid="Input_8h" local="no">Input.h</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classInput_1ae35589903d5dd57f1b29df2039bbe562" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool Input::s_KeyState</definition>
+        <argsstring>[SDL_SCANCODE_COUNT]</argsstring>
+        <name>s_KeyState</name>
+        <qualifiedname>Input::s_KeyState</qualifiedname>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="56" column="17" bodyfile="engine/core/Input.h" bodystart="6" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="variable" id="classInput_1a101419ed1564201345669b7dc3aceab9" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool Input::s_KeyStatePrevious</definition>
+        <argsstring>[SDL_SCANCODE_COUNT]</argsstring>
+        <name>s_KeyStatePrevious</name>
+        <qualifiedname>Input::s_KeyStatePrevious</qualifiedname>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="57" column="17" bodyfile="engine/core/Input.h" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="variable" id="classInput_1ab00b8236f27ec4750c2f7445cb1b10f6" prot="private" static="yes" mutable="no">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D Input::s_MousePosition</definition>
+        <argsstring></argsstring>
+        <name>s_MousePosition</name>
+        <qualifiedname>Input::s_MousePosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="60" column="21" bodyfile="engine/core/Input.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classInput_1a3d3d10de42d33da3c4b05ffdb39795d2" prot="private" static="yes" mutable="no">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D Input::s_MouseDelta</definition>
+        <argsstring></argsstring>
+        <name>s_MouseDelta</name>
+        <qualifiedname>Input::s_MouseDelta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="61" column="21" bodyfile="engine/core/Input.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classInput_1a38cbcc583b20863850fd3f552d9bf460" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool Input::s_MouseButtonState</definition>
+        <argsstring>[5]</argsstring>
+        <name>s_MouseButtonState</name>
+        <qualifiedname>Input::s_MouseButtonState</qualifiedname>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="62" column="17" bodyfile="engine/core/Input.h" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="variable" id="classInput_1a4e47ca136800ff0fdb2ff45cbd4d6e1b" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool Input::s_MouseButtonPrevious</definition>
+        <argsstring>[5]</argsstring>
+        <name>s_MouseButtonPrevious</name>
+        <qualifiedname>Input::s_MouseButtonPrevious</qualifiedname>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="63" column="17" bodyfile="engine/core/Input.h" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="variable" id="classInput_1ab41e893697e72075e87d4beb5e827155" prot="private" static="yes" mutable="no">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D Input::s_ScrollDelta</definition>
+        <argsstring></argsstring>
+        <name>s_ScrollDelta</name>
+        <qualifiedname>Input::s_ScrollDelta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="64" column="21" bodyfile="engine/core/Input.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classInput_1aead1b302f92f40508f394030fb96ff43" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool Input::s_WindowResized</definition>
+        <argsstring></argsstring>
+        <name>s_WindowResized</name>
+        <qualifiedname>Input::s_WindowResized</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="67" column="17" bodyfile="engine/core/Input.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classInput_1ac9f8548524960a49842cc0a16ec9ac96" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int Input::s_WindowWidth</definition>
+        <argsstring></argsstring>
+        <name>s_WindowWidth</name>
+        <qualifiedname>Input::s_WindowWidth</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="68" column="16" bodyfile="engine/core/Input.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classInput_1ac2a9b120cf7963ce08709b5aa96fd8b2" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int Input::s_WindowHeight</definition>
+        <argsstring></argsstring>
+        <name>s_WindowHeight</name>
+        <qualifiedname>Input::s_WindowHeight</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="69" column="16" bodyfile="engine/core/Input.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classInput_1af80dcfde6dbfe39bf3bc0345c75595ce" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>Input::Update</qualifiedname>
+        <briefdescription>
+<para>Updates the input state (should be called once per frame). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates input state for the current frame.</para>
+<para>Saves the previous state of keys and mouse buttons, then fetches the current keyboard state. Resets mouse delta and scroll delta.</para>
+<para>This method should be called once per frame, after processing events. It saves the previous state of keys and mouse buttons for transition detection, fetches the current keyboard state, and resets all delta values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="25" column="17" bodyfile="engine/core/Input.cpp" bodystart="24" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1abe4504868f560362185f020c471e9a84" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::ProcessEvent</definition>
+        <argsstring>(const SDL_Event &amp;event)</argsstring>
+        <name>ProcessEvent</name>
+        <qualifiedname>Input::ProcessEvent</qualifiedname>
+        <param>
+          <type>const SDL_Event &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Processes an SDL event and updates the input state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Processes an SDL event and updates internal state.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SDL event to process.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This method is called for each event in the event queue. It updates key states, mouse position, button states, scroll delta, and window size.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SDL event to process. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="31" column="17" bodyfile="engine/core/Input.cpp" bodystart="47" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::IsKeyPressed</definition>
+        <argsstring>(SDL_Scancode key)</argsstring>
+        <name>IsKeyPressed</name>
+        <qualifiedname>Input::IsKeyPressed</qualifiedname>
+        <param>
+          <type>SDL_Scancode</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="34" column="17" bodyfile="engine/core/Input.cpp" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1a745b3db0f4100ff52f8597b407bcb55e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::IsKeyHeld</definition>
+        <argsstring>(SDL_Scancode key)</argsstring>
+        <name>IsKeyHeld</name>
+        <qualifiedname>Input::IsKeyHeld</qualifiedname>
+        <param>
+          <type>SDL_Scancode</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="35" column="17" bodyfile="engine/core/Input.cpp" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1a21e529cf7720b4df2906bd44aa73e889" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::IsKeyReleased</definition>
+        <argsstring>(SDL_Scancode key)</argsstring>
+        <name>IsKeyReleased</name>
+        <qualifiedname>Input::IsKeyReleased</qualifiedname>
+        <param>
+          <type>SDL_Scancode</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="36" column="17" bodyfile="engine/core/Input.cpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1a58652e658e6b2a088d0bfbd07753c914" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D Input::GetMousePosition</definition>
+        <argsstring>()</argsstring>
+        <name>GetMousePosition</name>
+        <qualifiedname>Input::GetMousePosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="39" column="21" bodyfile="engine/core/Input.cpp" bodystart="96" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1a53bdc3cb0c879a60bd99396872eb6dcb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D Input::GetMouseDelta</definition>
+        <argsstring>()</argsstring>
+        <name>GetMouseDelta</name>
+        <qualifiedname>Input::GetMouseDelta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="40" column="21" bodyfile="engine/core/Input.cpp" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1a1915a90124c915e35e04bc9044d3b575" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::IsMouseButtonPressed</definition>
+        <argsstring>(uint8_t button)</argsstring>
+        <name>IsMouseButtonPressed</name>
+        <qualifiedname>Input::IsMouseButtonPressed</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="41" column="17" bodyfile="engine/core/Input.cpp" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1aec38619f1a5a330430756de75db0aff2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::IsMouseButtonHeld</definition>
+        <argsstring>(uint8_t button)</argsstring>
+        <name>IsMouseButtonHeld</name>
+        <qualifiedname>Input::IsMouseButtonHeld</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="42" column="17" bodyfile="engine/core/Input.cpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1acf61c1a35081151e6d382272ba07d051" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::IsMouseButtonReleased</definition>
+        <argsstring>(uint8_t button)</argsstring>
+        <name>IsMouseButtonReleased</name>
+        <qualifiedname>Input::IsMouseButtonReleased</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="43" column="17" bodyfile="engine/core/Input.cpp" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1af4fb33ee8a3ae10ad92ad2adc7e00ebf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVector2D" kindref="compound">Vector2D</ref></type>
+        <definition>Vector2D Input::GetScrollDelta</definition>
+        <argsstring>()</argsstring>
+        <name>GetScrollDelta</name>
+        <qualifiedname>Input::GetScrollDelta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="46" column="21" bodyfile="engine/core/Input.cpp" bodystart="116" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1a4ddd4e0a717ca4b564a0491e32e6e280" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::WasWindowResized</definition>
+        <argsstring>()</argsstring>
+        <name>WasWindowResized</name>
+        <qualifiedname>Input::WasWindowResized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="49" column="17" bodyfile="engine/core/Input.cpp" bodystart="119" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1a6fa97576489b0946ce0bcc88e8cbb46a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Input::GetWindowWidth</definition>
+        <argsstring>()</argsstring>
+        <name>GetWindowWidth</name>
+        <qualifiedname>Input::GetWindowWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="50" column="16" bodyfile="engine/core/Input.cpp" bodystart="120" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1a73ac35d323c9c62b29a0fdb7cd10c84f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Input::GetWindowHeight</definition>
+        <argsstring>()</argsstring>
+        <name>GetWindowHeight</name>
+        <qualifiedname>Input::GetWindowHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="51" column="16" bodyfile="engine/core/Input.cpp" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classInput_1a4d970dee00ab2bbe858a7758cc167d07" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::SetWindowSize</definition>
+        <argsstring>(int width, int height)</argsstring>
+        <name>SetWindowSize</name>
+        <qualifiedname>Input::SetWindowSize</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Input.h" line="52" column="17" bodyfile="engine/core/Input.cpp" bodystart="122" bodyend="125"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Static input manager for keyboard, mouse, and window state. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides polling-based input detection with support for detecting pressed, held, and released states. Also tracks mouse position, delta movement, and window size changes.</para>
+<para><simplesect kind="note"><para>All methods are static; no instantiation is required. </para>
+</simplesect>
+<simplesect kind="note"><para>The <ref refid="classInput_1af80dcfde6dbfe39bf3bc0345c75595ce" kindref="member">Update()</ref> method should be called once per frame to reset deltas. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Input</label>
+        <link refid="classInput"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-s_MouseDelta</edgelabel>
+          <edgelabel>-s_MousePosition</edgelabel>
+          <edgelabel>-s_ScrollDelta</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Vector2D</label>
+        <link refid="structVector2D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/core/Input.h" line="17" column="1" bodyfile="engine/core/Input.h" bodystart="17" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classInput_1a53bdc3cb0c879a60bd99396872eb6dcb" prot="public" virt="non-virtual"><scope>Input</scope><name>GetMouseDelta</name></member>
+      <member refid="classInput_1a58652e658e6b2a088d0bfbd07753c914" prot="public" virt="non-virtual"><scope>Input</scope><name>GetMousePosition</name></member>
+      <member refid="classInput_1af4fb33ee8a3ae10ad92ad2adc7e00ebf" prot="public" virt="non-virtual"><scope>Input</scope><name>GetScrollDelta</name></member>
+      <member refid="classInput_1a73ac35d323c9c62b29a0fdb7cd10c84f" prot="public" virt="non-virtual"><scope>Input</scope><name>GetWindowHeight</name></member>
+      <member refid="classInput_1a6fa97576489b0946ce0bcc88e8cbb46a" prot="public" virt="non-virtual"><scope>Input</scope><name>GetWindowWidth</name></member>
+      <member refid="classInput_1a745b3db0f4100ff52f8597b407bcb55e" prot="public" virt="non-virtual"><scope>Input</scope><name>IsKeyHeld</name></member>
+      <member refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" prot="public" virt="non-virtual"><scope>Input</scope><name>IsKeyPressed</name></member>
+      <member refid="classInput_1a21e529cf7720b4df2906bd44aa73e889" prot="public" virt="non-virtual"><scope>Input</scope><name>IsKeyReleased</name></member>
+      <member refid="classInput_1aec38619f1a5a330430756de75db0aff2" prot="public" virt="non-virtual"><scope>Input</scope><name>IsMouseButtonHeld</name></member>
+      <member refid="classInput_1a1915a90124c915e35e04bc9044d3b575" prot="public" virt="non-virtual"><scope>Input</scope><name>IsMouseButtonPressed</name></member>
+      <member refid="classInput_1acf61c1a35081151e6d382272ba07d051" prot="public" virt="non-virtual"><scope>Input</scope><name>IsMouseButtonReleased</name></member>
+      <member refid="classInput_1abe4504868f560362185f020c471e9a84" prot="public" virt="non-virtual"><scope>Input</scope><name>ProcessEvent</name></member>
+      <member refid="classInput_1ae35589903d5dd57f1b29df2039bbe562" prot="private" virt="non-virtual"><scope>Input</scope><name>s_KeyState</name></member>
+      <member refid="classInput_1a101419ed1564201345669b7dc3aceab9" prot="private" virt="non-virtual"><scope>Input</scope><name>s_KeyStatePrevious</name></member>
+      <member refid="classInput_1a4e47ca136800ff0fdb2ff45cbd4d6e1b" prot="private" virt="non-virtual"><scope>Input</scope><name>s_MouseButtonPrevious</name></member>
+      <member refid="classInput_1a38cbcc583b20863850fd3f552d9bf460" prot="private" virt="non-virtual"><scope>Input</scope><name>s_MouseButtonState</name></member>
+      <member refid="classInput_1a3d3d10de42d33da3c4b05ffdb39795d2" prot="private" virt="non-virtual"><scope>Input</scope><name>s_MouseDelta</name></member>
+      <member refid="classInput_1ab00b8236f27ec4750c2f7445cb1b10f6" prot="private" virt="non-virtual"><scope>Input</scope><name>s_MousePosition</name></member>
+      <member refid="classInput_1ab41e893697e72075e87d4beb5e827155" prot="private" virt="non-virtual"><scope>Input</scope><name>s_ScrollDelta</name></member>
+      <member refid="classInput_1ac2a9b120cf7963ce08709b5aa96fd8b2" prot="private" virt="non-virtual"><scope>Input</scope><name>s_WindowHeight</name></member>
+      <member refid="classInput_1aead1b302f92f40508f394030fb96ff43" prot="private" virt="non-virtual"><scope>Input</scope><name>s_WindowResized</name></member>
+      <member refid="classInput_1ac9f8548524960a49842cc0a16ec9ac96" prot="private" virt="non-virtual"><scope>Input</scope><name>s_WindowWidth</name></member>
+      <member refid="classInput_1a4d970dee00ab2bbe858a7758cc167d07" prot="public" virt="non-virtual"><scope>Input</scope><name>SetWindowSize</name></member>
+      <member refid="classInput_1af80dcfde6dbfe39bf3bc0345c75595ce" prot="public" virt="non-virtual"><scope>Input</scope><name>Update</name></member>
+      <member refid="classInput_1a4ddd4e0a717ca4b564a0491e32e6e280" prot="public" virt="non-virtual"><scope>Input</scope><name>WasWindowResized</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

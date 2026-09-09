@@ -8,6 +8,8 @@
  * This class calculates the average FPS over a configurable interval,
  * and logs it to the console. It also provides access to delta time
  * and elapsed time values.
+ *
+ * @note FPS is calculated as frame count divided by elapsed time over the logging interval.
  */
 class FpsCounter{
 public:
@@ -28,16 +30,16 @@ public:
     float GetElapsedTime() const{ return m_ElapsedTime; }
 
     /**
-     * @brief Set the logging interval.
-     * @param interval Interval in seconds.
+     * @brief Sets the logging interval.
+     * @param interval Interval in seconds between FPS logs.
      */
     void SetLogInterval(float interval){ m_LogInterval = interval; }
 
 private:
-    float m_Timer = 0.0f;
-    float m_FPS = 0.0f;
-    int m_FrameCount = 0;
-    float m_DeltaTime = 0.0f;
-    float m_ElapsedTime = 0.0f;
-    float m_LogInterval = 1.0f;
+    float m_Timer = 0.0f; //Accumulated time since last log
+    float m_FPS = 0.0f; //Calculated FPS
+    int m_FrameCount = 0; //Number of frames since last log
+    float m_DeltaTime = 0.0f; //Current frame delta time
+    float m_ElapsedTime = 0.0f; //Total elapsed time
+    float m_LogInterval = 1.0f; //Interval between logs - used usually for FPS logging
 };

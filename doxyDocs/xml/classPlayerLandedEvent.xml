@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classPlayerLandedEvent" kind="class" language="C++" prot="public">
+    <compoundname>PlayerLandedEvent</compoundname>
+    <basecompoundref refid="classEvent" prot="public" virt="non-virtual">Event</basecompoundref>
+    <includes refid="PlayerEvents_8h" local="no">PlayerEvents.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classPlayerLandedEvent_1a112b2471c9a765002bcb2e6ed6edbf3e" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D PlayerLandedEvent::m_Position</definition>
+        <argsstring></argsstring>
+        <name>m_Position</name>
+        <qualifiedname>PlayerLandedEvent::m_Position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/PlayerEvents.h" line="59" column="14" bodyfile="engine/events/PlayerEvents.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPlayerLandedEvent_1aa8bb505e3f27f9c59c802d1f1b254002" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PlayerLandedEvent::m_FallSpeed</definition>
+        <argsstring></argsstring>
+        <name>m_FallSpeed</name>
+        <qualifiedname>PlayerLandedEvent::m_FallSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/PlayerEvents.h" line="60" column="11" bodyfile="engine/events/PlayerEvents.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classPlayerLandedEvent_1a43b714a3239fbc1a9df2c32c7b82fbcd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PlayerLandedEvent::PlayerLandedEvent</definition>
+        <argsstring>(const Vector3D &amp;position, float fallSpeed)</argsstring>
+        <name>PlayerLandedEvent</name>
+        <qualifiedname>PlayerLandedEvent::PlayerLandedEvent</qualifiedname>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>fallSpeed</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classPlayerLandedEvent" kindref="compound">PlayerLandedEvent</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Player position at landing. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fallSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The speed at landing. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/PlayerEvents.h" line="49" column="5" bodyfile="engine/events/PlayerEvents.h" bodystart="49" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classPlayerLandedEvent_1a4df4022912dd5fe3f431619aec1aa62a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+        <definition>const Vector3D &amp; PlayerLandedEvent::GetPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPosition</name>
+        <qualifiedname>PlayerLandedEvent::GetPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/PlayerEvents.h" line="52" column="20" bodyfile="engine/events/PlayerEvents.h" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classPlayerLandedEvent_1a6c71ec39bca8e3db05340273cc860935" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float PlayerLandedEvent::GetFallSpeed</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFallSpeed</name>
+        <qualifiedname>PlayerLandedEvent::GetFallSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/PlayerEvents.h" line="53" column="11" bodyfile="engine/events/PlayerEvents.h" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classPlayerLandedEvent_1aec8a4bc83cf439244e3a813c2361a92c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>EventType PlayerLandedEvent::GetEventType</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetEventType</name>
+        <qualifiedname>PlayerLandedEvent::GetEventType</qualifiedname>
+        <reimplements refid="classEvent_1af14bbd8f69c2778def9462375a0e70f2">GetEventType</reimplements>
+        <briefdescription>
+<para>Returns the type of the event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref> enum value identifying the event. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/PlayerEvents.h" line="56" column="15" bodyfile="engine/events/PlayerEvents.h" bodystart="56" bodyend="56"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classPlayerLandedEvent_1a31183b8860e3bf6e6f96334b4a9fc07f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>static EventType PlayerLandedEvent::GetStaticType</definition>
+        <argsstring>()</argsstring>
+        <name>GetStaticType</name>
+        <qualifiedname>PlayerLandedEvent::GetStaticType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/PlayerEvents.h" line="55" column="22" bodyfile="engine/events/PlayerEvents.h" bodystart="55" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classEvent" kindref="compound">Event</ref> dispatched when the player lands on a surface. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contains the player&apos;s position at landing and the fall speed.</para>
+<para><simplesect kind="note"><para>Dispatched by <ref refid="classPlayerController" kindref="compound">PlayerController</ref> when grounded detection triggers. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>PlayerLandedEvent</label>
+        <link refid="classPlayerLandedEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>PlayerLandedEvent</label>
+        <link refid="classPlayerLandedEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_Position</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/events/PlayerEvents.h" line="42" column="1" bodyfile="engine/events/PlayerEvents.h" bodystart="42" bodyend="61"/>
+    <listofallmembers>
+      <member refid="classPlayerLandedEvent_1aec8a4bc83cf439244e3a813c2361a92c" prot="public" virt="virtual"><scope>PlayerLandedEvent</scope><name>GetEventType</name></member>
+      <member refid="classPlayerLandedEvent_1a6c71ec39bca8e3db05340273cc860935" prot="public" virt="non-virtual"><scope>PlayerLandedEvent</scope><name>GetFallSpeed</name></member>
+      <member refid="classPlayerLandedEvent_1a4df4022912dd5fe3f431619aec1aa62a" prot="public" virt="non-virtual"><scope>PlayerLandedEvent</scope><name>GetPosition</name></member>
+      <member refid="classPlayerLandedEvent_1a31183b8860e3bf6e6f96334b4a9fc07f" prot="public" virt="non-virtual"><scope>PlayerLandedEvent</scope><name>GetStaticType</name></member>
+      <member refid="classEvent_1a8ad0c350a8f569dbb05cf845caa4737e" prot="public" virt="non-virtual"><scope>PlayerLandedEvent</scope><name>Handled</name></member>
+      <member refid="classPlayerLandedEvent_1aa8bb505e3f27f9c59c802d1f1b254002" prot="private" virt="non-virtual"><scope>PlayerLandedEvent</scope><name>m_FallSpeed</name></member>
+      <member refid="classPlayerLandedEvent_1a112b2471c9a765002bcb2e6ed6edbf3e" prot="private" virt="non-virtual"><scope>PlayerLandedEvent</scope><name>m_Position</name></member>
+      <member refid="classPlayerLandedEvent_1a43b714a3239fbc1a9df2c32c7b82fbcd" prot="public" virt="non-virtual"><scope>PlayerLandedEvent</scope><name>PlayerLandedEvent</name></member>
+      <member refid="classEvent_1a105223995bbf1a1e4714d0c77f91cf0b" prot="public" virt="virtual"><scope>PlayerLandedEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,480 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classShader" kind="class" language="C++" prot="public">
+    <compoundname>Shader</compoundname>
+    <includes refid="Shader_8h" local="no">Shader.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classShader_1a1a5c07b2c962e5c31810cd7a5d93026d" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Shader::m_RendererID</definition>
+        <argsstring></argsstring>
+        <name>m_RendererID</name>
+        <qualifiedname>Shader::m_RendererID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="93" column="18" bodyfile="engine/graphics/Shader.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classShader_1a0d654ebaca4e0555197c0724c6d30610" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Shader::Shader</definition>
+        <argsstring>()</argsstring>
+        <name>Shader</name>
+        <qualifiedname>Shader::Shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="20" column="5" bodyfile="engine/graphics/Shader.cpp" bodystart="6" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classShader_1aff01df87e8a102f270b5b135a295e59d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Shader::~Shader</definition>
+        <argsstring>()</argsstring>
+        <name>~Shader</name>
+        <qualifiedname>Shader::~Shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="21" column="5" bodyfile="engine/graphics/Shader.cpp" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classShader_1a76b0876b9f7018273a1fe4c6a3717cc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Shader::Compile</definition>
+        <argsstring>(const std::string &amp;vertexSource, const std::string &amp;fragmentSource)</argsstring>
+        <name>Compile</name>
+        <qualifiedname>Shader::Compile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>vertexSource</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fragmentSource</declname>
+        </param>
+        <briefdescription>
+<para>Compiles and links the vertex and fragment shaders. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertexSource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GLSL source code for the vertex shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fragmentSource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GLSL source code for the fragment shader. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if compilation and linking succeeded, false otherwise.</para>
+</simplesect>
+This method creates and compiles the vertex shader and then fragment shader. Then links both shaders into a program and then clears its objects. Also clears it in case of failure.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertexSource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GLSL source code for the vertex shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fragmentSource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GLSL source code for the fragment shader. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if compilation and linking succeeded, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="29" column="10" bodyfile="engine/graphics/Shader.cpp" bodystart="23" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classShader_1a5a5a24f72050f46f03cb839b41490527" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::Bind</definition>
+        <argsstring>() const</argsstring>
+        <name>Bind</name>
+        <qualifiedname>Shader::Bind</qualifiedname>
+        <briefdescription>
+<para>Binds the shader program for use. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Binds the shader program. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="34" column="10" bodyfile="engine/graphics/Shader.cpp" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classShader_1aebfe8baf7c63c605e0ed429085a4e06a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::Unbind</definition>
+        <argsstring>() const</argsstring>
+        <name>Unbind</name>
+        <qualifiedname>Shader::Unbind</qualifiedname>
+        <briefdescription>
+<para>Unbinds the shader program. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="39" column="10" bodyfile="engine/graphics/Shader.cpp" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classShader_1a1abb7c1fa7d1c58f82ba6544b2ae57bc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::SetUniformMat4</definition>
+        <argsstring>(const std::string &amp;name, const Matrix4 &amp;matrix) const</argsstring>
+        <name>SetUniformMat4</name>
+        <qualifiedname>Shader::SetUniformMat4</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classMatrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+<para>Sets a 4x4 matrix uniform. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uniform name in the shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>matrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="46" column="10" bodyfile="engine/graphics/Shader.cpp" bodystart="102" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classShader_1a1631958f43e9c0f6d8c706de11ed2ee6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::SetUniformFloat</definition>
+        <argsstring>(const std::string &amp;name, float value) const</argsstring>
+        <name>SetUniformFloat</name>
+        <qualifiedname>Shader::SetUniformFloat</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets a float uniform. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uniform name in the shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float value to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="53" column="10" bodyfile="engine/graphics/Shader.cpp" bodystart="116" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classShader_1a317a09917f0a22884b3c6b96bbe0184d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::SetUniformFloat3</definition>
+        <argsstring>(const std::string &amp;name, float x, float y, float z) const</argsstring>
+        <name>SetUniformFloat3</name>
+        <qualifiedname>Shader::SetUniformFloat3</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+<para>Sets a 3D vector uniform (three floats). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uniform name in the shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Z component. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="62" column="10" bodyfile="engine/graphics/Shader.cpp" bodystart="128" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classShader_1aaf8f4c3d1c1a892f66b0141821697869" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::SetUniformFloat3</definition>
+        <argsstring>(const std::string &amp;name, const Vector3D &amp;value) const</argsstring>
+        <name>SetUniformFloat3</name>
+        <qualifiedname>Shader::SetUniformFloat3</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets a 3D vector uniform from a <ref refid="structVector3D" kindref="compound">Vector3D</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uniform name in the shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structVector3D" kindref="compound">Vector3D</ref> value to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="69" column="10" bodyfile="engine/graphics/Shader.cpp" bodystart="138" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classShader_1a382e9d0bb916f47a09f6a5a4b378e65d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::SetUniformVec2</definition>
+        <argsstring>(const std::string &amp;name, float x, float y) const</argsstring>
+        <name>SetUniformVec2</name>
+        <qualifiedname>Shader::SetUniformVec2</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Sets a 2D vector uniform (two floats). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uniform name in the shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y component. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="77" column="10" bodyfile="engine/graphics/Shader.cpp" bodystart="148" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classShader_1a2ec513a8aeac4edde89ae006dac62368" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::SetUniformVec2</definition>
+        <argsstring>(const std::string &amp;name, const Vector2D &amp;value) const</argsstring>
+        <name>SetUniformVec2</name>
+        <qualifiedname>Shader::SetUniformVec2</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector2D" kindref="compound">Vector2D</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets a 2D vector uniform from a <ref refid="structVector2D" kindref="compound">Vector2D</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uniform name in the shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structVector2D" kindref="compound">Vector2D</ref> value to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="84" column="10" bodyfile="engine/graphics/Shader.cpp" bodystart="158" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classShader_1a72180929f60f8071527e75eb5d5add40" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Shader::GetRendererID</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRendererID</name>
+        <qualifiedname>Shader::GetRendererID</qualifiedname>
+        <briefdescription>
+<para>Gets the OpenGL program ID. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>OpenGL program ID. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Shader.h" line="90" column="18" bodyfile="engine/graphics/Shader.h" bodystart="90" bodyend="90"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>OpenGL shader program wrapper. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Manages the compilation, linking, and usage of vertex and fragment shaders. Provides methods for setting uniform values (matrices, vectors, and floats).</para>
+<para><simplesect kind="note"><para>Shaders are compiled from source strings at runtime. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classGraphicsContext" kindref="compound">GraphicsContext</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Shader</label>
+        <link refid="classShader"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/graphics/Shader.h" line="18" column="1" bodyfile="engine/graphics/Shader.h" bodystart="18" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classShader_1a5a5a24f72050f46f03cb839b41490527" prot="public" virt="non-virtual"><scope>Shader</scope><name>Bind</name></member>
+      <member refid="classShader_1a76b0876b9f7018273a1fe4c6a3717cc3" prot="public" virt="non-virtual"><scope>Shader</scope><name>Compile</name></member>
+      <member refid="classShader_1a72180929f60f8071527e75eb5d5add40" prot="public" virt="non-virtual"><scope>Shader</scope><name>GetRendererID</name></member>
+      <member refid="classShader_1a1a5c07b2c962e5c31810cd7a5d93026d" prot="private" virt="non-virtual"><scope>Shader</scope><name>m_RendererID</name></member>
+      <member refid="classShader_1a1631958f43e9c0f6d8c706de11ed2ee6" prot="public" virt="non-virtual"><scope>Shader</scope><name>SetUniformFloat</name></member>
+      <member refid="classShader_1a317a09917f0a22884b3c6b96bbe0184d" prot="public" virt="non-virtual"><scope>Shader</scope><name>SetUniformFloat3</name></member>
+      <member refid="classShader_1aaf8f4c3d1c1a892f66b0141821697869" prot="public" virt="non-virtual"><scope>Shader</scope><name>SetUniformFloat3</name></member>
+      <member refid="classShader_1a1abb7c1fa7d1c58f82ba6544b2ae57bc" prot="public" virt="non-virtual"><scope>Shader</scope><name>SetUniformMat4</name></member>
+      <member refid="classShader_1a382e9d0bb916f47a09f6a5a4b378e65d" prot="public" virt="non-virtual"><scope>Shader</scope><name>SetUniformVec2</name></member>
+      <member refid="classShader_1a2ec513a8aeac4edde89ae006dac62368" prot="public" virt="non-virtual"><scope>Shader</scope><name>SetUniformVec2</name></member>
+      <member refid="classShader_1a0d654ebaca4e0555197c0724c6d30610" prot="public" virt="non-virtual"><scope>Shader</scope><name>Shader</name></member>
+      <member refid="classShader_1aebfe8baf7c63c605e0ed429085a4e06a" prot="public" virt="non-virtual"><scope>Shader</scope><name>Unbind</name></member>
+      <member refid="classShader_1aff01df87e8a102f270b5b135a295e59d" prot="public" virt="non-virtual"><scope>Shader</scope><name>~Shader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

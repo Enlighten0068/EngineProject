@@ -1,0 +1,48 @@
+\doxysection{Event\+Bus.\+h}
+\hypertarget{EventBus_8h_source}{}\label{EventBus_8h_source}\index{engine/events/EventBus.h@{engine/events/EventBus.h}}
+\doxymbox{\hyperlink{EventBus_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Event_8h}{events/Event.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <typeindex>}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00019}\doxymbox{\hyperlink{classEventBus}{00019}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classEventBus_a33cb29b2fe543e43494fc40adf9cdfa7}{EventBus}}\{}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00020}00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00021}\doxymbox{\hyperlink{classEventBus_aedcd787e8f3f1a2c587be349957da894}{00021}}\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classEventBus_aedcd787e8f3f1a2c587be349957da894}{Callback}}\ =\ std::function<void(\doxymbox{\hyperlink{classEvent}{Event}}\&)>;\ \textcolor{comment}{//Callback\ type\ for\ event\ handlers}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{classEventBus_a33cb29b2fe543e43494fc40adf9cdfa7}{EventBus}}\&\ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{GetInstance}}();}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00039}\doxymbox{\hyperlink{classEventBus_aec7a1402c0f1789198cc9954639bac99}{00039}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classEventBus_aec7a1402c0f1789198cc9954639bac99}{Subscribe}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classEventBus_aedcd787e8f3f1a2c587be349957da894}{Callback}}\&\ callback)\{}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ std::type\_index\ typeIndex\ =\ std::type\_index(\textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classEventBus_a702797a8b9f7919aebea9be693fed6fa}{m\_Subscribers}}[typeIndex].push\_back(callback);}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00052}\doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{00052}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}}(\doxymbox{\hyperlink{classEvent}{Event}}\&\ event)\{}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ std::type\_index\ typeIndex\ =\ std::type\_index(\textcolor{keyword}{typeid}(event));}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \doxymbox{\hyperlink{classEventBus_a702797a8b9f7919aebea9be693fed6fa}{m\_Subscribers}}.find(typeIndex);}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(it\ !=\ \doxymbox{\hyperlink{classEventBus_a702797a8b9f7919aebea9be693fed6fa}{m\_Subscribers}}.end())\{}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\&\ callback\ :\ it-\/>second)\{}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback(event);}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00067}\doxymbox{\hyperlink{classEventBus_a979e575b3ee8a4e6d09c2d723d54ce79}{00067}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classEventBus_a979e575b3ee8a4e6d09c2d723d54ce79}{Clear}}()\{}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classEventBus_a702797a8b9f7919aebea9be693fed6fa}{m\_Subscribers}}.clear();}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00071}00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00072}\doxymbox{\hyperlink{classEventBus_a33cb29b2fe543e43494fc40adf9cdfa7}{00072}}\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_a33cb29b2fe543e43494fc40adf9cdfa7}{EventBus}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00073}\doxymbox{\hyperlink{classEventBus_aaea67615da6646dfcc3418a632bfedc2}{00073}}\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_aaea67615da6646dfcc3418a632bfedc2}{\string~EventBus}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00074}\doxymbox{\hyperlink{classEventBus_a270ac5b93ed8fa8c64a32f89c281e7fa}{00074}}\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_a270ac5b93ed8fa8c64a32f89c281e7fa}{EventBus}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classEventBus_a33cb29b2fe543e43494fc40adf9cdfa7}{EventBus}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00075}\doxymbox{\hyperlink{classEventBus_a77679fdfb272555934f408c0a685c850}{00075}}\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_a33cb29b2fe543e43494fc40adf9cdfa7}{EventBus}}\&\ \doxymbox{\hyperlink{classEventBus_a77679fdfb272555934f408c0a685c850}{operator=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classEventBus_a33cb29b2fe543e43494fc40adf9cdfa7}{EventBus}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00077}\doxymbox{\hyperlink{classEventBus_a702797a8b9f7919aebea9be693fed6fa}{00077}}\ \ \ \ \ std::unordered\_map<std::type\_index,\ std::vector<Callback>>\ \doxymbox{\hyperlink{classEventBus_a702797a8b9f7919aebea9be693fed6fa}{m\_Subscribers}};\ \textcolor{comment}{//Map\ of\ event\ types\ to\ callbacks}}
+\DoxyCodeLine{\Hypertarget{EventBus_8h_source_l00078}00078\ \};}
+
+\end{DoxyCode}

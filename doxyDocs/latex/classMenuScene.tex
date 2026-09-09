@@ -1,0 +1,472 @@
+\doxysection{Menu\+Scene Class Reference}
+\hypertarget{classMenuScene}{}\label{classMenuScene}\index{MenuScene@{MenuScene}}
+
+
+Main menu scene with visual text rendering.  
+
+
+
+
+{\ttfamily \+\#include $<$Menu\+Scene.\+h$>$}
+
+
+
+Inheritance diagram for Menu\+Scene:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classMenuScene__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Menu\+Scene:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMenuScene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structMenuScene_1_1MenuOption}{Menu\+Option}}
+\begin{DoxyCompactList}\small\item\em Menu option data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classMenuScene_a76e19b60d3334d7697f7d29bab6708d3}{Menu\+Scene}} (\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene\+Manager, \doxymbox{\hyperlink{classShader}{Shader}} \&shader, \doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&va, \doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&ib, \doxymbox{\hyperlink{classCamera2D}{Camera2D}} \&camera, \doxymbox{\hyperlink{classShader}{Shader}} \&line\+Shader)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classMenuScene}{Menu\+Scene}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classMenuScene_a9b8d7fd2c641191231e9d352932be80d}{\texorpdfstring{$\sim$}{\string~}\+Menu\+Scene}} ()
+\item 
+void \doxymbox{\hyperlink{classMenuScene_a015085736912c87c4e28ab54ab056e6d}{On\+Enter}} () override
+\begin{DoxyCompactList}\small\item\em Called when the menu becomes active. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classMenuScene_a834e7aa54dd72502876d30114e47cc9e}{On\+Exit}} () override
+\begin{DoxyCompactList}\small\item\em Called when the menu is exited. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classMenuScene_af2b1e0e9e1c783c8b058f60906add842}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Updates the menu: navigation and selection. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classMenuScene_a57787dac0643417ddd147c940c36b93a}{Render}} () override
+\begin{DoxyCompactList}\small\item\em Renders the menu. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{classMenuScene_a8bb0e3e014de1ba6912dc937de6a2a69}{Get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classScene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classScene_af6e09d91ebd10ae9cc7c12c39d06386c}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classMenuScene_a329504c5161fa328040b3f3092df2bae}{Is\+Mouse\+Over\+Option}} (const \doxymbox{\hyperlink{structMenuScene_1_1MenuOption}{Menu\+Option}} \&option) const
+\begin{DoxyCompactList}\small\item\em Checks if the mouse is over a menu option. \end{DoxyCompactList}\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \doxymbox{\hyperlink{classMenuScene_a4e1a9cdb5e0dedaab5c9f780f54d4f67}{Create\+Text\+Texture}} (const std::\+string \&text, const SDL\+\_\+\+Color \&color)
+\begin{DoxyCompactList}\small\item\em Creates a texture from rendered text. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classMenuScene_a46a3159d25cbdd8710abf3a1a67bfca0}{Handle\+Selection}} ()
+\begin{DoxyCompactList}\small\item\em Handles the selection of the current menu option. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classMenuScene_a1e7a918b520265294fd74c1d9d086795}{Render\+Option}} (const \doxymbox{\hyperlink{structMenuScene_1_1MenuOption}{Menu\+Option}} \&option, bool is\+Selected)
+\begin{DoxyCompactList}\small\item\em Renders a single menu option. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classCamera2D}{Camera2D}} \& \doxymbox{\hyperlink{classMenuScene_a42392ac9ca92d2c766daef724b6ab131}{m\+\_\+\+Camera}}
+\item 
+\doxymbox{\hyperlink{classShader}{Shader}} \& \doxymbox{\hyperlink{classMenuScene_a46e28a18551c53cff67144bb9ffe6057}{m\+\_\+\+Line\+Shader}}
+\item 
+\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}} \& \doxymbox{\hyperlink{classMenuScene_aafe8fc8c4b77426e8edbc443283c6dda}{m\+\_\+\+Scene\+Manager}}
+\item 
+\doxymbox{\hyperlink{classShader}{Shader}} \& \doxymbox{\hyperlink{classMenuScene_a9efeacffbcd00dea280ccf3703321f71}{m\+\_\+\+Shader}}
+\item 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \& \doxymbox{\hyperlink{classMenuScene_aee526af82a75d255d1b6fd6d3d499e92}{m\+\_\+\+Vertex\+Array}}
+\item 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \& \doxymbox{\hyperlink{classMenuScene_af61d24fa8a94de5b0282fce6af54e0c4}{m\+\_\+\+Index\+Buffer}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classFont}{Font}} $>$ \doxymbox{\hyperlink{classMenuScene_af6491cf56e85392de0bcf6e510afe9cf}{m\+\_\+\+Font}}
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{structMenuScene_1_1MenuOption}{Menu\+Option}} $>$ \doxymbox{\hyperlink{classMenuScene_aae06e56f01f32bab0f9b7262dad0f393}{m\+\_\+\+Options}}
+\item 
+int \doxymbox{\hyperlink{classMenuScene_aaa5474b6830601a4a96a15426cc915c7}{m\+\_\+\+Selected\+Option}} = 0
+\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \doxymbox{\hyperlink{classMenuScene_acfabc7d7b96c85747e56c6c11f9077c1}{m\+\_\+\+Background\+Texture}}
+\item 
+SDL\+\_\+\+Color \doxymbox{\hyperlink{classMenuScene_a0ad6ec8522307042405a1e14b6d7e72e}{m\+\_\+\+Normal\+Color}} = \{255, 255, 255, 255\}
+\item 
+SDL\+\_\+\+Color \doxymbox{\hyperlink{classMenuScene_af46c6487c84f609a1fea2f0c98c0d2f7}{m\+\_\+\+Selected\+Color}} = \{255, 255, 0, 255\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main menu scene with visual text rendering. 
+
+The \doxylink{classMenuScene}{Menu\+Scene} provides a graphical menu with options rendered using SDL\+\_\+ttf. Navigation is done with arrow keys / D-\/pad, mouse clicks, and selection with Enter / Space / A button.
+
+\begin{DoxyNote}{Note}
+This scene requires a font file to be present in assets. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classFont}{Font}, \doxylink{classSceneManager}{Scene\+Manager} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00022}{22}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+
+
+\label{classMenuScene_doc-constructors}
+\Hypertarget{classMenuScene_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMenuScene_a76e19b60d3334d7697f7d29bab6708d3}\index{MenuScene@{MenuScene}!MenuScene@{MenuScene}}
+\index{MenuScene@{MenuScene}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{MenuScene()}{MenuScene()}}
+{\footnotesize\ttfamily \label{classMenuScene_a76e19b60d3334d7697f7d29bab6708d3} 
+Menu\+Scene::\+\+Menu\+Scene (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene\+Manager}{, }\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{shader}{, }\item[{\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&}]{va}{, }\item[{\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&}]{ib}{, }\item[{\doxymbox{\hyperlink{classCamera2D}{Camera2D}} \&}]{camera}{, }\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{line\+Shader}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the \doxylink{classMenuScene}{Menu\+Scene}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Manager} & Reference to the \doxylink{classSceneManager}{Scene\+Manager} for transitions. \\
+\hline
+{\em shader} & Reference to the shader for rendering. \\
+\hline
+{\em va} & Reference to the vertex array. \\
+\hline
+{\em ib} & Reference to the index buffer. \\
+\hline
+{\em camera} & Reference to the camera. \\
+\hline
+{\em line\+Shader} & Reference to the line shader. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00012}{12}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+
+\Hypertarget{classMenuScene_a9b8d7fd2c641191231e9d352932be80d}\index{MenuScene@{MenuScene}!````~MenuScene@{\texorpdfstring{$\sim$}{\string~}MenuScene}}
+\index{````~MenuScene@{\texorpdfstring{$\sim$}{\string~}MenuScene}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MenuScene()}{\string~MenuScene()}}
+{\footnotesize\ttfamily \label{classMenuScene_a9b8d7fd2c641191231e9d352932be80d} 
+Menu\+Scene::\+\texorpdfstring{$\sim$}{\string~}\+Menu\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00017}{17}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+
+
+
+\label{classMenuScene_doc-func-members}
+\Hypertarget{classMenuScene_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMenuScene_a4e1a9cdb5e0dedaab5c9f780f54d4f67}\index{MenuScene@{MenuScene}!CreateTextTexture@{CreateTextTexture}}
+\index{CreateTextTexture@{CreateTextTexture}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{CreateTextTexture()}{CreateTextTexture()}}
+{\footnotesize\ttfamily \label{classMenuScene_a4e1a9cdb5e0dedaab5c9f780f54d4f67} 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ Menu\+Scene::\+\+Create\+Text\+Texture (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{text}{, }\item[{const SDL\+\_\+\+Color \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates a texture from rendered text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The string to render. \\
+\hline
+{\em color} & The color of the text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shared pointer to the \doxylink{classTexture2D}{Texture2D}, or nullptr on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00084}{84}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+
+\Hypertarget{classMenuScene_a8bb0e3e014de1ba6912dc937de6a2a69}\index{MenuScene@{MenuScene}!GetName@{GetName}}
+\index{GetName@{GetName}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily \label{classMenuScene_a8bb0e3e014de1ba6912dc937de6a2a69} 
+std::\+string Menu\+Scene::\+\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the scene. 
+
+\begin{DoxyReturn}{Returns}
+String containing the scene name. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classScene_ad93511100250c3f3ed736b9ed69fdc6f}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00041}{41}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_a46a3159d25cbdd8710abf3a1a67bfca0}\index{MenuScene@{MenuScene}!HandleSelection@{HandleSelection}}
+\index{HandleSelection@{HandleSelection}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{HandleSelection()}{HandleSelection()}}
+{\footnotesize\ttfamily \label{classMenuScene_a46a3159d25cbdd8710abf3a1a67bfca0} 
+void Menu\+Scene::\+\+Handle\+Selection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles the selection of the current menu option. 
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00238}{238}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+
+\Hypertarget{classMenuScene_a329504c5161fa328040b3f3092df2bae}\index{MenuScene@{MenuScene}!IsMouseOverOption@{IsMouseOverOption}}
+\index{IsMouseOverOption@{IsMouseOverOption}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{IsMouseOverOption()}{IsMouseOverOption()}}
+{\footnotesize\ttfamily \label{classMenuScene_a329504c5161fa328040b3f3092df2bae} 
+bool Menu\+Scene::\+\+Is\+Mouse\+Over\+Option (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structMenuScene_1_1MenuOption}{Menu\+Option}} \&}]{option}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the mouse is over a menu option. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & The menu option to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the mouse is over the option, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00185}{185}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+
+\Hypertarget{classMenuScene_a015085736912c87c4e28ab54ab056e6d}\index{MenuScene@{MenuScene}!OnEnter@{OnEnter}}
+\index{OnEnter@{OnEnter}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{OnEnter()}{OnEnter()}}
+{\footnotesize\ttfamily \label{classMenuScene_a015085736912c87c4e28ab54ab056e6d} 
+void Menu\+Scene::\+\+On\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the menu becomes active. 
+
+Loads the font, creates the menu options, and sets up the background. 
+
+Implements \doxymbox{\hyperlink{classScene_ad09d42329f52df55fad0467cd092c9aa}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00026}{26}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+
+\Hypertarget{classMenuScene_a834e7aa54dd72502876d30114e47cc9e}\index{MenuScene@{MenuScene}!OnExit@{OnExit}}
+\index{OnExit@{OnExit}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{OnExit()}{OnExit()}}
+{\footnotesize\ttfamily \label{classMenuScene_a834e7aa54dd72502876d30114e47cc9e} 
+void Menu\+Scene::\+\+On\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the menu is exited. 
+
+Releases resources used by the menu. 
+
+Implements \doxymbox{\hyperlink{classScene_a9824fefa923e5a9db4dca5a23343609b}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00071}{71}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+
+\Hypertarget{classMenuScene_a57787dac0643417ddd147c940c36b93a}\index{MenuScene@{MenuScene}!Render@{Render}}
+\index{Render@{Render}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{classMenuScene_a57787dac0643417ddd147c940c36b93a} 
+void Menu\+Scene::\+\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the menu. 
+
+
+
+Implements \doxymbox{\hyperlink{classScene_ae24d21e12b34839994ad265662ea24d7}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00170}{170}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+
+\Hypertarget{classMenuScene_a1e7a918b520265294fd74c1d9d086795}\index{MenuScene@{MenuScene}!RenderOption@{RenderOption}}
+\index{RenderOption@{RenderOption}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{RenderOption()}{RenderOption()}}
+{\footnotesize\ttfamily \label{classMenuScene_a1e7a918b520265294fd74c1d9d086795} 
+void Menu\+Scene::\+\+Render\+Option (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structMenuScene_1_1MenuOption}{Menu\+Option}} \&}]{option}{, }\item[{bool}]{is\+Selected}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Renders a single menu option. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & The menu option to render. \\
+\hline
+{\em is\+Selected} & Whether this option is currently selected. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00209}{209}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+
+\Hypertarget{classMenuScene_af2b1e0e9e1c783c8b058f60906add842}\index{MenuScene@{MenuScene}!Update@{Update}}
+\index{Update@{Update}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classMenuScene_af2b1e0e9e1c783c8b058f60906add842} 
+void Menu\+Scene::\+\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the menu: navigation and selection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \doxylink{classTime}{Time} elapsed since the last frame (unused). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \doxymbox{\hyperlink{classScene_aaede6346f58776bd40efffd55885ab02}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00117}{117}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+
+
+
+\label{classMenuScene_doc-variable-members}
+\Hypertarget{classMenuScene_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMenuScene_acfabc7d7b96c85747e56c6c11f9077c1}\index{MenuScene@{MenuScene}!m\_BackgroundTexture@{m\_BackgroundTexture}}
+\index{m\_BackgroundTexture@{m\_BackgroundTexture}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_BackgroundTexture}{m\_BackgroundTexture}}
+{\footnotesize\ttfamily \label{classMenuScene_acfabc7d7b96c85747e56c6c11f9077c1} 
+std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classTexture2D}{Texture2D}}$>$ Menu\+Scene::\+m\+\_\+\+Background\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00068}{68}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_a42392ac9ca92d2c766daef724b6ab131}\index{MenuScene@{MenuScene}!m\_Camera@{m\_Camera}}
+\index{m\_Camera@{m\_Camera}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_Camera}{m\_Camera}}
+{\footnotesize\ttfamily \label{classMenuScene_a42392ac9ca92d2c766daef724b6ab131} 
+\doxymbox{\hyperlink{classCamera2D}{Camera2D}}\& Menu\+Scene::\+m\+\_\+\+Camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00056}{56}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_af6491cf56e85392de0bcf6e510afe9cf}\index{MenuScene@{MenuScene}!m\_Font@{m\_Font}}
+\index{m\_Font@{m\_Font}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_Font}{m\_Font}}
+{\footnotesize\ttfamily \label{classMenuScene_af6491cf56e85392de0bcf6e510afe9cf} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classFont}{Font}}$>$ Menu\+Scene::\+m\+\_\+\+Font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00064}{64}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_af61d24fa8a94de5b0282fce6af54e0c4}\index{MenuScene@{MenuScene}!m\_IndexBuffer@{m\_IndexBuffer}}
+\index{m\_IndexBuffer@{m\_IndexBuffer}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_IndexBuffer}{m\_IndexBuffer}}
+{\footnotesize\ttfamily \label{classMenuScene_af61d24fa8a94de5b0282fce6af54e0c4} 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}}\& Menu\+Scene::\+m\+\_\+\+Index\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00062}{62}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_a46e28a18551c53cff67144bb9ffe6057}\index{MenuScene@{MenuScene}!m\_LineShader@{m\_LineShader}}
+\index{m\_LineShader@{m\_LineShader}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_LineShader}{m\_LineShader}}
+{\footnotesize\ttfamily \label{classMenuScene_a46e28a18551c53cff67144bb9ffe6057} 
+\doxymbox{\hyperlink{classShader}{Shader}}\& Menu\+Scene::\+m\+\_\+\+Line\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00057}{57}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_a0ad6ec8522307042405a1e14b6d7e72e}\index{MenuScene@{MenuScene}!m\_NormalColor@{m\_NormalColor}}
+\index{m\_NormalColor@{m\_NormalColor}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_NormalColor}{m\_NormalColor}}
+{\footnotesize\ttfamily \label{classMenuScene_a0ad6ec8522307042405a1e14b6d7e72e} 
+SDL\+\_\+\+Color Menu\+Scene::\+m\+\_\+\+Normal\+Color = \{255, 255, 255, 255\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00069}{69}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_aae06e56f01f32bab0f9b7262dad0f393}\index{MenuScene@{MenuScene}!m\_Options@{m\_Options}}
+\index{m\_Options@{m\_Options}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_Options}{m\_Options}}
+{\footnotesize\ttfamily \label{classMenuScene_aae06e56f01f32bab0f9b7262dad0f393} 
+std::\+vector$<$\doxymbox{\hyperlink{structMenuScene_1_1MenuOption}{Menu\+Option}}$>$ Menu\+Scene::\+m\+\_\+\+Options\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00065}{65}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_aafe8fc8c4b77426e8edbc443283c6dda}\index{MenuScene@{MenuScene}!m\_SceneManager@{m\_SceneManager}}
+\index{m\_SceneManager@{m\_SceneManager}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_SceneManager}{m\_SceneManager}}
+{\footnotesize\ttfamily \label{classMenuScene_aafe8fc8c4b77426e8edbc443283c6dda} 
+\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}}\& Menu\+Scene::\+m\+\_\+\+Scene\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00059}{59}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_af46c6487c84f609a1fea2f0c98c0d2f7}\index{MenuScene@{MenuScene}!m\_SelectedColor@{m\_SelectedColor}}
+\index{m\_SelectedColor@{m\_SelectedColor}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_SelectedColor}{m\_SelectedColor}}
+{\footnotesize\ttfamily \label{classMenuScene_af46c6487c84f609a1fea2f0c98c0d2f7} 
+SDL\+\_\+\+Color Menu\+Scene::\+m\+\_\+\+Selected\+Color = \{255, 255, 0, 255\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00070}{70}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_aaa5474b6830601a4a96a15426cc915c7}\index{MenuScene@{MenuScene}!m\_SelectedOption@{m\_SelectedOption}}
+\index{m\_SelectedOption@{m\_SelectedOption}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_SelectedOption}{m\_SelectedOption}}
+{\footnotesize\ttfamily \label{classMenuScene_aaa5474b6830601a4a96a15426cc915c7} 
+int Menu\+Scene::\+m\+\_\+\+Selected\+Option = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00066}{66}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_a9efeacffbcd00dea280ccf3703321f71}\index{MenuScene@{MenuScene}!m\_Shader@{m\_Shader}}
+\index{m\_Shader@{m\_Shader}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_Shader}{m\_Shader}}
+{\footnotesize\ttfamily \label{classMenuScene_a9efeacffbcd00dea280ccf3703321f71} 
+\doxymbox{\hyperlink{classShader}{Shader}}\& Menu\+Scene::\+m\+\_\+\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00060}{60}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+\Hypertarget{classMenuScene_aee526af82a75d255d1b6fd6d3d499e92}\index{MenuScene@{MenuScene}!m\_VertexArray@{m\_VertexArray}}
+\index{m\_VertexArray@{m\_VertexArray}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{m\_VertexArray}{m\_VertexArray}}
+{\footnotesize\ttfamily \label{classMenuScene_aee526af82a75d255d1b6fd6d3d499e92} 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}}\& Menu\+Scene::\+m\+\_\+\+Vertex\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{MenuScene_8h_source_l00061}{61}} of file \doxymbox{\hyperlink{MenuScene_8h_source}{Menu\+Scene.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+scene/\doxymbox{\hyperlink{MenuScene_8h}{Menu\+Scene.\+h}}\item 
+engine/\+scene/\doxymbox{\hyperlink{MenuScene_8cpp}{Menu\+Scene.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_3862078e0a5429b6ce9a8a5d655cc609" kind="dir">
+    <compoundname>engine/platform</compoundname>
+    <innerdir refid="dir_2bc419a5fb6c3db8b46302b7a1376d88">engine/platform/sdl</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/platform/"/>
+  </compounddef>
+</doxygen>

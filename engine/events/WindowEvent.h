@@ -12,12 +12,8 @@
  */
 class WindowCloseEvent : public Event{
 public:
-    static EventType GetStaticType(){
-        return EventType::WindowClose;
-    }
-    EventType GetEventType() const override{
-        return EventType::WindowClose;
-    }
+    static EventType GetStaticType(){ return EventType::WindowClose; }
+    EventType GetEventType() const override{ return EventType::WindowClose; }
 };
 
 /**
@@ -29,21 +25,19 @@ public:
  */
 class WindowResizeEvent : public Event{
 public:
-    WindowResizeEvent(int width, int height): m_Width(width),m_Height(height){}
+    /**
+     * @brief Constructs a WindowResizeEvent.
+     * @param width New window width in pixels.
+     * @param height New window height in pixels.
+     */
+    WindowResizeEvent(int width, int height) : m_Width(width), m_Height(height){}
 
-    EventType GetEventType() const override{
-        return EventType::WindowResize;
-    }
+    EventType GetEventType() const override{ return EventType::WindowResize; }
 
-    int GetWidth() const{
-        return m_Width;
-    }
-
-    int GetHeight() const{
-        return m_Height;
-    }
+    int GetWidth() const{ return m_Width; }
+    int GetHeight() const{ return m_Height; }
 
 private:
-    int m_Width;
-    int m_Height;
+    int m_Width; //New window width
+    int m_Height; //New window height
 };

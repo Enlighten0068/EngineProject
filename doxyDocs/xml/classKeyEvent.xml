@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classKeyEvent" kind="class" language="C++" prot="public">
+    <compoundname>KeyEvent</compoundname>
+    <basecompoundref refid="classEvent" prot="public" virt="non-virtual">Event</basecompoundref>
+    <includes refid="KeyEvent_8h" local="no">KeyEvent.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classKeyEvent_1a628fa8f7d5d100dadcde5a126d0bd8ee" prot="private" static="no" mutable="no">
+        <type>SDL_Scancode</type>
+        <definition>SDL_Scancode KeyEvent::m_Scancode</definition>
+        <argsstring></argsstring>
+        <name>m_Scancode</name>
+        <qualifiedname>KeyEvent::m_Scancode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="47" column="18" bodyfile="engine/events/KeyEvent.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKeyEvent_1aad5fdec337221e5ee64d961e22a26e62" prot="private" static="no" mutable="no">
+        <type><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1" kindref="member">KeyAction</ref></type>
+        <definition>KeyAction KeyEvent::m_Action</definition>
+        <argsstring></argsstring>
+        <name>m_Action</name>
+        <qualifiedname>KeyEvent::m_Action</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="48" column="15" bodyfile="engine/events/KeyEvent.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKeyEvent_1a23cd0c227402e8ab0558c625f672382b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KeyEvent::m_Ctrl</definition>
+        <argsstring></argsstring>
+        <name>m_Ctrl</name>
+        <qualifiedname>KeyEvent::m_Ctrl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="49" column="10" bodyfile="engine/events/KeyEvent.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKeyEvent_1a7adc51b58a55cfc871e59d796acd75e9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KeyEvent::m_Shift</definition>
+        <argsstring></argsstring>
+        <name>m_Shift</name>
+        <qualifiedname>KeyEvent::m_Shift</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="50" column="10" bodyfile="engine/events/KeyEvent.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKeyEvent_1a2e4b86082ea9bcf30bf0140d04a76640" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KeyEvent::m_Alt</definition>
+        <argsstring></argsstring>
+        <name>m_Alt</name>
+        <qualifiedname>KeyEvent::m_Alt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="51" column="10" bodyfile="engine/events/KeyEvent.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKeyEvent_1ae7effbcd58ecd0fa7787a0c7bb8fc4c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>KeyEvent::KeyEvent</definition>
+        <argsstring>(SDL_Scancode scancode, KeyAction action, bool ctrl, bool shift, bool alt)</argsstring>
+        <name>KeyEvent</name>
+        <qualifiedname>KeyEvent::KeyEvent</qualifiedname>
+        <param>
+          <type>SDL_Scancode</type>
+          <declname>scancode</declname>
+        </param>
+        <param>
+          <type><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1" kindref="member">KeyAction</ref></type>
+          <declname>action</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ctrl</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>shift</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>alt</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classKeyEvent" kindref="compound">KeyEvent</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scancode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SDL scancode of the key. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Action type (pressed, released, repeated). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ctrl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if Ctrl key is held. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>shift</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if Shift key is held. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if Alt key is held. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="34" column="5" bodyfile="engine/events/KeyEvent.h" bodystart="34" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classKeyEvent_1ad612ba1c06ae469951e06d4635ae256f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>SDL_Scancode</type>
+        <definition>SDL_Scancode KeyEvent::GetScancode</definition>
+        <argsstring>() const</argsstring>
+        <name>GetScancode</name>
+        <qualifiedname>KeyEvent::GetScancode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="37" column="18" bodyfile="engine/events/KeyEvent.h" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classKeyEvent_1a83f1a67717c14fc58ab42c668425de0e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="KeyEvent_8h_1a70f971fdf17a8c66ee3c9c336e07a3e1" kindref="member">KeyAction</ref></type>
+        <definition>KeyAction KeyEvent::GetAction</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAction</name>
+        <qualifiedname>KeyEvent::GetAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="38" column="15" bodyfile="engine/events/KeyEvent.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classKeyEvent_1a59358073046cd36740b8595d4ff28379" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KeyEvent::IsCtrlPressed</definition>
+        <argsstring>() const</argsstring>
+        <name>IsCtrlPressed</name>
+        <qualifiedname>KeyEvent::IsCtrlPressed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="39" column="10" bodyfile="engine/events/KeyEvent.h" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classKeyEvent_1a58e682c21b99b031779ec1f210a50a0a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KeyEvent::IsShiftPressed</definition>
+        <argsstring>() const</argsstring>
+        <name>IsShiftPressed</name>
+        <qualifiedname>KeyEvent::IsShiftPressed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="40" column="10" bodyfile="engine/events/KeyEvent.h" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classKeyEvent_1aab67e22618180ca64d3369555fa2aee6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KeyEvent::IsAltPressed</definition>
+        <argsstring>() const</argsstring>
+        <name>IsAltPressed</name>
+        <qualifiedname>KeyEvent::IsAltPressed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="41" column="10" bodyfile="engine/events/KeyEvent.h" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classKeyEvent_1aba1bc77a6676e8a62dd26a14670a69e1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>EventType KeyEvent::GetEventType</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetEventType</name>
+        <qualifiedname>KeyEvent::GetEventType</qualifiedname>
+        <reimplements refid="classEvent_1af14bbd8f69c2778def9462375a0e70f2">GetEventType</reimplements>
+        <briefdescription>
+<para>Returns the type of the event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref> enum value identifying the event. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="44" column="15" bodyfile="engine/events/KeyEvent.h" bodystart="44" bodyend="44"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classKeyEvent_1a2d85adf9e71829dad3518f4310f8ef0d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="EventType_8h_1a2628ea8d12e8b2563c32f05dc7fff6fa" kindref="member">EventType</ref></type>
+        <definition>static EventType KeyEvent::GetStaticType</definition>
+        <argsstring>()</argsstring>
+        <name>GetStaticType</name>
+        <qualifiedname>KeyEvent::GetStaticType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/events/KeyEvent.h" line="43" column="22" bodyfile="engine/events/KeyEvent.h" bodystart="43" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classEvent" kindref="compound">Event</ref> representing a keyboard key press/release. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contains information about which key was pressed, the action type, and the state of modifier keys (Ctrl, Shift, Alt).</para>
+<para><simplesect kind="note"><para>This event is dispatched by <ref refid="classSDLEventTranslator" kindref="compound">SDLEventTranslator</ref>. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classSDLEventTranslator" kindref="compound">SDLEventTranslator</ref>, <ref refid="classEventBus" kindref="compound">EventBus</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>KeyEvent</label>
+        <link refid="classKeyEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Event</label>
+        <link refid="classEvent"/>
+      </node>
+      <node id="1">
+        <label>KeyEvent</label>
+        <link refid="classKeyEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="engine/events/KeyEvent.h" line="24" column="1" bodyfile="engine/events/KeyEvent.h" bodystart="24" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classKeyEvent_1a83f1a67717c14fc58ab42c668425de0e" prot="public" virt="non-virtual"><scope>KeyEvent</scope><name>GetAction</name></member>
+      <member refid="classKeyEvent_1aba1bc77a6676e8a62dd26a14670a69e1" prot="public" virt="virtual"><scope>KeyEvent</scope><name>GetEventType</name></member>
+      <member refid="classKeyEvent_1ad612ba1c06ae469951e06d4635ae256f" prot="public" virt="non-virtual"><scope>KeyEvent</scope><name>GetScancode</name></member>
+      <member refid="classKeyEvent_1a2d85adf9e71829dad3518f4310f8ef0d" prot="public" virt="non-virtual"><scope>KeyEvent</scope><name>GetStaticType</name></member>
+      <member refid="classEvent_1a8ad0c350a8f569dbb05cf845caa4737e" prot="public" virt="non-virtual"><scope>KeyEvent</scope><name>Handled</name></member>
+      <member refid="classKeyEvent_1aab67e22618180ca64d3369555fa2aee6" prot="public" virt="non-virtual"><scope>KeyEvent</scope><name>IsAltPressed</name></member>
+      <member refid="classKeyEvent_1a59358073046cd36740b8595d4ff28379" prot="public" virt="non-virtual"><scope>KeyEvent</scope><name>IsCtrlPressed</name></member>
+      <member refid="classKeyEvent_1a58e682c21b99b031779ec1f210a50a0a" prot="public" virt="non-virtual"><scope>KeyEvent</scope><name>IsShiftPressed</name></member>
+      <member refid="classKeyEvent_1ae7effbcd58ecd0fa7787a0c7bb8fc4c7" prot="public" virt="non-virtual"><scope>KeyEvent</scope><name>KeyEvent</name></member>
+      <member refid="classKeyEvent_1aad5fdec337221e5ee64d961e22a26e62" prot="private" virt="non-virtual"><scope>KeyEvent</scope><name>m_Action</name></member>
+      <member refid="classKeyEvent_1a2e4b86082ea9bcf30bf0140d04a76640" prot="private" virt="non-virtual"><scope>KeyEvent</scope><name>m_Alt</name></member>
+      <member refid="classKeyEvent_1a23cd0c227402e8ab0558c625f672382b" prot="private" virt="non-virtual"><scope>KeyEvent</scope><name>m_Ctrl</name></member>
+      <member refid="classKeyEvent_1a628fa8f7d5d100dadcde5a126d0bd8ee" prot="private" virt="non-virtual"><scope>KeyEvent</scope><name>m_Scancode</name></member>
+      <member refid="classKeyEvent_1a7adc51b58a55cfc871e59d796acd75e9" prot="private" virt="non-virtual"><scope>KeyEvent</scope><name>m_Shift</name></member>
+      <member refid="classEvent_1a105223995bbf1a1e4714d0c77f91cf0b" prot="public" virt="virtual"><scope>KeyEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

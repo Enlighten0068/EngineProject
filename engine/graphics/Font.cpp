@@ -6,7 +6,7 @@
 Font::Font() = default;
 
 Font::~Font(){
-    if (m_Font){
+    if(m_Font){
         TTF_CloseFont(m_Font);
         m_Font = nullptr;
     }
@@ -14,14 +14,13 @@ Font::~Font(){
 
 /**
  * @brief Loads a TrueType font from a file.
- *
  * @param filepath Path to the TTF font file.
  * @param pointSize Font size in points.
  * @return true if the font was loaded successfully, false otherwise.
  */
 bool Font::Load(const std::string& filepath, int pointSize){
     m_Font = TTF_OpenFont(filepath.c_str(), pointSize);
-    if (!m_Font){
+    if(!m_Font){
         Log::Error(std::format("Failed to load font '{}': {}", filepath, SDL_GetError()));
         return false;
     }
@@ -42,13 +41,13 @@ bool Font::Load(const std::string& filepath, int pointSize){
  * @return SDL_Surface* containing the rendered text, or nullptr on failure.
  */
 SDL_Surface* Font::RenderText(const std::string& text, const SDL_Color& color) const{
-    if (!m_Font) {
+    if(!m_Font){
         Log::Warning("Attempted to render text with no font loaded.");
         return nullptr;
     }
 
     SDL_Surface* surface = TTF_RenderText_Blended(m_Font, text.c_str(), text.length(), color);
-    if (!surface){
+    if(!surface){
         Log::Error(std::format("Failed to render text '{}': {}", text, SDL_GetError()));
         return nullptr;
     }

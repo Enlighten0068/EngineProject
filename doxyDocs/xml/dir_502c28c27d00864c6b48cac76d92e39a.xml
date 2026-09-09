@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_502c28c27d00864c6b48cac76d92e39a" kind="dir">
+    <compoundname>engine/renderer</compoundname>
+    <innerfile refid="Renderer_8cpp">Renderer.cpp</innerfile>
+    <innerfile refid="Renderer_8h">Renderer.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/renderer/"/>
+  </compounddef>
+</doxygen>

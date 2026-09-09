@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classFont" kind="class" language="C++" prot="public">
+    <compoundname>Font</compoundname>
+    <includes refid="Font_8h" local="no">Font.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classFont_1ac66e145f6d04eaa624e22d1a727d2fd1" prot="private" static="no" mutable="no">
+        <type>TTF_Font *</type>
+        <definition>TTF_Font* Font::m_Font</definition>
+        <argsstring></argsstring>
+        <name>m_Font</name>
+        <qualifiedname>Font::m_Font</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Font.h" line="50" column="14" bodyfile="engine/graphics/Font.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classFont_1a4e6a119206f505522100221c1fafde45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Font::Font</definition>
+        <argsstring>()</argsstring>
+        <name>Font</name>
+        <qualifiedname>Font::Font</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Font.h" line="20" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classFont_1a134aaa2f78af0c12d3ce504957169768" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Font::~Font</definition>
+        <argsstring>()</argsstring>
+        <name>~Font</name>
+        <qualifiedname>Font::~Font</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Font.h" line="21" column="5" bodyfile="engine/graphics/Font.cpp" bodystart="8" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classFont_1a4d8b450779ecae61899cfebae34c8f4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Font::Load</definition>
+        <argsstring>(const std::string &amp;filepath, int pointSize)</argsstring>
+        <name>Load</name>
+        <qualifiedname>Font::Load</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pointSize</declname>
+        </param>
+        <briefdescription>
+<para>Loads a TrueType font from a file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the TTF font file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pointSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classFont" kindref="compound">Font</ref> size in points. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the font was loaded successfully, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Font.h" line="29" column="10" bodyfile="engine/graphics/Font.cpp" bodystart="21" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classFont_1a75f569c89614b2f1132d7d5bee98db8d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>SDL_Surface *</type>
+        <definition>SDL_Surface * Font::RenderText</definition>
+        <argsstring>(const std::string &amp;text, const SDL_Color &amp;color) const</argsstring>
+        <name>RenderText</name>
+        <qualifiedname>Font::RenderText</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const SDL_Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Renders a string to an SDL_Surface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The surface can be converted to an OpenGL texture for rendering.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to render. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color of the text. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>SDL_Surface* containing the rendered text, or nullptr on failure. The caller is responsible for freeing the surface.</para>
+</simplesect>
+Uses SDL_ttf to render the text with the specified color. The surface is in SDL_PIXELFORMAT_ARGB8888 format, which can be converted to an OpenGL texture.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to render. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color of the text. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>SDL_Surface* containing the rendered text, or nullptr on failure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Font.h" line="41" column="17" bodyfile="engine/graphics/Font.cpp" bodystart="43" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classFont_1af691b307fad7de811621c465467e98cd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Font::IsLoaded</definition>
+        <argsstring>() const</argsstring>
+        <name>IsLoaded</name>
+        <qualifiedname>Font::IsLoaded</qualifiedname>
+        <briefdescription>
+<para>Checks if a font is loaded. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if a font is loaded, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/graphics/Font.h" line="47" column="10" bodyfile="engine/graphics/Font.h" bodystart="47" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Wrapper for a TrueType font using SDL_ttf. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class manages loading a font from a file and rendering text to OpenGL textures. It supports setting font size and style.</para>
+<para><simplesect kind="note"><para>The font is loaded from a TTF file and rendered to SDL_Surface, which can then be converted to an OpenGL texture. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classTexture2D" kindref="compound">Texture2D</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Font</label>
+        <link refid="classFont"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/graphics/Font.h" line="18" column="1" bodyfile="engine/graphics/Font.h" bodystart="18" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classFont_1a4e6a119206f505522100221c1fafde45" prot="public" virt="non-virtual"><scope>Font</scope><name>Font</name></member>
+      <member refid="classFont_1af691b307fad7de811621c465467e98cd" prot="public" virt="non-virtual"><scope>Font</scope><name>IsLoaded</name></member>
+      <member refid="classFont_1a4d8b450779ecae61899cfebae34c8f4e" prot="public" virt="non-virtual"><scope>Font</scope><name>Load</name></member>
+      <member refid="classFont_1ac66e145f6d04eaa624e22d1a727d2fd1" prot="private" virt="non-virtual"><scope>Font</scope><name>m_Font</name></member>
+      <member refid="classFont_1a75f569c89614b2f1132d7d5bee98db8d" prot="public" virt="non-virtual"><scope>Font</scope><name>RenderText</name></member>
+      <member refid="classFont_1a134aaa2f78af0c12d3ce504957169768" prot="public" virt="non-virtual"><scope>Font</scope><name>~Font</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,5 @@
+<map id="MenuScene::MenuOption" name="MenuScene::MenuOption">
+<area shape="rect" id="Node000001" title="Menu option data." alt="" coords="5,285,178,446"/>
+<area shape="rect" id="Node000002" href="$structVector3D.html" title="3D vector struct with basic arithmetic operations." alt="" coords="40,5,143,212"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,209,94,268,89,267,91,214"/>
+</map>

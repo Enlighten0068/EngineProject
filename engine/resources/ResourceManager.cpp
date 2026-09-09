@@ -26,21 +26,21 @@ ResourceManager& ResourceManager::GetInstance(){
  * @return Shared pointer to the loaded Texture2D, or nullptr on failure.
  */
 std::shared_ptr<Texture2D> ResourceManager::LoadTexture(const std::string& filepath){
-    //Check if texture is cached
+    //Check if texture is already cached
     auto it = m_Textures.find(filepath);
-    if (it != m_Textures.end()){
+    if(it != m_Textures.end()){
         Log::Info(std::format("Texture already loaded: {}", filepath));
         return it->second;
     }
 
     //Load texture from disk
     auto texture = std::make_shared<Texture2D>();
-    if (!texture->Load(filepath)){
+    if(!texture->Load(filepath)){
         Log::Error(std::format("Failed to load texture: {}", filepath));
         return nullptr;
     }
 
-    //Caches texture
+    //Add texture to cache
     m_Textures[filepath] = texture;
     Log::Info(std::format("Texture loaded and cached: {}", filepath));
     return texture;
@@ -59,34 +59,37 @@ std::shared_ptr<Texture2D> ResourceManager::LoadTexture(const std::string& filep
  * @return Shared pointer to the loaded Shader, or nullptr on compilation failure.
  */
 std::shared_ptr<Shader> ResourceManager::LoadShader(const std::string& name,
-                                                    const std::string& vertexSource,const std::string& fragmentSource){
+                                                    const std::string& vertexSource,
+                                                    const std::string& fragmentSource){
+    //Check if shader is already cached
     auto it = m_Shaders.find(name);
-    if (it != m_Shaders.end()){
+    if(it != m_Shaders.end()){
         Log::Info(std::format("Shader already loaded: {}", name));
         return it->second;
     }
 
+    //Compile shader from source
     auto shader = std::make_shared<Shader>();
-    if (!shader->Compile(vertexSource, fragmentSource)){
+    if(!shader->Compile(vertexSource, fragmentSource)){
         Log::Error(std::format("Failed to compile shader: {}", name));
         return nullptr;
     }
 
+    //Add shader to cache
     m_Shaders[name] = shader;
     Log::Info(std::format("Shader loaded and cached: {}", name));
     return shader;
 }
 
 /**
- * @brief Clears all cached resources.
- *
- * Releases all shared pointers to textures and shaders, allowing their
- * memory to be freed if no other references exist. This is useful for
- * level transitions or application shutdown.
- */
+    * @brief Clears all cached resources.
+    *
+    * Releases all shared pointers to textures and shaders, allowing their
+    * memory to be freed if no other references exist. This is useful for
+    * level transitions or application shutdown.
+    */
 void ResourceManager::Clear(){
     m_Textures.clear();
     m_Shaders.clear();
     Log::Info("ResourceManager cleared.");
-
 }
