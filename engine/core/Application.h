@@ -76,13 +76,13 @@ public:
 private:
     Engine m_Engine; //Window, SDL
     std::unique_ptr<GraphicsContext> m_Graphics; //Shaders, OpenGL, Buffers
-    std::unique_ptr<ECSScene> m_Scene; //Scene containing entities and components
+    //std::unique_ptr<ECSScene> m_Scene; //Scene containing entities and components
     std::unique_ptr<Camera2D> m_Camera;
-    std::unique_ptr<PlayerController> m_PlayerController; //Player entity actions
+    //std::unique_ptr<PlayerController> m_PlayerController; //Player entity actions
     std::unique_ptr<FpsCounter> m_FpsCounter;
     std::unique_ptr<GameWorld> m_World; //Game word - boundaries, colision resolution
 
-    entt::entity m_PlayerEntity;
+    //entt::entity m_PlayerEntity;
     SceneManager m_SceneManager;
 
     void ProcessEvents(); //Handles polls and SDL events

@@ -47,12 +47,12 @@ void Input::Update(){
  */
 void Input::ProcessEvent(const SDL_Event& event){
     switch (event.type){
-        case SDL_EVENT_KEY_DOWN:
+        /*case SDL_EVENT_KEY_DOWN:
             if (!event.key.repeat) s_KeyState[event.key.scancode] = true;
             break;
         case SDL_EVENT_KEY_UP:
             s_KeyState[event.key.scancode] = false;
-            break;
+            break;*/
         case SDL_EVENT_MOUSE_MOTION:
             s_MousePosition.x = static_cast<float>(event.motion.x);
             s_MousePosition.y = static_cast<float>(event.motion.y);

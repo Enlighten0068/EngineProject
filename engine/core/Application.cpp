@@ -1,3 +1,5 @@
+#define GLAD_GL_IMPLEMENTATION
+
 #include "audio/SoundManager.h"
 #include "audio/SoundEffect.h"
 #include "components/Transform.h"
@@ -29,6 +31,7 @@
 #include "systems/RenderSystem.h"
 #include <glad/glad.h>
 #include <SDL3/SDL.h>
+#include <SDL3_ttf/SDL_ttf.h>
 #include <iostream>
 #include <format>
 #include <cstdint>
@@ -40,7 +43,7 @@ Application::~Application(){ Shutdown(); }
  * @brief Initializes all engine subsystems and sets up the initial scene.
  *
  * It must follow an initialization order to work correctly starting from logging,
- * engine, event system, graphics context, camera/world, scene, controllers and audio.
+ * audio, engine, SDL_TTF, event system, graphics context, camera/world, scene and controllers.
  *
  * @return true if all subsystems initialized successfully, false otherwise.
  */
@@ -52,6 +55,19 @@ bool Application::Initialize(){
     Log::Warning("Warning test.");
     Log::Error("Error test.");*/
     Log::Info("Application: Initializing...");
+
+    //Audio initialization
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0){
+        Log::Error(std::format("SDL Init failed: {}", SDL_GetError()));
+        return false;
+    }
+
+    //SDL_ttf initialization
+    if (TTF_Init() != 0) {
+        Log::Error(std::format("SDL_ttf initialization failed: {}", SDL_GetError()));
+    } else{
+        Log::Info("SDL_ttf initialized successfully.");
+    }
 
     //Game window initialization (engine), change last parameter to true if fullscreen
     if (!m_Engine.Initialize("Game Window", 1920, 1080, false)){
@@ -96,9 +112,9 @@ bool Application::Initialize(){
     m_World = std::make_unique<GameWorld>(-20.0f, 20.0f, -10.0f, 10.0f);
 
     //Scene initialization
-    m_Scene = std::make_unique<ECSScene>(m_Graphics->GetShader(),
+    /*m_Scene = std::make_unique<ECSScene>(m_Graphics->GetShader(),
                                       m_Graphics->GetVertexArray(),
-                                      m_Graphics->GetIndexBuffer());
+                                      m_Graphics->GetIndexBuffer());*/
 
 
 
@@ -108,17 +124,12 @@ bool Application::Initialize(){
         Log::Error("Failed to load texture.");
         return false;
     }
-    m_PlayerEntity = m_Scene->CreateSpriteEntity(
-        Vector3D(0.0f, 0.0f, 0.0f), Vector3D(5.0f, 5.0f, 1.0f),texture);
+    //m_PlayerEntity = m_Scene->CreateSpriteEntity(
+    //    Vector3D(0.0f, 0.0f, 0.0f), Vector3D(5.0f, 5.0f, 1.0f),texture);
 
     //Controllers
-    SetupControllers();
+    //SetupControllers();
 
-    //Audio initialization
-    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0){
-        Log::Error(std::format("SDL Init failed: {}", SDL_GetError()));
-        return false;
-    }
 
     //Check if any gamepad is available
     if (!GamepadManager::GetInstance().Initialize()) {
@@ -192,10 +203,10 @@ void Application::Shutdown(){
 
     m_FpsCounter.reset();
     GamepadManager::GetInstance().Shutdown();
-    SoundEffect::CloseAudioDevice();
-    m_PlayerController.reset();
+
+    //m_PlayerController.reset();
     ResourceManager::GetInstance().Clear();
-    m_Scene.reset();
+    //m_Scene.reset();
     m_World.reset();
     m_Camera.reset();
 
@@ -209,6 +220,11 @@ void Application::Shutdown(){
 
     m_Engine.Shutdown();
     Log::Info("Engine shut down.");
+
+    TTF_Quit();
+    Log::Info("SDL_ttf shut down.");
+
+    SoundEffect::CloseAudioDevice();
 
     Log::Shutdown();
 }
@@ -260,16 +276,16 @@ void Application::Render(){
  *
  * Currently sets up the player controller with the world and entity.
  */
-void Application::SetupControllers(){
+/*void Application::SetupControllers(){
     //Player controller
     m_PlayerController = std::make_unique<PlayerController>(m_Scene->GetRegistry(), m_PlayerEntity, *m_World);
     m_PlayerController->SetSpeed(3.0f);
 
     //For 2D demo with follow Camera
-    /*m_CameraController = std::make_unique<CameraController>(*m_Camera);
+    m_CameraController = std::make_unique<CameraController>(*m_Camera);
     m_CameraController->SetSpeed(5.0f);
     m_CameraController->SetFollowEntity(true);
-    m_CameraController->SetZoomSpeed(1.0f);*/
+    m_CameraController->SetZoomSpeed(1.0f);
 
     Log::Info("Controllers initialized.");
-}
+}*/

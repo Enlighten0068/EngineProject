@@ -11,19 +11,15 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+set(SDLTTF_VENDORED ON)
+
 add_subdirectory(vendor/SDL3)
+add_subdirectory(vendor/SDL_ttf )
 
-add_library(
-  glad
-  vendor/glad/src/glad.c
-)
+add_library(glad vendor/glad/src/glad.c)
+target_compile_definitions(glad PRIVATE GLAD_GL_IMPLEMENTATION)
+target_include_directories(glad PUBLIC vendor/glad/include vendor/stb)
 
-target_include_directories(
-  glad
-  PUBLIC
-  vendor/glad/include
-  vendor/stb
-)
 
 set(ENGINE_SOURCES
   engine/audio/SoundEffect.cpp
@@ -41,6 +37,7 @@ set(ENGINE_SOURCES
   engine/diagnostics/Log.cpp
   engine/events/EventBus.cpp
   engine/events/SDLEventTranslator.cpp
+  engine/graphics/Font.cpp
   engine/graphics/IndexBuffer.cpp
   engine/graphics/Shader.cpp
   engine/graphics/VertexArray.cpp
@@ -62,6 +59,7 @@ add_executable(
   Game
   game/src/main.cpp
   ${ENGINE_SOURCES}
+  vendor/glad/src/glad.c
 )
 
 target_include_directories(
@@ -69,29 +67,43 @@ target_include_directories(
   PRIVATE
   ${CMAKE_SOURCE_DIR}/engine
   vendor/entt
+  vendor/SDL_ttf/include
+  vendor/stb
+  vendor/glad/include
 )
 
 target_link_libraries(
   Game
   PRIVATE
   SDL3::SDL3
-  glad
+  SDL3_ttf::SDL3_ttf
+  #glad
 )
 
-
-target_compile_definitions(Game PRIVATE DEMO_2D_FIXED)
+target_compile_definitions(Game PRIVATE GLAD_GL_IMPLEMENTATION)
+target_include_directories(Game PRIVATE vendor/glad/include)
 
 if (WIN32)
+    # Caminho para a SDL3.dll (gerada em build/windows/vendor/SDL3/)
     set(SDL3_DLL_PATH "${CMAKE_BINARY_DIR}/vendor/SDL3/SDL3.dll")
-    if (EXISTS "${SDL3_DLL_PATH}")
-        add_custom_command(
-            TARGET Game POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy_if_different
-                "${SDL3_DLL_PATH}"
-                "$<TARGET_FILE_DIR:Game>"
-            COMMENT "Copying SDL3.dll to executable diretory..."
-        )
-    else()
-        message(WARNING "SDL3.dll not found in ${SDL3_DLL_PATH}. Executable might not work without its DLL files.")
-    endif()
+    # Caminho para a SDL3_ttf.dll (gerada em build/windows/vendor/SDL_ttf/)
+    set(SDL3_TTF_DLL_PATH "${CMAKE_BINARY_DIR}/vendor/SDL_ttf/SDL3_ttf.dll")
+
+    # Copiar SDL3.dll se existir
+    add_custom_command(
+        TARGET Game POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "${SDL3_DLL_PATH}"
+            "$<TARGET_FILE_DIR:Game>"
+        COMMENT "Copying SDL3.dll to executable directory..."
+    )
+
+    # Copiar SDL3_ttf.dll se existir
+    add_custom_command(
+        TARGET Game POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "${SDL3_TTF_DLL_PATH}"
+            "$<TARGET_FILE_DIR:Game>"
+        COMMENT "Copying SDL3_ttf.dll to executable directory..."
+    )
 endif()

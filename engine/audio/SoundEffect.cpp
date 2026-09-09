@@ -37,12 +37,14 @@ bool SoundEffect::OpenDevice(){
         return false;
     }
 
-    //Stores the device specification for later use
-    m_DeviceSpec = desiredSpec;
+    if (!SDL_GetAudioDeviceFormat(s_AudioDevice, &m_DeviceSpec, nullptr)) {
+        Log::Error(std::format("Failed to get actual device format: {}", SDL_GetError()));
+        SDL_CloseAudioDevice(s_AudioDevice);
+        return false;
+    }
 
-    Log::Info(std::format("Audio device opened. Using format: {} Hz, {} channels, format {}",
-                          m_DeviceSpec.freq, m_DeviceSpec.channels,
-                          static_cast<int>(m_DeviceSpec.format)));
+    Log::Info(std::format("Audio device opened. ACTUAL format: {} Hz, {} channels",
+                          m_DeviceSpec.freq, m_DeviceSpec.channels));
 
     s_DeviceOpen = true;
     return true;
@@ -125,8 +127,11 @@ void SoundEffect::Play(int volume){
         return;
     }
 
+    float volumeFactor = static_cast<float>(volume) / 128.0f;
+    SDL_SetAudioStreamGain(m_Stream, volumeFactor);
+
     //Pushes the audio data into the audio stream
-    if (SDL_PutAudioStreamData(m_Stream, m_Data.data(), m_Data.size()) < 0) {
+    if (!SDL_PutAudioStreamData(m_Stream, m_Data.data(), m_Data.size())) {
         Log::Error(std::format("Failed to put data into stream: {}", SDL_GetError()));
         SDL_DestroyAudioStream(m_Stream);
         m_Stream = nullptr;
@@ -134,7 +139,7 @@ void SoundEffect::Play(int volume){
     }
 
     //Binds the stream to the audio device for playback
-    if (SDL_BindAudioStream(s_AudioDevice, m_Stream) < 0){
+    if (!SDL_BindAudioStream(s_AudioDevice, m_Stream)){
         Log::Error(std::format("Failed to bind audio stream: {}", SDL_GetError()));
         SDL_DestroyAudioStream(m_Stream);
         m_Stream = nullptr;

@@ -12,14 +12,18 @@ int main(){
 
       auto& graphics = app.GetGraphicsContext();
 
-#ifdef DEMO_2D_FIXED
-      auto scene = std::make_unique<Demo2DFixedScene>(graphics.GetShader(), graphics.GetVertexArray(), graphics.GetIndexBuffer(),
-                                                      app.GetCamera(), graphics.GetLineShader());
-#elif defined(MENU)
-      auto scene = std::make_unique<MenuScene>(app.GetSceneManager());
-//#else
-//      auto scene = std::make_unique<Demo2DScene>(graphics.GetShader(), graphics.GetVertexArray(), graphics.GetIndexBuffer());
-#endif
+      #ifdef DEMO_2D_FIXED
+      //Directly load the demo scene
+      auto scene = std::make_unique<Demo2DFixedScene>(graphics.GetShader(), graphics.GetVertexArray(),
+                                                      graphics.GetIndexBuffer(),
+                                                      app.GetCamera(), graphics.GetLineShader(),);
+      #else
+      //Load the menu scene
+      auto scene = std::make_unique<MenuScene>(app.GetSceneManager(), graphics.GetShader(),
+                                               graphics.GetVertexArray(), graphics.GetIndexBuffer(),
+                                               app.GetCamera(), graphics.GetLineShader());
+
+      #endif
 
       app.GetSceneManager().SetScene(std::move(scene));
       app.Run();

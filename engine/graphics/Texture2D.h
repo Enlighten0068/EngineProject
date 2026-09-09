@@ -1,5 +1,6 @@
 #pragma once
 
+#include <SDL3/SDL.h>
 #include <cstdint>
 #include <string>
 
@@ -27,6 +28,17 @@ public:
     bool Load(const std::string& filepath);
 
     /**
+     * @brief Loads a texture from an SDL_Surface.
+     *
+     * This method is useful for rendering text from SDL_ttf.
+     *
+     * @param surface The SDL_Surface containing the image data.
+     * @return true if the texture was loaded successfully, false otherwise.
+     * @note The surface is NOT freed by this method; the caller must free it.
+     */
+    bool LoadFromSurface(SDL_Surface* surface);
+
+    /**
      * @brief Binds the texture to a texture unit.
      * @param slot Texture unit index.
      */
@@ -41,6 +53,7 @@ public:
     int GetWidth() const;
     int GetHeight() const;
     int GetChannels() const;
+    uint32_t GetRendererID() const { return m_RendererID; }
 
 private:
     uint32_t m_RendererID;

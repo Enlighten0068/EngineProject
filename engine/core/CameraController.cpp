@@ -45,8 +45,15 @@ void CameraController::Update(float deltaTime){
     Vector3D pos = m_Camera.GetPosition();
     float marginX = 5.0f;
     float marginY = 3.0f;
-    pos.x = std::clamp(pos.x, m_World.GetMinX() + marginX, m_World.GetMaxX() - marginX);
-    pos.y = std::clamp(pos.y, m_World.GetMinY() + marginY, m_World.GetMaxY() - marginY);
+
+    float minX = m_World.GetMinX() + marginX;
+    float maxX = m_World.GetMaxX() - marginX;
+    if (minX < maxX) pos.x = std::clamp(pos.x, minX, maxX);
+
+    float minY = m_World.GetMinY() + marginY;
+    float maxY = m_World.GetMaxY() - marginY;
+    if (minY < maxY) pos.y = std::clamp(pos.y, minY, maxY);
+
     m_Camera.SetPosition(pos);
 
     //Zoom

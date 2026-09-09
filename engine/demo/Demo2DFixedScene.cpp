@@ -26,6 +26,8 @@ void Demo2DFixedScene::OnExit(){
     m_FpsCounter.reset();
     m_World.reset();
     m_ECSScene.reset();
+    m_EnemyEntities.clear();
+    m_EnemyDefinitions.clear();
     Log::Info("Exiting Demo2DFixedScene");
 }
 
@@ -44,7 +46,7 @@ void Demo2DFixedScene::SetupScene(){
     Log::Info("Camera projection set to world bounds.");
 
     //Textures
-    auto playerTex = ResourceManager::GetInstance().LoadTexture("assets/textures/test.png");
+    auto playerTex = ResourceManager::GetInstance().LoadTexture("assets/textures/player.png");
     auto tileTex = ResourceManager::GetInstance().LoadTexture("assets/textures/tile.png");
     if (!playerTex || !tileTex){
         Log::Error("Failed to load one or more textures.");
@@ -126,6 +128,8 @@ void Demo2DFixedScene::Update(float deltaTime){
 
     EnemySystem::Update(m_ECSScene->GetRegistry(), deltaTime,
                         m_PlatformEntities, m_World->GetMinY());
+
+    CheckEnemyCollisions();
 
     auto& registry = m_ECSScene->GetRegistry();
     auto& playerTransform = registry.get<Components::Transform>(m_PlayerEntity);
@@ -234,7 +238,18 @@ void Demo2DFixedScene::ResolveCollisions(){
     m_PlayerController->SetGrounded(grounded);
 }
 
+/**
+ * @brief Spawns all enemies in the scene and saves their definitions for respawn.
+ *
+ * Creates enemy entities with Patrol and PhysicsBody components, and stores
+ * their definitions in m_EnemyDefinitions for later respawning.
+ */
 void Demo2DFixedScene::SpawnEnemies(){
+    //Clear previous enemies and definitions
+    for (entt::entity enemy : m_EnemyEntities) m_ECSScene->GetRegistry().destroy(enemy);
+    m_EnemyEntities.clear();
+    m_EnemyDefinitions.clear();
+
     auto& registry = m_ECSScene->GetRegistry();
     auto enemyTex = ResourceManager::GetInstance().LoadTexture("assets/textures/enemy.png");
     if (!enemyTex){
@@ -243,32 +258,138 @@ void Demo2DFixedScene::SpawnEnemies(){
         if (!enemyTex) return;
     }
 
-    //Enemy1
-    auto enemy1 = m_ECSScene->CreateSpriteEntity(Vector3D(-12.0f, -8.0f, 0.0f),
-                                                 Vector3D(3.0f, 3.0f, 1.0f), enemyTex);
-    registry.emplace<Enemy>(enemy1);
-    registry.emplace<Patrol>(enemy1, Vector3D(-15.0f, -8.0f, 0.0f),
-                               Vector3D(-10.0f, -8.0f, 0.0f),2.0f);
-    registry.emplace<Components::PhysicsBody>(enemy1);
-    m_EnemyEntities.push_back(enemy1);
+    //Helper lambda to create an enemy and store its definition
+    auto createEnemy = [&](const Vector3D& pos, const Vector3D& scale,
+                           const Vector3D& patrolStart, const Vector3D& patrolEnd,
+                           float speed){
+        //Create enemy entity
+        auto enemy = m_ECSScene->CreateSpriteEntity(pos, scale, enemyTex);
+        registry.emplace<Enemy>(enemy);
+        registry.emplace<Patrol>(enemy, patrolStart, patrolEnd, speed);
+        registry.emplace<Components::PhysicsBody>(enemy);
+        m_EnemyEntities.push_back(enemy);
 
-    //Enemy2
-    auto enemy2 = m_ECSScene->CreateSpriteEntity(Vector3D(-8.0f, -2.0f, 0.0f),
-                                                 Vector3D(3.0f, 3.0f, 1.0f), enemyTex);
-    registry.emplace<Enemy>(enemy2);
-    registry.emplace<Patrol>(enemy2, Vector3D(-10.0f, -2.0f, 0.0f),
-                               Vector3D(-6.0f, -2.0f, 0.0f), 1.5f);
-    registry.emplace<Components::PhysicsBody>(enemy2);
-    m_EnemyEntities.push_back(enemy2);
+        //Save definition for respawn
+        EnemyDefinition def;
+        def.Position = pos;
+        def.Scale = scale;
+        def.Texture = enemyTex;
+        def.PatrolStart = patrolStart;
+        def.PatrolEnd = patrolEnd;
+        def.PatrolSpeed = speed;
+        m_EnemyDefinitions.push_back(def);
+    };
 
-    //Enemy3
-    auto enemy3 = m_ECSScene->CreateSpriteEntity(Vector3D(0.0f, 3.0f, 0.0f),
-                                                 Vector3D(3.0f, 3.0f, 1.0f), enemyTex);
-    registry.emplace<Enemy>(enemy3);
-    registry.emplace<Patrol>(enemy3, Vector3D(-2.0f, 3.0f, 0.0f),
-                               Vector3D(2.0f, 3.0f, 0.0f), 1.8f);
-    registry.emplace<Components::PhysicsBody>(enemy3);
-    m_EnemyEntities.push_back(enemy3);
+    //Enemy creation
+    //Enemy 1: spawns in ground level left side
+    createEnemy(Vector3D(-12.0f, -8.0f, 0.0f),
+                Vector3D(3.0f, 3.0f, 1.0f),
+                Vector3D(-15.0f, -8.0f, 0.0f),
+                Vector3D(-10.0f, -8.0f, 0.0f), 2.0f);
+
+    // Enemy 2: left floating platform
+    createEnemy(Vector3D(-8.0f, -2.0f, 0.0f),
+                Vector3D(3.0f, 3.0f, 1.0f),
+                Vector3D(-10.0f, -2.0f, 0.0f),
+                Vector3D(-6.0f, -2.0f, 0.0f), 1.5f);
+
+    // Enemy 3: central platform
+    createEnemy(Vector3D(0.0f, 3.0f, 0.0f),
+                Vector3D(3.0f, 3.0f, 1.0f),
+                Vector3D(-2.0f, 3.0f, 0.0f),
+                Vector3D(2.0f, 3.0f, 0.0f), 1.8f);
 
     Log::Info(std::format("Spawned {} enemies", m_EnemyEntities.size()));
+}
+
+/**
+ * @brief Respawns all enemies from their saved definitions.
+ *
+ * Destroys all current enemy entities and recreates them using the
+ * stored definitions. This is called when the player dies.
+ */
+void Demo2DFixedScene::RespawnEnemies(){
+    //Destroy existing enemy entities
+    for (entt::entity enemy : m_EnemyEntities) m_ECSScene->GetRegistry().destroy(enemy);
+    m_EnemyEntities.clear();
+
+    auto& registry = m_ECSScene->GetRegistry();
+
+    //Recreate enemies from stored definitions
+    for (const auto& def : m_EnemyDefinitions){
+        auto enemy = m_ECSScene->CreateSpriteEntity(def.Position, def.Scale, def.Texture);
+        registry.emplace<Enemy>(enemy);
+        registry.emplace<Patrol>(enemy, def.PatrolStart, def.PatrolEnd, def.PatrolSpeed);
+        registry.emplace<Components::PhysicsBody>(enemy);
+        m_EnemyEntities.push_back(enemy);
+    }
+
+    Log::Info(std::format("Respawned {} enemies", m_EnemyEntities.size()));
+}
+
+/**
+ * @brief Checks collisions between the player and all enemies.
+ *
+ * Determines the direction of collision, in the case the player is falling (velocity.y < 0)
+ * and the collision is from above, the enemy is destroyed (stomp).
+ * Otherwise, the player dies.
+ */
+void Demo2DFixedScene::CheckEnemyCollisions(){
+    auto& registry = m_ECSScene->GetRegistry();
+    auto& playerTransform = registry.get<Components::Transform>(m_PlayerEntity);
+    Vector3D playerSize = playerTransform.Scale;
+    Vector3D playerHalf = playerSize * 0.5f;
+    float playerBottom = playerTransform.Position.y - playerHalf.y;
+
+    auto enemyView = registry.view<Components::Transform, Enemy, Components::PhysicsBody>();
+
+    for (auto [entity, transform, enemy, physics] : enemyView.each()){
+        if (!enemy.IsActive) continue;
+
+        Vector3D enemyHalf = transform.Scale * 0.5f;
+
+        //AABB collision check
+        float dx = std::abs(playerTransform.Position.x - transform.Position.x);
+        float dy = std::abs(playerTransform.Position.y - transform.Position.y);
+        bool colliding = (dx < (playerHalf.x + enemyHalf.x)) &&
+        (dy < (playerHalf.y + enemyHalf.y));
+
+        if (!colliding) continue;
+
+        // Determine collision direction
+        // Check if player is falling and the collision is from above the enemy - "stomping"
+        float enemyTop = transform.Position.y + enemyHalf.y;
+        bool isAbove = (playerBottom < enemyTop + 0.1f) && (playerBottom > enemyTop - 0.2f);
+        bool isFalling = (m_PlayerController->GetVelocity().y < 0.0f);
+
+        if (isFalling && isAbove){
+            //Stomping then small bounce effect
+            DestroyEnemy(entity);
+            m_PlayerController->GetVelocity().y = 5.0f;
+            Log::Info("Enemy stomped!");
+        } else{
+            //Otherwise player dies and respawns all enemies
+            Log::Info("Player collided with enemy!");
+            m_PlayerController->Die("Killed by enemy");
+            RespawnEnemies();
+            break;
+        }
+    }
+}
+
+/**
+ * @brief Destroys an enemy entity.
+ * @param enemy The enemy entity to destroy.
+ */
+void Demo2DFixedScene::DestroyEnemy(entt::entity enemy){
+    auto& registry = m_ECSScene->GetRegistry();
+    //Mark enemy as inactive
+    if (registry.all_of<Enemy>(enemy)) registry.get<Enemy>(enemy).IsActive = false;
+
+    //Remove enemy from list
+    auto it = std::find(m_EnemyEntities.begin(), m_EnemyEntities.end(), enemy);
+    if (it != m_EnemyEntities.end()) m_EnemyEntities.erase(it);
+
+    //Destroy the entity
+    registry.destroy(enemy);
 }

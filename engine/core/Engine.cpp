@@ -25,10 +25,10 @@ Engine::~Engine(){
 bool Engine::Initialize(const char* title, int width, int height, bool fullscreen){
     Log::Info("Engine: Initializing SDL3 runtime and window.");
 
-    if (SDL_Init(SDL_INIT_VIDEO) < 0){
+    /*if (SDL_Init(SDL_INIT_VIDEO) < 0){
         Log::Error(std::format("SDL3 Initialization failed: {}", SDL_GetError()));
         return false;
-    }
+    }*/
 
     if (!m_Window.Create(title, width, height, fullscreen)){
         SDL_Quit();
