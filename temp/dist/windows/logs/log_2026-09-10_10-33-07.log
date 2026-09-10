@@ -1,0 +1,746 @@
+[2026-09-10 10:33:07.382] [INFO] Log system initialized. File: logs/log_2026-09-10_10-33-07.log
+[2026-09-10 10:33:07.382] [INFO] Application: Initializing...
+[2026-09-10 10:33:07.436] [ERROR] SDL_ttf initialization failed: 
+[2026-09-10 10:33:07.436] [INFO] Engine: Initializing SDL3 runtime and window.
+[2026-09-10 10:33:07.561] [INFO] Window ID: 4
+[2026-09-10 10:33:07.561] [INFO] Window successfully created.
+[2026-09-10 10:33:07.600] [INFO] OpenGL Version: 4.6.0 - Build 32.0.101.7026
+[2026-09-10 10:33:07.601] [INFO] Renderer: Intel(R) Iris(R) Xe Graphics
+[2026-09-10 10:33:07.601] [INFO] Engine initialized successfully.
+[2026-09-10 10:33:07.611] [INFO] Renderer ID: 1
+[2026-09-10 10:33:07.611] [INFO] VertexBuffer created.
+[2026-09-10 10:33:07.612] [INFO] VertexArray ID: 1
+[2026-09-10 10:33:07.614] [INFO] VertexArray created.
+[2026-09-10 10:33:07.614] [INFO] IndexBuffer created. Renderer ID: 2
+[2026-09-10 10:33:07.615] [INFO] Shader program linked successfully.
+[2026-09-10 10:33:07.617] [INFO] Program ID: 3, Link status: 1
+[2026-09-10 10:33:07.617] [INFO] Shader compiled successfully.
+[2026-09-10 10:33:07.618] [INFO] Shader program linked successfully.
+[2026-09-10 10:33:07.619] [INFO] Program ID: 6, Link status: 1
+[2026-09-10 10:33:07.619] [INFO] Shader compiled successfully.
+[2026-09-10 10:33:07.619] [INFO] Line shader compiled successfully.
+[2026-09-10 10:33:07.620] [INFO] Graphics context initialized.
+[2026-09-10 10:33:07.620] [INFO] Renderer ID: 3
+[2026-09-10 10:33:07.620] [INFO] VertexBuffer created.
+[2026-09-10 10:33:07.621] [INFO] VertexArray ID: 2
+[2026-09-10 10:33:07.621] [INFO] VertexArray created.
+[2026-09-10 10:33:07.621] [INFO] IndexBuffer created. Renderer ID: 4
+[2026-09-10 10:33:07.621] [INFO] GameWorld initialized with borders.
+[2026-09-10 10:33:07.645] [INFO] Texture loaded: assets/textures/test.png (1000x600)
+[2026-09-10 10:33:07.646] [INFO] Texture loaded and cached: assets/textures/test.png
+[2026-09-10 10:33:07.682] [ERROR] Failed to initialize gamepad subsystem: 
+[2026-09-10 10:33:07.682] [INFO] Trying to initialize joystick subsystem instead...
+[2026-09-10 10:33:07.683] [ERROR] Failed to initialize joystick subsystem: 
+[2026-09-10 10:33:07.683] [WARNING] Gamepad initialization failed. Continuing without gamepad support.
+[2026-09-10 10:33:07.683] [INFO] Application initialized successfully.
+[2026-09-10 10:33:07.683] [INFO] Exiting Demo2DFixedScene
+[2026-09-10 10:33:07.684] [INFO] Entering MenuScene
+[2026-09-10 10:33:07.685] [INFO] Font loaded: assets/fonts/arial.ttf (96pt)
+[2026-09-10 10:33:07.712] [INFO] Texture loaded from surface (186x92)
+[2026-09-10 10:33:07.712] [INFO] Text texture created: Play
+[2026-09-10 10:33:07.714] [INFO] Texture loaded from surface (330x92)
+[2026-09-10 10:33:07.714] [INFO] Text texture created: Options
+[2026-09-10 10:33:07.715] [INFO] Texture loaded from surface (160x92)
+[2026-09-10 10:33:07.715] [INFO] Text texture created: Exit
+[2026-09-10 10:33:07.716] [INFO] Scene set: Menu
+[2026-09-10 10:33:07.716] [WARNING] Unhandled SDL event type: 1028
+[2026-09-10 10:33:07.717] [WARNING] Unhandled SDL event type: 1028
+[2026-09-10 10:33:07.717] [WARNING] Unhandled SDL event type: 1028
+[2026-09-10 10:33:07.718] [WARNING] Unhandled SDL event type: 773
+[2026-09-10 10:33:07.718] [WARNING] Unhandled SDL event type: 773
+[2026-09-10 10:33:07.718] [WARNING] Unhandled SDL event type: 519
+[2026-09-10 10:33:07.718] [WARNING] Unhandled SDL event type: 514
+[2026-09-10 10:33:07.718] [WARNING] Unhandled SDL event type: 526
+[2026-09-10 10:33:07.718] [WARNING] Unhandled SDL event type: 2304
+[2026-09-10 10:33:07.719] [WARNING] Unhandled SDL event type: 516
+[2026-09-10 10:33:07.719] [WARNING] Unhandled SDL event type: 4352
+[2026-09-10 10:33:07.719] [WARNING] Unhandled SDL event type: 4352
+[2026-09-10 10:33:07.719] [WARNING] Unhandled SDL event type: 4352
+[2026-09-10 10:33:07.719] [WARNING] Unhandled SDL event type: 4352
+[2026-09-10 10:33:07.719] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.720] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.720] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.720] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.721] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.721] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.723] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.724] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.724] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.739] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.740] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.740] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.753] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.754] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.754] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.770] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.771] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.771] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.787] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.787] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.788] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.802] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.802] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.803] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.818] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.819] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.819] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.835] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.836] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.836] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.852] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.852] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.853] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.869] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.870] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.870] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.886] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.886] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.886] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.904] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.905] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.905] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.918] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.919] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.919] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.936] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.937] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.937] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.953] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.953] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.954] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.971] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.971] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.971] [INFO] Rendering option: Exit
+[2026-09-10 10:33:07.989] [WARNING] Unhandled SDL event type: 524
+[2026-09-10 10:33:07.989] [INFO] Rendering option: Play
+[2026-09-10 10:33:07.990] [INFO] Rendering option: Options
+[2026-09-10 10:33:07.990] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.007] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.007] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.007] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.019] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.019] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.020] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.038] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.039] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.039] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.055] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.055] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.055] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.071] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.072] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.072] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.087] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.087] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.088] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.105] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.106] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.106] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.120] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.121] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.121] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.137] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.138] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.138] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.152] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.153] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.153] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.170] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.170] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.170] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.186] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.186] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.186] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.203] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.204] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.204] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.219] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.219] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.220] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.235] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.235] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.235] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.255] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.255] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.255] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.271] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.271] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.271] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.288] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.288] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.288] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.304] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.304] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.305] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.320] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.320] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.321] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.337] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.337] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.338] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.353] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.353] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.353] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.370] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.371] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.371] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.386] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.387] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.387] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.405] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.405] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.405] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.421] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.422] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.422] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.438] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.439] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.439] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.455] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.455] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.455] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.471] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.471] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.471] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.486] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.487] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.487] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.503] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.503] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.503] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.519] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.520] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.520] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.535] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.535] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.536] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.552] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.553] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.553] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.568] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.569] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.569] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.586] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.586] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.586] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.602] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.602] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.603] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.618] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.619] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.619] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.636] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.636] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.636] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.650] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.650] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.651] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.666] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.666] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.667] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.683] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.683] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.683] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.700] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.700] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.701] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.715] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.716] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.716] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.732] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.733] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.733] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.752] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.752] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.752] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.766] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.767] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.767] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.782] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.783] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.783] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.799] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.799] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.800] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.847] [WARNING] Unhandled SDL event type: 527
+[2026-09-10 10:33:08.848] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.848] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.849] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.850] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.850] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.850] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.853] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.853] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.854] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.870] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.870] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.871] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.887] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.887] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.888] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.905] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.905] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.906] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.921] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.922] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.922] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.938] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.938] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.938] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.956] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.957] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.957] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.973] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.974] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.974] [INFO] Rendering option: Exit
+[2026-09-10 10:33:08.988] [INFO] Rendering option: Play
+[2026-09-10 10:33:08.989] [INFO] Rendering option: Options
+[2026-09-10 10:33:08.989] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.005] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.006] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.006] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.024] [WARNING] Unhandled SDL event type: 525
+[2026-09-10 10:33:09.025] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.025] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.026] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.046] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.049] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.050] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.074] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.074] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.074] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.093] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.093] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.094] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.108] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.109] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.109] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.140] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.140] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.141] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.142] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.143] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.143] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.155] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.156] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.156] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.185] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.185] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.186] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.216] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.216] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.217] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.236] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.237] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.237] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.254] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.254] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.255] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.284] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.285] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.285] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.286] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.286] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.287] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.305] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.306] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.306] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.336] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.337] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.337] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.355] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.356] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.356] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.386] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.387] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.387] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.400] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.401] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.401] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.431] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.432] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.432] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.434] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.435] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.435] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.451] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.451] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.451] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.482] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.483] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.483] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.484] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.485] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.485] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.500] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.501] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.501] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.518] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.519] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.519] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.535] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.535] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.536] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.551] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.552] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.552] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.567] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.568] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.568] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.584] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.585] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.585] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.600] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.601] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.601] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.618] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.618] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.618] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.634] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.634] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.635] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.651] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.651] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.652] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.667] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.668] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.668] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.684] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.685] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.685] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.701] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.702] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.702] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.718] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.719] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.719] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.734] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.735] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.735] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.751] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.752] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.752] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.767] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.767] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.767] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.784] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.784] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.784] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.800] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.801] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.801] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.817] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.817] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.818] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.833] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.834] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.834] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.850] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.850] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.851] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.866] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.867] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.867] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.883] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.884] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.885] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.900] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.901] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.901] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.918] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.918] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.919] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.933] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.934] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.934] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.951] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.951] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.952] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.970] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.970] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.971] [INFO] Rendering option: Exit
+[2026-09-10 10:33:09.984] [INFO] Rendering option: Play
+[2026-09-10 10:33:09.984] [INFO] Rendering option: Options
+[2026-09-10 10:33:09.985] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.000] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.000] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.001] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.017] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.018] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.018] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.033] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.033] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.034] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.051] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.051] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.051] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.066] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.067] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.067] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.084] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.084] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.085] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.100] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.101] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.101] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.116] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.117] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.117] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.133] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.133] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.134] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.150] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.150] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.151] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.166] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.167] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.167] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.184] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.184] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.184] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.200] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.201] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.201] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.217] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.217] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.218] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.233] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.233] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.233] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.250] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.250] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.250] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.266] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.267] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.267] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.284] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.284] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.285] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.299] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.299] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.300] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.316] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.317] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.317] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.332] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.333] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.333] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.350] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.350] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.351] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.366] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.367] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.367] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.383] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.384] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.384] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.399] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.400] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.400] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.416] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.416] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.417] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.432] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.433] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.433] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.449] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.450] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.450] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.466] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.466] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.467] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.483] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.484] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.484] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.499] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.499] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.499] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.516] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.517] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.517] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.532] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.533] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.533] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.550] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.551] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.551] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.570] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.571] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.571] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.584] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.585] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.585] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.601] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.601] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.601] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.617] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.618] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.619] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.663] [WARNING] Unhandled SDL event type: 526
+[2026-09-10 10:33:10.664] [WARNING] Unhandled SDL event type: 524
+[2026-09-10 10:33:10.665] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.665] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.665] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.669] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.669] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.670] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.696] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.697] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.699] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.727] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.727] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.728] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.757] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.758] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.758] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.767] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.767] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.767] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.768] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.769] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.769] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.801] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.801] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.801] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.803] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.803] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.803] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.820] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.820] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.820] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.851] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.851] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.851] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.852] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.852] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.853] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.871] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.872] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.872] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.902] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.902] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.903] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.921] [INFO] Rendering option: Play
+[2026-09-10 10:33:10.921] [INFO] Rendering option: Options
+[2026-09-10 10:33:10.922] [INFO] Rendering option: Exit
+[2026-09-10 10:33:10.953] [INFO] Starting Demo 2D...
+[2026-09-10 10:33:10.966] [INFO] Exiting MenuScene
+[2026-09-10 10:33:10.967] [INFO] Exiting MenuScene
+[2026-09-10 10:33:10.967] [INFO] Entering Demo2DFixedScene with fixed camera.
+[2026-09-10 10:33:10.967] [INFO] Renderer ID: 5
+[2026-09-10 10:33:10.968] [INFO] VertexBuffer created.
+[2026-09-10 10:33:10.968] [INFO] VertexArray ID: 3
+[2026-09-10 10:33:10.969] [INFO] VertexArray created.
+[2026-09-10 10:33:10.969] [INFO] IndexBuffer created. Renderer ID: 6
+[2026-09-10 10:33:10.970] [INFO] GameWorld initialized with borders.
+[2026-09-10 10:33:10.970] [INFO] Camera Projection: left=-20, right=20, bottom=-10, top=10, width=20, height=10
+[2026-09-10 10:33:10.970] [INFO] Camera projection set to world bounds.
+[2026-09-10 10:33:10.972] [INFO] Texture loaded: assets/textures/player.png (32x32)
+[2026-09-10 10:33:10.972] [INFO] Texture loaded and cached: assets/textures/player.png
+[2026-09-10 10:33:10.974] [INFO] Texture loaded: assets/textures/tile.png (144x144)
+[2026-09-10 10:33:10.974] [INFO] Texture loaded and cached: assets/textures/tile.png
+[2026-09-10 10:33:10.975] [INFO] Texture loaded: assets/textures/enemy.png (32x32)
+[2026-09-10 10:33:10.975] [INFO] Texture loaded and cached: assets/textures/enemy.png
+[2026-09-10 10:33:10.976] [INFO] Spawned 3 enemies
+[2026-09-10 10:33:10.976] [INFO] Entered Demo(fixed) successfully.
+[2026-09-10 10:33:10.976] [INFO] Scene set: Demo2D_FixedCamera
+[2026-09-10 10:33:10.977] [INFO] View[12]=-0, View[13]=-0
+[2026-09-10 10:33:10.977] [INFO] Proj[0]=0.05, Proj[5]=0.1, Proj[12]=-0, Proj[13]=-0
+[2026-09-10 10:33:10.978] [INFO] Update running...
+[2026-09-10 10:33:10.978] [INFO] Player grounded: false, Is jumping: false, Vertical velocity: -0.26
+[2026-09-10 10:33:10.979] [INFO] Player: (0.00, -0.01)
+[2026-09-10 10:33:11.965] [INFO] FPS: 59.2 | Delta: 0.0175s | Elapsed: 4.25s
+[2026-09-10 10:33:12.238] [INFO] Audio device opened. ACTUAL format: 44100 Hz, 2 channels
+[2026-09-10 10:33:12.239] [INFO] Sound loaded: assets/sounds/landing.wav (36864 bytes)
+[2026-09-10 10:33:12.239] [INFO] Sound cached: assets/sounds/landing.wav
+[2026-09-10 10:33:12.240] [INFO] Sound played: 36864 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:12.240] [INFO] Landed (sound played)
+[2026-09-10 10:33:12.241] [WARNING] Unhandled SDL event type: 4354
+[2026-09-10 10:33:12.614] [INFO] Sound loaded: assets/sounds/jump.wav (138240 bytes)
+[2026-09-10 10:33:12.615] [INFO] Sound cached: assets/sounds/jump.wav
+[2026-09-10 10:33:12.616] [INFO] Sound played: 138240 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:12.616] [INFO] Jump started.
+[2026-09-10 10:33:12.980] [INFO] Update running...
+[2026-09-10 10:33:12.981] [INFO] Player grounded: false, Is jumping: false, Vertical velocity: -0.98
+[2026-09-10 10:33:12.981] [INFO] FPS: 60.1 | Delta: 0.0165s | Elapsed: 5.26s
+[2026-09-10 10:33:12.982] [INFO] Player: (-0.33, -4.70)
+[2026-09-10 10:33:12.982] [INFO] View[12]=-0, View[13]=-0
+[2026-09-10 10:33:12.982] [INFO] Proj[0]=0.05, Proj[5]=0.1, Proj[12]=-0, Proj[13]=-0
+[2026-09-10 10:33:13.648] [INFO] Sound played: 36864 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:13.648] [INFO] Landed (sound played)
+[2026-09-10 10:33:13.863] [INFO] Sound played: 138240 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:13.864] [INFO] Jump started.
+[2026-09-10 10:33:13.997] [INFO] FPS: 60.0 | Delta: 0.0168s | Elapsed: 6.28s
+[2026-09-10 10:33:14.648] [INFO] Sound played: 36864 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:14.648] [INFO] Landed (sound played)
+[2026-09-10 10:33:14.981] [INFO] Update running...
+[2026-09-10 10:33:14.982] [INFO] Player grounded: true, Is jumping: false, Vertical velocity: 0.00
+[2026-09-10 10:33:14.982] [INFO] Player: (-8.33, -7.50)
+[2026-09-10 10:33:14.997] [INFO] Sound played: 138240 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:14.998] [INFO] Jump started.
+[2026-09-10 10:33:14.998] [INFO] FPS: 60.0 | Delta: 0.0163s | Elapsed: 7.28s
+[2026-09-10 10:33:14.998] [INFO] View[12]=-0, View[13]=-0
+[2026-09-10 10:33:14.999] [INFO] Proj[0]=0.05, Proj[5]=0.1, Proj[12]=-0, Proj[13]=-0
+[2026-09-10 10:33:15.663] [INFO] Player collided with enemy!
+[2026-09-10 10:33:15.664] [INFO] Player died: Killed by enemy
+[2026-09-10 10:33:15.664] [INFO] Respawned 3 enemies
+[2026-09-10 10:33:16.014] [INFO] FPS: 60.0 | Delta: 0.0168s | Elapsed: 8.30s
+[2026-09-10 10:33:16.914] [INFO] Sound played: 36864 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:16.914] [INFO] Landed (sound played)
+[2026-09-10 10:33:16.997] [INFO] Update running...
+[2026-09-10 10:33:16.998] [INFO] Player grounded: true, Is jumping: false, Vertical velocity: 0.00
+[2026-09-10 10:33:16.998] [INFO] Player: (-1.40, -7.50)
+[2026-09-10 10:33:16.999] [INFO] View[12]=-0, View[13]=-0
+[2026-09-10 10:33:16.999] [INFO] Proj[0]=0.05, Proj[5]=0.1, Proj[12]=-0, Proj[13]=-0
+[2026-09-10 10:33:17.015] [INFO] FPS: 60.0 | Delta: 0.0172s | Elapsed: 9.30s
+[2026-09-10 10:33:17.280] [INFO] Sound played: 138240 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:17.280] [INFO] Jump started.
+[2026-09-10 10:33:18.030] [INFO] FPS: 60.1 | Delta: 0.0166s | Elapsed: 10.31s
+[2026-09-10 10:33:18.096] [INFO] Sound played: 36864 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:18.097] [INFO] Landed (sound played)
+[2026-09-10 10:33:19.013] [INFO] Update running...
+[2026-09-10 10:33:19.013] [INFO] Player grounded: true, Is jumping: false, Vertical velocity: 0.00
+[2026-09-10 10:33:19.014] [INFO] Player: (-9.46, -7.50)
+[2026-09-10 10:33:19.014] [INFO] View[12]=-0, View[13]=-0
+[2026-09-10 10:33:19.014] [INFO] Proj[0]=0.05, Proj[5]=0.1, Proj[12]=-0, Proj[13]=-0
+[2026-09-10 10:33:19.030] [INFO] FPS: 60.0 | Delta: 0.0168s | Elapsed: 11.31s
+[2026-09-10 10:33:19.279] [INFO] Sound played: 138240 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:19.280] [INFO] Jump started.
+[2026-09-10 10:33:19.496] [INFO] Player collided with enemy!
+[2026-09-10 10:33:19.496] [INFO] Player died: Killed by enemy
+[2026-09-10 10:33:19.497] [INFO] Respawned 3 enemies
+[2026-09-10 10:33:20.046] [INFO] FPS: 60.0 | Delta: 0.0169s | Elapsed: 12.33s
+[2026-09-10 10:33:20.746] [INFO] Sound played: 36864 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:20.746] [INFO] Landed (sound played)
+[2026-09-10 10:33:21.012] [INFO] Update running...
+[2026-09-10 10:33:21.029] [INFO] Player grounded: true, Is jumping: false, Vertical velocity: 0.00
+[2026-09-10 10:33:21.030] [INFO] Player: (-5.07, -7.50)
+[2026-09-10 10:33:21.030] [INFO] View[12]=-0, View[13]=-0
+[2026-09-10 10:33:21.031] [INFO] Proj[0]=0.05, Proj[5]=0.1, Proj[12]=-0, Proj[13]=-0
+[2026-09-10 10:33:21.046] [INFO] FPS: 60.0 | Delta: 0.0168s | Elapsed: 13.33s
+[2026-09-10 10:33:22.062] [INFO] FPS: 60.0 | Delta: 0.0167s | Elapsed: 14.35s
+[2026-09-10 10:33:22.629] [INFO] Sound played: 138240 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:22.630] [INFO] Jump started.
+[2026-09-10 10:33:23.029] [INFO] Update running...
+[2026-09-10 10:33:23.029] [INFO] Player grounded: false, Is jumping: true, Vertical velocity: -1.77
+[2026-09-10 10:33:23.030] [INFO] Player: (-11.40, -5.18)
+[2026-09-10 10:33:23.030] [INFO] View[12]=-0, View[13]=-0
+[2026-09-10 10:33:23.030] [INFO] Proj[0]=0.05, Proj[5]=0.1, Proj[12]=-0, Proj[13]=-0
+[2026-09-10 10:33:23.063] [INFO] FPS: 60.0 | Delta: 0.0169s | Elapsed: 15.35s
+[2026-09-10 10:33:23.129] [INFO] Player collided with enemy!
+[2026-09-10 10:33:23.129] [INFO] Player died: Killed by enemy
+[2026-09-10 10:33:23.129] [INFO] Respawned 3 enemies
+[2026-09-10 10:33:24.079] [INFO] FPS: 60.0 | Delta: 0.0163s | Elapsed: 16.36s
+[2026-09-10 10:33:24.379] [INFO] Sound played: 36864 bytes (converted from 44100 Hz, 2 ch to 44100 Hz, 2 ch)
+[2026-09-10 10:33:24.379] [INFO] Landed (sound played)
+[2026-09-10 10:33:24.630] [WARNING] Unhandled SDL event type: 528
+[2026-09-10 10:33:24.630] [INFO] WindowCloseEvent received, shutting down game.
+[2026-09-10 10:33:24.646] [INFO] Shutting down Application...
+[2026-09-10 10:33:24.646] [INFO] GamepadManager shut down.
+[2026-09-10 10:33:24.662] [INFO] ResourceManager cleared.
+[2026-09-10 10:33:24.663] [INFO] EventBus cleared.
+[2026-09-10 10:33:24.757] [INFO] Engine shutdown.
+[2026-09-10 10:33:24.757] [INFO] Engine shut down.
+[2026-09-10 10:33:24.758] [INFO] SDL_ttf shut down.
+[2026-09-10 10:33:24.758] [INFO] Audio device closed.
+[2026-09-10 10:33:24.758] [INFO] Log system shutting down.
