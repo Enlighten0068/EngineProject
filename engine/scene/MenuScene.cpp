@@ -120,48 +120,48 @@ void MenuScene::Update(float deltaTime){
         GamepadManager::GetInstance().IsButtonPressed(0, SDL_GAMEPAD_BUTTON_DPAD_DOWN)){
         m_SelectedOption = (m_SelectedOption + 1) % static_cast<int>(m_Options.size());
     Log::Info("Selected: " + m_Options[m_SelectedOption].Label);
-        }
+    }
 
-        //Keyboard navigation - Up
-        if(Input::IsKeyPressed(SDL_SCANCODE_UP) || Input::IsKeyPressed(SDL_SCANCODE_W) ||
-            GamepadManager::GetInstance().IsButtonPressed(0, SDL_GAMEPAD_BUTTON_DPAD_UP)){
-            m_SelectedOption = (m_SelectedOption - 1 + static_cast<int>(m_Options.size())) % static_cast<int>(m_Options.size());
-        Log::Info("Selected: " + m_Options[m_SelectedOption].Label);
-            }
+    //Keyboard navigation - Up
+    if(Input::IsKeyPressed(SDL_SCANCODE_UP) || Input::IsKeyPressed(SDL_SCANCODE_W) ||
+        GamepadManager::GetInstance().IsButtonPressed(0, SDL_GAMEPAD_BUTTON_DPAD_UP)){
+        m_SelectedOption = (m_SelectedOption - 1 + static_cast<int>(m_Options.size())) % static_cast<int>(m_Options.size());
+    Log::Info("Selected: " + m_Options[m_SelectedOption].Label);
+    }
 
-            //Confirm selection with keyboard
-            if(Input::IsKeyPressed(SDL_SCANCODE_RETURN) || Input::IsKeyPressed(SDL_SCANCODE_SPACE) ||
-                GamepadManager::GetInstance().IsButtonPressed(0, SDL_GAMEPAD_BUTTON_EAST)){
+    //Confirm selection with keyboard
+    if(Input::IsKeyPressed(SDL_SCANCODE_RETURN) || Input::IsKeyPressed(SDL_SCANCODE_SPACE) ||
+        GamepadManager::GetInstance().IsButtonPressed(0, SDL_GAMEPAD_BUTTON_EAST)){
+        HandleSelection();
+    }
+
+    //Mouse click detection
+    if(Input::IsMouseButtonPressed(1)){
+        Vector2D mousePos = Input::GetMousePosition();
+        int winWidth = Input::GetWindowWidth();
+        int winHeight = Input::GetWindowHeight();
+
+        //Convert to world coordinates (projection: -10 to 10)
+        float worldX = (mousePos.x / winWidth) * 20.0f - 10.0f;
+        float worldY = -(mousePos.y / winHeight) * 20.0f + 10.0f;
+
+        for(size_t i = 0; i < m_Options.size(); ++i){
+            const auto& opt = m_Options[i];
+            float halfWidth = (opt.Width / opt.Height) * 1.5f * 0.5f;
+            float halfHeight = 0.75f;
+
+            float left = opt.Position.x - halfWidth;
+            float right = opt.Position.x + halfWidth;
+            float bottom = opt.Position.y - halfHeight;
+            float top = opt.Position.y + halfHeight;
+
+            if(worldX >= left && worldX <= right && worldY >= bottom && worldY <= top){
+                m_SelectedOption = static_cast<int>(i);
                 HandleSelection();
-                }
-
-                //Mouse click detection
-                if(Input::IsMouseButtonPressed(1)){
-                    Vector2D mousePos = Input::GetMousePosition();
-                    int winWidth = Input::GetWindowWidth();
-                    int winHeight = Input::GetWindowHeight();
-
-                    //Convert to world coordinates (projection: -10 to 10)
-                    float worldX = (mousePos.x / winWidth) * 20.0f - 10.0f;
-                    float worldY = -(mousePos.y / winHeight) * 20.0f + 10.0f;
-
-                    for(size_t i = 0; i < m_Options.size(); ++i){
-                        const auto& opt = m_Options[i];
-                        float halfWidth = (opt.Width / opt.Height) * 1.5f * 0.5f;
-                        float halfHeight = 0.75f;
-
-                        float left = opt.Position.x - halfWidth;
-                        float right = opt.Position.x + halfWidth;
-                        float bottom = opt.Position.y - halfHeight;
-                        float top = opt.Position.y + halfHeight;
-
-                        if(worldX >= left && worldX <= right && worldY >= bottom && worldY <= top){
-                            m_SelectedOption = static_cast<int>(i);
-                            HandleSelection();
-                            break;
-                        }
-                    }
-                }
+                break;
+            }
+        }
+    }
 }
 
 /**
