@@ -45,4 +45,10 @@ public:
      * @return String containing the scene name.
      */
     virtual std::string GetName() const = 0;
+
+    /**
+     * @brief Called when the window is resized.
+     * @note Default implementation does nothing.
+     */
+    virtual void OnResize(int width, int height){ (void)width; (void)height; }
 };

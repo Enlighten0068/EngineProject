@@ -124,9 +124,8 @@ bool Application::Initialize(){
 
         //Skip camera update for fixed camera scenes
         Scene* currentScene = m_SceneManager.GetCurrentScene();
-        if(currentScene && currentScene->GetName() == "Demo2D_FixedCamera"){
-            Log::Info("Fixed camera scene active: skipping camera projection update.");
-            return;
+        if(currentScene){
+            currentScene->OnResize(newWidth, newHeight);
         }
 
         if(m_Camera){
@@ -224,6 +223,9 @@ void Application::ProcessEvents(){
  * entities, physics, AI)
  */
 void Application::Update(){
+    //Global hotkey: F11 = toggle fullscreen
+    if(Input::IsKeyPressed(SDL_SCANCODE_F11)) m_Engine.ToggleFullscreen();
+
     GamepadManager::GetInstance().Update();
     m_SceneManager.Update(Time::DeltaTime());
 }

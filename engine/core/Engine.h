@@ -41,6 +41,13 @@ public:
      * @brief Checks if the engine is still running.
      * @return true if running, false otherwise.
      */
+
+    /** @brief Toggles fullscreen mode on the window. */
+    bool ToggleFullscreen(){ return m_Window.ToggleFullscreen(); }
+
+    /** @brief Checks if the window is fullscreen. */
+    bool IsFullscreen() const{ return m_Window.IsFullscreen(); }
+
     bool IsRunning() const{ return m_Running; }
 
     /**

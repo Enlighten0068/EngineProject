@@ -34,6 +34,9 @@ set(ENGINE_SOURCES
   engine/core/CameraController.cpp
   engine/demo/Demo2DScene.cpp
   engine/demo/Demo2DFixedScene.cpp
+  engine/demo/levels/Level1.cpp
+  engine/demo/levels/Level2.cpp
+  engine/demo/levels/Level3.cpp
   engine/diagnostics/Log.cpp
   engine/events/EventBus.cpp
   engine/events/SDLEventTranslator.cpp
@@ -44,6 +47,8 @@ set(ENGINE_SOURCES
   engine/graphics/VertexBuffer.cpp
   engine/graphics/Texture2D.cpp
   engine/graphics/GraphicsContext.cpp
+  engine/level/LevelRegistry.cpp
+  engine/level/LevelSelectorScene.cpp
   engine/math/Matrix4.cpp
   engine/platform/sdl/SDLWindow.cpp
   engine/renderer/Renderer.cpp
@@ -53,6 +58,8 @@ set(ENGINE_SOURCES
   engine/scene/GameWorld.cpp
   engine/scene/SceneManager.cpp
   engine/scene/MenuScene.cpp
+  engine/scene/BaseLevelScene.cpp
+  engine/systems/LevelSystem.cpp
 )
 
 add_executable(

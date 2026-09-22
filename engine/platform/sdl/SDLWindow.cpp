@@ -98,6 +98,27 @@ bool SDLWindow::Create(const char* title, int width, int height, bool fullscreen
   return true;
 }
 
+bool SDLWindow::ToggleFullscreen(){
+  if(!m_Window) return false;
+
+  bool isFullscreen = (SDL_GetWindowFlags(m_Window) & SDL_WINDOW_FULLSCREEN) != 0;
+  bool newState = !isFullscreen;
+
+  if(!SDL_SetWindowFullscreen(m_Window, newState)){
+    Log::Warning(std::format("Failed to toggle fullscreen: {}", SDL_GetError()));
+    return isFullscreen; //unchanged
+  }
+
+  Log::Info(newState ? "Fullscreen enabled." : "Windowed mode enabled.");
+  return newState;
+}
+
+bool SDLWindow::IsFullscreen() const{
+  if(!m_Window) return false;
+  return (SDL_GetWindowFlags(m_Window) & SDL_WINDOW_FULLSCREEN) != 0;
+}
+
+
 /**
  * @brief Destroys the OpenGL context and the SDL window.
  *

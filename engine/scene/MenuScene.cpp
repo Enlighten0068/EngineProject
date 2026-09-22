@@ -1,8 +1,9 @@
 #include "core/Input.h"
 #include "core/GamepadManager.h"
-#include "demo/Demo2DFixedScene.h"
+//#include "demo/Demo2DFixedScene.h"
 #include "diagnostics/Log.h"
 #include "graphics/Texture2D.h"
+#include "level/LevelSelectorScene.h"
 #include "renderer/Renderer.h"
 #include "scene/MenuScene.h"
 #include <glad/glad.h>
@@ -242,11 +243,10 @@ void MenuScene::HandleSelection(){
 
     if(selected == "Play"){
         Log::Info("Starting Demo 2D...");
-        auto scene = std::make_unique<Demo2DFixedScene>(
-            m_Shader, m_VertexArray, m_IndexBuffer,
-            m_Camera, m_LineShader
-        );
-        m_SceneManager.SetScene(std::move(scene));
+        auto selector = std::make_unique<LevelSelectorScene>(
+            m_SceneManager, m_Shader, m_VertexArray,
+            m_IndexBuffer, m_Camera, m_LineShader);
+        m_SceneManager.SetScene(std::move(selector));
     } else if(selected == "Options"){
         Log::Info("Options menu to be implemented later.");
     } else if(selected == "Exit"){

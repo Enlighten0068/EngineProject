@@ -33,6 +33,17 @@ public:
   bool Create(const char* title, int width, int height, bool fullscreen);
 
   /**
+   * @brief Toggles between windowed and fullscreen mode.
+   * @return true if now fullscreen, false if now windowed.
+   */
+  bool ToggleFullscreen();
+
+  /**
+   * @brief Checks if the window is currently fullscreen.
+   */
+  bool IsFullscreen() const;
+
+  /**
    * @brief Destroys the window and OpenGL context.
    */
   void Destroy();
