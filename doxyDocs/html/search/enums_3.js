@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['mousebutton_0',['MouseButton',['../MouseEvent_8h.html#ac1ec3647c005eacad401b06e7e18f711',1,'MouseEvent.h']]],
-  ['mousebuttonaction_1',['MouseButtonAction',['../MouseEvent_8h.html#abe9b53e1b348725f697f5e443cb3c224',1,'MouseEvent.h']]]
+  ['loglevel_0',['LogLevel',['../Log_8h.html#aca1fd1d8935433e6ba2e3918214e07f9',1,'Log.h']]]
 ];

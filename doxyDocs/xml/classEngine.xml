@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/Engine.h" line="53" column="15" bodyfile="engine/core/Engine.h" bodystart="53" bodyend="-1"/>
+        <location file="engine/core/Engine.h" line="65" column="15" bodyfile="engine/core/Engine.h" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classEngine_1a9702c44e02c02eb256ede54a6f259782" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/Engine.h" line="54" column="10" bodyfile="engine/core/Engine.h" bodystart="54" bodyend="-1"/>
+        <location file="engine/core/Engine.h" line="66" column="10" bodyfile="engine/core/Engine.h" bodystart="66" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -202,6 +202,41 @@ This method initializes the SDL video subsystem and creates a window with the sp
         </inbodydescription>
         <location file="engine/core/Engine.h" line="38" column="15" bodyfile="engine/core/Engine.cpp" bodystart="57" bodyend="59"/>
       </memberdef>
+      <memberdef kind="function" id="classEngine_1a47e36969b7d5eb737b75ca542c44b31f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Engine::ToggleFullscreen</definition>
+        <argsstring>()</argsstring>
+        <name>ToggleFullscreen</name>
+        <qualifiedname>Engine::ToggleFullscreen</qualifiedname>
+        <briefdescription>
+<para>Checks if the engine is still running. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if running, false otherwise.</para>
+</simplesect>
+Toggles fullscreen mode on the window. <simplesect kind="return"><para>true if now fullscreen, false if now windowed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Engine.h" line="49" column="10" bodyfile="engine/core/Engine.h" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classEngine_1aa953a5f68826c7a2ea122674219d715b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Engine::IsFullscreen</definition>
+        <argsstring>() const</argsstring>
+        <name>IsFullscreen</name>
+        <qualifiedname>Engine::IsFullscreen</qualifiedname>
+        <briefdescription>
+<para>Checks if the window is currently fullscreen. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Engine.h" line="54" column="10" bodyfile="engine/core/Engine.h" bodystart="54" bodyend="54"/>
+      </memberdef>
       <memberdef kind="function" id="classEngine_1a96fbaebec1936cf4440f93b59a7c5148" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool Engine::IsRunning</definition>
@@ -209,16 +244,12 @@ This method initializes the SDL video subsystem and creates a window with the sp
         <name>IsRunning</name>
         <qualifiedname>Engine::IsRunning</qualifiedname>
         <briefdescription>
-<para>Checks if the engine is still running. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>true if running, false otherwise. </para>
-</simplesect>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/Engine.h" line="44" column="10" bodyfile="engine/core/Engine.h" bodystart="44" bodyend="44"/>
+        <location file="engine/core/Engine.h" line="56" column="10" bodyfile="engine/core/Engine.h" bodystart="56" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="classEngine_1a75cf7e8499772e2a46c9bb747ce1f4e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -247,7 +278,7 @@ This method initializes the SDL video subsystem and creates a window with the sp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/Engine.h" line="50" column="10" bodyfile="engine/core/Engine.h" bodystart="50" bodyend="50"/>
+        <location file="engine/core/Engine.h" line="62" column="10" bodyfile="engine/core/Engine.h" bodystart="62" bodyend="62"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -272,16 +303,18 @@ This method initializes the SDL video subsystem and creates a window with the sp
         <link refid="classSDLWindow"/>
       </node>
     </collaborationgraph>
-    <location file="engine/core/Engine.h" line="14" column="1" bodyfile="engine/core/Engine.h" bodystart="14" bodyend="55"/>
+    <location file="engine/core/Engine.h" line="14" column="1" bodyfile="engine/core/Engine.h" bodystart="14" bodyend="67"/>
     <listofallmembers>
       <member refid="classEngine_1a8c98683b0a3aa28d8ab72a8bcd0d52f2" prot="public" virt="non-virtual"><scope>Engine</scope><name>Engine</name></member>
       <member refid="classEngine_1a531f887d1b7f38525d0c21d20e216e6c" prot="public" virt="non-virtual"><scope>Engine</scope><name>GetWindow</name></member>
       <member refid="classEngine_1a253fc356293f0a5228b6d7ab143540b3" prot="public" virt="non-virtual"><scope>Engine</scope><name>Initialize</name></member>
+      <member refid="classEngine_1aa953a5f68826c7a2ea122674219d715b" prot="public" virt="non-virtual"><scope>Engine</scope><name>IsFullscreen</name></member>
       <member refid="classEngine_1a96fbaebec1936cf4440f93b59a7c5148" prot="public" virt="non-virtual"><scope>Engine</scope><name>IsRunning</name></member>
       <member refid="classEngine_1a9702c44e02c02eb256ede54a6f259782" prot="private" virt="non-virtual"><scope>Engine</scope><name>m_Running</name></member>
       <member refid="classEngine_1a6bbcb94d19650accc1e62492c82178e2" prot="private" virt="non-virtual"><scope>Engine</scope><name>m_Window</name></member>
       <member refid="classEngine_1a75cf7e8499772e2a46c9bb747ce1f4e9" prot="public" virt="non-virtual"><scope>Engine</scope><name>SetRunning</name></member>
       <member refid="classEngine_1a3dbd2c0a65e642baa7eaa97caa6e4e64" prot="public" virt="non-virtual"><scope>Engine</scope><name>Shutdown</name></member>
+      <member refid="classEngine_1a47e36969b7d5eb737b75ca542c44b31f" prot="public" virt="non-virtual"><scope>Engine</scope><name>ToggleFullscreen</name></member>
       <member refid="classEngine_1a8ef7030a089ecb30bbfcb9e43094717a" prot="public" virt="non-virtual"><scope>Engine</scope><name>~Engine</name></member>
     </listofallmembers>
   </compounddef>

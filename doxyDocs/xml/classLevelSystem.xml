@@ -1,0 +1,794 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classLevelSystem" kind="class" language="C++" prot="public">
+    <compoundname>LevelSystem</compoundname>
+    <includes refid="LevelSystem_8h" local="no">LevelSystem.h</includes>
+    <innerclass refid="structLevelSystem_1_1EnemyDefinition" prot="public">LevelSystem::EnemyDefinition</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLevelSystem_1a3264e9b899873ac854f0759d3103aeac" prot="private" static="no" mutable="no">
+        <type><ref refid="classECSScene" kindref="compound">ECSScene</ref> &amp;</type>
+        <definition>ECSScene&amp; LevelSystem::m_Scene</definition>
+        <argsstring></argsstring>
+        <name>m_Scene</name>
+        <qualifiedname>LevelSystem::m_Scene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="128" column="14" bodyfile="engine/systems/LevelSystem.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSystem_1ab69f9cb52128e9c8c54f3d7ca50c77ac" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2D&gt; LevelSystem::m_PlayerTex</definition>
+        <argsstring></argsstring>
+        <name>m_PlayerTex</name>
+        <qualifiedname>LevelSystem::m_PlayerTex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="129" column="21" bodyfile="engine/systems/LevelSystem.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSystem_1ab03cdacf2090d7c234bb91c8b005ef03" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2D&gt; LevelSystem::m_TileTex</definition>
+        <argsstring></argsstring>
+        <name>m_TileTex</name>
+        <qualifiedname>LevelSystem::m_TileTex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="130" column="21" bodyfile="engine/systems/LevelSystem.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSystem_1a7c91d5ae725b59c2b21829be61b05129" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2D&gt; LevelSystem::m_EnemyTex</definition>
+        <argsstring></argsstring>
+        <name>m_EnemyTex</name>
+        <qualifiedname>LevelSystem::m_EnemyTex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="131" column="21" bodyfile="engine/systems/LevelSystem.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSystem_1a7ee740d1275dc8de3f4cfbe0f5d4d37e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LevelSystem::m_MinX</definition>
+        <argsstring></argsstring>
+        <name>m_MinX</name>
+        <qualifiedname>LevelSystem::m_MinX</qualifiedname>
+        <initializer>= -20.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="133" column="11" bodyfile="engine/systems/LevelSystem.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSystem_1a471eaf3314955832389dc96aa0b2c668" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LevelSystem::m_MaxX</definition>
+        <argsstring></argsstring>
+        <name>m_MaxX</name>
+        <qualifiedname>LevelSystem::m_MaxX</qualifiedname>
+        <initializer>= 20.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="133" column="19" bodyfile="engine/systems/LevelSystem.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSystem_1ab3ec7fcdfc2ea8e3b1cae73cdea66284" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LevelSystem::m_MinY</definition>
+        <argsstring></argsstring>
+        <name>m_MinY</name>
+        <qualifiedname>LevelSystem::m_MinY</qualifiedname>
+        <initializer>= -10.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="134" column="11" bodyfile="engine/systems/LevelSystem.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSystem_1a53e01a0809e2aef16469a04f3de101be" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LevelSystem::m_MaxY</definition>
+        <argsstring></argsstring>
+        <name>m_MaxY</name>
+        <qualifiedname>LevelSystem::m_MaxY</qualifiedname>
+        <initializer>= 10.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="134" column="19" bodyfile="engine/systems/LevelSystem.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSystem_1a3360d59adae5259447c161bf3050899c" prot="private" static="no" mutable="no">
+        <type>entt::entity</type>
+        <definition>entt::entity LevelSystem::m_PlayerEntity</definition>
+        <argsstring></argsstring>
+        <name>m_PlayerEntity</name>
+        <qualifiedname>LevelSystem::m_PlayerEntity</qualifiedname>
+        <initializer>= entt::null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="136" column="18" bodyfile="engine/systems/LevelSystem.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSystem_1a7583ed8df68e766a29c522cfc1719df9" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; entt::entity &gt;</type>
+        <definition>std::vector&lt;entt::entity&gt; LevelSystem::m_PlatformEntities</definition>
+        <argsstring></argsstring>
+        <name>m_PlatformEntities</name>
+        <qualifiedname>LevelSystem::m_PlatformEntities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="137" column="17" bodyfile="engine/systems/LevelSystem.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSystem_1a21f4aeea06b4c7427eda4418094b116c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; entt::entity &gt;</type>
+        <definition>std::vector&lt;entt::entity&gt; LevelSystem::m_EnemyEntities</definition>
+        <argsstring></argsstring>
+        <name>m_EnemyEntities</name>
+        <qualifiedname>LevelSystem::m_EnemyEntities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="138" column="17" bodyfile="engine/systems/LevelSystem.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSystem_1aa2494c86ba64c939dc03980891c646d8" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structLevelSystem_1_1EnemyDefinition" kindref="compound">EnemyDefinition</ref> &gt;</type>
+        <definition>std::vector&lt;EnemyDefinition&gt; LevelSystem::m_EnemyDefinitions</definition>
+        <argsstring></argsstring>
+        <name>m_EnemyDefinitions</name>
+        <qualifiedname>LevelSystem::m_EnemyDefinitions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="139" column="17" bodyfile="engine/systems/LevelSystem.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLevelSystem_1adf27eff6fdebd568877347bd09f023d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LevelSystem::LevelSystem</definition>
+        <argsstring>(ECSScene &amp;scene, std::shared_ptr&lt; Texture2D &gt; playerTex, std::shared_ptr&lt; Texture2D &gt; tileTex, std::shared_ptr&lt; Texture2D &gt; enemyTex)</argsstring>
+        <name>LevelSystem</name>
+        <qualifiedname>LevelSystem::LevelSystem</qualifiedname>
+        <param>
+          <type><ref refid="classECSScene" kindref="compound">ECSScene</ref> &amp;</type>
+          <declname>scene</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+          <declname>playerTex</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+          <declname>tileTex</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+          <declname>enemyTex</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classLevelSystem" kindref="compound">LevelSystem</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scene</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the ECS scene. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>playerTex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Texture for the player. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tileTex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Texture for platforms and walls. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enemyTex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Texture for enemies. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="53" column="5" bodyfile="engine/systems/LevelSystem.cpp" bodystart="5" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1a3e6320da6531e2929c3d8a78e359ac24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LevelSystem::SetWorldBounds</definition>
+        <argsstring>(float minX, float maxX, float minY, float maxY)</argsstring>
+        <name>SetWorldBounds</name>
+        <qualifiedname>LevelSystem::SetWorldBounds</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>minX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>maxX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>minY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>maxY</declname>
+        </param>
+        <briefdescription>
+<para>Sets the world bounds (does NOT create the <ref refid="classGameWorld" kindref="compound">GameWorld</ref>). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the world bounds.</para>
+<para>The <ref refid="classGameWorld" kindref="compound">GameWorld</ref> is created by the scene after the level is built.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>minX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum X coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum X coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>minY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum Y coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum Y coordinate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="68" column="10" bodyfile="engine/systems/LevelSystem.cpp" bodystart="14" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1a7530478b25741aebf4deccad90696d5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LevelSystem::CreatePlayer</definition>
+        <argsstring>(float x, float y, const Vector3D &amp;scale=Vector3D(3.0f, 3.0f, 1.0f))</argsstring>
+        <name>CreatePlayer</name>
+        <qualifiedname>LevelSystem::CreatePlayer</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>scale</declname>
+          <defval><ref refid="structVector3D" kindref="compound">Vector3D</ref>(3.0f, 3.0f, 1.0f)</defval>
+        </param>
+        <briefdescription>
+<para>Creates the player entity at the given position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Spawn X. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Spawn Y. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scale vector (default: 3x3). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="76" column="10" bodyfile="engine/systems/LevelSystem.cpp" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1a1b19c6edebac036042a5786330e76987" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LevelSystem::CreatePlayerOnFloor</definition>
+        <argsstring>(float x, float floorY, const Vector3D &amp;scale=Vector3D(3.0f, 3.0f, 1.0f))</argsstring>
+        <name>CreatePlayerOnFloor</name>
+        <qualifiedname>LevelSystem::CreatePlayerOnFloor</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>floorY</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>scale</declname>
+          <defval><ref refid="structVector3D" kindref="compound">Vector3D</ref>(3.0f, 3.0f, 1.0f)</defval>
+        </param>
+        <briefdescription>
+<para>Creates the player with its bottom edge sitting on the floor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Convenience method that calculates the correct Y position so that the player spawns exactly on top of the given floor level.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Spawn X. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>floorY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y coordinate of the floor&apos;s top edge. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scale vector (default: 3x3). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="88" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1a085108be7529741cb15602a8022b833c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LevelSystem::CreatePlatform</definition>
+        <argsstring>(float x, float y, float w, float h, float tileX=-1.0f, float tileY=1.0f)</argsstring>
+        <name>CreatePlatform</name>
+        <qualifiedname>LevelSystem::CreatePlatform</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>tileX</declname>
+          <defval>-1.0f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>tileY</declname>
+          <defval>1.0f</defval>
+        </param>
+        <briefdescription>
+<para>Creates a platform at the given position and size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a platform entity.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Center X position. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Center Y position. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tileX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of horizontal texture repetitions (default: w). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tileY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of vertical texture repetitions (default: 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="100" column="10" bodyfile="engine/systems/LevelSystem.cpp" bodystart="26" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1aba8c5392fbf24e635c064847625d5be6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LevelSystem::CreateEnemy</definition>
+        <argsstring>(float x, float y, float patrolStartX, float patrolEndX, float speed, const Vector3D &amp;scale=Vector3D(3.0f, 3.0f, 1.0f))</argsstring>
+        <name>CreateEnemy</name>
+        <qualifiedname>LevelSystem::CreateEnemy</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>patrolStartX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>patrolEndX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
+          <declname>scale</declname>
+          <defval><ref refid="structVector3D" kindref="compound">Vector3D</ref>(3.0f, 3.0f, 1.0f)</defval>
+        </param>
+        <briefdescription>
+<para>Creates an enemy with patrol behavior. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an enemy entity with patrol behavior.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Spawn X. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Spawn Y. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>patrolStartX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left bound of patrol range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>patrolEndX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right bound of patrol range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Movement speed in units per second. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scale vector (default: 3x3). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="112" column="10" bodyfile="engine/systems/LevelSystem.cpp" bodystart="49" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1a9200d914b599b8def8493a7c2cae76b4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float LevelSystem::GetMinX</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMinX</name>
+        <qualifiedname>LevelSystem::GetMinX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="117" column="11" bodyfile="engine/systems/LevelSystem.h" bodystart="117" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1a363a5adfbef8e600a912b96f1e75f5fc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float LevelSystem::GetMaxX</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMaxX</name>
+        <qualifiedname>LevelSystem::GetMaxX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="118" column="11" bodyfile="engine/systems/LevelSystem.h" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1a7f519e936acfa2af7f94570d01fae0a1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float LevelSystem::GetMinY</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMinY</name>
+        <qualifiedname>LevelSystem::GetMinY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="119" column="11" bodyfile="engine/systems/LevelSystem.h" bodystart="119" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1ad0bd129e84474259c33c976eae3f03b6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float LevelSystem::GetMaxY</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMaxY</name>
+        <qualifiedname>LevelSystem::GetMaxY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="120" column="11" bodyfile="engine/systems/LevelSystem.h" bodystart="120" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1a58a12d9e7eb3781b3976c42ba04a62b0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>entt::entity</type>
+        <definition>entt::entity LevelSystem::GetPlayerEntity</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPlayerEntity</name>
+        <qualifiedname>LevelSystem::GetPlayerEntity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="122" column="18" bodyfile="engine/systems/LevelSystem.h" bodystart="122" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1a05736b7dfd96201827d4d27ea628dc13" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; entt::entity &gt; &amp;</type>
+        <definition>const std::vector&lt; entt::entity &gt; &amp; LevelSystem::GetPlatforms</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPlatforms</name>
+        <qualifiedname>LevelSystem::GetPlatforms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="123" column="23" bodyfile="engine/systems/LevelSystem.h" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1a4e765e3778c9694c995c1d45b2737806" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; entt::entity &gt; &amp;</type>
+        <definition>const std::vector&lt; entt::entity &gt; &amp; LevelSystem::GetEnemies</definition>
+        <argsstring>() const</argsstring>
+        <name>GetEnemies</name>
+        <qualifiedname>LevelSystem::GetEnemies</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="124" column="23" bodyfile="engine/systems/LevelSystem.h" bodystart="124" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSystem_1a3b3c9cb5a253e0e253f868cd7d6352c5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="structLevelSystem_1_1EnemyDefinition" kindref="compound">EnemyDefinition</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; EnemyDefinition &gt; &amp; LevelSystem::GetEnemyDefinitions</definition>
+        <argsstring>() const</argsstring>
+        <name>GetEnemyDefinitions</name>
+        <qualifiedname>LevelSystem::GetEnemyDefinitions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="125" column="23" bodyfile="engine/systems/LevelSystem.h" bodystart="125" bodyend="125"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>System that provides a high-level API for building game levels. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classLevelSystem" kindref="compound">LevelSystem</ref> accumulates entities as they are created and records the world bounds. The <ref refid="classGameWorld" kindref="compound">GameWorld</ref> itself is created by the scene after the level is built (via GetWorldBounds accessors). This separation avoids copying a non-copyable <ref refid="classGameWorld" kindref="compound">GameWorld</ref>.</para>
+<para>Each level is defined in a separate .cpp file as a function that receives a reference to a <ref refid="classLevelSystem" kindref="compound">LevelSystem</ref> and calls its methods.</para>
+<para><simplesect kind="see"><para><ref refid="classBaseLevelScene" kindref="compound">BaseLevelScene</ref>, <ref refid="classLevelRegistry" kindref="compound">LevelRegistry</ref>, <ref refid="LevelMacros_8h_1abffe427d7a82d716aaeb59f206234302" kindref="member">REGISTER_LEVEL</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ECSScene</label>
+        <link refid="classECSScene"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_Shader</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>-m_VertexArray</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-m_IndexBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IndexBuffer</label>
+        <link refid="classIndexBuffer"/>
+      </node>
+      <node id="1">
+        <label>LevelSystem</label>
+        <link refid="classLevelSystem"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-m_Scene</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Shader</label>
+        <link refid="classShader"/>
+      </node>
+      <node id="4">
+        <label>VertexArray</label>
+        <link refid="classVertexArray"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/systems/LevelSystem.h" line="30" column="1" bodyfile="engine/systems/LevelSystem.h" bodystart="30" bodyend="140"/>
+    <listofallmembers>
+      <member refid="classLevelSystem_1aba8c5392fbf24e635c064847625d5be6" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>CreateEnemy</name></member>
+      <member refid="classLevelSystem_1a085108be7529741cb15602a8022b833c" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>CreatePlatform</name></member>
+      <member refid="classLevelSystem_1a7530478b25741aebf4deccad90696d5b" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>CreatePlayer</name></member>
+      <member refid="classLevelSystem_1a1b19c6edebac036042a5786330e76987" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>CreatePlayerOnFloor</name></member>
+      <member refid="classLevelSystem_1a4e765e3778c9694c995c1d45b2737806" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>GetEnemies</name></member>
+      <member refid="classLevelSystem_1a3b3c9cb5a253e0e253f868cd7d6352c5" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>GetEnemyDefinitions</name></member>
+      <member refid="classLevelSystem_1a363a5adfbef8e600a912b96f1e75f5fc" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>GetMaxX</name></member>
+      <member refid="classLevelSystem_1ad0bd129e84474259c33c976eae3f03b6" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>GetMaxY</name></member>
+      <member refid="classLevelSystem_1a9200d914b599b8def8493a7c2cae76b4" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>GetMinX</name></member>
+      <member refid="classLevelSystem_1a7f519e936acfa2af7f94570d01fae0a1" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>GetMinY</name></member>
+      <member refid="classLevelSystem_1a05736b7dfd96201827d4d27ea628dc13" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>GetPlatforms</name></member>
+      <member refid="classLevelSystem_1a58a12d9e7eb3781b3976c42ba04a62b0" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>GetPlayerEntity</name></member>
+      <member refid="classLevelSystem_1adf27eff6fdebd568877347bd09f023d6" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>LevelSystem</name></member>
+      <member refid="classLevelSystem_1aa2494c86ba64c939dc03980891c646d8" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_EnemyDefinitions</name></member>
+      <member refid="classLevelSystem_1a21f4aeea06b4c7427eda4418094b116c" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_EnemyEntities</name></member>
+      <member refid="classLevelSystem_1a7c91d5ae725b59c2b21829be61b05129" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_EnemyTex</name></member>
+      <member refid="classLevelSystem_1a471eaf3314955832389dc96aa0b2c668" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_MaxX</name></member>
+      <member refid="classLevelSystem_1a53e01a0809e2aef16469a04f3de101be" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_MaxY</name></member>
+      <member refid="classLevelSystem_1a7ee740d1275dc8de3f4cfbe0f5d4d37e" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_MinX</name></member>
+      <member refid="classLevelSystem_1ab3ec7fcdfc2ea8e3b1cae73cdea66284" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_MinY</name></member>
+      <member refid="classLevelSystem_1a7583ed8df68e766a29c522cfc1719df9" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_PlatformEntities</name></member>
+      <member refid="classLevelSystem_1a3360d59adae5259447c161bf3050899c" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_PlayerEntity</name></member>
+      <member refid="classLevelSystem_1ab69f9cb52128e9c8c54f3d7ca50c77ac" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_PlayerTex</name></member>
+      <member refid="classLevelSystem_1a3264e9b899873ac854f0759d3103aeac" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_Scene</name></member>
+      <member refid="classLevelSystem_1ab03cdacf2090d7c234bb91c8b005ef03" prot="private" virt="non-virtual"><scope>LevelSystem</scope><name>m_TileTex</name></member>
+      <member refid="classLevelSystem_1a3e6320da6531e2929c3d8a78e359ac24" prot="public" virt="non-virtual"><scope>LevelSystem</scope><name>SetWorldBounds</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

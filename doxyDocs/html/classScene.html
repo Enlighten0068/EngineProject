@@ -123,13 +123,17 @@ Inheritance diagram for Scene:</div>
 <div class="dyncontent">
 <div class="center"><img src="classScene__inherit__graph.png" border="0" usemap="#aScene_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="aScene_inherit__map" id="aScene_inherit__map">
-<area shape="rect" title="Abstract base class for all scenes in the engine." alt="" coords="246,5,345,189"/>
-<area shape="rect" href="classDemo2DFixedScene.html" title="Demo 2D Scene with a fixed camera and enemy stomping mechanics." alt="" coords="5,237,190,846"/>
-<area shape="poly" title=" " alt="" coords="236,179,204,239,193,263,188,261,199,236,239,174"/>
-<area shape="rect" href="classDemo2DScene.html" title="Demo 2D Scene with a dynamic camera that follows the player." alt="" coords="214,304,376,779"/>
-<area shape="poly" title=" " alt="" coords="296,202,298,305,293,304,294,207"/>
-<area shape="rect" href="classMenuScene.html" title="Main menu scene with visual text rendering." alt="" coords="400,271,572,812"/>
-<area shape="poly" title=" " alt="" coords="353,174,391,236,406,271,401,271,386,239,353,179"/>
+<area shape="rect" title="Abstract base class for all scenes in the engine." alt="" coords="442,5,566,234"/>
+<area shape="rect" href="classBaseLevelScene.html" title="Generic scene that builds its content from a LevelSystem builder function." alt="" coords="5,293,190,879"/>
+<area shape="poly" title=" " alt="" coords="426,146,374,168,314,198,256,236,205,284,193,300,188,297,201,280,252,232,311,194,372,163,430,142"/>
+<area shape="rect" href="classDemo2DFixedScene.html" title="Demo 2D Scene with a fixed camera and enemy stomping mechanics." alt="" coords="215,282,400,890"/>
+<area shape="poly" title=" " alt="" coords="437,232,414,283,402,310,397,307,409,281,434,236"/>
+<area shape="rect" href="classDemo2DScene.html" title="Demo 2D Scene with a dynamic camera that follows the player." alt="" coords="424,349,586,823"/>
+<area shape="poly" title=" " alt="" coords="506,247,507,350,502,349,503,251"/>
+<area shape="rect" href="classLevelSelectorScene.html" title="Scene that lists all registered levels and lets the player choose one." alt="" coords="609,316,784,857"/>
+<area shape="poly" title=" " alt="" coords="574,231,600,281,615,316,610,315,595,283,573,236"/>
+<area shape="rect" href="classMenuScene.html" title="Main menu scene with visual text rendering." alt="" coords="808,316,980,857"/>
+<area shape="poly" title=" " alt="" coords="579,142,635,164,693,194,750,233,799,280,823,316,818,315,794,284,746,237,690,199,633,169,581,147"/>
 </map>
 </div>
 <div class="dynheader">
@@ -137,7 +141,7 @@ Collaboration diagram for Scene:</div>
 <div class="dyncontent">
 <div class="center"><img src="classScene__coll__graph.png" border="0" usemap="#aScene_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aScene_coll__map" id="aScene_coll__map">
-<area shape="rect" title="Abstract base class for all scenes in the engine." alt="" coords="5,5,104,189"/>
+<area shape="rect" title="Abstract base class for all scenes in the engine." alt="" coords="5,5,129,234"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -154,6 +158,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae24d21e12b34839994ad265662ea24d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the scene.  <br /></td></tr>
 <tr class="memitem:ad93511100250c3f3ed736b9ed69fdc6f" id="r_ad93511100250c3f3ed736b9ed69fdc6f"><td class="memItemLeft">virtual std::string&#160;</td><td class="memItemRight"><a class="el" href="#ad93511100250c3f3ed736b9ed69fdc6f">GetName</a> () const =0</td></tr>
 <tr class="memdesc:ad93511100250c3f3ed736b9ed69fdc6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the scene.  <br /></td></tr>
+<tr class="memitem:a0b39bb1405c0f9ed82b2123a4b9dbfbd" id="r_a0b39bb1405c0f9ed82b2123a4b9dbfbd"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a0b39bb1405c0f9ed82b2123a4b9dbfbd">OnResize</a> (int width, int height)</td></tr>
+<tr class="memdesc:a0b39bb1405c0f9ed82b2123a4b9dbfbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the window is resized.  <br /></td></tr>
+<tr class="memitem:afb756dd8b7583f4b06a000d8157c7952" id="r_afb756dd8b7583f4b06a000d8157c7952"><td class="memItemLeft">virtual std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#afb756dd8b7583f4b06a000d8157c7952">GetHUDLines</a> () const</td></tr>
+<tr class="memdesc:afb756dd8b7583f4b06a000d8157c7952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the lines to be rendered by the <a class="el" href="classHUD.html" title="Simple heads-up display overlay for rendering text on top of scenes.">HUD</a> overlay.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for all scenes in the engine. </p>
@@ -161,7 +169,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Scenes are managed by the <a class="el" href="classSceneManager.html" title="Manages a stack of scenes.">SceneManager</a>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classSceneManager.html" title="Manages a stack of scenes.">SceneManager</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Scene_8h_source.html#l00014">14</a> of file <a class="el" href="Scene_8h_source.html">Scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Scene_8h_source.html#l00015">15</a> of file <a class="el" href="Scene_8h_source.html">Scene.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af6e09d91ebd10ae9cc7c12c39d06386c" name="af6e09d91ebd10ae9cc7c12c39d06386c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af6e09d91ebd10ae9cc7c12c39d06386c">&#9670;&#160;</a></span>~Scene()</h2>
@@ -189,6 +197,40 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="afb756dd8b7583f4b06a000d8157c7952" name="afb756dd8b7583f4b06a000d8157c7952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb756dd8b7583f4b06a000d8157c7952">&#9670;&#160;</a></span>GetHUDLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::vector&lt; std::string &gt; Scene::GetHUDLines </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the lines to be rendered by the <a class="el" href="classHUD.html" title="Simple heads-up display overlay for rendering text on top of scenes.">HUD</a> overlay. </p>
+<p>The default implementation returns only the F11 hint. Scenes that have additional shortcuts (e.g., ESC to exit) should override this method and append their own lines.</p>
+<dl class="section return"><dt>Returns</dt><dd>Vector of strings to display in the <a class="el" href="classHUD.html" title="Simple heads-up display overlay for rendering text on top of scenes.">HUD</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classHUD.html" title="Simple heads-up display overlay for rendering text on top of scenes.">HUD</a>, <a class="el" href="classApplication.html#a6f40ffdb97f3a938ae19ea4eae4882ed" title="Renders the current scene.">Application::Render</a> </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classBaseLevelScene.html#ab1a4691694cad905d0d6c7368d8b82e6">BaseLevelScene</a>, and <a class="el" href="classLevelSelectorScene.html#aebf0f8867df43f6606d5457bdce9d386">LevelSelectorScene</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Scene_8h_source.html#l00070">70</a> of file <a class="el" href="Scene_8h_source.html">Scene.h</a>.</p>
+
+</div>
+</div>
 <a id="ad93511100250c3f3ed736b9ed69fdc6f" name="ad93511100250c3f3ed736b9ed69fdc6f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad93511100250c3f3ed736b9ed69fdc6f">&#9670;&#160;</a></span>GetName()</h2>
 
@@ -215,7 +257,7 @@ Public Member Functions</h2></td></tr>
 <p>Gets the name of the scene. </p>
 <dl class="section return"><dt>Returns</dt><dd>String containing the scene name. </dd></dl>
 
-<p>Implemented in <a class="el" href="classDemo2DFixedScene.html#a67590905026e92be48a1e864db868eb9">Demo2DFixedScene</a>, <a class="el" href="classDemo2DScene.html#aa6caae608302b160ef184473e1ef0219">Demo2DScene</a>, and <a class="el" href="classMenuScene.html#a8bb0e3e014de1ba6912dc937de6a2a69">MenuScene</a>.</p>
+<p>Implemented in <a class="el" href="classBaseLevelScene.html#a09c51e071220755c6b9ff37e46ae83aa">BaseLevelScene</a>, <a class="el" href="classDemo2DFixedScene.html#a67590905026e92be48a1e864db868eb9">Demo2DFixedScene</a>, <a class="el" href="classDemo2DScene.html#aa6caae608302b160ef184473e1ef0219">Demo2DScene</a>, <a class="el" href="classLevelSelectorScene.html#a8085250fc5dee5c345c763c26c8a0707">LevelSelectorScene</a>, and <a class="el" href="classMenuScene.html#a8bb0e3e014de1ba6912dc937de6a2a69">MenuScene</a>.</p>
 
 </div>
 </div>
@@ -245,7 +287,7 @@ Public Member Functions</h2></td></tr>
 <p>Called when the scene becomes active. </p>
 <p>Use this method to initialize scene-specific resources. </p>
 
-<p>Implemented in <a class="el" href="classDemo2DFixedScene.html#a1daab876b813800575999e0a5374d899">Demo2DFixedScene</a>, <a class="el" href="classDemo2DScene.html#a8ffa82c6772da7121ff4d812d9d1c1e5">Demo2DScene</a>, and <a class="el" href="classMenuScene.html#a015085736912c87c4e28ab54ab056e6d">MenuScene</a>.</p>
+<p>Implemented in <a class="el" href="classBaseLevelScene.html#ab16251567315098d84b5afed205ebf75">BaseLevelScene</a>, <a class="el" href="classDemo2DFixedScene.html#a1daab876b813800575999e0a5374d899">Demo2DFixedScene</a>, <a class="el" href="classDemo2DScene.html#a8ffa82c6772da7121ff4d812d9d1c1e5">Demo2DScene</a>, <a class="el" href="classLevelSelectorScene.html#a2ef8dc2df76c5d6a9dde5cb034ac242d">LevelSelectorScene</a>, and <a class="el" href="classMenuScene.html#a015085736912c87c4e28ab54ab056e6d">MenuScene</a>.</p>
 
 </div>
 </div>
@@ -275,7 +317,50 @@ Public Member Functions</h2></td></tr>
 <p>Called when the scene is exited. </p>
 <p>Use this method to clean up scene-specific resources. </p>
 
-<p>Implemented in <a class="el" href="classDemo2DFixedScene.html#a327f00eb5155cd0b30138787babecba2">Demo2DFixedScene</a>, <a class="el" href="classDemo2DScene.html#afce546436c8328555a6c548dcb3a9d90">Demo2DScene</a>, and <a class="el" href="classMenuScene.html#a834e7aa54dd72502876d30114e47cc9e">MenuScene</a>.</p>
+<p>Implemented in <a class="el" href="classBaseLevelScene.html#a4dbbd984d245a1d8fd20e89546db30c4">BaseLevelScene</a>, <a class="el" href="classDemo2DFixedScene.html#a327f00eb5155cd0b30138787babecba2">Demo2DFixedScene</a>, <a class="el" href="classDemo2DScene.html#afce546436c8328555a6c548dcb3a9d90">Demo2DScene</a>, <a class="el" href="classLevelSelectorScene.html#a38c557d72f36f05319bd8fc097cccb1e">LevelSelectorScene</a>, and <a class="el" href="classMenuScene.html#a834e7aa54dd72502876d30114e47cc9e">MenuScene</a>.</p>
+
+</div>
+</div>
+<a id="a0b39bb1405c0f9ed82b2123a4b9dbfbd" name="a0b39bb1405c0f9ed82b2123a4b9dbfbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b39bb1405c0f9ed82b2123a4b9dbfbd">&#9670;&#160;</a></span>OnResize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Scene::OnResize </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called when the window is resized. </p>
+<p>The scene decides how to react (e.g., recompute camera projection).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>New window width in pixels. </td></tr>
+    <tr><td class="paramname">height</td><td>New window height in pixels. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classBaseLevelScene.html#a8131a96a0029b8801e80012c3d7b10dc">BaseLevelScene</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Scene_8h_source.html#l00058">58</a> of file <a class="el" href="Scene_8h_source.html">Scene.h</a>.</p>
 
 </div>
 </div>
@@ -304,7 +389,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Renders the scene. </p>
 
-<p>Implemented in <a class="el" href="classDemo2DFixedScene.html#ad938c557aa7ad055aee8d25171fafad5">Demo2DFixedScene</a>, <a class="el" href="classDemo2DScene.html#aa04f40209bc6b113df30f9dcf03bd80c">Demo2DScene</a>, and <a class="el" href="classMenuScene.html#a57787dac0643417ddd147c940c36b93a">MenuScene</a>.</p>
+<p>Implemented in <a class="el" href="classBaseLevelScene.html#a97d454ced01a68b11b7b4906ba30d7b1">BaseLevelScene</a>, <a class="el" href="classDemo2DFixedScene.html#ad938c557aa7ad055aee8d25171fafad5">Demo2DFixedScene</a>, <a class="el" href="classDemo2DScene.html#aa04f40209bc6b113df30f9dcf03bd80c">Demo2DScene</a>, <a class="el" href="classLevelSelectorScene.html#aa4161b586dbea24ead423a034816fdfc">LevelSelectorScene</a>, and <a class="el" href="classMenuScene.html#a57787dac0643417ddd147c940c36b93a">MenuScene</a>.</p>
 
 </div>
 </div>
@@ -339,7 +424,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classDemo2DFixedScene.html#ac626aa848bd8d98054f7d2b21a724ac9">Demo2DFixedScene</a>, <a class="el" href="classDemo2DScene.html#a960e0d534e6e05bda39f3d9eaaf30deb">Demo2DScene</a>, and <a class="el" href="classMenuScene.html#af2b1e0e9e1c783c8b058f60906add842">MenuScene</a>.</p>
+<p>Implemented in <a class="el" href="classBaseLevelScene.html#a3efbf3f1e6d16a34de0b27a1da2f98f7">BaseLevelScene</a>, <a class="el" href="classDemo2DFixedScene.html#ac626aa848bd8d98054f7d2b21a724ac9">Demo2DFixedScene</a>, <a class="el" href="classDemo2DScene.html#a960e0d534e6e05bda39f3d9eaaf30deb">Demo2DScene</a>, <a class="el" href="classLevelSelectorScene.html#acfaf5d66253dbd5880be7bc68d210d0a">LevelSelectorScene</a>, and <a class="el" href="classMenuScene.html#af2b1e0e9e1c783c8b058f60906add842">MenuScene</a>.</p>
 
 </div>
 </div>

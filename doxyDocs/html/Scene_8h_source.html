@@ -116,30 +116,41 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('Scene_8h_sourc
 <a href="Scene_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span></div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classScene.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="classScene.html">Scene</a>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classScene.html#af6e09d91ebd10ae9cc7c12c39d06386c">   16</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classScene.html#af6e09d91ebd10ae9cc7c12c39d06386c">~Scene</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classScene.html#ad09d42329f52df55fad0467cd092c9aa">   23</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#ad09d42329f52df55fad0467cd092c9aa">OnEnter</a>() = 0;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classScene.html#a9824fefa923e5a9db4dca5a23343609b">   30</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#a9824fefa923e5a9db4dca5a23343609b">OnExit</a>() = 0;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classScene.html#aaede6346f58776bd40efffd55885ab02">   36</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#aaede6346f58776bd40efffd55885ab02">Update</a>(<span class="keywordtype">float</span> deltaTime) = 0;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classScene.html#ae24d21e12b34839994ad265662ea24d7">   41</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#ae24d21e12b34839994ad265662ea24d7">Render</a>() = 0;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classScene.html#ad93511100250c3f3ed736b9ed69fdc6f">   47</a></span>    <span class="keyword">virtual</span> std::string <a class="code hl_function" href="classScene.html#ad93511100250c3f3ed736b9ed69fdc6f">GetName</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classScene.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="classScene.html">Scene</a>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classScene.html#af6e09d91ebd10ae9cc7c12c39d06386c">   17</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classScene.html#af6e09d91ebd10ae9cc7c12c39d06386c">~Scene</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classScene.html#ad09d42329f52df55fad0467cd092c9aa">   24</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#ad09d42329f52df55fad0467cd092c9aa">OnEnter</a>() = 0;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classScene.html#a9824fefa923e5a9db4dca5a23343609b">   31</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#a9824fefa923e5a9db4dca5a23343609b">OnExit</a>() = 0;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classScene.html#aaede6346f58776bd40efffd55885ab02">   37</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#aaede6346f58776bd40efffd55885ab02">Update</a>(<span class="keywordtype">float</span> deltaTime) = 0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classScene.html#ae24d21e12b34839994ad265662ea24d7">   42</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#ae24d21e12b34839994ad265662ea24d7">Render</a>() = 0;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classScene.html#ad93511100250c3f3ed736b9ed69fdc6f">   48</a></span>    <span class="keyword">virtual</span> std::string <a class="code hl_function" href="classScene.html#ad93511100250c3f3ed736b9ed69fdc6f">GetName</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classScene.html#a0b39bb1405c0f9ed82b2123a4b9dbfbd">   58</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#a0b39bb1405c0f9ed82b2123a4b9dbfbd">OnResize</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height){ (void)width; (void)height; }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classScene.html#afb756dd8b7583f4b06a000d8157c7952">   70</a></span>    <span class="keyword">virtual</span> std::vector&lt;std::string&gt; <a class="code hl_function" href="classScene.html#afb756dd8b7583f4b06a000d8157c7952">GetHUDLines</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> { <span class="stringliteral">&quot;F11: Toggle Fullscreen&quot;</span> };</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
 </div>
-<div class="ttc" id="aclassScene_html"><div class="ttname"><a href="classScene.html">Scene</a></div><div class="ttdoc">Abstract base class for all scenes in the engine.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">Scene.h:14</a></div></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="ttc" id="aclassScene_html"><div class="ttname"><a href="classScene.html">Scene</a></div><div class="ttdoc">Abstract base class for all scenes in the engine.</div><div class="ttdef"><b>Definition</b> <a href="#l00015">Scene.h:15</a></div></div>
+<div class="ttc" id="aclassScene_html_a0b39bb1405c0f9ed82b2123a4b9dbfbd"><div class="ttname"><a href="classScene.html#a0b39bb1405c0f9ed82b2123a4b9dbfbd">Scene::OnResize</a></div><div class="ttdeci">virtual void OnResize(int width, int height)</div><div class="ttdoc">Called when the window is resized.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">Scene.h:58</a></div></div>
 <div class="ttc" id="aclassScene_html_a9824fefa923e5a9db4dca5a23343609b"><div class="ttname"><a href="classScene.html#a9824fefa923e5a9db4dca5a23343609b">Scene::OnExit</a></div><div class="ttdeci">virtual void OnExit()=0</div><div class="ttdoc">Called when the scene is exited.</div></div>
 <div class="ttc" id="aclassScene_html_aaede6346f58776bd40efffd55885ab02"><div class="ttname"><a href="classScene.html#aaede6346f58776bd40efffd55885ab02">Scene::Update</a></div><div class="ttdeci">virtual void Update(float deltaTime)=0</div><div class="ttdoc">Updates the scene logic.</div></div>
 <div class="ttc" id="aclassScene_html_ad09d42329f52df55fad0467cd092c9aa"><div class="ttname"><a href="classScene.html#ad09d42329f52df55fad0467cd092c9aa">Scene::OnEnter</a></div><div class="ttdeci">virtual void OnEnter()=0</div><div class="ttdoc">Called when the scene becomes active.</div></div>
 <div class="ttc" id="aclassScene_html_ad93511100250c3f3ed736b9ed69fdc6f"><div class="ttname"><a href="classScene.html#ad93511100250c3f3ed736b9ed69fdc6f">Scene::GetName</a></div><div class="ttdeci">virtual std::string GetName() const =0</div><div class="ttdoc">Gets the name of the scene.</div></div>
 <div class="ttc" id="aclassScene_html_ae24d21e12b34839994ad265662ea24d7"><div class="ttname"><a href="classScene.html#ae24d21e12b34839994ad265662ea24d7">Scene::Render</a></div><div class="ttdeci">virtual void Render()=0</div><div class="ttdoc">Renders the scene.</div></div>
 <div class="ttc" id="aclassScene_html_af6e09d91ebd10ae9cc7c12c39d06386c"><div class="ttname"><a href="classScene.html#af6e09d91ebd10ae9cc7c12c39d06386c">Scene::~Scene</a></div><div class="ttdeci">virtual ~Scene()=default</div></div>
+<div class="ttc" id="aclassScene_html_afb756dd8b7583f4b06a000d8157c7952"><div class="ttname"><a href="classScene.html#afb756dd8b7583f4b06a000d8157c7952">Scene::GetHUDLines</a></div><div class="ttdeci">virtual std::vector&lt; std::string &gt; GetHUDLines() const</div><div class="ttdoc">Returns the lines to be rendered by the HUD overlay.</div><div class="ttdef"><b>Definition</b> <a href="#l00070">Scene.h:70</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

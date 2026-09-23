@@ -15,140 +15,146 @@
 \DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <algorithm>}}
 \DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <format>}}
 \DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00014}\doxymbox{\hyperlink{classPlayerController_a526dbbbce5f9567a8558b5366445b4f7}{00014}}\ \doxymbox{\hyperlink{classPlayerController_a526dbbbce5f9567a8558b5366445b4f7}{PlayerController::PlayerController}}(entt::registry\&\ registry,\ entt::entity\ playerEntity,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classGameWorld}{GameWorld}}\&\ world)}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00015}00015\ :\ \doxymbox{\hyperlink{classPlayerController_ad586858eeaf73156678220adde0dfc65}{m\_Registry}}(registry),\ \doxymbox{\hyperlink{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7}{m\_PlayerEntity}}(playerEntity),\ \doxymbox{\hyperlink{classPlayerController_a0741e03ee1239165e1a12ab2fdc818db}{m\_World}}(world)\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00016}00016\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ab1593f66b3a70d2ce2c99d2898b27300}{SetupEventSubscriptions}}();}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00017}00017\ \}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00025}\doxymbox{\hyperlink{classPlayerController_ab1593f66b3a70d2ce2c99d2898b27300}{00025}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPlayerController_ab1593f66b3a70d2ce2c99d2898b27300}{PlayerController::SetupEventSubscriptions}}()\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00026}00026\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_aec7a1402c0f1789198cc9954639bac99}{Subscribe}}<\doxymbox{\hyperlink{classKeyEvent}{KeyEvent}}>([\textcolor{keyword}{this}](\doxymbox{\hyperlink{classEvent}{Event}}\&\ e)\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classKeyEvent}{KeyEvent}}\&\ keyEvent\ =\ \textcolor{keyword}{static\_cast<}\doxymbox{\hyperlink{classKeyEvent}{KeyEvent}}\&\textcolor{keyword}{>}(e);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(keyEvent.\doxymbox{\hyperlink{classKeyEvent_a83f1a67717c14fc58ab42c668425de0e}{GetAction}}()\ ==\ \doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1ad78a68f6a85421ae121c2cb5b73a1040}{KeyAction::Pressed}}\ \&\&\ keyEvent.\doxymbox{\hyperlink{classKeyEvent_ad612ba1c06ae469951e06d4635ae256f}{GetScancode}}()\ ==\ SDL\_SCANCODE\_E)\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Interact\ key\ pressed."{}});}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00031}00031\ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00032}00032\ \}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00043}\doxymbox{\hyperlink{classPlayerController_a2e0c380d64a88c8cfe60ce8452921227}{00043}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPlayerController_a2e0c380d64a88c8cfe60ce8452921227}{PlayerController::Update}}()\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}{m\_IsDead}})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{float}\ dt\ =\ \doxymbox{\hyperlink{classTime_ad543732facbdbe2aa7298de13cb2a12b}{Time::DeltaTime}}();}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ \doxymbox{\hyperlink{classPlayerController_ad586858eeaf73156678220adde0dfc65}{m\_Registry}}.get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(\doxymbox{\hyperlink{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7}{m\_PlayerEntity}});}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//Get\ direction\ from\ keyboard}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00050}00050\ \ \ \ \ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ keyboardDirection(0.0f,\ 0.0f);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Input::IsKeyHeld}}(SDL\_SCANCODE\_LEFT))\ \ keyboardDirection.x\ -\/=\ 1.0f;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Input::IsKeyHeld}}(SDL\_SCANCODE\_RIGHT))\ keyboardDirection.x\ +=\ 1.0f;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//Normalize\ diagonal\ movement}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{if}(keyboardDirection.x\ !=\ 0.0f\ \&\&\ keyboardDirection.y\ !=\ 0.0f)\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ keyboardDirection\ =\ keyboardDirection\ *\ 0.7071f;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00018}\doxymbox{\hyperlink{classPlayerController_a526dbbbce5f9567a8558b5366445b4f7}{00018}}\ \doxymbox{\hyperlink{classPlayerController_a526dbbbce5f9567a8558b5366445b4f7}{PlayerController::PlayerController}}(entt::registry\&\ registry,\ entt::entity\ playerEntity,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classGameWorld}{GameWorld}}\&\ world)}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00019}00019\ :\ \doxymbox{\hyperlink{classPlayerController_ad586858eeaf73156678220adde0dfc65}{m\_Registry}}(registry),\ \doxymbox{\hyperlink{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7}{m\_PlayerEntity}}(playerEntity),\ \doxymbox{\hyperlink{classPlayerController_a0741e03ee1239165e1a12ab2fdc818db}{m\_World}}(world)\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//Capture\ the\ current\ transform\ as\ the\ spawn\ point\ for\ respawn}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classPlayerController_ad586858eeaf73156678220adde0dfc65}{m\_Registry}}.all\_of<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(\doxymbox{\hyperlink{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7}{m\_PlayerEntity}}))\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ m\_SpawnPosition\ =\ m\_Registry.get<Components::Transform>(m\_PlayerEntity).Position;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ Log::Info(std::format(\textcolor{stringliteral}{"{}PlayerController:\ spawn\ captured\ at\ (\{\},\ \{\})"{}},}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_SpawnPosition.x,\ m\_SpawnPosition.y));}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00026}00026\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ab1593f66b3a70d2ce2c99d2898b27300}{SetupEventSubscriptions}}();}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00035}\doxymbox{\hyperlink{classPlayerController_ab1593f66b3a70d2ce2c99d2898b27300}{00035}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPlayerController_ab1593f66b3a70d2ce2c99d2898b27300}{PlayerController::SetupEventSubscriptions}}()\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00036}00036\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_aec7a1402c0f1789198cc9954639bac99}{Subscribe}}<\doxymbox{\hyperlink{classKeyEvent}{KeyEvent}}>([\textcolor{keyword}{this}](\doxymbox{\hyperlink{classEvent}{Event}}\&\ e)\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classKeyEvent}{KeyEvent}}\&\ keyEvent\ =\ \textcolor{keyword}{static\_cast<}\doxymbox{\hyperlink{classKeyEvent}{KeyEvent}}\&\textcolor{keyword}{>}(e);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(keyEvent.\doxymbox{\hyperlink{classKeyEvent_a83f1a67717c14fc58ab42c668425de0e}{GetAction}}()\ ==\ \doxymbox{\hyperlink{KeyEvent_8h_a70f971fdf17a8c66ee3c9c336e07a3e1ad78a68f6a85421ae121c2cb5b73a1040}{KeyAction::Pressed}}\ \&\&\ keyEvent.\doxymbox{\hyperlink{classKeyEvent_ad612ba1c06ae469951e06d4635ae256f}{GetScancode}}()\ ==\ SDL\_SCANCODE\_E)\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Interact\ key\ pressed."{}});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00041}00041\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00053}\doxymbox{\hyperlink{classPlayerController_a2e0c380d64a88c8cfe60ce8452921227}{00053}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPlayerController_a2e0c380d64a88c8cfe60ce8452921227}{PlayerController::Update}}()\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}{m\_IsDead}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{float}\ dt\ =\ \doxymbox{\hyperlink{classTime_ad543732facbdbe2aa7298de13cb2a12b}{Time::DeltaTime}}();}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ \doxymbox{\hyperlink{classPlayerController_ad586858eeaf73156678220adde0dfc65}{m\_Registry}}.get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(\doxymbox{\hyperlink{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7}{m\_PlayerEntity}});}
 \DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//Get\ gamepad\ left\ joystick\ direction}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00060}00060\ \ \ \ \ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ gamepadDirection(0.0f,\ 0.0f);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ gamepadActive\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().IsConnected(0))\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ gamepadDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ =\ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().\doxymbox{\hyperlink{classGamepadManager_afc5533e2907a7356e1e7a34cbae3f872}{GetAxis}}(0,\ SDL\_GAMEPAD\_AXIS\_LEFTX);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ deadzone\ =\ 0.2f;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(std::abs(gamepadDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}})\ <\ deadzone)\ gamepadDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ =\ 0.0f;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(std::abs(gamepadDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ <\ deadzone)\ gamepadDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//Get\ direction\ from\ keyboard}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00060}00060\ \ \ \ \ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ keyboardDirection(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Input::IsKeyHeld}}(SDL\_SCANCODE\_LEFT))\ \ keyboardDirection.x\ -\/=\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Input::IsKeyHeld}}(SDL\_SCANCODE\_RIGHT))\ keyboardDirection.x\ +=\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//Normalize\ diagonal\ movement}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{if}(keyboardDirection.x\ !=\ 0.0f\ \&\&\ keyboardDirection.y\ !=\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ keyboardDirection\ =\ keyboardDirection\ *\ 0.7071f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00067}00067\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ magnitude\ =\ std::sqrt(gamepadDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ *\ gamepadDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ +\ gamepadDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ *\ gamepadDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}});}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(magnitude\ >\ 0.1f)\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ gamepadActive\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ gamepadDirection\ =\ gamepadDirection\ /\ magnitude;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00074}00074\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//Combine\ directions:\ gamepad\ takes\ priority\ over\ keyboard}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00077}00077\ \ \ \ \ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ inputDirection(0.0f,\ 0.0f);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{if}(gamepadActive)\ inputDirection\ =\ gamepadDirection;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{else}\ inputDirection\ =\ keyboardDirection;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//Apply\ horizontal\ movement}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{float}\ speed\ =\ \doxymbox{\hyperlink{classPlayerController_a552c0308cb0226c7862d99c04f68357a}{m\_Speed}}\ *\ dt;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{if}(inputDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ !=\ 0.0f\ ||\ inputDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ !=\ 0.0f)\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ transform.Position.x\ +=\ inputDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ *\ speed;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ transform.Position.y\ +=\ inputDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ *\ speed;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00086}00086\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//Jump\ detection}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ wantToJump\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Input::IsKeyPressed}}(SDL\_SCANCODE\_SPACE))\ wantToJump\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().IsButtonPressed(0,\ SDL\_GAMEPAD\_BUTTON\_EAST))\ wantToJump\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00092}00092\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//Execute\ jump}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{if}(wantToJump\ \&\&\ \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}})\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\_IsJumping}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ae0e4240a0fad2c55cdf0b96e4450e83d}{m\_JumpTimer}}\ =\ 0.0f;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ =\ 12.0f;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Dispatch\ jump\ event\ and\ play\ sound}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerJumpedEvent}{PlayerJumpedEvent}}\ jumpEvent(transform.Position,\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}});}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}}(jumpEvent);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSoundManager_a9102852e83b623b6fbf733bcfe610653}{SoundManager::GetInstance}}().\doxymbox{\hyperlink{classSoundManager_a9a672ed95a515097bcea2f57a8eb3569}{PlaySound}}(\textcolor{stringliteral}{"{}assets/sounds/jump.wav"{}});}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Jump\ started."{}});}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00105}00105\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00106}00106\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{comment}{//Vertical\ physics\ (jumping\ +\ gravity)}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\_IsJumping}})\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Input::IsKeyHeld}}(SDL\_SCANCODE\_SPACE)\ ||\ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().IsButtonHeld(0,\ SDL\_GAMEPAD\_BUTTON\_EAST))\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ae0e4240a0fad2c55cdf0b96e4450e83d}{m\_JumpTimer}}\ +=\ dt;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ gravityReduction\ =\ 1.0f\ -\/\ (\doxymbox{\hyperlink{classPlayerController_ae0e4240a0fad2c55cdf0b96e4450e83d}{m\_JumpTimer}}\ /\ 0.5f);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(gravityReduction\ <\ 0.0f)\ gravityReduction\ =\ 0.0f;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ +=\ (gravityReduction\ *\ 0.5f\ -\/\ 9.8f)\ *\ dt;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ =\ std::min(\doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}},\ 0.0f);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\_IsJumping}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00118}00118\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}})\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ -\/=\ 9.8f\ *\ dt;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ =\ 0.0f;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00121}00121\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00122}00122\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{comment}{//Apply\ vertical\ velocity}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}}\ ||\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ >\ 0.0f)\ transform.Position.y\ +=\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ *\ dt;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00125}00125\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{comment}{//Landing\ detection\ and\ sound}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}}\ \&\&\ !\doxymbox{\hyperlink{classPlayerController_a2b4f8434fdc256669b54c8ac8f7d6aeb}{m\_WasGrounded}})\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSoundManager_a9102852e83b623b6fbf733bcfe610653}{SoundManager::GetInstance}}().\doxymbox{\hyperlink{classSoundManager_a9a672ed95a515097bcea2f57a8eb3569}{PlaySound}}(\textcolor{stringliteral}{"{}assets/sounds/landing.wav"{}});}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Landed\ (sound\ played)"{}});}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00130}00130\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00131}00131\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a2b4f8434fdc256669b54c8ac8f7d6aeb}{m\_WasGrounded}}\ =\ \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//Get\ gamepad\ left\ joystick\ direction}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00070}00070\ \ \ \ \ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ gamepadDirection(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ gamepadActive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().IsConnected(0))\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ gamepadDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ =\ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().\doxymbox{\hyperlink{classGamepadManager_afc5533e2907a7356e1e7a34cbae3f872}{GetAxis}}(0,\ SDL\_GAMEPAD\_AXIS\_LEFTX);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ deadzone\ =\ 0.2f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(std::abs(gamepadDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}})\ <\ deadzone)\ gamepadDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(std::abs(gamepadDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ <\ deadzone)\ gamepadDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ magnitude\ =\ std::sqrt(gamepadDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ *\ gamepadDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ +\ gamepadDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ *\ gamepadDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(magnitude\ >\ 0.1f)\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ gamepadActive\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ gamepadDirection\ =\ gamepadDirection\ /\ magnitude;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{comment}{//Combine\ directions:\ gamepad\ takes\ priority\ over\ keyboard}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00087}00087\ \ \ \ \ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ inputDirection(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{if}(gamepadActive)\ inputDirection\ =\ gamepadDirection;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{else}\ inputDirection\ =\ keyboardDirection;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{comment}{//Apply\ horizontal\ movement}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{float}\ speed\ =\ \doxymbox{\hyperlink{classPlayerController_a552c0308cb0226c7862d99c04f68357a}{m\_Speed}}\ *\ dt;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{if}(inputDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ !=\ 0.0f\ ||\ inputDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ !=\ 0.0f)\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ transform.Position.x\ +=\ inputDirection.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ *\ speed;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ transform.Position.y\ +=\ inputDirection.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ *\ speed;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//Jump\ detection}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ wantToJump\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Input::IsKeyPressed}}(SDL\_SCANCODE\_SPACE))\ wantToJump\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().IsButtonPressed(0,\ SDL\_GAMEPAD\_BUTTON\_EAST))\ wantToJump\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{comment}{//Execute\ jump}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{if}(wantToJump\ \&\&\ \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}})\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\_IsJumping}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ae0e4240a0fad2c55cdf0b96e4450e83d}{m\_JumpTimer}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ =\ 12.0f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Dispatch\ jump\ event\ and\ play\ sound}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerJumpedEvent}{PlayerJumpedEvent}}\ jumpEvent(transform.Position,\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}}(jumpEvent);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSoundManager_a9102852e83b623b6fbf733bcfe610653}{SoundManager::GetInstance}}().\doxymbox{\hyperlink{classSoundManager_a9a672ed95a515097bcea2f57a8eb3569}{PlaySound}}(\textcolor{stringliteral}{"{}assets/sounds/jump.wav"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Jump\ started."{}});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{comment}{//Vertical\ physics\ (jumping\ +\ gravity)}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\_IsJumping}})\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a745b3db0f4100ff52f8597b407bcb55e}{Input::IsKeyHeld}}(SDL\_SCANCODE\_SPACE)\ ||\ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().IsButtonHeld(0,\ SDL\_GAMEPAD\_BUTTON\_EAST))\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ae0e4240a0fad2c55cdf0b96e4450e83d}{m\_JumpTimer}}\ +=\ dt;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ gravityReduction\ =\ 1.0f\ -\/\ (\doxymbox{\hyperlink{classPlayerController_ae0e4240a0fad2c55cdf0b96e4450e83d}{m\_JumpTimer}}\ /\ 0.5f);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(gravityReduction\ <\ 0.0f)\ gravityReduction\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ +=\ (gravityReduction\ *\ 0.5f\ -\/\ 9.8f)\ *\ dt;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ =\ std::min(\doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}},\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\_IsJumping}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00128}00128\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}})\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ -\/=\ 9.8f\ *\ dt;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00131}00131\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00132}00132\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{comment}{//Clamp\ player\ position\ to\ world\ boundaries}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00134}00134\ \ \ \ \ transform.Position\ =\ \doxymbox{\hyperlink{classPlayerController_a0741e03ee1239165e1a12ab2fdc818db}{m\_World}}.\doxymbox{\hyperlink{classGameWorld_a3e8ec719469deeee0e298939e85996b2}{ClampPosition}}(transform.Position);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{comment}{//Apply\ vertical\ velocity}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}}\ ||\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ >\ 0.0f)\ transform.Position.y\ +=\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ *\ dt;}
 \DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00135}00135\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{comment}{//Log\ player\ state\ for\ debugging}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00137}00137\ \ \ \ \ \doxymbox{\hyperlink{classLog_a112833cbd05320dac0790f50eb4ab25e}{Log::InfoThrottled}}(std::format(\textcolor{stringliteral}{"{}Player\ grounded:\ \{\},\ Is\ jumping:\ \{\},\ Vertical\ velocity:\ \{:.2f\}"{}},}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}},\ \doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\_IsJumping}},\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}),\ \textcolor{stringliteral}{"{}check\_grounded\_state"{}},\ 2.0f);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00139}00139\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{comment}{//Death\ check\ -\/\ fell\ off\ the\ world}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{if}(transform.Position.y\ <\ -\/15.0f)\ \doxymbox{\hyperlink{classPlayerController_a41c1071503dfa351b2e028389476529b}{Die}}(\textcolor{stringliteral}{"{}Fell\ off\ the\ world"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{comment}{//Landing\ detection\ and\ sound}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}}\ \&\&\ !\doxymbox{\hyperlink{classPlayerController_a2b4f8434fdc256669b54c8ac8f7d6aeb}{m\_WasGrounded}})\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSoundManager_a9102852e83b623b6fbf733bcfe610653}{SoundManager::GetInstance}}().\doxymbox{\hyperlink{classSoundManager_a9a672ed95a515097bcea2f57a8eb3569}{PlaySound}}(\textcolor{stringliteral}{"{}assets/sounds/landing.wav"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Landed\ (sound\ played)"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00140}00140\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00141}00141\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a2b4f8434fdc256669b54c8ac8f7d6aeb}{m\_WasGrounded}}\ =\ \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}};}
 \DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00142}00142\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}})\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ =\ 0.0f;}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00144}00144\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//Clamp\ player\ position\ to\ world\ boundaries}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00144}00144\ \ \ \ \ transform.Position\ =\ \doxymbox{\hyperlink{classPlayerController_a0741e03ee1239165e1a12ab2fdc818db}{m\_World}}.\doxymbox{\hyperlink{classGameWorld_a3e8ec719469deeee0e298939e85996b2}{ClampPosition}}(transform.Position);}
 \DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00145}00145\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00154}\doxymbox{\hyperlink{classPlayerController_a41c1071503dfa351b2e028389476529b}{00154}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPlayerController_a41c1071503dfa351b2e028389476529b}{PlayerController::Die}}(\textcolor{keyword}{const}\ std::string\&\ cause)\{}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}{m\_IsDead}})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00156}00156\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}{m\_IsDead}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00157}00157\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ \doxymbox{\hyperlink{classPlayerController_ad586858eeaf73156678220adde0dfc65}{m\_Registry}}.get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(\doxymbox{\hyperlink{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7}{m\_PlayerEntity}});}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00159}00159\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{comment}{//Dispatch\ death\ event}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00161}00161\ \ \ \ \ \doxymbox{\hyperlink{classPlayerDiedEvent}{PlayerDiedEvent}}\ deathEvent(transform.Position,\ cause);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00162}00162\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}}(deathEvent);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00163}00163\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00164}00164\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Player\ died:\ \{\}"{}},\ cause));}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00165}00165\ }
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00166}00166\ \ \ \ \ \textcolor{comment}{//Respawn\ at\ center}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00167}00167\ \ \ \ \ transform.Position\ =\ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ 0.0f,\ 0.0f);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00168}00168\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}\ =\ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ 0.0f,\ 0.0f);}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00169}00169\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\_IsJumping}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00170}00170\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}{m\_IsDead}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//Instant\ respawn}}
-\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00171}00171\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{comment}{//Log\ player\ state\ for\ debugging}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00147}00147\ \ \ \ \ \doxymbox{\hyperlink{classLog_a112833cbd05320dac0790f50eb4ab25e}{Log::InfoThrottled}}(std::format(\textcolor{stringliteral}{"{}Player\ grounded:\ \{\},\ Is\ jumping:\ \{\},\ Vertical\ velocity:\ \{:.2f\}"{}},}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}},\ \doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\_IsJumping}},\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}),\ \textcolor{stringliteral}{"{}check\_grounded\_state"{}},\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//Death\ check\ -\/\ fell\ off\ the\ world}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{if}(transform.Position.y\ <\ -\/15.0f)\ \doxymbox{\hyperlink{classPlayerController_a41c1071503dfa351b2e028389476529b}{Die}}(\textcolor{stringliteral}{"{}Fell\ off\ the\ world"{}});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00153}00153\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1c}{m\_IsGrounded}})\ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00154}00154\ \}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00164}\doxymbox{\hyperlink{classPlayerController_a41c1071503dfa351b2e028389476529b}{00164}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPlayerController_a41c1071503dfa351b2e028389476529b}{PlayerController::Die}}(\textcolor{keyword}{const}\ std::string\&\ cause)\{}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00165}00165\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}{m\_IsDead}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00166}00166\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}{m\_IsDead}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ \doxymbox{\hyperlink{classPlayerController_ad586858eeaf73156678220adde0dfc65}{m\_Registry}}.get<\doxymbox{\hyperlink{structComponents_1_1Transform}{Components::Transform}}>(\doxymbox{\hyperlink{classPlayerController_a91f7e14f412fb0a338d50227b8d77dc7}{m\_PlayerEntity}});}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00170}00170\ \ \ \ \ \doxymbox{\hyperlink{classPlayerDiedEvent}{PlayerDiedEvent}}\ deathEvent(transform.Position,\ cause);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00171}00171\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a82238e13fe91bb5ed5bc1dbb1555c0af}{Dispatch}}(deathEvent);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00173}00173\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}Player\ died:\ \{\}.\ Respawning\ at\ (\{\},\ \{\})"{}},}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cause,\ \doxymbox{\hyperlink{classPlayerController_a70fe08e779f88d190a8e8a3982aaefdc}{m\_SpawnPosition}}.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}},\ \doxymbox{\hyperlink{classPlayerController_a70fe08e779f88d190a8e8a3982aaefdc}{m\_SpawnPosition}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}));}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00176}00176\ \ \ \ \ \textcolor{comment}{//Respawn\ at\ the\ level's\ spawn\ point}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00177}00177\ \ \ \ \ transform.Position\ =\ \doxymbox{\hyperlink{classPlayerController_a70fe08e779f88d190a8e8a3982aaefdc}{m\_SpawnPosition}};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00178}00178\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_ab868cf3ab7193e241e0b9eaffa1f6995}{m\_Velocity}}\ =\ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00179}00179\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a4a2c41cdd7c80c8eef1805188a36f541}{m\_IsJumping}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00180}00180\ \ \ \ \ \doxymbox{\hyperlink{classPlayerController_a1e9b40f2e626532f9d49c66dd256990f}{m\_IsDead}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//Instant\ respawn}}
+\DoxyCodeLine{\Hypertarget{PlayerController_8cpp_source_l00181}00181\ \}}
 
 \end{DoxyCode}

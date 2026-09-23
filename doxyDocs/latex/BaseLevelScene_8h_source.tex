@@ -1,0 +1,81 @@
+\doxysection{Base\+Level\+Scene.\+h}
+\hypertarget{BaseLevelScene_8h_source}{}\label{BaseLevelScene_8h_source}\index{engine/scene/BaseLevelScene.h@{engine/scene/BaseLevelScene.h}}
+\doxymbox{\hyperlink{BaseLevelScene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Enemy_8h}{components/Enemy.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Patrol_8h}{components/Patrol.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{CameraController_8h}{core/CameraController.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{PlayerController_8h}{core/PlayerController.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{FpsCounter_8h}{core/FpsCounter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{CameraMode_8h}{level/CameraMode.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Scene_8h}{scene/Scene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{SceneManager_8h}{scene/SceneManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{ECSScene_8h}{scene/ECSScene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{GameWorld_8h}{scene/GameWorld.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Camera2D_8h}{scene/Camera2D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{EnemySystem_8h}{systems/EnemySystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{LevelSystem_8h}{systems/LevelSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00031}\doxymbox{\hyperlink{classBaseLevelScene}{00031}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classBaseLevelScene_ad453a827009fdc987722770402988ba0}{BaseLevelScene}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classScene}{Scene}}\{}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00032}00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00033}\doxymbox{\hyperlink{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c}{00033}}\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c}{BuilderFn}}\ =\ std::function<void(\doxymbox{\hyperlink{classLevelSystem}{LevelSystem}}\&)>;}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00047}00047\ \ \ \ \ \doxymbox{\hyperlink{classBaseLevelScene_ad453a827009fdc987722770402988ba0}{BaseLevelScene}}(\doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ va,\ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ ib,}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classCamera2D}{Camera2D}}\&\ camera,\ \doxymbox{\hyperlink{classShader}{Shader}}\&\ lineShader,}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSceneManager}{SceneManager}}\&\ sceneManager,}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c}{BuilderFn}}\ builder,\ \textcolor{keyword}{const}\ std::string\&\ levelName,}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35}{CameraMode}}\ cameraMode);}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00053}00053\ \ \ \ \ \doxymbox{\hyperlink{classBaseLevelScene_ad453a827009fdc987722770402988ba0}{\string~BaseLevelScene}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBaseLevelScene_ab16251567315098d84b5afed205ebf75}{OnEnter}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBaseLevelScene_a4dbbd984d245a1d8fd20e89546db30c4}{OnExit}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBaseLevelScene_a8131a96a0029b8801e80012c3d7b10dc}{OnResize}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBaseLevelScene_a3efbf3f1e6d16a34de0b27a1da2f98f7}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBaseLevelScene_a97d454ced01a68b11b7b4906ba30d7b1}{Render}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00060}\doxymbox{\hyperlink{classBaseLevelScene_a09c51e071220755c6b9ff37e46ae83aa}{00060}}\ \ \ \ \ std::string\ \doxymbox{\hyperlink{classBaseLevelScene_a09c51e071220755c6b9ff37e46ae83aa}{GetName}}()\textcolor{keyword}{\ const\ override}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classBaseLevelScene_a378c17670d06335f86f2a8f01cc0d3aa}{m\_LevelName}};\ \}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00065}\doxymbox{\hyperlink{classBaseLevelScene_ab1a4691694cad905d0d6c7368d8b82e6}{00065}}\ \ \ \ \ std::vector<std::string>\ \doxymbox{\hyperlink{classBaseLevelScene_ab1a4691694cad905d0d6c7368d8b82e6}{GetHUDLines}}()\textcolor{keyword}{\ const\ override}\{}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}F11:\ Toggle\ Fullscreen"{}},}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ESC:\ Exit\ Level"{}}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBaseLevelScene_ad699b8d5399b8b240c1db4af6c07cbcc}{RespawnEnemies}}();}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00077}00077\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBaseLevelScene_ac14c1450ecf7e04fca4365eb19857f82}{SetupScene}}();\ \textcolor{comment}{//Builds\ the\ level\ and\ initializes\ controllers}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBaseLevelScene_a731f0a2859c5e76d8212ef22876bde90}{ResolveCollisions}}();\ \textcolor{comment}{//Resolves\ player-\/platform\ collisions}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBaseLevelScene_a77fd4e5577c3c2e867d1b6ab27cf5f16}{CheckEnemyCollisions}}();\ \textcolor{comment}{//Checks\ player-\/enemy\ collisions}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBaseLevelScene_ab310c8eb93b4b89ffac68dabbdc2e28b}{DestroyEnemy}}(entt::entity\ enemy);\ \textcolor{comment}{//Destroys\ a\ single\ enemy\ entity}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00083}\doxymbox{\hyperlink{classBaseLevelScene_ab1103dfbcb852a26e6576e2e6d050467}{00083}}\ \ \ \ \ \doxymbox{\hyperlink{classShader}{Shader}}\&\ \doxymbox{\hyperlink{classBaseLevelScene_ab1103dfbcb852a26e6576e2e6d050467}{m\_Shader}};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00084}\doxymbox{\hyperlink{classBaseLevelScene_ad235292db6dd9d29404a56fe2d761f27}{00084}}\ \ \ \ \ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ \doxymbox{\hyperlink{classBaseLevelScene_ad235292db6dd9d29404a56fe2d761f27}{m\_VertexArray}};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00085}\doxymbox{\hyperlink{classBaseLevelScene_a7c958f5e88c56046ce2317a33aa103b6}{00085}}\ \ \ \ \ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ \doxymbox{\hyperlink{classBaseLevelScene_a7c958f5e88c56046ce2317a33aa103b6}{m\_IndexBuffer}};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00086}\doxymbox{\hyperlink{classBaseLevelScene_af013346ebc9543a97f793bb7a61b4414}{00086}}\ \ \ \ \ \doxymbox{\hyperlink{classCamera2D}{Camera2D}}\&\ \doxymbox{\hyperlink{classBaseLevelScene_af013346ebc9543a97f793bb7a61b4414}{m\_Camera}};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00087}\doxymbox{\hyperlink{classBaseLevelScene_ab435e3b596945acbde3667871495d4b5}{00087}}\ \ \ \ \ \doxymbox{\hyperlink{classShader}{Shader}}\&\ \doxymbox{\hyperlink{classBaseLevelScene_ab435e3b596945acbde3667871495d4b5}{m\_LineShader}};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00088}\doxymbox{\hyperlink{classBaseLevelScene_a39ab68552abf1385f4d27801dafa86b9}{00088}}\ \ \ \ \ \doxymbox{\hyperlink{classSceneManager}{SceneManager}}\&\ \doxymbox{\hyperlink{classBaseLevelScene_a39ab68552abf1385f4d27801dafa86b9}{m\_SceneManager}};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00089}\doxymbox{\hyperlink{classBaseLevelScene_aef393c459e51f1c35ec11debbc6e4c7b}{00089}}\ \ \ \ \ \doxymbox{\hyperlink{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c}{BuilderFn}}\ \doxymbox{\hyperlink{classBaseLevelScene_aef393c459e51f1c35ec11debbc6e4c7b}{m\_Builder}};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00090}\doxymbox{\hyperlink{classBaseLevelScene_a378c17670d06335f86f2a8f01cc0d3aa}{00090}}\ \ \ \ \ std::string\ \doxymbox{\hyperlink{classBaseLevelScene_a378c17670d06335f86f2a8f01cc0d3aa}{m\_LevelName}};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00091}\doxymbox{\hyperlink{classBaseLevelScene_a97c355120bd46574398b7fc35bb027fd}{00091}}\ \ \ \ \ \doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35}{CameraMode}}\ \doxymbox{\hyperlink{classBaseLevelScene_a97c355120bd46574398b7fc35bb027fd}{m\_CameraMode}};}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00093}\doxymbox{\hyperlink{classBaseLevelScene_a92e8e1b3659b34c538c8b66d472550f8}{00093}}\ \ \ \ \ std::unique\_ptr<ECSScene>\ \doxymbox{\hyperlink{classBaseLevelScene_a92e8e1b3659b34c538c8b66d472550f8}{m\_ECSScene}};\ \textcolor{comment}{//ECS\ scene\ containing\ all\ entities}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00094}\doxymbox{\hyperlink{classBaseLevelScene_a5b0538757b5a6b1f307983fb56a6c070}{00094}}\ \ \ \ \ std::unique\_ptr<GameWorld>\ \doxymbox{\hyperlink{classBaseLevelScene_a5b0538757b5a6b1f307983fb56a6c070}{m\_World}};\ \textcolor{comment}{//World\ bounds\ and\ clamping}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00095}\doxymbox{\hyperlink{classBaseLevelScene_a88654189be731926a1093106b86de0c6}{00095}}\ \ \ \ \ std::unique\_ptr<CameraController>\ \doxymbox{\hyperlink{classBaseLevelScene_a88654189be731926a1093106b86de0c6}{m\_CameraController}};\ \textcolor{comment}{//Player\ controller}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00096}\doxymbox{\hyperlink{classBaseLevelScene_a6d231d2ede9243ceb3e9f587f144ba2d}{00096}}\ \ \ \ \ std::unique\_ptr<PlayerController>\ \doxymbox{\hyperlink{classBaseLevelScene_a6d231d2ede9243ceb3e9f587f144ba2d}{m\_PlayerController}};\ \textcolor{comment}{//Camera\ follow\ controller\ (nullptr\ for\ Fixed)}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00097}\doxymbox{\hyperlink{classBaseLevelScene_a7a21e9c1df6703713d73a7cc8f512b33}{00097}}\ \ \ \ \ std::unique\_ptr<FpsCounter>\ \doxymbox{\hyperlink{classBaseLevelScene_a7a21e9c1df6703713d73a7cc8f512b33}{m\_FpsCounter}};\ \textcolor{comment}{//FPS\ counter}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00099}\doxymbox{\hyperlink{classBaseLevelScene_af3a106663a4762944a05ef216687c35d}{00099}}\ \ \ \ \ entt::entity\ \doxymbox{\hyperlink{classBaseLevelScene_af3a106663a4762944a05ef216687c35d}{m\_PlayerEntity}};\ \textcolor{comment}{//Player\ entity\ ID}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00100}\doxymbox{\hyperlink{classBaseLevelScene_a2f7f5c476ad9a31a54840d1a574175c1}{00100}}\ \ \ \ \ std::vector<entt::entity>\ \doxymbox{\hyperlink{classBaseLevelScene_a2f7f5c476ad9a31a54840d1a574175c1}{m\_EnemyEntities}};\ \textcolor{comment}{//Active\ enemy\ entities}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00101}\doxymbox{\hyperlink{classBaseLevelScene_ad705f1295cbae14ba923e1b1b2f46ad6}{00101}}\ \ \ \ \ std::vector<LevelSystem::EnemyDefinition>\ \doxymbox{\hyperlink{classBaseLevelScene_ad705f1295cbae14ba923e1b1b2f46ad6}{m\_EnemyDefinitions}};\ \textcolor{comment}{//Enemy\ definitions\ for\ respawn}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00102}\doxymbox{\hyperlink{classBaseLevelScene_a1c0eb61a6a5ef4688dda661abe12206a}{00102}}\ \ \ \ \ std::vector<entt::entity>\ \doxymbox{\hyperlink{classBaseLevelScene_a1c0eb61a6a5ef4688dda661abe12206a}{m\_PlatformEntities}};\ \textcolor{comment}{//Platform\ entities\ for\ collision}}
+\DoxyCodeLine{\Hypertarget{BaseLevelScene_8h_source_l00103}00103\ \};}
+
+\end{DoxyCode}

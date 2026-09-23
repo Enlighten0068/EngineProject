@@ -55,7 +55,11 @@ std::\+string \doxymbox{\hyperlink{classMenuScene_a8bb0e3e014de1ba6912dc937de6a2
 \begin{DoxyCompactItemize}
 \item 
 virtual \doxymbox{\hyperlink{classScene_af6e09d91ebd10ae9cc7c12c39d06386c}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
-\end{DoxyCompactItemize}
+\item 
+virtual void \doxymbox{\hyperlink{classScene_a0b39bb1405c0f9ed82b2123a4b9dbfbd}{On\+Resize}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Called when the window is resized. \end{DoxyCompactList}\item 
+virtual std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{classScene_afb756dd8b7583f4b06a000d8157c7952}{Get\+HUDLines}} () const
+\begin{DoxyCompactList}\small\item\em Returns the lines to be rendered by the \doxylink{classHUD}{HUD} overlay. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -143,7 +147,7 @@ Constructs the \doxylink{classMenuScene}{Menu\+Scene}.
 \end{DoxyParams}
 
 
-Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00012}{12}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00013}{13}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
 
 \Hypertarget{classMenuScene_a9b8d7fd2c641191231e9d352932be80d}\index{MenuScene@{MenuScene}!````~MenuScene@{\texorpdfstring{$\sim$}{\string~}MenuScene}}
 \index{````~MenuScene@{\texorpdfstring{$\sim$}{\string~}MenuScene}!MenuScene@{MenuScene}}
@@ -153,7 +157,7 @@ Menu\+Scene::\+\texorpdfstring{$\sim$}{\string~}\+Menu\+Scene (\begin{DoxyParamC
 
 
 
-Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00017}{17}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00018}{18}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
 
 
 
@@ -182,7 +186,7 @@ Shared pointer to the \doxylink{classTexture2D}{Texture2D}, or nullptr on failur
 \end{DoxyReturn}
 
 
-Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00084}{84}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00085}{85}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
 
 \Hypertarget{classMenuScene_a8bb0e3e014de1ba6912dc937de6a2a69}\index{MenuScene@{MenuScene}!GetName@{GetName}}
 \index{GetName@{GetName}!MenuScene@{MenuScene}}
@@ -217,7 +221,7 @@ Handles the selection of the current menu option.
 
 
 
-Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00238}{238}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00239}{239}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
 
 \Hypertarget{classMenuScene_a329504c5161fa328040b3f3092df2bae}\index{MenuScene@{MenuScene}!IsMouseOverOption@{IsMouseOverOption}}
 \index{IsMouseOverOption@{IsMouseOverOption}!MenuScene@{MenuScene}}
@@ -239,7 +243,7 @@ true if the mouse is over the option, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00185}{185}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00186}{186}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
 
 \Hypertarget{classMenuScene_a015085736912c87c4e28ab54ab056e6d}\index{MenuScene@{MenuScene}!OnEnter@{OnEnter}}
 \index{OnEnter@{OnEnter}!MenuScene@{MenuScene}}
@@ -257,7 +261,7 @@ Implements \doxymbox{\hyperlink{classScene_ad09d42329f52df55fad0467cd092c9aa}{Sc
 
 
 
-Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00026}{26}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00027}{27}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
 
 \Hypertarget{classMenuScene_a834e7aa54dd72502876d30114e47cc9e}\index{MenuScene@{MenuScene}!OnExit@{OnExit}}
 \index{OnExit@{OnExit}!MenuScene@{MenuScene}}
@@ -275,7 +279,7 @@ Implements \doxymbox{\hyperlink{classScene_a9824fefa923e5a9db4dca5a23343609b}{Sc
 
 
 
-Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00071}{71}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00072}{72}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
 
 \Hypertarget{classMenuScene_a57787dac0643417ddd147c940c36b93a}\index{MenuScene@{MenuScene}!Render@{Render}}
 \index{Render@{Render}!MenuScene@{MenuScene}}
@@ -293,7 +297,7 @@ Implements \doxymbox{\hyperlink{classScene_ae24d21e12b34839994ad265662ea24d7}{Sc
 
 
 
-Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00170}{170}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00171}{171}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
 
 \Hypertarget{classMenuScene_a1e7a918b520265294fd74c1d9d086795}\index{MenuScene@{MenuScene}!RenderOption@{RenderOption}}
 \index{RenderOption@{RenderOption}!MenuScene@{MenuScene}}
@@ -314,7 +318,7 @@ Renders a single menu option.
 \end{DoxyParams}
 
 
-Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00209}{209}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00210}{210}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
 
 \Hypertarget{classMenuScene_af2b1e0e9e1c783c8b058f60906add842}\index{MenuScene@{MenuScene}!Update@{Update}}
 \index{Update@{Update}!MenuScene@{MenuScene}}
@@ -337,7 +341,7 @@ Implements \doxymbox{\hyperlink{classScene_aaede6346f58776bd40efffd55885ab02}{Sc
 
 
 
-Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00117}{117}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{MenuScene_8cpp_source_l00118}{118}} of file \doxymbox{\hyperlink{MenuScene_8cpp_source}{Menu\+Scene.\+cpp}}.
 
 
 

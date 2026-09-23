@@ -1,0 +1,33 @@
+\doxysection{Level3.\+cpp}
+\hypertarget{Level3_8cpp_source}{}\label{Level3_8cpp_source}\index{engine/demo/levels/Level3.cpp@{engine/demo/levels/Level3.cpp}}
+\doxymbox{\hyperlink{Level3_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Levels_8h}{demo/levels/Levels.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{LevelMacros_8h}{level/LevelMacros.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00004}\doxymbox{\hyperlink{Level3_8cpp_a8ef00d680d1917d873a6a23ff769d7fa}{00004}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{Level3_8cpp_a8ef00d680d1917d873a6a23ff769d7fa}{BuildLevel3}}(\doxymbox{\hyperlink{classLevelSystem}{LevelSystem}}\&\ level)\{}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00005}00005\ \ \ \ \ level.\doxymbox{\hyperlink{classLevelSystem_a3e6320da6531e2929c3d8a78e359ac24}{SetWorldBounds}}(-\/20.0f,\ 20.0f,\ -\/10.0f,\ 10.0f);}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00007}00007\ \ \ \ \ level.\doxymbox{\hyperlink{classLevelSystem_a7530478b25741aebf4deccad90696d5b}{CreatePlayer}}(0.0f,\ 5.0f);}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{comment}{//Arena\ walls}}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00010}00010\ \ \ \ \ level.\doxymbox{\hyperlink{classLevelSystem_a085108be7529741cb15602a8022b833c}{CreatePlatform}}(-\/19.5f,\ \ 0.0f,\ 1.0f,\ 20.0f,\ 1.0f,\ 20.0f);}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00011}00011\ \ \ \ \ level.\doxymbox{\hyperlink{classLevelSystem_a085108be7529741cb15602a8022b833c}{CreatePlatform}}(\ 19.5f,\ \ 0.0f,\ 1.0f,\ 20.0f,\ 1.0f,\ 20.0f);}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00012}00012\ \ \ \ \ level.\doxymbox{\hyperlink{classLevelSystem_a085108be7529741cb15602a8022b833c}{CreatePlatform}}(\ \ 0.0f,\ -\/9.5f,\ 39.0f,\ 1.0f,\ 39.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00013}00013\ \ \ \ \ level.\doxymbox{\hyperlink{classLevelSystem_a085108be7529741cb15602a8022b833c}{CreatePlatform}}(\ \ 0.0f,\ \ 9.5f,\ 39.0f,\ 1.0f,\ 39.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//Central\ arena\ platforms}}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00016}00016\ \ \ \ \ level.\doxymbox{\hyperlink{classLevelSystem_a085108be7529741cb15602a8022b833c}{CreatePlatform}}(-\/10.0f,\ -\/4.0f,\ 4.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00017}00017\ \ \ \ \ level.\doxymbox{\hyperlink{classLevelSystem_a085108be7529741cb15602a8022b833c}{CreatePlatform}}(\ 10.0f,\ -\/4.0f,\ 4.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00018}00018\ \ \ \ \ level.\doxymbox{\hyperlink{classLevelSystem_a085108be7529741cb15602a8022b833c}{CreatePlatform}}(\ \ 0.0f,\ -\/6.0f,\ 8.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//Enemies\ —\ many,\ to\ test\ performance}}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ -\/3;\ i\ <=\ 3;\ ++i)\{}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ level.\doxymbox{\hyperlink{classLevelSystem_aba8c5392fbf24e635c064847625d5be6}{CreateEnemy}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i\ *\ 5),\ -\/8.0f,}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i\ *\ 5\ -\/\ 2),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i\ *\ 5\ +\ 2),\ 3.0f);}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Level3_8cpp_source_l00027}\doxymbox{\hyperlink{Level3_8cpp_ad1136b1bf2080dfd6caabb4d9496f0bd}{00027}}\ \doxymbox{\hyperlink{LevelMacros_8h_abffe427d7a82d716aaeb59f206234302}{REGISTER\_LEVEL}}(Level3,\ \textcolor{stringliteral}{"{}Level\ 3"{}},\ \textcolor{stringliteral}{"{}Arena\ with\ many\ enemies"{}},\ \doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35a4457d440870ad6d42bab9082d9bf9b61}{CameraMode::Fixed}},\ \doxymbox{\hyperlink{Level3_8cpp_a8ef00d680d1917d873a6a23ff769d7fa}{BuildLevel3}});}
+
+\end{DoxyCode}

@@ -1,0 +1,19 @@
+<map id="BaseLevelScene" name="BaseLevelScene">
+<area shape="rect" id="Node000001" title="Generic scene that builds its content from a LevelSystem builder function." alt="" coords="375,854,560,1463"/>
+<area shape="rect" id="Node000002" href="$classScene.html" title="Abstract base class for all scenes in the engine." alt="" coords="5,430,129,658"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,670,124,716,144,758,198,843,258,924,320,998,378,1064,373,1064,316,1002,254,927,193,846,140,760,119,718,104,675"/>
+<area shape="rect" id="Node000003" href="$classShader.html" title="OpenGL shader program wrapper." alt="" coords="154,385,306,703"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="252,700,269,767,289,829,326,915,369,998,364,999,321,917,284,831,264,768,252,706"/>
+<area shape="rect" id="Node000004" href="$classVertexArray.html" title="OpenGL Vertex Array Object (VAO) wrapper." alt="" coords="330,474,456,614"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="392,611,396,716,404,830,405,838,400,837,399,831,391,716,391,616"/>
+<area shape="rect" id="Node000005" href="$classIndexBuffer.html" title="OpenGL Index Buffer Object (EBO/IBO) wrapper." alt="" coords="480,452,604,636"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="535,634,515,831,514,838,509,836,510,830,532,638"/>
+<area shape="rect" id="Node000006" href="$classCamera2D.html" title="2D camera with orthographic projection, position, rotation, and zoom." alt="" coords="628,329,795,759"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="659,757,635,831,604,905,569,977,565,974,599,902,630,829,656,761"/>
+<area shape="rect" id="Node000007" href="$structVector3D.html" title="3D vector struct with basic arithmetic operations." alt="" coords="592,16,695,223"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="654,220,668,305,669,313,663,312,662,306,653,225"/>
+<area shape="rect" id="Node000008" href="$classMatrix4.html" title="4x4 matrix class for 3D transformations and projections." alt="" coords="719,5,840,234"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="762,231,753,306,751,314,746,312,747,305,761,236"/>
+<area shape="rect" id="Node000009" href="$classSceneManager.html" title="Manages a stack of scenes." alt="" coords="819,452,966,636"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="866,634,841,699,810,760,755,842,694,921,632,993,573,1057,570,1053,628,990,690,918,751,839,805,758,837,697,862,638"/>
+</map>

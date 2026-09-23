@@ -123,13 +123,13 @@ Collaboration diagram for Application:</div>
 <div class="dyncontent">
 <div class="center"><img src="classApplication__coll__graph.png" border="0" usemap="#aApplication_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aApplication_coll__map" id="aApplication_coll__map">
-<area shape="rect" title="Main application class that orchestrates the entire game engine." alt="" coords="75,564,243,927"/>
-<area shape="rect" href="classEngine.html" title="Core engine class responsible for window creation and SDL lifecycle." alt="" coords="27,285,139,491"/>
-<area shape="poly" title=" " alt="" coords="105,488,119,548,114,548,104,494"/>
-<area shape="rect" href="classSDLWindow.html" title="Wrapper for an SDL3 window with OpenGL context." alt="" coords="5,5,160,212"/>
-<area shape="poly" title=" " alt="" coords="83,209,85,268,80,268,83,214"/>
-<area shape="rect" href="classSceneManager.html" title="Manages a stack of scenes." alt="" coords="163,296,310,480"/>
-<area shape="poly" title=" " alt="" coords="217,477,204,548,199,547,215,482"/>
+<area shape="rect" title="Main application class that orchestrates the entire game engine." alt="" coords="84,653,252,1038"/>
+<area shape="rect" href="classEngine.html" title="Core engine class responsible for window creation and SDL lifecycle." alt="" coords="10,329,155,580"/>
+<area shape="poly" title=" " alt="" coords="110,577,125,636,120,637,110,583"/>
+<area shape="rect" href="classSDLWindow.html" title="Wrapper for an SDL3 window with OpenGL context." alt="" coords="5,5,160,256"/>
+<area shape="poly" title=" " alt="" coords="83,253,85,313,80,312,83,259"/>
+<area shape="rect" href="classSceneManager.html" title="Manages a stack of scenes." alt="" coords="180,363,327,547"/>
+<area shape="poly" title=" " alt="" coords="235,544,216,638,211,636,233,549"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -167,6 +167,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a682a91f7e9cb6072807dd7a6f14ef345" id="r_a682a91f7e9cb6072807dd7a6f14ef345"><td class="memItemLeft">std::unique_ptr&lt; <a class="el" href="classFpsCounter.html">FpsCounter</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a682a91f7e9cb6072807dd7a6f14ef345">m_FpsCounter</a></td></tr>
 <tr class="memitem:a3e23ce99f0bb67f879a477d73c046f96" id="r_a3e23ce99f0bb67f879a477d73c046f96"><td class="memItemLeft">std::unique_ptr&lt; <a class="el" href="classGameWorld.html">GameWorld</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3e23ce99f0bb67f879a477d73c046f96">m_World</a></td></tr>
 <tr class="memitem:a515a967a0aba4f893e8738519dc00cec" id="r_a515a967a0aba4f893e8738519dc00cec"><td class="memItemLeft"><a class="el" href="classSceneManager.html">SceneManager</a>&#160;</td><td class="memItemRight"><a class="el" href="#a515a967a0aba4f893e8738519dc00cec">m_SceneManager</a></td></tr>
+<tr class="memitem:a1d855757f4b1bc12b70bcb2409d4bb9e" id="r_a1d855757f4b1bc12b70bcb2409d4bb9e"><td class="memItemLeft">std::unique_ptr&lt; <a class="el" href="classHUD.html">HUD</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1d855757f4b1bc12b70bcb2409d4bb9e">m_HUD</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main application class that orchestrates the entire game engine. </p>
@@ -174,7 +175,7 @@ Private Attributes</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Even though it's not a Singleton class, keep no more than one instance active. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEngine.html" title="Core engine class responsible for window creation and SDL lifecycle.">Engine</a>, <a class="el" href="classGraphicsContext.html" title="Centralized manager for OpenGL graphics resources.">GraphicsContext</a>, <a class="el" href="classSceneManager.html" title="Manages a stack of scenes.">SceneManager</a>, <a class="el" href="classPlayerController.html" title="Controller for the player entity, handling movement, jumping, and physics.">PlayerController</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00037">37</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00038">38</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afa8cc05ce6b6092be5ecdfdae44e05f8" name="afa8cc05ce6b6092be5ecdfdae44e05f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa8cc05ce6b6092be5ecdfdae44e05f8">&#9670;&#160;</a></span>Application()</h2>
@@ -247,7 +248,7 @@ Private Attributes</h2></td></tr>
 <p>Gets the <a class="el" href="classCamera2D.html" title="2D camera with orthographic projection, position, rotation, and zoom.">Camera2D</a> instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the <a class="el" href="classCamera2D.html" title="2D camera with orthographic projection, position, rotation, and zoom.">Camera2D</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00079">79</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00080">80</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
 
 </div>
 </div>
@@ -277,7 +278,7 @@ Private Attributes</h2></td></tr>
 <p>Gets the <a class="el" href="classGraphicsContext.html" title="Centralized manager for OpenGL graphics resources.">GraphicsContext</a> instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the <a class="el" href="classGraphicsContext.html" title="Centralized manager for OpenGL graphics resources.">GraphicsContext</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00073">73</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00074">74</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
 
 </div>
 </div>
@@ -307,7 +308,7 @@ Private Attributes</h2></td></tr>
 <p>Gets the <a class="el" href="classSceneManager.html" title="Manages a stack of scenes.">SceneManager</a> instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the <a class="el" href="classSceneManager.html" title="Manages a stack of scenes.">SceneManager</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00067">67</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00068">68</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
 
 </div>
 </div>
@@ -362,7 +363,7 @@ Private Attributes</h2></td></tr>
 <p>Processes all pending SDL events. </p>
 <p>Events are passed to <a class="el" href="classInput.html" title="Static input manager for keyboard, mouse, and window state.">Input</a> (for state tracking), <a class="el" href="classGamepadManager.html" title="Singleton manager for gamepad input using SDL3 Gamepad API.">GamepadManager</a> (for gamepad events), and <a class="el" href="classSDLEventTranslator.html" title="Translates SDL events into engine events and dispatches them via EventBus.">SDLEventTranslator</a> (for converting to engine events and dispatching via <a class="el" href="classEventBus.html" title="Singleton event bus for global event dispatching.">EventBus</a>). </p>
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00211">211</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00214">214</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
 
 </div>
 </div>
@@ -392,7 +393,7 @@ Private Attributes</h2></td></tr>
 <p>Renders the current scene. </p>
 <p>Clears buffers and delegates rendering to the <a class="el" href="classScene.html" title="Abstract base class for all scenes in the engine.">Scene</a> Manager. </p>
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00236">236</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00243">243</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
 
 </div>
 </div>
@@ -416,7 +417,7 @@ Private Attributes</h2></td></tr>
 <p>The loop processes events, updates all systems, and renders the current scene.</p>
 <p>The loop runs while the engine is running, processing events, updating all systems, and rendering the current scene. It follows a strict order starting from time then event handling, system updates, input state, rendering. </p>
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00161">161</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00153">153</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
 
 </div>
 </div>
@@ -439,7 +440,7 @@ Private Attributes</h2></td></tr>
 <p>This method ensures that all subsystems (graphics, audio, input, etc.) are properly cleaned up before exiting the application.</p>
 <p>The shutdown order is the reverse of initialization to ensure proper resource cleanup and avoid dangling references. </p>
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00177">177</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00175">175</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
 
 </div>
 </div>
@@ -467,9 +468,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Updates all systems for the current frame. </p>
-<p>This includes the gamepad state and the current scene (which updates entities, physics, AI) </p>
+<p>This includes the gamepad state and the current scene (which updates entities, physics, AI). Also handles the global F11 hotkey for toggling fullscreen. </p>
 
-<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00226">226</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8cpp_source.html#l00230">230</a> of file <a class="el" href="Application_8cpp_source.html">Application.cpp</a>.</p>
 
 </div>
 </div>
@@ -494,7 +495,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00084">84</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00085">85</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
 
 </div>
 </div>
@@ -518,7 +519,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00082">82</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00083">83</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
 
 </div>
 </div>
@@ -542,7 +543,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00085">85</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00086">86</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
 
 </div>
 </div>
@@ -566,7 +567,31 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00083">83</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00084">84</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
+
+</div>
+</div>
+<a id="a1d855757f4b1bc12b70bcb2409d4bb9e" name="a1d855757f4b1bc12b70bcb2409d4bb9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d855757f4b1bc12b70bcb2409d4bb9e">&#9670;&#160;</a></span>m_HUD</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classHUD.html">HUD</a>&gt; Application::m_HUD</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00089">89</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
 
 </div>
 </div>
@@ -590,7 +615,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00087">87</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00088">88</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
 
 </div>
 </div>
@@ -614,7 +639,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00086">86</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Application_8h_source.html#l00087">87</a> of file <a class="el" href="Application_8h_source.html">Application.h</a>.</p>
 
 </div>
 </div>

@@ -26,6 +26,8 @@
         <link refid="Scene_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>engine/scene/SceneManager.cpp</label>
@@ -40,9 +42,9 @@
         <link refid="SceneManager_8h"/>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
         <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -54,13 +56,13 @@
       <node id="6">
         <label>iomanip</label>
       </node>
-      <node id="11">
+      <node id="12">
         <label>memory</label>
       </node>
       <node id="7">
         <label>sstream</label>
       </node>
-      <node id="12">
+      <node id="13">
         <label>stack</label>
       </node>
       <node id="3">
@@ -68,6 +70,9 @@
       </node>
       <node id="8">
         <label>unordered_map</label>
+      </node>
+      <node id="11">
+        <label>vector</label>
       </node>
     </incdepgraph>
     <briefdescription>

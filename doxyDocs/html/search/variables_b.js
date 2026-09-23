@@ -1,4 +1,28 @@
 var searchData=
 [
-  ['velocity_0',['Velocity',['../structComponents_1_1PhysicsBody.html#a3210a86ca2ea87ab8ce3ff1bda713ade',1,'Components::PhysicsBody']]]
+  ['s_5faudiodevice_0',['s_AudioDevice',['../classSoundEffect.html#a133e312b04f01d6835286ed69b667951',1,'SoundEffect']]],
+  ['s_5fdeltatime_1',['s_DeltaTime',['../classTime.html#a2b684243784e6daedfa7ec3ce4b57ea5',1,'Time']]],
+  ['s_5fdeviceopen_2',['s_DeviceOpen',['../classSoundEffect.html#ad1201573d75db7d3f6128d38dbde4c6a',1,'SoundEffect']]],
+  ['s_5felapsedtime_3',['s_ElapsedTime',['../classTime.html#a6595aadb1feae1ea8f4058682ee8c27d',1,'Time']]],
+  ['s_5ffile_4',['s_File',['../classLog.html#a10767fd008319be02fc0125dd20ba948',1,'Log']]],
+  ['s_5finitialized_5',['s_Initialized',['../classLog.html#ae21d84fef839b5bfb9e1f18fa0c3f6b4',1,'Log']]],
+  ['s_5fkeystate_6',['s_KeyState',['../classInput.html#ae35589903d5dd57f1b29df2039bbe562',1,'Input']]],
+  ['s_5fkeystateprevious_7',['s_KeyStatePrevious',['../classInput.html#a101419ed1564201345669b7dc3aceab9',1,'Input']]],
+  ['s_5flastlogtime_8',['s_LastLogTime',['../classLog.html#ab91281939d32cf870499a85edcb820e3',1,'Log']]],
+  ['s_5fminlevel_9',['s_MinLevel',['../classLog.html#a3dd36397bb30af3c6ccd514d3e8468e0',1,'Log']]],
+  ['s_5fmousebuttonprevious_10',['s_MouseButtonPrevious',['../classInput.html#a4e47ca136800ff0fdb2ff45cbd4d6e1b',1,'Input']]],
+  ['s_5fmousebuttonstate_11',['s_MouseButtonState',['../classInput.html#a38cbcc583b20863850fd3f552d9bf460',1,'Input']]],
+  ['s_5fmousedelta_12',['s_MouseDelta',['../classInput.html#a3d3d10de42d33da3c4b05ffdb39795d2',1,'Input']]],
+  ['s_5fmouseposition_13',['s_MousePosition',['../classInput.html#ab00b8236f27ec4750c2f7445cb1b10f6',1,'Input']]],
+  ['s_5fscrolldelta_14',['s_ScrollDelta',['../classInput.html#ab41e893697e72075e87d4beb5e827155',1,'Input']]],
+  ['s_5funhandledcallback_15',['s_UnhandledCallback',['../classSDLEventTranslator.html#a20e49284964400b64b5ab2978c84d0af',1,'SDLEventTranslator']]],
+  ['s_5fwindowheight_16',['s_WindowHeight',['../classInput.html#ac2a9b120cf7963ce08709b5aa96fd8b2',1,'Input']]],
+  ['s_5fwindowresized_17',['s_WindowResized',['../classInput.html#aead1b302f92f40508f394030fb96ff43',1,'Input']]],
+  ['s_5fwindowwidth_18',['s_WindowWidth',['../classInput.html#ac9f8548524960a49842cc0a16ec9ac96',1,'Input']]],
+  ['scale_19',['Scale',['../structComponents_1_1Transform.html#a6c5ad13eaf7c41f4e9abc5d3dead3f96',1,'Components::Transform::Scale'],['../structDemo2DFixedScene_1_1EnemyDefinition.html#ab9c519376bbec771cc02ad437a914ae6',1,'Demo2DFixedScene::EnemyDefinition::Scale'],['../structTransform.html#af736c98399dd283677d5b8e232df95fb',1,'Transform::Scale'],['../structLevelSystem_1_1EnemyDefinition.html#a92d8b660a610207612f56863e895e754',1,'LevelSystem::EnemyDefinition::Scale']]],
+  ['scalex_20',['ScaleX',['../structComponents_1_1TileScale.html#a2056b13025a5feff66ba87bc66a3faca',1,'Components::TileScale']]],
+  ['scaley_21',['ScaleY',['../structComponents_1_1TileScale.html#aaefc4e78b1bcfc2ba99374370eade78c',1,'Components::TileScale']]],
+  ['selectedtexture_22',['SelectedTexture',['../structLevelSelectorScene_1_1Option.html#ab4f540ccc737789009d7e35eeb4fcfa3',1,'LevelSelectorScene::Option::SelectedTexture'],['../structMenuScene_1_1MenuOption.html#a351d76fc84f6056639f56d93556cc902',1,'MenuScene::MenuOption::SelectedTexture']]],
+  ['speed_23',['Speed',['../structComponents_1_1Patrol.html#a6e941f16bb4b4dbcefd9dddd2055ad2c',1,'Components::Patrol']]],
+  ['startposition_24',['StartPosition',['../structComponents_1_1Patrol.html#acdb7e56ff34a14dbd8500c29bec0affe',1,'Components::Patrol']]]
 ];

@@ -1,0 +1,177 @@
+\doxysection{Level\+Registry Class Reference}
+\hypertarget{classLevelRegistry}{}\label{classLevelRegistry}\index{LevelRegistry@{LevelRegistry}}
+
+
+Global registry of all levels.  
+
+
+
+
+{\ttfamily \+\#include $<$Level\+Registry.\+h$>$}
+
+
+
+Collaboration diagram for Level\+Registry:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classLevelRegistry__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classLevelRegistry_ae261559d928372122d80ae2fb5ecbb6d}{Register}} (const \doxymbox{\hyperlink{structLevelDefinition}{Level\+Definition}} \&def)
+\begin{DoxyCompactList}\small\item\em Registers a level. \end{DoxyCompactList}\item 
+const std::\+vector$<$ \doxymbox{\hyperlink{structLevelDefinition}{Level\+Definition}} $>$ \& \doxymbox{\hyperlink{classLevelRegistry_a1dfb168ad2c52c04cb02e8fd84e01c21}{Get\+Levels}} () const
+\begin{DoxyCompactList}\small\item\em Gets all registered levels, in registration order. \end{DoxyCompactList}\item 
+size\+\_\+t \doxymbox{\hyperlink{classLevelRegistry_a35be3f015bea516ae71194573c4ec3fc}{Count}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of registered levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{classLevelRegistry}{Level\+Registry}} \& \doxymbox{\hyperlink{classLevelRegistry_a2395d481c0cfe381c2db11091d85ab9b}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classLevelRegistry_a558029dd2c44dbe83e72a3507bb86fff}{Level\+Registry}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{structLevelDefinition}{Level\+Definition}} $>$ \doxymbox{\hyperlink{classLevelRegistry_a97aab666d43fb6bc3f6949de09831572}{m\+\_\+\+Levels}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Global registry of all levels. 
+
+Levels register themselves at program startup via static initialization (see \doxylink{LevelMacros_8h}{Level\+Macros.\+h}). This allows adding new levels without modifying any central file — just create a new .cpp, add it to CMake\+Lists.\+txt, and the selector will list it automatically.
+
+\begin{DoxyNote}{Note}
+This class is a singleton. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{LevelMacros_8h_abffe427d7a82d716aaeb59f206234302}{REGISTER\+\_\+\+LEVEL}, \doxylink{classLevelSelectorScene}{Level\+Selector\+Scene} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8h_source_l00036}{36}} of file \doxymbox{\hyperlink{LevelRegistry_8h_source}{Level\+Registry.\+h}}.
+
+
+
+\label{classLevelRegistry_doc-constructors}
+\Hypertarget{classLevelRegistry_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLevelRegistry_a558029dd2c44dbe83e72a3507bb86fff}\index{LevelRegistry@{LevelRegistry}!LevelRegistry@{LevelRegistry}}
+\index{LevelRegistry@{LevelRegistry}!LevelRegistry@{LevelRegistry}}
+\doxysubsubsection{\texorpdfstring{LevelRegistry()}{LevelRegistry()}}
+{\footnotesize\ttfamily \label{classLevelRegistry_a558029dd2c44dbe83e72a3507bb86fff} 
+Level\+Registry::\+\+Level\+Registry (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}
+
+
+
+\label{classLevelRegistry_doc-func-members}
+\Hypertarget{classLevelRegistry_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLevelRegistry_a35be3f015bea516ae71194573c4ec3fc}\index{LevelRegistry@{LevelRegistry}!Count@{Count}}
+\index{Count@{Count}!LevelRegistry@{LevelRegistry}}
+\doxysubsubsection{\texorpdfstring{Count()}{Count()}}
+{\footnotesize\ttfamily \label{classLevelRegistry_a35be3f015bea516ae71194573c4ec3fc} 
+size\+\_\+t Level\+Registry::\+\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the number of registered levels. 
+
+\begin{DoxyReturn}{Returns}
+Number of levels. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8h_source_l00063}{63}} of file \doxymbox{\hyperlink{LevelRegistry_8h_source}{Level\+Registry.\+h}}.
+
+\Hypertarget{classLevelRegistry_a2395d481c0cfe381c2db11091d85ab9b}\index{LevelRegistry@{LevelRegistry}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!LevelRegistry@{LevelRegistry}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classLevelRegistry_a2395d481c0cfe381c2db11091d85ab9b} 
+\doxymbox{\hyperlink{classLevelRegistry}{Level\+Registry}} \& Level\+Registry::\+\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the singleton instance. 
+
+Returns the singleton instance of \doxylink{classLevelRegistry}{Level\+Registry}.
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classLevelRegistry}{Level\+Registry}.
+
+Reference to the \doxylink{classLevelRegistry}{Level\+Registry} instance. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8cpp_source_l00009}{9}} of file \doxymbox{\hyperlink{LevelRegistry_8cpp_source}{Level\+Registry.\+cpp}}.
+
+\Hypertarget{classLevelRegistry_a1dfb168ad2c52c04cb02e8fd84e01c21}\index{LevelRegistry@{LevelRegistry}!GetLevels@{GetLevels}}
+\index{GetLevels@{GetLevels}!LevelRegistry@{LevelRegistry}}
+\doxysubsubsection{\texorpdfstring{GetLevels()}{GetLevels()}}
+{\footnotesize\ttfamily \label{classLevelRegistry_a1dfb168ad2c52c04cb02e8fd84e01c21} 
+const std::\+vector$<$ \doxymbox{\hyperlink{structLevelDefinition}{Level\+Definition}} $>$ \& Level\+Registry::\+\+Get\+Levels (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets all registered levels, in registration order. 
+
+\begin{DoxyReturn}{Returns}
+Const reference to the vector of level definitions. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8h_source_l00057}{57}} of file \doxymbox{\hyperlink{LevelRegistry_8h_source}{Level\+Registry.\+h}}.
+
+\Hypertarget{classLevelRegistry_ae261559d928372122d80ae2fb5ecbb6d}\index{LevelRegistry@{LevelRegistry}!Register@{Register}}
+\index{Register@{Register}!LevelRegistry@{LevelRegistry}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily \label{classLevelRegistry_ae261559d928372122d80ae2fb5ecbb6d} 
+void Level\+Registry::\+\+Register (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structLevelDefinition}{Level\+Definition}} \&}]{def}{}\end{DoxyParamCaption})}
+
+
+
+Registers a level. 
+
+Called automatically by the REGISTER\+\_\+\+LEVEL macro at program startup.
+
+
+\begin{DoxyParams}{Parameters}
+{\em def} & The level definition to register.\\
+\hline
+{\em def} & The level definition to register. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8cpp_source_l00018}{18}} of file \doxymbox{\hyperlink{LevelRegistry_8cpp_source}{Level\+Registry.\+cpp}}.
+
+
+
+\label{classLevelRegistry_doc-variable-members}
+\Hypertarget{classLevelRegistry_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classLevelRegistry_a97aab666d43fb6bc3f6949de09831572}\index{LevelRegistry@{LevelRegistry}!m\_Levels@{m\_Levels}}
+\index{m\_Levels@{m\_Levels}!LevelRegistry@{LevelRegistry}}
+\doxysubsubsection{\texorpdfstring{m\_Levels}{m\_Levels}}
+{\footnotesize\ttfamily \label{classLevelRegistry_a97aab666d43fb6bc3f6949de09831572} 
+std::\+vector$<$\doxymbox{\hyperlink{structLevelDefinition}{Level\+Definition}}$>$ Level\+Registry::\+m\+\_\+\+Levels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8h_source_l00066}{66}} of file \doxymbox{\hyperlink{LevelRegistry_8h_source}{Level\+Registry.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+level/\doxymbox{\hyperlink{LevelRegistry_8h}{Level\+Registry.\+h}}\item 
+engine/\+level/\doxymbox{\hyperlink{LevelRegistry_8cpp}{Level\+Registry.\+cpp}}\end{DoxyCompactItemize}

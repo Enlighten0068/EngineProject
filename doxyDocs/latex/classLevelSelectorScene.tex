@@ -1,0 +1,462 @@
+\doxysection{Level\+Selector\+Scene Class Reference}
+\hypertarget{classLevelSelectorScene}{}\label{classLevelSelectorScene}\index{LevelSelectorScene@{LevelSelectorScene}}
+
+
+\doxylink{classScene}{Scene} that lists all registered levels and lets the player choose one.  
+
+
+
+
+{\ttfamily \+\#include $<$Level\+Selector\+Scene.\+h$>$}
+
+
+
+Inheritance diagram for Level\+Selector\+Scene:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classLevelSelectorScene__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Level\+Selector\+Scene:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLevelSelectorScene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structLevelSelectorScene_1_1Option}{Option}}
+\begin{DoxyCompactList}\small\item\em A single menu option (text label with two textures). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classLevelSelectorScene_a70144989f056c70ee7cb3e4755ebe45b}{Level\+Selector\+Scene}} (\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene\+Manager, \doxymbox{\hyperlink{classShader}{Shader}} \&shader, \doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&va, \doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&ib, \doxymbox{\hyperlink{classCamera2D}{Camera2D}} \&camera, \doxymbox{\hyperlink{classShader}{Shader}} \&line\+Shader)
+\item 
+\doxymbox{\hyperlink{classLevelSelectorScene_a29adb71d9bf3a6bb60d127c8e506be8f}{\texorpdfstring{$\sim$}{\string~}\+Level\+Selector\+Scene}} ()
+\item 
+void \doxymbox{\hyperlink{classLevelSelectorScene_a2ef8dc2df76c5d6a9dde5cb034ac242d}{On\+Enter}} () override
+\begin{DoxyCompactList}\small\item\em Called when the scene becomes active. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classLevelSelectorScene_a38c557d72f36f05319bd8fc097cccb1e}{On\+Exit}} () override
+\begin{DoxyCompactList}\small\item\em Called when the scene is exited. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classLevelSelectorScene_acfaf5d66253dbd5880be7bc68d210d0a}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Updates navigation and selection. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classLevelSelectorScene_aa4161b586dbea24ead423a034816fdfc}{Render}} () override
+\begin{DoxyCompactList}\small\item\em Renders the level selector. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{classLevelSelectorScene_a8085250fc5dee5c345c763c26c8a0707}{Get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the scene. \end{DoxyCompactList}\item 
+std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{classLevelSelectorScene_aebf0f8867df43f6606d5457bdce9d386}{Get\+HUDLines}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the \doxylink{classHUD}{HUD} lines to show in this scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classScene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classScene_af6e09d91ebd10ae9cc7c12c39d06386c}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
+\item 
+virtual void \doxymbox{\hyperlink{classScene_a0b39bb1405c0f9ed82b2123a4b9dbfbd}{On\+Resize}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Called when the window is resized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \doxymbox{\hyperlink{classLevelSelectorScene_abb78b1c558d9139ccc5894603a792806}{Create\+Text\+Texture}} (const std::\+string \&text, const SDL\+\_\+\+Color \&color)
+\begin{DoxyCompactList}\small\item\em Creates a texture from rendered text. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classLevelSelectorScene_a2f96c000d92e26cc44e50dd6f932c6d2}{Render\+Option}} (const \doxymbox{\hyperlink{structLevelSelectorScene_1_1Option}{Option}} \&option, bool is\+Selected)
+\begin{DoxyCompactList}\small\item\em Renders a single option. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classLevelSelectorScene_a142562be4dbf89030310c0075d160369}{Is\+Mouse\+Over\+Option}} (const \doxymbox{\hyperlink{structLevelSelectorScene_1_1Option}{Option}} \&option) const
+\begin{DoxyCompactList}\small\item\em Checks if the mouse is over a menu option. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classLevelSelectorScene_ab6fc75b411632651fa21249a1a995fec}{Handle\+Selection}} ()
+\begin{DoxyCompactList}\small\item\em Loads the selected level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}} \& \doxymbox{\hyperlink{classLevelSelectorScene_a2f95782c506eec5907525c433ed06d44}{m\+\_\+\+Scene\+Manager}}
+\item 
+\doxymbox{\hyperlink{classShader}{Shader}} \& \doxymbox{\hyperlink{classLevelSelectorScene_ab6a99773b6fdeadcffda2d7ddc81b20e}{m\+\_\+\+Shader}}
+\item 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \& \doxymbox{\hyperlink{classLevelSelectorScene_a9a837ee73063b49c25dd8ed397bb40cb}{m\+\_\+\+Vertex\+Array}}
+\item 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \& \doxymbox{\hyperlink{classLevelSelectorScene_ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b}{m\+\_\+\+Index\+Buffer}}
+\item 
+\doxymbox{\hyperlink{classCamera2D}{Camera2D}} \& \doxymbox{\hyperlink{classLevelSelectorScene_ac484ddb64073422335ab3ec85251168d}{m\+\_\+\+Camera}}
+\item 
+\doxymbox{\hyperlink{classShader}{Shader}} \& \doxymbox{\hyperlink{classLevelSelectorScene_af2e87d65ca014b3845678db72fff1c9a}{m\+\_\+\+Line\+Shader}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classFont}{Font}} $>$ \doxymbox{\hyperlink{classLevelSelectorScene_a32b9d528a0c8f03437dd069f46b7895e}{m\+\_\+\+Font}}
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{structLevelSelectorScene_1_1Option}{Option}} $>$ \doxymbox{\hyperlink{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}{m\+\_\+\+Options}}
+\item 
+int \doxymbox{\hyperlink{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef}{m\+\_\+\+Selected\+Option}} = 0
+\item 
+SDL\+\_\+\+Color \doxymbox{\hyperlink{classLevelSelectorScene_a0e18a737fd9413f0cd415a74bf4029bf}{m\+\_\+\+Normal\+Color}} = \{255, 255, 255, 255\}
+\item 
+SDL\+\_\+\+Color \doxymbox{\hyperlink{classLevelSelectorScene_af7ef2bbba2fb263804b77ef3900a5045}{m\+\_\+\+Selected\+Color}} = \{255, 255, 0, 255\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classScene}{Scene} that lists all registered levels and lets the player choose one. 
+
+The list is populated automatically from the \doxylink{classLevelRegistry}{Level\+Registry}, so adding a new level only requires creating a new .cpp with REGISTER\+\_\+\+LEVEL and recompiling.
+
+Navigation: Up/\+\+Down (or W/\+S) to select, Enter/\+\+Space to confirm, ESC to go back to the main menu. Mouse hover highlights the option under the cursor, and clicking loads it.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classLevelRegistry}{Level\+Registry}, \doxylink{classMenuScene}{Menu\+Scene}, \doxylink{classBaseLevelScene}{Base\+Level\+Scene} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00028}{28}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+
+
+\label{classLevelSelectorScene_doc-constructors}
+\Hypertarget{classLevelSelectorScene_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLevelSelectorScene_a70144989f056c70ee7cb3e4755ebe45b}\index{LevelSelectorScene@{LevelSelectorScene}!LevelSelectorScene@{LevelSelectorScene}}
+\index{LevelSelectorScene@{LevelSelectorScene}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{LevelSelectorScene()}{LevelSelectorScene()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a70144989f056c70ee7cb3e4755ebe45b} 
+Level\+Selector\+Scene::\+\+Level\+Selector\+Scene (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene\+Manager}{, }\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{shader}{, }\item[{\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&}]{va}{, }\item[{\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&}]{ib}{, }\item[{\doxymbox{\hyperlink{classCamera2D}{Camera2D}} \&}]{camera}{, }\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{line\+Shader}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source_l00013}{13}} of file \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source}{Level\+Selector\+Scene.\+cpp}}.
+
+\Hypertarget{classLevelSelectorScene_a29adb71d9bf3a6bb60d127c8e506be8f}\index{LevelSelectorScene@{LevelSelectorScene}!````~LevelSelectorScene@{\texorpdfstring{$\sim$}{\string~}LevelSelectorScene}}
+\index{````~LevelSelectorScene@{\texorpdfstring{$\sim$}{\string~}LevelSelectorScene}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LevelSelectorScene()}{\string~LevelSelectorScene()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a29adb71d9bf3a6bb60d127c8e506be8f} 
+Level\+Selector\+Scene::\+\texorpdfstring{$\sim$}{\string~}\+Level\+Selector\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source_l00019}{19}} of file \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source}{Level\+Selector\+Scene.\+cpp}}.
+
+
+
+\label{classLevelSelectorScene_doc-func-members}
+\Hypertarget{classLevelSelectorScene_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLevelSelectorScene_abb78b1c558d9139ccc5894603a792806}\index{LevelSelectorScene@{LevelSelectorScene}!CreateTextTexture@{CreateTextTexture}}
+\index{CreateTextTexture@{CreateTextTexture}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{CreateTextTexture()}{CreateTextTexture()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_abb78b1c558d9139ccc5894603a792806} 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ Level\+Selector\+Scene::\+\+Create\+Text\+Texture (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{text}{, }\item[{const SDL\+\_\+\+Color \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates a texture from rendered text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The string to render. \\
+\hline
+{\em color} & The color of the text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shared pointer to the created \doxylink{classTexture2D}{Texture2D}, or nullptr on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source_l00084}{84}} of file \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source}{Level\+Selector\+Scene.\+cpp}}.
+
+\Hypertarget{classLevelSelectorScene_aebf0f8867df43f6606d5457bdce9d386}\index{LevelSelectorScene@{LevelSelectorScene}!GetHUDLines@{GetHUDLines}}
+\index{GetHUDLines@{GetHUDLines}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{GetHUDLines()}{GetHUDLines()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_aebf0f8867df43f6606d5457bdce9d386} 
+std::\+vector$<$ std::\+string $>$ Level\+Selector\+Scene::\+\+Get\+HUDLines (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the \doxylink{classHUD}{HUD} lines to show in this scene. 
+
+
+
+Reimplemented from \doxymbox{\hyperlink{classScene_afb756dd8b7583f4b06a000d8157c7952}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00043}{43}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_a8085250fc5dee5c345c763c26c8a0707}\index{LevelSelectorScene@{LevelSelectorScene}!GetName@{GetName}}
+\index{GetName@{GetName}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a8085250fc5dee5c345c763c26c8a0707} 
+std::\+string Level\+Selector\+Scene::\+\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the scene. 
+
+\begin{DoxyReturn}{Returns}
+String containing the scene name. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classScene_ad93511100250c3f3ed736b9ed69fdc6f}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00038}{38}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_ab6fc75b411632651fa21249a1a995fec}\index{LevelSelectorScene@{LevelSelectorScene}!HandleSelection@{HandleSelection}}
+\index{HandleSelection@{HandleSelection}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{HandleSelection()}{HandleSelection()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_ab6fc75b411632651fa21249a1a995fec} 
+void Level\+Selector\+Scene::\+\+Handle\+Selection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads the selected level. 
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source_l00217}{217}} of file \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source}{Level\+Selector\+Scene.\+cpp}}.
+
+\Hypertarget{classLevelSelectorScene_a142562be4dbf89030310c0075d160369}\index{LevelSelectorScene@{LevelSelectorScene}!IsMouseOverOption@{IsMouseOverOption}}
+\index{IsMouseOverOption@{IsMouseOverOption}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{IsMouseOverOption()}{IsMouseOverOption()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a142562be4dbf89030310c0075d160369} 
+bool Level\+Selector\+Scene::\+\+Is\+Mouse\+Over\+Option (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structLevelSelectorScene_1_1Option}{Option}} \&}]{option}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the mouse is over a menu option. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & The option to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the mouse is over the option. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source_l00173}{173}} of file \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source}{Level\+Selector\+Scene.\+cpp}}.
+
+\Hypertarget{classLevelSelectorScene_a2ef8dc2df76c5d6a9dde5cb034ac242d}\index{LevelSelectorScene@{LevelSelectorScene}!OnEnter@{OnEnter}}
+\index{OnEnter@{OnEnter}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{OnEnter()}{OnEnter()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a2ef8dc2df76c5d6a9dde5cb034ac242d} 
+void Level\+Selector\+Scene::\+\+On\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the scene becomes active. 
+
+Loads the font and builds the list of options from the \doxylink{classLevelRegistry}{Level\+Registry}. 
+
+Implements \doxymbox{\hyperlink{classScene_ad09d42329f52df55fad0467cd092c9aa}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source_l00026}{26}} of file \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source}{Level\+Selector\+Scene.\+cpp}}.
+
+\Hypertarget{classLevelSelectorScene_a38c557d72f36f05319bd8fc097cccb1e}\index{LevelSelectorScene@{LevelSelectorScene}!OnExit@{OnExit}}
+\index{OnExit@{OnExit}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{OnExit()}{OnExit()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a38c557d72f36f05319bd8fc097cccb1e} 
+void Level\+Selector\+Scene::\+\+On\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the scene is exited. 
+
+
+
+Implements \doxymbox{\hyperlink{classScene_a9824fefa923e5a9db4dca5a23343609b}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source_l00073}{73}} of file \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source}{Level\+Selector\+Scene.\+cpp}}.
+
+\Hypertarget{classLevelSelectorScene_aa4161b586dbea24ead423a034816fdfc}\index{LevelSelectorScene@{LevelSelectorScene}!Render@{Render}}
+\index{Render@{Render}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_aa4161b586dbea24ead423a034816fdfc} 
+void Level\+Selector\+Scene::\+\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the level selector. 
+
+
+
+Implements \doxymbox{\hyperlink{classScene_ae24d21e12b34839994ad265662ea24d7}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source_l00158}{158}} of file \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source}{Level\+Selector\+Scene.\+cpp}}.
+
+\Hypertarget{classLevelSelectorScene_a2f96c000d92e26cc44e50dd6f932c6d2}\index{LevelSelectorScene@{LevelSelectorScene}!RenderOption@{RenderOption}}
+\index{RenderOption@{RenderOption}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{RenderOption()}{RenderOption()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a2f96c000d92e26cc44e50dd6f932c6d2} 
+void Level\+Selector\+Scene::\+\+Render\+Option (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structLevelSelectorScene_1_1Option}{Option}} \&}]{option}{, }\item[{bool}]{is\+Selected}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Renders a single option. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & The option to render. \\
+\hline
+{\em is\+Selected} & Whether this option is currently selected. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source_l00196}{196}} of file \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source}{Level\+Selector\+Scene.\+cpp}}.
+
+\Hypertarget{classLevelSelectorScene_acfaf5d66253dbd5880be7bc68d210d0a}\index{LevelSelectorScene@{LevelSelectorScene}!Update@{Update}}
+\index{Update@{Update}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_acfaf5d66253dbd5880be7bc68d210d0a} 
+void Level\+Selector\+Scene::\+\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates navigation and selection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \doxylink{classTime}{Time} elapsed since the last frame (unused). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \doxymbox{\hyperlink{classScene_aaede6346f58776bd40efffd55885ab02}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source_l00109}{109}} of file \doxymbox{\hyperlink{LevelSelectorScene_8cpp_source}{Level\+Selector\+Scene.\+cpp}}.
+
+
+
+\label{classLevelSelectorScene_doc-variable-members}
+\Hypertarget{classLevelSelectorScene_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classLevelSelectorScene_ac484ddb64073422335ab3ec85251168d}\index{LevelSelectorScene@{LevelSelectorScene}!m\_Camera@{m\_Camera}}
+\index{m\_Camera@{m\_Camera}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{m\_Camera}{m\_Camera}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_ac484ddb64073422335ab3ec85251168d} 
+\doxymbox{\hyperlink{classCamera2D}{Camera2D}}\& Level\+Selector\+Scene::\+m\+\_\+\+Camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00067}{67}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_a32b9d528a0c8f03437dd069f46b7895e}\index{LevelSelectorScene@{LevelSelectorScene}!m\_Font@{m\_Font}}
+\index{m\_Font@{m\_Font}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{m\_Font}{m\_Font}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a32b9d528a0c8f03437dd069f46b7895e} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classFont}{Font}}$>$ Level\+Selector\+Scene::\+m\+\_\+\+Font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00070}{70}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b}\index{LevelSelectorScene@{LevelSelectorScene}!m\_IndexBuffer@{m\_IndexBuffer}}
+\index{m\_IndexBuffer@{m\_IndexBuffer}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{m\_IndexBuffer}{m\_IndexBuffer}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b} 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}}\& Level\+Selector\+Scene::\+m\+\_\+\+Index\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00066}{66}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_af2e87d65ca014b3845678db72fff1c9a}\index{LevelSelectorScene@{LevelSelectorScene}!m\_LineShader@{m\_LineShader}}
+\index{m\_LineShader@{m\_LineShader}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{m\_LineShader}{m\_LineShader}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_af2e87d65ca014b3845678db72fff1c9a} 
+\doxymbox{\hyperlink{classShader}{Shader}}\& Level\+Selector\+Scene::\+m\+\_\+\+Line\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00068}{68}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_a0e18a737fd9413f0cd415a74bf4029bf}\index{LevelSelectorScene@{LevelSelectorScene}!m\_NormalColor@{m\_NormalColor}}
+\index{m\_NormalColor@{m\_NormalColor}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{m\_NormalColor}{m\_NormalColor}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a0e18a737fd9413f0cd415a74bf4029bf} 
+SDL\+\_\+\+Color Level\+Selector\+Scene::\+m\+\_\+\+Normal\+Color = \{255, 255, 255, 255\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00074}{74}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}\index{LevelSelectorScene@{LevelSelectorScene}!m\_Options@{m\_Options}}
+\index{m\_Options@{m\_Options}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{m\_Options}{m\_Options}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e} 
+std::\+vector$<$\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option}{Option}}$>$ Level\+Selector\+Scene::\+m\+\_\+\+Options\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00071}{71}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_a2f95782c506eec5907525c433ed06d44}\index{LevelSelectorScene@{LevelSelectorScene}!m\_SceneManager@{m\_SceneManager}}
+\index{m\_SceneManager@{m\_SceneManager}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{m\_SceneManager}{m\_SceneManager}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a2f95782c506eec5907525c433ed06d44} 
+\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}}\& Level\+Selector\+Scene::\+m\+\_\+\+Scene\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00063}{63}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_af7ef2bbba2fb263804b77ef3900a5045}\index{LevelSelectorScene@{LevelSelectorScene}!m\_SelectedColor@{m\_SelectedColor}}
+\index{m\_SelectedColor@{m\_SelectedColor}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{m\_SelectedColor}{m\_SelectedColor}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_af7ef2bbba2fb263804b77ef3900a5045} 
+SDL\+\_\+\+Color Level\+Selector\+Scene::\+m\+\_\+\+Selected\+Color = \{255, 255, 0, 255\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00075}{75}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef}\index{LevelSelectorScene@{LevelSelectorScene}!m\_SelectedOption@{m\_SelectedOption}}
+\index{m\_SelectedOption@{m\_SelectedOption}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{m\_SelectedOption}{m\_SelectedOption}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef} 
+int Level\+Selector\+Scene::\+m\+\_\+\+Selected\+Option = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00072}{72}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_ab6a99773b6fdeadcffda2d7ddc81b20e}\index{LevelSelectorScene@{LevelSelectorScene}!m\_Shader@{m\_Shader}}
+\index{m\_Shader@{m\_Shader}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{m\_Shader}{m\_Shader}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_ab6a99773b6fdeadcffda2d7ddc81b20e} 
+\doxymbox{\hyperlink{classShader}{Shader}}\& Level\+Selector\+Scene::\+m\+\_\+\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00064}{64}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+\Hypertarget{classLevelSelectorScene_a9a837ee73063b49c25dd8ed397bb40cb}\index{LevelSelectorScene@{LevelSelectorScene}!m\_VertexArray@{m\_VertexArray}}
+\index{m\_VertexArray@{m\_VertexArray}!LevelSelectorScene@{LevelSelectorScene}}
+\doxysubsubsection{\texorpdfstring{m\_VertexArray}{m\_VertexArray}}
+{\footnotesize\ttfamily \label{classLevelSelectorScene_a9a837ee73063b49c25dd8ed397bb40cb} 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}}\& Level\+Selector\+Scene::\+m\+\_\+\+Vertex\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSelectorScene_8h_source_l00065}{65}} of file \doxymbox{\hyperlink{LevelSelectorScene_8h_source}{Level\+Selector\+Scene.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+level/\doxymbox{\hyperlink{LevelSelectorScene_8h}{Level\+Selector\+Scene.\+h}}\item 
+engine/\+level/\doxymbox{\hyperlink{LevelSelectorScene_8cpp}{Level\+Selector\+Scene.\+cpp}}\end{DoxyCompactItemize}

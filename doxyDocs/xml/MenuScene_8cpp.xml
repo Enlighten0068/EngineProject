@@ -4,61 +4,15 @@
     <compoundname>MenuScene.cpp</compoundname>
     <includes refid="Input_8h" local="yes">core/Input.h</includes>
     <includes refid="GamepadManager_8h" local="yes">core/GamepadManager.h</includes>
-    <includes refid="Demo2DFixedScene_8h" local="yes">demo/Demo2DFixedScene.h</includes>
     <includes refid="Log_8h" local="yes">diagnostics/Log.h</includes>
     <includes refid="Texture2D_8h" local="yes">graphics/Texture2D.h</includes>
+    <includes refid="LevelSelectorScene_8h" local="yes">level/LevelSelectorScene.h</includes>
     <includes refid="Renderer_8h" local="yes">renderer/Renderer.h</includes>
     <includes refid="MenuScene_8h" local="yes">scene/MenuScene.h</includes>
     <includes local="no">glad/glad.h</includes>
     <includes local="no">SDL3/SDL.h</includes>
     <includes local="no">format</includes>
     <incdepgraph>
-      <node id="11">
-        <label>components/Enemy.h</label>
-        <link refid="Enemy_8h"/>
-      </node>
-      <node id="12">
-        <label>components/Patrol.h</label>
-        <link refid="Patrol_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="32">
-        <label>components/PhysicsBody.h</label>
-        <link refid="PhysicsBody_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="29">
-        <label>components/SpriteRenderer.h</label>
-        <link refid="SpriteRenderer_8h"/>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>components/Transform.h</label>
-        <link refid="components_2Transform_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="24">
-        <label>core/CameraController.h</label>
-        <link refid="CameraController_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>core/FpsCounter.h</label>
-        <link refid="FpsCounter_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
       <node id="7">
         <label>core/GamepadManager.h</label>
         <link refid="GamepadManager_8h"/>
@@ -79,97 +33,55 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>core/PlayerController.h</label>
-        <link refid="PlayerController_8h"/>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-      </node>
-      <node id="33">
-        <label>core/Time.h</label>
-        <link refid="Time_8h"/>
-      </node>
       <node id="10">
-        <label>demo/Demo2DFixedScene.h</label>
-        <link refid="Demo2DFixedScene_8h"/>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="39" relation="include">
-        </childnode>
-      </node>
-      <node id="34">
         <label>diagnostics/Log.h</label>
         <link refid="Log_8h"/>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="42">
+      <node id="17">
         <label>graphics/Font.h</label>
         <link refid="Font_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="21">
+      <node id="24">
         <label>graphics/IndexBuffer.h</label>
         <link refid="IndexBuffer_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="20">
         <label>graphics/Shader.h</label>
         <link refid="Shader_8h"/>
-        <childnode refid="18" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="30">
+      <node id="15">
         <label>graphics/Texture2D.h</label>
         <link refid="Texture2D_8h"/>
         <childnode refid="5" relation="include">
@@ -179,22 +91,44 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="23">
         <label>graphics/VertexArray.h</label>
         <link refid="VertexArray_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="20">
-        <label>graphics/VertexBuffer.h</label>
-        <link refid="VertexBuffer_8h"/>
-        <childnode refid="6" relation="include">
+      <node id="16">
+        <label>level/LevelSelectorScene.h</label>
+        <link refid="LevelSelectorScene_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="21">
         <label>math/Matrix4.h</label>
         <link refid="Matrix4_8h"/>
-        <childnode refid="13" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
@@ -205,58 +139,20 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="13">
+      <node id="22">
         <label>math/Vector3D.h</label>
         <link refid="Vector3D_8h"/>
       </node>
-      <node id="40">
+      <node id="30">
         <label>renderer/Renderer.h</label>
         <link refid="Renderer_8h"/>
-        <childnode refid="18" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
-      <node id="25">
+      <node id="29">
         <label>scene/Camera2D.h</label>
         <link refid="Camera2D_8h"/>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="28">
-        <label>scene/ECSScene.h</label>
-        <link refid="ECSScene_8h"/>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
         <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>scene/GameWorld.h</label>
-        <link refid="GameWorld_8h"/>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
@@ -270,86 +166,66 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="30" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
-        </childnode>
-        <childnode refid="46" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="47" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
       </node>
-      <node id="41">
+      <node id="31">
         <label>scene/MenuScene.h</label>
         <link refid="MenuScene_8h"/>
-        <childnode refid="42" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
-        </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="27">
+      <node id="25">
         <label>scene/Scene.h</label>
         <link refid="Scene_8h"/>
         <childnode refid="9" relation="include">
         </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
       </node>
-      <node id="44">
+      <node id="27">
         <label>scene/SceneManager.h</label>
         <link refid="SceneManager_8h"/>
-        <childnode refid="27" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="45" relation="include">
-        </childnode>
-      </node>
-      <node id="31">
-        <label>systems/EnemySystem.h</label>
-        <link refid="EnemySystem_8h"/>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
       <node id="5">
         <label>SDL3/SDL.h</label>
       </node>
-      <node id="43">
+      <node id="18">
         <label>SDL3_ttf/SDL_ttf.h</label>
       </node>
-      <node id="36">
+      <node id="12">
         <label>chrono</label>
       </node>
       <node id="4">
@@ -358,28 +234,25 @@
       <node id="6">
         <label>cstdint</label>
       </node>
-      <node id="23">
-        <label>entt.hpp</label>
-      </node>
-      <node id="47">
+      <node id="33">
         <label>format</label>
       </node>
-      <node id="35">
+      <node id="11">
         <label>fstream</label>
       </node>
-      <node id="46">
+      <node id="32">
         <label>glad/glad.h</label>
       </node>
-      <node id="37">
+      <node id="13">
         <label>iomanip</label>
       </node>
-      <node id="22">
+      <node id="19">
         <label>memory</label>
       </node>
-      <node id="38">
+      <node id="14">
         <label>sstream</label>
       </node>
-      <node id="45">
+      <node id="28">
         <label>stack</label>
       </node>
       <node id="9">
@@ -388,7 +261,7 @@
       <node id="8">
         <label>unordered_map</label>
       </node>
-      <node id="39">
+      <node id="26">
         <label>vector</label>
       </node>
     </incdepgraph>
@@ -399,217 +272,217 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Input_8h" kindref="compound">core/Input.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GamepadManager_8h" kindref="compound">core/GamepadManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Demo2DFixedScene_8h" kindref="compound">demo/Demo2DFixedScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;demo/Demo2DFixedScene.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Log_8h" kindref="compound">diagnostics/Log.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Texture2D_8h" kindref="compound">graphics/Texture2D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Renderer_8h" kindref="compound">renderer/Renderer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MenuScene_8h" kindref="compound">scene/MenuScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;glad/glad.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL3/SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;format&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12" refid="classMenuScene_1a76e19b60d3334d7697f7d29bab6708d3" refkind="member"><highlight class="normal"><ref refid="classMenuScene_1a76e19b60d3334d7697f7d29bab6708d3" kindref="member">MenuScene::MenuScene</ref>(<ref refid="classSceneManager" kindref="compound">SceneManager</ref>&amp;<sp/>sceneManager,<sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>shader,<sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/>va,<sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/>ib,</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera2D" kindref="compound">Camera2D</ref>&amp;<sp/>camera,<sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>lineShader)</highlight></codeline>
-<codeline lineno="14"><highlight class="normal">:<sp/><ref refid="classMenuScene_1aafe8fc8c4b77426e8edbc443283c6dda" kindref="member">m_SceneManager</ref>(sceneManager),<sp/><ref refid="classMenuScene_1a9efeacffbcd00dea280ccf3703321f71" kindref="member">m_Shader</ref>(shader),<sp/><ref refid="classMenuScene_1aee526af82a75d255d1b6fd6d3d499e92" kindref="member">m_VertexArray</ref>(va)</highlight></codeline>
-<codeline lineno="15"><highlight class="normal">,<sp/><ref refid="classMenuScene_1af61d24fa8a94de5b0282fce6af54e0c4" kindref="member">m_IndexBuffer</ref>(ib),<sp/><ref refid="classMenuScene_1a42392ac9ca92d2c766daef724b6ab131" kindref="member">m_Camera</ref>(camera),<sp/><ref refid="classMenuScene_1a46e28a18551c53cff67144bb9ffe6057" kindref="member">m_LineShader</ref>(lineShader){}</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17" refid="classMenuScene_1a9b8d7fd2c641191231e9d352932be80d" refkind="member"><highlight class="normal"><ref refid="classMenuScene_1a9b8d7fd2c641191231e9d352932be80d" kindref="member">MenuScene::~MenuScene</ref>(){</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1a834e7aa54dd72502876d30114e47cc9e" kindref="member">OnExit</ref>();</highlight></codeline>
-<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="classMenuScene_1a015085736912c87c4e28ab54ab056e6d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a015085736912c87c4e28ab54ab056e6d" kindref="member">MenuScene::OnEnter</ref>(){</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Entering<sp/>MenuScene&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Load<sp/>font</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref><sp/>=<sp/>std::make_unique&lt;Font&gt;();</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref>-&gt;Load(</highlight><highlight class="stringliteral">&quot;assets/fonts/arial.ttf&quot;</highlight><highlight class="normal">,<sp/>96)){</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>load<sp/>font.<sp/>Menu<sp/>will<sp/>not<sp/>display<sp/>text.&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Create<sp/>menu<sp/>options</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.clear();</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>createOption<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>label,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yPos){</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Color<sp/>normalColor<sp/>=<sp/><ref refid="classMenuScene_1a0ad6ec8522307042405a1e14b6d7e72e" kindref="member">m_NormalColor</ref>;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Color<sp/>selectedColor<sp/>=<sp/><ref refid="classMenuScene_1af46c6487c84f609a1fea2f0c98c0d2f7" kindref="member">m_SelectedColor</ref>;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>normalTexture<sp/>=<sp/><ref refid="classMenuScene_1a4e1a9cdb5e0dedaab5c9f780f54d4f67" kindref="member">CreateTextTexture</ref>(label,<sp/>normalColor);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>selectedTexture<sp/>=<sp/><ref refid="classMenuScene_1a4e1a9cdb5e0dedaab5c9f780f54d4f67" kindref="member">CreateTextTexture</ref>(label,<sp/>selectedColor);</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(normalTexture<sp/>&amp;&amp;<sp/>selectedTexture){</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMenuScene_1_1MenuOption" kindref="compound">MenuOption</ref><sp/>option;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a2be42da1d855215326a50ed1b684c4c4" kindref="member">Label</ref><sp/>=<sp/>label;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ae7196230c8420e3bbaaded73df24c0a1" kindref="member">NormalTexture</ref><sp/>=<sp/>normalTexture;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a351d76fc84f6056639f56d93556cc902" kindref="member">SelectedTexture</ref><sp/>=<sp/>selectedTexture;</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref><sp/>=<sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>(0.0f,<sp/>yPos,<sp/>0.0f);</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1af87421383fdb8457d9f5019ee5d07eaa" kindref="member">Width</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(normalTexture-&gt;GetWidth());</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a0fd1eb2ae016bd9ef36cae3f22e30cb4" kindref="member">Height</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(normalTexture-&gt;GetHeight());</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.push_back(option);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Position<sp/>options<sp/>vertically<sp/>(top<sp/>to<sp/>bottom)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>startY<sp/>=<sp/>2.0f;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>spacing<sp/>=<sp/>2.5f;</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>createOption(</highlight><highlight class="stringliteral">&quot;Play&quot;</highlight><highlight class="normal">,<sp/>startY<sp/>+<sp/>spacing<sp/>*<sp/>2);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>createOption(</highlight><highlight class="stringliteral">&quot;Options&quot;</highlight><highlight class="normal">,<sp/>startY<sp/>+<sp/>spacing);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>createOption(</highlight><highlight class="stringliteral">&quot;Exit&quot;</highlight><highlight class="normal">,<sp/>startY);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71" refid="classMenuScene_1a834e7aa54dd72502876d30114e47cc9e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a834e7aa54dd72502876d30114e47cc9e" kindref="member">MenuScene::OnExit</ref>(){</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.clear();</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref>.reset();</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1acfabc7d7b96c85747e56c6c11f9077c1" kindref="member">m_BackgroundTexture</ref>.reset();</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Exiting<sp/>MenuScene&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84" refid="classMenuScene_1a4e1a9cdb5e0dedaab5c9f780f54d4f67" refkind="member"><highlight class="normal">std::shared_ptr&lt;Texture2D&gt;<sp/><ref refid="classMenuScene_1a4e1a9cdb5e0dedaab5c9f780f54d4f67" kindref="member">MenuScene::CreateTextTexture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>text,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Color&amp;<sp/>color){</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref><sp/>||<sp/>!<ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref>-&gt;IsLoaded()){</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a5a5a1c297ed72ab2f850d0d01ae00aaa" kindref="member">Log::Warning</ref>(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>render<sp/>text:<sp/>no<sp/>font<sp/>loaded.&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Surface*<sp/>surface<sp/>=<sp/><ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref>-&gt;RenderText(text,<sp/>color);</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!surface){</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(</highlight><highlight class="stringliteral">&quot;RenderText<sp/>returned<sp/>null<sp/>surface<sp/>for:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>text);</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>texture<sp/>=<sp/>std::make_shared&lt;Texture2D&gt;();</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!texture-&gt;LoadFromSurface(surface)){</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(</highlight><highlight class="stringliteral">&quot;LoadFromSurface<sp/>failed<sp/>for:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>text);</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_DestroySurface(surface);</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Use<sp/>nearest<sp/>neighbor<sp/>for<sp/>sharp<sp/>text<sp/>rendering</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>glBindTexture(GL_TEXTURE_2D,<sp/>texture-&gt;GetRendererID());</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>glTexParameteri(GL_TEXTURE_2D,<sp/>GL_TEXTURE_MAG_FILTER,<sp/>GL_NEAREST);</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>glTexParameteri(GL_TEXTURE_2D,<sp/>GL_TEXTURE_MIN_FILTER,<sp/>GL_LINEAR);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_DestroySurface(surface);</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Text<sp/>texture<sp/>created:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>text);</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>texture;</highlight></codeline>
-<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117" refid="classMenuScene_1af2b1e0e9e1c783c8b058f60906add842" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1af2b1e0e9e1c783c8b058f60906add842" kindref="member">MenuScene::Update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime){</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Keyboard<sp/>navigation<sp/>-<sp/>Down</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_DOWN)<sp/>||<sp/><ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_S)<sp/>||</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GamepadManager::GetInstance</ref>().IsButtonPressed(0,<sp/>SDL_GAMEPAD_BUTTON_DPAD_DOWN)){</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>=<sp/>(<ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>+<sp/>1)<sp/>%<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.size());</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Selected:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>[<ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref>].Label);</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Keyboard<sp/>navigation<sp/>-<sp/>Up</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_UP)<sp/>||<sp/><ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_W)<sp/>||</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GamepadManager::GetInstance</ref>().IsButtonPressed(0,<sp/>SDL_GAMEPAD_BUTTON_DPAD_UP)){</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>=<sp/>(<ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>-<sp/>1<sp/>+<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.size()))<sp/>%<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.size());</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Selected:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>[<ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref>].Label);</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Confirm<sp/>selection<sp/>with<sp/>keyboard</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_RETURN)<sp/>||<sp/><ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_SPACE)<sp/>||</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GamepadManager::GetInstance</ref>().IsButtonPressed(0,<sp/>SDL_GAMEPAD_BUTTON_EAST)){</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1a46a3159d25cbdd8710abf3a1a67bfca0" kindref="member">HandleSelection</ref>();</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Mouse<sp/>click<sp/>detection</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a1915a90124c915e35e04bc9044d3b575" kindref="member">Input::IsMouseButtonPressed</ref>(1)){</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/>mousePos<sp/>=<sp/><ref refid="classInput_1a58652e658e6b2a088d0bfbd07753c914" kindref="member">Input::GetMousePosition</ref>();</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>winWidth<sp/>=<sp/><ref refid="classInput_1a6fa97576489b0946ce0bcc88e8cbb46a" kindref="member">Input::GetWindowWidth</ref>();</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>winHeight<sp/>=<sp/><ref refid="classInput_1a73ac35d323c9c62b29a0fdb7cd10c84f" kindref="member">Input::GetWindowHeight</ref>();</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Convert<sp/>to<sp/>world<sp/>coordinates<sp/>(projection:<sp/>-10<sp/>to<sp/>10)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>worldX<sp/>=<sp/>(mousePos.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>/<sp/>winWidth)<sp/>*<sp/>20.0f<sp/>-<sp/>10.0f;</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>worldY<sp/>=<sp/>-(mousePos.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>/<sp/>winHeight)<sp/>*<sp/>20.0f<sp/>+<sp/>10.0f;</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.size();<sp/>++i){</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>opt<sp/>=<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>[i];</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>halfWidth<sp/>=<sp/>(opt.Width<sp/>/<sp/>opt.Height)<sp/>*<sp/>1.5f<sp/>*<sp/>0.5f;</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>halfHeight<sp/>=<sp/>0.75f;</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"></highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left<sp/>=<sp/>opt.Position.x<sp/>-<sp/>halfWidth;</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>right<sp/>=<sp/>opt.Position.x<sp/>+<sp/>halfWidth;</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottom<sp/>=<sp/>opt.Position.y<sp/>-<sp/>halfHeight;</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top<sp/>=<sp/>opt.Position.y<sp/>+<sp/>halfHeight;</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(worldX<sp/>&gt;=<sp/>left<sp/>&amp;&amp;<sp/>worldX<sp/>&lt;=<sp/>right<sp/>&amp;&amp;<sp/>worldY<sp/>&gt;=<sp/>bottom<sp/>&amp;&amp;<sp/>worldY<sp/>&lt;=<sp/>top){</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(i);</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1a46a3159d25cbdd8710abf3a1a67bfca0" kindref="member">HandleSelection</ref>();</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"></highlight></codeline>
-<codeline lineno="170" refid="classMenuScene_1a57787dac0643417ddd147c940c36b93a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a57787dac0643417ddd147c940c36b93a" kindref="member">MenuScene::Render</ref>(){</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>glClearColor(0.1f,<sp/>0.1f,<sp/>0.2f,<sp/>1.0f);</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>glClear(GL_COLOR_BUFFER_BIT);</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"></highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.size();<sp/>++i){</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isSelected<sp/>=<sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(i)<sp/>==<sp/><ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref>);</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1a1e7a918b520265294fd74c1d9d086795" kindref="member">RenderOption</ref>(<ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>[i],<sp/>isSelected);</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"></highlight></codeline>
-<codeline lineno="185" refid="classMenuScene_1a329504c5161fa328040b3f3092df2bae" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a329504c5161fa328040b3f3092df2bae" kindref="member">MenuScene::IsMouseOverOption</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structMenuScene_1_1MenuOption" kindref="compound">MenuOption</ref>&amp;<sp/>option)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/>mousePos<sp/>=<sp/><ref refid="classInput_1a58652e658e6b2a088d0bfbd07753c914" kindref="member">Input::GetMousePosition</ref>();</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>winWidth<sp/>=<sp/><ref refid="classInput_1a6fa97576489b0946ce0bcc88e8cbb46a" kindref="member">Input::GetWindowWidth</ref>();</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>winHeight<sp/>=<sp/><ref refid="classInput_1a73ac35d323c9c62b29a0fdb7cd10c84f" kindref="member">Input::GetWindowHeight</ref>();</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"></highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>worldX<sp/>=<sp/>(mousePos.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>/<sp/>winWidth)<sp/>*<sp/>20.0f<sp/>-<sp/>10.0f;</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>worldY<sp/>=<sp/>-(mousePos.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>/<sp/>winHeight)<sp/>*<sp/>20.0f<sp/>+<sp/>10.0f;</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"></highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>halfWidth<sp/>=<sp/>(option.<ref refid="structMenuScene_1_1MenuOption_1af87421383fdb8457d9f5019ee5d07eaa" kindref="member">Width</ref><sp/>/<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a0fd1eb2ae016bd9ef36cae3f22e30cb4" kindref="member">Height</ref>)<sp/>*<sp/>1.5f<sp/>*<sp/>0.5f;</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>halfHeight<sp/>=<sp/>0.75f;</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"></highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left<sp/>=<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref>.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>-<sp/>halfWidth;</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>right<sp/>=<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref>.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>+<sp/>halfWidth;</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottom<sp/>=<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>-<sp/>halfHeight;</highlight></codeline>
-<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top<sp/>=<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>+<sp/>halfHeight;</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(worldX<sp/>&gt;=<sp/>left<sp/>&amp;&amp;<sp/>worldX<sp/>&lt;=<sp/>right<sp/>&amp;&amp;<sp/>worldY<sp/>&gt;=<sp/>bottom<sp/>&amp;&amp;<sp/>worldY<sp/>&lt;=<sp/>top);</highlight></codeline>
-<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="203"><highlight class="normal"></highlight></codeline>
-<codeline lineno="209" refid="classMenuScene_1a1e7a918b520265294fd74c1d9d086795" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a1e7a918b520265294fd74c1d9d086795" kindref="member">MenuScene::RenderOption</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structMenuScene_1_1MenuOption" kindref="compound">MenuOption</ref>&amp;<sp/>option,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isSelected){</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isHovered<sp/>=<sp/><ref refid="classMenuScene_1a329504c5161fa328040b3f3092df2bae" kindref="member">IsMouseOverOption</ref>(option);</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/>texture<sp/>=<sp/>(isSelected<sp/>||<sp/>isHovered)</highlight></codeline>
-<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>?<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a351d76fc84f6056639f56d93556cc902" kindref="member">SelectedTexture</ref></highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ae7196230c8420e3bbaaded73df24c0a1" kindref="member">NormalTexture</ref>;</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"></highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!texture){</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a5a5a1c297ed72ab2f850d0d01ae00aaa" kindref="member">Log::Warning</ref>(</highlight><highlight class="stringliteral">&quot;RenderOption:<sp/>texture<sp/>is<sp/>null<sp/>for<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a2be42da1d855215326a50ed1b684c4c4" kindref="member">Label</ref>);</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="219"><highlight class="normal"></highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Build<sp/>model<sp/>matrix</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref><sp/>model<sp/>=<sp/><ref refid="classMatrix4_1a35fb272e82fbfc17cdf2d75c858f5da7" kindref="member">Matrix4::Translation</ref>(option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref>);</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>aspect<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(texture-&gt;GetWidth())<sp/>/<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(texture-&gt;GetHeight());</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height<sp/>=<sp/>1.5f;</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width<sp/>=<sp/>height<sp/>*<sp/>aspect;</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>model<sp/>=<sp/>model<sp/>*<sp/><ref refid="classMatrix4_1aa3a30984ce9f309c23827d5e1cde0fdc" kindref="member">Matrix4::Scale</ref>(<ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>(width,<sp/>height,<sp/>1.0f));</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"></highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//View<sp/>and<sp/>projection<sp/>(fixed<sp/>orthographic)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref><sp/>view<sp/>=<sp/><ref refid="classMatrix4_1ae114a47efddacad2207eadac5f532098" kindref="member">Matrix4::Identity</ref>();</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref><sp/>projection<sp/>=<sp/><ref refid="classMatrix4_1a8cc70f5111adc0c13fed0521a31b80b6" kindref="member">Matrix4::Orthographic</ref>(-10.0f,<sp/>10.0f,<sp/>-10.0f,<sp/>10.0f,<sp/>-1.0f,<sp/>1.0f);</highlight></codeline>
-<codeline lineno="230"><highlight class="normal"></highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRenderer_1a71992cf4acf88e30dd0abaaa6cda23b4" kindref="member">Renderer::DrawTexturedQuad</ref>(<ref refid="classMenuScene_1a9efeacffbcd00dea280ccf3703321f71" kindref="member">m_Shader</ref>,<sp/><ref refid="classMenuScene_1aee526af82a75d255d1b6fd6d3d499e92" kindref="member">m_VertexArray</ref>,<sp/><ref refid="classMenuScene_1af61d24fa8a94de5b0282fce6af54e0c4" kindref="member">m_IndexBuffer</ref>,</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*texture,<sp/>model,<sp/>view,<sp/>projection,<sp/>1.0f,<sp/>1.0f);</highlight></codeline>
-<codeline lineno="233"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="234"><highlight class="normal"></highlight></codeline>
-<codeline lineno="238" refid="classMenuScene_1a46a3159d25cbdd8710abf3a1a67bfca0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a46a3159d25cbdd8710abf3a1a67bfca0" kindref="member">MenuScene::HandleSelection</ref>(){</highlight></codeline>
-<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.empty())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="240"><highlight class="normal"></highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>selected<sp/>=<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>[<ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref>].Label;</highlight></codeline>
-<codeline lineno="242"><highlight class="normal"></highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(selected<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;Play&quot;</highlight><highlight class="normal">){</highlight></codeline>
-<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Starting<sp/>Demo<sp/>2D...&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>scene<sp/>=<sp/>std::make_unique&lt;Demo2DFixedScene&gt;(</highlight></codeline>
-<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1a9efeacffbcd00dea280ccf3703321f71" kindref="member">m_Shader</ref>,<sp/><ref refid="classMenuScene_1aee526af82a75d255d1b6fd6d3d499e92" kindref="member">m_VertexArray</ref>,<sp/><ref refid="classMenuScene_1af61d24fa8a94de5b0282fce6af54e0c4" kindref="member">m_IndexBuffer</ref>,</highlight></codeline>
-<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1a42392ac9ca92d2c766daef724b6ab131" kindref="member">m_Camera</ref>,<sp/><ref refid="classMenuScene_1a46e28a18551c53cff67144bb9ffe6057" kindref="member">m_LineShader</ref></highlight></codeline>
-<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aafe8fc8c4b77426e8edbc443283c6dda" kindref="member">m_SceneManager</ref>.<ref refid="classSceneManager_1ae0003097b2a7ccd3f63758fcf8734bfd" kindref="member">SetScene</ref>(std::move(scene));</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LevelSelectorScene_8h" kindref="compound">level/LevelSelectorScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Renderer_8h" kindref="compound">renderer/Renderer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MenuScene_8h" kindref="compound">scene/MenuScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;glad/glad.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL3/SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;format&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classMenuScene_1a76e19b60d3334d7697f7d29bab6708d3" refkind="member"><highlight class="normal"><ref refid="classMenuScene_1a76e19b60d3334d7697f7d29bab6708d3" kindref="member">MenuScene::MenuScene</ref>(<ref refid="classSceneManager" kindref="compound">SceneManager</ref>&amp;<sp/>sceneManager,<sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>shader,<sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/>va,<sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/>ib,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera2D" kindref="compound">Camera2D</ref>&amp;<sp/>camera,<sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>lineShader)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">:<sp/><ref refid="classMenuScene_1aafe8fc8c4b77426e8edbc443283c6dda" kindref="member">m_SceneManager</ref>(sceneManager),<sp/><ref refid="classMenuScene_1a9efeacffbcd00dea280ccf3703321f71" kindref="member">m_Shader</ref>(shader),<sp/><ref refid="classMenuScene_1aee526af82a75d255d1b6fd6d3d499e92" kindref="member">m_VertexArray</ref>(va)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">,<sp/><ref refid="classMenuScene_1af61d24fa8a94de5b0282fce6af54e0c4" kindref="member">m_IndexBuffer</ref>(ib),<sp/><ref refid="classMenuScene_1a42392ac9ca92d2c766daef724b6ab131" kindref="member">m_Camera</ref>(camera),<sp/><ref refid="classMenuScene_1a46e28a18551c53cff67144bb9ffe6057" kindref="member">m_LineShader</ref>(lineShader){}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classMenuScene_1a9b8d7fd2c641191231e9d352932be80d" refkind="member"><highlight class="normal"><ref refid="classMenuScene_1a9b8d7fd2c641191231e9d352932be80d" kindref="member">MenuScene::~MenuScene</ref>(){</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1a834e7aa54dd72502876d30114e47cc9e" kindref="member">OnExit</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classMenuScene_1a015085736912c87c4e28ab54ab056e6d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a015085736912c87c4e28ab54ab056e6d" kindref="member">MenuScene::OnEnter</ref>(){</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Entering<sp/>MenuScene&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Load<sp/>font</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref><sp/>=<sp/>std::make_unique&lt;Font&gt;();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref>-&gt;Load(</highlight><highlight class="stringliteral">&quot;assets/fonts/arial.ttf&quot;</highlight><highlight class="normal">,<sp/>96)){</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>load<sp/>font.<sp/>Menu<sp/>will<sp/>not<sp/>display<sp/>text.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Create<sp/>menu<sp/>options</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.clear();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>createOption<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>label,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yPos){</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Color<sp/>normalColor<sp/>=<sp/><ref refid="classMenuScene_1a0ad6ec8522307042405a1e14b6d7e72e" kindref="member">m_NormalColor</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Color<sp/>selectedColor<sp/>=<sp/><ref refid="classMenuScene_1af46c6487c84f609a1fea2f0c98c0d2f7" kindref="member">m_SelectedColor</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>normalTexture<sp/>=<sp/><ref refid="classMenuScene_1a4e1a9cdb5e0dedaab5c9f780f54d4f67" kindref="member">CreateTextTexture</ref>(label,<sp/>normalColor);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>selectedTexture<sp/>=<sp/><ref refid="classMenuScene_1a4e1a9cdb5e0dedaab5c9f780f54d4f67" kindref="member">CreateTextTexture</ref>(label,<sp/>selectedColor);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(normalTexture<sp/>&amp;&amp;<sp/>selectedTexture){</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMenuScene_1_1MenuOption" kindref="compound">MenuOption</ref><sp/>option;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a2be42da1d855215326a50ed1b684c4c4" kindref="member">Label</ref><sp/>=<sp/>label;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ae7196230c8420e3bbaaded73df24c0a1" kindref="member">NormalTexture</ref><sp/>=<sp/>normalTexture;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a351d76fc84f6056639f56d93556cc902" kindref="member">SelectedTexture</ref><sp/>=<sp/>selectedTexture;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref><sp/>=<sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>(0.0f,<sp/>yPos,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1af87421383fdb8457d9f5019ee5d07eaa" kindref="member">Width</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(normalTexture-&gt;GetWidth());</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a0fd1eb2ae016bd9ef36cae3f22e30cb4" kindref="member">Height</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(normalTexture-&gt;GetHeight());</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.push_back(option);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Position<sp/>options<sp/>vertically<sp/>(top<sp/>to<sp/>bottom)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>startY<sp/>=<sp/>2.0f;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>spacing<sp/>=<sp/>2.5f;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>createOption(</highlight><highlight class="stringliteral">&quot;Play&quot;</highlight><highlight class="normal">,<sp/>startY<sp/>+<sp/>spacing<sp/>*<sp/>2);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>createOption(</highlight><highlight class="stringliteral">&quot;Options&quot;</highlight><highlight class="normal">,<sp/>startY<sp/>+<sp/>spacing);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>createOption(</highlight><highlight class="stringliteral">&quot;Exit&quot;</highlight><highlight class="normal">,<sp/>startY);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classMenuScene_1a834e7aa54dd72502876d30114e47cc9e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a834e7aa54dd72502876d30114e47cc9e" kindref="member">MenuScene::OnExit</ref>(){</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.clear();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref>.reset();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1acfabc7d7b96c85747e56c6c11f9077c1" kindref="member">m_BackgroundTexture</ref>.reset();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Exiting<sp/>MenuScene&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classMenuScene_1a4e1a9cdb5e0dedaab5c9f780f54d4f67" refkind="member"><highlight class="normal">std::shared_ptr&lt;Texture2D&gt;<sp/><ref refid="classMenuScene_1a4e1a9cdb5e0dedaab5c9f780f54d4f67" kindref="member">MenuScene::CreateTextTexture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>text,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Color&amp;<sp/>color){</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref><sp/>||<sp/>!<ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref>-&gt;IsLoaded()){</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a5a5a1c297ed72ab2f850d0d01ae00aaa" kindref="member">Log::Warning</ref>(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>render<sp/>text:<sp/>no<sp/>font<sp/>loaded.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Surface*<sp/>surface<sp/>=<sp/><ref refid="classMenuScene_1af6491cf56e85392de0bcf6e510afe9cf" kindref="member">m_Font</ref>-&gt;RenderText(text,<sp/>color);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!surface){</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(</highlight><highlight class="stringliteral">&quot;RenderText<sp/>returned<sp/>null<sp/>surface<sp/>for:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>text);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>texture<sp/>=<sp/>std::make_shared&lt;Texture2D&gt;();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!texture-&gt;LoadFromSurface(surface)){</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a860a6724a65c95001e3617ac6ae04e28" kindref="member">Log::Error</ref>(</highlight><highlight class="stringliteral">&quot;LoadFromSurface<sp/>failed<sp/>for:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>text);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_DestroySurface(surface);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Use<sp/>nearest<sp/>neighbor<sp/>for<sp/>sharp<sp/>text<sp/>rendering</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>glBindTexture(GL_TEXTURE_2D,<sp/>texture-&gt;GetRendererID());</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>glTexParameteri(GL_TEXTURE_2D,<sp/>GL_TEXTURE_MAG_FILTER,<sp/>GL_NEAREST);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>glTexParameteri(GL_TEXTURE_2D,<sp/>GL_TEXTURE_MIN_FILTER,<sp/>GL_LINEAR);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_DestroySurface(surface);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Text<sp/>texture<sp/>created:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>text);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>texture;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classMenuScene_1af2b1e0e9e1c783c8b058f60906add842" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1af2b1e0e9e1c783c8b058f60906add842" kindref="member">MenuScene::Update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime){</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Keyboard<sp/>navigation<sp/>-<sp/>Down</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_DOWN)<sp/>||<sp/><ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_S)<sp/>||</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GamepadManager::GetInstance</ref>().IsButtonPressed(0,<sp/>SDL_GAMEPAD_BUTTON_DPAD_DOWN)){</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>=<sp/>(<ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>+<sp/>1)<sp/>%<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.size());</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Selected:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>[<ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref>].Label);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Keyboard<sp/>navigation<sp/>-<sp/>Up</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_UP)<sp/>||<sp/><ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_W)<sp/>||</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GamepadManager::GetInstance</ref>().IsButtonPressed(0,<sp/>SDL_GAMEPAD_BUTTON_DPAD_UP)){</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>=<sp/>(<ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>-<sp/>1<sp/>+<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.size()))<sp/>%<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.size());</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Selected:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>[<ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref>].Label);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Confirm<sp/>selection<sp/>with<sp/>keyboard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_RETURN)<sp/>||<sp/><ref refid="classInput_1a6f730bd93702cfca7ed7d2619e4340d7" kindref="member">Input::IsKeyPressed</ref>(SDL_SCANCODE_SPACE)<sp/>||</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classGamepadManager_1a7ed1fa9ba985dc62cba0c796992689e8" kindref="member">GamepadManager::GetInstance</ref>().IsButtonPressed(0,<sp/>SDL_GAMEPAD_BUTTON_EAST)){</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1a46a3159d25cbdd8710abf3a1a67bfca0" kindref="member">HandleSelection</ref>();</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Mouse<sp/>click<sp/>detection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classInput_1a1915a90124c915e35e04bc9044d3b575" kindref="member">Input::IsMouseButtonPressed</ref>(1)){</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/>mousePos<sp/>=<sp/><ref refid="classInput_1a58652e658e6b2a088d0bfbd07753c914" kindref="member">Input::GetMousePosition</ref>();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>winWidth<sp/>=<sp/><ref refid="classInput_1a6fa97576489b0946ce0bcc88e8cbb46a" kindref="member">Input::GetWindowWidth</ref>();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>winHeight<sp/>=<sp/><ref refid="classInput_1a73ac35d323c9c62b29a0fdb7cd10c84f" kindref="member">Input::GetWindowHeight</ref>();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Convert<sp/>to<sp/>world<sp/>coordinates<sp/>(projection:<sp/>-10<sp/>to<sp/>10)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>worldX<sp/>=<sp/>(mousePos.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>/<sp/>winWidth)<sp/>*<sp/>20.0f<sp/>-<sp/>10.0f;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>worldY<sp/>=<sp/>-(mousePos.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>/<sp/>winHeight)<sp/>*<sp/>20.0f<sp/>+<sp/>10.0f;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.size();<sp/>++i){</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>opt<sp/>=<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>[i];</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>halfWidth<sp/>=<sp/>(opt.Width<sp/>/<sp/>opt.Height)<sp/>*<sp/>1.5f<sp/>*<sp/>0.5f;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>halfHeight<sp/>=<sp/>0.75f;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left<sp/>=<sp/>opt.Position.x<sp/>-<sp/>halfWidth;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>right<sp/>=<sp/>opt.Position.x<sp/>+<sp/>halfWidth;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottom<sp/>=<sp/>opt.Position.y<sp/>-<sp/>halfHeight;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top<sp/>=<sp/>opt.Position.y<sp/>+<sp/>halfHeight;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(worldX<sp/>&gt;=<sp/>left<sp/>&amp;&amp;<sp/>worldX<sp/>&lt;=<sp/>right<sp/>&amp;&amp;<sp/>worldY<sp/>&gt;=<sp/>bottom<sp/>&amp;&amp;<sp/>worldY<sp/>&lt;=<sp/>top){</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(i);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1a46a3159d25cbdd8710abf3a1a67bfca0" kindref="member">HandleSelection</ref>();</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="classMenuScene_1a57787dac0643417ddd147c940c36b93a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a57787dac0643417ddd147c940c36b93a" kindref="member">MenuScene::Render</ref>(){</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>glClearColor(0.1f,<sp/>0.1f,<sp/>0.2f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>glClear(GL_COLOR_BUFFER_BIT);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.size();<sp/>++i){</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isSelected<sp/>=<sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(i)<sp/>==<sp/><ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref>);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1a1e7a918b520265294fd74c1d9d086795" kindref="member">RenderOption</ref>(<ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>[i],<sp/>isSelected);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="classMenuScene_1a329504c5161fa328040b3f3092df2bae" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a329504c5161fa328040b3f3092df2bae" kindref="member">MenuScene::IsMouseOverOption</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structMenuScene_1_1MenuOption" kindref="compound">MenuOption</ref>&amp;<sp/>option)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structVector2D" kindref="compound">Vector2D</ref><sp/>mousePos<sp/>=<sp/><ref refid="classInput_1a58652e658e6b2a088d0bfbd07753c914" kindref="member">Input::GetMousePosition</ref>();</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>winWidth<sp/>=<sp/><ref refid="classInput_1a6fa97576489b0946ce0bcc88e8cbb46a" kindref="member">Input::GetWindowWidth</ref>();</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>winHeight<sp/>=<sp/><ref refid="classInput_1a73ac35d323c9c62b29a0fdb7cd10c84f" kindref="member">Input::GetWindowHeight</ref>();</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>worldX<sp/>=<sp/>(mousePos.<ref refid="structVector2D_1aeb4253ba6555251d010ea4450619029e" kindref="member">x</ref><sp/>/<sp/>winWidth)<sp/>*<sp/>20.0f<sp/>-<sp/>10.0f;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>worldY<sp/>=<sp/>-(mousePos.<ref refid="structVector2D_1a85215519d3f71d0e6be7d636346f3b7d" kindref="member">y</ref><sp/>/<sp/>winHeight)<sp/>*<sp/>20.0f<sp/>+<sp/>10.0f;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>halfWidth<sp/>=<sp/>(option.<ref refid="structMenuScene_1_1MenuOption_1af87421383fdb8457d9f5019ee5d07eaa" kindref="member">Width</ref><sp/>/<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a0fd1eb2ae016bd9ef36cae3f22e30cb4" kindref="member">Height</ref>)<sp/>*<sp/>1.5f<sp/>*<sp/>0.5f;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>halfHeight<sp/>=<sp/>0.75f;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left<sp/>=<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref>.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>-<sp/>halfWidth;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>right<sp/>=<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref>.<ref refid="structVector3D_1aca5d15bdb846448e3cb73b072783f329" kindref="member">x</ref><sp/>+<sp/>halfWidth;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottom<sp/>=<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>-<sp/>halfHeight;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>top<sp/>=<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref>.<ref refid="structVector3D_1a9b6d194fcf526d7d4f9e902421285e94" kindref="member">y</ref><sp/>+<sp/>halfHeight;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(worldX<sp/>&gt;=<sp/>left<sp/>&amp;&amp;<sp/>worldX<sp/>&lt;=<sp/>right<sp/>&amp;&amp;<sp/>worldY<sp/>&gt;=<sp/>bottom<sp/>&amp;&amp;<sp/>worldY<sp/>&lt;=<sp/>top);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210" refid="classMenuScene_1a1e7a918b520265294fd74c1d9d086795" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a1e7a918b520265294fd74c1d9d086795" kindref="member">MenuScene::RenderOption</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structMenuScene_1_1MenuOption" kindref="compound">MenuOption</ref>&amp;<sp/>option,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isSelected){</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isHovered<sp/>=<sp/><ref refid="classMenuScene_1a329504c5161fa328040b3f3092df2bae" kindref="member">IsMouseOverOption</ref>(option);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/>texture<sp/>=<sp/>(isSelected<sp/>||<sp/>isHovered)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>?<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a351d76fc84f6056639f56d93556cc902" kindref="member">SelectedTexture</ref></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1ae7196230c8420e3bbaaded73df24c0a1" kindref="member">NormalTexture</ref>;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!texture){</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1a5a5a1c297ed72ab2f850d0d01ae00aaa" kindref="member">Log::Warning</ref>(</highlight><highlight class="stringliteral">&quot;RenderOption:<sp/>texture<sp/>is<sp/>null<sp/>for<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>option.<ref refid="structMenuScene_1_1MenuOption_1a2be42da1d855215326a50ed1b684c4c4" kindref="member">Label</ref>);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Build<sp/>model<sp/>matrix</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref><sp/>model<sp/>=<sp/><ref refid="classMatrix4_1a35fb272e82fbfc17cdf2d75c858f5da7" kindref="member">Matrix4::Translation</ref>(option.<ref refid="structMenuScene_1_1MenuOption_1ab738cef47764835c217be65e8ad28a71" kindref="member">Position</ref>);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>aspect<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(texture-&gt;GetWidth())<sp/>/<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(texture-&gt;GetHeight());</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height<sp/>=<sp/>1.5f;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width<sp/>=<sp/>height<sp/>*<sp/>aspect;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>model<sp/>=<sp/>model<sp/>*<sp/><ref refid="classMatrix4_1aa3a30984ce9f309c23827d5e1cde0fdc" kindref="member">Matrix4::Scale</ref>(<ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>(width,<sp/>height,<sp/>1.0f));</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//View<sp/>and<sp/>projection<sp/>(fixed<sp/>orthographic)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref><sp/>view<sp/>=<sp/><ref refid="classMatrix4_1ae114a47efddacad2207eadac5f532098" kindref="member">Matrix4::Identity</ref>();</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMatrix4" kindref="compound">Matrix4</ref><sp/>projection<sp/>=<sp/><ref refid="classMatrix4_1a8cc70f5111adc0c13fed0521a31b80b6" kindref="member">Matrix4::Orthographic</ref>(-10.0f,<sp/>10.0f,<sp/>-10.0f,<sp/>10.0f,<sp/>-1.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classRenderer_1a71992cf4acf88e30dd0abaaa6cda23b4" kindref="member">Renderer::DrawTexturedQuad</ref>(<ref refid="classMenuScene_1a9efeacffbcd00dea280ccf3703321f71" kindref="member">m_Shader</ref>,<sp/><ref refid="classMenuScene_1aee526af82a75d255d1b6fd6d3d499e92" kindref="member">m_VertexArray</ref>,<sp/><ref refid="classMenuScene_1af61d24fa8a94de5b0282fce6af54e0c4" kindref="member">m_IndexBuffer</ref>,</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*texture,<sp/>model,<sp/>view,<sp/>projection,<sp/>1.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="classMenuScene_1a46a3159d25cbdd8710abf3a1a67bfca0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMenuScene_1a46a3159d25cbdd8710abf3a1a67bfca0" kindref="member">MenuScene::HandleSelection</ref>(){</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>.empty())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>selected<sp/>=<sp/><ref refid="classMenuScene_1aae06e56f01f32bab0f9b7262dad0f393" kindref="member">m_Options</ref>[<ref refid="classMenuScene_1aaa5474b6830601a4a96a15426cc915c7" kindref="member">m_SelectedOption</ref>].Label;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(selected<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;Play&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Starting<sp/>Demo<sp/>2D...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>selector<sp/>=<sp/>std::make_unique&lt;LevelSelectorScene&gt;(</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aafe8fc8c4b77426e8edbc443283c6dda" kindref="member">m_SceneManager</ref>,<sp/><ref refid="classMenuScene_1a9efeacffbcd00dea280ccf3703321f71" kindref="member">m_Shader</ref>,<sp/><ref refid="classMenuScene_1aee526af82a75d255d1b6fd6d3d499e92" kindref="member">m_VertexArray</ref>,</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1af61d24fa8a94de5b0282fce6af54e0c4" kindref="member">m_IndexBuffer</ref>,<sp/><ref refid="classMenuScene_1a42392ac9ca92d2c766daef724b6ab131" kindref="member">m_Camera</ref>,<sp/><ref refid="classMenuScene_1a46e28a18551c53cff67144bb9ffe6057" kindref="member">m_LineShader</ref>);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMenuScene_1aafe8fc8c4b77426e8edbc443283c6dda" kindref="member">m_SceneManager</ref>.<ref refid="classSceneManager_1ae0003097b2a7ccd3f63758fcf8734bfd" kindref="member">SetScene</ref>(std::move(selector));</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(selected<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;Options&quot;</highlight><highlight class="normal">){</highlight></codeline>
 <codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classLog_1abc92ed5074f74feecedfac4f6dfa592c" kindref="member">Log::Info</ref>(</highlight><highlight class="stringliteral">&quot;Options<sp/>menu<sp/>to<sp/>be<sp/>implemented<sp/>later.&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(selected<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;Exit&quot;</highlight><highlight class="normal">){</highlight></codeline>

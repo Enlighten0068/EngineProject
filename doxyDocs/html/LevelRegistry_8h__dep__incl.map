@@ -1,0 +1,15 @@
+<map id="engine/level/LevelRegistry.h" name="engine/level/LevelRegistry.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="384,5,589,33"/>
+<area shape="rect" id="Node000002" href="$LevelMacros_8h.html" title=" " alt="" coords="154,90,353,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="433,40,292,91,290,86,438,37"/>
+<area shape="rect" id="Node000006" href="$LevelRegistry_8cpp.html" title=" " alt="" coords="377,90,596,117"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="488,47,489,91,484,88,485,51"/>
+<area shape="rect" id="Node000007" href="$LevelSelectorScene_8cpp.html" title=" " alt="" coords="621,81,814,126"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="538,36,659,80,653,81,538,41"/>
+<area shape="rect" id="Node000003" href="$Level1_8cpp.html" title=" " alt="" coords="5,174,155,218"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="217,124,123,175,120,171,212,125"/>
+<area shape="rect" id="Node000004" href="$Level2_8cpp.html" title=" " alt="" coords="179,174,328,218"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="255,131,256,175,251,172,251,134"/>
+<area shape="rect" id="Node000005" href="$Level3_8cpp.html" title=" " alt="" coords="352,174,501,218"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="293,122,388,173,382,173,291,127"/>
+</map>

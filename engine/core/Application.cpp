@@ -224,7 +224,8 @@ void Application::ProcessEvents(){
  * @brief Updates all systems for the current frame.
  *
  * This includes the gamepad state and the current scene (which updates
- * entities, physics, AI)
+ * entities, physics, AI).
+ * Also handles the global F11 hotkey for toggling fullscreen.
  */
 void Application::Update(){
     //Global hotkey: F11 = toggle fullscreen

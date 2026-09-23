@@ -29,15 +29,20 @@
     <includedby refid="Texture2D_8cpp" local="yes">engine/graphics/Texture2D.cpp</includedby>
     <includedby refid="VertexArray_8cpp" local="yes">engine/graphics/VertexArray.cpp</includedby>
     <includedby refid="VertexBuffer_8cpp" local="yes">engine/graphics/VertexBuffer.cpp</includedby>
+    <includedby refid="LevelRegistry_8cpp" local="yes">engine/level/LevelRegistry.cpp</includedby>
+    <includedby refid="LevelSelectorScene_8cpp" local="yes">engine/level/LevelSelectorScene.cpp</includedby>
     <includedby refid="SDLWindow_8cpp" local="yes">engine/platform/sdl/SDLWindow.cpp</includedby>
     <includedby refid="Renderer_8cpp" local="yes">engine/renderer/Renderer.cpp</includedby>
     <includedby refid="ResourceManager_8cpp" local="yes">engine/resources/ResourceManager.cpp</includedby>
+    <includedby refid="BaseLevelScene_8cpp" local="yes">engine/scene/BaseLevelScene.cpp</includedby>
     <includedby refid="Camera2D_8cpp" local="yes">engine/scene/Camera2D.cpp</includedby>
     <includedby refid="ECSScene_8cpp" local="yes">engine/scene/ECSScene.cpp</includedby>
     <includedby refid="GameWorld_8cpp" local="yes">engine/scene/GameWorld.cpp</includedby>
+    <includedby refid="HUD_8cpp" local="yes">engine/scene/HUD.cpp</includedby>
     <includedby refid="MenuScene_8cpp" local="yes">engine/scene/MenuScene.cpp</includedby>
     <includedby refid="SceneManager_8cpp" local="yes">engine/scene/SceneManager.cpp</includedby>
     <includedby refid="EnemySystem_8h" local="yes">engine/systems/EnemySystem.h</includedby>
+    <includedby refid="LevelSystem_8cpp" local="yes">engine/systems/LevelSystem.cpp</includedby>
     <includedby refid="RenderSystem_8h" local="yes">engine/systems/RenderSystem.h</includedby>
     <incdepgraph>
       <node id="1">
@@ -116,16 +121,14 @@
         <label>engine/demo/Demo2DFixedScene.cpp</label>
         <link refid="Demo2DFixedScene_8cpp"/>
       </node>
-      <node id="32">
+      <node id="36">
         <label>engine/demo/Demo2DFixedScene.h</label>
         <link refid="Demo2DFixedScene_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
       </node>
       <node id="12">
@@ -187,11 +190,11 @@
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
         <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
@@ -205,7 +208,17 @@
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
         <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
         </childnode>
       </node>
       <node id="16">
@@ -240,53 +253,83 @@
         <label>engine/graphics/VertexBuffer.cpp</label>
         <link refid="VertexBuffer_8cpp"/>
       </node>
+      <node id="24">
+        <label>engine/level/LevelRegistry.cpp</label>
+        <link refid="LevelRegistry_8cpp"/>
+      </node>
+      <node id="25">
+        <label>engine/level/LevelSelectorScene.cpp</label>
+        <link refid="LevelSelectorScene_8cpp"/>
+      </node>
       <node id="14">
         <label>engine/platform/sdl/SDLWindow.cpp</label>
         <link refid="SDLWindow_8cpp"/>
       </node>
-      <node id="24">
+      <node id="26">
         <label>engine/renderer/Renderer.cpp</label>
         <link refid="Renderer_8cpp"/>
       </node>
-      <node id="25">
+      <node id="27">
         <label>engine/resources/ResourceManager.cpp</label>
         <link refid="ResourceManager_8cpp"/>
       </node>
-      <node id="26">
+      <node id="28">
+        <label>engine/scene/BaseLevelScene.cpp</label>
+        <link refid="BaseLevelScene_8cpp"/>
+      </node>
+      <node id="38">
+        <label>engine/scene/BaseLevelScene.h</label>
+        <link refid="BaseLevelScene_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
         <label>engine/scene/Camera2D.cpp</label>
         <link refid="Camera2D_8cpp"/>
       </node>
-      <node id="27">
+      <node id="30">
         <label>engine/scene/ECSScene.cpp</label>
         <link refid="ECSScene_8cpp"/>
       </node>
-      <node id="28">
+      <node id="31">
         <label>engine/scene/GameWorld.cpp</label>
         <link refid="GameWorld_8cpp"/>
       </node>
-      <node id="29">
+      <node id="32">
+        <label>engine/scene/HUD.cpp</label>
+        <link refid="HUD_8cpp"/>
+      </node>
+      <node id="33">
         <label>engine/scene/MenuScene.cpp</label>
         <link refid="MenuScene_8cpp"/>
       </node>
-      <node id="30">
+      <node id="34">
         <label>engine/scene/SceneManager.cpp</label>
         <link refid="SceneManager_8cpp"/>
       </node>
-      <node id="31">
+      <node id="35">
         <label>engine/systems/EnemySystem.h</label>
         <link refid="EnemySystem_8h"/>
-        <childnode refid="32" relation="include">
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
         </childnode>
       </node>
-      <node id="34">
+      <node id="39">
+        <label>engine/systems/LevelSystem.cpp</label>
+        <link refid="LevelSystem_8cpp"/>
+      </node>
+      <node id="40">
         <label>engine/systems/RenderSystem.h</label>
         <link refid="RenderSystem_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="33">
+      <node id="37">
         <label>game/src/main.cpp</label>
         <link refid="main_8cpp"/>
       </node>

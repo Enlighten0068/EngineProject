@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/systems/EnemySystem.h" line="46" column="17" bodyfile="engine/systems/EnemySystem.h" bodystart="46" bodyend="129"/>
+        <location file="engine/systems/EnemySystem.h" line="46" column="17" bodyfile="engine/systems/EnemySystem.h" bodystart="46" bodyend="135"/>
       </memberdef>
       <memberdef kind="function" id="classEnemySystem_1ae6879f0cea50154a47a3ba26eec29bde" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/systems/EnemySystem.h" line="143" column="17" bodyfile="engine/systems/EnemySystem.h" bodystart="143" bodyend="153"/>
+        <location file="engine/systems/EnemySystem.h" line="149" column="17" bodyfile="engine/systems/EnemySystem.h" bodystart="149" bodyend="159"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -171,7 +171,7 @@
         <link refid="classEnemySystem"/>
       </node>
     </collaborationgraph>
-    <location file="engine/systems/EnemySystem.h" line="28" column="1" bodyfile="engine/systems/EnemySystem.h" bodystart="28" bodyend="154"/>
+    <location file="engine/systems/EnemySystem.h" line="28" column="1" bodyfile="engine/systems/EnemySystem.h" bodystart="28" bodyend="160"/>
     <listofallmembers>
       <member refid="classEnemySystem_1ae6879f0cea50154a47a3ba26eec29bde" prot="public" virt="non-virtual"><scope>EnemySystem</scope><name>CheckCollision</name></member>
       <member refid="classEnemySystem_1a122dd4911d2670f242ec120e6a82081e" prot="public" virt="non-virtual"><scope>EnemySystem</scope><name>Update</name></member>

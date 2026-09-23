@@ -1,0 +1,200 @@
+\doxysection{HUD Class Reference}
+\hypertarget{classHUD}{}\label{classHUD}\index{HUD@{HUD}}
+
+
+Simple heads-\/up display overlay for rendering text on top of scenes.  
+
+
+
+
+{\ttfamily \+\#include $<$HUD.\+h$>$}
+
+
+
+Collaboration diagram for HUD:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classHUD__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classHUD_a568b8ee1591f9ba3ed36ae05966f6b56}{HUD}} ()
+\item 
+\doxymbox{\hyperlink{classHUD_a1e1140a40e4bf72a45acf9f7b2119323}{\texorpdfstring{$\sim$}{\string~}\+HUD}} ()
+\item 
+bool \doxymbox{\hyperlink{classHUD_a5da52e1cbe872f0dcf9f30d5fc72ba13}{Initialize}} (const std::\+string \&font\+Path, int font\+Size)
+\begin{DoxyCompactList}\small\item\em Initializes the \doxylink{classHUD}{HUD} with a font. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classHUD_ac74213a2dfa97b3bd1559943a23bdfcd}{Shutdown}} ()
+\begin{DoxyCompactList}\small\item\em Releases all \doxylink{classHUD}{HUD} resources. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classHUD_a34e6d4715c4b95b36e01aed52d23fa61}{Render}} (const std::\+vector$<$ std::\+string $>$ \&lines, \doxymbox{\hyperlink{classShader}{Shader}} \&shader, \doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&va, \doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&ib, int window\+Width, int window\+Height)
+\begin{DoxyCompactList}\small\item\em Renders text lines at the top-\/right corner of the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \doxymbox{\hyperlink{classHUD_a86921d3d206d90f46f39365a3acc65e5}{Get\+Or\+Create\+Texture}} (const std::\+string \&text, const SDL\+\_\+\+Color \&color)
+\begin{DoxyCompactList}\small\item\em Returns a cached texture for the given text/\+color, creating it if needed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classFont}{Font}} $>$ \doxymbox{\hyperlink{classHUD_afde486af9f51f3cefddf0e9e00c62d62}{m\+\_\+\+Font}}
+\item 
+std::\+unordered\+\_\+map$<$ std::\+string, std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ $>$ \doxymbox{\hyperlink{classHUD_a8a94f0bf18f8629246835d4e1d48d042}{m\+\_\+\+Texture\+Cache}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple heads-\/up display overlay for rendering text on top of scenes. 
+
+The \doxylink{classHUD}{HUD} renders a list of text lines at the top-\/right corner of the screen using screen-\/space pixel coordinates. Text textures are cached by content (text + color) to avoid re-\/rasterizing the same string every frame.
+
+Rendered by \doxylink{classApplication}{Application} after the scene, so it always appears on top.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classScene_afb756dd8b7583f4b06a000d8157c7952}{Scene::\+\+Get\+HUDLines}, \doxylink{classApplication_a6f40ffdb97f3a938ae19ea4eae4882ed}{Application::\+\+Render} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{HUD_8h_source_l00024}{24}} of file \doxymbox{\hyperlink{HUD_8h_source}{HUD.\+h}}.
+
+
+
+\label{classHUD_doc-constructors}
+\Hypertarget{classHUD_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHUD_a568b8ee1591f9ba3ed36ae05966f6b56}\index{HUD@{HUD}!HUD@{HUD}}
+\index{HUD@{HUD}!HUD@{HUD}}
+\doxysubsubsection{\texorpdfstring{HUD()}{HUD()}}
+{\footnotesize\ttfamily \label{classHUD_a568b8ee1591f9ba3ed36ae05966f6b56} 
+HUD::\+\+HUD (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classHUD_a1e1140a40e4bf72a45acf9f7b2119323}\index{HUD@{HUD}!````~HUD@{\texorpdfstring{$\sim$}{\string~}HUD}}
+\index{````~HUD@{\texorpdfstring{$\sim$}{\string~}HUD}!HUD@{HUD}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}HUD()}{\string~HUD()}}
+{\footnotesize\ttfamily \label{classHUD_a1e1140a40e4bf72a45acf9f7b2119323} 
+HUD::\+\texorpdfstring{$\sim$}{\string~}\+HUD (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{HUD_8cpp_source_l00018}{18}} of file \doxymbox{\hyperlink{HUD_8cpp_source}{HUD.\+cpp}}.
+
+
+
+\label{classHUD_doc-func-members}
+\Hypertarget{classHUD_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHUD_a86921d3d206d90f46f39365a3acc65e5}\index{HUD@{HUD}!GetOrCreateTexture@{GetOrCreateTexture}}
+\index{GetOrCreateTexture@{GetOrCreateTexture}!HUD@{HUD}}
+\doxysubsubsection{\texorpdfstring{GetOrCreateTexture()}{GetOrCreateTexture()}}
+{\footnotesize\ttfamily \label{classHUD_a86921d3d206d90f46f39365a3acc65e5} 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ HUD::\+\+Get\+Or\+Create\+Texture (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{text}{, }\item[{const SDL\+\_\+\+Color \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns a cached texture for the given text/\+color, creating it if needed. 
+
+Returns a cached texture for the given text/\+color. 
+
+Definition at line \doxymbox{\hyperlink{HUD_8cpp_source_l00046}{46}} of file \doxymbox{\hyperlink{HUD_8cpp_source}{HUD.\+cpp}}.
+
+\Hypertarget{classHUD_a5da52e1cbe872f0dcf9f30d5fc72ba13}\index{HUD@{HUD}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!HUD@{HUD}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{classHUD_a5da52e1cbe872f0dcf9f30d5fc72ba13} 
+bool HUD::\+\+Initialize (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{font\+Path}{, }\item[{int}]{font\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the \doxylink{classHUD}{HUD} with a font. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font\+Path} & Path to the TTF font file. \\
+\hline
+{\em font\+Size} & \doxylink{classFont}{Font} size in points. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if initialized successfully. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{HUD_8cpp_source_l00024}{24}} of file \doxymbox{\hyperlink{HUD_8cpp_source}{HUD.\+cpp}}.
+
+\Hypertarget{classHUD_a34e6d4715c4b95b36e01aed52d23fa61}\index{HUD@{HUD}!Render@{Render}}
+\index{Render@{Render}!HUD@{HUD}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{classHUD_a34e6d4715c4b95b36e01aed52d23fa61} 
+void HUD::\+\+Render (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ std::\+string $>$ \&}]{lines}{, }\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{shader}{, }\item[{\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&}]{va}{, }\item[{\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&}]{ib}{, }\item[{int}]{window\+Width}{, }\item[{int}]{window\+Height}{}\end{DoxyParamCaption})}
+
+
+
+Renders text lines at the top-\/right corner of the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lines} & Text lines (top to bottom). \\
+\hline
+{\em shader} & \doxylink{classShader}{Shader} used to render text. \\
+\hline
+{\em va} & Vertex array. \\
+\hline
+{\em ib} & Index buffer. \\
+\hline
+{\em window\+Width} & Current window width in pixels. \\
+\hline
+{\em window\+Height} & Current window height in pixels. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{HUD_8cpp_source_l00080}{80}} of file \doxymbox{\hyperlink{HUD_8cpp_source}{HUD.\+cpp}}.
+
+\Hypertarget{classHUD_ac74213a2dfa97b3bd1559943a23bdfcd}\index{HUD@{HUD}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!HUD@{HUD}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily \label{classHUD_ac74213a2dfa97b3bd1559943a23bdfcd} 
+void HUD::\+\+Shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Releases all \doxylink{classHUD}{HUD} resources. 
+
+
+
+Definition at line \doxymbox{\hyperlink{HUD_8cpp_source_l00038}{38}} of file \doxymbox{\hyperlink{HUD_8cpp_source}{HUD.\+cpp}}.
+
+
+
+\label{classHUD_doc-variable-members}
+\Hypertarget{classHUD_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classHUD_afde486af9f51f3cefddf0e9e00c62d62}\index{HUD@{HUD}!m\_Font@{m\_Font}}
+\index{m\_Font@{m\_Font}!HUD@{HUD}}
+\doxysubsubsection{\texorpdfstring{m\_Font}{m\_Font}}
+{\footnotesize\ttfamily \label{classHUD_afde486af9f51f3cefddf0e9e00c62d62} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classFont}{Font}}$>$ HUD::\+m\+\_\+\+Font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{HUD_8h_source_l00056}{56}} of file \doxymbox{\hyperlink{HUD_8h_source}{HUD.\+h}}.
+
+\Hypertarget{classHUD_a8a94f0bf18f8629246835d4e1d48d042}\index{HUD@{HUD}!m\_TextureCache@{m\_TextureCache}}
+\index{m\_TextureCache@{m\_TextureCache}!HUD@{HUD}}
+\doxysubsubsection{\texorpdfstring{m\_TextureCache}{m\_TextureCache}}
+{\footnotesize\ttfamily \label{classHUD_a8a94f0bf18f8629246835d4e1d48d042} 
+std::\+unordered\+\_\+map$<$std::\+string, std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classTexture2D}{Texture2D}}$>$ $>$ HUD::\+m\+\_\+\+Texture\+Cache\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{HUD_8h_source_l00057}{57}} of file \doxymbox{\hyperlink{HUD_8h_source}{HUD.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+scene/\doxymbox{\hyperlink{HUD_8h}{HUD.\+h}}\item 
+engine/\+scene/\doxymbox{\hyperlink{HUD_8cpp}{HUD.\+cpp}}\end{DoxyCompactItemize}

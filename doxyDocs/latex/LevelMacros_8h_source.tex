@@ -1,0 +1,33 @@
+\doxysection{Level\+Macros.\+h}
+\hypertarget{LevelMacros_8h_source}{}\label{LevelMacros_8h_source}\index{engine/level/LevelMacros.h@{engine/level/LevelMacros.h}}
+\doxymbox{\hyperlink{LevelMacros_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{LevelRegistry_8h}{level/LevelRegistry.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00019}\doxymbox{\hyperlink{LevelMacros_8h_abffe427d7a82d716aaeb59f206234302}{00019}}\ \textcolor{preprocessor}{\#define\ REGISTER\_LEVEL(id,\ displayName,\ description,\ cameraMode,\ builderFn)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00020}00020\ \textcolor{preprocessor}{namespace\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00021}00021\ \textcolor{preprocessor}{\ \ \ \ struct\ LevelRegistrar\_\#\#id\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00022}00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ LevelRegistrar\_\#\#id()\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00023}00023\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ LevelRegistry::GetInstance().Register(\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00024}00024\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ displayName,\ description,\ builderFn,\ cameraMode,\ false\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00025}00025\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00026}00026\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00027}00027\ \textcolor{preprocessor}{\ \ \ \ \};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00028}00028\ \textcolor{preprocessor}{\ \ \ \ static\ LevelRegistrar\_\#\#id\ g\_LevelRegistrar\_\#\#id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00029}00029\ \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00036}\doxymbox{\hyperlink{LevelMacros_8h_ae6304d68c85873f6efff15e730363b4c}{00036}}\ \textcolor{preprocessor}{\#define\ REGISTER\_LEVEL\_NEW(id,\ displayName,\ description,\ cameraMode,\ builderFn)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00037}00037\ \textcolor{preprocessor}{namespace\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00038}00038\ \textcolor{preprocessor}{\ \ \ \ struct\ LevelRegistrar\_\#\#id\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00039}00039\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ LevelRegistrar\_\#\#id()\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00040}00040\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ LevelRegistry::GetInstance().Register(\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00041}00041\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ displayName,\ description,\ builderFn,\ cameraMode,\ true\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00042}00042\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00043}00043\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00044}00044\ \textcolor{preprocessor}{\ \ \ \ \};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00045}00045\ \textcolor{preprocessor}{\ \ \ \ static\ LevelRegistrar\_\#\#id\ g\_LevelRegistrar\_\#\#id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{LevelMacros_8h_source_l00046}00046\ \textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}

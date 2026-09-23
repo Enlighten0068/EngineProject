@@ -1,0 +1,108 @@
+\doxysection{Level\+Definition Struct Reference}
+\hypertarget{structLevelDefinition}{}\label{structLevelDefinition}\index{LevelDefinition@{LevelDefinition}}
+
+
+Definition of a level: metadata + builder function.  
+
+
+
+
+{\ttfamily \+\#include $<$Level\+Registry.\+h$>$}
+
+
+
+Collaboration diagram for Level\+Definition:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{structLevelDefinition__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+string \doxymbox{\hyperlink{structLevelDefinition_a8e92f9b20f1eb1a9ac44de804290b4e8}{Name}}
+\item 
+std::\+string \doxymbox{\hyperlink{structLevelDefinition_aa41fb86eb1255c3ae2ac786549a92560}{Description}}
+\item 
+std::\+function$<$ void(\doxymbox{\hyperlink{classLevelSystem}{Level\+System}} \&)$>$ \doxymbox{\hyperlink{structLevelDefinition_a1391bd366813e06226f8229c49f9bfbb}{Build}}
+\item 
+\doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35}{Camera\+Mode}} \doxymbox{\hyperlink{structLevelDefinition_a73045130a392c3e2a9ee42d6c7b6c137}{Mode}} = \doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35a4457d440870ad6d42bab9082d9bf9b61}{Camera\+Mode::\+\+Fixed}}
+\item 
+bool \doxymbox{\hyperlink{structLevelDefinition_a22664e95b2c4a39e90776824845fafd8}{Is\+New}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of a level: metadata + builder function. 
+
+Each level is described by a display name, a short description, a builder function (that fills a \doxylink{classLevelSystem}{Level\+System}), and a camera mode.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classLevelRegistry}{Level\+Registry}, \doxylink{LevelMacros_8h_abffe427d7a82d716aaeb59f206234302}{REGISTER\+\_\+\+LEVEL} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8h_source_l00017}{17}} of file \doxymbox{\hyperlink{LevelRegistry_8h_source}{Level\+Registry.\+h}}.
+
+
+
+\label{structLevelDefinition_doc-variable-members}
+\Hypertarget{structLevelDefinition_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structLevelDefinition_a1391bd366813e06226f8229c49f9bfbb}\index{LevelDefinition@{LevelDefinition}!Build@{Build}}
+\index{Build@{Build}!LevelDefinition@{LevelDefinition}}
+\doxysubsubsection{\texorpdfstring{Build}{Build}}
+{\footnotesize\ttfamily \label{structLevelDefinition_a1391bd366813e06226f8229c49f9bfbb} 
+std::\+function$<$void(\doxymbox{\hyperlink{classLevelSystem}{Level\+System}}\&)$>$ Level\+Definition::\+\+Build}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8h_source_l00020}{20}} of file \doxymbox{\hyperlink{LevelRegistry_8h_source}{Level\+Registry.\+h}}.
+
+\Hypertarget{structLevelDefinition_aa41fb86eb1255c3ae2ac786549a92560}\index{LevelDefinition@{LevelDefinition}!Description@{Description}}
+\index{Description@{Description}!LevelDefinition@{LevelDefinition}}
+\doxysubsubsection{\texorpdfstring{Description}{Description}}
+{\footnotesize\ttfamily \label{structLevelDefinition_aa41fb86eb1255c3ae2ac786549a92560} 
+std::\+string Level\+Definition::\+\+Description}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8h_source_l00019}{19}} of file \doxymbox{\hyperlink{LevelRegistry_8h_source}{Level\+Registry.\+h}}.
+
+\Hypertarget{structLevelDefinition_a22664e95b2c4a39e90776824845fafd8}\index{LevelDefinition@{LevelDefinition}!IsNew@{IsNew}}
+\index{IsNew@{IsNew}!LevelDefinition@{LevelDefinition}}
+\doxysubsubsection{\texorpdfstring{IsNew}{IsNew}}
+{\footnotesize\ttfamily \label{structLevelDefinition_a22664e95b2c4a39e90776824845fafd8} 
+bool Level\+Definition::\+\+Is\+New = false}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8h_source_l00022}{22}} of file \doxymbox{\hyperlink{LevelRegistry_8h_source}{Level\+Registry.\+h}}.
+
+\Hypertarget{structLevelDefinition_a73045130a392c3e2a9ee42d6c7b6c137}\index{LevelDefinition@{LevelDefinition}!Mode@{Mode}}
+\index{Mode@{Mode}!LevelDefinition@{LevelDefinition}}
+\doxysubsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily \label{structLevelDefinition_a73045130a392c3e2a9ee42d6c7b6c137} 
+\doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35}{Camera\+Mode}} Level\+Definition::\+\+Mode = \doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35a4457d440870ad6d42bab9082d9bf9b61}{Camera\+Mode::\+\+Fixed}}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8h_source_l00021}{21}} of file \doxymbox{\hyperlink{LevelRegistry_8h_source}{Level\+Registry.\+h}}.
+
+\Hypertarget{structLevelDefinition_a8e92f9b20f1eb1a9ac44de804290b4e8}\index{LevelDefinition@{LevelDefinition}!Name@{Name}}
+\index{Name@{Name}!LevelDefinition@{LevelDefinition}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{structLevelDefinition_a8e92f9b20f1eb1a9ac44de804290b4e8} 
+std::\+string Level\+Definition::\+\+Name}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelRegistry_8h_source_l00018}{18}} of file \doxymbox{\hyperlink{LevelRegistry_8h_source}{Level\+Registry.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+engine/\+level/\doxymbox{\hyperlink{LevelRegistry_8h}{Level\+Registry.\+h}}\end{DoxyCompactItemize}

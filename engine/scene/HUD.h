@@ -14,10 +14,12 @@
  * @brief Simple heads-up display overlay for rendering text on top of scenes.
  *
  * The HUD renders a list of text lines at the top-right corner of the screen
- * using screen-space pixel coordinates. Text textures are cached by content.
+ * using screen-space pixel coordinates. Text textures are cached by content
+ * (text + color) to avoid re-rasterizing the same string every frame.
  *
- * @note Rendered by Application after the scene, so it always appears on top.
- * @see Scene::GetHUDLines
+ * Rendered by Application after the scene, so it always appears on top.
+ *
+ * @see Scene::GetHUDLines, Application::Render
  */
 class HUD{
 public:
@@ -51,9 +53,12 @@ public:
                 int windowWidth, int windowHeight);
 
 private:
-    std::unique_ptr<Font> m_Font;
-    std::unordered_map<std::string, std::shared_ptr<Texture2D>> m_TextureCache;
+    std::unique_ptr<Font> m_Font; //Font used for HUD text
+    std::unordered_map<std::string, std::shared_ptr<Texture2D>> m_TextureCache; //Cache of rendered text textures
 
+    /**
+     * @brief Returns a cached texture for the given text/color, creating it if needed.
+     */
     std::shared_ptr<Texture2D> GetOrCreateTexture(const std::string& text,
                                                   const SDL_Color& color);
 };

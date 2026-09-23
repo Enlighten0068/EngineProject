@@ -18,6 +18,11 @@ m_IndexBuffer(ib), m_Camera(camera), m_LineShader(lineShader){}
 
 LevelSelectorScene::~LevelSelectorScene(){ OnExit(); }
 
+/**
+ * @brief Called when the scene becomes active.
+ *
+ * Loads the font and builds the list of options from the LevelRegistry.
+ */
 void LevelSelectorScene::OnEnter(){
     Log::Info("Entering LevelSelectorScene");
 
@@ -36,6 +41,7 @@ void LevelSelectorScene::OnEnter(){
         return;
     }
 
+    //Layout
     float startY = 3.0f;
     float spacing = 2.0f;
 
@@ -61,11 +67,20 @@ void LevelSelectorScene::OnEnter(){
     m_SelectedOption = 0;
 }
 
+/**
+ * @brief Called when the scene is exited.
+ */
 void LevelSelectorScene::OnExit(){
     m_Options.clear();
     m_Font.reset();
 }
 
+/**
+ * @brief Creates a texture from rendered text.
+ * @param text The string to render.
+ * @param color The color of the text.
+ * @return Shared pointer to the created Texture2D, or nullptr on failure.
+ */
 std::shared_ptr<Texture2D> LevelSelectorScene::CreateTextTexture(const std::string& text,
                                                                  const SDL_Color& color){
     if(!m_Font || !m_Font->IsLoaded()) return nullptr;
@@ -87,6 +102,10 @@ std::shared_ptr<Texture2D> LevelSelectorScene::CreateTextTexture(const std::stri
     return texture;
 }
 
+/**
+ * @brief Updates navigation and selection.
+ * @param deltaTime Time elapsed since the last frame (unused).
+ */
 void LevelSelectorScene::Update(float deltaTime){
     if(m_Options.empty()) return;
 
@@ -133,6 +152,9 @@ void LevelSelectorScene::Update(float deltaTime){
 
 }
 
+/**
+ * @brief Renders the level selector.
+ */
 void LevelSelectorScene::Render(){
     glClearColor(0.1f, 0.1f, 0.2f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -143,6 +165,11 @@ void LevelSelectorScene::Render(){
     }
 }
 
+/**
+ * @brief Checks if the mouse is over a menu option.
+ * @param option The option to check.
+ * @return true if the mouse is over the option.
+ */
 bool LevelSelectorScene::IsMouseOverOption(const Option& option) const{
     Vector2D mousePos = Input::GetMousePosition();
     int winWidth = Input::GetWindowWidth();
@@ -161,6 +188,11 @@ bool LevelSelectorScene::IsMouseOverOption(const Option& option) const{
     return (worldX >= left && worldX <= right && worldY >= bottom && worldY <= top);
 }
 
+/**
+ * @brief Renders a single option.
+ * @param option The option to render.
+ * @param isSelected Whether this option is currently selected.
+ */
 void LevelSelectorScene::RenderOption(const Option& option, bool isSelected){
     bool isHovered = IsMouseOverOption(option);
     auto texture = (isSelected || isHovered) ? option.SelectedTexture : option.NormalTexture;
@@ -179,6 +211,9 @@ void LevelSelectorScene::RenderOption(const Option& option, bool isSelected){
                             *texture, model, view, projection, 1.0f, 1.0f);
 }
 
+/**
+ * @brief Loads the selected level.
+ */
 void LevelSelectorScene::HandleSelection(){
     if(m_Options.empty()) return;
 

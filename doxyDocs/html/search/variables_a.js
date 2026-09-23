@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['texture_0',['Texture',['../structComponents_1_1SpriteRenderer.html#a7f430566c6a661fa1973ad364f6ba744',1,'Components::SpriteRenderer::Texture'],['../structDemo2DFixedScene_1_1EnemyDefinition.html#a2c9b9c09496bb2ba40bf1e865cd1c797',1,'Demo2DFixedScene::EnemyDefinition::Texture']]]
+  ['rotation_0',['Rotation',['../structComponents_1_1Transform.html#abbdaf3e3edb9be26b24c6a9a902f3809',1,'Components::Transform::Rotation'],['../structTransform.html#a076925ea681b074978cdfc3d20aa51fa',1,'Transform::Rotation']]]
 ];

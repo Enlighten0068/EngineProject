@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classLevelRegistry" kind="class" language="C++" prot="public">
+    <compoundname>LevelRegistry</compoundname>
+    <includes refid="LevelRegistry_8h" local="no">LevelRegistry.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLevelRegistry_1a97aab666d43fb6bc3f6949de09831572" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structLevelDefinition" kindref="compound">LevelDefinition</ref> &gt;</type>
+        <definition>std::vector&lt;LevelDefinition&gt; LevelRegistry::m_Levels</definition>
+        <argsstring></argsstring>
+        <name>m_Levels</name>
+        <qualifiedname>LevelRegistry::m_Levels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelRegistry.h" line="66" column="17" bodyfile="engine/level/LevelRegistry.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classLevelRegistry_1a2395d481c0cfe381c2db11091d85ab9b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLevelRegistry" kindref="compound">LevelRegistry</ref> &amp;</type>
+        <definition>LevelRegistry &amp; LevelRegistry::GetInstance</definition>
+        <argsstring>()</argsstring>
+        <name>GetInstance</name>
+        <qualifiedname>LevelRegistry::GetInstance</qualifiedname>
+        <briefdescription>
+<para>Gets the singleton instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the singleton instance of <ref refid="classLevelRegistry" kindref="compound">LevelRegistry</ref>.</para>
+<para><simplesect kind="return"><para>Reference to the <ref refid="classLevelRegistry" kindref="compound">LevelRegistry</ref>.</para>
+</simplesect>
+<simplesect kind="return"><para>Reference to the <ref refid="classLevelRegistry" kindref="compound">LevelRegistry</ref> instance. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelRegistry.h" line="42" column="26" bodyfile="engine/level/LevelRegistry.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLevelRegistry_1ae261559d928372122d80ae2fb5ecbb6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LevelRegistry::Register</definition>
+        <argsstring>(const LevelDefinition &amp;def)</argsstring>
+        <name>Register</name>
+        <qualifiedname>LevelRegistry::Register</qualifiedname>
+        <param>
+          <type>const <ref refid="structLevelDefinition" kindref="compound">LevelDefinition</ref> &amp;</type>
+          <declname>def</declname>
+        </param>
+        <briefdescription>
+<para>Registers a level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Called automatically by the REGISTER_LEVEL macro at program startup.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level definition to register.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>def</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level definition to register. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelRegistry.h" line="51" column="10" bodyfile="engine/level/LevelRegistry.cpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelRegistry_1a1dfb168ad2c52c04cb02e8fd84e01c21" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="structLevelDefinition" kindref="compound">LevelDefinition</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; LevelDefinition &gt; &amp; LevelRegistry::GetLevels</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLevels</name>
+        <qualifiedname>LevelRegistry::GetLevels</qualifiedname>
+        <briefdescription>
+<para>Gets all registered levels, in registration order. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Const reference to the vector of level definitions. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelRegistry.h" line="57" column="23" bodyfile="engine/level/LevelRegistry.h" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelRegistry_1a35be3f015bea516ae71194573c4ec3fc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t LevelRegistry::Count</definition>
+        <argsstring>() const</argsstring>
+        <name>Count</name>
+        <qualifiedname>LevelRegistry::Count</qualifiedname>
+        <briefdescription>
+<para>Gets the number of registered levels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of levels. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelRegistry.h" line="63" column="12" bodyfile="engine/level/LevelRegistry.h" bodystart="63" bodyend="63"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLevelRegistry_1a558029dd2c44dbe83e72a3507bb86fff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LevelRegistry::LevelRegistry</definition>
+        <argsstring>()=default</argsstring>
+        <name>LevelRegistry</name>
+        <qualifiedname>LevelRegistry::LevelRegistry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelRegistry.h" line="65" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Global registry of all levels. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Levels register themselves at program startup via static initialization (see <ref refid="LevelMacros_8h" kindref="compound">LevelMacros.h</ref>). This allows adding new levels without modifying any central file — just create a new .cpp, add it to CMakeLists.txt, and the selector will list it automatically.</para>
+<para><simplesect kind="note"><para>This class is a singleton. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="LevelMacros_8h_1abffe427d7a82d716aaeb59f206234302" kindref="member">REGISTER_LEVEL</ref>, <ref refid="classLevelSelectorScene" kindref="compound">LevelSelectorScene</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>LevelRegistry</label>
+        <link refid="classLevelRegistry"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/level/LevelRegistry.h" line="36" column="1" bodyfile="engine/level/LevelRegistry.h" bodystart="36" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classLevelRegistry_1a35be3f015bea516ae71194573c4ec3fc" prot="public" virt="non-virtual"><scope>LevelRegistry</scope><name>Count</name></member>
+      <member refid="classLevelRegistry_1a2395d481c0cfe381c2db11091d85ab9b" prot="public" virt="non-virtual"><scope>LevelRegistry</scope><name>GetInstance</name></member>
+      <member refid="classLevelRegistry_1a1dfb168ad2c52c04cb02e8fd84e01c21" prot="public" virt="non-virtual"><scope>LevelRegistry</scope><name>GetLevels</name></member>
+      <member refid="classLevelRegistry_1a558029dd2c44dbe83e72a3507bb86fff" prot="private" virt="non-virtual"><scope>LevelRegistry</scope><name>LevelRegistry</name></member>
+      <member refid="classLevelRegistry_1a97aab666d43fb6bc3f6949de09831572" prot="private" virt="non-virtual"><scope>LevelRegistry</scope><name>m_Levels</name></member>
+      <member refid="classLevelRegistry_1ae261559d928372122d80ae2fb5ecbb6d" prot="public" virt="non-virtual"><scope>LevelRegistry</scope><name>Register</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -7,7 +7,7 @@ var searchData=
   ['endposition_4',['EndPosition',['../structComponents_1_1Patrol.html#a6c28272ebcacf6843b3c3ab318db5700',1,'Components::Patrol']]],
   ['enemy_5',['Enemy',['../structComponents_1_1Enemy.html',1,'Components']]],
   ['enemy_2eh_6',['Enemy.h',['../Enemy_8h.html',1,'']]],
-  ['enemydefinition_7',['EnemyDefinition',['../structDemo2DFixedScene_1_1EnemyDefinition.html',1,'Demo2DFixedScene']]],
+  ['enemydefinition_7',['EnemyDefinition',['../structDemo2DFixedScene_1_1EnemyDefinition.html',1,'Demo2DFixedScene::EnemyDefinition'],['../structLevelSystem_1_1EnemyDefinition.html',1,'LevelSystem::EnemyDefinition']]],
   ['enemydied_8',['EnemyDied',['../EventType_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faae59ed6209af6696edabb7eddf66bd2eb',1,'EventType.h']]],
   ['enemydiedevent_9',['EnemyDiedEvent',['../classEnemyDiedEvent.html',1,'EnemyDiedEvent'],['../classEnemyDiedEvent.html#a08d712390038a196578dcd7480787f6b',1,'EnemyDiedEvent::EnemyDiedEvent()']]],
   ['enemyevents_2eh_10',['EnemyEvents.h',['../EnemyEvents_8h.html',1,'']]],

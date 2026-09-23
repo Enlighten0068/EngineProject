@@ -40,6 +40,7 @@ public:
 
   /**
    * @brief Checks if the window is currently fullscreen.
+   * @return true if fullscreen, false otherwise.
    */
   bool IsFullscreen() const;
 

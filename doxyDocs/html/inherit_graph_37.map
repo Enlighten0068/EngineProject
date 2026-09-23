@@ -1,3 +1,13 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classSoundManager.html" title="Manager for loading, caching, and playing sound effects." alt="" coords="5,5,124,33"/>
+<area shape="rect" id="Node000000" href="$classScene.html" title="Abstract base class for all scenes in the engine." alt="" coords="5,109,66,137"/>
+<area shape="rect" id="Node000001" href="$classBaseLevelScene.html" title="Generic scene that builds its content from a LevelSystem builder function." alt="" coords="126,5,253,33"/>
+<area shape="poly" id="edge11_Node000000_Node000001" title=" " alt="" coords="55,95,81,68,112,44,140,32,136,35,115,48,85,72,60,99"/>
+<area shape="rect" id="Node000002" href="$classDemo2DFixedScene.html" title="Demo 2D Scene with a fixed camera and enemy stomping mechanics." alt="" coords="114,57,265,85"/>
+<area shape="poly" id="edge12_Node000000_Node000002" title=" " alt="" coords="79,106,148,83,145,88,82,111"/>
+<area shape="rect" id="Node000003" href="$classDemo2DScene.html" title="Demo 2D Scene with a dynamic camera that follows the player." alt="" coords="131,109,248,137"/>
+<area shape="poly" id="edge13_Node000000_Node000003" title=" " alt="" coords="80,121,132,122,128,125,82,126"/>
+<area shape="rect" id="Node000004" href="$classLevelSelectorScene.html" title="Scene that lists all registered levels and lets the player choose one." alt="" coords="115,161,264,189"/>
+<area shape="poly" id="edge14_Node000000_Node000004" title=" " alt="" coords="80,135,149,159,144,162,80,141"/>
+<area shape="rect" id="Node000005" href="$classMenuScene.html" title="Main menu scene with visual text rendering." alt="" coords="141,213,238,241"/>
+<area shape="poly" id="edge15_Node000000_Node000005" title=" " alt="" coords="58,147,85,174,115,198,143,214,138,214,112,203,81,178,57,152"/>
 </map>

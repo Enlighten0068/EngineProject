@@ -2,6 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="dir_c4b2e6fa44e5132327cff5b3242dfb0d" kind="dir">
     <compoundname>engine/scene</compoundname>
+    <innerfile refid="BaseLevelScene_8cpp">BaseLevelScene.cpp</innerfile>
+    <innerfile refid="BaseLevelScene_8h">BaseLevelScene.h</innerfile>
     <innerfile refid="Camera2D_8cpp">Camera2D.cpp</innerfile>
     <innerfile refid="Camera2D_8h">Camera2D.h</innerfile>
     <innerfile refid="ECSScene_8cpp">ECSScene.cpp</innerfile>
@@ -10,6 +12,8 @@
     <innerfile refid="GameObject_8h">GameObject.h</innerfile>
     <innerfile refid="GameWorld_8cpp">GameWorld.cpp</innerfile>
     <innerfile refid="GameWorld_8h">GameWorld.h</innerfile>
+    <innerfile refid="HUD_8cpp">HUD.cpp</innerfile>
+    <innerfile refid="HUD_8h">HUD.h</innerfile>
     <innerfile refid="MenuScene_8cpp">MenuScene.cpp</innerfile>
     <innerfile refid="MenuScene_8h">MenuScene.h</innerfile>
     <innerfile refid="Scene_8h">Scene.h</innerfile>

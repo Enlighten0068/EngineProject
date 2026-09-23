@@ -1,0 +1,35 @@
+\doxysection{Level\+Registry.\+h}
+\hypertarget{LevelRegistry_8h_source}{}\label{LevelRegistry_8h_source}\index{engine/level/LevelRegistry.h@{engine/level/LevelRegistry.h}}
+\doxymbox{\hyperlink{LevelRegistry_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{CameraMode_8h}{level/CameraMode.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{LevelSystem_8h}{systems/LevelSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00017}\doxymbox{\hyperlink{structLevelDefinition}{00017}}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structLevelDefinition}{LevelDefinition}}\{}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00018}\doxymbox{\hyperlink{structLevelDefinition_a8e92f9b20f1eb1a9ac44de804290b4e8}{00018}}\ \ \ \ \ std::string\ \doxymbox{\hyperlink{structLevelDefinition_a8e92f9b20f1eb1a9ac44de804290b4e8}{Name}};\ \textcolor{comment}{//Display\ name\ in\ the\ selector}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00019}\doxymbox{\hyperlink{structLevelDefinition_aa41fb86eb1255c3ae2ac786549a92560}{00019}}\ \ \ \ \ std::string\ \doxymbox{\hyperlink{structLevelDefinition_aa41fb86eb1255c3ae2ac786549a92560}{Description}};\ \textcolor{comment}{//Short\ description}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00020}\doxymbox{\hyperlink{structLevelDefinition_a1391bd366813e06226f8229c49f9bfbb}{00020}}\ \ \ \ \ std::function<void(\doxymbox{\hyperlink{classLevelSystem}{LevelSystem}}\&)>\ \doxymbox{\hyperlink{structLevelDefinition_a1391bd366813e06226f8229c49f9bfbb}{Build}};\ \textcolor{comment}{//Builder\ function}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00021}\doxymbox{\hyperlink{structLevelDefinition_a73045130a392c3e2a9ee42d6c7b6c137}{00021}}\ \ \ \ \ \doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35}{CameraMode}}\ \doxymbox{\hyperlink{structLevelDefinition_a73045130a392c3e2a9ee42d6c7b6c137}{Mode}}\ =\ \doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35a4457d440870ad6d42bab9082d9bf9b61}{CameraMode::Fixed}};\ \textcolor{comment}{//Camera\ behavior\ for\ current\ level}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00022}\doxymbox{\hyperlink{structLevelDefinition_a22664e95b2c4a39e90776824845fafd8}{00022}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{structLevelDefinition_a22664e95b2c4a39e90776824845fafd8}{IsNew}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//Highlight\ flag}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00023}00023\ \};}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00036}\doxymbox{\hyperlink{classLevelRegistry}{00036}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classLevelRegistry_a558029dd2c44dbe83e72a3507bb86fff}{LevelRegistry}}\{}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00037}00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{classLevelRegistry_a558029dd2c44dbe83e72a3507bb86fff}{LevelRegistry}}\&\ \doxymbox{\hyperlink{classLevelRegistry_a2395d481c0cfe381c2db11091d85ab9b}{GetInstance}}();}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLevelRegistry_ae261559d928372122d80ae2fb5ecbb6d}{Register}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structLevelDefinition}{LevelDefinition}}\&\ def);}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00057}\doxymbox{\hyperlink{classLevelRegistry_a1dfb168ad2c52c04cb02e8fd84e01c21}{00057}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<LevelDefinition>\&\ \doxymbox{\hyperlink{classLevelRegistry_a1dfb168ad2c52c04cb02e8fd84e01c21}{GetLevels}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classLevelRegistry_a97aab666d43fb6bc3f6949de09831572}{m\_Levels}};\ \}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00063}\doxymbox{\hyperlink{classLevelRegistry_a35be3f015bea516ae71194573c4ec3fc}{00063}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{classLevelRegistry_a35be3f015bea516ae71194573c4ec3fc}{Count}}()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classLevelRegistry_a97aab666d43fb6bc3f6949de09831572}{m\_Levels}}.size();\ \}}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00064}00064\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00065}\doxymbox{\hyperlink{classLevelRegistry_a558029dd2c44dbe83e72a3507bb86fff}{00065}}\ \ \ \ \ \doxymbox{\hyperlink{classLevelRegistry_a558029dd2c44dbe83e72a3507bb86fff}{LevelRegistry}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00066}\doxymbox{\hyperlink{classLevelRegistry_a97aab666d43fb6bc3f6949de09831572}{00066}}\ \ \ \ \ std::vector<LevelDefinition>\ \doxymbox{\hyperlink{classLevelRegistry_a97aab666d43fb6bc3f6949de09831572}{m\_Levels}};}
+\DoxyCodeLine{\Hypertarget{LevelRegistry_8h_source_l00067}00067\ \};}
+
+\end{DoxyCode}

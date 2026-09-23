@@ -12,6 +12,8 @@
     <includedby refid="PlayerController_8cpp" local="yes">engine/core/PlayerController.cpp</includedby>
     <includedby refid="Demo2DFixedScene_8cpp" local="yes">engine/demo/Demo2DFixedScene.cpp</includedby>
     <includedby refid="Demo2DScene_8cpp" local="yes">engine/demo/Demo2DScene.cpp</includedby>
+    <includedby refid="LevelSelectorScene_8cpp" local="yes">engine/level/LevelSelectorScene.cpp</includedby>
+    <includedby refid="BaseLevelScene_8cpp" local="yes">engine/scene/BaseLevelScene.cpp</includedby>
     <includedby refid="ECSScene_8cpp" local="yes">engine/scene/ECSScene.cpp</includedby>
     <includedby refid="MenuScene_8cpp" local="yes">engine/scene/MenuScene.cpp</includedby>
     <incdepgraph>
@@ -79,6 +81,10 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
       <node id="6">
         <label>engine/core/PlayerController.cpp</label>
@@ -93,10 +99,18 @@
         <link refid="Demo2DScene_8cpp"/>
       </node>
       <node id="9">
+        <label>engine/level/LevelSelectorScene.cpp</label>
+        <link refid="LevelSelectorScene_8cpp"/>
+      </node>
+      <node id="10">
+        <label>engine/scene/BaseLevelScene.cpp</label>
+        <link refid="BaseLevelScene_8cpp"/>
+      </node>
+      <node id="11">
         <label>engine/scene/ECSScene.cpp</label>
         <link refid="ECSScene_8cpp"/>
       </node>
-      <node id="10">
+      <node id="12">
         <label>engine/scene/MenuScene.cpp</label>
         <link refid="MenuScene_8cpp"/>
       </node>

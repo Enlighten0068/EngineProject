@@ -9,6 +9,7 @@
     <innerdir refid="dir_02d85b8a1e3170069e01ca45c1e36bcd">engine/diagnostics</innerdir>
     <innerdir refid="dir_4ffb5477f1b1e804fe9f56487dd521e8">engine/events</innerdir>
     <innerdir refid="dir_8aa109d331f3e3b3014e32565285b6b8">engine/graphics</innerdir>
+    <innerdir refid="dir_1d7686bd4ad0d0d1a98bac552750a9f4">engine/level</innerdir>
     <innerdir refid="dir_6092418e369ca819ce866d11ef016080">engine/math</innerdir>
     <innerdir refid="dir_3862078e0a5429b6ce9a8a5d655cc609">engine/platform</innerdir>
     <innerdir refid="dir_502c28c27d00864c6b48cac76d92e39a">engine/renderer</innerdir>

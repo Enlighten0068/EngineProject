@@ -4,7 +4,7 @@
 void BuildLevel2(LevelSystem& level){
     level.SetWorldBounds(-20.0f, 20.0f, -10.0f, 10.0f);
 
-    level.CreatePlayer(-15.0f, -8.0f);
+    level.CreatePlayer(-15.0f, -7.0f, Vector3D(2.0f, 2.0f, 1.0f));
 
     //Walls
     level.CreatePlatform(-19.5f,  0.0f, 1.0f, 20.0f, 1.0f, 20.0f);
@@ -19,8 +19,8 @@ void BuildLevel2(LevelSystem& level){
     level.CreatePlatform( 12.0f,  3.0f, 4.0f, 1.0f);
 
     //Enemies on the stairs
-    level.CreateEnemy(-12.0f, -5.0f, -13.0f, -11.0f, 2.5f);
-    level.CreateEnemy( -4.0f, -2.0f,  -5.0f,  -3.0f, 2.0f);
+    level.CreateEnemy(-14.0f, -4.0f, -13.0f, -11.0f, 1.5f, Vector3D(4.0f, 4.0f, 1.0f));
+    level.CreateEnemy(-4.0f, -2.0f, -5.0f, -3.0f, 3.0f, Vector3D(1.5f, 1.5f, 1.0f));
     level.CreateEnemy(  4.0f,  1.0f,   3.0f,   5.0f, 2.0f);
     level.CreateEnemy( 12.0f,  4.0f,  11.0f,  13.0f, 2.5f);
 }

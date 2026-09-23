@@ -123,7 +123,7 @@ Collaboration diagram for SDLWindow:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSDLWindow__coll__graph.png" border="0" usemap="#aSDLWindow_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aSDLWindow_coll__map" id="aSDLWindow_coll__map">
-<area shape="rect" title="Wrapper for an SDL3 window with OpenGL context." alt="" coords="5,5,160,212"/>
+<area shape="rect" title="Wrapper for an SDL3 window with OpenGL context." alt="" coords="5,5,160,256"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -133,6 +133,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a0af0daec54970ff2262b67a6ece281" id="r_a7a0af0daec54970ff2262b67a6ece281"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7a0af0daec54970ff2262b67a6ece281">~SDLWindow</a> ()</td></tr>
 <tr class="memitem:a6c60257844fe3a5fe819183539116e40" id="r_a6c60257844fe3a5fe819183539116e40"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6c60257844fe3a5fe819183539116e40">Create</a> (const char *title, int width, int height, bool fullscreen)</td></tr>
 <tr class="memdesc:a6c60257844fe3a5fe819183539116e40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an SDL window with an OpenGL context.  <br /></td></tr>
+<tr class="memitem:a91c60ebb91c668a0be1a910734df55c9" id="r_a91c60ebb91c668a0be1a910734df55c9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a91c60ebb91c668a0be1a910734df55c9">ToggleFullscreen</a> ()</td></tr>
+<tr class="memdesc:a91c60ebb91c668a0be1a910734df55c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles between windowed and fullscreen mode.  <br /></td></tr>
+<tr class="memitem:a088f775d244451c7adb588cd8fce5e26" id="r_a088f775d244451c7adb588cd8fce5e26"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a088f775d244451c7adb588cd8fce5e26">IsFullscreen</a> () const</td></tr>
+<tr class="memdesc:a088f775d244451c7adb588cd8fce5e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the window is currently fullscreen.  <br /></td></tr>
 <tr class="memitem:ac8f370d73ebfe50529fbbba56c100b4b" id="r_ac8f370d73ebfe50529fbbba56c100b4b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac8f370d73ebfe50529fbbba56c100b4b">Destroy</a> ()</td></tr>
 <tr class="memdesc:ac8f370d73ebfe50529fbbba56c100b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the window and OpenGL context.  <br /></td></tr>
 <tr class="memitem:a63de111915a58b28696a6fd1889acec8" id="r_a63de111915a58b28696a6fd1889acec8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a63de111915a58b28696a6fd1889acec8">SwapBuffers</a> ()</td></tr>
@@ -269,7 +273,7 @@ Private Attributes</h2></td></tr>
 <p>Destroys the OpenGL context and the SDL window.</p>
 <p>The context is destroyed first, then the window. Both pointers are set to nullptr to prevent double deletion. </p>
 
-<p class="definition">Definition at line <a class="el" href="SDLWindow_8cpp_source.html#l00107">107</a> of file <a class="el" href="SDLWindow_8cpp_source.html">SDLWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SDLWindow_8cpp_source.html#l00134">134</a> of file <a class="el" href="SDLWindow_8cpp_source.html">SDLWindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -293,7 +297,29 @@ Private Attributes</h2></td></tr>
 <p>Used by other systems (e.g., <a class="el" href="classInput.html" title="Static input manager for keyboard, mouse, and window state.">Input</a>, <a class="el" href="classEngine.html" title="Core engine class responsible for window creation and SDL lifecycle.">Engine</a>) that need direct access to the window.</p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the SDL_Window. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SDLWindow_8cpp_source.html#l00135">135</a> of file <a class="el" href="SDLWindow_8cpp_source.html">SDLWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SDLWindow_8cpp_source.html#l00162">162</a> of file <a class="el" href="SDLWindow_8cpp_source.html">SDLWindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a088f775d244451c7adb588cd8fce5e26" name="a088f775d244451c7adb588cd8fce5e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a088f775d244451c7adb588cd8fce5e26">&#9670;&#160;</a></span>IsFullscreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SDLWindow::IsFullscreen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the window is currently fullscreen. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if fullscreen, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="SDLWindow_8cpp_source.html#l00122">122</a> of file <a class="el" href="SDLWindow_8cpp_source.html">SDLWindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -316,7 +342,29 @@ Private Attributes</h2></td></tr>
 <p>Swaps the front and back buffers.</p>
 <p>This presents the rendered frame to the screen. </p>
 
-<p class="definition">Definition at line <a class="el" href="SDLWindow_8cpp_source.html#l00124">124</a> of file <a class="el" href="SDLWindow_8cpp_source.html">SDLWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SDLWindow_8cpp_source.html#l00151">151</a> of file <a class="el" href="SDLWindow_8cpp_source.html">SDLWindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a91c60ebb91c668a0be1a910734df55c9" name="a91c60ebb91c668a0be1a910734df55c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c60ebb91c668a0be1a910734df55c9">&#9670;&#160;</a></span>ToggleFullscreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SDLWindow::ToggleFullscreen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Toggles between windowed and fullscreen mode. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if now fullscreen, false if now windowed. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="SDLWindow_8cpp_source.html#l00104">104</a> of file <a class="el" href="SDLWindow_8cpp_source.html">SDLWindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -341,7 +389,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SDLWindow_8h_source.html#l00053">53</a> of file <a class="el" href="SDLWindow_8h_source.html">SDLWindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SDLWindow_8h_source.html#l00065">65</a> of file <a class="el" href="SDLWindow_8h_source.html">SDLWindow.h</a>.</p>
 
 </div>
 </div>
@@ -365,7 +413,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SDLWindow_8h_source.html#l00052">52</a> of file <a class="el" href="SDLWindow_8h_source.html">SDLWindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SDLWindow_8h_source.html#l00064">64</a> of file <a class="el" href="SDLWindow_8h_source.html">SDLWindow.h</a>.</p>
 
 </div>
 </div>

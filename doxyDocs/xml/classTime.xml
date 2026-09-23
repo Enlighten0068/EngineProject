@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/Time.h" line="34" column="18" bodyfile="engine/core/Time.h" bodystart="34" bodyend="-1"/>
+        <location file="engine/core/Time.h" line="45" column="18" bodyfile="engine/core/Time.h" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classTime_1a6595aadb1feae1ea8f4058682ee8c27d" prot="private" static="yes" mutable="no">
         <type>float</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/Time.h" line="35" column="18" bodyfile="engine/core/Time.h" bodystart="35" bodyend="-1"/>
+        <location file="engine/core/Time.h" line="46" column="18" bodyfile="engine/core/Time.h" bodystart="46" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
@@ -55,6 +55,36 @@
         </inbodydescription>
         <location file="engine/core/Time.h" line="17" column="18" bodyfile="engine/core/Time.cpp" bodystart="29" bodyend="31"/>
       </memberdef>
+      <memberdef kind="function" id="classTime_1ac6ae72b2ea451dd16f0d0ca3ae45fec5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Time::SetDeltaTime</definition>
+        <argsstring>(float dt)</argsstring>
+        <name>SetDeltaTime</name>
+        <qualifiedname>Time::SetDeltaTime</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>Overrides the delta time for the current frame. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used by <ref refid="classApplication" kindref="compound">Application</ref> to clamp delta time after long freezes (e.g., while the user drags the window border), preventing physics tunneling and huge position jumps.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New delta time value (seconds). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/Time.h" line="28" column="17" bodyfile="engine/core/Time.h" bodystart="28" bodyend="28"/>
+      </memberdef>
       <memberdef kind="function" id="classTime_1a78df68c0498044fa62fdeb6b9e9e8b63" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
         <definition>float Time::ElapsedTime</definition>
@@ -72,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/Time.h" line="23" column="18" bodyfile="engine/core/Time.cpp" bodystart="37" bodyend="39"/>
+        <location file="engine/core/Time.h" line="34" column="18" bodyfile="engine/core/Time.cpp" bodystart="37" bodyend="39"/>
       </memberdef>
       <memberdef kind="function" id="classTime_1a7e9cf31048064a9aedfee885807b1b56" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -90,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/Time.h" line="31" column="17" bodyfile="engine/core/Time.cpp" bodystart="14" bodyend="23"/>
+        <location file="engine/core/Time.h" line="42" column="17" bodyfile="engine/core/Time.cpp" bodystart="14" bodyend="23"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -108,12 +138,13 @@
         <link refid="classTime"/>
       </node>
     </collaborationgraph>
-    <location file="engine/core/Time.h" line="11" column="1" bodyfile="engine/core/Time.h" bodystart="11" bodyend="36"/>
+    <location file="engine/core/Time.h" line="11" column="1" bodyfile="engine/core/Time.h" bodystart="11" bodyend="47"/>
     <listofallmembers>
       <member refid="classTime_1ad543732facbdbe2aa7298de13cb2a12b" prot="public" virt="non-virtual"><scope>Time</scope><name>DeltaTime</name></member>
       <member refid="classTime_1a78df68c0498044fa62fdeb6b9e9e8b63" prot="public" virt="non-virtual"><scope>Time</scope><name>ElapsedTime</name></member>
       <member refid="classTime_1a2b684243784e6daedfa7ec3ce4b57ea5" prot="private" virt="non-virtual"><scope>Time</scope><name>s_DeltaTime</name></member>
       <member refid="classTime_1a6595aadb1feae1ea8f4058682ee8c27d" prot="private" virt="non-virtual"><scope>Time</scope><name>s_ElapsedTime</name></member>
+      <member refid="classTime_1ac6ae72b2ea451dd16f0d0ca3ae45fec5" prot="public" virt="non-virtual"><scope>Time</scope><name>SetDeltaTime</name></member>
       <member refid="classTime_1a7e9cf31048064a9aedfee885807b1b56" prot="public" virt="non-virtual"><scope>Time</scope><name>Update</name></member>
     </listofallmembers>
   </compounddef>

@@ -42,10 +42,15 @@ public:
      * @return true if running, false otherwise.
      */
 
-    /** @brief Toggles fullscreen mode on the window. */
+    /**
+     * @brief Toggles fullscreen mode on the window.
+     * @return true if now fullscreen, false if now windowed.
+     */
     bool ToggleFullscreen(){ return m_Window.ToggleFullscreen(); }
 
-    /** @brief Checks if the window is fullscreen. */
+    /**
+     * @brief Checks if the window is currently fullscreen.
+     */
     bool IsFullscreen() const{ return m_Window.IsFullscreen(); }
 
     bool IsRunning() const{ return m_Running; }

@@ -123,11 +123,11 @@ Collaboration diagram for PlayerController:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerController__coll__graph.png" border="0" usemap="#aPlayerController_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aPlayerController_coll__map" id="aPlayerController_coll__map">
-<area shape="rect" title="Controller for the player entity, handling movement, jumping, and physics." alt="" coords="31,486,229,938"/>
+<area shape="rect" title="Controller for the player entity, handling movement, jumping, and physics." alt="" coords="36,508,234,960"/>
 <area shape="rect" href="structVector3D.html" title="3D vector struct with basic arithmetic operations." alt="" coords="5,106,108,312"/>
-<area shape="poly" title=" " alt="" coords="69,309,91,461,92,469,87,469,86,462,68,315"/>
-<area shape="rect" href="classGameWorld.html" title="Defines the boundaries of the game world and provides clamping." alt="" coords="132,5,275,413"/>
-<area shape="poly" title=" " alt="" coords="182,410,177,462,176,469,171,468,172,461,180,415"/>
+<area shape="poly" title=" " alt="" coords="50,309,53,396,61,484,62,491,57,491,56,484,48,396,50,314"/>
+<area shape="rect" href="classGameWorld.html" title="Defines the boundaries of the game world and provides clamping." alt="" coords="144,5,287,413"/>
+<area shape="poly" title=" " alt="" coords="197,410,189,484,188,492,182,490,184,484,195,415"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -165,6 +165,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a1e9b40f2e626532f9d49c66dd256990f" id="r_a1e9b40f2e626532f9d49c66dd256990f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1e9b40f2e626532f9d49c66dd256990f">m_IsDead</a> = false</td></tr>
 <tr class="memitem:abb92e9880ae0250e5fdb3f756475de1c" id="r_abb92e9880ae0250e5fdb3f756475de1c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#abb92e9880ae0250e5fdb3f756475de1c">m_IsGrounded</a> = false</td></tr>
 <tr class="memitem:a2b4f8434fdc256669b54c8ac8f7d6aeb" id="r_a2b4f8434fdc256669b54c8ac8f7d6aeb"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2b4f8434fdc256669b54c8ac8f7d6aeb">m_WasGrounded</a> = false</td></tr>
+<tr class="memitem:a70fe08e779f88d190a8e8a3982aaefdc" id="r_a70fe08e779f88d190a8e8a3982aaefdc"><td class="memItemLeft"><a class="el" href="structVector3D.html">Vector3D</a>&#160;</td><td class="memItemRight"><a class="el" href="#a70fe08e779f88d190a8e8a3982aaefdc">m_SpawnPosition</a> {0.0f, 0.0f, 0.0f}</td></tr>
 <tr class="memitem:a0741e03ee1239165e1a12ab2fdc818db" id="r_a0741e03ee1239165e1a12ab2fdc818db"><td class="memItemLeft">const <a class="el" href="classGameWorld.html">GameWorld</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a0741e03ee1239165e1a12ab2fdc818db">m_World</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
@@ -200,6 +201,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="classPlayerController.html" title="Controller for the player entity, handling movement, jumping, and physics.">PlayerController</a>. </p>
+<p>Constructs a <a class="el" href="classPlayerController.html" title="Controller for the player entity, handling movement, jumping, and physics.">PlayerController</a> and captures the current transform as the spawn point for respawn.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">registry</td><td>Reference to the ECS registry. </td></tr>
@@ -209,7 +211,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PlayerController_8cpp_source.html#l00014">14</a> of file <a class="el" href="PlayerController_8cpp_source.html">PlayerController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PlayerController_8cpp_source.html#l00018">18</a> of file <a class="el" href="PlayerController_8cpp_source.html">PlayerController.cpp</a>.</p>
 
 </div>
 </div>
@@ -270,7 +272,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PlayerController_8cpp_source.html#l00154">154</a> of file <a class="el" href="PlayerController_8cpp_source.html">PlayerController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PlayerController_8cpp_source.html#l00164">164</a> of file <a class="el" href="PlayerController_8cpp_source.html">PlayerController.cpp</a>.</p>
 
 </div>
 </div>
@@ -475,7 +477,7 @@ Private Attributes</h2></td></tr>
 <p>Currently subscribes to key events (E key for interaction). Still under development.</p>
 <p>Currently subscribes to key events for interaction (E key). Jump is handled via polling in <a class="el" href="#a2e0c380d64a88c8cfe60ce8452921227" title="Updates the player&#39;s state (movement, jump, physics).">Update()</a> for more responsive input. </p>
 
-<p class="definition">Definition at line <a class="el" href="PlayerController_8cpp_source.html#l00025">25</a> of file <a class="el" href="PlayerController_8cpp_source.html">PlayerController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PlayerController_8cpp_source.html#l00035">35</a> of file <a class="el" href="PlayerController_8cpp_source.html">PlayerController.cpp</a>.</p>
 
 </div>
 </div>
@@ -499,7 +501,7 @@ Private Attributes</h2></td></tr>
 <p>This method handles horizontal movement, jump detection and its physics, vertical velocity, landing detection, boundary clamping and death.</p>
 <dl class="section note"><dt>Note</dt><dd>Vertical movement with UP/DOWN keys is commented out but can be enabled for debugging or special mechanics. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PlayerController_8cpp_source.html#l00043">43</a> of file <a class="el" href="PlayerController_8cpp_source.html">PlayerController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PlayerController_8cpp_source.html#l00053">53</a> of file <a class="el" href="PlayerController_8cpp_source.html">PlayerController.cpp</a>.</p>
 
 </div>
 </div>
@@ -648,6 +650,30 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a70fe08e779f88d190a8e8a3982aaefdc" name="a70fe08e779f88d190a8e8a3982aaefdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70fe08e779f88d190a8e8a3982aaefdc">&#9670;&#160;</a></span>m_SpawnPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVector3D.html">Vector3D</a> PlayerController::m_SpawnPosition {0.0f, 0.0f, 0.0f}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlayerController_8h_source.html#l00085">85</a> of file <a class="el" href="PlayerController_8h_source.html">PlayerController.h</a>.</p>
+
+</div>
+</div>
 <a id="a552c0308cb0226c7862d99c04f68357a" name="a552c0308cb0226c7862d99c04f68357a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a552c0308cb0226c7862d99c04f68357a">&#9670;&#160;</a></span>m_Speed</h2>
 
@@ -740,7 +766,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PlayerController_8h_source.html#l00085">85</a> of file <a class="el" href="PlayerController_8h_source.html">PlayerController.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PlayerController_8h_source.html#l00087">87</a> of file <a class="el" href="PlayerController_8h_source.html">PlayerController.h</a>.</p>
 
 </div>
 </div>

@@ -5,7 +5,9 @@ var classSDLWindow =
     [ "Create", "classSDLWindow.html#a6c60257844fe3a5fe819183539116e40", null ],
     [ "Destroy", "classSDLWindow.html#ac8f370d73ebfe50529fbbba56c100b4b", null ],
     [ "GetNativeWindow", "classSDLWindow.html#ad11eb6f7291bfcedcd7a5cbff75ebd8e", null ],
+    [ "IsFullscreen", "classSDLWindow.html#a088f775d244451c7adb588cd8fce5e26", null ],
     [ "SwapBuffers", "classSDLWindow.html#a63de111915a58b28696a6fd1889acec8", null ],
+    [ "ToggleFullscreen", "classSDLWindow.html#a91c60ebb91c668a0be1a910734df55c9", null ],
     [ "m_Context", "classSDLWindow.html#a0ebd46794adf3da5005805893212f8b2", null ],
     [ "m_Window", "classSDLWindow.html#a4ec4dc1373136604f3d13aac6a9d1b2a", null ]
 ];

@@ -11,6 +11,10 @@
 #include <algorithm>
 #include <format>
 
+/**
+ * @brief Constructs a PlayerController and captures the current transform
+ *        as the spawn point for respawn.
+ */
 PlayerController::PlayerController(entt::registry& registry, entt::entity playerEntity, const GameWorld& world)
 : m_Registry(registry), m_PlayerEntity(playerEntity), m_World(world){
     //Capture the current transform as the spawn point for respawn

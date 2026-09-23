@@ -1,0 +1,38 @@
+\doxysection{HUD.\+h}
+\hypertarget{HUD_8h_source}{}\label{HUD_8h_source}\index{engine/scene/HUD.h@{engine/scene/HUD.h}}
+\doxymbox{\hyperlink{HUD_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Font_8h}{graphics/Font.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Texture2D_8h}{graphics/Texture2D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Shader_8h}{graphics/Shader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{VertexArray_8h}{graphics/VertexArray.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{IndexBuffer_8h}{graphics/IndexBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00024}\doxymbox{\hyperlink{classHUD}{00024}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classHUD_a568b8ee1591f9ba3ed36ae05966f6b56}{HUD}}\{}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00025}00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00026}\doxymbox{\hyperlink{classHUD_a568b8ee1591f9ba3ed36ae05966f6b56}{00026}}\ \ \ \ \ \doxymbox{\hyperlink{classHUD_a568b8ee1591f9ba3ed36ae05966f6b56}{HUD}}();}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00027}00027\ \ \ \ \ \doxymbox{\hyperlink{classHUD_a568b8ee1591f9ba3ed36ae05966f6b56}{\string~HUD}}();}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classHUD_a5da52e1cbe872f0dcf9f30d5fc72ba13}{Initialize}}(\textcolor{keyword}{const}\ std::string\&\ fontPath,\ \textcolor{keywordtype}{int}\ fontSize);}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHUD_ac74213a2dfa97b3bd1559943a23bdfcd}{Shutdown}}();}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHUD_a34e6d4715c4b95b36e01aed52d23fa61}{Render}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ lines,}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,\ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ va,\ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ ib,}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ windowWidth,\ \textcolor{keywordtype}{int}\ windowHeight);}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00055}00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00056}\doxymbox{\hyperlink{classHUD_afde486af9f51f3cefddf0e9e00c62d62}{00056}}\ \ \ \ \ std::unique\_ptr<Font>\ \doxymbox{\hyperlink{classHUD_afde486af9f51f3cefddf0e9e00c62d62}{m\_Font}};\ \textcolor{comment}{//Font\ used\ for\ HUD\ text}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00057}\doxymbox{\hyperlink{classHUD_a8a94f0bf18f8629246835d4e1d48d042}{00057}}\ \ \ \ \ std::unordered\_map<std::string,\ std::shared\_ptr<Texture2D>>\ \doxymbox{\hyperlink{classHUD_a8a94f0bf18f8629246835d4e1d48d042}{m\_TextureCache}};\ \textcolor{comment}{//Cache\ of\ rendered\ text\ textures}}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00062}00062\ \ \ \ \ std::shared\_ptr<Texture2D>\ \doxymbox{\hyperlink{classHUD_a86921d3d206d90f46f39365a3acc65e5}{GetOrCreateTexture}}(\textcolor{keyword}{const}\ std::string\&\ text,}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ SDL\_Color\&\ color);}
+\DoxyCodeLine{\Hypertarget{HUD_8h_source_l00064}00064\ \};}
+
+\end{DoxyCode}

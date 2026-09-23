@@ -1,0 +1,5 @@
+<map id="BaseLevelScene" name="BaseLevelScene">
+<area shape="rect" id="Node000001" title="Generic scene that builds its content from a LevelSystem builder function." alt="" coords="5,282,190,868"/>
+<area shape="rect" id="Node000002" href="$classScene.html" title="Abstract base class for all scenes in the engine." alt="" coords="36,5,160,234"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,246,100,282,95,282,98,251"/>
+</map>

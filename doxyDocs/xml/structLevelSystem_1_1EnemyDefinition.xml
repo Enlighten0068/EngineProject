@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structLevelSystem_1_1EnemyDefinition" kind="struct" language="C++" prot="public">
+    <compoundname>LevelSystem::EnemyDefinition</compoundname>
+    <includes refid="LevelSystem_8h" local="no">LevelSystem.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLevelSystem_1_1EnemyDefinition_1ac7b211e985297ab59069938c73771fe6" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D LevelSystem::EnemyDefinition::Position</definition>
+        <argsstring></argsstring>
+        <name>Position</name>
+        <qualifiedname>LevelSystem::EnemyDefinition::Position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="38" column="18" bodyfile="engine/systems/LevelSystem.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelSystem_1_1EnemyDefinition_1a92d8b660a610207612f56863e895e754" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D LevelSystem::EnemyDefinition::Scale</definition>
+        <argsstring></argsstring>
+        <name>Scale</name>
+        <qualifiedname>LevelSystem::EnemyDefinition::Scale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="39" column="18" bodyfile="engine/systems/LevelSystem.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelSystem_1_1EnemyDefinition_1a75975711e8aeb4705ac234822cddade6" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2D&gt; LevelSystem::EnemyDefinition::Texture</definition>
+        <argsstring></argsstring>
+        <name>Texture</name>
+        <qualifiedname>LevelSystem::EnemyDefinition::Texture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="40" column="25" bodyfile="engine/systems/LevelSystem.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelSystem_1_1EnemyDefinition_1a0be9a477c9ae928a0ee86056d306566a" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D LevelSystem::EnemyDefinition::PatrolStart</definition>
+        <argsstring></argsstring>
+        <name>PatrolStart</name>
+        <qualifiedname>LevelSystem::EnemyDefinition::PatrolStart</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="41" column="18" bodyfile="engine/systems/LevelSystem.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelSystem_1_1EnemyDefinition_1ade4221f51df3fe9abbeb7880c54104fd" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D LevelSystem::EnemyDefinition::PatrolEnd</definition>
+        <argsstring></argsstring>
+        <name>PatrolEnd</name>
+        <qualifiedname>LevelSystem::EnemyDefinition::PatrolEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="42" column="18" bodyfile="engine/systems/LevelSystem.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelSystem_1_1EnemyDefinition_1a91a2652cec2601dfaffb1d78e601e1e3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LevelSystem::EnemyDefinition::PatrolSpeed</definition>
+        <argsstring></argsstring>
+        <name>PatrolSpeed</name>
+        <qualifiedname>LevelSystem::EnemyDefinition::PatrolSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/systems/LevelSystem.h" line="43" column="15" bodyfile="engine/systems/LevelSystem.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Definition of an enemy for respawn. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Stores all the data needed to recreate an enemy entity. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>LevelSystem::EnemyDefinition</label>
+        <link refid="structLevelSystem_1_1EnemyDefinition"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+PatrolEnd</edgelabel>
+          <edgelabel>+PatrolStart</edgelabel>
+          <edgelabel>+Position</edgelabel>
+          <edgelabel>+Scale</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/systems/LevelSystem.h" line="37" column="5" bodyfile="engine/systems/LevelSystem.h" bodystart="37" bodyend="44"/>
+    <listofallmembers>
+      <member refid="structLevelSystem_1_1EnemyDefinition_1ade4221f51df3fe9abbeb7880c54104fd" prot="public" virt="non-virtual"><scope>LevelSystem::EnemyDefinition</scope><name>PatrolEnd</name></member>
+      <member refid="structLevelSystem_1_1EnemyDefinition_1a91a2652cec2601dfaffb1d78e601e1e3" prot="public" virt="non-virtual"><scope>LevelSystem::EnemyDefinition</scope><name>PatrolSpeed</name></member>
+      <member refid="structLevelSystem_1_1EnemyDefinition_1a0be9a477c9ae928a0ee86056d306566a" prot="public" virt="non-virtual"><scope>LevelSystem::EnemyDefinition</scope><name>PatrolStart</name></member>
+      <member refid="structLevelSystem_1_1EnemyDefinition_1ac7b211e985297ab59069938c73771fe6" prot="public" virt="non-virtual"><scope>LevelSystem::EnemyDefinition</scope><name>Position</name></member>
+      <member refid="structLevelSystem_1_1EnemyDefinition_1a92d8b660a610207612f56863e895e754" prot="public" virt="non-virtual"><scope>LevelSystem::EnemyDefinition</scope><name>Scale</name></member>
+      <member refid="structLevelSystem_1_1EnemyDefinition_1a75975711e8aeb4705ac234822cddade6" prot="public" virt="non-virtual"><scope>LevelSystem::EnemyDefinition</scope><name>Texture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

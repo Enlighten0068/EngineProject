@@ -1,0 +1,581 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classLevelSelectorScene" kind="class" language="C++" prot="public">
+    <compoundname>LevelSelectorScene</compoundname>
+    <basecompoundref refid="classScene" prot="public" virt="non-virtual">Scene</basecompoundref>
+    <includes refid="LevelSelectorScene_8h" local="no">LevelSelectorScene.h</includes>
+    <innerclass refid="structLevelSelectorScene_1_1Option" prot="private">LevelSelectorScene::Option</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLevelSelectorScene_1a2f95782c506eec5907525c433ed06d44" prot="private" static="no" mutable="no">
+        <type><ref refid="classSceneManager" kindref="compound">SceneManager</ref> &amp;</type>
+        <definition>SceneManager&amp; LevelSelectorScene::m_SceneManager</definition>
+        <argsstring></argsstring>
+        <name>m_SceneManager</name>
+        <qualifiedname>LevelSelectorScene::m_SceneManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="63" column="18" bodyfile="engine/level/LevelSelectorScene.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSelectorScene_1ab6a99773b6fdeadcffda2d7ddc81b20e" prot="private" static="no" mutable="no">
+        <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader&amp; LevelSelectorScene::m_Shader</definition>
+        <argsstring></argsstring>
+        <name>m_Shader</name>
+        <qualifiedname>LevelSelectorScene::m_Shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="64" column="12" bodyfile="engine/level/LevelSelectorScene.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSelectorScene_1a9a837ee73063b49c25dd8ed397bb40cb" prot="private" static="no" mutable="no">
+        <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+        <definition>VertexArray&amp; LevelSelectorScene::m_VertexArray</definition>
+        <argsstring></argsstring>
+        <name>m_VertexArray</name>
+        <qualifiedname>LevelSelectorScene::m_VertexArray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="65" column="17" bodyfile="engine/level/LevelSelectorScene.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSelectorScene_1ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b" prot="private" static="no" mutable="no">
+        <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+        <definition>IndexBuffer&amp; LevelSelectorScene::m_IndexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_IndexBuffer</name>
+        <qualifiedname>LevelSelectorScene::m_IndexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="66" column="17" bodyfile="engine/level/LevelSelectorScene.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSelectorScene_1ac484ddb64073422335ab3ec85251168d" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera2D" kindref="compound">Camera2D</ref> &amp;</type>
+        <definition>Camera2D&amp; LevelSelectorScene::m_Camera</definition>
+        <argsstring></argsstring>
+        <name>m_Camera</name>
+        <qualifiedname>LevelSelectorScene::m_Camera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="67" column="14" bodyfile="engine/level/LevelSelectorScene.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSelectorScene_1af2e87d65ca014b3845678db72fff1c9a" prot="private" static="no" mutable="no">
+        <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader&amp; LevelSelectorScene::m_LineShader</definition>
+        <argsstring></argsstring>
+        <name>m_LineShader</name>
+        <qualifiedname>LevelSelectorScene::m_LineShader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="68" column="12" bodyfile="engine/level/LevelSelectorScene.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSelectorScene_1a32b9d528a0c8f03437dd069f46b7895e" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classFont" kindref="compound">Font</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Font&gt; LevelSelectorScene::m_Font</definition>
+        <argsstring></argsstring>
+        <name>m_Font</name>
+        <qualifiedname>LevelSelectorScene::m_Font</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="70" column="21" bodyfile="engine/level/LevelSelectorScene.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSelectorScene_1ac68dce54991fa1861c7300c10bb7ea9e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structLevelSelectorScene_1_1Option" kindref="compound">Option</ref> &gt;</type>
+        <definition>std::vector&lt;Option&gt; LevelSelectorScene::m_Options</definition>
+        <argsstring></argsstring>
+        <name>m_Options</name>
+        <qualifiedname>LevelSelectorScene::m_Options</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="71" column="17" bodyfile="engine/level/LevelSelectorScene.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSelectorScene_1a912e5dfba70c6a335795569a818a8fef" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int LevelSelectorScene::m_SelectedOption</definition>
+        <argsstring></argsstring>
+        <name>m_SelectedOption</name>
+        <qualifiedname>LevelSelectorScene::m_SelectedOption</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="72" column="9" bodyfile="engine/level/LevelSelectorScene.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSelectorScene_1a0e18a737fd9413f0cd415a74bf4029bf" prot="private" static="no" mutable="no">
+        <type>SDL_Color</type>
+        <definition>SDL_Color LevelSelectorScene::m_NormalColor</definition>
+        <argsstring></argsstring>
+        <name>m_NormalColor</name>
+        <qualifiedname>LevelSelectorScene::m_NormalColor</qualifiedname>
+        <initializer>= {255, 255, 255, 255}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="74" column="15" bodyfile="engine/level/LevelSelectorScene.h" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLevelSelectorScene_1af7ef2bbba2fb263804b77ef3900a5045" prot="private" static="no" mutable="no">
+        <type>SDL_Color</type>
+        <definition>SDL_Color LevelSelectorScene::m_SelectedColor</definition>
+        <argsstring></argsstring>
+        <name>m_SelectedColor</name>
+        <qualifiedname>LevelSelectorScene::m_SelectedColor</qualifiedname>
+        <initializer>= {255, 255, 0, 255}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="75" column="15" bodyfile="engine/level/LevelSelectorScene.h" bodystart="75" bodyend="75"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLevelSelectorScene_1a70144989f056c70ee7cb3e4755ebe45b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LevelSelectorScene::LevelSelectorScene</definition>
+        <argsstring>(SceneManager &amp;sceneManager, Shader &amp;shader, VertexArray &amp;va, IndexBuffer &amp;ib, Camera2D &amp;camera, Shader &amp;lineShader)</argsstring>
+        <name>LevelSelectorScene</name>
+        <qualifiedname>LevelSelectorScene::LevelSelectorScene</qualifiedname>
+        <param>
+          <type><ref refid="classSceneManager" kindref="compound">SceneManager</ref> &amp;</type>
+          <declname>sceneManager</declname>
+        </param>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+          <declname>va</declname>
+        </param>
+        <param>
+          <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+          <declname>ib</declname>
+        </param>
+        <param>
+          <type><ref refid="classCamera2D" kindref="compound">Camera2D</ref> &amp;</type>
+          <declname>camera</declname>
+        </param>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>lineShader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="30" column="5" bodyfile="engine/level/LevelSelectorScene.cpp" bodystart="13" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSelectorScene_1a29adb71d9bf3a6bb60d127c8e506be8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LevelSelectorScene::~LevelSelectorScene</definition>
+        <argsstring>()</argsstring>
+        <name>~LevelSelectorScene</name>
+        <qualifiedname>LevelSelectorScene::~LevelSelectorScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="32" column="5" bodyfile="engine/level/LevelSelectorScene.cpp" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSelectorScene_1a2ef8dc2df76c5d6a9dde5cb034ac242d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LevelSelectorScene::OnEnter</definition>
+        <argsstring>() override</argsstring>
+        <name>OnEnter</name>
+        <qualifiedname>LevelSelectorScene::OnEnter</qualifiedname>
+        <reimplements refid="classScene_1ad09d42329f52df55fad0467cd092c9aa">OnEnter</reimplements>
+        <briefdescription>
+<para>Called when the scene becomes active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads the font and builds the list of options from the <ref refid="classLevelRegistry" kindref="compound">LevelRegistry</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="34" column="10" bodyfile="engine/level/LevelSelectorScene.cpp" bodystart="26" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSelectorScene_1a38c557d72f36f05319bd8fc097cccb1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LevelSelectorScene::OnExit</definition>
+        <argsstring>() override</argsstring>
+        <name>OnExit</name>
+        <qualifiedname>LevelSelectorScene::OnExit</qualifiedname>
+        <reimplements refid="classScene_1a9824fefa923e5a9db4dca5a23343609b">OnExit</reimplements>
+        <briefdescription>
+<para>Called when the scene is exited. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="35" column="10" bodyfile="engine/level/LevelSelectorScene.cpp" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSelectorScene_1acfaf5d66253dbd5880be7bc68d210d0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LevelSelectorScene::Update</definition>
+        <argsstring>(float deltaTime) override</argsstring>
+        <name>Update</name>
+        <qualifiedname>LevelSelectorScene::Update</qualifiedname>
+        <reimplements refid="classScene_1aaede6346f58776bd40efffd55885ab02">Update</reimplements>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+<para>Updates navigation and selection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classTime" kindref="compound">Time</ref> elapsed since the last frame (unused). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="36" column="10" bodyfile="engine/level/LevelSelectorScene.cpp" bodystart="109" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSelectorScene_1aa4161b586dbea24ead423a034816fdfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LevelSelectorScene::Render</definition>
+        <argsstring>() override</argsstring>
+        <name>Render</name>
+        <qualifiedname>LevelSelectorScene::Render</qualifiedname>
+        <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
+        <briefdescription>
+<para>Renders the level selector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="37" column="10" bodyfile="engine/level/LevelSelectorScene.cpp" bodystart="158" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSelectorScene_1a8085250fc5dee5c345c763c26c8a0707" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string LevelSelectorScene::GetName</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetName</name>
+        <qualifiedname>LevelSelectorScene::GetName</qualifiedname>
+        <reimplements refid="classScene_1ad93511100250c3f3ed736b9ed69fdc6f">GetName</reimplements>
+        <briefdescription>
+<para>Gets the name of the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>String containing the scene name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="38" column="17" bodyfile="engine/level/LevelSelectorScene.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSelectorScene_1aebf0f8867df43f6606d5457bdce9d386" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; LevelSelectorScene::GetHUDLines</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetHUDLines</name>
+        <qualifiedname>LevelSelectorScene::GetHUDLines</qualifiedname>
+        <reimplements refid="classScene_1afb756dd8b7583f4b06a000d8157c7952">GetHUDLines</reimplements>
+        <briefdescription>
+<para>Returns the <ref refid="classHUD" kindref="compound">HUD</ref> lines to show in this scene. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="43" column="17" bodyfile="engine/level/LevelSelectorScene.h" bodystart="43" bodyend="48"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLevelSelectorScene_1abb78b1c558d9139ccc5894603a792806" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Texture2D &gt; LevelSelectorScene::CreateTextTexture</definition>
+        <argsstring>(const std::string &amp;text, const SDL_Color &amp;color)</argsstring>
+        <name>CreateTextTexture</name>
+        <qualifiedname>LevelSelectorScene::CreateTextTexture</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const SDL_Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Creates a texture from rendered text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to render. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color of the text. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Shared pointer to the created <ref refid="classTexture2D" kindref="compound">Texture2D</ref>, or nullptr on failure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="77" column="21" bodyfile="engine/level/LevelSelectorScene.cpp" bodystart="84" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSelectorScene_1a2f96c000d92e26cc44e50dd6f932c6d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LevelSelectorScene::RenderOption</definition>
+        <argsstring>(const Option &amp;option, bool isSelected)</argsstring>
+        <name>RenderOption</name>
+        <qualifiedname>LevelSelectorScene::RenderOption</qualifiedname>
+        <param>
+          <type>const <ref refid="structLevelSelectorScene_1_1Option" kindref="compound">Option</ref> &amp;</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isSelected</declname>
+        </param>
+        <briefdescription>
+<para>Renders a single option. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>option</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The option to render. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isSelected</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether this option is currently selected. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="78" column="10" bodyfile="engine/level/LevelSelectorScene.cpp" bodystart="196" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSelectorScene_1a142562be4dbf89030310c0075d160369" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool LevelSelectorScene::IsMouseOverOption</definition>
+        <argsstring>(const Option &amp;option) const</argsstring>
+        <name>IsMouseOverOption</name>
+        <qualifiedname>LevelSelectorScene::IsMouseOverOption</qualifiedname>
+        <param>
+          <type>const <ref refid="structLevelSelectorScene_1_1Option" kindref="compound">Option</ref> &amp;</type>
+          <declname>option</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the mouse is over a menu option. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>option</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The option to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the mouse is over the option. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="79" column="10" bodyfile="engine/level/LevelSelectorScene.cpp" bodystart="173" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classLevelSelectorScene_1ab6fc75b411632651fa21249a1a995fec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LevelSelectorScene::HandleSelection</definition>
+        <argsstring>()</argsstring>
+        <name>HandleSelection</name>
+        <qualifiedname>LevelSelectorScene::HandleSelection</qualifiedname>
+        <briefdescription>
+<para>Loads the selected level. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="80" column="10" bodyfile="engine/level/LevelSelectorScene.cpp" bodystart="217" bodyend="231"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classScene" kindref="compound">Scene</ref> that lists all registered levels and lets the player choose one. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The list is populated automatically from the <ref refid="classLevelRegistry" kindref="compound">LevelRegistry</ref>, so adding a new level only requires creating a new .cpp with REGISTER_LEVEL and recompiling.</para>
+<para>Navigation: Up/Down (or W/S) to select, Enter/Space to confirm, ESC to go back to the main menu. Mouse hover highlights the option under the cursor, and clicking loads it.</para>
+<para><simplesect kind="see"><para><ref refid="classLevelRegistry" kindref="compound">LevelRegistry</ref>, <ref refid="classMenuScene" kindref="compound">MenuScene</ref>, <ref refid="classBaseLevelScene" kindref="compound">BaseLevelScene</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LevelSelectorScene</label>
+        <link refid="classLevelSelectorScene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>Camera2D</label>
+        <link refid="classCamera2D"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>-m_Position</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>-m_ProjectionMatrix</edgelabel>
+          <edgelabel>-m_ViewMatrix</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>IndexBuffer</label>
+        <link refid="classIndexBuffer"/>
+      </node>
+      <node id="1">
+        <label>LevelSelectorScene</label>
+        <link refid="classLevelSelectorScene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_SceneManager</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>-m_LineShader</edgelabel>
+          <edgelabel>-m_Shader</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-m_VertexArray</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>-m_IndexBuffer</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>-m_Camera</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Matrix4</label>
+        <link refid="classMatrix4"/>
+      </node>
+      <node id="2">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="3">
+        <label>SceneManager</label>
+        <link refid="classSceneManager"/>
+      </node>
+      <node id="4">
+        <label>Shader</label>
+        <link refid="classShader"/>
+      </node>
+      <node id="8">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+      <node id="5">
+        <label>VertexArray</label>
+        <link refid="classVertexArray"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/level/LevelSelectorScene.h" line="28" column="1" bodyfile="engine/level/LevelSelectorScene.h" bodystart="28" bodyend="81"/>
+    <listofallmembers>
+      <member refid="classLevelSelectorScene_1abb78b1c558d9139ccc5894603a792806" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>CreateTextTexture</name></member>
+      <member refid="classLevelSelectorScene_1aebf0f8867df43f6606d5457bdce9d386" prot="public" virt="virtual"><scope>LevelSelectorScene</scope><name>GetHUDLines</name></member>
+      <member refid="classLevelSelectorScene_1a8085250fc5dee5c345c763c26c8a0707" prot="public" virt="virtual"><scope>LevelSelectorScene</scope><name>GetName</name></member>
+      <member refid="classLevelSelectorScene_1ab6fc75b411632651fa21249a1a995fec" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>HandleSelection</name></member>
+      <member refid="classLevelSelectorScene_1a142562be4dbf89030310c0075d160369" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>IsMouseOverOption</name></member>
+      <member refid="classLevelSelectorScene_1a70144989f056c70ee7cb3e4755ebe45b" prot="public" virt="non-virtual"><scope>LevelSelectorScene</scope><name>LevelSelectorScene</name></member>
+      <member refid="classLevelSelectorScene_1ac484ddb64073422335ab3ec85251168d" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>m_Camera</name></member>
+      <member refid="classLevelSelectorScene_1a32b9d528a0c8f03437dd069f46b7895e" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>m_Font</name></member>
+      <member refid="classLevelSelectorScene_1ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>m_IndexBuffer</name></member>
+      <member refid="classLevelSelectorScene_1af2e87d65ca014b3845678db72fff1c9a" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>m_LineShader</name></member>
+      <member refid="classLevelSelectorScene_1a0e18a737fd9413f0cd415a74bf4029bf" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>m_NormalColor</name></member>
+      <member refid="classLevelSelectorScene_1ac68dce54991fa1861c7300c10bb7ea9e" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>m_Options</name></member>
+      <member refid="classLevelSelectorScene_1a2f95782c506eec5907525c433ed06d44" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>m_SceneManager</name></member>
+      <member refid="classLevelSelectorScene_1af7ef2bbba2fb263804b77ef3900a5045" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>m_SelectedColor</name></member>
+      <member refid="classLevelSelectorScene_1a912e5dfba70c6a335795569a818a8fef" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>m_SelectedOption</name></member>
+      <member refid="classLevelSelectorScene_1ab6a99773b6fdeadcffda2d7ddc81b20e" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>m_Shader</name></member>
+      <member refid="classLevelSelectorScene_1a9a837ee73063b49c25dd8ed397bb40cb" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>m_VertexArray</name></member>
+      <member refid="classLevelSelectorScene_1a2ef8dc2df76c5d6a9dde5cb034ac242d" prot="public" virt="virtual"><scope>LevelSelectorScene</scope><name>OnEnter</name></member>
+      <member refid="classLevelSelectorScene_1a38c557d72f36f05319bd8fc097cccb1e" prot="public" virt="virtual"><scope>LevelSelectorScene</scope><name>OnExit</name></member>
+      <member refid="classScene_1a0b39bb1405c0f9ed82b2123a4b9dbfbd" prot="public" virt="virtual"><scope>LevelSelectorScene</scope><name>OnResize</name></member>
+      <member refid="classLevelSelectorScene_1aa4161b586dbea24ead423a034816fdfc" prot="public" virt="virtual"><scope>LevelSelectorScene</scope><name>Render</name></member>
+      <member refid="classLevelSelectorScene_1a2f96c000d92e26cc44e50dd6f932c6d2" prot="private" virt="non-virtual"><scope>LevelSelectorScene</scope><name>RenderOption</name></member>
+      <member refid="classLevelSelectorScene_1acfaf5d66253dbd5880be7bc68d210d0a" prot="public" virt="virtual"><scope>LevelSelectorScene</scope><name>Update</name></member>
+      <member refid="classLevelSelectorScene_1a29adb71d9bf3a6bb60d127c8e506be8f" prot="public" virt="non-virtual"><scope>LevelSelectorScene</scope><name>~LevelSelectorScene</name></member>
+      <member refid="classScene_1af6e09d91ebd10ae9cc7c12c39d06386c" prot="public" virt="virtual"><scope>LevelSelectorScene</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structLevelDefinition" kind="struct" language="C++" prot="public">
+    <compoundname>LevelDefinition</compoundname>
+    <includes refid="LevelRegistry_8h" local="no">LevelRegistry.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLevelDefinition_1a8e92f9b20f1eb1a9ac44de804290b4e8" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string LevelDefinition::Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <qualifiedname>LevelDefinition::Name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelRegistry.h" line="18" column="17" bodyfile="engine/level/LevelRegistry.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelDefinition_1aa41fb86eb1255c3ae2ac786549a92560" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string LevelDefinition::Description</definition>
+        <argsstring></argsstring>
+        <name>Description</name>
+        <qualifiedname>LevelDefinition::Description</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelRegistry.h" line="19" column="17" bodyfile="engine/level/LevelRegistry.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelDefinition_1a1391bd366813e06226f8229c49f9bfbb" prot="public" static="no" mutable="no">
+        <type>std::function&lt; void(<ref refid="classLevelSystem" kindref="compound">LevelSystem</ref> &amp;)&gt;</type>
+        <definition>std::function&lt;void(LevelSystem&amp;)&gt; LevelDefinition::Build</definition>
+        <argsstring></argsstring>
+        <name>Build</name>
+        <qualifiedname>LevelDefinition::Build</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelRegistry.h" line="20" column="19" bodyfile="engine/level/LevelRegistry.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelDefinition_1a73045130a392c3e2a9ee42d6c7b6c137" prot="public" static="no" mutable="no">
+        <type><ref refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35" kindref="member">CameraMode</ref></type>
+        <definition>CameraMode LevelDefinition::Mode</definition>
+        <argsstring></argsstring>
+        <name>Mode</name>
+        <qualifiedname>LevelDefinition::Mode</qualifiedname>
+        <initializer>= <ref refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35a4457d440870ad6d42bab9082d9bf9b61" kindref="member">CameraMode::Fixed</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelRegistry.h" line="21" column="16" bodyfile="engine/level/LevelRegistry.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelDefinition_1a22664e95b2c4a39e90776824845fafd8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool LevelDefinition::IsNew</definition>
+        <argsstring></argsstring>
+        <name>IsNew</name>
+        <qualifiedname>LevelDefinition::IsNew</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelRegistry.h" line="22" column="10" bodyfile="engine/level/LevelRegistry.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Definition of a level: metadata + builder function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Each level is described by a display name, a short description, a builder function (that fills a <ref refid="classLevelSystem" kindref="compound">LevelSystem</ref>), and a camera mode.</para>
+<para><simplesect kind="see"><para><ref refid="classLevelRegistry" kindref="compound">LevelRegistry</ref>, <ref refid="LevelMacros_8h_1abffe427d7a82d716aaeb59f206234302" kindref="member">REGISTER_LEVEL</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>LevelDefinition</label>
+        <link refid="structLevelDefinition"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/level/LevelRegistry.h" line="17" column="1" bodyfile="engine/level/LevelRegistry.h" bodystart="17" bodyend="23"/>
+    <listofallmembers>
+      <member refid="structLevelDefinition_1a1391bd366813e06226f8229c49f9bfbb" prot="public" virt="non-virtual"><scope>LevelDefinition</scope><name>Build</name></member>
+      <member refid="structLevelDefinition_1aa41fb86eb1255c3ae2ac786549a92560" prot="public" virt="non-virtual"><scope>LevelDefinition</scope><name>Description</name></member>
+      <member refid="structLevelDefinition_1a22664e95b2c4a39e90776824845fafd8" prot="public" virt="non-virtual"><scope>LevelDefinition</scope><name>IsNew</name></member>
+      <member refid="structLevelDefinition_1a73045130a392c3e2a9ee42d6c7b6c137" prot="public" virt="non-virtual"><scope>LevelDefinition</scope><name>Mode</name></member>
+      <member refid="structLevelDefinition_1a8e92f9b20f1eb1a9ac44de804290b4e8" prot="public" virt="non-virtual"><scope>LevelDefinition</scope><name>Name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

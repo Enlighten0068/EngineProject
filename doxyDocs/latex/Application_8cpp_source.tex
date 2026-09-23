@@ -89,124 +89,143 @@
 \DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00094}00094\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//Initialize\ camera\ with\ aspect\ ratio}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{int}\ winWidth,\ winHeight;}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00098}00098\ \ \ \ \ SDL\_GetWindowSize(\doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{m\_Engine}}.\doxymbox{\hyperlink{classEngine_a531f887d1b7f38525d0c21d20e216e6c}{GetWindow}}().\doxymbox{\hyperlink{classSDLWindow_ad11eb6f7291bfcedcd7a5cbff75ebd8e}{GetNativeWindow}}(),\ \&winWidth,\ \&winHeight);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00099}00099\ \ \ \ \ \doxymbox{\hyperlink{classInput_a4d970dee00ab2bbe858a7758cc167d07}{Input::SetWindowSize}}(winWidth,\ winHeight);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordtype}{float}\ aspect\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(winWidth)\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(winHeight);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{float}\ height\ =\ 5.0f;}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{float}\ width\ =\ height\ *\ aspect;}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00103}00103\ \ \ \ \ \doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}}\ =\ std::make\_unique<Camera2D>(-\/width,\ width,\ -\/height,\ height);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00104}00104\ \ \ \ \ \doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}}-\/>SetPosition(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ 0.0f,\ 0.0f));}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00105}00105\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{comment}{//Initialize\ game\ world\ boundaries}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00107}00107\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a3e23ce99f0bb67f879a477d73c046f96}{m\_World}}\ =\ std::make\_unique<GameWorld>(-\/20.0f,\ 20.0f,\ -\/10.0f,\ 10.0f);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00108}00108\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{comment}{//Initialize\ gamepad\ manager}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().\doxymbox{\hyperlink{classApplication_a00d10eb756046bb9a02494ca7362013e}{Initialize}}())\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a5a5a1c297ed72ab2f850d0d01ae00aaa}{Log::Warning}}(\textcolor{stringliteral}{"{}Gamepad\ initialization\ failed.\ Continuing\ without\ gamepad\ support."{}});}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00112}00112\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00113}00113\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{comment}{//Initialize\ FPS\ counter}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00115}00115\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a682a91f7e9cb6072807dd7a6f14ef345}{m\_FpsCounter}}\ =\ std::make\_unique<FpsCounter>();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00116}00116\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{comment}{//Subscribe\ to\ window\ resize\ events\ for\ camera\ updates}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00118}00118\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_aec7a1402c0f1789198cc9954639bac99}{Subscribe}}<\doxymbox{\hyperlink{classWindowResizeEvent}{WindowResizeEvent}}>([\textcolor{keyword}{this}](\doxymbox{\hyperlink{classEvent}{Event}}\&\ e)\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classWindowResizeEvent}{WindowResizeEvent}}\&\ resizeEvent\ =\ \textcolor{keyword}{static\_cast<}\doxymbox{\hyperlink{classWindowResizeEvent}{WindowResizeEvent}}\&\textcolor{keyword}{>}(e);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ newWidth\ =\ resizeEvent.\doxymbox{\hyperlink{classWindowResizeEvent_a9800bd5e7b5a84c59c68d9b2301ca159}{GetWidth}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ newHeight\ =\ resizeEvent.\doxymbox{\hyperlink{classWindowResizeEvent_a13becd83abdc32de50c57664f64a5e55}{GetHeight}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00122}00122\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_a4d970dee00ab2bbe858a7758cc167d07}{Input::SetWindowSize}}(newWidth,\ newHeight);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00124}00124\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Skip\ camera\ update\ for\ fixed\ camera\ scenes}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classScene}{Scene}}*\ currentScene\ =\ \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\_SceneManager}}.\doxymbox{\hyperlink{classSceneManager_a6881ef515af1d01c0a35e9b40b4a7555}{GetCurrentScene}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(currentScene\ \&\&\ currentScene-\/>\doxymbox{\hyperlink{classScene_ad93511100250c3f3ed736b9ed69fdc6f}{GetName}}()\ ==\ \textcolor{stringliteral}{"{}Demo2D\_FixedCamera"{}})\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Fixed\ camera\ scene\ active:\ skipping\ camera\ projection\ update."{}});}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00131}00131\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}})\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ aspect\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(newWidth)\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(newHeight);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ height\ =\ 5.0f;}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ width\ =\ height\ *\ aspect;}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}}-\/>SetProjection(-\/width,\ width,\ -\/height,\ height);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00138}00138\ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00139}00139\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00140}00140\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Application\ initialized\ successfully."{}});}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00141}00141\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{comment}{//Initial\ scene\ -\/\ Demo2DFixedScene}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keyword}{auto}\ initialScene\ =\ std::make\_unique<Demo2DFixedScene>(}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>GetShader(),}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>GetVertexArray(),}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>GetIndexBuffer(),}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}},}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>GetLineShader()}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00149}00149\ \ \ \ \ );}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00150}00150\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00152}00152\ \}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00153}00153\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00161}\doxymbox{\hyperlink{classApplication_aaf09cd6cb412086dc039e28cdb059f0d}{00161}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_aaf09cd6cb412086dc039e28cdb059f0d}{Application::Run}}()\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{while}(\doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{m\_Engine}}.\doxymbox{\hyperlink{classEngine_a96fbaebec1936cf4440f93b59a7c5148}{IsRunning}}())\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classTime_a7e9cf31048064a9aedfee885807b1b56}{Time::Update}}();\ \textcolor{comment}{//Update\ time\ system}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afe51e6248cd234f53bb78f18fb7c52e5}{ProcessEvents}}();\ \textcolor{comment}{//Process\ SDL\ events}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_a72f9820ca25c093f6c2c4b2812f6a2a4}{Update}}();\ \textcolor{comment}{//Update\ game\ logic}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_af80dcfde6dbfe39bf3bc0345c75595ce}{Input::Update}}();\ \textcolor{comment}{//Reset\ input\ deltas}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_a6f40ffdb97f3a938ae19ea4eae4882ed}{Render}}();\ \textcolor{comment}{//Render\ the\ scene}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00168}00168\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00169}00169\ \}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00170}00170\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00177}\doxymbox{\hyperlink{classApplication_a817892cf56c1c333d53be31e73e8c2f8}{00177}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a817892cf56c1c333d53be31e73e8c2f8}{Application::Shutdown}}()\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00178}00178\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Shutting\ down\ Application..."{}});}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00179}00179\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00180}00180\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a682a91f7e9cb6072807dd7a6f14ef345}{m\_FpsCounter}}.reset();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00181}00181\ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().\doxymbox{\hyperlink{classGamepadManager_a55ac3f9f4cc6174f3143b176d348f0dc}{Shutdown}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00182}00182\ \ \ \ \ \doxymbox{\hyperlink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{ResourceManager::GetInstance}}().\doxymbox{\hyperlink{classResourceManager_aecd08b92634fad3316442c267a04e8c4}{Clear}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00183}00183\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a3e23ce99f0bb67f879a477d73c046f96}{m\_World}}.reset();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00184}00184\ \ \ \ \ \doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}}.reset();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00185}00185\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00186}00186\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}})\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>Shutdown();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}.reset();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00189}00189\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00190}00190\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00191}00191\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a979e575b3ee8a4e6d09c2d723d54ce79}{Clear}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00192}00192\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}EventBus\ cleared."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//Initialize\ HUD\ overlay}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00097}00097\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e}{m\_HUD}}\ =\ std::make\_unique<HUD>();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00098}00098\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e}{m\_HUD}}-\/>Initialize(\textcolor{stringliteral}{"{}assets/fonts/arial.ttf"{}},\ 28);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{comment}{//Initialize\ camera\ with\ aspect\ ratio}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{int}\ winWidth,\ winHeight;}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00102}00102\ \ \ \ \ SDL\_GetWindowSize(\doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{m\_Engine}}.\doxymbox{\hyperlink{classEngine_a531f887d1b7f38525d0c21d20e216e6c}{GetWindow}}().\doxymbox{\hyperlink{classSDLWindow_ad11eb6f7291bfcedcd7a5cbff75ebd8e}{GetNativeWindow}}(),\ \&winWidth,\ \&winHeight);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00103}00103\ \ \ \ \ \doxymbox{\hyperlink{classInput_a4d970dee00ab2bbe858a7758cc167d07}{Input::SetWindowSize}}(winWidth,\ winHeight);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{float}\ aspect\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(winWidth)\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(winHeight);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{float}\ height\ =\ 5.0f;}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordtype}{float}\ width\ =\ height\ *\ aspect;}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00107}00107\ \ \ \ \ \doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}}\ =\ std::make\_unique<Camera2D>(-\/width,\ width,\ -\/height,\ height);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00108}00108\ \ \ \ \ \doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}}-\/>SetPosition(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ 0.0f,\ 0.0f));}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{comment}{//Initialize\ game\ world\ boundaries}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00111}00111\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a3e23ce99f0bb67f879a477d73c046f96}{m\_World}}\ =\ std::make\_unique<GameWorld>(-\/20.0f,\ 20.0f,\ -\/10.0f,\ 10.0f);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{comment}{//Initialize\ gamepad\ manager}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().\doxymbox{\hyperlink{classApplication_a00d10eb756046bb9a02494ca7362013e}{Initialize}}())\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a5a5a1c297ed72ab2f850d0d01ae00aaa}{Log::Warning}}(\textcolor{stringliteral}{"{}Gamepad\ initialization\ failed.\ Continuing\ without\ gamepad\ support."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{comment}{//Initialize\ FPS\ counter}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00119}00119\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a682a91f7e9cb6072807dd7a6f14ef345}{m\_FpsCounter}}\ =\ std::make\_unique<FpsCounter>();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{comment}{//Subscribe\ to\ window\ resize\ events\ —\ delegate\ to\ the\ current\ scene}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00122}00122\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_aec7a1402c0f1789198cc9954639bac99}{Subscribe}}<\doxymbox{\hyperlink{classWindowResizeEvent}{WindowResizeEvent}}>([\textcolor{keyword}{this}](\doxymbox{\hyperlink{classEvent}{Event}}\&\ e)\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classWindowResizeEvent}{WindowResizeEvent}}\&\ resizeEvent\ =\ \textcolor{keyword}{static\_cast<}\doxymbox{\hyperlink{classWindowResizeEvent}{WindowResizeEvent}}\&\textcolor{keyword}{>}(e);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ newWidth\ =\ resizeEvent.\doxymbox{\hyperlink{classWindowResizeEvent_a9800bd5e7b5a84c59c68d9b2301ca159}{GetWidth}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ newHeight\ =\ resizeEvent.\doxymbox{\hyperlink{classWindowResizeEvent_a13becd83abdc32de50c57664f64a5e55}{GetHeight}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_a4d970dee00ab2bbe858a7758cc167d07}{Input::SetWindowSize}}(newWidth,\ newHeight);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Let\ the\ current\ scene\ decide\ how\ to\ handle\ the\ resize}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classScene}{Scene}}*\ currentScene\ =\ \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\_SceneManager}}.\doxymbox{\hyperlink{classSceneManager_a6881ef515af1d01c0a35e9b40b4a7555}{GetCurrentScene}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(currentScene)\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ currentScene-\/>\doxymbox{\hyperlink{classScene_a0b39bb1405c0f9ed82b2123a4b9dbfbd}{OnResize}}(newWidth,\ newHeight);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00134}00134\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00136}00136\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Application\ initialized\ successfully."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{comment}{//Initial\ scene\ -\/\ Demo2DFixedScene}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{keyword}{auto}\ initialScene\ =\ std::make\_unique<Demo2DFixedScene>(}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>GetShader(),\ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>GetVertexArray(),}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>GetIndexBuffer(),\ *\doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}},\ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>GetLineShader());}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00144}00144\ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00153}\doxymbox{\hyperlink{classApplication_aaf09cd6cb412086dc039e28cdb059f0d}{00153}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_aaf09cd6cb412086dc039e28cdb059f0d}{Application::Run}}()\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00154}00154\ \ \ \ \ \textcolor{keywordflow}{while}(\doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{m\_Engine}}.\doxymbox{\hyperlink{classEngine_a96fbaebec1936cf4440f93b59a7c5148}{IsRunning}}())\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classTime_a7e9cf31048064a9aedfee885807b1b56}{Time::Update}}();\ \textcolor{comment}{//Update\ time\ system}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Clamp\ delta\ time\ to\ prevent\ massive\ jumps\ after\ a\ long\ freeze}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{comment}{//(e.g.,\ while\ the\ user\ drags\ the\ window\ border)}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ MAX\_DELTA\ =\ 0.05f;\ \textcolor{comment}{//50\ ms\ =\ min\ 20\ FPS}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classTime_ad543732facbdbe2aa7298de13cb2a12b}{Time::DeltaTime}}()\ >\ MAX\_DELTA)\ \doxymbox{\hyperlink{classTime_ac6ae72b2ea451dd16f0d0ca3ae45fec5}{Time::SetDeltaTime}}(MAX\_DELTA);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afe51e6248cd234f53bb78f18fb7c52e5}{ProcessEvents}}();\ \textcolor{comment}{//Process\ SDL\ events}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_a72f9820ca25c093f6c2c4b2812f6a2a4}{Update}}();\ \textcolor{comment}{//Update\ game\ logic}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_af80dcfde6dbfe39bf3bc0345c75595ce}{Input::Update}}();\ \textcolor{comment}{//Reset\ input\ deltas}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_a6f40ffdb97f3a938ae19ea4eae4882ed}{Render}}();\ \textcolor{comment}{//Render\ the\ scene}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00166}00166\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00167}00167\ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00175}\doxymbox{\hyperlink{classApplication_a817892cf56c1c333d53be31e73e8c2f8}{00175}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a817892cf56c1c333d53be31e73e8c2f8}{Application::Shutdown}}()\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00176}00176\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Shutting\ down\ Application..."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00178}00178\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a682a91f7e9cb6072807dd7a6f14ef345}{m\_FpsCounter}}.reset();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00179}00179\ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().\doxymbox{\hyperlink{classGamepadManager_a55ac3f9f4cc6174f3143b176d348f0dc}{Shutdown}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00180}00180\ \ \ \ \ \doxymbox{\hyperlink{classResourceManager_a98b11a6302bf0db4ffc81eea70512ee2}{ResourceManager::GetInstance}}().\doxymbox{\hyperlink{classResourceManager_aecd08b92634fad3316442c267a04e8c4}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00181}00181\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a3e23ce99f0bb67f879a477d73c046f96}{m\_World}}.reset();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00182}00182\ \ \ \ \ \doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}}.reset();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e}{m\_HUD}})\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e}{m\_HUD}}-\/>Shutdown();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e}{m\_HUD}}.reset();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00187}00187\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00189}00189\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}})\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>Shutdown();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}.reset();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00192}00192\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00193}00193\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00194}00194\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{m\_Engine}}.\doxymbox{\hyperlink{classEngine_a3dbd2c0a65e642baa7eaa97caa6e4e64}{Shutdown}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00195}00195\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Engine\ shut\ down."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00194}00194\ \ \ \ \ \doxymbox{\hyperlink{classEventBus_abb3a69dd93dc265aec144024ab8ab3ed}{EventBus::GetInstance}}().\doxymbox{\hyperlink{classEventBus_a979e575b3ee8a4e6d09c2d723d54ce79}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00195}00195\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}EventBus\ cleared."{}});}
 \DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00196}00196\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00197}00197\ \ \ \ \ TTF\_Quit();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00198}00198\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}SDL\_ttf\ shut\ down."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00197}00197\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{m\_Engine}}.\doxymbox{\hyperlink{classEngine_a3dbd2c0a65e642baa7eaa97caa6e4e64}{Shutdown}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00198}00198\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Engine\ shut\ down."{}});}
 \DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00199}00199\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00200}00200\ \ \ \ \ \doxymbox{\hyperlink{classSoundEffect_abc204c2f7c0a891eb671821d23b38bc7}{SoundEffect::CloseAudioDevice}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00201}00201\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00202}00202\ \ \ \ \ \doxymbox{\hyperlink{classLog_ae32d1e5b199330781e5ce6b87f5e61c8}{Log::Shutdown}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00203}00203\ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00200}00200\ \ \ \ \ TTF\_Quit();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00201}00201\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}SDL\_ttf\ shut\ down."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00203}00203\ \ \ \ \ \doxymbox{\hyperlink{classSoundEffect_abc204c2f7c0a891eb671821d23b38bc7}{SoundEffect::CloseAudioDevice}}();}
 \DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00204}00204\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00211}\doxymbox{\hyperlink{classApplication_afe51e6248cd234f53bb78f18fb7c52e5}{00211}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_afe51e6248cd234f53bb78f18fb7c52e5}{Application::ProcessEvents}}()\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00212}00212\ \ \ \ \ SDL\_Event\ event;}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00213}00213\ \ \ \ \ \textcolor{keywordflow}{while}(SDL\_PollEvent(\&event))\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_abe4504868f560362185f020c471e9a84}{Input::ProcessEvent}}(event);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().\doxymbox{\hyperlink{classGamepadManager_a3d38e8583ad177eef9fecfda4d015826}{ProcessEvent}}(event);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSDLEventTranslator_a3f9759218967a1c0aa87e8e8208de25d}{SDLEventTranslator::TranslateAndDispatch}}(event);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00217}00217\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00218}00218\ \}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00219}00219\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00226}\doxymbox{\hyperlink{classApplication_a72f9820ca25c093f6c2c4b2812f6a2a4}{00226}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a72f9820ca25c093f6c2c4b2812f6a2a4}{Application::Update}}()\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00227}00227\ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().\doxymbox{\hyperlink{classGamepadManager_a6de10c692816a54eb47ea13a9b0786fc}{Update}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00228}00228\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\_SceneManager}}.\doxymbox{\hyperlink{classSceneManager_adbede64d5706507e65f0e9dd0eaddd6b}{Update}}(\doxymbox{\hyperlink{classTime_ad543732facbdbe2aa7298de13cb2a12b}{Time::DeltaTime}}());}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00229}00229\ \}}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00230}00230\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00236}\doxymbox{\hyperlink{classApplication_a6f40ffdb97f3a938ae19ea4eae4882ed}{00236}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a6f40ffdb97f3a938ae19ea4eae4882ed}{Application::Render}}()\{}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00237}00237\ \ \ \ \ \textcolor{keywordtype}{int}\ winWidth\ =\ \doxymbox{\hyperlink{classInput_a6fa97576489b0946ce0bcc88e8cbb46a}{Input::GetWindowWidth}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00238}00238\ \ \ \ \ \textcolor{keywordtype}{int}\ winHeight\ =\ \doxymbox{\hyperlink{classInput_a73ac35d323c9c62b29a0fdb7cd10c84f}{Input::GetWindowHeight}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00239}00239\ \ \ \ \ glViewport(0,\ 0,\ winWidth,\ winHeight);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00240}00240\ }
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00241}00241\ \ \ \ \ glClear(GL\_COLOR\_BUFFER\_BIT);}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00242}00242\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\_SceneManager}}.\doxymbox{\hyperlink{classSceneManager_a61329955734e0c8a67796ef2b041b5a2}{Render}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00243}00243\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{m\_Engine}}.\doxymbox{\hyperlink{classEngine_a531f887d1b7f38525d0c21d20e216e6c}{GetWindow}}().\doxymbox{\hyperlink{classSDLWindow_a63de111915a58b28696a6fd1889acec8}{SwapBuffers}}();}
-\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00244}00244\ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00205}00205\ \ \ \ \ \doxymbox{\hyperlink{classLog_ae32d1e5b199330781e5ce6b87f5e61c8}{Log::Shutdown}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00206}00206\ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00214}\doxymbox{\hyperlink{classApplication_afe51e6248cd234f53bb78f18fb7c52e5}{00214}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_afe51e6248cd234f53bb78f18fb7c52e5}{Application::ProcessEvents}}()\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00215}00215\ \ \ \ \ SDL\_Event\ event;}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00216}00216\ \ \ \ \ \textcolor{keywordflow}{while}(SDL\_PollEvent(\&event))\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classInput_abe4504868f560362185f020c471e9a84}{Input::ProcessEvent}}(event);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().\doxymbox{\hyperlink{classGamepadManager_a3d38e8583ad177eef9fecfda4d015826}{ProcessEvent}}(event);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classSDLEventTranslator_a3f9759218967a1c0aa87e8e8208de25d}{SDLEventTranslator::TranslateAndDispatch}}(event);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00220}00220\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00221}00221\ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00230}\doxymbox{\hyperlink{classApplication_a72f9820ca25c093f6c2c4b2812f6a2a4}{00230}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a72f9820ca25c093f6c2c4b2812f6a2a4}{Application::Update}}()\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00231}00231\ \ \ \ \ \textcolor{comment}{//Global\ hotkey:\ F11\ =\ toggle\ fullscreen}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00232}00232\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Input::IsKeyPressed}}(SDL\_SCANCODE\_F11))\ \doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{m\_Engine}}.\doxymbox{\hyperlink{classEngine_a47e36969b7d5eb737b75ca542c44b31f}{ToggleFullscreen}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00234}00234\ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().\doxymbox{\hyperlink{classGamepadManager_a6de10c692816a54eb47ea13a9b0786fc}{Update}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00235}00235\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\_SceneManager}}.\doxymbox{\hyperlink{classSceneManager_adbede64d5706507e65f0e9dd0eaddd6b}{Update}}(\doxymbox{\hyperlink{classTime_ad543732facbdbe2aa7298de13cb2a12b}{Time::DeltaTime}}());}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00236}00236\ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00243}\doxymbox{\hyperlink{classApplication_a6f40ffdb97f3a938ae19ea4eae4882ed}{00243}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a6f40ffdb97f3a938ae19ea4eae4882ed}{Application::Render}}()\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{keywordtype}{int}\ winWidth\ =\ \doxymbox{\hyperlink{classInput_a6fa97576489b0946ce0bcc88e8cbb46a}{Input::GetWindowWidth}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00245}00245\ \ \ \ \ \textcolor{keywordtype}{int}\ winHeight\ =\ \doxymbox{\hyperlink{classInput_a73ac35d323c9c62b29a0fdb7cd10c84f}{Input::GetWindowHeight}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00246}00246\ \ \ \ \ glViewport(0,\ 0,\ winWidth,\ winHeight);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00248}00248\ \ \ \ \ glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00249}00249\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\_SceneManager}}.\doxymbox{\hyperlink{classSceneManager_a61329955734e0c8a67796ef2b041b5a2}{Render}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00251}00251\ \ \ \ \ \textcolor{comment}{//HUD\ overlay\ (renders\ on\ top\ of\ the\ scene)}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00252}00252\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e}{m\_HUD}})\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classScene}{Scene}}*\ currentScene\ =\ \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\_SceneManager}}.\doxymbox{\hyperlink{classSceneManager_a6881ef515af1d01c0a35e9b40b4a7555}{GetCurrentScene}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(currentScene)\{}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e}{m\_HUD}}-\/>Render(currentScene-\/>\doxymbox{\hyperlink{classScene_afb756dd8b7583f4b06a000d8157c7952}{GetHUDLines}}(),}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>GetShader(),}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>GetVertexArray(),}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}}-\/>GetIndexBuffer(),}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ winWidth,\ winHeight);}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00261}00261\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00263}00263\ \ \ \ \ \doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{m\_Engine}}.\doxymbox{\hyperlink{classEngine_a531f887d1b7f38525d0c21d20e216e6c}{GetWindow}}().\doxymbox{\hyperlink{classSDLWindow_a63de111915a58b28696a6fd1889acec8}{SwapBuffers}}();}
+\DoxyCodeLine{\Hypertarget{Application_8cpp_source_l00264}00264\ \}}
 
 \end{DoxyCode}

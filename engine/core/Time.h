@@ -17,8 +17,13 @@ public:
     static float DeltaTime();
 
     /**
-     * @brief Overrides the delta time for this frame.
-     * @note Used to clamp delta time after long freezes.
+     * @brief Overrides the delta time for the current frame.
+     *
+     * Used by Application to clamp delta time after long freezes (e.g.,
+     * while the user drags the window border), preventing physics
+     * tunneling and huge position jumps.
+     *
+     * @param dt New delta time value (seconds).
      */
     static void SetDeltaTime(float dt){ s_DeltaTime = dt; }
 

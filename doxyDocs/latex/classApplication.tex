@@ -61,6 +61,8 @@ std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classFpsCounter}{Fps\+Counter}} $
 std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classGameWorld}{Game\+World}} $>$ \doxymbox{\hyperlink{classApplication_a3e23ce99f0bb67f879a477d73c046f96}{m\+\_\+\+World}}
 \item 
 \doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}} \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\+\_\+\+Scene\+Manager}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classHUD}{HUD}} $>$ \doxymbox{\hyperlink{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e}{m\+\_\+\+HUD}}
 \end{DoxyCompactItemize}
 
 
@@ -77,7 +79,7 @@ Even though it\textquotesingle{}s not a Singleton class, keep no more than one i
 \end{DoxySeeAlso}
 
 
-Definition at line \doxymbox{\hyperlink{Application_8h_source_l00037}{37}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
+Definition at line \doxymbox{\hyperlink{Application_8h_source_l00038}{38}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
 
 
 
@@ -120,7 +122,7 @@ Reference to the \doxylink{classCamera2D}{Camera2D}.
 \end{DoxyReturn}
 
 
-Definition at line \doxymbox{\hyperlink{Application_8h_source_l00079}{79}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
+Definition at line \doxymbox{\hyperlink{Application_8h_source_l00080}{80}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
 
 \Hypertarget{classApplication_a3ee5aff75ba546ab029d8ad0ca89e503}\index{Application@{Application}!GetGraphicsContext@{GetGraphicsContext}}
 \index{GetGraphicsContext@{GetGraphicsContext}!Application@{Application}}
@@ -137,7 +139,7 @@ Reference to the \doxylink{classGraphicsContext}{Graphics\+Context}.
 \end{DoxyReturn}
 
 
-Definition at line \doxymbox{\hyperlink{Application_8h_source_l00073}{73}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
+Definition at line \doxymbox{\hyperlink{Application_8h_source_l00074}{74}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
 
 \Hypertarget{classApplication_a0f448032d2de38aaf84309848afd37c5}\index{Application@{Application}!GetSceneManager@{GetSceneManager}}
 \index{GetSceneManager@{GetSceneManager}!Application@{Application}}
@@ -154,7 +156,7 @@ Reference to the \doxylink{classSceneManager}{Scene\+Manager}.
 \end{DoxyReturn}
 
 
-Definition at line \doxymbox{\hyperlink{Application_8h_source_l00067}{67}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
+Definition at line \doxymbox{\hyperlink{Application_8h_source_l00068}{68}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
 
 \Hypertarget{classApplication_a00d10eb756046bb9a02494ca7362013e}\index{Application@{Application}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!Application@{Application}}
@@ -192,7 +194,7 @@ Processes all pending SDL events.
 
 Events are passed to \doxylink{classInput}{Input} (for state tracking), \doxylink{classGamepadManager}{Gamepad\+Manager} (for gamepad events), and \doxylink{classSDLEventTranslator}{SDLEvent\+Translator} (for converting to engine events and dispatching via \doxylink{classEventBus}{Event\+Bus}). 
 
-Definition at line \doxymbox{\hyperlink{Application_8cpp_source_l00211}{211}} of file \doxymbox{\hyperlink{Application_8cpp_source}{Application.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{Application_8cpp_source_l00214}{214}} of file \doxymbox{\hyperlink{Application_8cpp_source}{Application.\+cpp}}.
 
 \Hypertarget{classApplication_a6f40ffdb97f3a938ae19ea4eae4882ed}\index{Application@{Application}!Render@{Render}}
 \index{Render@{Render}!Application@{Application}}
@@ -206,7 +208,7 @@ Renders the current scene.
 
 Clears buffers and delegates rendering to the \doxylink{classScene}{Scene} Manager. 
 
-Definition at line \doxymbox{\hyperlink{Application_8cpp_source_l00236}{236}} of file \doxymbox{\hyperlink{Application_8cpp_source}{Application.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{Application_8cpp_source_l00243}{243}} of file \doxymbox{\hyperlink{Application_8cpp_source}{Application.\+cpp}}.
 
 \Hypertarget{classApplication_aaf09cd6cb412086dc039e28cdb059f0d}\index{Application@{Application}!Run@{Run}}
 \index{Run@{Run}!Application@{Application}}
@@ -224,7 +226,7 @@ The loop processes events, updates all systems, and renders the current scene.
 
 The loop runs while the engine is running, processing events, updating all systems, and rendering the current scene. It follows a strict order starting from time then event handling, system updates, input state, rendering. 
 
-Definition at line \doxymbox{\hyperlink{Application_8cpp_source_l00161}{161}} of file \doxymbox{\hyperlink{Application_8cpp_source}{Application.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{Application_8cpp_source_l00153}{153}} of file \doxymbox{\hyperlink{Application_8cpp_source}{Application.\+cpp}}.
 
 \Hypertarget{classApplication_a817892cf56c1c333d53be31e73e8c2f8}\index{Application@{Application}!Shutdown@{Shutdown}}
 \index{Shutdown@{Shutdown}!Application@{Application}}
@@ -240,7 +242,7 @@ This method ensures that all subsystems (graphics, audio, input, etc.) are prope
 
 The shutdown order is the reverse of initialization to ensure proper resource cleanup and avoid dangling references. 
 
-Definition at line \doxymbox{\hyperlink{Application_8cpp_source_l00177}{177}} of file \doxymbox{\hyperlink{Application_8cpp_source}{Application.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{Application_8cpp_source_l00175}{175}} of file \doxymbox{\hyperlink{Application_8cpp_source}{Application.\+cpp}}.
 
 \Hypertarget{classApplication_a72f9820ca25c093f6c2c4b2812f6a2a4}\index{Application@{Application}!Update@{Update}}
 \index{Update@{Update}!Application@{Application}}
@@ -252,9 +254,9 @@ void Application::\+\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}
 
 Updates all systems for the current frame. 
 
-This includes the gamepad state and the current scene (which updates entities, physics, AI) 
+This includes the gamepad state and the current scene (which updates entities, physics, AI). Also handles the global F11 hotkey for toggling fullscreen. 
 
-Definition at line \doxymbox{\hyperlink{Application_8cpp_source_l00226}{226}} of file \doxymbox{\hyperlink{Application_8cpp_source}{Application.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{Application_8cpp_source_l00230}{230}} of file \doxymbox{\hyperlink{Application_8cpp_source}{Application.\+cpp}}.
 
 
 
@@ -269,7 +271,7 @@ std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classCamera2D}{Camera2D}}$>$ Appli
 
 
 
-Definition at line \doxymbox{\hyperlink{Application_8h_source_l00084}{84}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
+Definition at line \doxymbox{\hyperlink{Application_8h_source_l00085}{85}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
 
 \Hypertarget{classApplication_a126a310227b213e720cc4596d7e1aadf}\index{Application@{Application}!m\_Engine@{m\_Engine}}
 \index{m\_Engine@{m\_Engine}!Application@{Application}}
@@ -279,7 +281,7 @@ Definition at line \doxymbox{\hyperlink{Application_8h_source_l00084}{84}} of fi
 
 
 
-Definition at line \doxymbox{\hyperlink{Application_8h_source_l00082}{82}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
+Definition at line \doxymbox{\hyperlink{Application_8h_source_l00083}{83}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
 
 \Hypertarget{classApplication_a682a91f7e9cb6072807dd7a6f14ef345}\index{Application@{Application}!m\_FpsCounter@{m\_FpsCounter}}
 \index{m\_FpsCounter@{m\_FpsCounter}!Application@{Application}}
@@ -289,7 +291,7 @@ std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classFpsCounter}{Fps\+Counter}}$>$
 
 
 
-Definition at line \doxymbox{\hyperlink{Application_8h_source_l00085}{85}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
+Definition at line \doxymbox{\hyperlink{Application_8h_source_l00086}{86}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
 
 \Hypertarget{classApplication_afb633069c0774e759f1d7cc1926983a8}\index{Application@{Application}!m\_Graphics@{m\_Graphics}}
 \index{m\_Graphics@{m\_Graphics}!Application@{Application}}
@@ -299,7 +301,17 @@ std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classGraphicsContext}{Graphics\+Co
 
 
 
-Definition at line \doxymbox{\hyperlink{Application_8h_source_l00083}{83}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
+Definition at line \doxymbox{\hyperlink{Application_8h_source_l00084}{84}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
+
+\Hypertarget{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e}\index{Application@{Application}!m\_HUD@{m\_HUD}}
+\index{m\_HUD@{m\_HUD}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{m\_HUD}{m\_HUD}}
+{\footnotesize\ttfamily \label{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classHUD}{HUD}}$>$ Application::\+m\+\_\+\+HUD\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{Application_8h_source_l00089}{89}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
 
 \Hypertarget{classApplication_a515a967a0aba4f893e8738519dc00cec}\index{Application@{Application}!m\_SceneManager@{m\_SceneManager}}
 \index{m\_SceneManager@{m\_SceneManager}!Application@{Application}}
@@ -309,7 +321,7 @@ Definition at line \doxymbox{\hyperlink{Application_8h_source_l00083}{83}} of fi
 
 
 
-Definition at line \doxymbox{\hyperlink{Application_8h_source_l00087}{87}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
+Definition at line \doxymbox{\hyperlink{Application_8h_source_l00088}{88}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
 
 \Hypertarget{classApplication_a3e23ce99f0bb67f879a477d73c046f96}\index{Application@{Application}!m\_World@{m\_World}}
 \index{m\_World@{m\_World}!Application@{Application}}
@@ -319,7 +331,7 @@ std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classGameWorld}{Game\+World}}$>$ A
 
 
 
-Definition at line \doxymbox{\hyperlink{Application_8h_source_l00086}{86}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
+Definition at line \doxymbox{\hyperlink{Application_8h_source_l00087}{87}} of file \doxymbox{\hyperlink{Application_8h_source}{Application.\+h}}.
 
 
 

@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="CameraMode_8h" kind="file" language="C++">
+    <compoundname>CameraMode.h</compoundname>
+    <includedby refid="LevelRegistry_8h" local="yes">engine/level/LevelRegistry.h</includedby>
+    <includedby refid="BaseLevelScene_8h" local="yes">engine/scene/BaseLevelScene.h</includedby>
+    <invincdepgraph>
+      <node id="4">
+        <label>engine/demo/levels/Level1.cpp</label>
+        <link refid="Level1_8cpp"/>
+      </node>
+      <node id="5">
+        <label>engine/demo/levels/Level2.cpp</label>
+        <link refid="Level2_8cpp"/>
+      </node>
+      <node id="6">
+        <label>engine/demo/levels/Level3.cpp</label>
+        <link refid="Level3_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/level/CameraMode.h</label>
+        <link refid="CameraMode_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>engine/level/LevelMacros.h</label>
+        <link refid="LevelMacros_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>engine/level/LevelRegistry.cpp</label>
+        <link refid="LevelRegistry_8cpp"/>
+      </node>
+      <node id="2">
+        <label>engine/level/LevelRegistry.h</label>
+        <link refid="LevelRegistry_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>engine/level/LevelSelectorScene.cpp</label>
+        <link refid="LevelSelectorScene_8cpp"/>
+      </node>
+      <node id="10">
+        <label>engine/scene/BaseLevelScene.cpp</label>
+        <link refid="BaseLevelScene_8cpp"/>
+      </node>
+      <node id="9">
+        <label>engine/scene/BaseLevelScene.h</label>
+        <link refid="BaseLevelScene_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>CameraMode</name>
+        <enumvalue id="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35a4457d440870ad6d42bab9082d9bf9b61" prot="public">
+          <name>Fixed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35a3903aab323863bd2e9b68218a7a65ebd" prot="public">
+          <name>Follow</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Camera behavior for a level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines how the camera tracks the world during gameplay.</para>
+<para><simplesect kind="see"><para><ref refid="classBaseLevelScene" kindref="compound">BaseLevelScene</ref>, <ref refid="structLevelDefinition" kindref="compound">LevelDefinition</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/CameraMode.h" line="10" column="1" bodyfile="engine/level/CameraMode.h" bodystart="10" bodyend="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35" kindref="member">CameraMode</ref>{</highlight></codeline>
+<codeline lineno="11" refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35a4457d440870ad6d42bab9082d9bf9b61" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35a4457d440870ad6d42bab9082d9bf9b61" kindref="member">Fixed</ref>,<sp/></highlight><highlight class="comment">//Camera<sp/>shows<sp/>the<sp/>entire<sp/>world<sp/>at<sp/>once<sp/>(no<sp/>follow)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35a3903aab323863bd2e9b68218a7a65ebd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35a3903aab323863bd2e9b68218a7a65ebd" kindref="member">Follow</ref><sp/></highlight><highlight class="comment">//Camera<sp/>follows<sp/>the<sp/>player,<sp/>keeping<sp/>vertical<sp/>extent<sp/>fixed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/level/CameraMode.h"/>
+  </compounddef>
+</doxygen>

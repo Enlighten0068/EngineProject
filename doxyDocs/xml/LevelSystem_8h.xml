@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="LevelSystem_8h" kind="file" language="C++">
+    <compoundname>LevelSystem.h</compoundname>
+    <includes refid="components_2Transform_8h" local="yes">components/Transform.h</includes>
+    <includes refid="SpriteRenderer_8h" local="yes">components/SpriteRenderer.h</includes>
+    <includes refid="TileScale_8h" local="yes">components/TileScale.h</includes>
+    <includes refid="Enemy_8h" local="yes">components/Enemy.h</includes>
+    <includes refid="Patrol_8h" local="yes">components/Patrol.h</includes>
+    <includes refid="PhysicsBody_8h" local="yes">components/PhysicsBody.h</includes>
+    <includes refid="Texture2D_8h" local="yes">graphics/Texture2D.h</includes>
+    <includes refid="Vector3D_8h" local="yes">math/Vector3D.h</includes>
+    <includes refid="ECSScene_8h" local="yes">scene/ECSScene.h</includes>
+    <includes local="no">entt.hpp</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="Levels_8h" local="yes">engine/demo/levels/Levels.h</includedby>
+    <includedby refid="LevelRegistry_8h" local="yes">engine/level/LevelRegistry.h</includedby>
+    <includedby refid="BaseLevelScene_8h" local="yes">engine/scene/BaseLevelScene.h</includedby>
+    <includedby refid="LevelSystem_8cpp" local="yes">engine/systems/LevelSystem.cpp</includedby>
+    <incdepgraph>
+      <node id="11">
+        <label>components/Enemy.h</label>
+        <link refid="Enemy_8h"/>
+      </node>
+      <node id="12">
+        <label>components/Patrol.h</label>
+        <link refid="Patrol_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>components/PhysicsBody.h</label>
+        <link refid="PhysicsBody_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>components/SpriteRenderer.h</label>
+        <link refid="SpriteRenderer_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>components/TileScale.h</label>
+        <link refid="TileScale_8h"/>
+      </node>
+      <node id="2">
+        <label>components/Transform.h</label>
+        <link refid="components_2Transform_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>graphics/Texture2D.h</label>
+        <link refid="Texture2D_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>graphics/VertexArray.h</label>
+        <link refid="VertexArray_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="14">
+        <label>scene/ECSScene.h</label>
+        <link refid="ECSScene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/systems/LevelSystem.h</label>
+        <link refid="LevelSystem_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="17">
+        <label>cmath</label>
+      </node>
+      <node id="7">
+        <label>cstdint</label>
+      </node>
+      <node id="21">
+        <label>entt.hpp</label>
+      </node>
+      <node id="9">
+        <label>memory</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="22">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>engine/demo/levels/Level1.cpp</label>
+        <link refid="Level1_8cpp"/>
+      </node>
+      <node id="4">
+        <label>engine/demo/levels/Level2.cpp</label>
+        <link refid="Level2_8cpp"/>
+      </node>
+      <node id="5">
+        <label>engine/demo/levels/Level3.cpp</label>
+        <link refid="Level3_8cpp"/>
+      </node>
+      <node id="2">
+        <label>engine/demo/levels/Levels.h</label>
+        <link refid="Levels_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>engine/level/LevelMacros.h</label>
+        <link refid="LevelMacros_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>engine/level/LevelRegistry.cpp</label>
+        <link refid="LevelRegistry_8cpp"/>
+      </node>
+      <node id="6">
+        <label>engine/level/LevelRegistry.h</label>
+        <link refid="LevelRegistry_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>engine/level/LevelSelectorScene.cpp</label>
+        <link refid="LevelSelectorScene_8cpp"/>
+      </node>
+      <node id="11">
+        <label>engine/scene/BaseLevelScene.cpp</label>
+        <link refid="BaseLevelScene_8cpp"/>
+      </node>
+      <node id="10">
+        <label>engine/scene/BaseLevelScene.h</label>
+        <link refid="BaseLevelScene_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>engine/systems/LevelSystem.cpp</label>
+        <link refid="LevelSystem_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/systems/LevelSystem.h</label>
+        <link refid="LevelSystem_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classLevelSystem" prot="public">LevelSystem</innerclass>
+    <innerclass refid="structLevelSystem_1_1EnemyDefinition" prot="public">LevelSystem::EnemyDefinition</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="components_2Transform_8h" kindref="compound">components/Transform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SpriteRenderer_8h" kindref="compound">components/SpriteRenderer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TileScale_8h" kindref="compound">components/TileScale.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Enemy_8h" kindref="compound">components/Enemy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Patrol_8h" kindref="compound">components/Patrol.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PhysicsBody_8h" kindref="compound">components/PhysicsBody.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Texture2D_8h" kindref="compound">graphics/Texture2D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3D_8h" kindref="compound">math/Vector3D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ECSScene_8h" kindref="compound">scene/ECSScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;entt.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classLevelSystem" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classLevelSystem_1adf27eff6fdebd568877347bd09f023d6" kindref="member">LevelSystem</ref>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37" refid="structLevelSystem_1_1EnemyDefinition" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLevelSystem_1_1EnemyDefinition" kindref="compound">EnemyDefinition</ref>{</highlight></codeline>
+<codeline lineno="38" refid="structLevelSystem_1_1EnemyDefinition_1ac7b211e985297ab59069938c73771fe6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structLevelSystem_1_1EnemyDefinition_1ac7b211e985297ab59069938c73771fe6" kindref="member">Position</ref>;<sp/></highlight><highlight class="comment">//Spawn<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structLevelSystem_1_1EnemyDefinition_1a92d8b660a610207612f56863e895e754" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structLevelSystem_1_1EnemyDefinition_1a92d8b660a610207612f56863e895e754" kindref="member">Scale</ref>;<sp/></highlight><highlight class="comment">//Size<sp/>of<sp/>the<sp/>enemy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structLevelSystem_1_1EnemyDefinition_1a75975711e8aeb4705ac234822cddade6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/><ref refid="structLevelSystem_1_1EnemyDefinition_1a75975711e8aeb4705ac234822cddade6" kindref="member">Texture</ref>;<sp/></highlight><highlight class="comment">//Enemy<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="structLevelSystem_1_1EnemyDefinition_1a0be9a477c9ae928a0ee86056d306566a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structLevelSystem_1_1EnemyDefinition_1a0be9a477c9ae928a0ee86056d306566a" kindref="member">PatrolStart</ref>;<sp/></highlight><highlight class="comment">//Start<sp/>of<sp/>patrol<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="structLevelSystem_1_1EnemyDefinition_1ade4221f51df3fe9abbeb7880c54104fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structLevelSystem_1_1EnemyDefinition_1ade4221f51df3fe9abbeb7880c54104fd" kindref="member">PatrolEnd</ref>;<sp/></highlight><highlight class="comment">//End<sp/>of<sp/>patrol<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="structLevelSystem_1_1EnemyDefinition_1a91a2652cec2601dfaffb1d78e601e1e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLevelSystem_1_1EnemyDefinition_1a91a2652cec2601dfaffb1d78e601e1e3" kindref="member">PatrolSpeed</ref>;<sp/></highlight><highlight class="comment">//Movement<sp/>speed<sp/>during<sp/>patrol</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLevelSystem_1adf27eff6fdebd568877347bd09f023d6" kindref="member">LevelSystem</ref>(<ref refid="classECSScene" kindref="compound">ECSScene</ref>&amp;<sp/>scene,<sp/>std::shared_ptr&lt;Texture2D&gt;<sp/>playerTex,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/>tileTex,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/>enemyTex);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Level<sp/>definition<sp/>API</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a3e6320da6531e2929c3d8a78e359ac24" kindref="member">SetWorldBounds</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>maxX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minY,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>maxY);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a7530478b25741aebf4deccad90696d5b" kindref="member">CreatePlayer</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>scale<sp/>=<sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>(3.0f,<sp/>3.0f,<sp/>1.0f));</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classLevelSystem_1a1b19c6edebac036042a5786330e76987" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a1b19c6edebac036042a5786330e76987" kindref="member">CreatePlayerOnFloor</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>floorY,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>scale<sp/>=<sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>(3.0f,<sp/>3.0f,<sp/>1.0f));</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a085108be7529741cb15602a8022b833c" kindref="member">CreatePlatform</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>h,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>tileX<sp/>=<sp/>-1.0f,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>tileY<sp/>=<sp/>1.0f);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1aba8c5392fbf24e635c064847625d5be6" kindref="member">CreateEnemy</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>patrolStartX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>patrolEndX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref>&amp;<sp/>scale<sp/>=<sp/><ref refid="structVector3D_1a0b11a8d75da427b27443d8a94d0d296c" kindref="member">Vector3D</ref>(3.0f,<sp/>3.0f,<sp/>1.0f));</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Accessors(used<sp/>by<sp/>the<sp/>scene<sp/>after<sp/>building)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="classLevelSystem_1a9200d914b599b8def8493a7c2cae76b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a9200d914b599b8def8493a7c2cae76b4" kindref="member">GetMinX</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a7ee740d1275dc8de3f4cfbe0f5d4d37e" kindref="member">m_MinX</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="118" refid="classLevelSystem_1a363a5adfbef8e600a912b96f1e75f5fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a363a5adfbef8e600a912b96f1e75f5fc" kindref="member">GetMaxX</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a471eaf3314955832389dc96aa0b2c668" kindref="member">m_MaxX</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="119" refid="classLevelSystem_1a7f519e936acfa2af7f94570d01fae0a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a7f519e936acfa2af7f94570d01fae0a1" kindref="member">GetMinY</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1ab3ec7fcdfc2ea8e3b1cae73cdea66284" kindref="member">m_MinY</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="120" refid="classLevelSystem_1ad0bd129e84474259c33c976eae3f03b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1ad0bd129e84474259c33c976eae3f03b6" kindref="member">GetMaxY</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a53e01a0809e2aef16469a04f3de101be" kindref="member">m_MaxY</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="classLevelSystem_1a58a12d9e7eb3781b3976c42ba04a62b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>entt::entity<sp/><ref refid="classLevelSystem_1a58a12d9e7eb3781b3976c42ba04a62b0" kindref="member">GetPlayerEntity</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a3360d59adae5259447c161bf3050899c" kindref="member">m_PlayerEntity</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="123" refid="classLevelSystem_1a05736b7dfd96201827d4d27ea628dc13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;entt::entity&gt;&amp;<sp/><ref refid="classLevelSystem_1a05736b7dfd96201827d4d27ea628dc13" kindref="member">GetPlatforms</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a7583ed8df68e766a29c522cfc1719df9" kindref="member">m_PlatformEntities</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="124" refid="classLevelSystem_1a4e765e3778c9694c995c1d45b2737806" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;entt::entity&gt;&amp;<sp/><ref refid="classLevelSystem_1a4e765e3778c9694c995c1d45b2737806" kindref="member">GetEnemies</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a21f4aeea06b4c7427eda4418094b116c" kindref="member">m_EnemyEntities</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="125" refid="classLevelSystem_1a3b3c9cb5a253e0e253f868cd7d6352c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;EnemyDefinition&gt;&amp;<sp/><ref refid="classLevelSystem_1a3b3c9cb5a253e0e253f868cd7d6352c5" kindref="member">GetEnemyDefinitions</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1aa2494c86ba64c939dc03980891c646d8" kindref="member">m_EnemyDefinitions</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="128" refid="classLevelSystem_1a3264e9b899873ac854f0759d3103aeac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classECSScene" kindref="compound">ECSScene</ref>&amp;<sp/><ref refid="classLevelSystem_1a3264e9b899873ac854f0759d3103aeac" kindref="member">m_Scene</ref>;<sp/></highlight><highlight class="comment">//Reference<sp/>to<sp/>the<sp/>ECS<sp/>scene</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="classLevelSystem_1ab69f9cb52128e9c8c54f3d7ca50c77ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/><ref refid="classLevelSystem_1ab69f9cb52128e9c8c54f3d7ca50c77ac" kindref="member">m_PlayerTex</ref>;<sp/></highlight><highlight class="comment">//Player<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="classLevelSystem_1ab03cdacf2090d7c234bb91c8b005ef03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/><ref refid="classLevelSystem_1ab03cdacf2090d7c234bb91c8b005ef03" kindref="member">m_TileTex</ref>;<sp/></highlight><highlight class="comment">//Tile/platform<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classLevelSystem_1a7c91d5ae725b59c2b21829be61b05129" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/><ref refid="classLevelSystem_1a7c91d5ae725b59c2b21829be61b05129" kindref="member">m_EnemyTex</ref>;<sp/></highlight><highlight class="comment">//Enemy<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="classLevelSystem_1a471eaf3314955832389dc96aa0b2c668" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1a7ee740d1275dc8de3f4cfbe0f5d4d37e" kindref="member">m_MinX</ref><sp/>=<sp/>-20.0f,<sp/><ref refid="classLevelSystem_1a471eaf3314955832389dc96aa0b2c668" kindref="member">m_MaxX</ref><sp/>=<sp/>20.0f;<sp/></highlight><highlight class="comment">//World<sp/>X<sp/>bounds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="classLevelSystem_1a53e01a0809e2aef16469a04f3de101be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classLevelSystem_1ab3ec7fcdfc2ea8e3b1cae73cdea66284" kindref="member">m_MinY</ref><sp/>=<sp/>-10.0f,<sp/><ref refid="classLevelSystem_1a53e01a0809e2aef16469a04f3de101be" kindref="member">m_MaxY</ref><sp/>=<sp/>10.0f;<sp/></highlight><highlight class="comment">//World<sp/>Y<sp/>bounds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="classLevelSystem_1a3360d59adae5259447c161bf3050899c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>entt::entity<sp/><ref refid="classLevelSystem_1a3360d59adae5259447c161bf3050899c" kindref="member">m_PlayerEntity</ref><sp/>=<sp/>entt::null;<sp/></highlight><highlight class="comment">//Player<sp/>entity<sp/>ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="classLevelSystem_1a7583ed8df68e766a29c522cfc1719df9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;entt::entity&gt;<sp/><ref refid="classLevelSystem_1a7583ed8df68e766a29c522cfc1719df9" kindref="member">m_PlatformEntities</ref>;<sp/></highlight><highlight class="comment">//Platform<sp/>entity<sp/>IDs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="classLevelSystem_1a21f4aeea06b4c7427eda4418094b116c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;entt::entity&gt;<sp/><ref refid="classLevelSystem_1a21f4aeea06b4c7427eda4418094b116c" kindref="member">m_EnemyEntities</ref>;<sp/></highlight><highlight class="comment">//Enemy<sp/>entity<sp/>IDs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="classLevelSystem_1aa2494c86ba64c939dc03980891c646d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;EnemyDefinition&gt;<sp/><ref refid="classLevelSystem_1aa2494c86ba64c939dc03980891c646d8" kindref="member">m_EnemyDefinitions</ref>;<sp/></highlight><highlight class="comment">//Enemy<sp/>definitions<sp/>for<sp/>respawn</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/systems/LevelSystem.h"/>
+  </compounddef>
+</doxygen>

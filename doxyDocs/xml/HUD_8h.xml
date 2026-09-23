@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="HUD_8h" kind="file" language="C++">
+    <compoundname>HUD.h</compoundname>
+    <includes refid="Font_8h" local="yes">graphics/Font.h</includes>
+    <includes refid="Texture2D_8h" local="yes">graphics/Texture2D.h</includes>
+    <includes refid="Shader_8h" local="yes">graphics/Shader.h</includes>
+    <includes refid="VertexArray_8h" local="yes">graphics/VertexArray.h</includes>
+    <includes refid="IndexBuffer_8h" local="yes">graphics/IndexBuffer.h</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="Application_8h" local="yes">engine/core/Application.h</includedby>
+    <includedby refid="HUD_8cpp" local="yes">engine/scene/HUD.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>graphics/Font.h</label>
+        <link refid="Font_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>graphics/Texture2D.h</label>
+        <link refid="Texture2D_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>graphics/VertexArray.h</label>
+        <link refid="VertexArray_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="1">
+        <label>engine/scene/HUD.h</label>
+        <link refid="HUD_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="4">
+        <label>SDL3_ttf/SDL_ttf.h</label>
+      </node>
+      <node id="12">
+        <label>cmath</label>
+      </node>
+      <node id="8">
+        <label>cstdint</label>
+      </node>
+      <node id="6">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="16">
+        <label>unordered_map</label>
+      </node>
+      <node id="17">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>engine/core/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="2">
+        <label>engine/core/Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>engine/core/Time.cpp</label>
+        <link refid="Time_8cpp"/>
+      </node>
+      <node id="6">
+        <label>engine/scene/HUD.cpp</label>
+        <link refid="HUD_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/scene/HUD.h</label>
+        <link refid="HUD_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>game/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classHUD" prot="public">HUD</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Font_8h" kindref="compound">graphics/Font.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Texture2D_8h" kindref="compound">graphics/Texture2D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Shader_8h" kindref="compound">graphics/Shader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="VertexArray_8h" kindref="compound">graphics/VertexArray.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="IndexBuffer_8h" kindref="compound">graphics/IndexBuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classHUD" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classHUD_1a568b8ee1591f9ba3ed36ae05966f6b56" kindref="member">HUD</ref>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26" refid="classHUD_1a568b8ee1591f9ba3ed36ae05966f6b56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHUD_1a568b8ee1591f9ba3ed36ae05966f6b56" kindref="member">HUD</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classHUD_1a568b8ee1591f9ba3ed36ae05966f6b56" kindref="member">~HUD</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classHUD_1a5da52e1cbe872f0dcf9f30d5fc72ba13" kindref="member">Initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>fontPath,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fontSize);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classHUD_1ac74213a2dfa97b3bd1559943a23bdfcd" kindref="member">Shutdown</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classHUD_1a34e6d4715c4b95b36e01aed52d23fa61" kindref="member">Render</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>lines,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>shader,<sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/>va,<sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/>ib,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>windowWidth,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>windowHeight);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56" refid="classHUD_1afde486af9f51f3cefddf0e9e00c62d62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Font&gt;<sp/><ref refid="classHUD_1afde486af9f51f3cefddf0e9e00c62d62" kindref="member">m_Font</ref>;<sp/></highlight><highlight class="comment">//Font<sp/>used<sp/>for<sp/>HUD<sp/>text</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classHUD_1a8a94f0bf18f8629246835d4e1d48d042" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::shared_ptr&lt;Texture2D&gt;&gt;<sp/><ref refid="classHUD_1a8a94f0bf18f8629246835d4e1d48d042" kindref="member">m_TextureCache</ref>;<sp/></highlight><highlight class="comment">//Cache<sp/>of<sp/>rendered<sp/>text<sp/>textures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/><ref refid="classHUD_1a86921d3d206d90f46f39365a3acc65e5" kindref="member">GetOrCreateTexture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>text,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Color&amp;<sp/>color);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/scene/HUD.h"/>
+  </compounddef>
+</doxygen>

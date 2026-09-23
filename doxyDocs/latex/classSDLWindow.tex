@@ -28,6 +28,10 @@ Collaboration diagram for SDLWindow:
 \item 
 bool \doxymbox{\hyperlink{classSDLWindow_a6c60257844fe3a5fe819183539116e40}{Create}} (const char \texorpdfstring{$\ast$}{*}title, int width, int height, bool fullscreen)
 \begin{DoxyCompactList}\small\item\em Creates an SDL window with an Open\+GL context. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classSDLWindow_a91c60ebb91c668a0be1a910734df55c9}{Toggle\+Fullscreen}} ()
+\begin{DoxyCompactList}\small\item\em Toggles between windowed and fullscreen mode. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classSDLWindow_a088f775d244451c7adb588cd8fce5e26}{Is\+Fullscreen}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the window is currently fullscreen. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classSDLWindow_ac8f370d73ebfe50529fbbba56c100b4b}{Destroy}} ()
 \begin{DoxyCompactList}\small\item\em Destroys the window and Open\+GL context. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classSDLWindow_a63de111915a58b28696a6fd1889acec8}{Swap\+Buffers}} ()
@@ -150,7 +154,7 @@ Destroys the Open\+GL context and the SDL window.
 
 The context is destroyed first, then the window. Both pointers are set to nullptr to prevent double deletion. 
 
-Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00107}{107}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00134}{134}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
 
 \Hypertarget{classSDLWindow_ad11eb6f7291bfcedcd7a5cbff75ebd8e}\index{SDLWindow@{SDLWindow}!GetNativeWindow@{GetNativeWindow}}
 \index{GetNativeWindow@{GetNativeWindow}!SDLWindow@{SDLWindow}}
@@ -172,7 +176,24 @@ Pointer to the SDL\+\_\+\+Window.
 \end{DoxyReturn}
 
 
-Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00135}{135}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00162}{162}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
+
+\Hypertarget{classSDLWindow_a088f775d244451c7adb588cd8fce5e26}\index{SDLWindow@{SDLWindow}!IsFullscreen@{IsFullscreen}}
+\index{IsFullscreen@{IsFullscreen}!SDLWindow@{SDLWindow}}
+\doxysubsubsection{\texorpdfstring{IsFullscreen()}{IsFullscreen()}}
+{\footnotesize\ttfamily \label{classSDLWindow_a088f775d244451c7adb588cd8fce5e26} 
+bool SDLWindow::\+\+Is\+Fullscreen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the window is currently fullscreen. 
+
+\begin{DoxyReturn}{Returns}
+true if fullscreen, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00122}{122}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
 
 \Hypertarget{classSDLWindow_a63de111915a58b28696a6fd1889acec8}\index{SDLWindow@{SDLWindow}!SwapBuffers@{SwapBuffers}}
 \index{SwapBuffers@{SwapBuffers}!SDLWindow@{SDLWindow}}
@@ -188,7 +209,24 @@ Swaps the front and back buffers.
 
 This presents the rendered frame to the screen. 
 
-Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00124}{124}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00151}{151}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
+
+\Hypertarget{classSDLWindow_a91c60ebb91c668a0be1a910734df55c9}\index{SDLWindow@{SDLWindow}!ToggleFullscreen@{ToggleFullscreen}}
+\index{ToggleFullscreen@{ToggleFullscreen}!SDLWindow@{SDLWindow}}
+\doxysubsubsection{\texorpdfstring{ToggleFullscreen()}{ToggleFullscreen()}}
+{\footnotesize\ttfamily \label{classSDLWindow_a91c60ebb91c668a0be1a910734df55c9} 
+bool SDLWindow::\+\+Toggle\+Fullscreen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Toggles between windowed and fullscreen mode. 
+
+\begin{DoxyReturn}{Returns}
+true if now fullscreen, false if now windowed. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{SDLWindow_8cpp_source_l00104}{104}} of file \doxymbox{\hyperlink{SDLWindow_8cpp_source}{SDLWindow.\+cpp}}.
 
 
 
@@ -203,7 +241,7 @@ SDL\+\_\+\+GLContext SDLWindow::\+m\+\_\+\+Context\hspace{0.3cm}{\ttfamily [priv
 
 
 
-Definition at line \doxymbox{\hyperlink{SDLWindow_8h_source_l00053}{53}} of file \doxymbox{\hyperlink{SDLWindow_8h_source}{SDLWindow.\+h}}.
+Definition at line \doxymbox{\hyperlink{SDLWindow_8h_source_l00065}{65}} of file \doxymbox{\hyperlink{SDLWindow_8h_source}{SDLWindow.\+h}}.
 
 \Hypertarget{classSDLWindow_a4ec4dc1373136604f3d13aac6a9d1b2a}\index{SDLWindow@{SDLWindow}!m\_Window@{m\_Window}}
 \index{m\_Window@{m\_Window}!SDLWindow@{SDLWindow}}
@@ -213,7 +251,7 @@ SDL\+\_\+\+Window\texorpdfstring{$\ast$}{*} SDLWindow::\+m\+\_\+\+Window\hspace{
 
 
 
-Definition at line \doxymbox{\hyperlink{SDLWindow_8h_source_l00052}{52}} of file \doxymbox{\hyperlink{SDLWindow_8h_source}{SDLWindow.\+h}}.
+Definition at line \doxymbox{\hyperlink{SDLWindow_8h_source_l00064}{64}} of file \doxymbox{\hyperlink{SDLWindow_8h_source}{SDLWindow.\+h}}.
 
 
 

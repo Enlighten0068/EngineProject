@@ -9,10 +9,10 @@
     <includes local="no">glad/glad.h</includes>
     <includes local="no">SDL3/SDL.h</includes>
     <incdepgraph>
-      <node id="25">
+      <node id="26">
         <label>components/SpriteRenderer.h</label>
         <link refid="SpriteRenderer_8h"/>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
@@ -88,7 +88,7 @@
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
@@ -96,7 +96,7 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
       </node>
       <node id="28">
@@ -135,7 +135,7 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="26">
+      <node id="27">
         <label>graphics/Texture2D.h</label>
         <link refid="Texture2D_8h"/>
         <childnode refid="5" relation="include">
@@ -178,7 +178,7 @@
       <node id="34">
         <label>resources/ResourceManager.h</label>
         <link refid="ResourceManager_8h"/>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
@@ -197,12 +197,12 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="24">
+      <node id="25">
         <label>scene/ECSScene.h</label>
         <link refid="ECSScene_8h"/>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
@@ -210,7 +210,7 @@
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
@@ -239,6 +239,8 @@
         <label>scene/Scene.h</label>
         <link refid="Scene_8h"/>
         <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -277,7 +279,7 @@
       <node id="33">
         <label>unordered_map</label>
       </node>
-      <node id="27">
+      <node id="24">
         <label>vector</label>
       </node>
     </incdepgraph>

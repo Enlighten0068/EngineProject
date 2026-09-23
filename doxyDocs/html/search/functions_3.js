@@ -5,7 +5,7 @@ var searchData=
   ['demo2dfixedscene_2',['Demo2DFixedScene',['../classDemo2DFixedScene.html#a492ba9953dd92d3b3536c44b1d7c2b2f',1,'Demo2DFixedScene']]],
   ['demo2dscene_3',['Demo2DScene',['../classDemo2DScene.html#add40385f9fe2a12d44b8a02336a8ea2a',1,'Demo2DScene']]],
   ['destroy_4',['Destroy',['../classSDLWindow.html#ac8f370d73ebfe50529fbbba56c100b4b',1,'SDLWindow']]],
-  ['destroyenemy_5',['DestroyEnemy',['../classDemo2DFixedScene.html#a54aa78702f3655ce33457462b421a94c',1,'Demo2DFixedScene']]],
+  ['destroyenemy_5',['DestroyEnemy',['../classDemo2DFixedScene.html#a54aa78702f3655ce33457462b421a94c',1,'Demo2DFixedScene::DestroyEnemy()'],['../classBaseLevelScene.html#ab310c8eb93b4b89ffac68dabbdc2e28b',1,'BaseLevelScene::DestroyEnemy()']]],
   ['die_6',['Die',['../classPlayerController.html#a41c1071503dfa351b2e028389476529b',1,'PlayerController']]],
   ['dispatch_7',['Dispatch',['../classEventBus.html#a82238e13fe91bb5ed5bc1dbb1555c0af',1,'EventBus::Dispatch()'],['../classEventDispatcher.html#a1786380511e001fdd2c73511abf7660a',1,'EventDispatcher::Dispatch()']]],
   ['dispatchkeyevent_8',['DispatchKeyEvent',['../classSDLEventTranslator.html#ab8c64c13f07e44ec781e7a4122f3bbae',1,'SDLEventTranslator']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['callback_0',['Callback',['../classEventBus.html#aedcd787e8f3f1a2c587be349957da894',1,'EventBus']]]
+  ['builderfn_0',['BuilderFn',['../classBaseLevelScene.html#a77e808a59ebefe66e3af2d06b633660c',1,'BaseLevelScene']]]
 ];

@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="LevelSelectorScene_8h" kind="file" language="C++">
+    <compoundname>LevelSelectorScene.h</compoundname>
+    <includes refid="Font_8h" local="yes">graphics/Font.h</includes>
+    <includes refid="Texture2D_8h" local="yes">graphics/Texture2D.h</includes>
+    <includes refid="Shader_8h" local="yes">graphics/Shader.h</includes>
+    <includes refid="VertexArray_8h" local="yes">graphics/VertexArray.h</includes>
+    <includes refid="IndexBuffer_8h" local="yes">graphics/IndexBuffer.h</includes>
+    <includes refid="Scene_8h" local="yes">scene/Scene.h</includes>
+    <includes refid="SceneManager_8h" local="yes">scene/SceneManager.h</includes>
+    <includes refid="Camera2D_8h" local="yes">scene/Camera2D.h</includes>
+    <includes refid="Vector3D_8h" local="yes">math/Vector3D.h</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">string</includes>
+    <includedby refid="LevelSelectorScene_8cpp" local="yes">engine/level/LevelSelectorScene.cpp</includedby>
+    <includedby refid="BaseLevelScene_8cpp" local="yes">engine/scene/BaseLevelScene.cpp</includedby>
+    <includedby refid="MenuScene_8cpp" local="yes">engine/scene/MenuScene.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>graphics/Font.h</label>
+        <link refid="Font_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>graphics/Texture2D.h</label>
+        <link refid="Texture2D_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>graphics/VertexArray.h</label>
+        <link refid="VertexArray_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/level/LevelSelectorScene.h</label>
+        <link refid="LevelSelectorScene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="20">
+        <label>scene/Camera2D.h</label>
+        <link refid="Camera2D_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>scene/Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>scene/SceneManager.h</label>
+        <link refid="SceneManager_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="4">
+        <label>SDL3_ttf/SDL_ttf.h</label>
+      </node>
+      <node id="12">
+        <label>cmath</label>
+      </node>
+      <node id="8">
+        <label>cstdint</label>
+      </node>
+      <node id="6">
+        <label>memory</label>
+      </node>
+      <node id="19">
+        <label>stack</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="17">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/level/LevelSelectorScene.cpp</label>
+        <link refid="LevelSelectorScene_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/level/LevelSelectorScene.h</label>
+        <link refid="LevelSelectorScene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>engine/scene/BaseLevelScene.cpp</label>
+        <link refid="BaseLevelScene_8cpp"/>
+      </node>
+      <node id="4">
+        <label>engine/scene/MenuScene.cpp</label>
+        <link refid="MenuScene_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classLevelSelectorScene" prot="public">LevelSelectorScene</innerclass>
+    <innerclass refid="structLevelSelectorScene_1_1Option" prot="private">LevelSelectorScene::Option</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Font_8h" kindref="compound">graphics/Font.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Texture2D_8h" kindref="compound">graphics/Texture2D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Shader_8h" kindref="compound">graphics/Shader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="VertexArray_8h" kindref="compound">graphics/VertexArray.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="IndexBuffer_8h" kindref="compound">graphics/IndexBuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Scene_8h" kindref="compound">scene/Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SceneManager_8h" kindref="compound">scene/SceneManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera2D_8h" kindref="compound">scene/Camera2D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3D_8h" kindref="compound">math/Vector3D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classLevelSelectorScene" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classLevelSelectorScene_1a70144989f056c70ee7cb3e4755ebe45b" kindref="member">LevelSelectorScene</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLevelSelectorScene_1a70144989f056c70ee7cb3e4755ebe45b" kindref="member">LevelSelectorScene</ref>(<ref refid="classSceneManager" kindref="compound">SceneManager</ref>&amp;<sp/>sceneManager,<sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>shader,<sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/>va,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/>ib,<sp/><ref refid="classCamera2D" kindref="compound">Camera2D</ref>&amp;<sp/>camera,<sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>lineShader);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classLevelSelectorScene_1a70144989f056c70ee7cb3e4755ebe45b" kindref="member">~LevelSelectorScene</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLevelSelectorScene_1a2ef8dc2df76c5d6a9dde5cb034ac242d" kindref="member">OnEnter</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLevelSelectorScene_1a38c557d72f36f05319bd8fc097cccb1e" kindref="member">OnExit</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLevelSelectorScene_1acfaf5d66253dbd5880be7bc68d210d0a" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLevelSelectorScene_1aa4161b586dbea24ead423a034816fdfc" kindref="member">Render</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38" refid="classLevelSelectorScene_1a8085250fc5dee5c345c763c26c8a0707" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classLevelSelectorScene_1a8085250fc5dee5c345c763c26c8a0707" kindref="member">GetName</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;LevelSelector&quot;</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classLevelSelectorScene_1aebf0f8867df43f6606d5457bdce9d386" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="classLevelSelectorScene_1aebf0f8867df43f6606d5457bdce9d386" kindref="member">GetHUDLines</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;F11:<sp/>Toggle<sp/>Fullscreen&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ESC:<sp/>Back<sp/>to<sp/>Menu&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54" refid="structLevelSelectorScene_1_1Option" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLevelSelectorScene_1_1Option" kindref="compound">Option</ref>{</highlight></codeline>
+<codeline lineno="55" refid="structLevelSelectorScene_1_1Option_1aa432014ff73e4d3715d5bebc70289948" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structLevelSelectorScene_1_1Option_1aa432014ff73e4d3715d5bebc70289948" kindref="member">Label</ref>;<sp/></highlight><highlight class="comment">//Display<sp/>text</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="structLevelSelectorScene_1_1Option_1a7b02823b0e5eafec5488802026eb8911" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/><ref refid="structLevelSelectorScene_1_1Option_1a7b02823b0e5eafec5488802026eb8911" kindref="member">NormalTexture</ref>;<sp/></highlight><highlight class="comment">//Normal<sp/>state<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="structLevelSelectorScene_1_1Option_1ab4f540ccc737789009d7e35eeb4fcfa3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/><ref refid="structLevelSelectorScene_1_1Option_1ab4f540ccc737789009d7e35eeb4fcfa3" kindref="member">SelectedTexture</ref>;<sp/></highlight><highlight class="comment">//Selected/hover<sp/>state<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="structLevelSelectorScene_1_1Option_1a3e5b8f6b84e764c6c7d1cf3ebf1bd12e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3D" kindref="compound">Vector3D</ref><sp/><ref refid="structLevelSelectorScene_1_1Option_1a3e5b8f6b84e764c6c7d1cf3ebf1bd12e" kindref="member">Position</ref>;<sp/></highlight><highlight class="comment">//World<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="structLevelSelectorScene_1_1Option_1a27114cde8813f06e07d69021ce03a72c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLevelSelectorScene_1_1Option_1a27114cde8813f06e07d69021ce03a72c" kindref="member">Width</ref><sp/>=<sp/>0.0f;<sp/></highlight><highlight class="comment">//Texture<sp/>width</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="structLevelSelectorScene_1_1Option_1ab067840435b782f8a78e68e74ad8af8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLevelSelectorScene_1_1Option_1ab067840435b782f8a78e68e74ad8af8a" kindref="member">Height</ref><sp/>=<sp/>0.0f;<sp/></highlight><highlight class="comment">//Texture<sp/>height</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classLevelSelectorScene_1a2f95782c506eec5907525c433ed06d44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSceneManager" kindref="compound">SceneManager</ref>&amp;<sp/><ref refid="classLevelSelectorScene_1a2f95782c506eec5907525c433ed06d44" kindref="member">m_SceneManager</ref>;</highlight></codeline>
+<codeline lineno="64" refid="classLevelSelectorScene_1ab6a99773b6fdeadcffda2d7ddc81b20e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/><ref refid="classLevelSelectorScene_1ab6a99773b6fdeadcffda2d7ddc81b20e" kindref="member">m_Shader</ref>;</highlight></codeline>
+<codeline lineno="65" refid="classLevelSelectorScene_1a9a837ee73063b49c25dd8ed397bb40cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/><ref refid="classLevelSelectorScene_1a9a837ee73063b49c25dd8ed397bb40cb" kindref="member">m_VertexArray</ref>;</highlight></codeline>
+<codeline lineno="66" refid="classLevelSelectorScene_1ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/><ref refid="classLevelSelectorScene_1ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b" kindref="member">m_IndexBuffer</ref>;</highlight></codeline>
+<codeline lineno="67" refid="classLevelSelectorScene_1ac484ddb64073422335ab3ec85251168d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D" kindref="compound">Camera2D</ref>&amp;<sp/><ref refid="classLevelSelectorScene_1ac484ddb64073422335ab3ec85251168d" kindref="member">m_Camera</ref>;</highlight></codeline>
+<codeline lineno="68" refid="classLevelSelectorScene_1af2e87d65ca014b3845678db72fff1c9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/><ref refid="classLevelSelectorScene_1af2e87d65ca014b3845678db72fff1c9a" kindref="member">m_LineShader</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classLevelSelectorScene_1a32b9d528a0c8f03437dd069f46b7895e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Font&gt;<sp/><ref refid="classLevelSelectorScene_1a32b9d528a0c8f03437dd069f46b7895e" kindref="member">m_Font</ref>;<sp/></highlight><highlight class="comment">//Font<sp/>for<sp/>rendering<sp/>text</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classLevelSelectorScene_1ac68dce54991fa1861c7300c10bb7ea9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Option&gt;<sp/><ref refid="classLevelSelectorScene_1ac68dce54991fa1861c7300c10bb7ea9e" kindref="member">m_Options</ref>;<sp/></highlight><highlight class="comment">//Registered<sp/>levels<sp/>as<sp/>options</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classLevelSelectorScene_1a912e5dfba70c6a335795569a818a8fef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classLevelSelectorScene_1a912e5dfba70c6a335795569a818a8fef" kindref="member">m_SelectedOption</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//Currently<sp/>selected<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classLevelSelectorScene_1a0e18a737fd9413f0cd415a74bf4029bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Color<sp/><ref refid="classLevelSelectorScene_1a0e18a737fd9413f0cd415a74bf4029bf" kindref="member">m_NormalColor</ref><sp/>=<sp/>{255,<sp/>255,<sp/>255,<sp/>255};<sp/></highlight><highlight class="comment">//Normal<sp/>text<sp/>color</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classLevelSelectorScene_1af7ef2bbba2fb263804b77ef3900a5045" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Color<sp/><ref refid="classLevelSelectorScene_1af7ef2bbba2fb263804b77ef3900a5045" kindref="member">m_SelectedColor</ref><sp/>=<sp/>{255,<sp/>255,<sp/>0,<sp/>255};<sp/></highlight><highlight class="comment">//Selected<sp/>text<sp/>color</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2D&gt;<sp/><ref refid="classLevelSelectorScene_1abb78b1c558d9139ccc5894603a792806" kindref="member">CreateTextTexture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>text,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SDL_Color&amp;<sp/>color);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLevelSelectorScene_1a2f96c000d92e26cc44e50dd6f932c6d2" kindref="member">RenderOption</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Option&amp;<sp/>option,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isSelected);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classLevelSelectorScene_1a142562be4dbf89030310c0075d160369" kindref="member">IsMouseOverOption</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Option&amp;<sp/>option)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLevelSelectorScene_1ab6fc75b411632651fa21249a1a995fec" kindref="member">HandleSelection</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/level/LevelSelectorScene.h"/>
+  </compounddef>
+</doxygen>

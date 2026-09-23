@@ -1,5 +1,5 @@
 <map id="MenuScene" name="MenuScene">
-<area shape="rect" id="Node000001" title="Main menu scene with visual text rendering." alt="" coords="5,237,177,779"/>
-<area shape="rect" id="Node000002" href="$classScene.html" title="Abstract base class for all scenes in the engine." alt="" coords="42,5,141,189"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,202,94,238,89,237,91,207"/>
+<area shape="rect" id="Node000001" title="Main menu scene with visual text rendering." alt="" coords="5,282,177,823"/>
+<area shape="rect" id="Node000002" href="$classScene.html" title="Abstract base class for all scenes in the engine." alt="" coords="29,5,153,234"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,246,94,282,89,282,91,251"/>
 </map>

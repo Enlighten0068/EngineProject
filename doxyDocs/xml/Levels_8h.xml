@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="Levels_8h" kind="file" language="C++">
+    <compoundname>Levels.h</compoundname>
+    <includes refid="LevelSystem_8h" local="yes">systems/LevelSystem.h</includes>
+    <includedby refid="Level1_8cpp" local="yes">engine/demo/levels/Level1.cpp</includedby>
+    <includedby refid="Level2_8cpp" local="yes">engine/demo/levels/Level2.cpp</includedby>
+    <includedby refid="Level3_8cpp" local="yes">engine/demo/levels/Level3.cpp</includedby>
+    <incdepgraph>
+      <node id="12">
+        <label>components/Enemy.h</label>
+        <link refid="Enemy_8h"/>
+      </node>
+      <node id="13">
+        <label>components/Patrol.h</label>
+        <link refid="Patrol_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>components/PhysicsBody.h</label>
+        <link refid="PhysicsBody_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>components/SpriteRenderer.h</label>
+        <link refid="SpriteRenderer_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>components/TileScale.h</label>
+        <link refid="TileScale_8h"/>
+      </node>
+      <node id="3">
+        <label>components/Transform.h</label>
+        <link refid="components_2Transform_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>engine/demo/levels/Levels.h</label>
+        <link refid="Levels_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>graphics/Texture2D.h</label>
+        <link refid="Texture2D_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>graphics/VertexArray.h</label>
+        <link refid="VertexArray_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="15">
+        <label>scene/ECSScene.h</label>
+        <link refid="ECSScene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>systems/LevelSystem.h</label>
+        <link refid="LevelSystem_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="18">
+        <label>cmath</label>
+      </node>
+      <node id="8">
+        <label>cstdint</label>
+      </node>
+      <node id="22">
+        <label>entt.hpp</label>
+      </node>
+      <node id="10">
+        <label>memory</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="23">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/demo/levels/Level1.cpp</label>
+        <link refid="Level1_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/demo/levels/Level2.cpp</label>
+        <link refid="Level2_8cpp"/>
+      </node>
+      <node id="4">
+        <label>engine/demo/levels/Level3.cpp</label>
+        <link refid="Level3_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/demo/levels/Levels.h</label>
+        <link refid="Levels_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="Levels_8h_1a05404a86824a87f43cf459033fafeafd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BuildLevel1</definition>
+        <argsstring>(LevelSystem &amp;level)</argsstring>
+        <name>BuildLevel1</name>
+        <param>
+          <type><ref refid="classLevelSystem" kindref="compound">LevelSystem</ref> &amp;</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Builder functions for all levels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each function builds a complete level by calling methods on the <ref refid="classLevelSystem" kindref="compound">LevelSystem</ref>. Registration is done in each .cpp via the REGISTER_LEVEL macro.</para>
+<para><simplesect kind="see"><para><ref refid="LevelMacros_8h_1abffe427d7a82d716aaeb59f206234302" kindref="member">REGISTER_LEVEL</ref>, <ref refid="classLevelRegistry" kindref="compound">LevelRegistry</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/levels/Levels.h" line="14" column="6" bodyfile="engine/demo/levels/Level1.cpp" bodystart="4" bodyend="25" declfile="engine/demo/levels/Levels.h" declline="14" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="Levels_8h_1ad1eb4efd5fd716e87ef2d64034590112" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BuildLevel2</definition>
+        <argsstring>(LevelSystem &amp;level)</argsstring>
+        <name>BuildLevel2</name>
+        <param>
+          <type><ref refid="classLevelSystem" kindref="compound">LevelSystem</ref> &amp;</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/levels/Levels.h" line="15" column="6" bodyfile="engine/demo/levels/Level2.cpp" bodystart="4" bodyend="26" declfile="engine/demo/levels/Levels.h" declline="15" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="Levels_8h_1a8ef00d680d1917d873a6a23ff769d7fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BuildLevel3</definition>
+        <argsstring>(LevelSystem &amp;level)</argsstring>
+        <name>BuildLevel3</name>
+        <param>
+          <type><ref refid="classLevelSystem" kindref="compound">LevelSystem</ref> &amp;</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/demo/levels/Levels.h" line="16" column="6" bodyfile="engine/demo/levels/Level3.cpp" bodystart="4" bodyend="25" declfile="engine/demo/levels/Levels.h" declline="16" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LevelSystem_8h" kindref="compound">systems/LevelSystem.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Level1_8cpp_1a05404a86824a87f43cf459033fafeafd" kindref="member">BuildLevel1</ref>(<ref refid="classLevelSystem" kindref="compound">LevelSystem</ref>&amp;<sp/>level);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Level2_8cpp_1ad1eb4efd5fd716e87ef2d64034590112" kindref="member">BuildLevel2</ref>(<ref refid="classLevelSystem" kindref="compound">LevelSystem</ref>&amp;<sp/>level);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Level3_8cpp_1a8ef00d680d1917d873a6a23ff769d7fa" kindref="member">BuildLevel3</ref>(<ref refid="classLevelSystem" kindref="compound">LevelSystem</ref>&amp;<sp/>level);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>BuildLevelNewDemo(LevelSystem&amp;<sp/>level);</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="engine/demo/levels/Levels.h"/>
+  </compounddef>
+</doxygen>

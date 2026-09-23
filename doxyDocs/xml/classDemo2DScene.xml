@@ -422,6 +422,7 @@
     <location file="engine/demo/Demo2DScene.h" line="23" column="1" bodyfile="engine/demo/Demo2DScene.h" bodystart="23" bodyend="58"/>
     <listofallmembers>
       <member refid="classDemo2DScene_1add40385f9fe2a12d44b8a02336a8ea2a" prot="public" virt="non-virtual"><scope>Demo2DScene</scope><name>Demo2DScene</name></member>
+      <member refid="classScene_1afb756dd8b7583f4b06a000d8157c7952" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>GetHUDLines</name></member>
       <member refid="classDemo2DScene_1aa6caae608302b160ef184473e1ef0219" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>GetName</name></member>
       <member refid="classDemo2DScene_1aef6643910216af035868027d99a24b82" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_Camera</name></member>
       <member refid="classDemo2DScene_1ac2db1d3e28993e56e7e8dc23646afd07" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_CameraController</name></member>
@@ -436,6 +437,7 @@
       <member refid="classDemo2DScene_1a7c3d302fcd9a919f137373c18a37117e" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>m_World</name></member>
       <member refid="classDemo2DScene_1a8ffa82c6772da7121ff4d812d9d1c1e5" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>OnEnter</name></member>
       <member refid="classDemo2DScene_1afce546436c8328555a6c548dcb3a9d90" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>OnExit</name></member>
+      <member refid="classScene_1a0b39bb1405c0f9ed82b2123a4b9dbfbd" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>OnResize</name></member>
       <member refid="classDemo2DScene_1aa04f40209bc6b113df30f9dcf03bd80c" prot="public" virt="virtual"><scope>Demo2DScene</scope><name>Render</name></member>
       <member refid="classDemo2DScene_1aac72f489fe5514f29e315acfd7851a06" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>ResolveCollisions</name></member>
       <member refid="classDemo2DScene_1af7cdfcef2f6bede3ffe930dba96f4812" prot="private" virt="non-virtual"><scope>Demo2DScene</scope><name>SetupScene</name></member>

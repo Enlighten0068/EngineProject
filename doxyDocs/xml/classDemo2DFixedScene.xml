@@ -578,6 +578,7 @@
       <member refid="classDemo2DFixedScene_1ae4c2705e2db95258b513cfe674f9c797" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>CheckEnemyCollisions</name></member>
       <member refid="classDemo2DFixedScene_1a492ba9953dd92d3b3536c44b1d7c2b2f" prot="public" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>Demo2DFixedScene</name></member>
       <member refid="classDemo2DFixedScene_1a54aa78702f3655ce33457462b421a94c" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>DestroyEnemy</name></member>
+      <member refid="classScene_1afb756dd8b7583f4b06a000d8157c7952" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>GetHUDLines</name></member>
       <member refid="classDemo2DFixedScene_1a67590905026e92be48a1e864db868eb9" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>GetName</name></member>
       <member refid="classDemo2DFixedScene_1a3ab92e6d343904b8e4b28e017fa46b9f" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_Camera</name></member>
       <member refid="classDemo2DFixedScene_1abf62eae1501faa926e757267ca05fd24" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_ECSScene</name></member>
@@ -594,6 +595,7 @@
       <member refid="classDemo2DFixedScene_1afbb0d5066454921f90e85a0533374fd3" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>m_World</name></member>
       <member refid="classDemo2DFixedScene_1a1daab876b813800575999e0a5374d899" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>OnEnter</name></member>
       <member refid="classDemo2DFixedScene_1a327f00eb5155cd0b30138787babecba2" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>OnExit</name></member>
+      <member refid="classScene_1a0b39bb1405c0f9ed82b2123a4b9dbfbd" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>OnResize</name></member>
       <member refid="classDemo2DFixedScene_1ad938c557aa7ad055aee8d25171fafad5" prot="public" virt="virtual"><scope>Demo2DFixedScene</scope><name>Render</name></member>
       <member refid="classDemo2DFixedScene_1abe838d285b6b2bc5277c613b39943d19" prot="private" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>ResolveCollisions</name></member>
       <member refid="classDemo2DFixedScene_1a52b58c77935f74c69ec27e6a48ad9187" prot="public" virt="non-virtual"><scope>Demo2DFixedScene</scope><name>RespawnEnemies</name></member>

@@ -1,0 +1,607 @@
+\doxysection{Base\+Level\+Scene Class Reference}
+\hypertarget{classBaseLevelScene}{}\label{classBaseLevelScene}\index{BaseLevelScene@{BaseLevelScene}}
+
+
+Generic scene that builds its content from a \doxylink{classLevelSystem}{Level\+System} builder function.  
+
+
+
+
+{\ttfamily \+\#include $<$Base\+Level\+Scene.\+h$>$}
+
+
+
+Inheritance diagram for Base\+Level\+Scene:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classBaseLevelScene__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Base\+Level\+Scene:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBaseLevelScene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \doxymbox{\hyperlink{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c}{Builder\+Fn}} = std::\+function$<$void(\doxymbox{\hyperlink{classLevelSystem}{Level\+System}}\&)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classBaseLevelScene_ad453a827009fdc987722770402988ba0}{Base\+Level\+Scene}} (\doxymbox{\hyperlink{classShader}{Shader}} \&shader, \doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&va, \doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&ib, \doxymbox{\hyperlink{classCamera2D}{Camera2D}} \&camera, \doxymbox{\hyperlink{classShader}{Shader}} \&line\+Shader, \doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene\+Manager, \doxymbox{\hyperlink{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c}{Builder\+Fn}} builder, const std::\+string \&level\+Name, \doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35}{Camera\+Mode}} camera\+Mode)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classBaseLevelScene}{Base\+Level\+Scene}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classBaseLevelScene_a57373887b22496420bd955b5a7985618}{\texorpdfstring{$\sim$}{\string~}\+Base\+Level\+Scene}} () override
+\item 
+void \doxymbox{\hyperlink{classBaseLevelScene_ab16251567315098d84b5afed205ebf75}{On\+Enter}} () override
+\begin{DoxyCompactList}\small\item\em Called when the scene becomes active. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classBaseLevelScene_a4dbbd984d245a1d8fd20e89546db30c4}{On\+Exit}} () override
+\begin{DoxyCompactList}\small\item\em Called when the scene is exited. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classBaseLevelScene_a8131a96a0029b8801e80012c3d7b10dc}{On\+Resize}} (int width, int height) override
+\begin{DoxyCompactList}\small\item\em Called when the window is resized. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classBaseLevelScene_a3efbf3f1e6d16a34de0b27a1da2f98f7}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Updates the level: player, enemies, collisions, camera. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classBaseLevelScene_a97d454ced01a68b11b7b4906ba30d7b1}{Render}} () override
+\begin{DoxyCompactList}\small\item\em Renders the scene: entities and world borders. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{classBaseLevelScene_a09c51e071220755c6b9ff37e46ae83aa}{Get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the name of the scene. \end{DoxyCompactList}\item 
+std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{classBaseLevelScene_ab1a4691694cad905d0d6c7368d8b82e6}{Get\+HUDLines}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the \doxylink{classHUD}{HUD} lines to show in this scene. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classBaseLevelScene_ad699b8d5399b8b240c1db4af6c07cbcc}{Respawn\+Enemies}} ()
+\begin{DoxyCompactList}\small\item\em Respawns all enemies from their saved definitions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classScene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classScene_af6e09d91ebd10ae9cc7c12c39d06386c}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classBaseLevelScene_ac14c1450ecf7e04fca4365eb19857f82}{Setup\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Builds the level and initializes all controllers. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classBaseLevelScene_a731f0a2859c5e76d8212ef22876bde90}{Resolve\+Collisions}} ()
+\begin{DoxyCompactList}\small\item\em Resolves player-\/platform collisions using AABB. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classBaseLevelScene_a77fd4e5577c3c2e867d1b6ab27cf5f16}{Check\+Enemy\+Collisions}} ()
+\begin{DoxyCompactList}\small\item\em Checks collisions between the player and all enemies. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classBaseLevelScene_ab310c8eb93b4b89ffac68dabbdc2e28b}{Destroy\+Enemy}} (entt::\+entity enemy)
+\begin{DoxyCompactList}\small\item\em Destroys an enemy entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classShader}{Shader}} \& \doxymbox{\hyperlink{classBaseLevelScene_ab1103dfbcb852a26e6576e2e6d050467}{m\+\_\+\+Shader}}
+\item 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \& \doxymbox{\hyperlink{classBaseLevelScene_ad235292db6dd9d29404a56fe2d761f27}{m\+\_\+\+Vertex\+Array}}
+\item 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \& \doxymbox{\hyperlink{classBaseLevelScene_a7c958f5e88c56046ce2317a33aa103b6}{m\+\_\+\+Index\+Buffer}}
+\item 
+\doxymbox{\hyperlink{classCamera2D}{Camera2D}} \& \doxymbox{\hyperlink{classBaseLevelScene_af013346ebc9543a97f793bb7a61b4414}{m\+\_\+\+Camera}}
+\item 
+\doxymbox{\hyperlink{classShader}{Shader}} \& \doxymbox{\hyperlink{classBaseLevelScene_ab435e3b596945acbde3667871495d4b5}{m\+\_\+\+Line\+Shader}}
+\item 
+\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}} \& \doxymbox{\hyperlink{classBaseLevelScene_a39ab68552abf1385f4d27801dafa86b9}{m\+\_\+\+Scene\+Manager}}
+\item 
+\doxymbox{\hyperlink{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c}{Builder\+Fn}} \doxymbox{\hyperlink{classBaseLevelScene_aef393c459e51f1c35ec11debbc6e4c7b}{m\+\_\+\+Builder}}
+\item 
+std::\+string \doxymbox{\hyperlink{classBaseLevelScene_a378c17670d06335f86f2a8f01cc0d3aa}{m\+\_\+\+Level\+Name}}
+\item 
+\doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35}{Camera\+Mode}} \doxymbox{\hyperlink{classBaseLevelScene_a97c355120bd46574398b7fc35bb027fd}{m\+\_\+\+Camera\+Mode}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classECSScene}{ECSScene}} $>$ \doxymbox{\hyperlink{classBaseLevelScene_a92e8e1b3659b34c538c8b66d472550f8}{m\+\_\+\+ECSScene}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classGameWorld}{Game\+World}} $>$ \doxymbox{\hyperlink{classBaseLevelScene_a5b0538757b5a6b1f307983fb56a6c070}{m\+\_\+\+World}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classCameraController}{Camera\+Controller}} $>$ \doxymbox{\hyperlink{classBaseLevelScene_a88654189be731926a1093106b86de0c6}{m\+\_\+\+Camera\+Controller}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classPlayerController}{Player\+Controller}} $>$ \doxymbox{\hyperlink{classBaseLevelScene_a6d231d2ede9243ceb3e9f587f144ba2d}{m\+\_\+\+Player\+Controller}}
+\item 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{classFpsCounter}{Fps\+Counter}} $>$ \doxymbox{\hyperlink{classBaseLevelScene_a7a21e9c1df6703713d73a7cc8f512b33}{m\+\_\+\+Fps\+Counter}}
+\item 
+entt::\+entity \doxymbox{\hyperlink{classBaseLevelScene_af3a106663a4762944a05ef216687c35d}{m\+\_\+\+Player\+Entity}}
+\item 
+std::\+vector$<$ entt::\+entity $>$ \doxymbox{\hyperlink{classBaseLevelScene_a2f7f5c476ad9a31a54840d1a574175c1}{m\+\_\+\+Enemy\+Entities}}
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition}{Level\+System::\+\+Enemy\+Definition}} $>$ \doxymbox{\hyperlink{classBaseLevelScene_ad705f1295cbae14ba923e1b1b2f46ad6}{m\+\_\+\+Enemy\+Definitions}}
+\item 
+std::\+vector$<$ entt::\+entity $>$ \doxymbox{\hyperlink{classBaseLevelScene_a1c0eb61a6a5ef4688dda661abe12206a}{m\+\_\+\+Platform\+Entities}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generic scene that builds its content from a \doxylink{classLevelSystem}{Level\+System} builder function. 
+
+This scene replaces the old \doxylink{classDemo2DFixedScene}{Demo2\+DFixed\+Scene} for level-\/based gameplay. It receives a builder function (e.\+g., Build\+Level1) and a camera mode, and uses them to construct and run the level. Pressing ESC returns to the level selector.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classLevelSystem}{Level\+System}, \doxylink{classLevelSelectorScene}{Level\+Selector\+Scene}, \doxylink{classLevelRegistry}{Level\+Registry} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00031}{31}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+
+
+\label{classBaseLevelScene_doc-typedef-members}
+\Hypertarget{classBaseLevelScene_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c}\index{BaseLevelScene@{BaseLevelScene}!BuilderFn@{BuilderFn}}
+\index{BuilderFn@{BuilderFn}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{BuilderFn}{BuilderFn}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c} 
+using \doxymbox{\hyperlink{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c}{Base\+Level\+Scene::\+\+Builder\+Fn}} = std::\+function$<$void(\doxymbox{\hyperlink{classLevelSystem}{Level\+System}}\&)$>$}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00033}{33}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+
+
+\label{classBaseLevelScene_doc-constructors}
+\Hypertarget{classBaseLevelScene_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBaseLevelScene_ad453a827009fdc987722770402988ba0}\index{BaseLevelScene@{BaseLevelScene}!BaseLevelScene@{BaseLevelScene}}
+\index{BaseLevelScene@{BaseLevelScene}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{BaseLevelScene()}{BaseLevelScene()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_ad453a827009fdc987722770402988ba0} 
+Base\+Level\+Scene::\+\+Base\+Level\+Scene (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{shader}{, }\item[{\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}} \&}]{va}{, }\item[{\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} \&}]{ib}{, }\item[{\doxymbox{\hyperlink{classCamera2D}{Camera2D}} \&}]{camera}{, }\item[{\doxymbox{\hyperlink{classShader}{Shader}} \&}]{line\+Shader}{, }\item[{\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene\+Manager}{, }\item[{\doxymbox{\hyperlink{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c}{Builder\+Fn}}}]{builder}{, }\item[{const std::\+string \&}]{level\+Name}{, }\item[{\doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35}{Camera\+Mode}}}]{camera\+Mode}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classBaseLevelScene}{Base\+Level\+Scene}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & Reference to the main shader. \\
+\hline
+{\em va} & Reference to the vertex array. \\
+\hline
+{\em ib} & Reference to the index buffer. \\
+\hline
+{\em camera} & Reference to the 2D camera. \\
+\hline
+{\em line\+Shader} & Reference to the line shader. \\
+\hline
+{\em scene\+Manager} & Reference to the scene manager (for ESC transitions). \\
+\hline
+{\em builder} & Level builder function. \\
+\hline
+{\em level\+Name} & Display name of the level. \\
+\hline
+{\em camera\+Mode} & Camera behavior (Fixed or Follow). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00011}{11}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+\Hypertarget{classBaseLevelScene_a57373887b22496420bd955b5a7985618}\index{BaseLevelScene@{BaseLevelScene}!````~BaseLevelScene@{\texorpdfstring{$\sim$}{\string~}BaseLevelScene}}
+\index{````~BaseLevelScene@{\texorpdfstring{$\sim$}{\string~}BaseLevelScene}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BaseLevelScene()}{\string~BaseLevelScene()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a57373887b22496420bd955b5a7985618} 
+Base\+Level\+Scene::\+\texorpdfstring{$\sim$}{\string~}\+Base\+Level\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00018}{18}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+
+
+\label{classBaseLevelScene_doc-func-members}
+\Hypertarget{classBaseLevelScene_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBaseLevelScene_a77fd4e5577c3c2e867d1b6ab27cf5f16}\index{BaseLevelScene@{BaseLevelScene}!CheckEnemyCollisions@{CheckEnemyCollisions}}
+\index{CheckEnemyCollisions@{CheckEnemyCollisions}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{CheckEnemyCollisions()}{CheckEnemyCollisions()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a77fd4e5577c3c2e867d1b6ab27cf5f16} 
+void Base\+Level\+Scene::\+\+Check\+Enemy\+Collisions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks collisions between the player and all enemies. 
+
+Applies stomping if the player is falling and hits an enemy from above; otherwise kills the player and respawns all enemies. 
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00285}{285}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+\Hypertarget{classBaseLevelScene_ab310c8eb93b4b89ffac68dabbdc2e28b}\index{BaseLevelScene@{BaseLevelScene}!DestroyEnemy@{DestroyEnemy}}
+\index{DestroyEnemy@{DestroyEnemy}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{DestroyEnemy()}{DestroyEnemy()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_ab310c8eb93b4b89ffac68dabbdc2e28b} 
+void Base\+Level\+Scene::\+\+Destroy\+Enemy (\begin{DoxyParamCaption}\item[{entt::\+entity}]{enemy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Destroys an enemy entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & The enemy entity to destroy. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00327}{327}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+\Hypertarget{classBaseLevelScene_ab1a4691694cad905d0d6c7368d8b82e6}\index{BaseLevelScene@{BaseLevelScene}!GetHUDLines@{GetHUDLines}}
+\index{GetHUDLines@{GetHUDLines}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{GetHUDLines()}{GetHUDLines()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_ab1a4691694cad905d0d6c7368d8b82e6} 
+std::\+vector$<$ std::\+string $>$ Base\+Level\+Scene::\+\+Get\+HUDLines (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the \doxylink{classHUD}{HUD} lines to show in this scene. 
+
+
+
+Reimplemented from \doxymbox{\hyperlink{classScene_afb756dd8b7583f4b06a000d8157c7952}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00065}{65}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a09c51e071220755c6b9ff37e46ae83aa}\index{BaseLevelScene@{BaseLevelScene}!GetName@{GetName}}
+\index{GetName@{GetName}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a09c51e071220755c6b9ff37e46ae83aa} 
+std::\+string Base\+Level\+Scene::\+\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of the scene. 
+
+\begin{DoxyReturn}{Returns}
+String containing the scene name. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classScene_ad93511100250c3f3ed736b9ed69fdc6f}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00060}{60}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_ab16251567315098d84b5afed205ebf75}\index{BaseLevelScene@{BaseLevelScene}!OnEnter@{OnEnter}}
+\index{OnEnter@{OnEnter}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{OnEnter()}{OnEnter()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_ab16251567315098d84b5afed205ebf75} 
+void Base\+Level\+Scene::\+\+On\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the scene becomes active. 
+
+Sets the clear color and builds the level. 
+
+Implements \doxymbox{\hyperlink{classScene_ad09d42329f52df55fad0467cd092c9aa}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00025}{25}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+\Hypertarget{classBaseLevelScene_a4dbbd984d245a1d8fd20e89546db30c4}\index{BaseLevelScene@{BaseLevelScene}!OnExit@{OnExit}}
+\index{OnExit@{OnExit}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{OnExit()}{OnExit()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a4dbbd984d245a1d8fd20e89546db30c4} 
+void Base\+Level\+Scene::\+\+On\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the scene is exited. 
+
+Releases all resources and clears entity lists. 
+
+Implements \doxymbox{\hyperlink{classScene_a9824fefa923e5a9db4dca5a23343609b}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00036}{36}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+\Hypertarget{classBaseLevelScene_a8131a96a0029b8801e80012c3d7b10dc}\index{BaseLevelScene@{BaseLevelScene}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{OnResize()}{OnResize()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a8131a96a0029b8801e80012c3d7b10dc} 
+void Base\+Level\+Scene::\+\+On\+Resize (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the window is resized. 
+
+For Fixed camera: recompute projection from world bounds (keep everything visible). For Follow camera: keep vertical extent constant, adjust horizontal by aspect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & New window width in pixels. \\
+\hline
+{\em height} & New window height in pixels. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \doxymbox{\hyperlink{classScene_a0b39bb1405c0f9ed82b2123a4b9dbfbd}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00057}{57}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+\Hypertarget{classBaseLevelScene_a97d454ced01a68b11b7b4906ba30d7b1}\index{BaseLevelScene@{BaseLevelScene}!Render@{Render}}
+\index{Render@{Render}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a97d454ced01a68b11b7b4906ba30d7b1} 
+void Base\+Level\+Scene::\+\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the scene: entities and world borders. 
+
+
+
+Implements \doxymbox{\hyperlink{classScene_ae24d21e12b34839994ad265662ea24d7}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00181}{181}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+\Hypertarget{classBaseLevelScene_a731f0a2859c5e76d8212ef22876bde90}\index{BaseLevelScene@{BaseLevelScene}!ResolveCollisions@{ResolveCollisions}}
+\index{ResolveCollisions@{ResolveCollisions}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{ResolveCollisions()}{ResolveCollisions()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a731f0a2859c5e76d8212ef22876bde90} 
+void Base\+Level\+Scene::\+\+Resolve\+Collisions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Resolves player-\/platform collisions using AABB. 
+
+Handles both landing (player above platform) and ceiling hits (player below). 
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00196}{196}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+\Hypertarget{classBaseLevelScene_ad699b8d5399b8b240c1db4af6c07cbcc}\index{BaseLevelScene@{BaseLevelScene}!RespawnEnemies@{RespawnEnemies}}
+\index{RespawnEnemies@{RespawnEnemies}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{RespawnEnemies()}{RespawnEnemies()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_ad699b8d5399b8b240c1db4af6c07cbcc} 
+void Base\+Level\+Scene::\+\+Respawn\+Enemies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Respawns all enemies from their saved definitions. 
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00340}{340}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+\Hypertarget{classBaseLevelScene_ac14c1450ecf7e04fca4365eb19857f82}\index{BaseLevelScene@{BaseLevelScene}!SetupScene@{SetupScene}}
+\index{SetupScene@{SetupScene}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{SetupScene()}{SetupScene()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_ac14c1450ecf7e04fca4365eb19857f82} 
+void Base\+Level\+Scene::\+\+Setup\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Builds the level and initializes all controllers. 
+
+Loads textures, calls the level builder function, creates the \doxylink{classGameWorld}{Game\+World} from the bounds registered by the \doxylink{classLevelSystem}{Level\+System}, configures the camera (Fixed or Follow), and initializes the player controller. 
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00079}{79}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+\Hypertarget{classBaseLevelScene_a3efbf3f1e6d16a34de0b27a1da2f98f7}\index{BaseLevelScene@{BaseLevelScene}!Update@{Update}}
+\index{Update@{Update}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a3efbf3f1e6d16a34de0b27a1da2f98f7} 
+void Base\+Level\+Scene::\+\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the level: player, enemies, collisions, camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \doxylink{classTime}{Time} elapsed since the last frame. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \doxymbox{\hyperlink{classScene_aaede6346f58776bd40efffd55885ab02}{Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8cpp_source_l00147}{147}} of file \doxymbox{\hyperlink{BaseLevelScene_8cpp_source}{Base\+Level\+Scene.\+cpp}}.
+
+
+
+\label{classBaseLevelScene_doc-variable-members}
+\Hypertarget{classBaseLevelScene_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBaseLevelScene_aef393c459e51f1c35ec11debbc6e4c7b}\index{BaseLevelScene@{BaseLevelScene}!m\_Builder@{m\_Builder}}
+\index{m\_Builder@{m\_Builder}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_Builder}{m\_Builder}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_aef393c459e51f1c35ec11debbc6e4c7b} 
+\doxymbox{\hyperlink{classBaseLevelScene_a77e808a59ebefe66e3af2d06b633660c}{Builder\+Fn}} Base\+Level\+Scene::\+m\+\_\+\+Builder\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00089}{89}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_af013346ebc9543a97f793bb7a61b4414}\index{BaseLevelScene@{BaseLevelScene}!m\_Camera@{m\_Camera}}
+\index{m\_Camera@{m\_Camera}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_Camera}{m\_Camera}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_af013346ebc9543a97f793bb7a61b4414} 
+\doxymbox{\hyperlink{classCamera2D}{Camera2D}}\& Base\+Level\+Scene::\+m\+\_\+\+Camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00086}{86}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a88654189be731926a1093106b86de0c6}\index{BaseLevelScene@{BaseLevelScene}!m\_CameraController@{m\_CameraController}}
+\index{m\_CameraController@{m\_CameraController}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_CameraController}{m\_CameraController}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a88654189be731926a1093106b86de0c6} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classCameraController}{Camera\+Controller}}$>$ Base\+Level\+Scene::\+m\+\_\+\+Camera\+Controller\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00095}{95}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a97c355120bd46574398b7fc35bb027fd}\index{BaseLevelScene@{BaseLevelScene}!m\_CameraMode@{m\_CameraMode}}
+\index{m\_CameraMode@{m\_CameraMode}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_CameraMode}{m\_CameraMode}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a97c355120bd46574398b7fc35bb027fd} 
+\doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35}{Camera\+Mode}} Base\+Level\+Scene::\+m\+\_\+\+Camera\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00091}{91}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a92e8e1b3659b34c538c8b66d472550f8}\index{BaseLevelScene@{BaseLevelScene}!m\_ECSScene@{m\_ECSScene}}
+\index{m\_ECSScene@{m\_ECSScene}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_ECSScene}{m\_ECSScene}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a92e8e1b3659b34c538c8b66d472550f8} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classECSScene}{ECSScene}}$>$ Base\+Level\+Scene::\+m\+\_\+\+ECSScene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00093}{93}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_ad705f1295cbae14ba923e1b1b2f46ad6}\index{BaseLevelScene@{BaseLevelScene}!m\_EnemyDefinitions@{m\_EnemyDefinitions}}
+\index{m\_EnemyDefinitions@{m\_EnemyDefinitions}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_EnemyDefinitions}{m\_EnemyDefinitions}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_ad705f1295cbae14ba923e1b1b2f46ad6} 
+std::\+vector$<$\doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition}{Level\+System::\+\+Enemy\+Definition}}$>$ Base\+Level\+Scene::\+m\+\_\+\+Enemy\+Definitions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00101}{101}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a2f7f5c476ad9a31a54840d1a574175c1}\index{BaseLevelScene@{BaseLevelScene}!m\_EnemyEntities@{m\_EnemyEntities}}
+\index{m\_EnemyEntities@{m\_EnemyEntities}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_EnemyEntities}{m\_EnemyEntities}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a2f7f5c476ad9a31a54840d1a574175c1} 
+std::\+vector$<$entt::\+entity$>$ Base\+Level\+Scene::\+m\+\_\+\+Enemy\+Entities\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00100}{100}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a7a21e9c1df6703713d73a7cc8f512b33}\index{BaseLevelScene@{BaseLevelScene}!m\_FpsCounter@{m\_FpsCounter}}
+\index{m\_FpsCounter@{m\_FpsCounter}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_FpsCounter}{m\_FpsCounter}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a7a21e9c1df6703713d73a7cc8f512b33} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classFpsCounter}{Fps\+Counter}}$>$ Base\+Level\+Scene::\+m\+\_\+\+Fps\+Counter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00097}{97}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a7c958f5e88c56046ce2317a33aa103b6}\index{BaseLevelScene@{BaseLevelScene}!m\_IndexBuffer@{m\_IndexBuffer}}
+\index{m\_IndexBuffer@{m\_IndexBuffer}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_IndexBuffer}{m\_IndexBuffer}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a7c958f5e88c56046ce2317a33aa103b6} 
+\doxymbox{\hyperlink{classIndexBuffer}{Index\+Buffer}}\& Base\+Level\+Scene::\+m\+\_\+\+Index\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00085}{85}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a378c17670d06335f86f2a8f01cc0d3aa}\index{BaseLevelScene@{BaseLevelScene}!m\_LevelName@{m\_LevelName}}
+\index{m\_LevelName@{m\_LevelName}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_LevelName}{m\_LevelName}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a378c17670d06335f86f2a8f01cc0d3aa} 
+std::\+string Base\+Level\+Scene::\+m\+\_\+\+Level\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00090}{90}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_ab435e3b596945acbde3667871495d4b5}\index{BaseLevelScene@{BaseLevelScene}!m\_LineShader@{m\_LineShader}}
+\index{m\_LineShader@{m\_LineShader}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_LineShader}{m\_LineShader}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_ab435e3b596945acbde3667871495d4b5} 
+\doxymbox{\hyperlink{classShader}{Shader}}\& Base\+Level\+Scene::\+m\+\_\+\+Line\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00087}{87}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a1c0eb61a6a5ef4688dda661abe12206a}\index{BaseLevelScene@{BaseLevelScene}!m\_PlatformEntities@{m\_PlatformEntities}}
+\index{m\_PlatformEntities@{m\_PlatformEntities}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_PlatformEntities}{m\_PlatformEntities}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a1c0eb61a6a5ef4688dda661abe12206a} 
+std::\+vector$<$entt::\+entity$>$ Base\+Level\+Scene::\+m\+\_\+\+Platform\+Entities\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00102}{102}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a6d231d2ede9243ceb3e9f587f144ba2d}\index{BaseLevelScene@{BaseLevelScene}!m\_PlayerController@{m\_PlayerController}}
+\index{m\_PlayerController@{m\_PlayerController}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_PlayerController}{m\_PlayerController}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a6d231d2ede9243ceb3e9f587f144ba2d} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classPlayerController}{Player\+Controller}}$>$ Base\+Level\+Scene::\+m\+\_\+\+Player\+Controller\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00096}{96}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_af3a106663a4762944a05ef216687c35d}\index{BaseLevelScene@{BaseLevelScene}!m\_PlayerEntity@{m\_PlayerEntity}}
+\index{m\_PlayerEntity@{m\_PlayerEntity}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_PlayerEntity}{m\_PlayerEntity}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_af3a106663a4762944a05ef216687c35d} 
+entt::\+entity Base\+Level\+Scene::\+m\+\_\+\+Player\+Entity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00099}{99}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a39ab68552abf1385f4d27801dafa86b9}\index{BaseLevelScene@{BaseLevelScene}!m\_SceneManager@{m\_SceneManager}}
+\index{m\_SceneManager@{m\_SceneManager}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_SceneManager}{m\_SceneManager}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a39ab68552abf1385f4d27801dafa86b9} 
+\doxymbox{\hyperlink{classSceneManager}{Scene\+Manager}}\& Base\+Level\+Scene::\+m\+\_\+\+Scene\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00088}{88}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_ab1103dfbcb852a26e6576e2e6d050467}\index{BaseLevelScene@{BaseLevelScene}!m\_Shader@{m\_Shader}}
+\index{m\_Shader@{m\_Shader}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_Shader}{m\_Shader}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_ab1103dfbcb852a26e6576e2e6d050467} 
+\doxymbox{\hyperlink{classShader}{Shader}}\& Base\+Level\+Scene::\+m\+\_\+\+Shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00083}{83}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_ad235292db6dd9d29404a56fe2d761f27}\index{BaseLevelScene@{BaseLevelScene}!m\_VertexArray@{m\_VertexArray}}
+\index{m\_VertexArray@{m\_VertexArray}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_VertexArray}{m\_VertexArray}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_ad235292db6dd9d29404a56fe2d761f27} 
+\doxymbox{\hyperlink{classVertexArray}{Vertex\+Array}}\& Base\+Level\+Scene::\+m\+\_\+\+Vertex\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00084}{84}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+\Hypertarget{classBaseLevelScene_a5b0538757b5a6b1f307983fb56a6c070}\index{BaseLevelScene@{BaseLevelScene}!m\_World@{m\_World}}
+\index{m\_World@{m\_World}!BaseLevelScene@{BaseLevelScene}}
+\doxysubsubsection{\texorpdfstring{m\_World}{m\_World}}
+{\footnotesize\ttfamily \label{classBaseLevelScene_a5b0538757b5a6b1f307983fb56a6c070} 
+std::\+unique\+\_\+ptr$<$\doxymbox{\hyperlink{classGameWorld}{Game\+World}}$>$ Base\+Level\+Scene::\+m\+\_\+\+World\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{BaseLevelScene_8h_source_l00094}{94}} of file \doxymbox{\hyperlink{BaseLevelScene_8h_source}{Base\+Level\+Scene.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+scene/\doxymbox{\hyperlink{BaseLevelScene_8h}{Base\+Level\+Scene.\+h}}\item 
+engine/\+scene/\doxymbox{\hyperlink{BaseLevelScene_8cpp}{Base\+Level\+Scene.\+cpp}}\end{DoxyCompactItemize}

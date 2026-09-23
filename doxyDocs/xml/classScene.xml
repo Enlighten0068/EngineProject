@@ -2,8 +2,10 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="classScene" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>Scene</compoundname>
+    <derivedcompoundref refid="classBaseLevelScene" prot="public" virt="non-virtual">BaseLevelScene</derivedcompoundref>
     <derivedcompoundref refid="classDemo2DFixedScene" prot="public" virt="non-virtual">Demo2DFixedScene</derivedcompoundref>
     <derivedcompoundref refid="classDemo2DScene" prot="public" virt="non-virtual">Demo2DScene</derivedcompoundref>
+    <derivedcompoundref refid="classLevelSelectorScene" prot="public" virt="non-virtual">LevelSelectorScene</derivedcompoundref>
     <derivedcompoundref refid="classMenuScene" prot="public" virt="non-virtual">MenuScene</derivedcompoundref>
     <includes refid="Scene_8h" local="no">Scene.h</includes>
     <sectiondef kind="public-func">
@@ -19,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/scene/Scene.h" line="16" column="13"/>
+        <location file="engine/scene/Scene.h" line="17" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classScene_1ad09d42329f52df55fad0467cd092c9aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -27,8 +29,10 @@
         <argsstring>()=0</argsstring>
         <name>OnEnter</name>
         <qualifiedname>Scene::OnEnter</qualifiedname>
+        <reimplementedby refid="classBaseLevelScene_1ab16251567315098d84b5afed205ebf75">OnEnter</reimplementedby>
         <reimplementedby refid="classDemo2DFixedScene_1a1daab876b813800575999e0a5374d899">OnEnter</reimplementedby>
         <reimplementedby refid="classDemo2DScene_1a8ffa82c6772da7121ff4d812d9d1c1e5">OnEnter</reimplementedby>
+        <reimplementedby refid="classLevelSelectorScene_1a2ef8dc2df76c5d6a9dde5cb034ac242d">OnEnter</reimplementedby>
         <reimplementedby refid="classMenuScene_1a015085736912c87c4e28ab54ab056e6d">OnEnter</reimplementedby>
         <briefdescription>
 <para>Called when the scene becomes active. </para>
@@ -38,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/scene/Scene.h" line="23" column="18"/>
+        <location file="engine/scene/Scene.h" line="24" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classScene_1a9824fefa923e5a9db4dca5a23343609b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -46,8 +50,10 @@
         <argsstring>()=0</argsstring>
         <name>OnExit</name>
         <qualifiedname>Scene::OnExit</qualifiedname>
+        <reimplementedby refid="classBaseLevelScene_1a4dbbd984d245a1d8fd20e89546db30c4">OnExit</reimplementedby>
         <reimplementedby refid="classDemo2DFixedScene_1a327f00eb5155cd0b30138787babecba2">OnExit</reimplementedby>
         <reimplementedby refid="classDemo2DScene_1afce546436c8328555a6c548dcb3a9d90">OnExit</reimplementedby>
+        <reimplementedby refid="classLevelSelectorScene_1a38c557d72f36f05319bd8fc097cccb1e">OnExit</reimplementedby>
         <reimplementedby refid="classMenuScene_1a834e7aa54dd72502876d30114e47cc9e">OnExit</reimplementedby>
         <briefdescription>
 <para>Called when the scene is exited. </para>
@@ -57,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/scene/Scene.h" line="30" column="18"/>
+        <location file="engine/scene/Scene.h" line="31" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classScene_1aaede6346f58776bd40efffd55885ab02" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -65,8 +71,10 @@
         <argsstring>(float deltaTime)=0</argsstring>
         <name>Update</name>
         <qualifiedname>Scene::Update</qualifiedname>
+        <reimplementedby refid="classBaseLevelScene_1a3efbf3f1e6d16a34de0b27a1da2f98f7">Update</reimplementedby>
         <reimplementedby refid="classDemo2DFixedScene_1ac626aa848bd8d98054f7d2b21a724ac9">Update</reimplementedby>
         <reimplementedby refid="classDemo2DScene_1a960e0d534e6e05bda39f3d9eaaf30deb">Update</reimplementedby>
+        <reimplementedby refid="classLevelSelectorScene_1acfaf5d66253dbd5880be7bc68d210d0a">Update</reimplementedby>
         <reimplementedby refid="classMenuScene_1af2b1e0e9e1c783c8b058f60906add842">Update</reimplementedby>
         <param>
           <type>float</type>
@@ -89,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/scene/Scene.h" line="36" column="18"/>
+        <location file="engine/scene/Scene.h" line="37" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classScene_1ae24d21e12b34839994ad265662ea24d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -97,8 +105,10 @@
         <argsstring>()=0</argsstring>
         <name>Render</name>
         <qualifiedname>Scene::Render</qualifiedname>
+        <reimplementedby refid="classBaseLevelScene_1a97d454ced01a68b11b7b4906ba30d7b1">Render</reimplementedby>
         <reimplementedby refid="classDemo2DFixedScene_1ad938c557aa7ad055aee8d25171fafad5">Render</reimplementedby>
         <reimplementedby refid="classDemo2DScene_1aa04f40209bc6b113df30f9dcf03bd80c">Render</reimplementedby>
+        <reimplementedby refid="classLevelSelectorScene_1aa4161b586dbea24ead423a034816fdfc">Render</reimplementedby>
         <reimplementedby refid="classMenuScene_1a57787dac0643417ddd147c940c36b93a">Render</reimplementedby>
         <briefdescription>
 <para>Renders the scene. </para>
@@ -107,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/scene/Scene.h" line="41" column="18"/>
+        <location file="engine/scene/Scene.h" line="42" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classScene_1ad93511100250c3f3ed736b9ed69fdc6f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>std::string</type>
@@ -115,8 +125,10 @@
         <argsstring>() const =0</argsstring>
         <name>GetName</name>
         <qualifiedname>Scene::GetName</qualifiedname>
+        <reimplementedby refid="classBaseLevelScene_1a09c51e071220755c6b9ff37e46ae83aa">GetName</reimplementedby>
         <reimplementedby refid="classDemo2DFixedScene_1a67590905026e92be48a1e864db868eb9">GetName</reimplementedby>
         <reimplementedby refid="classDemo2DScene_1aa6caae608302b160ef184473e1ef0219">GetName</reimplementedby>
+        <reimplementedby refid="classLevelSelectorScene_1a8085250fc5dee5c345c763c26c8a0707">GetName</reimplementedby>
         <reimplementedby refid="classMenuScene_1a8bb0e3e014de1ba6912dc937de6a2a69">GetName</reimplementedby>
         <briefdescription>
 <para>Gets the name of the scene. </para>
@@ -128,7 +140,73 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/scene/Scene.h" line="47" column="25"/>
+        <location file="engine/scene/Scene.h" line="48" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1a0b39bb1405c0f9ed82b2123a4b9dbfbd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Scene::OnResize</definition>
+        <argsstring>(int width, int height)</argsstring>
+        <name>OnResize</name>
+        <qualifiedname>Scene::OnResize</qualifiedname>
+        <reimplementedby refid="classBaseLevelScene_1a8131a96a0029b8801e80012c3d7b10dc">OnResize</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Called when the window is resized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The scene decides how to react (e.g., recompute camera projection).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New window width in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New window height in pixels. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Scene.h" line="58" column="18" bodyfile="engine/scene/Scene.h" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classScene_1afb756dd8b7583f4b06a000d8157c7952" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>virtual std::vector&lt; std::string &gt; Scene::GetHUDLines</definition>
+        <argsstring>() const</argsstring>
+        <name>GetHUDLines</name>
+        <qualifiedname>Scene::GetHUDLines</qualifiedname>
+        <reimplementedby refid="classBaseLevelScene_1ab1a4691694cad905d0d6c7368d8b82e6">GetHUDLines</reimplementedby>
+        <reimplementedby refid="classLevelSelectorScene_1aebf0f8867df43f6606d5457bdce9d386">GetHUDLines</reimplementedby>
+        <briefdescription>
+<para>Returns the lines to be rendered by the <ref refid="classHUD" kindref="compound">HUD</ref> overlay. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default implementation returns only the F11 hint. Scenes that have additional shortcuts (e.g., ESC to exit) should override this method and append their own lines.</para>
+<para><simplesect kind="return"><para>Vector of strings to display in the <ref refid="classHUD" kindref="compound">HUD</ref>. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classHUD" kindref="compound">HUD</ref>, <ref refid="classApplication_1a6f40ffdb97f3a938ae19ea4eae4882ed" kindref="member">Application::Render</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/Scene.h" line="70" column="25" bodyfile="engine/scene/Scene.h" bodystart="70" bodyend="72"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -144,18 +222,30 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
+        <label>BaseLevelScene</label>
+        <link refid="classBaseLevelScene"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
         <label>Demo2DFixedScene</label>
         <link refid="classDemo2DFixedScene"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
+      <node id="4">
         <label>Demo2DScene</label>
         <link refid="classDemo2DScene"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
+      <node id="5">
+        <label>LevelSelectorScene</label>
+        <link refid="classLevelSelectorScene"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
         <label>MenuScene</label>
         <link refid="classMenuScene"/>
         <childnode refid="1" relation="public-inheritance">
@@ -172,11 +262,13 @@
         <link refid="classScene"/>
       </node>
     </collaborationgraph>
-    <location file="engine/scene/Scene.h" line="14" column="1" bodyfile="engine/scene/Scene.h" bodystart="14" bodyend="48"/>
+    <location file="engine/scene/Scene.h" line="15" column="1" bodyfile="engine/scene/Scene.h" bodystart="15" bodyend="73"/>
     <listofallmembers>
+      <member refid="classScene_1afb756dd8b7583f4b06a000d8157c7952" prot="public" virt="virtual"><scope>Scene</scope><name>GetHUDLines</name></member>
       <member refid="classScene_1ad93511100250c3f3ed736b9ed69fdc6f" prot="public" virt="pure-virtual"><scope>Scene</scope><name>GetName</name></member>
       <member refid="classScene_1ad09d42329f52df55fad0467cd092c9aa" prot="public" virt="pure-virtual"><scope>Scene</scope><name>OnEnter</name></member>
       <member refid="classScene_1a9824fefa923e5a9db4dca5a23343609b" prot="public" virt="pure-virtual"><scope>Scene</scope><name>OnExit</name></member>
+      <member refid="classScene_1a0b39bb1405c0f9ed82b2123a4b9dbfbd" prot="public" virt="virtual"><scope>Scene</scope><name>OnResize</name></member>
       <member refid="classScene_1ae24d21e12b34839994ad265662ea24d7" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Render</name></member>
       <member refid="classScene_1aaede6346f58776bd40efffd55885ab02" prot="public" virt="pure-virtual"><scope>Scene</scope><name>Update</name></member>
       <member refid="classScene_1af6e09d91ebd10ae9cc7c12c39d06386c" prot="public" virt="virtual"><scope>Scene</scope><name>~Scene</name></member>

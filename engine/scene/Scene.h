@@ -49,13 +49,23 @@ public:
 
     /**
      * @brief Called when the window is resized.
-     * @note Default implementation does nothing.
+     *
+     * The scene decides how to react (e.g., recompute camera projection).
+     *
+     * @param width New window width in pixels.
+     * @param height New window height in pixels.
      */
     virtual void OnResize(int width, int height){ (void)width; (void)height; }
 
     /**
-     * @brief Returns the lines to be rendered by the HUD.
-     * @note Default: F11 hint only.
+     * @brief Returns the lines to be rendered by the HUD overlay.
+     *
+     * The default implementation returns only the F11 hint. Scenes that
+     * have additional shortcuts (e.g., ESC to exit) should override this
+     * method and append their own lines.
+     *
+     * @return Vector of strings to display in the HUD.
+     * @see HUD, Application::Render
      */
     virtual std::vector<std::string> GetHUDLines() const{
         return { "F11: Toggle Fullscreen" };

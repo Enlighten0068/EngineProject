@@ -26,7 +26,7 @@ Collaboration diagram for Scene:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=154pt]{classScene__coll__graph}
+\includegraphics[width=173pt]{classScene__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -43,7 +43,11 @@ virtual void \doxymbox{\hyperlink{classScene_aaede6346f58776bd40efffd55885ab02}{
 virtual void \doxymbox{\hyperlink{classScene_ae24d21e12b34839994ad265662ea24d7}{Render}} ()=0
 \begin{DoxyCompactList}\small\item\em Renders the scene. \end{DoxyCompactList}\item 
 virtual std::\+string \doxymbox{\hyperlink{classScene_ad93511100250c3f3ed736b9ed69fdc6f}{Get\+Name}} () const =0
-\begin{DoxyCompactList}\small\item\em Gets the name of the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the name of the scene. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{classScene_a0b39bb1405c0f9ed82b2123a4b9dbfbd}{On\+Resize}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Called when the window is resized. \end{DoxyCompactList}\item 
+virtual std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{classScene_afb756dd8b7583f4b06a000d8157c7952}{Get\+HUDLines}} () const
+\begin{DoxyCompactList}\small\item\em Returns the lines to be rendered by the \doxylink{classHUD}{HUD} overlay. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -59,7 +63,7 @@ Scenes are managed by the \doxylink{classSceneManager}{Scene\+Manager}.
 \end{DoxySeeAlso}
 
 
-Definition at line \doxymbox{\hyperlink{Scene_8h_source_l00014}{14}} of file \doxymbox{\hyperlink{Scene_8h_source}{Scene.\+h}}.
+Definition at line \doxymbox{\hyperlink{Scene_8h_source_l00015}{15}} of file \doxymbox{\hyperlink{Scene_8h_source}{Scene.\+h}}.
 
 
 
@@ -77,6 +81,32 @@ virtual Scene::\+\texorpdfstring{$\sim$}{\string~}\+Scene (\begin{DoxyParamCapti
 \label{classScene_doc-func-members}
 \Hypertarget{classScene_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classScene_afb756dd8b7583f4b06a000d8157c7952}\index{Scene@{Scene}!GetHUDLines@{GetHUDLines}}
+\index{GetHUDLines@{GetHUDLines}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{GetHUDLines()}{GetHUDLines()}}
+{\footnotesize\ttfamily \label{classScene_afb756dd8b7583f4b06a000d8157c7952} 
+virtual std::\+vector$<$ std::\+string $>$ Scene::\+\+Get\+HUDLines (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns the lines to be rendered by the \doxylink{classHUD}{HUD} overlay. 
+
+The default implementation returns only the F11 hint. Scenes that have additional shortcuts (e.\+g., ESC to exit) should override this method and append their own lines.
+
+\begin{DoxyReturn}{Returns}
+Vector of strings to display in the \doxylink{classHUD}{HUD}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classHUD}{HUD}, \doxylink{classApplication_a6f40ffdb97f3a938ae19ea4eae4882ed}{Application::\+\+Render} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \doxymbox{\hyperlink{classBaseLevelScene_ab1a4691694cad905d0d6c7368d8b82e6}{Base\+Level\+Scene}}, and \doxymbox{\hyperlink{classLevelSelectorScene_aebf0f8867df43f6606d5457bdce9d386}{Level\+Selector\+Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{Scene_8h_source_l00070}{70}} of file \doxymbox{\hyperlink{Scene_8h_source}{Scene.\+h}}.
+
 \Hypertarget{classScene_ad93511100250c3f3ed736b9ed69fdc6f}\index{Scene@{Scene}!GetName@{GetName}}
 \index{GetName@{GetName}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
@@ -92,7 +122,7 @@ String containing the scene name.
 \end{DoxyReturn}
 
 
-Implemented in \doxymbox{\hyperlink{classDemo2DFixedScene_a67590905026e92be48a1e864db868eb9}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_aa6caae608302b160ef184473e1ef0219}{Demo2\+DScene}}, and \doxymbox{\hyperlink{classMenuScene_a8bb0e3e014de1ba6912dc937de6a2a69}{Menu\+Scene}}.
+Implemented in \doxymbox{\hyperlink{classBaseLevelScene_a09c51e071220755c6b9ff37e46ae83aa}{Base\+Level\+Scene}}, \doxymbox{\hyperlink{classDemo2DFixedScene_a67590905026e92be48a1e864db868eb9}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_aa6caae608302b160ef184473e1ef0219}{Demo2\+DScene}}, \doxymbox{\hyperlink{classLevelSelectorScene_a8085250fc5dee5c345c763c26c8a0707}{Level\+Selector\+Scene}}, and \doxymbox{\hyperlink{classMenuScene_a8bb0e3e014de1ba6912dc937de6a2a69}{Menu\+Scene}}.
 
 \Hypertarget{classScene_ad09d42329f52df55fad0467cd092c9aa}\index{Scene@{Scene}!OnEnter@{OnEnter}}
 \index{OnEnter@{OnEnter}!Scene@{Scene}}
@@ -106,7 +136,7 @@ Called when the scene becomes active.
 
 Use this method to initialize scene-\/specific resources. 
 
-Implemented in \doxymbox{\hyperlink{classDemo2DFixedScene_a1daab876b813800575999e0a5374d899}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_a8ffa82c6772da7121ff4d812d9d1c1e5}{Demo2\+DScene}}, and \doxymbox{\hyperlink{classMenuScene_a015085736912c87c4e28ab54ab056e6d}{Menu\+Scene}}.
+Implemented in \doxymbox{\hyperlink{classBaseLevelScene_ab16251567315098d84b5afed205ebf75}{Base\+Level\+Scene}}, \doxymbox{\hyperlink{classDemo2DFixedScene_a1daab876b813800575999e0a5374d899}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_a8ffa82c6772da7121ff4d812d9d1c1e5}{Demo2\+DScene}}, \doxymbox{\hyperlink{classLevelSelectorScene_a2ef8dc2df76c5d6a9dde5cb034ac242d}{Level\+Selector\+Scene}}, and \doxymbox{\hyperlink{classMenuScene_a015085736912c87c4e28ab54ab056e6d}{Menu\+Scene}}.
 
 \Hypertarget{classScene_a9824fefa923e5a9db4dca5a23343609b}\index{Scene@{Scene}!OnExit@{OnExit}}
 \index{OnExit@{OnExit}!Scene@{Scene}}
@@ -120,7 +150,34 @@ Called when the scene is exited.
 
 Use this method to clean up scene-\/specific resources. 
 
-Implemented in \doxymbox{\hyperlink{classDemo2DFixedScene_a327f00eb5155cd0b30138787babecba2}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_afce546436c8328555a6c548dcb3a9d90}{Demo2\+DScene}}, and \doxymbox{\hyperlink{classMenuScene_a834e7aa54dd72502876d30114e47cc9e}{Menu\+Scene}}.
+Implemented in \doxymbox{\hyperlink{classBaseLevelScene_a4dbbd984d245a1d8fd20e89546db30c4}{Base\+Level\+Scene}}, \doxymbox{\hyperlink{classDemo2DFixedScene_a327f00eb5155cd0b30138787babecba2}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_afce546436c8328555a6c548dcb3a9d90}{Demo2\+DScene}}, \doxymbox{\hyperlink{classLevelSelectorScene_a38c557d72f36f05319bd8fc097cccb1e}{Level\+Selector\+Scene}}, and \doxymbox{\hyperlink{classMenuScene_a834e7aa54dd72502876d30114e47cc9e}{Menu\+Scene}}.
+
+\Hypertarget{classScene_a0b39bb1405c0f9ed82b2123a4b9dbfbd}\index{Scene@{Scene}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{OnResize()}{OnResize()}}
+{\footnotesize\ttfamily \label{classScene_a0b39bb1405c0f9ed82b2123a4b9dbfbd} 
+virtual void Scene::\+\+On\+Resize (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Called when the window is resized. 
+
+The scene decides how to react (e.\+g., recompute camera projection).
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & New window width in pixels. \\
+\hline
+{\em height} & New window height in pixels. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \doxymbox{\hyperlink{classBaseLevelScene_a8131a96a0029b8801e80012c3d7b10dc}{Base\+Level\+Scene}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{Scene_8h_source_l00058}{58}} of file \doxymbox{\hyperlink{Scene_8h_source}{Scene.\+h}}.
 
 \Hypertarget{classScene_ae24d21e12b34839994ad265662ea24d7}\index{Scene@{Scene}!Render@{Render}}
 \index{Render@{Render}!Scene@{Scene}}
@@ -134,7 +191,7 @@ Renders the scene.
 
 
 
-Implemented in \doxymbox{\hyperlink{classDemo2DFixedScene_ad938c557aa7ad055aee8d25171fafad5}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_aa04f40209bc6b113df30f9dcf03bd80c}{Demo2\+DScene}}, and \doxymbox{\hyperlink{classMenuScene_a57787dac0643417ddd147c940c36b93a}{Menu\+Scene}}.
+Implemented in \doxymbox{\hyperlink{classBaseLevelScene_a97d454ced01a68b11b7b4906ba30d7b1}{Base\+Level\+Scene}}, \doxymbox{\hyperlink{classDemo2DFixedScene_ad938c557aa7ad055aee8d25171fafad5}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_aa04f40209bc6b113df30f9dcf03bd80c}{Demo2\+DScene}}, \doxymbox{\hyperlink{classLevelSelectorScene_aa4161b586dbea24ead423a034816fdfc}{Level\+Selector\+Scene}}, and \doxymbox{\hyperlink{classMenuScene_a57787dac0643417ddd147c940c36b93a}{Menu\+Scene}}.
 
 \Hypertarget{classScene_aaede6346f58776bd40efffd55885ab02}\index{Scene@{Scene}!Update@{Update}}
 \index{Update@{Update}!Scene@{Scene}}
@@ -153,7 +210,7 @@ Updates the scene logic.
 \end{DoxyParams}
 
 
-Implemented in \doxymbox{\hyperlink{classDemo2DFixedScene_ac626aa848bd8d98054f7d2b21a724ac9}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_a960e0d534e6e05bda39f3d9eaaf30deb}{Demo2\+DScene}}, and \doxymbox{\hyperlink{classMenuScene_af2b1e0e9e1c783c8b058f60906add842}{Menu\+Scene}}.
+Implemented in \doxymbox{\hyperlink{classBaseLevelScene_a3efbf3f1e6d16a34de0b27a1da2f98f7}{Base\+Level\+Scene}}, \doxymbox{\hyperlink{classDemo2DFixedScene_ac626aa848bd8d98054f7d2b21a724ac9}{Demo2\+DFixed\+Scene}}, \doxymbox{\hyperlink{classDemo2DScene_a960e0d534e6e05bda39f3d9eaaf30deb}{Demo2\+DScene}}, \doxymbox{\hyperlink{classLevelSelectorScene_acfaf5d66253dbd5880be7bc68d210d0a}{Level\+Selector\+Scene}}, and \doxymbox{\hyperlink{classMenuScene_af2b1e0e9e1c783c8b058f60906add842}{Menu\+Scene}}.
 
 
 

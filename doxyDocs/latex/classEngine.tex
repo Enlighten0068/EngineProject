@@ -32,8 +32,12 @@ void \doxymbox{\hyperlink{classEngine_a3dbd2c0a65e642baa7eaa97caa6e4e64}{Shutdow
 \begin{DoxyCompactList}\small\item\em Shuts down the engine and destroys the game window. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classSDLWindow}{SDLWindow}} \& \doxymbox{\hyperlink{classEngine_a531f887d1b7f38525d0c21d20e216e6c}{Get\+Window}} ()
 \begin{DoxyCompactList}\small\item\em Gets the \doxylink{classSDLWindow}{SDLWindow} instance. \end{DoxyCompactList}\item 
-bool \doxymbox{\hyperlink{classEngine_a96fbaebec1936cf4440f93b59a7c5148}{Is\+Running}} () const
+bool \doxymbox{\hyperlink{classEngine_a47e36969b7d5eb737b75ca542c44b31f}{Toggle\+Fullscreen}} ()
 \begin{DoxyCompactList}\small\item\em Checks if the engine is still running. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classEngine_aa953a5f68826c7a2ea122674219d715b}{Is\+Fullscreen}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the window is currently fullscreen. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classEngine_a96fbaebec1936cf4440f93b59a7c5148}{Is\+Running}} () const
+\item 
 void \doxymbox{\hyperlink{classEngine_a75cf7e8499772e2a46c9bb747ce1f4e9}{Set\+Running}} (bool running)
 \begin{DoxyCompactList}\small\item\em Sets the running state of the engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
@@ -150,6 +154,20 @@ true if successful, false otherwise.
 
 Definition at line \doxymbox{\hyperlink{Engine_8cpp_source_l00029}{29}} of file \doxymbox{\hyperlink{Engine_8cpp_source}{Engine.\+cpp}}.
 
+\Hypertarget{classEngine_aa953a5f68826c7a2ea122674219d715b}\index{Engine@{Engine}!IsFullscreen@{IsFullscreen}}
+\index{IsFullscreen@{IsFullscreen}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{IsFullscreen()}{IsFullscreen()}}
+{\footnotesize\ttfamily \label{classEngine_aa953a5f68826c7a2ea122674219d715b} 
+bool Engine::\+\+Is\+Fullscreen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the window is currently fullscreen. 
+
+
+
+Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00054}{54}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
+
 \Hypertarget{classEngine_a96fbaebec1936cf4440f93b59a7c5148}\index{Engine@{Engine}!IsRunning@{IsRunning}}
 \index{IsRunning@{IsRunning}!Engine@{Engine}}
 \doxysubsubsection{\texorpdfstring{IsRunning()}{IsRunning()}}
@@ -158,14 +176,7 @@ bool Engine::\+\+Is\+Running (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}
 
 
 
-Checks if the engine is still running. 
-
-\begin{DoxyReturn}{Returns}
-true if running, false otherwise. 
-\end{DoxyReturn}
-
-
-Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00044}{44}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
+Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00056}{56}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
 
 \Hypertarget{classEngine_a75cf7e8499772e2a46c9bb747ce1f4e9}\index{Engine@{Engine}!SetRunning@{SetRunning}}
 \index{SetRunning@{SetRunning}!Engine@{Engine}}
@@ -184,7 +195,7 @@ Sets the running state of the engine.
 \end{DoxyParams}
 
 
-Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00050}{50}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
+Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00062}{62}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
 
 \Hypertarget{classEngine_a3dbd2c0a65e642baa7eaa97caa6e4e64}\index{Engine@{Engine}!Shutdown@{Shutdown}}
 \index{Shutdown@{Shutdown}!Engine@{Engine}}
@@ -202,6 +213,26 @@ Destroys the window and quits SDL.
 
 Definition at line \doxymbox{\hyperlink{Engine_8cpp_source_l00047}{47}} of file \doxymbox{\hyperlink{Engine_8cpp_source}{Engine.\+cpp}}.
 
+\Hypertarget{classEngine_a47e36969b7d5eb737b75ca542c44b31f}\index{Engine@{Engine}!ToggleFullscreen@{ToggleFullscreen}}
+\index{ToggleFullscreen@{ToggleFullscreen}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{ToggleFullscreen()}{ToggleFullscreen()}}
+{\footnotesize\ttfamily \label{classEngine_a47e36969b7d5eb737b75ca542c44b31f} 
+bool Engine::\+\+Toggle\+Fullscreen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the engine is still running. 
+
+\begin{DoxyReturn}{Returns}
+true if running, false otherwise.
+\end{DoxyReturn}
+Toggles fullscreen mode on the window. \begin{DoxyReturn}{Returns}
+true if now fullscreen, false if now windowed. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00049}{49}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
+
 
 
 \label{classEngine_doc-variable-members}
@@ -215,7 +246,7 @@ bool Engine::\+m\+\_\+\+Running\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00054}{54}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
+Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00066}{66}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
 
 \Hypertarget{classEngine_a6bbcb94d19650accc1e62492c82178e2}\index{Engine@{Engine}!m\_Window@{m\_Window}}
 \index{m\_Window@{m\_Window}!Engine@{Engine}}
@@ -225,7 +256,7 @@ Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00054}{54}} of file \d
 
 
 
-Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00053}{53}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
+Definition at line \doxymbox{\hyperlink{Engine_8h_source_l00065}{65}} of file \doxymbox{\hyperlink{Engine_8h_source}{Engine.\+h}}.
 
 
 

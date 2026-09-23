@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structLevelSelectorScene_1_1Option" kind="struct" language="C++" prot="private">
+    <compoundname>LevelSelectorScene::Option</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLevelSelectorScene_1_1Option_1aa432014ff73e4d3715d5bebc70289948" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string LevelSelectorScene::Option::Label</definition>
+        <argsstring></argsstring>
+        <name>Label</name>
+        <qualifiedname>LevelSelectorScene::Option::Label</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="55" column="21" bodyfile="engine/level/LevelSelectorScene.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelSelectorScene_1_1Option_1a7b02823b0e5eafec5488802026eb8911" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2D&gt; LevelSelectorScene::Option::NormalTexture</definition>
+        <argsstring></argsstring>
+        <name>NormalTexture</name>
+        <qualifiedname>LevelSelectorScene::Option::NormalTexture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="56" column="25" bodyfile="engine/level/LevelSelectorScene.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelSelectorScene_1_1Option_1ab4f540ccc737789009d7e35eeb4fcfa3" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2D&gt; LevelSelectorScene::Option::SelectedTexture</definition>
+        <argsstring></argsstring>
+        <name>SelectedTexture</name>
+        <qualifiedname>LevelSelectorScene::Option::SelectedTexture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="57" column="25" bodyfile="engine/level/LevelSelectorScene.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelSelectorScene_1_1Option_1a3e5b8f6b84e764c6c7d1cf3ebf1bd12e" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D LevelSelectorScene::Option::Position</definition>
+        <argsstring></argsstring>
+        <name>Position</name>
+        <qualifiedname>LevelSelectorScene::Option::Position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="58" column="18" bodyfile="engine/level/LevelSelectorScene.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelSelectorScene_1_1Option_1a27114cde8813f06e07d69021ce03a72c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LevelSelectorScene::Option::Width</definition>
+        <argsstring></argsstring>
+        <name>Width</name>
+        <qualifiedname>LevelSelectorScene::Option::Width</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="59" column="15" bodyfile="engine/level/LevelSelectorScene.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLevelSelectorScene_1_1Option_1ab067840435b782f8a78e68e74ad8af8a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LevelSelectorScene::Option::Height</definition>
+        <argsstring></argsstring>
+        <name>Height</name>
+        <qualifiedname>LevelSelectorScene::Option::Height</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/level/LevelSelectorScene.h" line="60" column="15" bodyfile="engine/level/LevelSelectorScene.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A single menu option (text label with two textures). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>LevelSelectorScene::Option</label>
+        <link refid="structLevelSelectorScene_1_1Option"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+Position</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/level/LevelSelectorScene.h" line="54" column="5" bodyfile="engine/level/LevelSelectorScene.h" bodystart="54" bodyend="61"/>
+    <listofallmembers>
+      <member refid="structLevelSelectorScene_1_1Option_1ab067840435b782f8a78e68e74ad8af8a" prot="public" virt="non-virtual"><scope>LevelSelectorScene::Option</scope><name>Height</name></member>
+      <member refid="structLevelSelectorScene_1_1Option_1aa432014ff73e4d3715d5bebc70289948" prot="public" virt="non-virtual"><scope>LevelSelectorScene::Option</scope><name>Label</name></member>
+      <member refid="structLevelSelectorScene_1_1Option_1a7b02823b0e5eafec5488802026eb8911" prot="public" virt="non-virtual"><scope>LevelSelectorScene::Option</scope><name>NormalTexture</name></member>
+      <member refid="structLevelSelectorScene_1_1Option_1a3e5b8f6b84e764c6c7d1cf3ebf1bd12e" prot="public" virt="non-virtual"><scope>LevelSelectorScene::Option</scope><name>Position</name></member>
+      <member refid="structLevelSelectorScene_1_1Option_1ab4f540ccc737789009d7e35eeb4fcfa3" prot="public" virt="non-virtual"><scope>LevelSelectorScene::Option</scope><name>SelectedTexture</name></member>
+      <member refid="structLevelSelectorScene_1_1Option_1a27114cde8813f06e07d69021ce03a72c" prot="public" virt="non-virtual"><scope>LevelSelectorScene::Option</scope><name>Width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

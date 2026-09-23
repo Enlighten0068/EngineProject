@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_1d7686bd4ad0d0d1a98bac552750a9f4" kind="dir">
+    <compoundname>engine/level</compoundname>
+    <innerfile refid="CameraMode_8h">CameraMode.h</innerfile>
+    <innerfile refid="LevelMacros_8h">LevelMacros.h</innerfile>
+    <innerfile refid="LevelRegistry_8cpp">LevelRegistry.cpp</innerfile>
+    <innerfile refid="LevelRegistry_8h">LevelRegistry.h</innerfile>
+    <innerfile refid="LevelSelectorScene_8cpp">LevelSelectorScene.cpp</innerfile>
+    <innerfile refid="LevelSelectorScene_8h">LevelSelectorScene.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="engine/level/"/>
+  </compounddef>
+</doxygen>

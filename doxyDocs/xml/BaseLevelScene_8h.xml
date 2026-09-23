@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="BaseLevelScene_8h" kind="file" language="C++">
+    <compoundname>BaseLevelScene.h</compoundname>
+    <includes refid="Enemy_8h" local="yes">components/Enemy.h</includes>
+    <includes refid="Patrol_8h" local="yes">components/Patrol.h</includes>
+    <includes refid="CameraController_8h" local="yes">core/CameraController.h</includes>
+    <includes refid="PlayerController_8h" local="yes">core/PlayerController.h</includes>
+    <includes refid="FpsCounter_8h" local="yes">core/FpsCounter.h</includes>
+    <includes refid="CameraMode_8h" local="yes">level/CameraMode.h</includes>
+    <includes refid="Scene_8h" local="yes">scene/Scene.h</includes>
+    <includes refid="SceneManager_8h" local="yes">scene/SceneManager.h</includes>
+    <includes refid="ECSScene_8h" local="yes">scene/ECSScene.h</includes>
+    <includes refid="GameWorld_8h" local="yes">scene/GameWorld.h</includes>
+    <includes refid="Camera2D_8h" local="yes">scene/Camera2D.h</includes>
+    <includes refid="EnemySystem_8h" local="yes">systems/EnemySystem.h</includes>
+    <includes refid="LevelSystem_8h" local="yes">systems/LevelSystem.h</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="LevelSelectorScene_8cpp" local="yes">engine/level/LevelSelectorScene.cpp</includedby>
+    <includedby refid="BaseLevelScene_8cpp" local="yes">engine/scene/BaseLevelScene.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>components/Enemy.h</label>
+        <link refid="Enemy_8h"/>
+      </node>
+      <node id="3">
+        <label>components/Patrol.h</label>
+        <link refid="Patrol_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>components/PhysicsBody.h</label>
+        <link refid="PhysicsBody_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>components/SpriteRenderer.h</label>
+        <link refid="SpriteRenderer_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>components/TileScale.h</label>
+        <link refid="TileScale_8h"/>
+      </node>
+      <node id="19">
+        <label>components/Transform.h</label>
+        <link refid="components_2Transform_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>core/CameraController.h</label>
+        <link refid="CameraController_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>core/FpsCounter.h</label>
+        <link refid="FpsCounter_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>core/PlayerController.h</label>
+        <link refid="PlayerController_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>core/Time.h</label>
+        <link refid="Time_8h"/>
+      </node>
+      <node id="34">
+        <label>diagnostics/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>graphics/IndexBuffer.h</label>
+        <link refid="IndexBuffer_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>graphics/Shader.h</label>
+        <link refid="Shader_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>graphics/Texture2D.h</label>
+        <link refid="Texture2D_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>graphics/VertexArray.h</label>
+        <link refid="VertexArray_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>graphics/VertexBuffer.h</label>
+        <link refid="VertexBuffer_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>level/CameraMode.h</label>
+        <link refid="CameraMode_8h"/>
+      </node>
+      <node id="7">
+        <label>math/Matrix4.h</label>
+        <link refid="Matrix4_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>math/Vector2D.h</label>
+        <link refid="Vector2D_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>math/Vector3D.h</label>
+        <link refid="Vector3D_8h"/>
+      </node>
+      <node id="1">
+        <label>engine/scene/BaseLevelScene.h</label>
+        <link refid="BaseLevelScene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>scene/Camera2D.h</label>
+        <link refid="Camera2D_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>scene/ECSScene.h</label>
+        <link refid="ECSScene_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>scene/GameWorld.h</label>
+        <link refid="GameWorld_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>scene/Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>scene/SceneManager.h</label>
+        <link refid="SceneManager_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>systems/EnemySystem.h</label>
+        <link refid="EnemySystem_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>systems/LevelSystem.h</label>
+        <link refid="LevelSystem_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>SDL3/SDL.h</label>
+      </node>
+      <node id="36">
+        <label>chrono</label>
+      </node>
+      <node id="8">
+        <label>cmath</label>
+      </node>
+      <node id="13">
+        <label>cstdint</label>
+      </node>
+      <node id="20">
+        <label>entt.hpp</label>
+      </node>
+      <node id="35">
+        <label>fstream</label>
+      </node>
+      <node id="42">
+        <label>functional</label>
+      </node>
+      <node id="37">
+        <label>iomanip</label>
+      </node>
+      <node id="17">
+        <label>memory</label>
+      </node>
+      <node id="38">
+        <label>sstream</label>
+      </node>
+      <node id="26">
+        <label>stack</label>
+      </node>
+      <node id="12">
+        <label>string</label>
+      </node>
+      <node id="39">
+        <label>unordered_map</label>
+      </node>
+      <node id="24">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>engine/level/LevelSelectorScene.cpp</label>
+        <link refid="LevelSelectorScene_8cpp"/>
+      </node>
+      <node id="3">
+        <label>engine/scene/BaseLevelScene.cpp</label>
+        <link refid="BaseLevelScene_8cpp"/>
+      </node>
+      <node id="1">
+        <label>engine/scene/BaseLevelScene.h</label>
+        <link refid="BaseLevelScene_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classBaseLevelScene" prot="public">BaseLevelScene</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Enemy_8h" kindref="compound">components/Enemy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Patrol_8h" kindref="compound">components/Patrol.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CameraController_8h" kindref="compound">core/CameraController.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PlayerController_8h" kindref="compound">core/PlayerController.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="FpsCounter_8h" kindref="compound">core/FpsCounter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CameraMode_8h" kindref="compound">level/CameraMode.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Scene_8h" kindref="compound">scene/Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SceneManager_8h" kindref="compound">scene/SceneManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ECSScene_8h" kindref="compound">scene/ECSScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameWorld_8h" kindref="compound">scene/GameWorld.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera2D_8h" kindref="compound">scene/Camera2D.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="EnemySystem_8h" kindref="compound">systems/EnemySystem.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LevelSystem_8h" kindref="compound">systems/LevelSystem.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classBaseLevelScene" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classBaseLevelScene_1ad453a827009fdc987722770402988ba0" kindref="member">BaseLevelScene</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classScene" kindref="compound">Scene</ref>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33" refid="classBaseLevelScene_1a77e808a59ebefe66e3af2d06b633660c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classBaseLevelScene_1a77e808a59ebefe66e3af2d06b633660c" kindref="member">BuilderFn</ref><sp/>=<sp/>std::function&lt;void(<ref refid="classLevelSystem" kindref="compound">LevelSystem</ref>&amp;)&gt;;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBaseLevelScene_1ad453a827009fdc987722770402988ba0" kindref="member">BaseLevelScene</ref>(<ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>shader,<sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/>va,<sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/>ib,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera2D" kindref="compound">Camera2D</ref>&amp;<sp/>camera,<sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/>lineShader,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSceneManager" kindref="compound">SceneManager</ref>&amp;<sp/>sceneManager,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classBaseLevelScene_1a77e808a59ebefe66e3af2d06b633660c" kindref="member">BuilderFn</ref><sp/>builder,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>levelName,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35" kindref="member">CameraMode</ref><sp/>cameraMode);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBaseLevelScene_1ad453a827009fdc987722770402988ba0" kindref="member">~BaseLevelScene</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBaseLevelScene_1ab16251567315098d84b5afed205ebf75" kindref="member">OnEnter</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBaseLevelScene_1a4dbbd984d245a1d8fd20e89546db30c4" kindref="member">OnExit</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBaseLevelScene_1a8131a96a0029b8801e80012c3d7b10dc" kindref="member">OnResize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBaseLevelScene_1a3efbf3f1e6d16a34de0b27a1da2f98f7" kindref="member">Update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deltaTime)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBaseLevelScene_1a97d454ced01a68b11b7b4906ba30d7b1" kindref="member">Render</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60" refid="classBaseLevelScene_1a09c51e071220755c6b9ff37e46ae83aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classBaseLevelScene_1a09c51e071220755c6b9ff37e46ae83aa" kindref="member">GetName</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classBaseLevelScene_1a378c17670d06335f86f2a8f01cc0d3aa" kindref="member">m_LevelName</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classBaseLevelScene_1ab1a4691694cad905d0d6c7368d8b82e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="classBaseLevelScene_1ab1a4691694cad905d0d6c7368d8b82e6" kindref="member">GetHUDLines</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;F11:<sp/>Toggle<sp/>Fullscreen&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ESC:<sp/>Exit<sp/>Level&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBaseLevelScene_1ad699b8d5399b8b240c1db4af6c07cbcc" kindref="member">RespawnEnemies</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBaseLevelScene_1ac14c1450ecf7e04fca4365eb19857f82" kindref="member">SetupScene</ref>();<sp/></highlight><highlight class="comment">//Builds<sp/>the<sp/>level<sp/>and<sp/>initializes<sp/>controllers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBaseLevelScene_1a731f0a2859c5e76d8212ef22876bde90" kindref="member">ResolveCollisions</ref>();<sp/></highlight><highlight class="comment">//Resolves<sp/>player-platform<sp/>collisions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBaseLevelScene_1a77fd4e5577c3c2e867d1b6ab27cf5f16" kindref="member">CheckEnemyCollisions</ref>();<sp/></highlight><highlight class="comment">//Checks<sp/>player-enemy<sp/>collisions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classBaseLevelScene_1ab310c8eb93b4b89ffac68dabbdc2e28b" kindref="member">DestroyEnemy</ref>(entt::entity<sp/>enemy);<sp/></highlight><highlight class="comment">//Destroys<sp/>a<sp/>single<sp/>enemy<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classBaseLevelScene_1ab1103dfbcb852a26e6576e2e6d050467" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/><ref refid="classBaseLevelScene_1ab1103dfbcb852a26e6576e2e6d050467" kindref="member">m_Shader</ref>;</highlight></codeline>
+<codeline lineno="84" refid="classBaseLevelScene_1ad235292db6dd9d29404a56fe2d761f27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classVertexArray" kindref="compound">VertexArray</ref>&amp;<sp/><ref refid="classBaseLevelScene_1ad235292db6dd9d29404a56fe2d761f27" kindref="member">m_VertexArray</ref>;</highlight></codeline>
+<codeline lineno="85" refid="classBaseLevelScene_1a7c958f5e88c56046ce2317a33aa103b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref>&amp;<sp/><ref refid="classBaseLevelScene_1a7c958f5e88c56046ce2317a33aa103b6" kindref="member">m_IndexBuffer</ref>;</highlight></codeline>
+<codeline lineno="86" refid="classBaseLevelScene_1af013346ebc9543a97f793bb7a61b4414" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D" kindref="compound">Camera2D</ref>&amp;<sp/><ref refid="classBaseLevelScene_1af013346ebc9543a97f793bb7a61b4414" kindref="member">m_Camera</ref>;</highlight></codeline>
+<codeline lineno="87" refid="classBaseLevelScene_1ab435e3b596945acbde3667871495d4b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classShader" kindref="compound">Shader</ref>&amp;<sp/><ref refid="classBaseLevelScene_1ab435e3b596945acbde3667871495d4b5" kindref="member">m_LineShader</ref>;</highlight></codeline>
+<codeline lineno="88" refid="classBaseLevelScene_1a39ab68552abf1385f4d27801dafa86b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSceneManager" kindref="compound">SceneManager</ref>&amp;<sp/><ref refid="classBaseLevelScene_1a39ab68552abf1385f4d27801dafa86b9" kindref="member">m_SceneManager</ref>;</highlight></codeline>
+<codeline lineno="89" refid="classBaseLevelScene_1aef393c459e51f1c35ec11debbc6e4c7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classBaseLevelScene_1a77e808a59ebefe66e3af2d06b633660c" kindref="member">BuilderFn</ref><sp/><ref refid="classBaseLevelScene_1aef393c459e51f1c35ec11debbc6e4c7b" kindref="member">m_Builder</ref>;</highlight></codeline>
+<codeline lineno="90" refid="classBaseLevelScene_1a378c17670d06335f86f2a8f01cc0d3aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classBaseLevelScene_1a378c17670d06335f86f2a8f01cc0d3aa" kindref="member">m_LevelName</ref>;</highlight></codeline>
+<codeline lineno="91" refid="classBaseLevelScene_1a97c355120bd46574398b7fc35bb027fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35" kindref="member">CameraMode</ref><sp/><ref refid="classBaseLevelScene_1a97c355120bd46574398b7fc35bb027fd" kindref="member">m_CameraMode</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classBaseLevelScene_1a92e8e1b3659b34c538c8b66d472550f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;ECSScene&gt;<sp/><ref refid="classBaseLevelScene_1a92e8e1b3659b34c538c8b66d472550f8" kindref="member">m_ECSScene</ref>;<sp/></highlight><highlight class="comment">//ECS<sp/>scene<sp/>containing<sp/>all<sp/>entities</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classBaseLevelScene_1a5b0538757b5a6b1f307983fb56a6c070" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GameWorld&gt;<sp/><ref refid="classBaseLevelScene_1a5b0538757b5a6b1f307983fb56a6c070" kindref="member">m_World</ref>;<sp/></highlight><highlight class="comment">//World<sp/>bounds<sp/>and<sp/>clamping</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="classBaseLevelScene_1a88654189be731926a1093106b86de0c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;CameraController&gt;<sp/><ref refid="classBaseLevelScene_1a88654189be731926a1093106b86de0c6" kindref="member">m_CameraController</ref>;<sp/></highlight><highlight class="comment">//Player<sp/>controller</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classBaseLevelScene_1a6d231d2ede9243ceb3e9f587f144ba2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;PlayerController&gt;<sp/><ref refid="classBaseLevelScene_1a6d231d2ede9243ceb3e9f587f144ba2d" kindref="member">m_PlayerController</ref>;<sp/></highlight><highlight class="comment">//Camera<sp/>follow<sp/>controller<sp/>(nullptr<sp/>for<sp/>Fixed)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="classBaseLevelScene_1a7a21e9c1df6703713d73a7cc8f512b33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;FpsCounter&gt;<sp/><ref refid="classBaseLevelScene_1a7a21e9c1df6703713d73a7cc8f512b33" kindref="member">m_FpsCounter</ref>;<sp/></highlight><highlight class="comment">//FPS<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="classBaseLevelScene_1af3a106663a4762944a05ef216687c35d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>entt::entity<sp/><ref refid="classBaseLevelScene_1af3a106663a4762944a05ef216687c35d" kindref="member">m_PlayerEntity</ref>;<sp/></highlight><highlight class="comment">//Player<sp/>entity<sp/>ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classBaseLevelScene_1a2f7f5c476ad9a31a54840d1a574175c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;entt::entity&gt;<sp/><ref refid="classBaseLevelScene_1a2f7f5c476ad9a31a54840d1a574175c1" kindref="member">m_EnemyEntities</ref>;<sp/></highlight><highlight class="comment">//Active<sp/>enemy<sp/>entities</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="classBaseLevelScene_1ad705f1295cbae14ba923e1b1b2f46ad6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;LevelSystem::EnemyDefinition&gt;<sp/><ref refid="classBaseLevelScene_1ad705f1295cbae14ba923e1b1b2f46ad6" kindref="member">m_EnemyDefinitions</ref>;<sp/></highlight><highlight class="comment">//Enemy<sp/>definitions<sp/>for<sp/>respawn</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="classBaseLevelScene_1a1c0eb61a6a5ef4688dda661abe12206a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;entt::entity&gt;<sp/><ref refid="classBaseLevelScene_1a1c0eb61a6a5ef4688dda661abe12206a" kindref="member">m_PlatformEntities</ref>;<sp/></highlight><highlight class="comment">//Platform<sp/>entities<sp/>for<sp/>collision</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="engine/scene/BaseLevelScene.h"/>
+  </compounddef>
+</doxygen>

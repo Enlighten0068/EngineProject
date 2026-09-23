@@ -14,6 +14,7 @@
     <includedby refid="PlayerController_8h" local="yes">engine/core/PlayerController.h</includedby>
     <includedby refid="Demo2DFixedScene_8h" local="yes">engine/demo/Demo2DFixedScene.h</includedby>
     <includedby refid="Demo2DScene_8h" local="yes">engine/demo/Demo2DScene.h</includedby>
+    <includedby refid="BaseLevelScene_8h" local="yes">engine/scene/BaseLevelScene.h</includedby>
     <includedby refid="GameWorld_8cpp" local="yes">engine/scene/GameWorld.cpp</includedby>
     <incdepgraph>
       <node id="11">
@@ -125,25 +126,29 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="16">
         <label>engine/core/PlayerController.cpp</label>
         <link refid="PlayerController_8cpp"/>
       </node>
-      <node id="13">
+      <node id="15">
         <label>engine/core/PlayerController.h</label>
         <link refid="PlayerController_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -161,26 +166,40 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="12">
+      <node id="11">
         <label>engine/demo/Demo2DScene.cpp</label>
         <link refid="Demo2DScene_8cpp"/>
       </node>
-      <node id="11">
+      <node id="10">
         <label>engine/demo/Demo2DScene.h</label>
         <link refid="Demo2DScene_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="13">
+        <label>engine/level/LevelSelectorScene.cpp</label>
+        <link refid="LevelSelectorScene_8cpp"/>
+      </node>
+      <node id="14">
+        <label>engine/scene/BaseLevelScene.cpp</label>
+        <link refid="BaseLevelScene_8cpp"/>
+      </node>
+      <node id="12">
+        <label>engine/scene/BaseLevelScene.h</label>
+        <link refid="BaseLevelScene_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
         <label>engine/scene/GameWorld.cpp</label>
         <link refid="GameWorld_8cpp"/>
       </node>
@@ -193,18 +212,16 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
-      </node>
-      <node id="10">
-        <label>engine/scene/MenuScene.cpp</label>
-        <link refid="MenuScene_8cpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
       </node>
       <node id="5">
         <label>game/src/main.cpp</label>

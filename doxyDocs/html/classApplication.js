@@ -15,6 +15,7 @@ var classApplication =
     [ "m_Engine", "classApplication.html#a126a310227b213e720cc4596d7e1aadf", null ],
     [ "m_FpsCounter", "classApplication.html#a682a91f7e9cb6072807dd7a6f14ef345", null ],
     [ "m_Graphics", "classApplication.html#afb633069c0774e759f1d7cc1926983a8", null ],
+    [ "m_HUD", "classApplication.html#a1d855757f4b1bc12b70bcb2409d4bb9e", null ],
     [ "m_SceneManager", "classApplication.html#a515a967a0aba4f893e8738519dc00cec", null ],
     [ "m_World", "classApplication.html#a3e23ce99f0bb67f879a477d73c046f96", null ]
 ];

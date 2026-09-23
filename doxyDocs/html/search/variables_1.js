@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gravityscale_0',['GravityScale',['../structComponents_1_1PhysicsBody.html#afab2ab2824663679e684cb92e4d0a2ed',1,'Components::PhysicsBody']]]
+  ['description_0',['Description',['../structLevelDefinition.html#aa41fb86eb1255c3ae2ac786549a92560',1,'LevelDefinition']]]
 ];

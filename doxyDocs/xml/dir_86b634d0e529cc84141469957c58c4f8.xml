@@ -3,6 +3,8 @@
   <compounddef id="dir_86b634d0e529cc84141469957c58c4f8" kind="dir">
     <compoundname>engine/systems</compoundname>
     <innerfile refid="EnemySystem_8h">EnemySystem.h</innerfile>
+    <innerfile refid="LevelSystem_8cpp">LevelSystem.cpp</innerfile>
+    <innerfile refid="LevelSystem_8h">LevelSystem.h</innerfile>
     <innerfile refid="RenderSystem_8h">RenderSystem.h</innerfile>
     <briefdescription>
     </briefdescription>

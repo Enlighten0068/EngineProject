@@ -16,7 +16,7 @@ Collaboration diagram for Time:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=173pt]{classTime__coll__graph}
+\includegraphics[width=174pt]{classTime__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Static Public Member Functions}
@@ -24,6 +24,8 @@ Collaboration diagram for Time:
 \item 
 static float \doxymbox{\hyperlink{classTime_ad543732facbdbe2aa7298de13cb2a12b}{Delta\+Time}} ()
 \begin{DoxyCompactList}\small\item\em Gets the time elapsed since the last frame. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classTime_ac6ae72b2ea451dd16f0d0ca3ae45fec5}{Set\+Delta\+Time}} (float dt)
+\begin{DoxyCompactList}\small\item\em Overrides the delta time for the current frame. \end{DoxyCompactList}\item 
 static float \doxymbox{\hyperlink{classTime_a78df68c0498044fa62fdeb6b9e9e8b63}{Elapsed\+Time}} ()
 \begin{DoxyCompactList}\small\item\em Gets the total time elapsed since application startup. \end{DoxyCompactList}\item 
 static void \doxymbox{\hyperlink{classTime_a7e9cf31048064a9aedfee885807b1b56}{Update}} ()
@@ -92,6 +94,27 @@ Elapsed time in seconds.
 
 Definition at line \doxymbox{\hyperlink{Time_8cpp_source_l00037}{37}} of file \doxymbox{\hyperlink{Time_8cpp_source}{Time.\+cpp}}.
 
+\Hypertarget{classTime_ac6ae72b2ea451dd16f0d0ca3ae45fec5}\index{Time@{Time}!SetDeltaTime@{SetDeltaTime}}
+\index{SetDeltaTime@{SetDeltaTime}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{SetDeltaTime()}{SetDeltaTime()}}
+{\footnotesize\ttfamily \label{classTime_ac6ae72b2ea451dd16f0d0ca3ae45fec5} 
+void Time::\+\+Set\+Delta\+Time (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Overrides the delta time for the current frame. 
+
+Used by \doxylink{classApplication}{Application} to clamp delta time after long freezes (e.\+g., while the user drags the window border), preventing physics tunneling and huge position jumps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & New delta time value (seconds). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{Time_8h_source_l00028}{28}} of file \doxymbox{\hyperlink{Time_8h_source}{Time.\+h}}.
+
 \Hypertarget{classTime_a7e9cf31048064a9aedfee885807b1b56}\index{Time@{Time}!Update@{Update}}
 \index{Update@{Update}!Time@{Time}}
 \doxysubsubsection{\texorpdfstring{Update()}{Update()}}
@@ -123,7 +146,7 @@ float Time::\+s\+\_\+\+Delta\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [static]}, {
 
 
 
-Definition at line \doxymbox{\hyperlink{Time_8h_source_l00034}{34}} of file \doxymbox{\hyperlink{Time_8h_source}{Time.\+h}}.
+Definition at line \doxymbox{\hyperlink{Time_8h_source_l00045}{45}} of file \doxymbox{\hyperlink{Time_8h_source}{Time.\+h}}.
 
 \Hypertarget{classTime_a6595aadb1feae1ea8f4058682ee8c27d}\index{Time@{Time}!s\_ElapsedTime@{s\_ElapsedTime}}
 \index{s\_ElapsedTime@{s\_ElapsedTime}!Time@{Time}}
@@ -133,7 +156,7 @@ float Time::\+s\+\_\+\+Elapsed\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [static]},
 
 
 
-Definition at line \doxymbox{\hyperlink{Time_8h_source_l00035}{35}} of file \doxymbox{\hyperlink{Time_8h_source}{Time.\+h}}.
+Definition at line \doxymbox{\hyperlink{Time_8h_source_l00046}{46}} of file \doxymbox{\hyperlink{Time_8h_source}{Time.\+h}}.
 
 
 

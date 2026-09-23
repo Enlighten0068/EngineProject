@@ -98,6 +98,9 @@ bool SDLWindow::Create(const char* title, int width, int height, bool fullscreen
   return true;
 }
 
+/**
+ * @brief Toggles between windowed and fullscreen mode.
+ */
 bool SDLWindow::ToggleFullscreen(){
   if(!m_Window) return false;
 
@@ -113,6 +116,9 @@ bool SDLWindow::ToggleFullscreen(){
   return newState;
 }
 
+/**
+ * @brief Checks if the window is currently fullscreen.
+ */
 bool SDLWindow::IsFullscreen() const{
   if(!m_Window) return false;
   return (SDL_GetWindowFlags(m_Window) & SDL_WINDOW_FULLSCREEN) != 0;

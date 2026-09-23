@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classHUD" kind="class" language="C++" prot="public">
+    <compoundname>HUD</compoundname>
+    <includes refid="HUD_8h" local="no">HUD.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classHUD_1afde486af9f51f3cefddf0e9e00c62d62" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classFont" kindref="compound">Font</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Font&gt; HUD::m_Font</definition>
+        <argsstring></argsstring>
+        <name>m_Font</name>
+        <qualifiedname>HUD::m_Font</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/HUD.h" line="56" column="21" bodyfile="engine/scene/HUD.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classHUD_1a8a94f0bf18f8629246835d4e1d48d042" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::shared_ptr&lt;Texture2D&gt; &gt; HUD::m_TextureCache</definition>
+        <argsstring></argsstring>
+        <name>m_TextureCache</name>
+        <qualifiedname>HUD::m_TextureCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/HUD.h" line="57" column="24" bodyfile="engine/scene/HUD.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classHUD_1a568b8ee1591f9ba3ed36ae05966f6b56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HUD::HUD</definition>
+        <argsstring>()</argsstring>
+        <name>HUD</name>
+        <qualifiedname>HUD::HUD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/HUD.h" line="26" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classHUD_1a1e1140a40e4bf72a45acf9f7b2119323" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HUD::~HUD</definition>
+        <argsstring>()</argsstring>
+        <name>~HUD</name>
+        <qualifiedname>HUD::~HUD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/HUD.h" line="27" column="5" bodyfile="engine/scene/HUD.cpp" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classHUD_1a5da52e1cbe872f0dcf9f30d5fc72ba13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HUD::Initialize</definition>
+        <argsstring>(const std::string &amp;fontPath, int fontSize)</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>HUD::Initialize</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fontPath</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fontSize</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the <ref refid="classHUD" kindref="compound">HUD</ref> with a font. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fontPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the TTF font file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fontSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classFont" kindref="compound">Font</ref> size in points. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if initialized successfully. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/HUD.h" line="35" column="10" bodyfile="engine/scene/HUD.cpp" bodystart="24" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classHUD_1ac74213a2dfa97b3bd1559943a23bdfcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HUD::Shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>Shutdown</name>
+        <qualifiedname>HUD::Shutdown</qualifiedname>
+        <briefdescription>
+<para>Releases all <ref refid="classHUD" kindref="compound">HUD</ref> resources. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/HUD.h" line="40" column="10" bodyfile="engine/scene/HUD.cpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classHUD_1a34e6d4715c4b95b36e01aed52d23fa61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HUD::Render</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;lines, Shader &amp;shader, VertexArray &amp;va, IndexBuffer &amp;ib, int windowWidth, int windowHeight)</argsstring>
+        <name>Render</name>
+        <qualifiedname>HUD::Render</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>lines</declname>
+        </param>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+          <declname>va</declname>
+        </param>
+        <param>
+          <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+          <declname>ib</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>windowWidth</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>windowHeight</declname>
+        </param>
+        <briefdescription>
+<para>Renders text lines at the top-right corner of the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lines</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text lines (top to bottom). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classShader" kindref="compound">Shader</ref> used to render text. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>va</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertex array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ib</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>windowWidth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current window width in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>windowHeight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current window height in pixels. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/HUD.h" line="51" column="10" bodyfile="engine/scene/HUD.cpp" bodystart="80" bodyend="123"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classHUD_1a86921d3d206d90f46f39365a3acc65e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classTexture2D" kindref="compound">Texture2D</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Texture2D &gt; HUD::GetOrCreateTexture</definition>
+        <argsstring>(const std::string &amp;text, const SDL_Color &amp;color)</argsstring>
+        <name>GetOrCreateTexture</name>
+        <qualifiedname>HUD::GetOrCreateTexture</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const SDL_Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Returns a cached texture for the given text/color, creating it if needed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a cached texture for the given text/color. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/HUD.h" line="62" column="21" bodyfile="engine/scene/HUD.cpp" bodystart="46" bodyend="75"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Simple heads-up display overlay for rendering text on top of scenes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classHUD" kindref="compound">HUD</ref> renders a list of text lines at the top-right corner of the screen using screen-space pixel coordinates. Text textures are cached by content (text + color) to avoid re-rasterizing the same string every frame.</para>
+<para>Rendered by <ref refid="classApplication" kindref="compound">Application</ref> after the scene, so it always appears on top.</para>
+<para><simplesect kind="see"><para><ref refid="classScene_1afb756dd8b7583f4b06a000d8157c7952" kindref="member">Scene::GetHUDLines</ref>, <ref refid="classApplication_1a6f40ffdb97f3a938ae19ea4eae4882ed" kindref="member">Application::Render</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>HUD</label>
+        <link refid="classHUD"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/scene/HUD.h" line="24" column="1" bodyfile="engine/scene/HUD.h" bodystart="24" bodyend="64"/>
+    <listofallmembers>
+      <member refid="classHUD_1a86921d3d206d90f46f39365a3acc65e5" prot="private" virt="non-virtual"><scope>HUD</scope><name>GetOrCreateTexture</name></member>
+      <member refid="classHUD_1a568b8ee1591f9ba3ed36ae05966f6b56" prot="public" virt="non-virtual"><scope>HUD</scope><name>HUD</name></member>
+      <member refid="classHUD_1a5da52e1cbe872f0dcf9f30d5fc72ba13" prot="public" virt="non-virtual"><scope>HUD</scope><name>Initialize</name></member>
+      <member refid="classHUD_1afde486af9f51f3cefddf0e9e00c62d62" prot="private" virt="non-virtual"><scope>HUD</scope><name>m_Font</name></member>
+      <member refid="classHUD_1a8a94f0bf18f8629246835d4e1d48d042" prot="private" virt="non-virtual"><scope>HUD</scope><name>m_TextureCache</name></member>
+      <member refid="classHUD_1a34e6d4715c4b95b36e01aed52d23fa61" prot="public" virt="non-virtual"><scope>HUD</scope><name>Render</name></member>
+      <member refid="classHUD_1ac74213a2dfa97b3bd1559943a23bdfcd" prot="public" virt="non-virtual"><scope>HUD</scope><name>Shutdown</name></member>
+      <member refid="classHUD_1a1e1140a40e4bf72a45acf9f7b2119323" prot="public" virt="non-virtual"><scope>HUD</scope><name>~HUD</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

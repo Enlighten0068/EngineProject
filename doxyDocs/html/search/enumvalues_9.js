@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['warning_0',['Warning',['../Log_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a0eaadb4fcb48a0a0ed7bc9868be9fbaa',1,'Log.h']]],
-  ['windowclose_1',['WindowClose',['../EventType_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faac984201d37197ab297a14d19efee4b07',1,'EventType.h']]],
-  ['windowresize_2',['WindowResize',['../EventType_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa9f8f27bff2915738c4fe1b970e12f89c',1,'EventType.h']]]
+  ['released_0',['Released',['../KeyEvent_8h.html#a70f971fdf17a8c66ee3c9c336e07a3e1aea1e34304a5d8ffa7c9b0ed8ede4ef1a',1,'Released:&#160;KeyEvent.h'],['../MouseEvent_8h.html#abe9b53e1b348725f697f5e443cb3c224aea1e34304a5d8ffa7c9b0ed8ede4ef1a',1,'Released:&#160;MouseEvent.h']]],
+  ['repeated_1',['Repeated',['../KeyEvent_8h.html#a70f971fdf17a8c66ee3c9c336e07a3e1a7f7309d5a83099309ac04dcb795ad0ce',1,'KeyEvent.h']]],
+  ['right_2',['Right',['../MouseEvent_8h.html#ac1ec3647c005eacad401b06e7e18f711a92b09c7c48c520c3c55e497875da437c',1,'MouseEvent.h']]]
 ];

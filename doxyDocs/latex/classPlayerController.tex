@@ -68,6 +68,8 @@ bool \doxymbox{\hyperlink{classPlayerController_abb92e9880ae0250e5fdb3f756475de1
 \item 
 bool \doxymbox{\hyperlink{classPlayerController_a2b4f8434fdc256669b54c8ac8f7d6aeb}{m\+\_\+\+Was\+Grounded}} = false
 \item 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} \doxymbox{\hyperlink{classPlayerController_a70fe08e779f88d190a8e8a3982aaefdc}{m\+\_\+\+Spawn\+Position}} \{0.\+0f, 0.\+0f, 0.\+0f\}
+\item 
 const \doxymbox{\hyperlink{classGameWorld}{Game\+World}} \& \doxymbox{\hyperlink{classPlayerController_a0741e03ee1239165e1a12ab2fdc818db}{m\+\_\+\+World}}
 \end{DoxyCompactItemize}
 
@@ -102,6 +104,8 @@ Player\+Controller::\+\+Player\+Controller (\begin{DoxyParamCaption}\item[{entt:
 
 Constructs a \doxylink{classPlayerController}{Player\+Controller}. 
 
+Constructs a \doxylink{classPlayerController}{Player\+Controller} and captures the current transform as the spawn point for respawn.
+
 
 \begin{DoxyParams}{Parameters}
 {\em registry} & Reference to the ECS registry. \\
@@ -113,7 +117,7 @@ Constructs a \doxylink{classPlayerController}{Player\+Controller}.
 \end{DoxyParams}
 
 
-Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00014}{14}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00018}{18}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
 
 \Hypertarget{classPlayerController_ab89c90498ca2285d7f0ef0b83a091966}\index{PlayerController@{PlayerController}!````~PlayerController@{\texorpdfstring{$\sim$}{\string~}PlayerController}}
 \index{````~PlayerController@{\texorpdfstring{$\sim$}{\string~}PlayerController}!PlayerController@{PlayerController}}
@@ -152,7 +156,7 @@ Dispatches a \doxylink{classPlayerDiedEvent}{Player\+Died\+Event}, resets the pl
 \end{DoxyParams}
 
 
-Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00154}{154}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00164}{164}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
 
 \Hypertarget{classPlayerController_ab4060eac83a61cfcb0e527a1494b8a23}\index{PlayerController@{PlayerController}!GetSpeed@{GetSpeed}}
 \index{GetSpeed@{GetSpeed}!PlayerController@{PlayerController}}
@@ -246,7 +250,7 @@ Currently subscribes to key events (E key for interaction). Still under developm
 
 Currently subscribes to key events for interaction (E key). Jump is handled via polling in \doxylink{classPlayerController_a2e0c380d64a88c8cfe60ce8452921227}{Update()} for more responsive input. 
 
-Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00025}{25}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00035}{35}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
 
 \Hypertarget{classPlayerController_a2e0c380d64a88c8cfe60ce8452921227}\index{PlayerController@{PlayerController}!Update@{Update}}
 \index{Update@{Update}!PlayerController@{PlayerController}}
@@ -267,7 +271,7 @@ Vertical movement with UP/\+\+DOWN keys is commented out but can be enabled for 
 \end{DoxyNote}
 
 
-Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00043}{43}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
+Definition at line \doxymbox{\hyperlink{PlayerController_8cpp_source_l00053}{53}} of file \doxymbox{\hyperlink{PlayerController_8cpp_source}{Player\+Controller.\+cpp}}.
 
 
 
@@ -334,6 +338,16 @@ entt::\+registry\& Player\+Controller::\+m\+\_\+\+Registry\hspace{0.3cm}{\ttfami
 
 Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00072}{72}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
 
+\Hypertarget{classPlayerController_a70fe08e779f88d190a8e8a3982aaefdc}\index{PlayerController@{PlayerController}!m\_SpawnPosition@{m\_SpawnPosition}}
+\index{m\_SpawnPosition@{m\_SpawnPosition}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{m\_SpawnPosition}{m\_SpawnPosition}}
+{\footnotesize\ttfamily \label{classPlayerController_a70fe08e779f88d190a8e8a3982aaefdc} 
+\doxymbox{\hyperlink{structVector3D}{Vector3D}} Player\+Controller::\+m\+\_\+\+Spawn\+Position \{0.\+0f, 0.\+0f, 0.\+0f\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00085}{85}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+
 \Hypertarget{classPlayerController_a552c0308cb0226c7862d99c04f68357a}\index{PlayerController@{PlayerController}!m\_Speed@{m\_Speed}}
 \index{m\_Speed@{m\_Speed}!PlayerController@{PlayerController}}
 \doxysubsubsection{\texorpdfstring{m\_Speed}{m\_Speed}}
@@ -372,7 +386,7 @@ const \doxymbox{\hyperlink{classGameWorld}{Game\+World}}\& Player\+Controller::\
 
 
 
-Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00085}{85}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
+Definition at line \doxymbox{\hyperlink{PlayerController_8h_source_l00087}{87}} of file \doxymbox{\hyperlink{PlayerController_8h_source}{Player\+Controller.\+h}}.
 
 
 

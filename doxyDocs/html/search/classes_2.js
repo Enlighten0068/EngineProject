@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['demo2dfixedscene_0',['Demo2DFixedScene',['../classDemo2DFixedScene.html',1,'']]],
-  ['demo2dscene_1',['Demo2DScene',['../classDemo2DScene.html',1,'']]]
+  ['camera2d_0',['Camera2D',['../classCamera2D.html',1,'']]],
+  ['cameracontroller_1',['CameraController',['../classCameraController.html',1,'']]]
 ];

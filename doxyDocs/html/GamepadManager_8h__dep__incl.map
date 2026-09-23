@@ -1,17 +1,19 @@
 <map id="engine/core/GamepadManager.h" name="engine/core/GamepadManager.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="568,5,801,33"/>
-<area shape="rect" id="Node000002" href="$Application_8h.html" title=" " alt="" coords="218,81,404,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="600,37,379,83,378,78,605,36"/>
-<area shape="rect" id="Node000006" href="$GamepadManager_8cpp.html" title=" " alt="" coords="428,81,677,109"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="650,40,577,83,575,78,645,42"/>
-<area shape="rect" id="Node000007" href="$PlayerController_8cpp.html" title=" " alt="" coords="701,81,935,109"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="722,38,797,81,792,80,721,43"/>
-<area shape="rect" id="Node000008" href="$MenuScene_8cpp.html" title=" " alt="" coords="959,81,1173,109"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="768,34,1000,80,995,81,768,39"/>
-<area shape="rect" id="Node000003" href="$Application_8cpp.html" title=" " alt="" coords="5,157,207,184"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="263,115,144,159,142,154,258,114"/>
-<area shape="rect" id="Node000004" href="$Time_8cpp.html" title=" " alt="" coords="231,157,392,184"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="313,123,313,158,309,155,309,126"/>
-<area shape="rect" id="Node000005" href="$main_8cpp.html" title=" " alt="" coords="416,157,561,184"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="358,112,460,156,455,156,357,118"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="701,5,935,33"/>
+<area shape="rect" id="Node000002" href="$Application_8h.html" title=" " alt="" coords="218,90,404,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="705,37,417,84,375,91,374,86,416,78,710,35"/>
+<area shape="rect" id="Node000006" href="$GamepadManager_8cpp.html" title=" " alt="" coords="428,90,677,117"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="764,37,596,92,594,86,759,38"/>
+<area shape="rect" id="Node000007" href="$PlayerController_8cpp.html" title=" " alt="" coords="701,90,935,117"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="820,47,820,91,816,88,816,51"/>
+<area shape="rect" id="Node000008" href="$LevelSelectorScene_8cpp.html" title=" " alt="" coords="959,81,1152,126"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="871,36,995,80,990,80,870,41"/>
+<area shape="rect" id="Node000009" href="$MenuScene_8cpp.html" title=" " alt="" coords="1177,90,1390,117"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="909,34,1165,78,1212,89,1207,89,1164,84,908,39"/>
+<area shape="rect" id="Node000003" href="$Application_8cpp.html" title=" " alt="" coords="5,174,207,201"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="267,124,140,176,138,171,262,122"/>
+<area shape="rect" id="Node000004" href="$Time_8cpp.html" title=" " alt="" coords="231,174,392,201"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="313,131,314,175,309,172,309,135"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title=" " alt="" coords="416,174,561,201"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="354,121,463,173,458,173,353,127"/>
 </map>

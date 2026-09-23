@@ -137,6 +137,21 @@
         </inbodydescription>
         <location file="engine/core/PlayerController.h" line="83" column="10" bodyfile="engine/core/PlayerController.h" bodystart="83" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="classPlayerController_1a70fe08e779f88d190a8e8a3982aaefdc" prot="private" static="no" mutable="no">
+        <type><ref refid="structVector3D" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D PlayerController::m_SpawnPosition</definition>
+        <argsstring></argsstring>
+        <name>m_SpawnPosition</name>
+        <qualifiedname>PlayerController::m_SpawnPosition</qualifiedname>
+        <initializer>{0.0f, 0.0f, 0.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/core/PlayerController.h" line="85" column="14" bodyfile="engine/core/PlayerController.h" bodystart="85" bodyend="85"/>
+      </memberdef>
       <memberdef kind="variable" id="classPlayerController_1a0741e03ee1239165e1a12ab2fdc818db" prot="private" static="no" mutable="no">
         <type>const <ref refid="classGameWorld" kindref="compound">GameWorld</ref> &amp;</type>
         <definition>const GameWorld&amp; PlayerController::m_World</definition>
@@ -149,7 +164,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/PlayerController.h" line="85" column="21" bodyfile="engine/core/PlayerController.h" bodystart="85" bodyend="-1"/>
+        <location file="engine/core/PlayerController.h" line="87" column="21" bodyfile="engine/core/PlayerController.h" bodystart="87" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -175,6 +190,7 @@
 <para>Constructs a <ref refid="classPlayerController" kindref="compound">PlayerController</ref>. </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs a <ref refid="classPlayerController" kindref="compound">PlayerController</ref> and captures the current transform as the spawn point for respawn.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>registry</parametername>
@@ -204,7 +220,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/PlayerController.h" line="28" column="5" bodyfile="engine/core/PlayerController.cpp" bodystart="14" bodyend="17"/>
+        <location file="engine/core/PlayerController.h" line="28" column="5" bodyfile="engine/core/PlayerController.cpp" bodystart="18" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="classPlayerController_1ab89c90498ca2285d7f0ef0b83a091966" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -238,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/PlayerController.h" line="37" column="10" bodyfile="engine/core/PlayerController.cpp" bodystart="43" bodyend="144"/>
+        <location file="engine/core/PlayerController.h" line="37" column="10" bodyfile="engine/core/PlayerController.cpp" bodystart="53" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="classPlayerController_1abc200ae4a92f7fb881a6dfeb395c1f11" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -326,7 +342,7 @@ Dispatches a <ref refid="classPlayerDiedEvent" kindref="compound">PlayerDiedEven
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/PlayerController.h" line="55" column="10" bodyfile="engine/core/PlayerController.cpp" bodystart="154" bodyend="171"/>
+        <location file="engine/core/PlayerController.h" line="55" column="10" bodyfile="engine/core/PlayerController.cpp" bodystart="164" bodyend="181"/>
       </memberdef>
       <memberdef kind="function" id="classPlayerController_1ade1bb93004235d430154378ed6306afa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structVector3D" kindref="compound">Vector3D</ref> &amp;</type>
@@ -406,7 +422,7 @@ Dispatches a <ref refid="classPlayerDiedEvent" kindref="compound">PlayerDiedEven
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/core/PlayerController.h" line="70" column="10" bodyfile="engine/core/PlayerController.cpp" bodystart="25" bodyend="32"/>
+        <location file="engine/core/PlayerController.h" line="70" column="10" bodyfile="engine/core/PlayerController.cpp" bodystart="35" bodyend="42"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -429,6 +445,7 @@ Dispatches a <ref refid="classPlayerDiedEvent" kindref="compound">PlayerDiedEven
         <label>PlayerController</label>
         <link refid="classPlayerController"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>-m_SpawnPosition</edgelabel>
           <edgelabel>-m_Velocity</edgelabel>
         </childnode>
         <childnode refid="3" relation="usage">
@@ -440,7 +457,7 @@ Dispatches a <ref refid="classPlayerDiedEvent" kindref="compound">PlayerDiedEven
         <link refid="structVector3D"/>
       </node>
     </collaborationgraph>
-    <location file="engine/core/PlayerController.h" line="20" column="1" bodyfile="engine/core/PlayerController.h" bodystart="20" bodyend="86"/>
+    <location file="engine/core/PlayerController.h" line="20" column="1" bodyfile="engine/core/PlayerController.h" bodystart="20" bodyend="88"/>
     <listofallmembers>
       <member refid="classPlayerController_1a41c1071503dfa351b2e028389476529b" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>Die</name></member>
       <member refid="classPlayerController_1ab4060eac83a61cfcb0e527a1494b8a23" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>GetSpeed</name></member>
@@ -453,6 +470,7 @@ Dispatches a <ref refid="classPlayerDiedEvent" kindref="compound">PlayerDiedEven
       <member refid="classPlayerController_1ae0e4240a0fad2c55cdf0b96e4450e83d" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>m_JumpTimer</name></member>
       <member refid="classPlayerController_1a91f7e14f412fb0a338d50227b8d77dc7" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>m_PlayerEntity</name></member>
       <member refid="classPlayerController_1ad586858eeaf73156678220adde0dfc65" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>m_Registry</name></member>
+      <member refid="classPlayerController_1a70fe08e779f88d190a8e8a3982aaefdc" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>m_SpawnPosition</name></member>
       <member refid="classPlayerController_1a552c0308cb0226c7862d99c04f68357a" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>m_Speed</name></member>
       <member refid="classPlayerController_1ab868cf3ab7193e241e0b9eaffa1f6995" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>m_Velocity</name></member>
       <member refid="classPlayerController_1a2b4f8434fdc256669b54c8ac8f7d6aeb" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>m_WasGrounded</name></member>

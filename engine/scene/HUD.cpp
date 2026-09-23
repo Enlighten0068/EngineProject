@@ -6,9 +6,9 @@
 #include <format>
 
 namespace{
-    constexpr float MARGIN  = 12.0f;    //pixels from screen edges
-    constexpr float PADDING = 4.0f;     //pixels between lines
-    constexpr float SHADOW_OFFSET = 2.0f;
+    constexpr float MARGIN  = 12.0f; //Pixels from screen edges
+    constexpr float PADDING = 4.0f; //Pixels between lines
+    constexpr float SHADOW_OFFSET = 2.0f; //Shadow offset in pixels
     const SDL_Color TEXT_COLOR   = {255, 255, 255, 255};
     const SDL_Color SHADOW_COLOR = {0, 0, 0, 220};
 }
@@ -16,6 +16,10 @@ namespace{
 HUD::HUD() = default;
 
 HUD::~HUD(){ Shutdown(); }
+
+/**
+ * @brief Initializes the HUD with a font.
+ */
 
 bool HUD::Initialize(const std::string& fontPath, int fontSize){
     m_Font = std::make_unique<Font>();
@@ -28,11 +32,17 @@ bool HUD::Initialize(const std::string& fontPath, int fontSize){
     return true;
 }
 
+/**
+ * @brief Releases all HUD resources.
+ */
 void HUD::Shutdown(){
     m_TextureCache.clear();
     m_Font.reset();
 }
 
+/**
+ * @brief Returns a cached texture for the given text/color.
+ */
 std::shared_ptr<Texture2D> HUD::GetOrCreateTexture(const std::string& text,
                                                    const SDL_Color& color){
     std::string key = text + "|" +
@@ -64,6 +74,9 @@ std::shared_ptr<Texture2D> HUD::GetOrCreateTexture(const std::string& text,
     return texture;
 }
 
+/**
+ * @brief Renders text lines at the top-right corner of the screen.
+ */
 void HUD::Render(const std::vector<std::string>& lines,
                 Shader& shader, VertexArray& va, IndexBuffer& ib,
                 int windowWidth, int windowHeight){
@@ -72,10 +85,9 @@ void HUD::Render(const std::vector<std::string>& lines,
     //Screen-space orthographic projection:
     //(0, 0) = bottom-left, (W, H) = top-right
     Matrix4 view = Matrix4::Identity();
-    Matrix4 projection = Matrix4::Orthographic(
-        0.0f, static_cast<float>(windowWidth),
-                                                0.0f, static_cast<float>(windowHeight),
-                                                -1.0f, 1.0f);
+    Matrix4 projection = Matrix4::Orthographic(0.0f, static_cast<float>(windowWidth),
+                                               0.0f, static_cast<float>(windowHeight),
+                                               -1.0f, 1.0f);
 
     float topY = static_cast<float>(windowHeight) - MARGIN;
 
@@ -97,7 +109,7 @@ void HUD::Render(const std::vector<std::string>& lines,
                 Vector3D(x + w * 0.5f + SHADOW_OFFSET, y + h * 0.5f - SHADOW_OFFSET, 0.0f));
             shadowModel = shadowModel * Matrix4::Scale(Vector3D(w, h, 1.0f));
             Renderer::DrawTexturedQuad(shader, va, ib, *shadow,
-                                        shadowModel, view, projection, 1.0f, 1.0f);
+                                       shadowModel, view, projection, 1.0f, 1.0f);
         }
 
         //Main text

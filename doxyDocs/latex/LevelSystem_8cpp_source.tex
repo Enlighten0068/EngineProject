@@ -1,0 +1,66 @@
+\doxysection{Level\+System.\+cpp}
+\hypertarget{LevelSystem_8cpp_source}{}\label{LevelSystem_8cpp_source}\index{engine/systems/LevelSystem.cpp@{engine/systems/LevelSystem.cpp}}
+\doxymbox{\hyperlink{LevelSystem_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{LevelSystem_8h}{systems/LevelSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00005}\doxymbox{\hyperlink{classLevelSystem_adf27eff6fdebd568877347bd09f023d6}{00005}}\ \doxymbox{\hyperlink{classLevelSystem_adf27eff6fdebd568877347bd09f023d6}{LevelSystem::LevelSystem}}(\doxymbox{\hyperlink{classECSScene}{ECSScene}}\&\ scene,}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Texture2D>\ playerTex,}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Texture2D>\ tileTex,}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Texture2D>\ enemyTex)}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00009}00009\ :\ \doxymbox{\hyperlink{classLevelSystem_a3264e9b899873ac854f0759d3103aeac}{m\_Scene}}(scene),\ \doxymbox{\hyperlink{classLevelSystem_ab69f9cb52128e9c8c54f3d7ca50c77ac}{m\_PlayerTex}}(playerTex),\ \doxymbox{\hyperlink{classLevelSystem_ab03cdacf2090d7c234bb91c8b005ef03}{m\_TileTex}}(tileTex),\ \doxymbox{\hyperlink{classLevelSystem_a7c91d5ae725b59c2b21829be61b05129}{m\_EnemyTex}}(enemyTex)\{\}}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00014}\doxymbox{\hyperlink{classLevelSystem_a3e6320da6531e2929c3d8a78e359ac24}{00014}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLevelSystem_a3e6320da6531e2929c3d8a78e359ac24}{LevelSystem::SetWorldBounds}}(\textcolor{keywordtype}{float}\ minX,\ \textcolor{keywordtype}{float}\ maxX,\ \textcolor{keywordtype}{float}\ minY,\ \textcolor{keywordtype}{float}\ maxY)\{}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00015}00015\ \ \ \ \ \doxymbox{\hyperlink{classLevelSystem_a7ee740d1275dc8de3f4cfbe0f5d4d37e}{m\_MinX}}\ =\ minX;}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00016}00016\ \ \ \ \ \doxymbox{\hyperlink{classLevelSystem_a471eaf3314955832389dc96aa0b2c668}{m\_MaxX}}\ =\ maxX;}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00017}00017\ \ \ \ \ \doxymbox{\hyperlink{classLevelSystem_ab3ec7fcdfc2ea8e3b1cae73cdea66284}{m\_MinY}}\ =\ minY;}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00018}00018\ \ \ \ \ \doxymbox{\hyperlink{classLevelSystem_a53e01a0809e2aef16469a04f3de101be}{m\_MaxY}}\ =\ maxY;}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00019}00019\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}LevelSystem:\ world\ bounds\ set\ to\ [\{\},\{\}]\ x\ [\{\},\{\}]"{}},}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minX,\ maxX,\ minY,\ maxY));}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00026}\doxymbox{\hyperlink{classLevelSystem_a085108be7529741cb15602a8022b833c}{00026}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLevelSystem_a085108be7529741cb15602a8022b833c}{LevelSystem::CreatePlatform}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ w,\ \textcolor{keywordtype}{float}\ h,}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tileX,\ \textcolor{keywordtype}{float}\ tileY)\{}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{auto}\ entity\ =\ \doxymbox{\hyperlink{classLevelSystem_a3264e9b899873ac854f0759d3103aeac}{m\_Scene}}.\doxymbox{\hyperlink{classECSScene_a818d8b2200a44df7097c4eedaa1c6142}{CreateSpriteEntity}}(}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(x,\ y,\ 0.0f),\ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(w,\ h,\ 1.0f),\ \doxymbox{\hyperlink{classLevelSystem_ab03cdacf2090d7c234bb91c8b005ef03}{m\_TileTex}});}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00030}00030\ \ \ \ \ \doxymbox{\hyperlink{classLevelSystem_a7583ed8df68e766a29c522cfc1719df9}{m\_PlatformEntities}}.push\_back(entity);}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ Default\ tile\ scale\ =\ width\ (so\ texture\ repeats\ once\ per\ unit)}}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{float}\ tx\ =\ (tileX\ <\ 0.0f)\ ?\ w\ :\ tileX;}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00034}00034\ \ \ \ \ \doxymbox{\hyperlink{classLevelSystem_a3264e9b899873ac854f0759d3103aeac}{m\_Scene}}.\doxymbox{\hyperlink{classECSScene_a6261a3c0ab97b3a9fcfec09d0a02e45b}{GetRegistry}}().emplace<\doxymbox{\hyperlink{structComponents_1_1TileScale}{Components::TileScale}}>(entity,\ tx,\ tileY);}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00040}\doxymbox{\hyperlink{classLevelSystem_a7530478b25741aebf4deccad90696d5b}{00040}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLevelSystem_a7530478b25741aebf4deccad90696d5b}{LevelSystem::CreatePlayer}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ scale)\{}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00041}00041\ \ \ \ \ \doxymbox{\hyperlink{classLevelSystem_a3360d59adae5259447c161bf3050899c}{m\_PlayerEntity}}\ =\ \doxymbox{\hyperlink{classLevelSystem_a3264e9b899873ac854f0759d3103aeac}{m\_Scene}}.\doxymbox{\hyperlink{classECSScene_a818d8b2200a44df7097c4eedaa1c6142}{CreateSpriteEntity}}(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(x,\ y,\ 0.0f),\ scale,\ \doxymbox{\hyperlink{classLevelSystem_ab69f9cb52128e9c8c54f3d7ca50c77ac}{m\_PlayerTex}});}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00042}00042\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}LevelSystem:\ player\ created\ at\ (\{\},\ \{\})\ scale\ (\{\},\ \{\})"{}},}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x,\ y,\ scale.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}},\ scale.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}));}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00049}\doxymbox{\hyperlink{classLevelSystem_aba8c5392fbf24e635c064847625d5be6}{00049}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLevelSystem_aba8c5392fbf24e635c064847625d5be6}{LevelSystem::CreateEnemy}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ patrolStartX,\ \textcolor{keywordtype}{float}\ patrolEndX,\ \textcolor{keywordtype}{float}\ speed,}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structVector3D}{Vector3D}}\&\ scale)\{}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{auto}\ entity\ =\ \doxymbox{\hyperlink{classLevelSystem_a3264e9b899873ac854f0759d3103aeac}{m\_Scene}}.\doxymbox{\hyperlink{classECSScene_a818d8b2200a44df7097c4eedaa1c6142}{CreateSpriteEntity}}(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(x,\ y,\ 0.0f),\ scale,\ \doxymbox{\hyperlink{classLevelSystem_a7c91d5ae725b59c2b21829be61b05129}{m\_EnemyTex}});}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{auto}\&\ registry\ =\ \doxymbox{\hyperlink{classLevelSystem_a3264e9b899873ac854f0759d3103aeac}{m\_Scene}}.\doxymbox{\hyperlink{classECSScene_a6261a3c0ab97b3a9fcfec09d0a02e45b}{GetRegistry}}();}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00055}00055\ \ \ \ \ registry.emplace<\doxymbox{\hyperlink{structComponents_1_1Enemy}{Components::Enemy}}>(entity);}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00056}00056\ \ \ \ \ registry.emplace<\doxymbox{\hyperlink{structComponents_1_1Patrol}{Components::Patrol}}>(entity,}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(patrolStartX,\ y,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(patrolEndX,\ y,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ speed);}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00060}00060\ \ \ \ \ registry.emplace<\doxymbox{\hyperlink{structComponents_1_1PhysicsBody}{Components::PhysicsBody}}>(entity);}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00062}00062\ \ \ \ \ \doxymbox{\hyperlink{classLevelSystem_a21f4aeea06b4c7427eda4418094b116c}{m\_EnemyEntities}}.push\_back(entity);}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00064}00064\ \ \ \ \ \doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition}{EnemyDefinition}}\ def;}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00065}00065\ \ \ \ \ def.\doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition_ac7b211e985297ab59069938c73771fe6}{Position}}\ =\ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(x,\ y,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00066}00066\ \ \ \ \ def.\doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition_a92d8b660a610207612f56863e895e754}{Scale}}\ =\ scale;}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00067}00067\ \ \ \ \ def.\doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition_a75975711e8aeb4705ac234822cddade6}{Texture}}\ =\ \doxymbox{\hyperlink{classLevelSystem_a7c91d5ae725b59c2b21829be61b05129}{m\_EnemyTex}};}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00068}00068\ \ \ \ \ def.\doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition_a0be9a477c9ae928a0ee86056d306566a}{PatrolStart}}\ =\ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(patrolStartX,\ y,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00069}00069\ \ \ \ \ def.\doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition_ade4221f51df3fe9abbeb7880c54104fd}{PatrolEnd}}\ =\ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(patrolEndX,\ y,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00070}00070\ \ \ \ \ def.\doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition_a91a2652cec2601dfaffb1d78e601e1e3}{PatrolSpeed}}\ =\ speed;}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00071}00071\ \ \ \ \ \doxymbox{\hyperlink{classLevelSystem_aa2494c86ba64c939dc03980891c646d8}{m\_EnemyDefinitions}}.push\_back(def);}
+\DoxyCodeLine{\Hypertarget{LevelSystem_8cpp_source_l00072}00072\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,49 @@
+\doxysection{engine/\+demo/\+levels/\+\+Level1.cpp File Reference}
+\hypertarget{Level1_8cpp}{}\label{Level1_8cpp}\index{engine/demo/levels/Level1.cpp@{engine/demo/levels/Level1.cpp}}
+{\ttfamily \+\#include "{}demo/\+levels/\+\+Levels.\+h"{}}\newline
+{\ttfamily \+\#include "{}level/\+\+Level\+Macros.\+h"{}}\newline
+Include dependency graph for Level1.\+cpp:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Level1_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{Level1_8cpp_a05404a86824a87f43cf459033fafeafd}{Build\+Level1}} (\doxymbox{\hyperlink{classLevelSystem}{Level\+System}} \&level)
+\begin{DoxyCompactList}\small\item\em Builder functions for all levels. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{Level1_8cpp_a145c616383df587799ea9663867c067c}{REGISTER\+\_\+\+LEVEL}} (Level1, "{}Level 1"{}, "{}Simple platformer"{}, \doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35a4457d440870ad6d42bab9082d9bf9b61}{Camera\+Mode::\+\+Fixed}}, \doxymbox{\hyperlink{Level1_8cpp_a05404a86824a87f43cf459033fafeafd}{Build\+Level1}})
+\end{DoxyCompactItemize}
+
+
+\label{Level1_8cpp_doc-func-members}
+\Hypertarget{Level1_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{Level1_8cpp_a05404a86824a87f43cf459033fafeafd}\index{Level1.cpp@{Level1.cpp}!BuildLevel1@{BuildLevel1}}
+\index{BuildLevel1@{BuildLevel1}!Level1.cpp@{Level1.cpp}}
+\doxysubsubsection{\texorpdfstring{BuildLevel1()}{BuildLevel1()}}
+{\footnotesize\ttfamily \label{Level1_8cpp_a05404a86824a87f43cf459033fafeafd} 
+void Build\+Level1 (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classLevelSystem}{Level\+System}} \&}]{level}{}\end{DoxyParamCaption})}
+
+
+
+Builder functions for all levels. 
+
+Each function builds a complete level by calling methods on the \doxylink{classLevelSystem}{Level\+System}. Registration is done in each .cpp via the REGISTER\+\_\+\+LEVEL macro.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{LevelMacros_8h_abffe427d7a82d716aaeb59f206234302}{REGISTER\+\_\+\+LEVEL}, \doxylink{classLevelRegistry}{Level\+Registry} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{Level1_8cpp_source_l00004}{4}} of file \doxymbox{\hyperlink{Level1_8cpp_source}{Level1.\+cpp}}.
+
+\Hypertarget{Level1_8cpp_a145c616383df587799ea9663867c067c}\index{Level1.cpp@{Level1.cpp}!REGISTER\_LEVEL@{REGISTER\_LEVEL}}
+\index{REGISTER\_LEVEL@{REGISTER\_LEVEL}!Level1.cpp@{Level1.cpp}}
+\doxysubsubsection{\texorpdfstring{REGISTER\_LEVEL()}{REGISTER\_LEVEL()}}
+{\footnotesize\ttfamily \label{Level1_8cpp_a145c616383df587799ea9663867c067c} 
+REGISTER\+\_\+\+LEVEL (\begin{DoxyParamCaption}\item[{Level1}]{}{, }\item[{"{}Level 1"{}}]{}{, }\item[{"{}Simple platformer"{}}]{}{, }\item[{\doxymbox{\hyperlink{CameraMode_8h_ac6e73fe6ce68e10b0acd6d2312bdbb35a4457d440870ad6d42bab9082d9bf9b61}{Camera\+Mode::\+\+Fixed}}}]{}{, }\item[{\doxymbox{\hyperlink{Level1_8cpp_a05404a86824a87f43cf459033fafeafd}{Build\+Level1}}}]{}{}\end{DoxyParamCaption})}
+

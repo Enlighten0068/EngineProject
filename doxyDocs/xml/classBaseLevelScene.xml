@@ -1,0 +1,792 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classBaseLevelScene" kind="class" language="C++" prot="public">
+    <compoundname>BaseLevelScene</compoundname>
+    <basecompoundref refid="classScene" prot="public" virt="non-virtual">Scene</basecompoundref>
+    <includes refid="BaseLevelScene_8h" local="no">BaseLevelScene.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classBaseLevelScene_1a77e808a59ebefe66e3af2d06b633660c" prot="public" static="no">
+        <type>std::function&lt; void(<ref refid="classLevelSystem" kindref="compound">LevelSystem</ref> &amp;)&gt;</type>
+        <definition>using BaseLevelScene::BuilderFn = std::function&lt;void(LevelSystem&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>BuilderFn</name>
+        <qualifiedname>BaseLevelScene::BuilderFn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="33" column="5" bodyfile="engine/scene/BaseLevelScene.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBaseLevelScene_1ab1103dfbcb852a26e6576e2e6d050467" prot="private" static="no" mutable="no">
+        <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader&amp; BaseLevelScene::m_Shader</definition>
+        <argsstring></argsstring>
+        <name>m_Shader</name>
+        <qualifiedname>BaseLevelScene::m_Shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="83" column="12" bodyfile="engine/scene/BaseLevelScene.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1ad235292db6dd9d29404a56fe2d761f27" prot="private" static="no" mutable="no">
+        <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+        <definition>VertexArray&amp; BaseLevelScene::m_VertexArray</definition>
+        <argsstring></argsstring>
+        <name>m_VertexArray</name>
+        <qualifiedname>BaseLevelScene::m_VertexArray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="84" column="17" bodyfile="engine/scene/BaseLevelScene.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1a7c958f5e88c56046ce2317a33aa103b6" prot="private" static="no" mutable="no">
+        <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+        <definition>IndexBuffer&amp; BaseLevelScene::m_IndexBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_IndexBuffer</name>
+        <qualifiedname>BaseLevelScene::m_IndexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="85" column="17" bodyfile="engine/scene/BaseLevelScene.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1af013346ebc9543a97f793bb7a61b4414" prot="private" static="no" mutable="no">
+        <type><ref refid="classCamera2D" kindref="compound">Camera2D</ref> &amp;</type>
+        <definition>Camera2D&amp; BaseLevelScene::m_Camera</definition>
+        <argsstring></argsstring>
+        <name>m_Camera</name>
+        <qualifiedname>BaseLevelScene::m_Camera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="86" column="14" bodyfile="engine/scene/BaseLevelScene.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1ab435e3b596945acbde3667871495d4b5" prot="private" static="no" mutable="no">
+        <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader&amp; BaseLevelScene::m_LineShader</definition>
+        <argsstring></argsstring>
+        <name>m_LineShader</name>
+        <qualifiedname>BaseLevelScene::m_LineShader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="87" column="12" bodyfile="engine/scene/BaseLevelScene.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1a39ab68552abf1385f4d27801dafa86b9" prot="private" static="no" mutable="no">
+        <type><ref refid="classSceneManager" kindref="compound">SceneManager</ref> &amp;</type>
+        <definition>SceneManager&amp; BaseLevelScene::m_SceneManager</definition>
+        <argsstring></argsstring>
+        <name>m_SceneManager</name>
+        <qualifiedname>BaseLevelScene::m_SceneManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="88" column="18" bodyfile="engine/scene/BaseLevelScene.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1aef393c459e51f1c35ec11debbc6e4c7b" prot="private" static="no" mutable="no">
+        <type><ref refid="classBaseLevelScene_1a77e808a59ebefe66e3af2d06b633660c" kindref="member">BuilderFn</ref></type>
+        <definition>BuilderFn BaseLevelScene::m_Builder</definition>
+        <argsstring></argsstring>
+        <name>m_Builder</name>
+        <qualifiedname>BaseLevelScene::m_Builder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="89" column="15" bodyfile="engine/scene/BaseLevelScene.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1a378c17670d06335f86f2a8f01cc0d3aa" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string BaseLevelScene::m_LevelName</definition>
+        <argsstring></argsstring>
+        <name>m_LevelName</name>
+        <qualifiedname>BaseLevelScene::m_LevelName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="90" column="17" bodyfile="engine/scene/BaseLevelScene.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1a97c355120bd46574398b7fc35bb027fd" prot="private" static="no" mutable="no">
+        <type><ref refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35" kindref="member">CameraMode</ref></type>
+        <definition>CameraMode BaseLevelScene::m_CameraMode</definition>
+        <argsstring></argsstring>
+        <name>m_CameraMode</name>
+        <qualifiedname>BaseLevelScene::m_CameraMode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="91" column="16" bodyfile="engine/scene/BaseLevelScene.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1a92e8e1b3659b34c538c8b66d472550f8" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classECSScene" kindref="compound">ECSScene</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ECSScene&gt; BaseLevelScene::m_ECSScene</definition>
+        <argsstring></argsstring>
+        <name>m_ECSScene</name>
+        <qualifiedname>BaseLevelScene::m_ECSScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="93" column="21" bodyfile="engine/scene/BaseLevelScene.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1a5b0538757b5a6b1f307983fb56a6c070" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classGameWorld" kindref="compound">GameWorld</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GameWorld&gt; BaseLevelScene::m_World</definition>
+        <argsstring></argsstring>
+        <name>m_World</name>
+        <qualifiedname>BaseLevelScene::m_World</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="94" column="21" bodyfile="engine/scene/BaseLevelScene.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1a88654189be731926a1093106b86de0c6" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classCameraController" kindref="compound">CameraController</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;CameraController&gt; BaseLevelScene::m_CameraController</definition>
+        <argsstring></argsstring>
+        <name>m_CameraController</name>
+        <qualifiedname>BaseLevelScene::m_CameraController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="95" column="21" bodyfile="engine/scene/BaseLevelScene.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1a6d231d2ede9243ceb3e9f587f144ba2d" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classPlayerController" kindref="compound">PlayerController</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;PlayerController&gt; BaseLevelScene::m_PlayerController</definition>
+        <argsstring></argsstring>
+        <name>m_PlayerController</name>
+        <qualifiedname>BaseLevelScene::m_PlayerController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="96" column="21" bodyfile="engine/scene/BaseLevelScene.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1a7a21e9c1df6703713d73a7cc8f512b33" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classFpsCounter" kindref="compound">FpsCounter</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;FpsCounter&gt; BaseLevelScene::m_FpsCounter</definition>
+        <argsstring></argsstring>
+        <name>m_FpsCounter</name>
+        <qualifiedname>BaseLevelScene::m_FpsCounter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="97" column="21" bodyfile="engine/scene/BaseLevelScene.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1af3a106663a4762944a05ef216687c35d" prot="private" static="no" mutable="no">
+        <type>entt::entity</type>
+        <definition>entt::entity BaseLevelScene::m_PlayerEntity</definition>
+        <argsstring></argsstring>
+        <name>m_PlayerEntity</name>
+        <qualifiedname>BaseLevelScene::m_PlayerEntity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="99" column="18" bodyfile="engine/scene/BaseLevelScene.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1a2f7f5c476ad9a31a54840d1a574175c1" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; entt::entity &gt;</type>
+        <definition>std::vector&lt;entt::entity&gt; BaseLevelScene::m_EnemyEntities</definition>
+        <argsstring></argsstring>
+        <name>m_EnemyEntities</name>
+        <qualifiedname>BaseLevelScene::m_EnemyEntities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="100" column="17" bodyfile="engine/scene/BaseLevelScene.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1ad705f1295cbae14ba923e1b1b2f46ad6" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structLevelSystem_1_1EnemyDefinition" kindref="compound">LevelSystem::EnemyDefinition</ref> &gt;</type>
+        <definition>std::vector&lt;LevelSystem::EnemyDefinition&gt; BaseLevelScene::m_EnemyDefinitions</definition>
+        <argsstring></argsstring>
+        <name>m_EnemyDefinitions</name>
+        <qualifiedname>BaseLevelScene::m_EnemyDefinitions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="101" column="17" bodyfile="engine/scene/BaseLevelScene.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classBaseLevelScene_1a1c0eb61a6a5ef4688dda661abe12206a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; entt::entity &gt;</type>
+        <definition>std::vector&lt;entt::entity&gt; BaseLevelScene::m_PlatformEntities</definition>
+        <argsstring></argsstring>
+        <name>m_PlatformEntities</name>
+        <qualifiedname>BaseLevelScene::m_PlatformEntities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="102" column="17" bodyfile="engine/scene/BaseLevelScene.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBaseLevelScene_1ad453a827009fdc987722770402988ba0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BaseLevelScene::BaseLevelScene</definition>
+        <argsstring>(Shader &amp;shader, VertexArray &amp;va, IndexBuffer &amp;ib, Camera2D &amp;camera, Shader &amp;lineShader, SceneManager &amp;sceneManager, BuilderFn builder, const std::string &amp;levelName, CameraMode cameraMode)</argsstring>
+        <name>BaseLevelScene</name>
+        <qualifiedname>BaseLevelScene::BaseLevelScene</qualifiedname>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type><ref refid="classVertexArray" kindref="compound">VertexArray</ref> &amp;</type>
+          <declname>va</declname>
+        </param>
+        <param>
+          <type><ref refid="classIndexBuffer" kindref="compound">IndexBuffer</ref> &amp;</type>
+          <declname>ib</declname>
+        </param>
+        <param>
+          <type><ref refid="classCamera2D" kindref="compound">Camera2D</ref> &amp;</type>
+          <declname>camera</declname>
+        </param>
+        <param>
+          <type><ref refid="classShader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>lineShader</declname>
+        </param>
+        <param>
+          <type><ref refid="classSceneManager" kindref="compound">SceneManager</ref> &amp;</type>
+          <declname>sceneManager</declname>
+        </param>
+        <param>
+          <type><ref refid="classBaseLevelScene_1a77e808a59ebefe66e3af2d06b633660c" kindref="member">BuilderFn</ref></type>
+          <declname>builder</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>levelName</declname>
+        </param>
+        <param>
+          <type><ref refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35" kindref="member">CameraMode</ref></type>
+          <declname>cameraMode</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classBaseLevelScene" kindref="compound">BaseLevelScene</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the main shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>va</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the vertex array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ib</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the index buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>camera</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the 2D camera. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lineShader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the line shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sceneManager</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the scene manager (for ESC transitions). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>builder</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level builder function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>levelName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Display name of the level. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cameraMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Camera behavior (Fixed or Follow). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="47" column="5" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="11" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1a57373887b22496420bd955b5a7985618" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BaseLevelScene::~BaseLevelScene</definition>
+        <argsstring>() override</argsstring>
+        <name>~BaseLevelScene</name>
+        <qualifiedname>BaseLevelScene::~BaseLevelScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="53" column="5" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1ab16251567315098d84b5afed205ebf75" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BaseLevelScene::OnEnter</definition>
+        <argsstring>() override</argsstring>
+        <name>OnEnter</name>
+        <qualifiedname>BaseLevelScene::OnEnter</qualifiedname>
+        <reimplements refid="classScene_1ad09d42329f52df55fad0467cd092c9aa">OnEnter</reimplements>
+        <briefdescription>
+<para>Called when the scene becomes active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the clear color and builds the level. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="55" column="10" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="25" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1a4dbbd984d245a1d8fd20e89546db30c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BaseLevelScene::OnExit</definition>
+        <argsstring>() override</argsstring>
+        <name>OnExit</name>
+        <qualifiedname>BaseLevelScene::OnExit</qualifiedname>
+        <reimplements refid="classScene_1a9824fefa923e5a9db4dca5a23343609b">OnExit</reimplements>
+        <briefdescription>
+<para>Called when the scene is exited. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases all resources and clears entity lists. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="56" column="10" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="36" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1a8131a96a0029b8801e80012c3d7b10dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BaseLevelScene::OnResize</definition>
+        <argsstring>(int width, int height) override</argsstring>
+        <name>OnResize</name>
+        <qualifiedname>BaseLevelScene::OnResize</qualifiedname>
+        <reimplements refid="classScene_1a0b39bb1405c0f9ed82b2123a4b9dbfbd">OnResize</reimplements>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Called when the window is resized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For Fixed camera: recompute projection from world bounds (keep everything visible). For Follow camera: keep vertical extent constant, adjust horizontal by aspect.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New window width in pixels. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New window height in pixels. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="57" column="10" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="57" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1a3efbf3f1e6d16a34de0b27a1da2f98f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BaseLevelScene::Update</definition>
+        <argsstring>(float deltaTime) override</argsstring>
+        <name>Update</name>
+        <qualifiedname>BaseLevelScene::Update</qualifiedname>
+        <reimplements refid="classScene_1aaede6346f58776bd40efffd55885ab02">Update</reimplements>
+        <param>
+          <type>float</type>
+          <declname>deltaTime</declname>
+        </param>
+        <briefdescription>
+<para>Updates the level: player, enemies, collisions, camera. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deltaTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classTime" kindref="compound">Time</ref> elapsed since the last frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="58" column="10" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="147" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1a97d454ced01a68b11b7b4906ba30d7b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BaseLevelScene::Render</definition>
+        <argsstring>() override</argsstring>
+        <name>Render</name>
+        <qualifiedname>BaseLevelScene::Render</qualifiedname>
+        <reimplements refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Render</reimplements>
+        <briefdescription>
+<para>Renders the scene: entities and world borders. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="59" column="10" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="181" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1a09c51e071220755c6b9ff37e46ae83aa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string BaseLevelScene::GetName</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetName</name>
+        <qualifiedname>BaseLevelScene::GetName</qualifiedname>
+        <reimplements refid="classScene_1ad93511100250c3f3ed736b9ed69fdc6f">GetName</reimplements>
+        <briefdescription>
+<para>Gets the name of the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>String containing the scene name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="60" column="17" bodyfile="engine/scene/BaseLevelScene.h" bodystart="60" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1ab1a4691694cad905d0d6c7368d8b82e6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; BaseLevelScene::GetHUDLines</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetHUDLines</name>
+        <qualifiedname>BaseLevelScene::GetHUDLines</qualifiedname>
+        <reimplements refid="classScene_1afb756dd8b7583f4b06a000d8157c7952">GetHUDLines</reimplements>
+        <briefdescription>
+<para>Returns the <ref refid="classHUD" kindref="compound">HUD</ref> lines to show in this scene. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="65" column="17" bodyfile="engine/scene/BaseLevelScene.h" bodystart="65" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1ad699b8d5399b8b240c1db4af6c07cbcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BaseLevelScene::RespawnEnemies</definition>
+        <argsstring>()</argsstring>
+        <name>RespawnEnemies</name>
+        <qualifiedname>BaseLevelScene::RespawnEnemies</qualifiedname>
+        <briefdescription>
+<para>Respawns all enemies from their saved definitions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="75" column="10" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="340" bodyend="352"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classBaseLevelScene_1ac14c1450ecf7e04fca4365eb19857f82" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BaseLevelScene::SetupScene</definition>
+        <argsstring>()</argsstring>
+        <name>SetupScene</name>
+        <qualifiedname>BaseLevelScene::SetupScene</qualifiedname>
+        <briefdescription>
+<para>Builds the level and initializes all controllers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads textures, calls the level builder function, creates the <ref refid="classGameWorld" kindref="compound">GameWorld</ref> from the bounds registered by the <ref refid="classLevelSystem" kindref="compound">LevelSystem</ref>, configures the camera (Fixed or Follow), and initializes the player controller. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="78" column="10" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="79" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1a731f0a2859c5e76d8212ef22876bde90" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BaseLevelScene::ResolveCollisions</definition>
+        <argsstring>()</argsstring>
+        <name>ResolveCollisions</name>
+        <qualifiedname>BaseLevelScene::ResolveCollisions</qualifiedname>
+        <briefdescription>
+<para>Resolves player-platform collisions using AABB. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Handles both landing (player above platform) and ceiling hits (player below). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="79" column="10" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="196" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1a77fd4e5577c3c2e867d1b6ab27cf5f16" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BaseLevelScene::CheckEnemyCollisions</definition>
+        <argsstring>()</argsstring>
+        <name>CheckEnemyCollisions</name>
+        <qualifiedname>BaseLevelScene::CheckEnemyCollisions</qualifiedname>
+        <briefdescription>
+<para>Checks collisions between the player and all enemies. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Applies stomping if the player is falling and hits an enemy from above; otherwise kills the player and respawns all enemies. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="80" column="10" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="285" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="classBaseLevelScene_1ab310c8eb93b4b89ffac68dabbdc2e28b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BaseLevelScene::DestroyEnemy</definition>
+        <argsstring>(entt::entity enemy)</argsstring>
+        <name>DestroyEnemy</name>
+        <qualifiedname>BaseLevelScene::DestroyEnemy</qualifiedname>
+        <param>
+          <type>entt::entity</type>
+          <declname>enemy</declname>
+        </param>
+        <briefdescription>
+<para>Destroys an enemy entity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enemy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enemy entity to destroy. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/scene/BaseLevelScene.h" line="81" column="10" bodyfile="engine/scene/BaseLevelScene.cpp" bodystart="327" bodyend="335"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Generic scene that builds its content from a <ref refid="classLevelSystem" kindref="compound">LevelSystem</ref> builder function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This scene replaces the old <ref refid="classDemo2DFixedScene" kindref="compound">Demo2DFixedScene</ref> for level-based gameplay. It receives a builder function (e.g., BuildLevel1) and a camera mode, and uses them to construct and run the level. Pressing ESC returns to the level selector.</para>
+<para><simplesect kind="see"><para><ref refid="classLevelSystem" kindref="compound">LevelSystem</ref>, <ref refid="classLevelSelectorScene" kindref="compound">LevelSelectorScene</ref>, <ref refid="classLevelRegistry" kindref="compound">LevelRegistry</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>BaseLevelScene</label>
+        <link refid="classBaseLevelScene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>BaseLevelScene</label>
+        <link refid="classBaseLevelScene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_LineShader</edgelabel>
+          <edgelabel>-m_Shader</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>-m_VertexArray</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-m_IndexBuffer</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>-m_Camera</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>-m_SceneManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Camera2D</label>
+        <link refid="classCamera2D"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>-m_Position</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>-m_ProjectionMatrix</edgelabel>
+          <edgelabel>-m_ViewMatrix</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IndexBuffer</label>
+        <link refid="classIndexBuffer"/>
+      </node>
+      <node id="8">
+        <label>Matrix4</label>
+        <link refid="classMatrix4"/>
+      </node>
+      <node id="2">
+        <label>Scene</label>
+        <link refid="classScene"/>
+      </node>
+      <node id="9">
+        <label>SceneManager</label>
+        <link refid="classSceneManager"/>
+      </node>
+      <node id="3">
+        <label>Shader</label>
+        <link refid="classShader"/>
+      </node>
+      <node id="7">
+        <label>Vector3D</label>
+        <link refid="structVector3D"/>
+      </node>
+      <node id="4">
+        <label>VertexArray</label>
+        <link refid="classVertexArray"/>
+      </node>
+    </collaborationgraph>
+    <location file="engine/scene/BaseLevelScene.h" line="31" column="1" bodyfile="engine/scene/BaseLevelScene.h" bodystart="31" bodyend="103"/>
+    <listofallmembers>
+      <member refid="classBaseLevelScene_1ad453a827009fdc987722770402988ba0" prot="public" virt="non-virtual"><scope>BaseLevelScene</scope><name>BaseLevelScene</name></member>
+      <member refid="classBaseLevelScene_1a77e808a59ebefe66e3af2d06b633660c" prot="public" virt="non-virtual"><scope>BaseLevelScene</scope><name>BuilderFn</name></member>
+      <member refid="classBaseLevelScene_1a77fd4e5577c3c2e867d1b6ab27cf5f16" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>CheckEnemyCollisions</name></member>
+      <member refid="classBaseLevelScene_1ab310c8eb93b4b89ffac68dabbdc2e28b" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>DestroyEnemy</name></member>
+      <member refid="classBaseLevelScene_1ab1a4691694cad905d0d6c7368d8b82e6" prot="public" virt="virtual"><scope>BaseLevelScene</scope><name>GetHUDLines</name></member>
+      <member refid="classBaseLevelScene_1a09c51e071220755c6b9ff37e46ae83aa" prot="public" virt="virtual"><scope>BaseLevelScene</scope><name>GetName</name></member>
+      <member refid="classBaseLevelScene_1aef393c459e51f1c35ec11debbc6e4c7b" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_Builder</name></member>
+      <member refid="classBaseLevelScene_1af013346ebc9543a97f793bb7a61b4414" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_Camera</name></member>
+      <member refid="classBaseLevelScene_1a88654189be731926a1093106b86de0c6" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_CameraController</name></member>
+      <member refid="classBaseLevelScene_1a97c355120bd46574398b7fc35bb027fd" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_CameraMode</name></member>
+      <member refid="classBaseLevelScene_1a92e8e1b3659b34c538c8b66d472550f8" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_ECSScene</name></member>
+      <member refid="classBaseLevelScene_1ad705f1295cbae14ba923e1b1b2f46ad6" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_EnemyDefinitions</name></member>
+      <member refid="classBaseLevelScene_1a2f7f5c476ad9a31a54840d1a574175c1" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_EnemyEntities</name></member>
+      <member refid="classBaseLevelScene_1a7a21e9c1df6703713d73a7cc8f512b33" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_FpsCounter</name></member>
+      <member refid="classBaseLevelScene_1a7c958f5e88c56046ce2317a33aa103b6" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_IndexBuffer</name></member>
+      <member refid="classBaseLevelScene_1a378c17670d06335f86f2a8f01cc0d3aa" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_LevelName</name></member>
+      <member refid="classBaseLevelScene_1ab435e3b596945acbde3667871495d4b5" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_LineShader</name></member>
+      <member refid="classBaseLevelScene_1a1c0eb61a6a5ef4688dda661abe12206a" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_PlatformEntities</name></member>
+      <member refid="classBaseLevelScene_1a6d231d2ede9243ceb3e9f587f144ba2d" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_PlayerController</name></member>
+      <member refid="classBaseLevelScene_1af3a106663a4762944a05ef216687c35d" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_PlayerEntity</name></member>
+      <member refid="classBaseLevelScene_1a39ab68552abf1385f4d27801dafa86b9" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_SceneManager</name></member>
+      <member refid="classBaseLevelScene_1ab1103dfbcb852a26e6576e2e6d050467" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_Shader</name></member>
+      <member refid="classBaseLevelScene_1ad235292db6dd9d29404a56fe2d761f27" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_VertexArray</name></member>
+      <member refid="classBaseLevelScene_1a5b0538757b5a6b1f307983fb56a6c070" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>m_World</name></member>
+      <member refid="classBaseLevelScene_1ab16251567315098d84b5afed205ebf75" prot="public" virt="virtual"><scope>BaseLevelScene</scope><name>OnEnter</name></member>
+      <member refid="classBaseLevelScene_1a4dbbd984d245a1d8fd20e89546db30c4" prot="public" virt="virtual"><scope>BaseLevelScene</scope><name>OnExit</name></member>
+      <member refid="classBaseLevelScene_1a8131a96a0029b8801e80012c3d7b10dc" prot="public" virt="virtual"><scope>BaseLevelScene</scope><name>OnResize</name></member>
+      <member refid="classBaseLevelScene_1a97d454ced01a68b11b7b4906ba30d7b1" prot="public" virt="virtual"><scope>BaseLevelScene</scope><name>Render</name></member>
+      <member refid="classBaseLevelScene_1a731f0a2859c5e76d8212ef22876bde90" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>ResolveCollisions</name></member>
+      <member refid="classBaseLevelScene_1ad699b8d5399b8b240c1db4af6c07cbcc" prot="public" virt="non-virtual"><scope>BaseLevelScene</scope><name>RespawnEnemies</name></member>
+      <member refid="classBaseLevelScene_1ac14c1450ecf7e04fca4365eb19857f82" prot="private" virt="non-virtual"><scope>BaseLevelScene</scope><name>SetupScene</name></member>
+      <member refid="classBaseLevelScene_1a3efbf3f1e6d16a34de0b27a1da2f98f7" prot="public" virt="virtual"><scope>BaseLevelScene</scope><name>Update</name></member>
+      <member refid="classBaseLevelScene_1a57373887b22496420bd955b5a7985618" prot="public" virt="non-virtual"><scope>BaseLevelScene</scope><name>~BaseLevelScene</name></member>
+      <member refid="classScene_1af6e09d91ebd10ae9cc7c12c39d06386c" prot="public" virt="virtual"><scope>BaseLevelScene</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

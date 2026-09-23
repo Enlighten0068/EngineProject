@@ -36,7 +36,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ]
       ] ]
     ] ],
@@ -48,16 +48,18 @@ var NAVTREE =
         [ "Enumerations", "globals_enum.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "Examples", "examples.html", "examples" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
 "Application_8cpp.html",
-"classCameraController.html#a8990c89b4d50923d183579a93c9923b1",
-"classLog.html#a860a6724a65c95001e3617ac6ae04e28",
-"dir_2bc419a5fb6c3db8b46302b7a1376d88.html"
+"classApplication.html#a1d855757f4b1bc12b70bcb2409d4bb9e",
+"classGamepadManager.html#a68b06a2e5a93cf739c5bdf9851c2d381",
+"classPlayerJumpedEvent.html#a0187e7315c5587f82da1340cbc6d8f18",
+"index.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

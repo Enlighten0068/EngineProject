@@ -1,0 +1,203 @@
+\doxysection{Level\+Selector\+Scene.\+cpp}
+\hypertarget{LevelSelectorScene_8cpp_source}{}\label{LevelSelectorScene_8cpp_source}\index{engine/level/LevelSelectorScene.cpp@{engine/level/LevelSelectorScene.cpp}}
+\doxymbox{\hyperlink{LevelSelectorScene_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{LevelSelectorScene_8h}{level/LevelSelectorScene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Input_8h}{core/Input.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{GamepadManager_8h}{core/GamepadManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Log_8h}{diagnostics/Log.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{LevelRegistry_8h}{level/LevelRegistry.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Renderer_8h}{renderer/Renderer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{BaseLevelScene_8h}{scene/BaseLevelScene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{MenuScene_8h}{scene/MenuScene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00013}\doxymbox{\hyperlink{classLevelSelectorScene_a70144989f056c70ee7cb3e4755ebe45b}{00013}}\ \doxymbox{\hyperlink{classLevelSelectorScene_a70144989f056c70ee7cb3e4755ebe45b}{LevelSelectorScene::LevelSelectorScene}}(\doxymbox{\hyperlink{classSceneManager}{SceneManager}}\&\ sceneManager,\ \doxymbox{\hyperlink{classShader}{Shader}}\&\ shader,}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classVertexArray}{VertexArray}}\&\ va,\ \doxymbox{\hyperlink{classIndexBuffer}{IndexBuffer}}\&\ ib,}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classCamera2D}{Camera2D}}\&\ camera,\ \doxymbox{\hyperlink{classShader}{Shader}}\&\ lineShader)}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00016}00016\ :\ \doxymbox{\hyperlink{classLevelSelectorScene_a2f95782c506eec5907525c433ed06d44}{m\_SceneManager}}(sceneManager),\ \doxymbox{\hyperlink{classLevelSelectorScene_ab6a99773b6fdeadcffda2d7ddc81b20e}{m\_Shader}}(shader),\ \doxymbox{\hyperlink{classLevelSelectorScene_a9a837ee73063b49c25dd8ed397bb40cb}{m\_VertexArray}}(va),}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00017}00017\ \doxymbox{\hyperlink{classLevelSelectorScene_ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b}{m\_IndexBuffer}}(ib),\ \doxymbox{\hyperlink{classLevelSelectorScene_ac484ddb64073422335ab3ec85251168d}{m\_Camera}}(camera),\ \doxymbox{\hyperlink{classLevelSelectorScene_af2e87d65ca014b3845678db72fff1c9a}{m\_LineShader}}(lineShader)\{\}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00019}\doxymbox{\hyperlink{classLevelSelectorScene_a29adb71d9bf3a6bb60d127c8e506be8f}{00019}}\ \doxymbox{\hyperlink{classLevelSelectorScene_a29adb71d9bf3a6bb60d127c8e506be8f}{LevelSelectorScene::\string~LevelSelectorScene}}()\{\ \doxymbox{\hyperlink{classLevelSelectorScene_a38c557d72f36f05319bd8fc097cccb1e}{OnExit}}();\ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00026}\doxymbox{\hyperlink{classLevelSelectorScene_a2ef8dc2df76c5d6a9dde5cb034ac242d}{00026}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLevelSelectorScene_a2ef8dc2df76c5d6a9dde5cb034ac242d}{LevelSelectorScene::OnEnter}}()\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00027}00027\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Entering\ LevelSelectorScene"{}});}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00029}00029\ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_a32b9d528a0c8f03437dd069f46b7895e}{m\_Font}}\ =\ std::make\_unique<Font>();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classLevelSelectorScene_a32b9d528a0c8f03437dd069f46b7895e}{m\_Font}}-\/>Load(\textcolor{stringliteral}{"{}assets/fonts/arial.ttf"{}},\ 48))\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a860a6724a65c95001e3617ac6ae04e28}{Log::Error}}(\textcolor{stringliteral}{"{}Failed\ to\ load\ font."{}});}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00034}00034\ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}{m\_Options}}.clear();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ levels\ =\ \doxymbox{\hyperlink{classLevelRegistry_a2395d481c0cfe381c2db11091d85ab9b}{LevelRegistry::GetInstance}}().\doxymbox{\hyperlink{classLevelRegistry_a1dfb168ad2c52c04cb02e8fd84e01c21}{GetLevels}}();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00037}00037\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(std::format(\textcolor{stringliteral}{"{}LevelSelector:\ \{\}\ levels\ registered"{}},\ levels.size()));}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{if}(levels.empty())\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_a5a5a1c297ed72ab2f850d0d01ae00aaa}{Log::Warning}}(\textcolor{stringliteral}{"{}No\ levels\ registered!"{}});}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//Layout}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{float}\ startY\ =\ 3.0f;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{float}\ spacing\ =\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ levels.size();\ ++i)\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ lvl\ =\ levels[i];}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ std::string\ label\ =\ lvl.Name;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(lvl.IsNew)\ label\ +=\ \textcolor{stringliteral}{"{}\ [NEW]"{}};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ normalTex\ \ \ =\ \doxymbox{\hyperlink{classLevelSelectorScene_abb78b1c558d9139ccc5894603a792806}{CreateTextTexture}}(label,\ \doxymbox{\hyperlink{classLevelSelectorScene_a0e18a737fd9413f0cd415a74bf4029bf}{m\_NormalColor}});}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ selectedTex\ =\ \doxymbox{\hyperlink{classLevelSelectorScene_abb78b1c558d9139ccc5894603a792806}{CreateTextTexture}}(label,\ \doxymbox{\hyperlink{classLevelSelectorScene_af7ef2bbba2fb263804b77ef3900a5045}{m\_SelectedColor}});}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!normalTex\ ||\ !selectedTex)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structLevelSelectorScene_1_1Option}{Option}}\ opt;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ opt.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_aa432014ff73e4d3715d5bebc70289948}{Label}}\ =\ lvl.Name;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ opt.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_a7b02823b0e5eafec5488802026eb8911}{NormalTexture}}\ =\ normalTex;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ opt.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_ab4f540ccc737789009d7e35eeb4fcfa3}{SelectedTexture}}\ =\ selectedTex;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ opt.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_a3e5b8f6b84e764c6c7d1cf3ebf1bd12e}{Position}}\ =\ \doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(0.0f,\ startY\ -\/\ i\ *\ spacing,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ opt.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_a27114cde8813f06e07d69021ce03a72c}{Width}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(normalTex-\/>GetWidth());}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ opt.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_ab067840435b782f8a78e68e74ad8af8a}{Height}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(normalTex-\/>GetHeight());}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}{m\_Options}}.push\_back(opt);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00067}00067\ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef}{m\_SelectedOption}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00073}\doxymbox{\hyperlink{classLevelSelectorScene_a38c557d72f36f05319bd8fc097cccb1e}{00073}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLevelSelectorScene_a38c557d72f36f05319bd8fc097cccb1e}{LevelSelectorScene::OnExit}}()\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00074}00074\ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}{m\_Options}}.clear();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00075}00075\ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_a32b9d528a0c8f03437dd069f46b7895e}{m\_Font}}.reset();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00076}00076\ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00084}\doxymbox{\hyperlink{classLevelSelectorScene_abb78b1c558d9139ccc5894603a792806}{00084}}\ std::shared\_ptr<Texture2D>\ \doxymbox{\hyperlink{classLevelSelectorScene_abb78b1c558d9139ccc5894603a792806}{LevelSelectorScene::CreateTextTexture}}(\textcolor{keyword}{const}\ std::string\&\ text,}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ SDL\_Color\&\ color)\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{classLevelSelectorScene_a32b9d528a0c8f03437dd069f46b7895e}{m\_Font}}\ ||\ !\doxymbox{\hyperlink{classLevelSelectorScene_a32b9d528a0c8f03437dd069f46b7895e}{m\_Font}}-\/>IsLoaded())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00088}00088\ \ \ \ \ SDL\_Surface*\ surface\ =\ \doxymbox{\hyperlink{classLevelSelectorScene_a32b9d528a0c8f03437dd069f46b7895e}{m\_Font}}-\/>RenderText(text,\ color);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{if}(!surface)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{auto}\ texture\ =\ std::make\_shared<Texture2D>();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{if}(!texture-\/>LoadFromSurface(surface))\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ SDL\_DestroySurface(surface);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00097}00097\ \ \ \ \ glBindTexture(GL\_TEXTURE\_2D,\ texture-\/>GetRendererID());}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00098}00098\ \ \ \ \ glTexParameteri(GL\_TEXTURE\_2D,\ GL\_TEXTURE\_MAG\_FILTER,\ GL\_NEAREST);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00099}00099\ \ \ \ \ glTexParameteri(GL\_TEXTURE\_2D,\ GL\_TEXTURE\_MIN\_FILTER,\ GL\_LINEAR);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00101}00101\ \ \ \ \ SDL\_DestroySurface(surface);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{return}\ texture;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00109}\doxymbox{\hyperlink{classLevelSelectorScene_acfaf5d66253dbd5880be7bc68d210d0a}{00109}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLevelSelectorScene_acfaf5d66253dbd5880be7bc68d210d0a}{LevelSelectorScene::Update}}(\textcolor{keywordtype}{float}\ deltaTime)\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}{m\_Options}}.empty())\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{comment}{//ESC\ to\ go\ back\ to\ main\ menu}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Input::IsKeyPressed}}(SDL\_SCANCODE\_ESCAPE))\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Returning\ to\ main\ menu..."{}});}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ menu\ =\ std::make\_unique<MenuScene>(}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_a2f95782c506eec5907525c433ed06d44}{m\_SceneManager}},\ \doxymbox{\hyperlink{classLevelSelectorScene_ab6a99773b6fdeadcffda2d7ddc81b20e}{m\_Shader}},\ \doxymbox{\hyperlink{classLevelSelectorScene_a9a837ee73063b49c25dd8ed397bb40cb}{m\_VertexArray}},\ \doxymbox{\hyperlink{classLevelSelectorScene_ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b}{m\_IndexBuffer}},}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_ac484ddb64073422335ab3ec85251168d}{m\_Camera}},\ \doxymbox{\hyperlink{classLevelSelectorScene_af2e87d65ca014b3845678db72fff1c9a}{m\_LineShader}});}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_a2f95782c506eec5907525c433ed06d44}{m\_SceneManager}}.\doxymbox{\hyperlink{classSceneManager_ae0003097b2a7ccd3f63758fcf8734bfd}{SetScene}}(std::move(menu));}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\doxymbox{\hyperlink{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}{m\_Options}}.size());}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{comment}{//Navigation\ down}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Input::IsKeyPressed}}(SDL\_SCANCODE\_DOWN)\ ||\ \doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Input::IsKeyPressed}}(SDL\_SCANCODE\_S)\ ||}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().IsButtonPressed(0,\ SDL\_GAMEPAD\_BUTTON\_DPAD\_DOWN))\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef}{m\_SelectedOption}}\ =\ (\doxymbox{\hyperlink{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef}{m\_SelectedOption}}\ +\ 1)\ \%\ n;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{comment}{//Navigation\ up}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Input::IsKeyPressed}}(SDL\_SCANCODE\_UP)\ ||\ \doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Input::IsKeyPressed}}(SDL\_SCANCODE\_W)\ ||}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().IsButtonPressed(0,\ SDL\_GAMEPAD\_BUTTON\_DPAD\_UP))\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef}{m\_SelectedOption}}\ =\ (\doxymbox{\hyperlink{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef}{m\_SelectedOption}}\ -\/\ 1\ +\ n)\ \%\ n;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{comment}{//Confirm\ with\ keyboard\ or\ gamepad}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Input::IsKeyPressed}}(SDL\_SCANCODE\_RETURN)\ ||\ \doxymbox{\hyperlink{classInput_a6f730bd93702cfca7ed7d2619e4340d7}{Input::IsKeyPressed}}(SDL\_SCANCODE\_SPACE)\ ||}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classGamepadManager_a7ed1fa9ba985dc62cba0c796992689e8}{GamepadManager::GetInstance}}().IsButtonPressed(0,\ SDL\_GAMEPAD\_BUTTON\_EAST))\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_ab6fc75b411632651fa21249a1a995fec}{HandleSelection}}();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00140}00140\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{comment}{//Mouse\ click\ detection}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classInput_a1915a90124c915e35e04bc9044d3b575}{Input::IsMouseButtonPressed}}(1))\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \doxymbox{\hyperlink{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}{m\_Options}}.size();\ ++i)\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classLevelSelectorScene_a142562be4dbf89030310c0075d160369}{IsMouseOverOption}}(\doxymbox{\hyperlink{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}{m\_Options}}[i]))\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef}{m\_SelectedOption}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(i);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_ab6fc75b411632651fa21249a1a995fec}{HandleSelection}}();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00153}00153\ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00158}\doxymbox{\hyperlink{classLevelSelectorScene_aa4161b586dbea24ead423a034816fdfc}{00158}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLevelSelectorScene_aa4161b586dbea24ead423a034816fdfc}{LevelSelectorScene::Render}}()\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00159}00159\ \ \ \ \ glClearColor(0.1f,\ 0.1f,\ 0.2f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00160}00160\ \ \ \ \ glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \doxymbox{\hyperlink{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}{m\_Options}}.size();\ ++i)\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isSelected\ =\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(i)\ ==\ \doxymbox{\hyperlink{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef}{m\_SelectedOption}});}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_a2f96c000d92e26cc44e50dd6f932c6d2}{RenderOption}}(\doxymbox{\hyperlink{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}{m\_Options}}[i],\ isSelected);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00165}00165\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00166}00166\ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00173}\doxymbox{\hyperlink{classLevelSelectorScene_a142562be4dbf89030310c0075d160369}{00173}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classLevelSelectorScene_a142562be4dbf89030310c0075d160369}{LevelSelectorScene::IsMouseOverOption}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structLevelSelectorScene_1_1Option}{Option}}\&\ option)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00174}00174\ \ \ \ \ \doxymbox{\hyperlink{structVector2D}{Vector2D}}\ mousePos\ =\ \doxymbox{\hyperlink{classInput_a58652e658e6b2a088d0bfbd07753c914}{Input::GetMousePosition}}();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00175}00175\ \ \ \ \ \textcolor{keywordtype}{int}\ winWidth\ =\ \doxymbox{\hyperlink{classInput_a6fa97576489b0946ce0bcc88e8cbb46a}{Input::GetWindowWidth}}();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00176}00176\ \ \ \ \ \textcolor{keywordtype}{int}\ winHeight\ =\ \doxymbox{\hyperlink{classInput_a73ac35d323c9c62b29a0fdb7cd10c84f}{Input::GetWindowHeight}}();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00177}00177\ \ \ \ \ \textcolor{keywordtype}{float}\ worldX\ =\ (mousePos.\doxymbox{\hyperlink{structVector2D_aeb4253ba6555251d010ea4450619029e}{x}}\ /\ winWidth)\ *\ 20.0f\ -\/\ 10.0f;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keywordtype}{float}\ worldY\ =\ -\/(mousePos.\doxymbox{\hyperlink{structVector2D_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ /\ winHeight)\ *\ 20.0f\ +\ 10.0f;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordtype}{float}\ halfWidth\ =\ (option.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_a27114cde8813f06e07d69021ce03a72c}{Width}}\ /\ option.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_ab067840435b782f8a78e68e74ad8af8a}{Height}})\ *\ 1.2f\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordtype}{float}\ halfHeight\ =\ 0.6f;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00183}00183\ \ \ \ \ \textcolor{keywordtype}{float}\ left\ \ \ =\ option.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_a3e5b8f6b84e764c6c7d1cf3ebf1bd12e}{Position}}.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ -\/\ halfWidth;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordtype}{float}\ right\ \ =\ option.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_a3e5b8f6b84e764c6c7d1cf3ebf1bd12e}{Position}}.\doxymbox{\hyperlink{structVector3D_aca5d15bdb846448e3cb73b072783f329}{x}}\ +\ halfWidth;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00185}00185\ \ \ \ \ \textcolor{keywordtype}{float}\ bottom\ =\ option.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_a3e5b8f6b84e764c6c7d1cf3ebf1bd12e}{Position}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ -\/\ halfHeight;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00186}00186\ \ \ \ \ \textcolor{keywordtype}{float}\ top\ \ \ \ =\ option.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_a3e5b8f6b84e764c6c7d1cf3ebf1bd12e}{Position}}.\doxymbox{\hyperlink{structVector3D_a9b6d194fcf526d7d4f9e902421285e94}{y}}\ +\ halfHeight;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00188}00188\ \ \ \ \ \textcolor{keywordflow}{return}\ (worldX\ >=\ left\ \&\&\ worldX\ <=\ right\ \&\&\ worldY\ >=\ bottom\ \&\&\ worldY\ <=\ top);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00196}\doxymbox{\hyperlink{classLevelSelectorScene_a2f96c000d92e26cc44e50dd6f932c6d2}{00196}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLevelSelectorScene_a2f96c000d92e26cc44e50dd6f932c6d2}{LevelSelectorScene::RenderOption}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structLevelSelectorScene_1_1Option}{Option}}\&\ option,\ \textcolor{keywordtype}{bool}\ isSelected)\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00197}00197\ \ \ \ \ \textcolor{keywordtype}{bool}\ isHovered\ =\ \doxymbox{\hyperlink{classLevelSelectorScene_a142562be4dbf89030310c0075d160369}{IsMouseOverOption}}(option);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00198}00198\ \ \ \ \ \textcolor{keyword}{auto}\ texture\ =\ (isSelected\ ||\ isHovered)\ ?\ option.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_ab4f540ccc737789009d7e35eeb4fcfa3}{SelectedTexture}}\ :\ option.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_a7b02823b0e5eafec5488802026eb8911}{NormalTexture}};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{if}(!texture)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00201}00201\ \ \ \ \ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\ model\ =\ \doxymbox{\hyperlink{classMatrix4_a35fb272e82fbfc17cdf2d75c858f5da7}{Matrix4::Translation}}(option.\doxymbox{\hyperlink{structLevelSelectorScene_1_1Option_a3e5b8f6b84e764c6c7d1cf3ebf1bd12e}{Position}});}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00202}00202\ \ \ \ \ \textcolor{keywordtype}{float}\ aspect\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(texture-\/>GetWidth())\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(texture-\/>GetHeight());}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00203}00203\ \ \ \ \ \textcolor{keywordtype}{float}\ height\ =\ 1.2f;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{keywordtype}{float}\ width\ =\ height\ *\ aspect;}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00205}00205\ \ \ \ \ model\ =\ model\ *\ \doxymbox{\hyperlink{classMatrix4_aa3a30984ce9f309c23827d5e1cde0fdc}{Matrix4::Scale}}(\doxymbox{\hyperlink{structVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}}(width,\ height,\ 1.0f));}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00207}00207\ \ \ \ \ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\ view\ =\ \doxymbox{\hyperlink{classMatrix4_ae114a47efddacad2207eadac5f532098}{Matrix4::Identity}}();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00208}00208\ \ \ \ \ \doxymbox{\hyperlink{classMatrix4}{Matrix4}}\ projection\ =\ \doxymbox{\hyperlink{classMatrix4_a8cc70f5111adc0c13fed0521a31b80b6}{Matrix4::Orthographic}}(-\/10.0f,\ 10.0f,\ -\/10.0f,\ 10.0f,\ -\/1.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00210}00210\ \ \ \ \ \doxymbox{\hyperlink{classRenderer_a71992cf4acf88e30dd0abaaa6cda23b4}{Renderer::DrawTexturedQuad}}(\doxymbox{\hyperlink{classLevelSelectorScene_ab6a99773b6fdeadcffda2d7ddc81b20e}{m\_Shader}},\ \doxymbox{\hyperlink{classLevelSelectorScene_a9a837ee73063b49c25dd8ed397bb40cb}{m\_VertexArray}},\ \doxymbox{\hyperlink{classLevelSelectorScene_ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b}{m\_IndexBuffer}},}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *texture,\ model,\ view,\ projection,\ 1.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00212}00212\ \}}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00217}\doxymbox{\hyperlink{classLevelSelectorScene_ab6fc75b411632651fa21249a1a995fec}{00217}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classLevelSelectorScene_ab6fc75b411632651fa21249a1a995fec}{LevelSelectorScene::HandleSelection}}()\{}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00218}00218\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classLevelSelectorScene_ac68dce54991fa1861c7300c10bb7ea9e}{m\_Options}}.empty())\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00220}00220\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ levels\ =\ \doxymbox{\hyperlink{classLevelRegistry_a2395d481c0cfe381c2db11091d85ab9b}{LevelRegistry::GetInstance}}().\doxymbox{\hyperlink{classLevelRegistry_a1dfb168ad2c52c04cb02e8fd84e01c21}{GetLevels}}();}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef}{m\_SelectedOption}}\ >=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(levels.size()))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ def\ =\ levels[\doxymbox{\hyperlink{classLevelSelectorScene_a912e5dfba70c6a335795569a818a8fef}{m\_SelectedOption}}];}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00224}00224\ \ \ \ \ \doxymbox{\hyperlink{classLog_abc92ed5074f74feecedfac4f6dfa592c}{Log::Info}}(\textcolor{stringliteral}{"{}Loading\ level:\ "{}}\ +\ def.Name);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00226}00226\ \ \ \ \ \textcolor{keyword}{auto}\ scene\ =\ std::make\_unique<BaseLevelScene>(}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_ab6a99773b6fdeadcffda2d7ddc81b20e}{m\_Shader}},\ \doxymbox{\hyperlink{classLevelSelectorScene_a9a837ee73063b49c25dd8ed397bb40cb}{m\_VertexArray}},\ \doxymbox{\hyperlink{classLevelSelectorScene_ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b}{m\_IndexBuffer}},}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_ac484ddb64073422335ab3ec85251168d}{m\_Camera}},\ \doxymbox{\hyperlink{classLevelSelectorScene_af2e87d65ca014b3845678db72fff1c9a}{m\_LineShader}},\ \doxymbox{\hyperlink{classLevelSelectorScene_a2f95782c506eec5907525c433ed06d44}{m\_SceneManager}},}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ def.Build,\ def.Name,\ def.Mode);}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00230}00230\ \ \ \ \ \doxymbox{\hyperlink{classLevelSelectorScene_a2f95782c506eec5907525c433ed06d44}{m\_SceneManager}}.\doxymbox{\hyperlink{classSceneManager_ae0003097b2a7ccd3f63758fcf8734bfd}{SetScene}}(std::move(scene));}
+\DoxyCodeLine{\Hypertarget{LevelSelectorScene_8cpp_source_l00231}00231\ \}}
+
+\end{DoxyCode}

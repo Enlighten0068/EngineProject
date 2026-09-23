@@ -1,0 +1,5 @@
+<map id="LevelSelectorScene" name="LevelSelectorScene">
+<area shape="rect" id="Node000001" title="Scene that lists all registered levels and lets the player choose one." alt="" coords="5,282,180,823"/>
+<area shape="rect" id="Node000002" href="$classScene.html" title="Abstract base class for all scenes in the engine." alt="" coords="31,5,155,234"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,246,95,282,90,282,93,251"/>
+</map>

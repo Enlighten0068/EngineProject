@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unhandledcallback_0',['UnhandledCallback',['../classSDLEventTranslator.html#a38596334139d7ed6215d334ddd0d9dd4',1,'SDLEventTranslator']]]
+  ['callback_0',['Callback',['../classEventBus.html#aedcd787e8f3f1a2c587be349957da894',1,'EventBus']]]
 ];

@@ -58,20 +58,32 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
       </node>
-      <node id="10">
-        <label>engine/scene/MenuScene.cpp</label>
-        <link refid="MenuScene_8cpp"/>
+      <node id="12">
+        <label>engine/level/LevelSelectorScene.cpp</label>
+        <link refid="LevelSelectorScene_8cpp"/>
+      </node>
+      <node id="13">
+        <label>engine/scene/BaseLevelScene.cpp</label>
+        <link refid="BaseLevelScene_8cpp"/>
+      </node>
+      <node id="11">
+        <label>engine/scene/BaseLevelScene.h</label>
+        <link refid="BaseLevelScene_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
       </node>
       <node id="7">
         <label>engine/systems/EnemySystem.h</label>
         <link refid="EnemySystem_8h"/>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
       </node>
-      <node id="11">
+      <node id="10">
         <label>game/src/main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
@@ -88,14 +100,16 @@
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classTime_1ad543732facbdbe2aa7298de13cb2a12b" kindref="member">DeltaTime</ref>();</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classTime_1a78df68c0498044fa62fdeb6b9e9e8b63" kindref="member">ElapsedTime</ref>();</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTime_1a7e9cf31048064a9aedfee885807b1b56" kindref="member">Update</ref>();</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="34" refid="classTime_1a2b684243784e6daedfa7ec3ce4b57ea5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classTime_1a2b684243784e6daedfa7ec3ce4b57ea5" kindref="member">s_DeltaTime</ref>;<sp/></highlight><highlight class="comment">//Time<sp/>between<sp/>frames</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35" refid="classTime_1a6595aadb1feae1ea8f4058682ee8c27d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classTime_1a6595aadb1feae1ea8f4058682ee8c27d" kindref="member">s_ElapsedTime</ref>;<sp/></highlight><highlight class="comment">//Total<sp/>elapsed<sp/>time<sp/>since<sp/>startup</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28" refid="classTime_1ac6ae72b2ea451dd16f0d0ca3ae45fec5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTime_1ac6ae72b2ea451dd16f0d0ca3ae45fec5" kindref="member">SetDeltaTime</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dt){<sp/><ref refid="classTime_1a2b684243784e6daedfa7ec3ce4b57ea5" kindref="member">s_DeltaTime</ref><sp/>=<sp/>dt;<sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classTime_1a78df68c0498044fa62fdeb6b9e9e8b63" kindref="member">ElapsedTime</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTime_1a7e9cf31048064a9aedfee885807b1b56" kindref="member">Update</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45" refid="classTime_1a2b684243784e6daedfa7ec3ce4b57ea5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classTime_1a2b684243784e6daedfa7ec3ce4b57ea5" kindref="member">s_DeltaTime</ref>;<sp/></highlight><highlight class="comment">//Time<sp/>between<sp/>frames</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="classTime_1a6595aadb1feae1ea8f4058682ee8c27d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classTime_1a6595aadb1feae1ea8f4058682ee8c27d" kindref="member">s_ElapsedTime</ref>;<sp/></highlight><highlight class="comment">//Total<sp/>elapsed<sp/>time<sp/>since<sp/>startup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
     </programlisting>
     <location file="engine/core/Time.h"/>
   </compounddef>

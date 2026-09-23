@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="dir_1ba22032d288d52631ed21efc738f575" kind="dir">
     <compoundname>engine/demo</compoundname>
+    <innerdir refid="dir_215f49ad94af785b49e2c4f0606ed7c4">engine/demo/levels</innerdir>
     <innerfile refid="Demo2DFixedScene_8cpp">Demo2DFixedScene.cpp</innerfile>
     <innerfile refid="Demo2DFixedScene_8h">Demo2DFixedScene.h</innerfile>
     <innerfile refid="Demo2DScene_8cpp">Demo2DScene.cpp</innerfile>

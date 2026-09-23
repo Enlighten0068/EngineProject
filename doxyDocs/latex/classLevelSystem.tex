@@ -1,0 +1,481 @@
+\doxysection{Level\+System Class Reference}
+\hypertarget{classLevelSystem}{}\label{classLevelSystem}\index{LevelSystem@{LevelSystem}}
+
+
+System that provides a high-\/level API for building game levels.  
+
+
+
+
+{\ttfamily \+\#include $<$Level\+System.\+h$>$}
+
+
+
+Collaboration diagram for Level\+System:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classLevelSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition}{Enemy\+Definition}}
+\begin{DoxyCompactList}\small\item\em Definition of an enemy for respawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classLevelSystem_adf27eff6fdebd568877347bd09f023d6}{Level\+System}} (\doxymbox{\hyperlink{classECSScene}{ECSScene}} \&scene, std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ player\+Tex, std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ tile\+Tex, std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ enemy\+Tex)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classLevelSystem}{Level\+System}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classLevelSystem_a3e6320da6531e2929c3d8a78e359ac24}{Set\+World\+Bounds}} (float minX, float maxX, float minY, float maxY)
+\begin{DoxyCompactList}\small\item\em Sets the world bounds (does NOT create the \doxylink{classGameWorld}{Game\+World}). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classLevelSystem_a7530478b25741aebf4deccad90696d5b}{Create\+Player}} (float x, float y, const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&scale=\doxymbox{\hyperlink{structVector3D}{Vector3D}}(3.\+0f, 3.\+0f, 1.\+0f))
+\begin{DoxyCompactList}\small\item\em Creates the player entity at the given position. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classLevelSystem_a1b19c6edebac036042a5786330e76987}{Create\+Player\+On\+Floor}} (float x, float floorY, const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&scale=\doxymbox{\hyperlink{structVector3D}{Vector3D}}(3.\+0f, 3.\+0f, 1.\+0f))
+\begin{DoxyCompactList}\small\item\em Creates the player with its bottom edge sitting on the floor. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classLevelSystem_a085108be7529741cb15602a8022b833c}{Create\+Platform}} (float x, float y, float w, float h, float tileX=-\/1.\+0f, float tileY=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Creates a platform at the given position and size. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classLevelSystem_aba8c5392fbf24e635c064847625d5be6}{Create\+Enemy}} (float x, float y, float patrol\+StartX, float patrol\+EndX, float speed, const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&scale=\doxymbox{\hyperlink{structVector3D}{Vector3D}}(3.\+0f, 3.\+0f, 1.\+0f))
+\begin{DoxyCompactList}\small\item\em Creates an enemy with patrol behavior. \end{DoxyCompactList}\item 
+float \doxymbox{\hyperlink{classLevelSystem_a9200d914b599b8def8493a7c2cae76b4}{Get\+MinX}} () const
+\item 
+float \doxymbox{\hyperlink{classLevelSystem_a363a5adfbef8e600a912b96f1e75f5fc}{Get\+MaxX}} () const
+\item 
+float \doxymbox{\hyperlink{classLevelSystem_a7f519e936acfa2af7f94570d01fae0a1}{Get\+MinY}} () const
+\item 
+float \doxymbox{\hyperlink{classLevelSystem_ad0bd129e84474259c33c976eae3f03b6}{Get\+MaxY}} () const
+\item 
+entt::\+entity \doxymbox{\hyperlink{classLevelSystem_a58a12d9e7eb3781b3976c42ba04a62b0}{Get\+Player\+Entity}} () const
+\item 
+const std::\+vector$<$ entt::\+entity $>$ \& \doxymbox{\hyperlink{classLevelSystem_a05736b7dfd96201827d4d27ea628dc13}{Get\+Platforms}} () const
+\item 
+const std::\+vector$<$ entt::\+entity $>$ \& \doxymbox{\hyperlink{classLevelSystem_a4e765e3778c9694c995c1d45b2737806}{Get\+Enemies}} () const
+\item 
+const std::\+vector$<$ \doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition}{Enemy\+Definition}} $>$ \& \doxymbox{\hyperlink{classLevelSystem_a3b3c9cb5a253e0e253f868cd7d6352c5}{Get\+Enemy\+Definitions}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classECSScene}{ECSScene}} \& \doxymbox{\hyperlink{classLevelSystem_a3264e9b899873ac854f0759d3103aeac}{m\+\_\+\+Scene}}
+\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \doxymbox{\hyperlink{classLevelSystem_ab69f9cb52128e9c8c54f3d7ca50c77ac}{m\+\_\+\+Player\+Tex}}
+\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \doxymbox{\hyperlink{classLevelSystem_ab03cdacf2090d7c234bb91c8b005ef03}{m\+\_\+\+Tile\+Tex}}
+\item 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$ \doxymbox{\hyperlink{classLevelSystem_a7c91d5ae725b59c2b21829be61b05129}{m\+\_\+\+Enemy\+Tex}}
+\item 
+float \doxymbox{\hyperlink{classLevelSystem_a7ee740d1275dc8de3f4cfbe0f5d4d37e}{m\+\_\+\+MinX}} = -\/20.\+0f
+\item 
+float \doxymbox{\hyperlink{classLevelSystem_a471eaf3314955832389dc96aa0b2c668}{m\+\_\+\+MaxX}} = 20.\+0f
+\item 
+float \doxymbox{\hyperlink{classLevelSystem_ab3ec7fcdfc2ea8e3b1cae73cdea66284}{m\+\_\+\+MinY}} = -\/10.\+0f
+\item 
+float \doxymbox{\hyperlink{classLevelSystem_a53e01a0809e2aef16469a04f3de101be}{m\+\_\+\+MaxY}} = 10.\+0f
+\item 
+entt::\+entity \doxymbox{\hyperlink{classLevelSystem_a3360d59adae5259447c161bf3050899c}{m\+\_\+\+Player\+Entity}} = entt::\+null
+\item 
+std::\+vector$<$ entt::\+entity $>$ \doxymbox{\hyperlink{classLevelSystem_a7583ed8df68e766a29c522cfc1719df9}{m\+\_\+\+Platform\+Entities}}
+\item 
+std::\+vector$<$ entt::\+entity $>$ \doxymbox{\hyperlink{classLevelSystem_a21f4aeea06b4c7427eda4418094b116c}{m\+\_\+\+Enemy\+Entities}}
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition}{Enemy\+Definition}} $>$ \doxymbox{\hyperlink{classLevelSystem_aa2494c86ba64c939dc03980891c646d8}{m\+\_\+\+Enemy\+Definitions}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+System that provides a high-\/level API for building game levels. 
+
+The \doxylink{classLevelSystem}{Level\+System} accumulates entities as they are created and records the world bounds. The \doxylink{classGameWorld}{Game\+World} itself is created by the scene after the level is built (via Get\+World\+Bounds accessors). This separation avoids copying a non-\/copyable \doxylink{classGameWorld}{Game\+World}.
+
+Each level is defined in a separate .cpp file as a function that receives a reference to a \doxylink{classLevelSystem}{Level\+System} and calls its methods.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classBaseLevelScene}{Base\+Level\+Scene}, \doxylink{classLevelRegistry}{Level\+Registry}, \doxylink{LevelMacros_8h_abffe427d7a82d716aaeb59f206234302}{REGISTER\+\_\+\+LEVEL} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00030}{30}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+
+
+\label{classLevelSystem_doc-constructors}
+\Hypertarget{classLevelSystem_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLevelSystem_adf27eff6fdebd568877347bd09f023d6}\index{LevelSystem@{LevelSystem}!LevelSystem@{LevelSystem}}
+\index{LevelSystem@{LevelSystem}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{LevelSystem()}{LevelSystem()}}
+{\footnotesize\ttfamily \label{classLevelSystem_adf27eff6fdebd568877347bd09f023d6} 
+Level\+System::\+\+Level\+System (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classECSScene}{ECSScene}} \&}]{scene}{, }\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$}]{player\+Tex}{, }\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$}]{tile\+Tex}{, }\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classTexture2D}{Texture2D}} $>$}]{enemy\+Tex}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classLevelSystem}{Level\+System}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & Reference to the ECS scene. \\
+\hline
+{\em player\+Tex} & Texture for the player. \\
+\hline
+{\em tile\+Tex} & Texture for platforms and walls. \\
+\hline
+{\em enemy\+Tex} & Texture for enemies. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8cpp_source_l00005}{5}} of file \doxymbox{\hyperlink{LevelSystem_8cpp_source}{Level\+System.\+cpp}}.
+
+
+
+\label{classLevelSystem_doc-func-members}
+\Hypertarget{classLevelSystem_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLevelSystem_aba8c5392fbf24e635c064847625d5be6}\index{LevelSystem@{LevelSystem}!CreateEnemy@{CreateEnemy}}
+\index{CreateEnemy@{CreateEnemy}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{CreateEnemy()}{CreateEnemy()}}
+{\footnotesize\ttfamily \label{classLevelSystem_aba8c5392fbf24e635c064847625d5be6} 
+void Level\+System::\+\+Create\+Enemy (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{patrol\+StartX}{, }\item[{float}]{patrol\+EndX}{, }\item[{float}]{speed}{, }\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{scale}{ = {\ttfamily \doxymbox{\hyperlink{structVector3D}{Vector3D}}(3.0f,~3.0f,~1.0f)}}\end{DoxyParamCaption})}
+
+
+
+Creates an enemy with patrol behavior. 
+
+Creates an enemy entity with patrol behavior.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Spawn X. \\
+\hline
+{\em y} & Spawn Y. \\
+\hline
+{\em patrol\+StartX} & Left bound of patrol range. \\
+\hline
+{\em patrol\+EndX} & Right bound of patrol range. \\
+\hline
+{\em speed} & Movement speed in units per second. \\
+\hline
+{\em scale} & Scale vector (default: 3x3). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8cpp_source_l00049}{49}} of file \doxymbox{\hyperlink{LevelSystem_8cpp_source}{Level\+System.\+cpp}}.
+
+\Hypertarget{classLevelSystem_a085108be7529741cb15602a8022b833c}\index{LevelSystem@{LevelSystem}!CreatePlatform@{CreatePlatform}}
+\index{CreatePlatform@{CreatePlatform}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{CreatePlatform()}{CreatePlatform()}}
+{\footnotesize\ttfamily \label{classLevelSystem_a085108be7529741cb15602a8022b833c} 
+void Level\+System::\+\+Create\+Platform (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{w}{, }\item[{float}]{h}{, }\item[{float}]{tileX}{ = {\ttfamily -\/1.0f}, }\item[{float}]{tileY}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})}
+
+
+
+Creates a platform at the given position and size. 
+
+Creates a platform entity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Center X position. \\
+\hline
+{\em y} & Center Y position. \\
+\hline
+{\em w} & Width. \\
+\hline
+{\em h} & Height. \\
+\hline
+{\em tileX} & Number of horizontal texture repetitions (default: w). \\
+\hline
+{\em tileY} & Number of vertical texture repetitions (default: 1). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8cpp_source_l00026}{26}} of file \doxymbox{\hyperlink{LevelSystem_8cpp_source}{Level\+System.\+cpp}}.
+
+\Hypertarget{classLevelSystem_a7530478b25741aebf4deccad90696d5b}\index{LevelSystem@{LevelSystem}!CreatePlayer@{CreatePlayer}}
+\index{CreatePlayer@{CreatePlayer}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{CreatePlayer()}{CreatePlayer()}}
+{\footnotesize\ttfamily \label{classLevelSystem_a7530478b25741aebf4deccad90696d5b} 
+void Level\+System::\+\+Create\+Player (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{scale}{ = {\ttfamily \doxymbox{\hyperlink{structVector3D}{Vector3D}}(3.0f,~3.0f,~1.0f)}}\end{DoxyParamCaption})}
+
+
+
+Creates the player entity at the given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Spawn X. \\
+\hline
+{\em y} & Spawn Y. \\
+\hline
+{\em scale} & Scale vector (default: 3x3). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8cpp_source_l00040}{40}} of file \doxymbox{\hyperlink{LevelSystem_8cpp_source}{Level\+System.\+cpp}}.
+
+\Hypertarget{classLevelSystem_a1b19c6edebac036042a5786330e76987}\index{LevelSystem@{LevelSystem}!CreatePlayerOnFloor@{CreatePlayerOnFloor}}
+\index{CreatePlayerOnFloor@{CreatePlayerOnFloor}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{CreatePlayerOnFloor()}{CreatePlayerOnFloor()}}
+{\footnotesize\ttfamily \label{classLevelSystem_a1b19c6edebac036042a5786330e76987} 
+void Level\+System::\+\+Create\+Player\+On\+Floor (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{floorY}{, }\item[{const \doxymbox{\hyperlink{structVector3D}{Vector3D}} \&}]{scale}{ = {\ttfamily \doxymbox{\hyperlink{structVector3D}{Vector3D}}(3.0f,~3.0f,~1.0f)}}\end{DoxyParamCaption})}
+
+
+
+Creates the player with its bottom edge sitting on the floor. 
+
+Convenience method that calculates the correct Y position so that the player spawns exactly on top of the given floor level.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Spawn X. \\
+\hline
+{\em floorY} & Y coordinate of the floor\textquotesingle{}s top edge. \\
+\hline
+{\em scale} & Scale vector (default: 3x3). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLevelSystem_a4e765e3778c9694c995c1d45b2737806}\index{LevelSystem@{LevelSystem}!GetEnemies@{GetEnemies}}
+\index{GetEnemies@{GetEnemies}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{GetEnemies()}{GetEnemies()}}
+{\footnotesize\ttfamily \label{classLevelSystem_a4e765e3778c9694c995c1d45b2737806} 
+const std::\+vector$<$ entt::\+entity $>$ \& Level\+System::\+\+Get\+Enemies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00124}{124}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a3b3c9cb5a253e0e253f868cd7d6352c5}\index{LevelSystem@{LevelSystem}!GetEnemyDefinitions@{GetEnemyDefinitions}}
+\index{GetEnemyDefinitions@{GetEnemyDefinitions}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{GetEnemyDefinitions()}{GetEnemyDefinitions()}}
+{\footnotesize\ttfamily \label{classLevelSystem_a3b3c9cb5a253e0e253f868cd7d6352c5} 
+const std::\+vector$<$ \doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition}{Enemy\+Definition}} $>$ \& Level\+System::\+\+Get\+Enemy\+Definitions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00125}{125}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a363a5adfbef8e600a912b96f1e75f5fc}\index{LevelSystem@{LevelSystem}!GetMaxX@{GetMaxX}}
+\index{GetMaxX@{GetMaxX}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{GetMaxX()}{GetMaxX()}}
+{\footnotesize\ttfamily \label{classLevelSystem_a363a5adfbef8e600a912b96f1e75f5fc} 
+float Level\+System::\+\+Get\+MaxX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00118}{118}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_ad0bd129e84474259c33c976eae3f03b6}\index{LevelSystem@{LevelSystem}!GetMaxY@{GetMaxY}}
+\index{GetMaxY@{GetMaxY}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{GetMaxY()}{GetMaxY()}}
+{\footnotesize\ttfamily \label{classLevelSystem_ad0bd129e84474259c33c976eae3f03b6} 
+float Level\+System::\+\+Get\+MaxY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00120}{120}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a9200d914b599b8def8493a7c2cae76b4}\index{LevelSystem@{LevelSystem}!GetMinX@{GetMinX}}
+\index{GetMinX@{GetMinX}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{GetMinX()}{GetMinX()}}
+{\footnotesize\ttfamily \label{classLevelSystem_a9200d914b599b8def8493a7c2cae76b4} 
+float Level\+System::\+\+Get\+MinX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00117}{117}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a7f519e936acfa2af7f94570d01fae0a1}\index{LevelSystem@{LevelSystem}!GetMinY@{GetMinY}}
+\index{GetMinY@{GetMinY}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{GetMinY()}{GetMinY()}}
+{\footnotesize\ttfamily \label{classLevelSystem_a7f519e936acfa2af7f94570d01fae0a1} 
+float Level\+System::\+\+Get\+MinY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00119}{119}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a05736b7dfd96201827d4d27ea628dc13}\index{LevelSystem@{LevelSystem}!GetPlatforms@{GetPlatforms}}
+\index{GetPlatforms@{GetPlatforms}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{GetPlatforms()}{GetPlatforms()}}
+{\footnotesize\ttfamily \label{classLevelSystem_a05736b7dfd96201827d4d27ea628dc13} 
+const std::\+vector$<$ entt::\+entity $>$ \& Level\+System::\+\+Get\+Platforms (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00123}{123}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a58a12d9e7eb3781b3976c42ba04a62b0}\index{LevelSystem@{LevelSystem}!GetPlayerEntity@{GetPlayerEntity}}
+\index{GetPlayerEntity@{GetPlayerEntity}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{GetPlayerEntity()}{GetPlayerEntity()}}
+{\footnotesize\ttfamily \label{classLevelSystem_a58a12d9e7eb3781b3976c42ba04a62b0} 
+entt::\+entity Level\+System::\+\+Get\+Player\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00122}{122}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a3e6320da6531e2929c3d8a78e359ac24}\index{LevelSystem@{LevelSystem}!SetWorldBounds@{SetWorldBounds}}
+\index{SetWorldBounds@{SetWorldBounds}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{SetWorldBounds()}{SetWorldBounds()}}
+{\footnotesize\ttfamily \label{classLevelSystem_a3e6320da6531e2929c3d8a78e359ac24} 
+void Level\+System::\+\+Set\+World\+Bounds (\begin{DoxyParamCaption}\item[{float}]{minX}{, }\item[{float}]{maxX}{, }\item[{float}]{minY}{, }\item[{float}]{maxY}{}\end{DoxyParamCaption})}
+
+
+
+Sets the world bounds (does NOT create the \doxylink{classGameWorld}{Game\+World}). 
+
+Sets the world bounds.
+
+The \doxylink{classGameWorld}{Game\+World} is created by the scene after the level is built.
+
+
+\begin{DoxyParams}{Parameters}
+{\em minX} & Minimum X coordinate. \\
+\hline
+{\em maxX} & Maximum X coordinate. \\
+\hline
+{\em minY} & Minimum Y coordinate. \\
+\hline
+{\em maxY} & Maximum Y coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8cpp_source_l00014}{14}} of file \doxymbox{\hyperlink{LevelSystem_8cpp_source}{Level\+System.\+cpp}}.
+
+
+
+\label{classLevelSystem_doc-variable-members}
+\Hypertarget{classLevelSystem_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classLevelSystem_aa2494c86ba64c939dc03980891c646d8}\index{LevelSystem@{LevelSystem}!m\_EnemyDefinitions@{m\_EnemyDefinitions}}
+\index{m\_EnemyDefinitions@{m\_EnemyDefinitions}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_EnemyDefinitions}{m\_EnemyDefinitions}}
+{\footnotesize\ttfamily \label{classLevelSystem_aa2494c86ba64c939dc03980891c646d8} 
+std::\+vector$<$\doxymbox{\hyperlink{structLevelSystem_1_1EnemyDefinition}{Enemy\+Definition}}$>$ Level\+System::\+m\+\_\+\+Enemy\+Definitions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00139}{139}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a21f4aeea06b4c7427eda4418094b116c}\index{LevelSystem@{LevelSystem}!m\_EnemyEntities@{m\_EnemyEntities}}
+\index{m\_EnemyEntities@{m\_EnemyEntities}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_EnemyEntities}{m\_EnemyEntities}}
+{\footnotesize\ttfamily \label{classLevelSystem_a21f4aeea06b4c7427eda4418094b116c} 
+std::\+vector$<$entt::\+entity$>$ Level\+System::\+m\+\_\+\+Enemy\+Entities\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00138}{138}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a7c91d5ae725b59c2b21829be61b05129}\index{LevelSystem@{LevelSystem}!m\_EnemyTex@{m\_EnemyTex}}
+\index{m\_EnemyTex@{m\_EnemyTex}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_EnemyTex}{m\_EnemyTex}}
+{\footnotesize\ttfamily \label{classLevelSystem_a7c91d5ae725b59c2b21829be61b05129} 
+std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classTexture2D}{Texture2D}}$>$ Level\+System::\+m\+\_\+\+Enemy\+Tex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00131}{131}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a471eaf3314955832389dc96aa0b2c668}\index{LevelSystem@{LevelSystem}!m\_MaxX@{m\_MaxX}}
+\index{m\_MaxX@{m\_MaxX}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_MaxX}{m\_MaxX}}
+{\footnotesize\ttfamily \label{classLevelSystem_a471eaf3314955832389dc96aa0b2c668} 
+float Level\+System::\+m\+\_\+\+MaxX = 20.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00133}{133}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a53e01a0809e2aef16469a04f3de101be}\index{LevelSystem@{LevelSystem}!m\_MaxY@{m\_MaxY}}
+\index{m\_MaxY@{m\_MaxY}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_MaxY}{m\_MaxY}}
+{\footnotesize\ttfamily \label{classLevelSystem_a53e01a0809e2aef16469a04f3de101be} 
+float Level\+System::\+m\+\_\+\+MaxY = 10.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00134}{134}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a7ee740d1275dc8de3f4cfbe0f5d4d37e}\index{LevelSystem@{LevelSystem}!m\_MinX@{m\_MinX}}
+\index{m\_MinX@{m\_MinX}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_MinX}{m\_MinX}}
+{\footnotesize\ttfamily \label{classLevelSystem_a7ee740d1275dc8de3f4cfbe0f5d4d37e} 
+float Level\+System::\+m\+\_\+\+MinX = -\/20.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00133}{133}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_ab3ec7fcdfc2ea8e3b1cae73cdea66284}\index{LevelSystem@{LevelSystem}!m\_MinY@{m\_MinY}}
+\index{m\_MinY@{m\_MinY}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_MinY}{m\_MinY}}
+{\footnotesize\ttfamily \label{classLevelSystem_ab3ec7fcdfc2ea8e3b1cae73cdea66284} 
+float Level\+System::\+m\+\_\+\+MinY = -\/10.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00134}{134}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a7583ed8df68e766a29c522cfc1719df9}\index{LevelSystem@{LevelSystem}!m\_PlatformEntities@{m\_PlatformEntities}}
+\index{m\_PlatformEntities@{m\_PlatformEntities}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_PlatformEntities}{m\_PlatformEntities}}
+{\footnotesize\ttfamily \label{classLevelSystem_a7583ed8df68e766a29c522cfc1719df9} 
+std::\+vector$<$entt::\+entity$>$ Level\+System::\+m\+\_\+\+Platform\+Entities\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00137}{137}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a3360d59adae5259447c161bf3050899c}\index{LevelSystem@{LevelSystem}!m\_PlayerEntity@{m\_PlayerEntity}}
+\index{m\_PlayerEntity@{m\_PlayerEntity}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_PlayerEntity}{m\_PlayerEntity}}
+{\footnotesize\ttfamily \label{classLevelSystem_a3360d59adae5259447c161bf3050899c} 
+entt::\+entity Level\+System::\+m\+\_\+\+Player\+Entity = entt::\+null\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00136}{136}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_ab69f9cb52128e9c8c54f3d7ca50c77ac}\index{LevelSystem@{LevelSystem}!m\_PlayerTex@{m\_PlayerTex}}
+\index{m\_PlayerTex@{m\_PlayerTex}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_PlayerTex}{m\_PlayerTex}}
+{\footnotesize\ttfamily \label{classLevelSystem_ab69f9cb52128e9c8c54f3d7ca50c77ac} 
+std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classTexture2D}{Texture2D}}$>$ Level\+System::\+m\+\_\+\+Player\+Tex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00129}{129}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_a3264e9b899873ac854f0759d3103aeac}\index{LevelSystem@{LevelSystem}!m\_Scene@{m\_Scene}}
+\index{m\_Scene@{m\_Scene}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_Scene}{m\_Scene}}
+{\footnotesize\ttfamily \label{classLevelSystem_a3264e9b899873ac854f0759d3103aeac} 
+\doxymbox{\hyperlink{classECSScene}{ECSScene}}\& Level\+System::\+m\+\_\+\+Scene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00128}{128}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+\Hypertarget{classLevelSystem_ab03cdacf2090d7c234bb91c8b005ef03}\index{LevelSystem@{LevelSystem}!m\_TileTex@{m\_TileTex}}
+\index{m\_TileTex@{m\_TileTex}!LevelSystem@{LevelSystem}}
+\doxysubsubsection{\texorpdfstring{m\_TileTex}{m\_TileTex}}
+{\footnotesize\ttfamily \label{classLevelSystem_ab03cdacf2090d7c234bb91c8b005ef03} 
+std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classTexture2D}{Texture2D}}$>$ Level\+System::\+m\+\_\+\+Tile\+Tex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{LevelSystem_8h_source_l00130}{130}} of file \doxymbox{\hyperlink{LevelSystem_8h_source}{Level\+System.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+engine/\+systems/\doxymbox{\hyperlink{LevelSystem_8h}{Level\+System.\+h}}\item 
+engine/\+systems/\doxymbox{\hyperlink{LevelSystem_8cpp}{Level\+System.\+cpp}}\end{DoxyCompactItemize}

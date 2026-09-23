@@ -17,12 +17,22 @@ m_Builder(builder), m_LevelName(levelName), m_CameraMode(cameraMode){}
 
 BaseLevelScene::~BaseLevelScene(){ OnExit(); }
 
+/**
+ * @brief Called when the scene becomes active.
+ *
+ * Sets the clear color and builds the level.
+ */
 void BaseLevelScene::OnEnter(){
     Log::Info("Entering BaseLevelScene: " + m_LevelName);
     glClearColor(0.3f, 0.5f, 0.7f, 1.0f);
     SetupScene();
 }
 
+/**
+ * @brief Called when the scene is exited.
+ *
+ * Releases all resources and clears entity lists.
+ */
 void BaseLevelScene::OnExit(){
     m_CameraController.reset();
     m_PlayerController.reset();
@@ -35,6 +45,15 @@ void BaseLevelScene::OnExit(){
     Log::Info("Exiting BaseLevelScene: " + m_LevelName);
 }
 
+/**
+ * @brief Called when the window is resized.
+ *
+ * For Fixed camera: recompute projection from world bounds (keep everything visible).
+ * For Follow camera: keep vertical extent constant, adjust horizontal by aspect.
+ *
+ * @param width New window width in pixels.
+ * @param height New window height in pixels.
+ */
 void BaseLevelScene::OnResize(int width, int height){
     if(!m_World) return;
 
@@ -50,6 +69,13 @@ void BaseLevelScene::OnResize(int width, int height){
     m_Camera.Update();
 }
 
+/**
+ * @brief Builds the level and initializes all controllers.
+ *
+ * Loads textures, calls the level builder function, creates the GameWorld
+ * from the bounds registered by the LevelSystem, configures the camera
+ * (Fixed or Follow), and initializes the player controller.
+ */
 void BaseLevelScene::SetupScene(){
     m_ECSScene = std::make_unique<ECSScene>(m_Shader, m_VertexArray, m_IndexBuffer);
 
@@ -114,6 +140,10 @@ void BaseLevelScene::SetupScene(){
                           m_LevelName, m_PlatformEntities.size(), m_EnemyEntities.size()));
 }
 
+/**
+ * @brief Updates the level: player, enemies, collisions, camera.
+ * @param deltaTime Time elapsed since the last frame.
+ */
 void BaseLevelScene::Update(float deltaTime){
     //ESC: back to level selector
     if(Input::IsKeyPressed(SDL_SCANCODE_ESCAPE)){
@@ -145,6 +175,9 @@ void BaseLevelScene::Update(float deltaTime){
     m_FpsCounter->Update();
 }
 
+/**
+ * @brief Renders the scene: entities and world borders.
+ */
 void BaseLevelScene::Render(){
     if(!m_ECSScene) return;
 
@@ -155,6 +188,11 @@ void BaseLevelScene::Render(){
     m_World->Render(m_LineShader, view, projection);
 }
 
+/**
+ * @brief Resolves player-platform collisions using AABB.
+ *
+ * Handles both landing (player above platform) and ceiling hits (player below).
+ */
 void BaseLevelScene::ResolveCollisions(){
     auto& registry = m_ECSScene->GetRegistry();
     auto& playerTransform = registry.get<Components::Transform>(m_PlayerEntity);
@@ -199,10 +237,20 @@ void BaseLevelScene::ResolveCollisions(){
 
             if(overlap.x > 0.0f && overlap.y > 0.0f){
                 if(overlap.x < overlap.y){
+                    //Horizontal resolution (player and platform overlap more vertically)
                     if(delta.x > 0.0f) playerTransform.Position.x += overlap.x;
                     else playerTransform.Position.x -= overlap.x;
                 } else{
-                    if(delta.y < 0.0f){
+                    //Vertical resolution (player and platform overlap more horizontally)
+                    if(delta.y > 0.0f){
+                        //Player center is above platform center: push up (landing/spawned inside)
+                        playerTransform.Position.y += overlap.y;
+                        if(m_PlayerController->GetVelocity().y < 0.0f){
+                            m_PlayerController->GetVelocity().y = 0.0f;
+                        }
+                        grounded = true;
+                    } else{
+                        //Player center is below platform center: push down (hit from underneath)
                         playerTransform.Position.y -= overlap.y;
                         if(m_PlayerController->GetVelocity().y > 0.0f){
                             m_PlayerController->GetVelocity().y = 0.0f;
@@ -213,6 +261,7 @@ void BaseLevelScene::ResolveCollisions(){
         }
     }
 
+    //Clamp to world floor
     if(!grounded){
         float worldFloor = m_World->GetMinY() + playerHalfSize.y;
         if(playerTransform.Position.y <= worldFloor + GROUND_MARGIN){
@@ -227,6 +276,12 @@ void BaseLevelScene::ResolveCollisions(){
     m_PlayerController->SetGrounded(grounded);
 }
 
+/**
+ * @brief Checks collisions between the player and all enemies.
+ *
+ * Applies stomping if the player is falling and hits an enemy from above;
+ * otherwise kills the player and respawns all enemies.
+ */
 void BaseLevelScene::CheckEnemyCollisions(){
     auto& registry = m_ECSScene->GetRegistry();
     auto& playerTransform = registry.get<Components::Transform>(m_PlayerEntity);
@@ -252,10 +307,12 @@ void BaseLevelScene::CheckEnemyCollisions(){
         bool isFalling = (m_PlayerController->GetVelocity().y < 0.0f);
 
         if(isFalling && isAbove){
+            //Stomp enemy
             DestroyEnemy(entity);
             m_PlayerController->GetVelocity().y = 5.0f;
             Log::Info("Enemy stomped!");
         } else{
+            //Player dies and all enemies respawn
             m_PlayerController->Die("Killed by enemy");
             RespawnEnemies();
             break;
@@ -263,6 +320,10 @@ void BaseLevelScene::CheckEnemyCollisions(){
     }
 }
 
+/**
+ * @brief Destroys an enemy entity.
+ * @param enemy The enemy entity to destroy.
+ */
 void BaseLevelScene::DestroyEnemy(entt::entity enemy){
     auto& registry = m_ECSScene->GetRegistry();
     if(registry.all_of<Components::Enemy>(enemy)){
@@ -273,6 +334,9 @@ void BaseLevelScene::DestroyEnemy(entt::entity enemy){
     registry.destroy(enemy);
 }
 
+/**
+ * @brief Respawns all enemies from their saved definitions.
+ */
 void BaseLevelScene::RespawnEnemies(){
     for(entt::entity e : m_EnemyEntities) m_ECSScene->GetRegistry().destroy(e);
     m_EnemyEntities.clear();

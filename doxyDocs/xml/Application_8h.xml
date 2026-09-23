@@ -22,6 +22,7 @@
     <includes refid="ECSScene_8h" local="yes">scene/ECSScene.h</includes>
     <includes refid="SceneManager_8h" local="yes">scene/SceneManager.h</includes>
     <includes refid="GameWorld_8h" local="yes">scene/GameWorld.h</includes>
+    <includes refid="HUD_8h" local="yes">scene/HUD.h</includes>
     <includes local="no">entt.hpp</includes>
     <includes local="no">memory</includes>
     <includedby refid="Application_8cpp" local="yes">engine/core/Application.cpp</includedby>
@@ -84,6 +85,8 @@
         <childnode refid="38" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
@@ -176,6 +179,18 @@
         <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>graphics/Font.h</label>
+        <link refid="Font_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="34">
@@ -318,10 +333,34 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
+      <node id="41">
+        <label>scene/HUD.h</label>
+        <link refid="HUD_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
       <node id="39">
         <label>scene/Scene.h</label>
         <link refid="Scene_8h"/>
         <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
         </childnode>
       </node>
       <node id="38">
@@ -336,6 +375,9 @@
       </node>
       <node id="4">
         <label>SDL3/SDL.h</label>
+      </node>
+      <node id="43">
+        <label>SDL3_ttf/SDL_ttf.h</label>
       </node>
       <node id="12">
         <label>cmath</label>
@@ -420,38 +462,40 @@
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ECSScene_8h" kindref="compound">scene/ECSScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="SceneManager_8h" kindref="compound">scene/SceneManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GameWorld_8h" kindref="compound">scene/GameWorld.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;entt.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37" refid="classApplication" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" kindref="member">Application</ref>{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="39" refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" kindref="member">Application</ref>();</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" kindref="member">~Application</ref>();</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a00d10eb756046bb9a02494ca7362013e" kindref="member">Initialize</ref>();</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" kindref="member">Run</ref>();</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a817892cf56c1c333d53be31e73e8c2f8" kindref="member">Shutdown</ref>();</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67" refid="classApplication_1a0f448032d2de38aaf84309848afd37c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSceneManager" kindref="compound">SceneManager</ref>&amp;<sp/><ref refid="classApplication_1a0f448032d2de38aaf84309848afd37c5" kindref="member">GetSceneManager</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a515a967a0aba4f893e8738519dc00cec" kindref="member">m_SceneManager</ref>;<sp/>}</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73" refid="classApplication_1a3ee5aff75ba546ab029d8ad0ca89e503" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGraphicsContext" kindref="compound">GraphicsContext</ref>&amp;<sp/><ref refid="classApplication_1a3ee5aff75ba546ab029d8ad0ca89e503" kindref="member">GetGraphicsContext</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="classApplication_1afb633069c0774e759f1d7cc1926983a8" kindref="member">m_Graphics</ref>;<sp/>}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79" refid="classApplication_1a81b3570c39db00025f48b2714f9d52e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D" kindref="compound">Camera2D</ref>&amp;<sp/><ref refid="classApplication_1a81b3570c39db00025f48b2714f9d52e1" kindref="member">GetCamera</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="classApplication_1ab79c0f4ff811927c17530ab510f25481" kindref="member">m_Camera</ref>;<sp/>}</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="82" refid="classApplication_1a126a310227b213e720cc4596d7e1aadf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEngine" kindref="compound">Engine</ref><sp/><ref refid="classApplication_1a126a310227b213e720cc4596d7e1aadf" kindref="member">m_Engine</ref>;<sp/></highlight><highlight class="comment">//Window<sp/>and<sp/>SDL<sp/>management</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="83" refid="classApplication_1afb633069c0774e759f1d7cc1926983a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GraphicsContext&gt;<sp/><ref refid="classApplication_1afb633069c0774e759f1d7cc1926983a8" kindref="member">m_Graphics</ref>;<sp/></highlight><highlight class="comment">//OpenGL<sp/>shaders<sp/>and<sp/>buffers</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="84" refid="classApplication_1ab79c0f4ff811927c17530ab510f25481" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Camera2D&gt;<sp/><ref refid="classApplication_1ab79c0f4ff811927c17530ab510f25481" kindref="member">m_Camera</ref>;<sp/></highlight><highlight class="comment">//2D<sp/>camera<sp/>for<sp/>rendering</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="85" refid="classApplication_1a682a91f7e9cb6072807dd7a6f14ef345" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;FpsCounter&gt;<sp/><ref refid="classApplication_1a682a91f7e9cb6072807dd7a6f14ef345" kindref="member">m_FpsCounter</ref>;<sp/></highlight><highlight class="comment">//FPS<sp/>measurement<sp/>and<sp/>logging</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86" refid="classApplication_1a3e23ce99f0bb67f879a477d73c046f96" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GameWorld&gt;<sp/><ref refid="classApplication_1a3e23ce99f0bb67f879a477d73c046f96" kindref="member">m_World</ref>;<sp/></highlight><highlight class="comment">//World<sp/>boundaries<sp/>and<sp/>clamping</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87" refid="classApplication_1a515a967a0aba4f893e8738519dc00cec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSceneManager" kindref="compound">SceneManager</ref><sp/><ref refid="classApplication_1a515a967a0aba4f893e8738519dc00cec" kindref="member">m_SceneManager</ref>;<sp/></highlight><highlight class="comment">//Scene<sp/>stack<sp/>management</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1afe51e6248cd234f53bb78f18fb7c52e5" kindref="member">ProcessEvents</ref>();<sp/></highlight><highlight class="comment">//Handles<sp/>SDL<sp/>event<sp/>polling</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a6f40ffdb97f3a938ae19ea4eae4882ed" kindref="member">Render</ref>();<sp/></highlight><highlight class="comment">//Renders<sp/>the<sp/>current<sp/>scene</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a72f9820ca25c093f6c2c4b2812f6a2a4" kindref="member">Update</ref>();<sp/></highlight><highlight class="comment">//Updates<sp/>all<sp/>systems<sp/>for<sp/>the<sp/>current<sp/>frame</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="HUD_8h" kindref="compound">scene/HUD.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;entt.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classApplication" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" kindref="member">Application</ref>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40" refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" kindref="member">Application</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" kindref="member">~Application</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a00d10eb756046bb9a02494ca7362013e" kindref="member">Initialize</ref>();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" kindref="member">Run</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a817892cf56c1c333d53be31e73e8c2f8" kindref="member">Shutdown</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classApplication_1a0f448032d2de38aaf84309848afd37c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSceneManager" kindref="compound">SceneManager</ref>&amp;<sp/><ref refid="classApplication_1a0f448032d2de38aaf84309848afd37c5" kindref="member">GetSceneManager</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a515a967a0aba4f893e8738519dc00cec" kindref="member">m_SceneManager</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classApplication_1a3ee5aff75ba546ab029d8ad0ca89e503" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classGraphicsContext" kindref="compound">GraphicsContext</ref>&amp;<sp/><ref refid="classApplication_1a3ee5aff75ba546ab029d8ad0ca89e503" kindref="member">GetGraphicsContext</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="classApplication_1afb633069c0774e759f1d7cc1926983a8" kindref="member">m_Graphics</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classApplication_1a81b3570c39db00025f48b2714f9d52e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classCamera2D" kindref="compound">Camera2D</ref>&amp;<sp/><ref refid="classApplication_1a81b3570c39db00025f48b2714f9d52e1" kindref="member">GetCamera</ref>(){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="classApplication_1ab79c0f4ff811927c17530ab510f25481" kindref="member">m_Camera</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="83" refid="classApplication_1a126a310227b213e720cc4596d7e1aadf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEngine" kindref="compound">Engine</ref><sp/><ref refid="classApplication_1a126a310227b213e720cc4596d7e1aadf" kindref="member">m_Engine</ref>;<sp/></highlight><highlight class="comment">//Window<sp/>and<sp/>SDL<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="classApplication_1afb633069c0774e759f1d7cc1926983a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GraphicsContext&gt;<sp/><ref refid="classApplication_1afb633069c0774e759f1d7cc1926983a8" kindref="member">m_Graphics</ref>;<sp/></highlight><highlight class="comment">//OpenGL<sp/>shaders<sp/>and<sp/>buffers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classApplication_1ab79c0f4ff811927c17530ab510f25481" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Camera2D&gt;<sp/><ref refid="classApplication_1ab79c0f4ff811927c17530ab510f25481" kindref="member">m_Camera</ref>;<sp/></highlight><highlight class="comment">//2D<sp/>camera<sp/>for<sp/>rendering</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classApplication_1a682a91f7e9cb6072807dd7a6f14ef345" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;FpsCounter&gt;<sp/><ref refid="classApplication_1a682a91f7e9cb6072807dd7a6f14ef345" kindref="member">m_FpsCounter</ref>;<sp/></highlight><highlight class="comment">//FPS<sp/>measurement<sp/>and<sp/>logging</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classApplication_1a3e23ce99f0bb67f879a477d73c046f96" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GameWorld&gt;<sp/><ref refid="classApplication_1a3e23ce99f0bb67f879a477d73c046f96" kindref="member">m_World</ref>;<sp/></highlight><highlight class="comment">//World<sp/>boundaries<sp/>and<sp/>clamping</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classApplication_1a515a967a0aba4f893e8738519dc00cec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSceneManager" kindref="compound">SceneManager</ref><sp/><ref refid="classApplication_1a515a967a0aba4f893e8738519dc00cec" kindref="member">m_SceneManager</ref>;<sp/></highlight><highlight class="comment">//Scene<sp/>stack<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classApplication_1a1d855757f4b1bc12b70bcb2409d4bb9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;HUD&gt;<sp/><ref refid="classApplication_1a1d855757f4b1bc12b70bcb2409d4bb9e" kindref="member">m_HUD</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1afe51e6248cd234f53bb78f18fb7c52e5" kindref="member">ProcessEvents</ref>();<sp/></highlight><highlight class="comment">//Handles<sp/>SDL<sp/>event<sp/>polling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a6f40ffdb97f3a938ae19ea4eae4882ed" kindref="member">Render</ref>();<sp/></highlight><highlight class="comment">//Renders<sp/>the<sp/>current<sp/>scene</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classApplication_1a72f9820ca25c093f6c2c4b2812f6a2a4" kindref="member">Update</ref>();<sp/></highlight><highlight class="comment">//Updates<sp/>all<sp/>systems<sp/>for<sp/>the<sp/>current<sp/>frame</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">};</highlight></codeline>
     </programlisting>
     <location file="engine/core/Application.h"/>
   </compounddef>

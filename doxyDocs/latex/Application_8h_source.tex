@@ -24,37 +24,39 @@
 \DoxyCodeLine{\Hypertarget{Application_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{ECSScene_8h}{scene/ECSScene.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{Application_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{SceneManager_8h}{scene/SceneManager.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{Application_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{GameWorld_8h}{scene/GameWorld.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <entt.hpp>}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <memory>}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00037}\doxymbox{\hyperlink{classApplication}{00037}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classApplication_afa8cc05ce6b6092be5ecdfdae44e05f8}{Application}}\{}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00038}00038\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00039}\doxymbox{\hyperlink{classApplication_afa8cc05ce6b6092be5ecdfdae44e05f8}{00039}}\ \ \ \ \ \doxymbox{\hyperlink{classApplication_afa8cc05ce6b6092be5ecdfdae44e05f8}{Application}}();}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00040}00040\ \ \ \ \ \doxymbox{\hyperlink{classApplication_afa8cc05ce6b6092be5ecdfdae44e05f8}{\string~Application}}();}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classApplication_a00d10eb756046bb9a02494ca7362013e}{Initialize}}();}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_aaf09cd6cb412086dc039e28cdb059f0d}{Run}}();}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a817892cf56c1c333d53be31e73e8c2f8}{Shutdown}}();}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00067}\doxymbox{\hyperlink{classApplication_a0f448032d2de38aaf84309848afd37c5}{00067}}\ \ \ \ \ \doxymbox{\hyperlink{classSceneManager}{SceneManager}}\&\ \doxymbox{\hyperlink{classApplication_a0f448032d2de38aaf84309848afd37c5}{GetSceneManager}}()\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\_SceneManager}};\ \}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00073}\doxymbox{\hyperlink{classApplication_a3ee5aff75ba546ab029d8ad0ca89e503}{00073}}\ \ \ \ \ \doxymbox{\hyperlink{classGraphicsContext}{GraphicsContext}}\&\ \doxymbox{\hyperlink{classApplication_a3ee5aff75ba546ab029d8ad0ca89e503}{GetGraphicsContext}}()\{\ \textcolor{keywordflow}{return}\ *\doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}};\ \}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00079}\doxymbox{\hyperlink{classApplication_a81b3570c39db00025f48b2714f9d52e1}{00079}}\ \ \ \ \ \doxymbox{\hyperlink{classCamera2D}{Camera2D}}\&\ \doxymbox{\hyperlink{classApplication_a81b3570c39db00025f48b2714f9d52e1}{GetCamera}}()\{\ \textcolor{keywordflow}{return}\ *\doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}};\ \}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00081}00081\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00082}\doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{00082}}\ \ \ \ \ \doxymbox{\hyperlink{classEngine}{Engine}}\ \doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{m\_Engine}};\ \textcolor{comment}{//Window\ and\ SDL\ management}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00083}\doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{00083}}\ \ \ \ \ std::unique\_ptr<GraphicsContext>\ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}};\ \textcolor{comment}{//OpenGL\ shaders\ and\ buffers}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00084}\doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{00084}}\ \ \ \ \ std::unique\_ptr<Camera2D>\ \doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}};\ \textcolor{comment}{//2D\ camera\ for\ rendering}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00085}\doxymbox{\hyperlink{classApplication_a682a91f7e9cb6072807dd7a6f14ef345}{00085}}\ \ \ \ \ std::unique\_ptr<FpsCounter>\ \doxymbox{\hyperlink{classApplication_a682a91f7e9cb6072807dd7a6f14ef345}{m\_FpsCounter}};\ \textcolor{comment}{//FPS\ measurement\ and\ logging}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00086}\doxymbox{\hyperlink{classApplication_a3e23ce99f0bb67f879a477d73c046f96}{00086}}\ \ \ \ \ std::unique\_ptr<GameWorld>\ \doxymbox{\hyperlink{classApplication_a3e23ce99f0bb67f879a477d73c046f96}{m\_World}};\ \textcolor{comment}{//World\ boundaries\ and\ clamping}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00087}\doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{00087}}\ \ \ \ \ \doxymbox{\hyperlink{classSceneManager}{SceneManager}}\ \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\_SceneManager}};\ \textcolor{comment}{//Scene\ stack\ management}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00088}00088\ }
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_afe51e6248cd234f53bb78f18fb7c52e5}{ProcessEvents}}();\ \textcolor{comment}{//Handles\ SDL\ event\ polling}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a6f40ffdb97f3a938ae19ea4eae4882ed}{Render}}();\ \textcolor{comment}{//Renders\ the\ current\ scene}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00091}00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a72f9820ca25c093f6c2c4b2812f6a2a4}{Update}}();\ \textcolor{comment}{//Updates\ all\ systems\ for\ the\ current\ frame}}
-\DoxyCodeLine{\Hypertarget{Application_8h_source_l00092}00092\ \};}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{HUD_8h}{scene/HUD.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <entt.hpp>}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00038}\doxymbox{\hyperlink{classApplication}{00038}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classApplication_afa8cc05ce6b6092be5ecdfdae44e05f8}{Application}}\{}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00039}00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00040}\doxymbox{\hyperlink{classApplication_afa8cc05ce6b6092be5ecdfdae44e05f8}{00040}}\ \ \ \ \ \doxymbox{\hyperlink{classApplication_afa8cc05ce6b6092be5ecdfdae44e05f8}{Application}}();}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00041}00041\ \ \ \ \ \doxymbox{\hyperlink{classApplication_afa8cc05ce6b6092be5ecdfdae44e05f8}{\string~Application}}();}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classApplication_a00d10eb756046bb9a02494ca7362013e}{Initialize}}();}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_aaf09cd6cb412086dc039e28cdb059f0d}{Run}}();}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a817892cf56c1c333d53be31e73e8c2f8}{Shutdown}}();}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00068}\doxymbox{\hyperlink{classApplication_a0f448032d2de38aaf84309848afd37c5}{00068}}\ \ \ \ \ \doxymbox{\hyperlink{classSceneManager}{SceneManager}}\&\ \doxymbox{\hyperlink{classApplication_a0f448032d2de38aaf84309848afd37c5}{GetSceneManager}}()\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\_SceneManager}};\ \}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00074}\doxymbox{\hyperlink{classApplication_a3ee5aff75ba546ab029d8ad0ca89e503}{00074}}\ \ \ \ \ \doxymbox{\hyperlink{classGraphicsContext}{GraphicsContext}}\&\ \doxymbox{\hyperlink{classApplication_a3ee5aff75ba546ab029d8ad0ca89e503}{GetGraphicsContext}}()\{\ \textcolor{keywordflow}{return}\ *\doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}};\ \}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00080}\doxymbox{\hyperlink{classApplication_a81b3570c39db00025f48b2714f9d52e1}{00080}}\ \ \ \ \ \doxymbox{\hyperlink{classCamera2D}{Camera2D}}\&\ \doxymbox{\hyperlink{classApplication_a81b3570c39db00025f48b2714f9d52e1}{GetCamera}}()\{\ \textcolor{keywordflow}{return}\ *\doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}};\ \}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00082}00082\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00083}\doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{00083}}\ \ \ \ \ \doxymbox{\hyperlink{classEngine}{Engine}}\ \doxymbox{\hyperlink{classApplication_a126a310227b213e720cc4596d7e1aadf}{m\_Engine}};\ \textcolor{comment}{//Window\ and\ SDL\ management}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00084}\doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{00084}}\ \ \ \ \ std::unique\_ptr<GraphicsContext>\ \doxymbox{\hyperlink{classApplication_afb633069c0774e759f1d7cc1926983a8}{m\_Graphics}};\ \textcolor{comment}{//OpenGL\ shaders\ and\ buffers}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00085}\doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{00085}}\ \ \ \ \ std::unique\_ptr<Camera2D>\ \doxymbox{\hyperlink{classApplication_ab79c0f4ff811927c17530ab510f25481}{m\_Camera}};\ \textcolor{comment}{//2D\ camera\ for\ rendering}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00086}\doxymbox{\hyperlink{classApplication_a682a91f7e9cb6072807dd7a6f14ef345}{00086}}\ \ \ \ \ std::unique\_ptr<FpsCounter>\ \doxymbox{\hyperlink{classApplication_a682a91f7e9cb6072807dd7a6f14ef345}{m\_FpsCounter}};\ \textcolor{comment}{//FPS\ measurement\ and\ logging}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00087}\doxymbox{\hyperlink{classApplication_a3e23ce99f0bb67f879a477d73c046f96}{00087}}\ \ \ \ \ std::unique\_ptr<GameWorld>\ \doxymbox{\hyperlink{classApplication_a3e23ce99f0bb67f879a477d73c046f96}{m\_World}};\ \textcolor{comment}{//World\ boundaries\ and\ clamping}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00088}\doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{00088}}\ \ \ \ \ \doxymbox{\hyperlink{classSceneManager}{SceneManager}}\ \doxymbox{\hyperlink{classApplication_a515a967a0aba4f893e8738519dc00cec}{m\_SceneManager}};\ \textcolor{comment}{//Scene\ stack\ management}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00089}\doxymbox{\hyperlink{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e}{00089}}\ \ \ \ \ std::unique\_ptr<HUD>\ \doxymbox{\hyperlink{classApplication_a1d855757f4b1bc12b70bcb2409d4bb9e}{m\_HUD}};}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00091}00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_afe51e6248cd234f53bb78f18fb7c52e5}{ProcessEvents}}();\ \textcolor{comment}{//Handles\ SDL\ event\ polling}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a6f40ffdb97f3a938ae19ea4eae4882ed}{Render}}();\ \textcolor{comment}{//Renders\ the\ current\ scene}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00093}00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classApplication_a72f9820ca25c093f6c2c4b2812f6a2a4}{Update}}();\ \textcolor{comment}{//Updates\ all\ systems\ for\ the\ current\ frame}}
+\DoxyCodeLine{\Hypertarget{Application_8h_source_l00094}00094\ \};}
 
 \end{DoxyCode}

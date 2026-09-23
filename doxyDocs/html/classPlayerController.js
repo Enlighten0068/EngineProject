@@ -17,6 +17,7 @@ var classPlayerController =
     [ "m_JumpTimer", "classPlayerController.html#ae0e4240a0fad2c55cdf0b96e4450e83d", null ],
     [ "m_PlayerEntity", "classPlayerController.html#a91f7e14f412fb0a338d50227b8d77dc7", null ],
     [ "m_Registry", "classPlayerController.html#ad586858eeaf73156678220adde0dfc65", null ],
+    [ "m_SpawnPosition", "classPlayerController.html#a70fe08e779f88d190a8e8a3982aaefdc", null ],
     [ "m_Speed", "classPlayerController.html#a552c0308cb0226c7862d99c04f68357a", null ],
     [ "m_Velocity", "classPlayerController.html#ab868cf3ab7193e241e0b9eaffa1f6995", null ],
     [ "m_WasGrounded", "classPlayerController.html#a2b4f8434fdc256669b54c8ac8f7d6aeb", null ],

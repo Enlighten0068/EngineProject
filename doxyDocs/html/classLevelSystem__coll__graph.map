@@ -1,0 +1,11 @@
+<map id="LevelSystem" name="LevelSystem">
+<area shape="rect" id="Node000001" title="System that provides a high&#45;level API for building game levels." alt="" coords="156,631,332,1217"/>
+<area shape="rect" id="Node000002" href="$classECSScene.html" title="Scene class that manages an ECS registry with sprite entities." alt="" coords="166,396,322,558"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,555,247,615,241,614,243,561"/>
+<area shape="rect" id="Node000003" href="$classShader.html" title="OpenGL shader program wrapper." alt="" coords="5,5,157,323"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="136,321,163,371,170,382,164,383,158,374,136,326"/>
+<area shape="rect" id="Node000004" href="$classVertexArray.html" title="OpenGL Vertex Array Object (VAO) wrapper." alt="" coords="181,95,307,234"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="244,231,247,380,241,379,244,236"/>
+<area shape="rect" id="Node000005" href="$classIndexBuffer.html" title="OpenGL Index Buffer Object (EBO/IBO) wrapper." alt="" coords="331,72,455,256"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="393,253,384,316,375,346,362,374,336,409,332,406,358,371,370,344,379,314,391,258"/>
+</map>

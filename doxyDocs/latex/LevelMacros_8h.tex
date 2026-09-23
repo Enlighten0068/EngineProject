@@ -1,0 +1,83 @@
+\doxysection{engine/\+level/\+\+Level\+Macros.h File Reference}
+\hypertarget{LevelMacros_8h}{}\label{LevelMacros_8h}\index{engine/level/LevelMacros.h@{engine/level/LevelMacros.h}}
+{\ttfamily \+\#include "{}level/\+\+Level\+Registry.\+h"{}}\newline
+Include dependency graph for Level\+Macros.\+h:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LevelMacros_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LevelMacros_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{LevelMacros_8h_abffe427d7a82d716aaeb59f206234302}{REGISTER\+\_\+\+LEVEL}}(id,  display\+Name,  description,  camera\+Mode,  builder\+Fn)
+\item 
+\+\#define \doxymbox{\hyperlink{LevelMacros_8h_ae6304d68c85873f6efff15e730363b4c}{REGISTER\+\_\+\+LEVEL\+\_\+\+NEW}}(id,  display\+Name,  description,  camera\+Mode,  builder\+Fn)
+\begin{DoxyCompactList}\small\item\em Same as REGISTER\+\_\+\+LEVEL but marks the level as "{}new"{} (highlighted). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{LevelMacros_8h_doc-define-members}
+\Hypertarget{LevelMacros_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{LevelMacros_8h_abffe427d7a82d716aaeb59f206234302}\index{LevelMacros.h@{LevelMacros.h}!REGISTER\_LEVEL@{REGISTER\_LEVEL}}
+\index{REGISTER\_LEVEL@{REGISTER\_LEVEL}!LevelMacros.h@{LevelMacros.h}}
+\doxysubsubsection{\texorpdfstring{REGISTER\_LEVEL}{REGISTER\_LEVEL}}
+{\footnotesize\ttfamily \label{LevelMacros_8h_abffe427d7a82d716aaeb59f206234302} 
+\+\#define REGISTER\+\_\+\+LEVEL(\begin{DoxyParamCaption}\item[{}]{id}{, }\item[{}]{display\+Name}{, }\item[{}]{description}{, }\item[{}]{camera\+Mode}{, }\item[{}]{builder\+Fn}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace}\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }LevelRegistrar\_\#\#id\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ LevelRegistrar\_\#\#id()\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ LevelRegistry::GetInstance().Register(\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ displayName,\ description,\ builderFn,\ cameraMode,\ \textcolor{keyword}{false}\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ LevelRegistrar\_\#\#\textcolor{keywordtype}{id}\ g\_LevelRegistrar\_\#\#id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{LevelMacros_8h_source_l00019}{19}} of file \doxymbox{\hyperlink{LevelMacros_8h_source}{Level\+Macros.\+h}}.
+
+\Hypertarget{LevelMacros_8h_ae6304d68c85873f6efff15e730363b4c}\index{LevelMacros.h@{LevelMacros.h}!REGISTER\_LEVEL\_NEW@{REGISTER\_LEVEL\_NEW}}
+\index{REGISTER\_LEVEL\_NEW@{REGISTER\_LEVEL\_NEW}!LevelMacros.h@{LevelMacros.h}}
+\doxysubsubsection{\texorpdfstring{REGISTER\_LEVEL\_NEW}{REGISTER\_LEVEL\_NEW}}
+{\footnotesize\ttfamily \label{LevelMacros_8h_ae6304d68c85873f6efff15e730363b4c} 
+\+\#define REGISTER\+\_\+\+LEVEL\+\_\+\+NEW(\begin{DoxyParamCaption}\item[{}]{id}{, }\item[{}]{display\+Name}{, }\item[{}]{description}{, }\item[{}]{camera\+Mode}{, }\item[{}]{builder\+Fn}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace}\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }LevelRegistrar\_\#\#id\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ LevelRegistrar\_\#\#id()\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ LevelRegistry::GetInstance().Register(\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ displayName,\ description,\ builderFn,\ cameraMode,\ \textcolor{keyword}{true}\ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ LevelRegistrar\_\#\#\textcolor{keywordtype}{id}\ g\_LevelRegistrar\_\#\#id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Same as REGISTER\+\_\+\+LEVEL but marks the level as "{}new"{} (highlighted). 
+
+Used for levels added during a live demo or presentation. 
+
+Definition at line \doxymbox{\hyperlink{LevelMacros_8h_source_l00036}{36}} of file \doxymbox{\hyperlink{LevelMacros_8h_source}{Level\+Macros.\+h}}.
+

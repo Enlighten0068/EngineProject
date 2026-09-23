@@ -16,9 +16,14 @@
 /**
  * @brief Scene that lists all registered levels and lets the player choose one.
  *
- * The list is populated automatically from the LevelRegistry.
+ * The list is populated automatically from the LevelRegistry, so adding a new
+ * level only requires creating a new .cpp with REGISTER_LEVEL and recompiling.
  *
- * Navigation: Up/Down (or W/S) to select, Enter/Space to confirm, Esc to go back.
+ * Navigation: Up/Down (or W/S) to select, Enter/Space to confirm,
+ * ESC to go back to the main menu. Mouse hover highlights the option under
+ * the cursor, and clicking loads it.
+ *
+ * @see LevelRegistry, MenuScene, BaseLevelScene
  */
 class LevelSelectorScene : public Scene{
 public:
@@ -32,6 +37,9 @@ public:
     void Render() override;
     std::string GetName() const override{ return "LevelSelector"; }
 
+    /**
+     * @brief Returns the HUD lines to show in this scene.
+     */
     std::vector<std::string> GetHUDLines() const override{
         return {
             "F11: Toggle Fullscreen",
@@ -40,13 +48,16 @@ public:
     }
 
 private:
+    /**
+     * @brief A single menu option (text label with two textures).
+     */
     struct Option{
-        std::string Label;
-        std::shared_ptr<Texture2D> NormalTexture;
-        std::shared_ptr<Texture2D> SelectedTexture;
-        Vector3D Position;
-        float Width = 0.0f;
-        float Height = 0.0f;
+        std::string Label; //Display text
+        std::shared_ptr<Texture2D> NormalTexture; //Normal state texture
+        std::shared_ptr<Texture2D> SelectedTexture; //Selected/hover state texture
+        Vector3D Position; //World position
+        float Width = 0.0f; //Texture width
+        float Height = 0.0f; //Texture height
     };
 
     SceneManager& m_SceneManager;
@@ -56,12 +67,12 @@ private:
     Camera2D& m_Camera;
     Shader& m_LineShader;
 
-    std::unique_ptr<Font> m_Font;
-    std::vector<Option> m_Options;
-    int m_SelectedOption = 0;
+    std::unique_ptr<Font> m_Font; //Font for rendering text
+    std::vector<Option> m_Options; //Registered levels as options
+    int m_SelectedOption = 0; //Currently selected index
 
-    SDL_Color m_NormalColor = {255, 255, 255, 255};
-    SDL_Color m_SelectedColor = {255, 255, 0, 255};
+    SDL_Color m_NormalColor = {255, 255, 255, 255}; //Normal text color
+    SDL_Color m_SelectedColor = {255, 255, 0, 255}; //Selected text color
 
     std::shared_ptr<Texture2D> CreateTextTexture(const std::string& text, const SDL_Color& color);
     void RenderOption(const Option& option, bool isSelected);

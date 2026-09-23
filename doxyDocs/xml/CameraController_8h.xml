@@ -10,6 +10,7 @@
     <includedby refid="CameraController_8cpp" local="yes">engine/core/CameraController.cpp</includedby>
     <includedby refid="Demo2DFixedScene_8h" local="yes">engine/demo/Demo2DFixedScene.h</includedby>
     <includedby refid="Demo2DScene_8h" local="yes">engine/demo/Demo2DScene.h</includedby>
+    <includedby refid="BaseLevelScene_8h" local="yes">engine/scene/BaseLevelScene.h</includedby>
     <incdepgraph>
       <node id="1">
         <label>engine/core/CameraController.h</label>
@@ -138,7 +139,9 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -156,28 +159,38 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="11">
+      <node id="10">
         <label>engine/demo/Demo2DScene.cpp</label>
         <link refid="Demo2DScene_8cpp"/>
       </node>
-      <node id="10">
+      <node id="9">
         <label>engine/demo/Demo2DScene.h</label>
         <link refid="Demo2DScene_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="9">
-        <label>engine/scene/MenuScene.cpp</label>
-        <link refid="MenuScene_8cpp"/>
+      <node id="12">
+        <label>engine/level/LevelSelectorScene.cpp</label>
+        <link refid="LevelSelectorScene_8cpp"/>
+      </node>
+      <node id="13">
+        <label>engine/scene/BaseLevelScene.cpp</label>
+        <link refid="BaseLevelScene_8cpp"/>
+      </node>
+      <node id="11">
+        <label>engine/scene/BaseLevelScene.h</label>
+        <link refid="BaseLevelScene_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
       </node>
       <node id="5">
         <label>game/src/main.cpp</label>

@@ -83,16 +83,20 @@
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSDLWindow_1a6c60257844fe3a5fe819183539116e40" kindref="member">Create</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>title,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>fullscreen);</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSDLWindow_1ac8f370d73ebfe50529fbbba56c100b4b" kindref="member">Destroy</ref>();</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSDLWindow_1a63de111915a58b28696a6fd1889acec8" kindref="member">SwapBuffers</ref>();</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/>SDL_Window*<sp/><ref refid="classSDLWindow_1ad11eb6f7291bfcedcd7a5cbff75ebd8e" kindref="member">GetNativeWindow</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="52" refid="classSDLWindow_1a4ec4dc1373136604f3d13aac6a9d1b2a" refkind="member"><highlight class="normal"><sp/><sp/>SDL_Window*<sp/><ref refid="classSDLWindow_1a4ec4dc1373136604f3d13aac6a9d1b2a" kindref="member">m_Window</ref>;<sp/></highlight><highlight class="comment">//SDL<sp/>window<sp/>handle</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53" refid="classSDLWindow_1a0ebd46794adf3da5005805893212f8b2" refkind="member"><highlight class="normal"><sp/><sp/>SDL_GLContext<sp/><ref refid="classSDLWindow_1a0ebd46794adf3da5005805893212f8b2" kindref="member">m_Context</ref>;<sp/></highlight><highlight class="comment">//OpenGL<sp/>context<sp/>handle</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSDLWindow_1a91c60ebb91c668a0be1a910734df55c9" kindref="member">ToggleFullscreen</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classSDLWindow_1a088f775d244451c7adb588cd8fce5e26" kindref="member">IsFullscreen</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSDLWindow_1ac8f370d73ebfe50529fbbba56c100b4b" kindref="member">Destroy</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classSDLWindow_1a63de111915a58b28696a6fd1889acec8" kindref="member">SwapBuffers</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>SDL_Window*<sp/><ref refid="classSDLWindow_1ad11eb6f7291bfcedcd7a5cbff75ebd8e" kindref="member">GetNativeWindow</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="64" refid="classSDLWindow_1a4ec4dc1373136604f3d13aac6a9d1b2a" refkind="member"><highlight class="normal"><sp/><sp/>SDL_Window*<sp/><ref refid="classSDLWindow_1a4ec4dc1373136604f3d13aac6a9d1b2a" kindref="member">m_Window</ref>;<sp/></highlight><highlight class="comment">//SDL<sp/>window<sp/>handle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classSDLWindow_1a0ebd46794adf3da5005805893212f8b2" refkind="member"><highlight class="normal"><sp/><sp/>SDL_GLContext<sp/><ref refid="classSDLWindow_1a0ebd46794adf3da5005805893212f8b2" kindref="member">m_Context</ref>;<sp/></highlight><highlight class="comment">//OpenGL<sp/>context<sp/>handle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
     </programlisting>
     <location file="engine/platform/sdl/SDLWindow.h"/>
   </compounddef>

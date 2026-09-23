@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/platform/sdl/SDLWindow.h" line="52" column="14" bodyfile="engine/platform/sdl/SDLWindow.h" bodystart="52" bodyend="-1"/>
+        <location file="engine/platform/sdl/SDLWindow.h" line="64" column="14" bodyfile="engine/platform/sdl/SDLWindow.h" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSDLWindow_1a0ebd46794adf3da5005805893212f8b2" prot="private" static="no" mutable="no">
         <type>SDL_GLContext</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/platform/sdl/SDLWindow.h" line="53" column="17" bodyfile="engine/platform/sdl/SDLWindow.h" bodystart="53" bodyend="-1"/>
+        <location file="engine/platform/sdl/SDLWindow.h" line="65" column="17" bodyfile="engine/platform/sdl/SDLWindow.h" bodystart="65" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -167,6 +167,42 @@ It sets OpenGL attributes (currently version 4.6 Core Profile), then creates the
         </inbodydescription>
         <location file="engine/platform/sdl/SDLWindow.h" line="33" column="8" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="29" bodyend="99"/>
       </memberdef>
+      <memberdef kind="function" id="classSDLWindow_1a91c60ebb91c668a0be1a910734df55c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDLWindow::ToggleFullscreen</definition>
+        <argsstring>()</argsstring>
+        <name>ToggleFullscreen</name>
+        <qualifiedname>SDLWindow::ToggleFullscreen</qualifiedname>
+        <briefdescription>
+<para>Toggles between windowed and fullscreen mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if now fullscreen, false if now windowed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/platform/sdl/SDLWindow.h" line="39" column="8" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="104" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classSDLWindow_1a088f775d244451c7adb588cd8fce5e26" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDLWindow::IsFullscreen</definition>
+        <argsstring>() const</argsstring>
+        <name>IsFullscreen</name>
+        <qualifiedname>SDLWindow::IsFullscreen</qualifiedname>
+        <briefdescription>
+<para>Checks if the window is currently fullscreen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if fullscreen, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="engine/platform/sdl/SDLWindow.h" line="45" column="8" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="122" bodyend="125"/>
+      </memberdef>
       <memberdef kind="function" id="classSDLWindow_1ac8f370d73ebfe50529fbbba56c100b4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void SDLWindow::Destroy</definition>
@@ -182,7 +218,7 @@ It sets OpenGL attributes (currently version 4.6 Core Profile), then creates the
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/platform/sdl/SDLWindow.h" line="38" column="8" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="107" bodyend="117"/>
+        <location file="engine/platform/sdl/SDLWindow.h" line="50" column="8" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="134" bodyend="144"/>
       </memberdef>
       <memberdef kind="function" id="classSDLWindow_1a63de111915a58b28696a6fd1889acec8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -199,7 +235,7 @@ It sets OpenGL attributes (currently version 4.6 Core Profile), then creates the
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/platform/sdl/SDLWindow.h" line="43" column="8" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="124" bodyend="126"/>
+        <location file="engine/platform/sdl/SDLWindow.h" line="55" column="8" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="151" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="classSDLWindow_1ad11eb6f7291bfcedcd7a5cbff75ebd8e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>SDL_Window *</type>
@@ -220,7 +256,7 @@ Used by other systems (e.g., <ref refid="classInput" kindref="compound">Input</r
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="engine/platform/sdl/SDLWindow.h" line="49" column="14" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="135" bodyend="137"/>
+        <location file="engine/platform/sdl/SDLWindow.h" line="61" column="14" bodyfile="engine/platform/sdl/SDLWindow.cpp" bodystart="162" bodyend="164"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -240,15 +276,17 @@ Used by other systems (e.g., <ref refid="classInput" kindref="compound">Input</r
         <link refid="classSDLWindow"/>
       </node>
     </collaborationgraph>
-    <location file="engine/platform/sdl/SDLWindow.h" line="15" column="1" bodyfile="engine/platform/sdl/SDLWindow.h" bodystart="15" bodyend="54"/>
+    <location file="engine/platform/sdl/SDLWindow.h" line="15" column="1" bodyfile="engine/platform/sdl/SDLWindow.h" bodystart="15" bodyend="66"/>
     <listofallmembers>
       <member refid="classSDLWindow_1a6c60257844fe3a5fe819183539116e40" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>Create</name></member>
       <member refid="classSDLWindow_1ac8f370d73ebfe50529fbbba56c100b4b" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>Destroy</name></member>
       <member refid="classSDLWindow_1ad11eb6f7291bfcedcd7a5cbff75ebd8e" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>GetNativeWindow</name></member>
+      <member refid="classSDLWindow_1a088f775d244451c7adb588cd8fce5e26" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>IsFullscreen</name></member>
       <member refid="classSDLWindow_1a0ebd46794adf3da5005805893212f8b2" prot="private" virt="non-virtual"><scope>SDLWindow</scope><name>m_Context</name></member>
       <member refid="classSDLWindow_1a4ec4dc1373136604f3d13aac6a9d1b2a" prot="private" virt="non-virtual"><scope>SDLWindow</scope><name>m_Window</name></member>
       <member refid="classSDLWindow_1ab081329db76eaeaed1716c2e3bad50b2" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>SDLWindow</name></member>
       <member refid="classSDLWindow_1a63de111915a58b28696a6fd1889acec8" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>SwapBuffers</name></member>
+      <member refid="classSDLWindow_1a91c60ebb91c668a0be1a910734df55c9" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>ToggleFullscreen</name></member>
       <member refid="classSDLWindow_1a7a0af0daec54970ff2262b67a6ece281" prot="public" virt="non-virtual"><scope>SDLWindow</scope><name>~SDLWindow</name></member>
     </listofallmembers>
   </compounddef>

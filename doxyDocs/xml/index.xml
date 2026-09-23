@@ -7,6 +7,7 @@
     <member refid="classApplication_1a682a91f7e9cb6072807dd7a6f14ef345" kind="variable"><name>m_FpsCounter</name></member>
     <member refid="classApplication_1a3e23ce99f0bb67f879a477d73c046f96" kind="variable"><name>m_World</name></member>
     <member refid="classApplication_1a515a967a0aba4f893e8738519dc00cec" kind="variable"><name>m_SceneManager</name></member>
+    <member refid="classApplication_1a1d855757f4b1bc12b70bcb2409d4bb9e" kind="variable"><name>m_HUD</name></member>
     <member refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" kind="function"><name>Application</name></member>
     <member refid="classApplication_1a748bca84fefb9c12661cfaa2f623748d" kind="function"><name>~Application</name></member>
     <member refid="classApplication_1a00d10eb756046bb9a02494ca7362013e" kind="function"><name>Initialize</name></member>
@@ -18,6 +19,41 @@
     <member refid="classApplication_1afe51e6248cd234f53bb78f18fb7c52e5" kind="function"><name>ProcessEvents</name></member>
     <member refid="classApplication_1a6f40ffdb97f3a938ae19ea4eae4882ed" kind="function"><name>Render</name></member>
     <member refid="classApplication_1a72f9820ca25c093f6c2c4b2812f6a2a4" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="classBaseLevelScene" kind="class"><name>BaseLevelScene</name>
+    <member refid="classBaseLevelScene_1a77e808a59ebefe66e3af2d06b633660c" kind="typedef"><name>BuilderFn</name></member>
+    <member refid="classBaseLevelScene_1ab1103dfbcb852a26e6576e2e6d050467" kind="variable"><name>m_Shader</name></member>
+    <member refid="classBaseLevelScene_1ad235292db6dd9d29404a56fe2d761f27" kind="variable"><name>m_VertexArray</name></member>
+    <member refid="classBaseLevelScene_1a7c958f5e88c56046ce2317a33aa103b6" kind="variable"><name>m_IndexBuffer</name></member>
+    <member refid="classBaseLevelScene_1af013346ebc9543a97f793bb7a61b4414" kind="variable"><name>m_Camera</name></member>
+    <member refid="classBaseLevelScene_1ab435e3b596945acbde3667871495d4b5" kind="variable"><name>m_LineShader</name></member>
+    <member refid="classBaseLevelScene_1a39ab68552abf1385f4d27801dafa86b9" kind="variable"><name>m_SceneManager</name></member>
+    <member refid="classBaseLevelScene_1aef393c459e51f1c35ec11debbc6e4c7b" kind="variable"><name>m_Builder</name></member>
+    <member refid="classBaseLevelScene_1a378c17670d06335f86f2a8f01cc0d3aa" kind="variable"><name>m_LevelName</name></member>
+    <member refid="classBaseLevelScene_1a97c355120bd46574398b7fc35bb027fd" kind="variable"><name>m_CameraMode</name></member>
+    <member refid="classBaseLevelScene_1a92e8e1b3659b34c538c8b66d472550f8" kind="variable"><name>m_ECSScene</name></member>
+    <member refid="classBaseLevelScene_1a5b0538757b5a6b1f307983fb56a6c070" kind="variable"><name>m_World</name></member>
+    <member refid="classBaseLevelScene_1a88654189be731926a1093106b86de0c6" kind="variable"><name>m_CameraController</name></member>
+    <member refid="classBaseLevelScene_1a6d231d2ede9243ceb3e9f587f144ba2d" kind="variable"><name>m_PlayerController</name></member>
+    <member refid="classBaseLevelScene_1a7a21e9c1df6703713d73a7cc8f512b33" kind="variable"><name>m_FpsCounter</name></member>
+    <member refid="classBaseLevelScene_1af3a106663a4762944a05ef216687c35d" kind="variable"><name>m_PlayerEntity</name></member>
+    <member refid="classBaseLevelScene_1a2f7f5c476ad9a31a54840d1a574175c1" kind="variable"><name>m_EnemyEntities</name></member>
+    <member refid="classBaseLevelScene_1ad705f1295cbae14ba923e1b1b2f46ad6" kind="variable"><name>m_EnemyDefinitions</name></member>
+    <member refid="classBaseLevelScene_1a1c0eb61a6a5ef4688dda661abe12206a" kind="variable"><name>m_PlatformEntities</name></member>
+    <member refid="classBaseLevelScene_1ad453a827009fdc987722770402988ba0" kind="function"><name>BaseLevelScene</name></member>
+    <member refid="classBaseLevelScene_1a57373887b22496420bd955b5a7985618" kind="function"><name>~BaseLevelScene</name></member>
+    <member refid="classBaseLevelScene_1ab16251567315098d84b5afed205ebf75" kind="function"><name>OnEnter</name></member>
+    <member refid="classBaseLevelScene_1a4dbbd984d245a1d8fd20e89546db30c4" kind="function"><name>OnExit</name></member>
+    <member refid="classBaseLevelScene_1a8131a96a0029b8801e80012c3d7b10dc" kind="function"><name>OnResize</name></member>
+    <member refid="classBaseLevelScene_1a3efbf3f1e6d16a34de0b27a1da2f98f7" kind="function"><name>Update</name></member>
+    <member refid="classBaseLevelScene_1a97d454ced01a68b11b7b4906ba30d7b1" kind="function"><name>Render</name></member>
+    <member refid="classBaseLevelScene_1a09c51e071220755c6b9ff37e46ae83aa" kind="function"><name>GetName</name></member>
+    <member refid="classBaseLevelScene_1ab1a4691694cad905d0d6c7368d8b82e6" kind="function"><name>GetHUDLines</name></member>
+    <member refid="classBaseLevelScene_1ad699b8d5399b8b240c1db4af6c07cbcc" kind="function"><name>RespawnEnemies</name></member>
+    <member refid="classBaseLevelScene_1ac14c1450ecf7e04fca4365eb19857f82" kind="function"><name>SetupScene</name></member>
+    <member refid="classBaseLevelScene_1a731f0a2859c5e76d8212ef22876bde90" kind="function"><name>ResolveCollisions</name></member>
+    <member refid="classBaseLevelScene_1a77fd4e5577c3c2e867d1b6ab27cf5f16" kind="function"><name>CheckEnemyCollisions</name></member>
+    <member refid="classBaseLevelScene_1ab310c8eb93b4b89ffac68dabbdc2e28b" kind="function"><name>DestroyEnemy</name></member>
   </compound>
   <compound refid="classCamera2D" kind="class"><name>Camera2D</name>
     <member refid="classCamera2D_1a651b5a30b9359cc06ebd5d0a6270775c" kind="variable"><name>m_Near</name></member>
@@ -134,6 +170,14 @@
     <member refid="structDemo2DFixedScene_1_1EnemyDefinition_1a85327057cec5de5bbdeb8810237d397b" kind="variable"><name>PatrolEnd</name></member>
     <member refid="structDemo2DFixedScene_1_1EnemyDefinition_1a21f2328a2619d085f532e5c550a279f8" kind="variable"><name>PatrolSpeed</name></member>
   </compound>
+  <compound refid="structLevelSystem_1_1EnemyDefinition" kind="struct"><name>LevelSystem::EnemyDefinition</name>
+    <member refid="structLevelSystem_1_1EnemyDefinition_1ac7b211e985297ab59069938c73771fe6" kind="variable"><name>Position</name></member>
+    <member refid="structLevelSystem_1_1EnemyDefinition_1a92d8b660a610207612f56863e895e754" kind="variable"><name>Scale</name></member>
+    <member refid="structLevelSystem_1_1EnemyDefinition_1a75975711e8aeb4705ac234822cddade6" kind="variable"><name>Texture</name></member>
+    <member refid="structLevelSystem_1_1EnemyDefinition_1a0be9a477c9ae928a0ee86056d306566a" kind="variable"><name>PatrolStart</name></member>
+    <member refid="structLevelSystem_1_1EnemyDefinition_1ade4221f51df3fe9abbeb7880c54104fd" kind="variable"><name>PatrolEnd</name></member>
+    <member refid="structLevelSystem_1_1EnemyDefinition_1a91a2652cec2601dfaffb1d78e601e1e3" kind="variable"><name>PatrolSpeed</name></member>
+  </compound>
   <compound refid="classEnemyDiedEvent" kind="class"><name>EnemyDiedEvent</name>
     <member refid="classEnemyDiedEvent_1a77a177161b33ef294e6014d6ad1dc99c" kind="variable"><name>m_Position</name></member>
     <member refid="classEnemyDiedEvent_1a4c307b78629d99dbb5d055911f206cea" kind="variable"><name>m_ScoreValue</name></member>
@@ -155,6 +199,8 @@
     <member refid="classEngine_1a253fc356293f0a5228b6d7ab143540b3" kind="function"><name>Initialize</name></member>
     <member refid="classEngine_1a3dbd2c0a65e642baa7eaa97caa6e4e64" kind="function"><name>Shutdown</name></member>
     <member refid="classEngine_1a531f887d1b7f38525d0c21d20e216e6c" kind="function"><name>GetWindow</name></member>
+    <member refid="classEngine_1a47e36969b7d5eb737b75ca542c44b31f" kind="function"><name>ToggleFullscreen</name></member>
+    <member refid="classEngine_1aa953a5f68826c7a2ea122674219d715b" kind="function"><name>IsFullscreen</name></member>
     <member refid="classEngine_1a96fbaebec1936cf4440f93b59a7c5148" kind="function"><name>IsRunning</name></member>
     <member refid="classEngine_1a75cf7e8499772e2a46c9bb747ce1f4e9" kind="function"><name>SetRunning</name></member>
   </compound>
@@ -276,6 +322,16 @@
     <member refid="classGraphicsContext_1a92739ce6618c156223091aa5b37f2f93" kind="function"><name>CompileShaders</name></member>
     <member refid="classGraphicsContext_1a1e40666b05cab4ede2e01bf3ab6487f0" kind="function"><name>CompileLineShader</name></member>
   </compound>
+  <compound refid="classHUD" kind="class"><name>HUD</name>
+    <member refid="classHUD_1afde486af9f51f3cefddf0e9e00c62d62" kind="variable"><name>m_Font</name></member>
+    <member refid="classHUD_1a8a94f0bf18f8629246835d4e1d48d042" kind="variable"><name>m_TextureCache</name></member>
+    <member refid="classHUD_1a568b8ee1591f9ba3ed36ae05966f6b56" kind="function"><name>HUD</name></member>
+    <member refid="classHUD_1a1e1140a40e4bf72a45acf9f7b2119323" kind="function"><name>~HUD</name></member>
+    <member refid="classHUD_1a5da52e1cbe872f0dcf9f30d5fc72ba13" kind="function"><name>Initialize</name></member>
+    <member refid="classHUD_1ac74213a2dfa97b3bd1559943a23bdfcd" kind="function"><name>Shutdown</name></member>
+    <member refid="classHUD_1a34e6d4715c4b95b36e01aed52d23fa61" kind="function"><name>Render</name></member>
+    <member refid="classHUD_1a86921d3d206d90f46f39365a3acc65e5" kind="function"><name>GetOrCreateTexture</name></member>
+  </compound>
   <compound refid="classIndexBuffer" kind="class"><name>IndexBuffer</name>
     <member refid="classIndexBuffer_1ae819041807551f8df4276aefcfce6505" kind="variable"><name>m_RendererID</name></member>
     <member refid="classIndexBuffer_1a5272b565abe244ea28d5cfa4c390b893" kind="variable"><name>m_Count</name></member>
@@ -326,6 +382,74 @@
     <member refid="classKeyEvent_1aab67e22618180ca64d3369555fa2aee6" kind="function"><name>IsAltPressed</name></member>
     <member refid="classKeyEvent_1aba1bc77a6676e8a62dd26a14670a69e1" kind="function"><name>GetEventType</name></member>
     <member refid="classKeyEvent_1a2d85adf9e71829dad3518f4310f8ef0d" kind="function"><name>GetStaticType</name></member>
+  </compound>
+  <compound refid="structLevelDefinition" kind="struct"><name>LevelDefinition</name>
+    <member refid="structLevelDefinition_1a8e92f9b20f1eb1a9ac44de804290b4e8" kind="variable"><name>Name</name></member>
+    <member refid="structLevelDefinition_1aa41fb86eb1255c3ae2ac786549a92560" kind="variable"><name>Description</name></member>
+    <member refid="structLevelDefinition_1a1391bd366813e06226f8229c49f9bfbb" kind="variable"><name>Build</name></member>
+    <member refid="structLevelDefinition_1a73045130a392c3e2a9ee42d6c7b6c137" kind="variable"><name>Mode</name></member>
+    <member refid="structLevelDefinition_1a22664e95b2c4a39e90776824845fafd8" kind="variable"><name>IsNew</name></member>
+  </compound>
+  <compound refid="classLevelRegistry" kind="class"><name>LevelRegistry</name>
+    <member refid="classLevelRegistry_1a97aab666d43fb6bc3f6949de09831572" kind="variable"><name>m_Levels</name></member>
+    <member refid="classLevelRegistry_1a2395d481c0cfe381c2db11091d85ab9b" kind="function"><name>GetInstance</name></member>
+    <member refid="classLevelRegistry_1ae261559d928372122d80ae2fb5ecbb6d" kind="function"><name>Register</name></member>
+    <member refid="classLevelRegistry_1a1dfb168ad2c52c04cb02e8fd84e01c21" kind="function"><name>GetLevels</name></member>
+    <member refid="classLevelRegistry_1a35be3f015bea516ae71194573c4ec3fc" kind="function"><name>Count</name></member>
+    <member refid="classLevelRegistry_1a558029dd2c44dbe83e72a3507bb86fff" kind="function"><name>LevelRegistry</name></member>
+  </compound>
+  <compound refid="classLevelSelectorScene" kind="class"><name>LevelSelectorScene</name>
+    <member refid="classLevelSelectorScene_1a2f95782c506eec5907525c433ed06d44" kind="variable"><name>m_SceneManager</name></member>
+    <member refid="classLevelSelectorScene_1ab6a99773b6fdeadcffda2d7ddc81b20e" kind="variable"><name>m_Shader</name></member>
+    <member refid="classLevelSelectorScene_1a9a837ee73063b49c25dd8ed397bb40cb" kind="variable"><name>m_VertexArray</name></member>
+    <member refid="classLevelSelectorScene_1ad2f19b9553b2a9c6c0b2a5f6ca0eeb3b" kind="variable"><name>m_IndexBuffer</name></member>
+    <member refid="classLevelSelectorScene_1ac484ddb64073422335ab3ec85251168d" kind="variable"><name>m_Camera</name></member>
+    <member refid="classLevelSelectorScene_1af2e87d65ca014b3845678db72fff1c9a" kind="variable"><name>m_LineShader</name></member>
+    <member refid="classLevelSelectorScene_1a32b9d528a0c8f03437dd069f46b7895e" kind="variable"><name>m_Font</name></member>
+    <member refid="classLevelSelectorScene_1ac68dce54991fa1861c7300c10bb7ea9e" kind="variable"><name>m_Options</name></member>
+    <member refid="classLevelSelectorScene_1a912e5dfba70c6a335795569a818a8fef" kind="variable"><name>m_SelectedOption</name></member>
+    <member refid="classLevelSelectorScene_1a0e18a737fd9413f0cd415a74bf4029bf" kind="variable"><name>m_NormalColor</name></member>
+    <member refid="classLevelSelectorScene_1af7ef2bbba2fb263804b77ef3900a5045" kind="variable"><name>m_SelectedColor</name></member>
+    <member refid="classLevelSelectorScene_1a70144989f056c70ee7cb3e4755ebe45b" kind="function"><name>LevelSelectorScene</name></member>
+    <member refid="classLevelSelectorScene_1a29adb71d9bf3a6bb60d127c8e506be8f" kind="function"><name>~LevelSelectorScene</name></member>
+    <member refid="classLevelSelectorScene_1a2ef8dc2df76c5d6a9dde5cb034ac242d" kind="function"><name>OnEnter</name></member>
+    <member refid="classLevelSelectorScene_1a38c557d72f36f05319bd8fc097cccb1e" kind="function"><name>OnExit</name></member>
+    <member refid="classLevelSelectorScene_1acfaf5d66253dbd5880be7bc68d210d0a" kind="function"><name>Update</name></member>
+    <member refid="classLevelSelectorScene_1aa4161b586dbea24ead423a034816fdfc" kind="function"><name>Render</name></member>
+    <member refid="classLevelSelectorScene_1a8085250fc5dee5c345c763c26c8a0707" kind="function"><name>GetName</name></member>
+    <member refid="classLevelSelectorScene_1aebf0f8867df43f6606d5457bdce9d386" kind="function"><name>GetHUDLines</name></member>
+    <member refid="classLevelSelectorScene_1abb78b1c558d9139ccc5894603a792806" kind="function"><name>CreateTextTexture</name></member>
+    <member refid="classLevelSelectorScene_1a2f96c000d92e26cc44e50dd6f932c6d2" kind="function"><name>RenderOption</name></member>
+    <member refid="classLevelSelectorScene_1a142562be4dbf89030310c0075d160369" kind="function"><name>IsMouseOverOption</name></member>
+    <member refid="classLevelSelectorScene_1ab6fc75b411632651fa21249a1a995fec" kind="function"><name>HandleSelection</name></member>
+  </compound>
+  <compound refid="classLevelSystem" kind="class"><name>LevelSystem</name>
+    <member refid="classLevelSystem_1a3264e9b899873ac854f0759d3103aeac" kind="variable"><name>m_Scene</name></member>
+    <member refid="classLevelSystem_1ab69f9cb52128e9c8c54f3d7ca50c77ac" kind="variable"><name>m_PlayerTex</name></member>
+    <member refid="classLevelSystem_1ab03cdacf2090d7c234bb91c8b005ef03" kind="variable"><name>m_TileTex</name></member>
+    <member refid="classLevelSystem_1a7c91d5ae725b59c2b21829be61b05129" kind="variable"><name>m_EnemyTex</name></member>
+    <member refid="classLevelSystem_1a7ee740d1275dc8de3f4cfbe0f5d4d37e" kind="variable"><name>m_MinX</name></member>
+    <member refid="classLevelSystem_1a471eaf3314955832389dc96aa0b2c668" kind="variable"><name>m_MaxX</name></member>
+    <member refid="classLevelSystem_1ab3ec7fcdfc2ea8e3b1cae73cdea66284" kind="variable"><name>m_MinY</name></member>
+    <member refid="classLevelSystem_1a53e01a0809e2aef16469a04f3de101be" kind="variable"><name>m_MaxY</name></member>
+    <member refid="classLevelSystem_1a3360d59adae5259447c161bf3050899c" kind="variable"><name>m_PlayerEntity</name></member>
+    <member refid="classLevelSystem_1a7583ed8df68e766a29c522cfc1719df9" kind="variable"><name>m_PlatformEntities</name></member>
+    <member refid="classLevelSystem_1a21f4aeea06b4c7427eda4418094b116c" kind="variable"><name>m_EnemyEntities</name></member>
+    <member refid="classLevelSystem_1aa2494c86ba64c939dc03980891c646d8" kind="variable"><name>m_EnemyDefinitions</name></member>
+    <member refid="classLevelSystem_1adf27eff6fdebd568877347bd09f023d6" kind="function"><name>LevelSystem</name></member>
+    <member refid="classLevelSystem_1a3e6320da6531e2929c3d8a78e359ac24" kind="function"><name>SetWorldBounds</name></member>
+    <member refid="classLevelSystem_1a7530478b25741aebf4deccad90696d5b" kind="function"><name>CreatePlayer</name></member>
+    <member refid="classLevelSystem_1a1b19c6edebac036042a5786330e76987" kind="function"><name>CreatePlayerOnFloor</name></member>
+    <member refid="classLevelSystem_1a085108be7529741cb15602a8022b833c" kind="function"><name>CreatePlatform</name></member>
+    <member refid="classLevelSystem_1aba8c5392fbf24e635c064847625d5be6" kind="function"><name>CreateEnemy</name></member>
+    <member refid="classLevelSystem_1a9200d914b599b8def8493a7c2cae76b4" kind="function"><name>GetMinX</name></member>
+    <member refid="classLevelSystem_1a363a5adfbef8e600a912b96f1e75f5fc" kind="function"><name>GetMaxX</name></member>
+    <member refid="classLevelSystem_1a7f519e936acfa2af7f94570d01fae0a1" kind="function"><name>GetMinY</name></member>
+    <member refid="classLevelSystem_1ad0bd129e84474259c33c976eae3f03b6" kind="function"><name>GetMaxY</name></member>
+    <member refid="classLevelSystem_1a58a12d9e7eb3781b3976c42ba04a62b0" kind="function"><name>GetPlayerEntity</name></member>
+    <member refid="classLevelSystem_1a05736b7dfd96201827d4d27ea628dc13" kind="function"><name>GetPlatforms</name></member>
+    <member refid="classLevelSystem_1a4e765e3778c9694c995c1d45b2737806" kind="function"><name>GetEnemies</name></member>
+    <member refid="classLevelSystem_1a3b3c9cb5a253e0e253f868cd7d6352c5" kind="function"><name>GetEnemyDefinitions</name></member>
   </compound>
   <compound refid="classLog" kind="class"><name>Log</name>
     <member refid="classLog_1a10767fd008319be02fc0125dd20ba948" kind="variable"><name>s_File</name></member>
@@ -414,6 +538,14 @@
     <member refid="classMouseWheelEvent_1a9673269c5bc0480fa716c51b35b3047a" kind="function"><name>GetEventType</name></member>
     <member refid="classMouseWheelEvent_1a43a82b6feb18741e3125a9e9113f2ae9" kind="function"><name>GetStaticType</name></member>
   </compound>
+  <compound refid="structLevelSelectorScene_1_1Option" kind="struct"><name>LevelSelectorScene::Option</name>
+    <member refid="structLevelSelectorScene_1_1Option_1aa432014ff73e4d3715d5bebc70289948" kind="variable"><name>Label</name></member>
+    <member refid="structLevelSelectorScene_1_1Option_1a7b02823b0e5eafec5488802026eb8911" kind="variable"><name>NormalTexture</name></member>
+    <member refid="structLevelSelectorScene_1_1Option_1ab4f540ccc737789009d7e35eeb4fcfa3" kind="variable"><name>SelectedTexture</name></member>
+    <member refid="structLevelSelectorScene_1_1Option_1a3e5b8f6b84e764c6c7d1cf3ebf1bd12e" kind="variable"><name>Position</name></member>
+    <member refid="structLevelSelectorScene_1_1Option_1a27114cde8813f06e07d69021ce03a72c" kind="variable"><name>Width</name></member>
+    <member refid="structLevelSelectorScene_1_1Option_1ab067840435b782f8a78e68e74ad8af8a" kind="variable"><name>Height</name></member>
+  </compound>
   <compound refid="structComponents_1_1Patrol" kind="struct"><name>Components::Patrol</name>
     <member refid="structComponents_1_1Patrol_1acdb7e56ff34a14dbd8500c29bec0affe" kind="variable"><name>StartPosition</name></member>
     <member refid="structComponents_1_1Patrol_1a6c28272ebcacf6843b3c3ab318db5700" kind="variable"><name>EndPosition</name></member>
@@ -435,6 +567,7 @@
     <member refid="classPlayerController_1a1e9b40f2e626532f9d49c66dd256990f" kind="variable"><name>m_IsDead</name></member>
     <member refid="classPlayerController_1abb92e9880ae0250e5fdb3f756475de1c" kind="variable"><name>m_IsGrounded</name></member>
     <member refid="classPlayerController_1a2b4f8434fdc256669b54c8ac8f7d6aeb" kind="variable"><name>m_WasGrounded</name></member>
+    <member refid="classPlayerController_1a70fe08e779f88d190a8e8a3982aaefdc" kind="variable"><name>m_SpawnPosition</name></member>
     <member refid="classPlayerController_1a0741e03ee1239165e1a12ab2fdc818db" kind="variable"><name>m_World</name></member>
     <member refid="classPlayerController_1a526dbbbce5f9567a8558b5366445b4f7" kind="function"><name>PlayerController</name></member>
     <member refid="classPlayerController_1ab89c90498ca2285d7f0ef0b83a091966" kind="function"><name>~PlayerController</name></member>
@@ -501,6 +634,8 @@
     <member refid="classScene_1aaede6346f58776bd40efffd55885ab02" kind="function"><name>Update</name></member>
     <member refid="classScene_1ae24d21e12b34839994ad265662ea24d7" kind="function"><name>Render</name></member>
     <member refid="classScene_1ad93511100250c3f3ed736b9ed69fdc6f" kind="function"><name>GetName</name></member>
+    <member refid="classScene_1a0b39bb1405c0f9ed82b2123a4b9dbfbd" kind="function"><name>OnResize</name></member>
+    <member refid="classScene_1afb756dd8b7583f4b06a000d8157c7952" kind="function"><name>GetHUDLines</name></member>
   </compound>
   <compound refid="classSceneManager" kind="class"><name>SceneManager</name>
     <member refid="classSceneManager_1a08ef808828ceeb144b289987309f328e" kind="variable"><name>m_SceneStack</name></member>
@@ -530,6 +665,8 @@
     <member refid="classSDLWindow_1ab081329db76eaeaed1716c2e3bad50b2" kind="function"><name>SDLWindow</name></member>
     <member refid="classSDLWindow_1a7a0af0daec54970ff2262b67a6ece281" kind="function"><name>~SDLWindow</name></member>
     <member refid="classSDLWindow_1a6c60257844fe3a5fe819183539116e40" kind="function"><name>Create</name></member>
+    <member refid="classSDLWindow_1a91c60ebb91c668a0be1a910734df55c9" kind="function"><name>ToggleFullscreen</name></member>
+    <member refid="classSDLWindow_1a088f775d244451c7adb588cd8fce5e26" kind="function"><name>IsFullscreen</name></member>
     <member refid="classSDLWindow_1ac8f370d73ebfe50529fbbba56c100b4b" kind="function"><name>Destroy</name></member>
     <member refid="classSDLWindow_1a63de111915a58b28696a6fd1889acec8" kind="function"><name>SwapBuffers</name></member>
     <member refid="classSDLWindow_1ad11eb6f7291bfcedcd7a5cbff75ebd8e" kind="function"><name>GetNativeWindow</name></member>
@@ -600,6 +737,7 @@
     <member refid="classTime_1a2b684243784e6daedfa7ec3ce4b57ea5" kind="variable"><name>s_DeltaTime</name></member>
     <member refid="classTime_1a6595aadb1feae1ea8f4058682ee8c27d" kind="variable"><name>s_ElapsedTime</name></member>
     <member refid="classTime_1ad543732facbdbe2aa7298de13cb2a12b" kind="function"><name>DeltaTime</name></member>
+    <member refid="classTime_1ac6ae72b2ea451dd16f0d0ca3ae45fec5" kind="function"><name>SetDeltaTime</name></member>
     <member refid="classTime_1a78df68c0498044fa62fdeb6b9e9e8b63" kind="function"><name>ElapsedTime</name></member>
     <member refid="classTime_1a7e9cf31048064a9aedfee885807b1b56" kind="function"><name>Update</name></member>
   </compound>
@@ -661,6 +799,8 @@
     <member refid="classWindowResizeEvent_1a60b310d95bea3bfa3b53ce70fb9a98f2" kind="function"><name>GetEventType</name></member>
     <member refid="classWindowResizeEvent_1a9800bd5e7b5a84c59c68d9b2301ca159" kind="function"><name>GetWidth</name></member>
     <member refid="classWindowResizeEvent_1a13becd83abdc32de50c57664f64a5e55" kind="function"><name>GetHeight</name></member>
+  </compound>
+  <compound refid="namespace_0d051252143061200160013313137064156013355231133233" kind="namespace"><name>@051252143061200160013313137064156013355231133233</name>
   </compound>
   <compound refid="namespaceComponents" kind="namespace"><name>Components</name>
   </compound>
@@ -725,6 +865,23 @@
   <compound refid="Demo2DScene_8cpp" kind="file"><name>Demo2DScene.cpp</name>
   </compound>
   <compound refid="Demo2DScene_8h" kind="file"><name>Demo2DScene.h</name>
+  </compound>
+  <compound refid="Level1_8cpp" kind="file"><name>Level1.cpp</name>
+    <member refid="Level1_8cpp_1a05404a86824a87f43cf459033fafeafd" kind="function"><name>BuildLevel1</name></member>
+    <member refid="Level1_8cpp_1a145c616383df587799ea9663867c067c" kind="function"><name>REGISTER_LEVEL</name></member>
+  </compound>
+  <compound refid="Level2_8cpp" kind="file"><name>Level2.cpp</name>
+    <member refid="Level2_8cpp_1ad1eb4efd5fd716e87ef2d64034590112" kind="function"><name>BuildLevel2</name></member>
+    <member refid="Level2_8cpp_1a584633477f14ef14c98172a161996e4d" kind="function"><name>REGISTER_LEVEL</name></member>
+  </compound>
+  <compound refid="Level3_8cpp" kind="file"><name>Level3.cpp</name>
+    <member refid="Level3_8cpp_1a8ef00d680d1917d873a6a23ff769d7fa" kind="function"><name>BuildLevel3</name></member>
+    <member refid="Level3_8cpp_1ad1136b1bf2080dfd6caabb4d9496f0bd" kind="function"><name>REGISTER_LEVEL</name></member>
+  </compound>
+  <compound refid="Levels_8h" kind="file"><name>Levels.h</name>
+    <member refid="Levels_8h_1a05404a86824a87f43cf459033fafeafd" kind="function"><name>BuildLevel1</name></member>
+    <member refid="Levels_8h_1ad1eb4efd5fd716e87ef2d64034590112" kind="function"><name>BuildLevel2</name></member>
+    <member refid="Levels_8h_1a8ef00d680d1917d873a6a23ff769d7fa" kind="function"><name>BuildLevel3</name></member>
   </compound>
   <compound refid="Assert_8h" kind="file"><name>Assert.h</name>
     <member refid="Assert_8h_1a8cd446f746bfa7d25787eb94290c900d" kind="define"><name>ENGINE_ASSERT</name></member>
@@ -816,6 +973,23 @@
   </compound>
   <compound refid="VertexBuffer_8h" kind="file"><name>VertexBuffer.h</name>
   </compound>
+  <compound refid="CameraMode_8h" kind="file"><name>CameraMode.h</name>
+    <member refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35" kind="enum"><name>CameraMode</name></member>
+    <member refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35a4457d440870ad6d42bab9082d9bf9b61" kind="enumvalue"><name>Fixed</name></member>
+    <member refid="CameraMode_8h_1ac6e73fe6ce68e10b0acd6d2312bdbb35a3903aab323863bd2e9b68218a7a65ebd" kind="enumvalue"><name>Follow</name></member>
+  </compound>
+  <compound refid="LevelMacros_8h" kind="file"><name>LevelMacros.h</name>
+    <member refid="LevelMacros_8h_1abffe427d7a82d716aaeb59f206234302" kind="define"><name>REGISTER_LEVEL</name></member>
+    <member refid="LevelMacros_8h_1ae6304d68c85873f6efff15e730363b4c" kind="define"><name>REGISTER_LEVEL_NEW</name></member>
+  </compound>
+  <compound refid="LevelRegistry_8cpp" kind="file"><name>LevelRegistry.cpp</name>
+  </compound>
+  <compound refid="LevelRegistry_8h" kind="file"><name>LevelRegistry.h</name>
+  </compound>
+  <compound refid="LevelSelectorScene_8cpp" kind="file"><name>LevelSelectorScene.cpp</name>
+  </compound>
+  <compound refid="LevelSelectorScene_8h" kind="file"><name>LevelSelectorScene.h</name>
+  </compound>
   <compound refid="Matrix4_8cpp" kind="file"><name>Matrix4.cpp</name>
   </compound>
   <compound refid="Matrix4_8h" kind="file"><name>Matrix4.h</name>
@@ -836,6 +1010,10 @@
   </compound>
   <compound refid="ResourceManager_8h" kind="file"><name>ResourceManager.h</name>
   </compound>
+  <compound refid="BaseLevelScene_8cpp" kind="file"><name>BaseLevelScene.cpp</name>
+  </compound>
+  <compound refid="BaseLevelScene_8h" kind="file"><name>BaseLevelScene.h</name>
+  </compound>
   <compound refid="Camera2D_8cpp" kind="file"><name>Camera2D.cpp</name>
   </compound>
   <compound refid="Camera2D_8h" kind="file"><name>Camera2D.h</name>
@@ -852,6 +1030,10 @@
   </compound>
   <compound refid="GameWorld_8h" kind="file"><name>GameWorld.h</name>
   </compound>
+  <compound refid="HUD_8cpp" kind="file"><name>HUD.cpp</name>
+  </compound>
+  <compound refid="HUD_8h" kind="file"><name>HUD.h</name>
+  </compound>
   <compound refid="MenuScene_8cpp" kind="file"><name>MenuScene.cpp</name>
   </compound>
   <compound refid="MenuScene_8h" kind="file"><name>MenuScene.h</name>
@@ -863,6 +1045,10 @@
   <compound refid="SceneManager_8h" kind="file"><name>SceneManager.h</name>
   </compound>
   <compound refid="EnemySystem_8h" kind="file"><name>EnemySystem.h</name>
+  </compound>
+  <compound refid="LevelSystem_8cpp" kind="file"><name>LevelSystem.cpp</name>
+  </compound>
+  <compound refid="LevelSystem_8h" kind="file"><name>LevelSystem.h</name>
   </compound>
   <compound refid="RenderSystem_8h" kind="file"><name>RenderSystem.h</name>
   </compound>
@@ -892,6 +1078,10 @@
   </compound>
   <compound refid="dir_8aa109d331f3e3b3014e32565285b6b8" kind="dir"><name>engine/graphics</name>
   </compound>
+  <compound refid="dir_1d7686bd4ad0d0d1a98bac552750a9f4" kind="dir"><name>engine/level</name>
+  </compound>
+  <compound refid="dir_215f49ad94af785b49e2c4f0606ed7c4" kind="dir"><name>engine/demo/levels</name>
+  </compound>
   <compound refid="dir_6092418e369ca819ce866d11ef016080" kind="dir"><name>engine/math</name>
   </compound>
   <compound refid="dir_3862078e0a5429b6ce9a8a5d655cc609" kind="dir"><name>engine/platform</name>
@@ -907,5 +1097,7 @@
   <compound refid="dir_fd1fc52505cfa4c86ecd59c02433df11" kind="dir"><name>game/src</name>
   </compound>
   <compound refid="dir_86b634d0e529cc84141469957c58c4f8" kind="dir"><name>engine/systems</name>
+  </compound>
+  <compound refid="_2home_2gmatos_2project_2EngineProject_2engine_2level_2LevelMacros_8h-example" kind="example"><name>/home/gmatos/project/EngineProject/engine/level/LevelMacros.h</name>
   </compound>
 </doxygenindex>
