@@ -20,6 +20,7 @@
 #include "scene/ECSScene.h"
 #include "scene/SceneManager.h"
 #include "scene/GameWorld.h"
+#include "scene/HUD.h"
 #include <entt.hpp>
 #include <memory>
 
@@ -85,6 +86,7 @@ private:
     std::unique_ptr<FpsCounter> m_FpsCounter; //FPS measurement and logging
     std::unique_ptr<GameWorld> m_World; //World boundaries and clamping
     SceneManager m_SceneManager; //Scene stack management
+    std::unique_ptr<HUD> m_HUD;
 
     void ProcessEvents(); //Handles SDL event polling
     void Render(); //Renders the current scene

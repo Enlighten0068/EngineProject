@@ -52,14 +52,20 @@ public:
         for(auto [entity, transform, enemy, patrol, physics] : view.each()){
             if(!enemy.IsActive) continue;
 
-            //Enemy patrol movement
+            //Enemy patrol movement — clamped to patrol bounds
             float speed = patrol.Speed * deltaTime;
             if(patrol.MovingRight){
                 transform.Position.x += speed;
-                if(transform.Position.x >= patrol.EndPosition.x) patrol.MovingRight = false;
+                if(transform.Position.x >= patrol.EndPosition.x){
+                    transform.Position.x = patrol.EndPosition.x; //hard clamp
+                    patrol.MovingRight = false;
+                }
             } else{
                 transform.Position.x -= speed;
-                if(transform.Position.x <= patrol.StartPosition.x) patrol.MovingRight = true;
+                if(transform.Position.x <= patrol.StartPosition.x){
+                    transform.Position.x = patrol.StartPosition.x; //hard clamp
+                    patrol.MovingRight = true;
+                }
             }
 
             //Apply gravity

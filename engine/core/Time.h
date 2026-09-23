@@ -17,6 +17,12 @@ public:
     static float DeltaTime();
 
     /**
+     * @brief Overrides the delta time for this frame.
+     * @note Used to clamp delta time after long freezes.
+     */
+    static void SetDeltaTime(float dt){ s_DeltaTime = dt; }
+
+    /**
      * @brief Gets the total time elapsed since application startup.
      * @return Elapsed time in seconds.
      */

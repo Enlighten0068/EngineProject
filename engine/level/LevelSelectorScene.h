@@ -32,6 +32,13 @@ public:
     void Render() override;
     std::string GetName() const override{ return "LevelSelector"; }
 
+    std::vector<std::string> GetHUDLines() const override{
+        return {
+            "F11: Toggle Fullscreen",
+            "ESC: Back to Menu"
+        };
+    }
+
 private:
     struct Option{
         std::string Label;

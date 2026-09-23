@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 /**
  * @brief Abstract base class for all scenes in the engine.
@@ -51,4 +52,12 @@ public:
      * @note Default implementation does nothing.
      */
     virtual void OnResize(int width, int height){ (void)width; (void)height; }
+
+    /**
+     * @brief Returns the lines to be rendered by the HUD.
+     * @note Default: F11 hint only.
+     */
+    virtual std::vector<std::string> GetHUDLines() const{
+        return { "F11: Toggle Fullscreen" };
+    }
 };

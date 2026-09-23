@@ -48,6 +48,13 @@ public:
 
     void RespawnEnemies();
 
+    std::vector<std::string> GetHUDLines() const override{
+        return {
+            "F11: Toggle Fullscreen",
+            "ESC: Exit Level"
+        };
+    }
+
 private:
     void SetupScene();
     void ResolveCollisions();

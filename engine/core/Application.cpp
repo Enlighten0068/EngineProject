@@ -93,6 +93,10 @@ bool Application::Initialize(){
         return false;
     }
 
+    //Initialize HUD overlay
+    m_HUD = std::make_unique<HUD>();
+    m_HUD->Initialize("assets/fonts/arial.ttf", 28);
+
     //Initialize camera with aspect ratio
     int winWidth, winHeight;
     SDL_GetWindowSize(m_Engine.GetWindow().GetNativeWindow(), &winWidth, &winHeight);
@@ -114,7 +118,7 @@ bool Application::Initialize(){
     //Initialize FPS counter
     m_FpsCounter = std::make_unique<FpsCounter>();
 
-    //Subscribe to window resize events for camera updates
+    //Subscribe to window resize events — delegate to the current scene
     EventBus::GetInstance().Subscribe<WindowResizeEvent>([this](Event& e){
         WindowResizeEvent& resizeEvent = static_cast<WindowResizeEvent&>(e);
         int newWidth = resizeEvent.GetWidth();
@@ -122,17 +126,10 @@ bool Application::Initialize(){
 
         Input::SetWindowSize(newWidth, newHeight);
 
-        //Skip camera update for fixed camera scenes
+        //Let the current scene decide how to handle the resize
         Scene* currentScene = m_SceneManager.GetCurrentScene();
         if(currentScene){
             currentScene->OnResize(newWidth, newHeight);
-        }
-
-        if(m_Camera){
-            float aspect = static_cast<float>(newWidth) / static_cast<float>(newHeight);
-            float height = 5.0f;
-            float width = height * aspect;
-            m_Camera->SetProjection(-width, width, -height, height);
         }
     });
 
@@ -140,12 +137,8 @@ bool Application::Initialize(){
 
     //Initial scene - Demo2DFixedScene
     auto initialScene = std::make_unique<Demo2DFixedScene>(
-        m_Graphics->GetShader(),
-                                                           m_Graphics->GetVertexArray(),
-                                                           m_Graphics->GetIndexBuffer(),
-                                                           *m_Camera,
-                                                           m_Graphics->GetLineShader()
-    );
+        m_Graphics->GetShader(), m_Graphics->GetVertexArray(),
+        m_Graphics->GetIndexBuffer(), *m_Camera, m_Graphics->GetLineShader());
 
     return true;
 }
@@ -160,6 +153,12 @@ bool Application::Initialize(){
 void Application::Run(){
     while(m_Engine.IsRunning()){
         Time::Update(); //Update time system
+
+        //Clamp delta time to prevent massive jumps after a long freeze
+        //(e.g., while the user drags the window border)
+        constexpr float MAX_DELTA = 0.05f; //50 ms = min 20 FPS
+        if(Time::DeltaTime() > MAX_DELTA) Time::SetDeltaTime(MAX_DELTA);
+
         ProcessEvents(); //Process SDL events
         Update(); //Update game logic
         Input::Update(); //Reset input deltas
@@ -181,6 +180,11 @@ void Application::Shutdown(){
     ResourceManager::GetInstance().Clear();
     m_World.reset();
     m_Camera.reset();
+
+    if(m_HUD){
+        m_HUD->Shutdown();
+        m_HUD.reset();
+    }
 
     if(m_Graphics){
         m_Graphics->Shutdown();
@@ -242,5 +246,18 @@ void Application::Render(){
 
     glClear(GL_COLOR_BUFFER_BIT);
     m_SceneManager.Render();
+
+    //HUD overlay (renders on top of the scene)
+    if(m_HUD){
+        Scene* currentScene = m_SceneManager.GetCurrentScene();
+        if(currentScene){
+            m_HUD->Render(currentScene->GetHUDLines(),
+            m_Graphics->GetShader(),
+            m_Graphics->GetVertexArray(),
+            m_Graphics->GetIndexBuffer(),
+            winWidth, winHeight);
+        }
+    }
+
     m_Engine.GetWindow().SwapBuffers();
 }

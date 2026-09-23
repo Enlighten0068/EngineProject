@@ -59,6 +59,7 @@ set(ENGINE_SOURCES
   engine/scene/SceneManager.cpp
   engine/scene/MenuScene.cpp
   engine/scene/BaseLevelScene.cpp
+  engine/scene/HUD.cpp
   engine/systems/LevelSystem.cpp
 )
 

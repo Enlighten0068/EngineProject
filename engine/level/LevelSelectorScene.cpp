@@ -5,6 +5,7 @@
 #include "level/LevelRegistry.h"
 #include "renderer/Renderer.h"
 #include "scene/BaseLevelScene.h"
+#include "scene/MenuScene.h"
 #include <glad/glad.h>
 #include <SDL3/SDL.h>
 #include <format>
@@ -89,6 +90,16 @@ std::shared_ptr<Texture2D> LevelSelectorScene::CreateTextTexture(const std::stri
 void LevelSelectorScene::Update(float deltaTime){
     if(m_Options.empty()) return;
 
+    //ESC to go back to main menu
+    if(Input::IsKeyPressed(SDL_SCANCODE_ESCAPE)){
+        Log::Info("Returning to main menu...");
+        auto menu = std::make_unique<MenuScene>(
+            m_SceneManager, m_Shader, m_VertexArray, m_IndexBuffer,
+            m_Camera, m_LineShader);
+        m_SceneManager.SetScene(std::move(menu));
+        return;
+    }
+
     int n = static_cast<int>(m_Options.size());
 
     //Navigation down
@@ -103,11 +114,23 @@ void LevelSelectorScene::Update(float deltaTime){
         m_SelectedOption = (m_SelectedOption - 1 + n) % n;
     }
 
-    //Confirm
+    //Confirm with keyboard or gamepad
     if(Input::IsKeyPressed(SDL_SCANCODE_RETURN) || Input::IsKeyPressed(SDL_SCANCODE_SPACE) ||
         GamepadManager::GetInstance().IsButtonPressed(0, SDL_GAMEPAD_BUTTON_EAST)){
         HandleSelection();
     }
+
+    //Mouse click detection
+    if(Input::IsMouseButtonPressed(1)){
+        for(size_t i = 0; i < m_Options.size(); ++i){
+            if(IsMouseOverOption(m_Options[i])){
+                m_SelectedOption = static_cast<int>(i);
+                HandleSelection();
+                return;
+            }
+        }
+    }
+
 }
 
 void LevelSelectorScene::Render(){

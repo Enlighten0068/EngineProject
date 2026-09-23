@@ -82,5 +82,7 @@ private:
     bool m_IsGrounded = false; //Touching ground
     bool m_WasGrounded = false; //Previous frame grounded state
 
+    Vector3D m_SpawnPosition{0.0f, 0.0f, 0.0f}; //Capture Spawn Position for respawning
+
     const GameWorld& m_World; //World for boundary clamping
 };

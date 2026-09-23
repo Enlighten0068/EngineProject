@@ -13,6 +13,12 @@
 
 PlayerController::PlayerController(entt::registry& registry, entt::entity playerEntity, const GameWorld& world)
 : m_Registry(registry), m_PlayerEntity(playerEntity), m_World(world){
+    //Capture the current transform as the spawn point for respawn
+    if(m_Registry.all_of<Components::Transform>(m_PlayerEntity)){
+        m_SpawnPosition = m_Registry.get<Components::Transform>(m_PlayerEntity).Position;
+        Log::Info(std::format("PlayerController: spawn captured at ({}, {})",
+                              m_SpawnPosition.x, m_SpawnPosition.y));
+    }
     SetupEventSubscriptions();
 }
 
@@ -157,14 +163,14 @@ void PlayerController::Die(const std::string& cause){
 
     auto& transform = m_Registry.get<Components::Transform>(m_PlayerEntity);
 
-    //Dispatch death event
     PlayerDiedEvent deathEvent(transform.Position, cause);
     EventBus::GetInstance().Dispatch(deathEvent);
 
-    Log::Info(std::format("Player died: {}", cause));
+    Log::Info(std::format("Player died: {}. Respawning at ({}, {})",
+                          cause, m_SpawnPosition.x, m_SpawnPosition.y));
 
-    //Respawn at center
-    transform.Position = Vector3D(0.0f, 0.0f, 0.0f);
+    //Respawn at the level's spawn point
+    transform.Position = m_SpawnPosition;
     m_Velocity = Vector3D(0.0f, 0.0f, 0.0f);
     m_IsJumping = false;
     m_IsDead = false; //Instant respawn
